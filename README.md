@@ -1,8 +1,5 @@
-# CGUs Snapshots
-
-History of all changes to the Terms Of Service of online service providers.
-
-> Historique des modifications des Conditions Générales d'Utilisations des principaux fournisseurs de services en ligne.
+This repository is to be considered as a database only.
+You can find the documentation by following the link in the “About” section of this page.
 
 # License
 
