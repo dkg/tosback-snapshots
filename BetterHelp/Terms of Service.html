@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+                <script>
+    function on_mixpanel_ready() {
+        if (mixpanel && mixpanel.multisite && page_info.features.mixpanel_multisite) {
+            var mp_distinct_id = mixpanel.multisite.get_distinct_id();
+            if (get_cookie('mp_' + page_info['multisite_mixpanel'] + '_mixpanel') != null && get_cookie('mp_distinct_id') == null) {
+                if (!!mp_distinct_id) {
+                    page_info['sites_fqdn'].forEach(function (site_fqdn) {
+                        var r = new XMLHttpRequest();
+                        r.open('GET', 'https://' + site_fqdn + '/api/set_mixpanel_cookie/?distinct_id=' + mp_distinct_id);
+                        r.withCredentials = true;
+                        r.send(null);
+                    });
+                }
+            }
+
+            var prev_page = '';
+            if (document.referrer !== '') {
+                prev_page = new URL(document.referrer);
+            }
+            mixpanel.multisite.time_event(page_info.mixpanel_site_abbreviation + 'page_view');
+            mixpanel.multisite.track(page_info.mixpanel_site_abbreviation + 'page_view', {
+                'current_page': window.location.pathname,
+                'previous_page': prev_page.pathname
+            });
+        }
+    }
+
+    function get_cookie(cookie_name) {
+        var name = cookie_name + "=";
+        var cookie_array = document.cookie.split(';');
+        for (var i = 0; i < cookie_array.length; i++) {
+            var c = cookie_array[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return null;
+    }
+
+    function set_cookie(cookie_name, cookie_value, expire_seconds) {
+        var d = new Date();
+        d.setTime(d.getTime() + (expire_seconds * 1000));
+        var expires = "";
+        if (expire_seconds != false) {
+            expires = "expires=" + d.toUTCString();
+        }
+        document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/";
+    }
+</script>
+        <script>
+            var page_info = {"multisite_mixpanel":"86b58a29fdd839ffd0d68941ef274e1f","sites_fqdn":["www.betterhelpteens.com","www.pridecounseling.com","www.faithfulcounseling.com","www.mytherapist.com","www.terappeuta.com","www.icounseling.com","www.teencounseling.com","www.betterhelp.com","www.regain.us"],"redirect_sites_fqdn":["www.betterhelp.com","www.regain.us","www.faithfulcounseling.com","www.pridecounseling.com","www.teencounseling.com"],"uniqid":"5fb67feae0b892.00323332","user_type":"logged_out_user","user_id":"b86e0f8726bbc6c9f1ed16c5a667211f226309703c66311cb6a10e6e50c2638cceb6147ef9d167b840bc598e3b23d3d1f6faec7dfae23246b2873fefa6188d9b","template":"terms","is_mobile":false,"is_app":false,"is_ios_app":false,"is_android_app":false,"user_app_version":null,"is_local":false,"features":{"specify_podcast":true,"sunsetting":false,"urgent_messages":true,"couples":false,"phone_calls":true,"secret_assign_straights":true,"library":false,"livechat":true,"about":true,"counselor_application":true,"counselor_application_lean":false,"worksheets":true,"smart_match_with_categories":true,"groupinars":true,"login_quotes":true,"videosessions":true,"app_supports_videosessions":true,"cloud_chat":true,"phq_followup":true,"consent_agreement":true,"gmail_quick_action":true,"scheduling":true,"support_link":true,"has_paypal_always":false,"no_trial":true,"strike_through_cake":true,"dollar_test_charge":true,"groupon":true,"mobgo":true,"mental":true,"funnel_smart_match":true,"funnel_overview":true,"offer_promo_codes":true,"email_verification_always":true,"reviews_page":true,"jobs_page":true,"security_logos_display":true,"social_links_display":true,"counselor-directory":true,"social_signup":true,"language_is_matching_hard_filter":false,"advice":true,"presskit":true,"press_page":true,"text_notifications":true,"goals":true,"goals_mobile_main_menu":false,"batch_creation":true,"ask_language":true,"parent_child_account":false,"hardcoded_testimonials":false,"friendly_funnel":true,"referral_program":true,"vouchers":true,"betterhelp_branded":true,"signup_captcha":true,"mixpanel_multisite":true,"cookie_consent_required":true,"counselors_page":true},"date_time_formats":{"full":"F j, Y g:ia T","date":"F j, Y","time":"g:ia T"},"subdomain":"www","cdn_host_assets":"dy7glz37jgl0b.cloudfront.net","assets_app_version":"?v=26","product_code_name":"betterhelp","product_name":"BetterHelp","unix_timestamp":1605795818,"mixpanel_site_abbreviation":"bh_","use_trackjs":true,"trackjs_api_key":"8e343f2dd24f4a45bf5e416e9c3b37e4","trackjs_user":"","default_language_id":1,"csrf_token":"5fc70c9b3235259ac7400a12c16cf8cbd1c59991888e289bcf0d401aae57a92a11b5e8ab431b3d0e3874cf16a29017eb9e9cff0afdd18b2db197c21dc3156895","presignup_experiments":{"COOKIE_CONSENT_COOKIEPRO":"control"},"counselor_presignup_experiments":[]}
+        </script>
+                                    
+    <!-- META TAGS -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Our Client Terms &amp; Conditions | BetterHelp</title>
+        <meta name="description" content="Review the terms and conditions for clients and users of our services here at BetterHelp.com; the largest and fastest growing online counseling platform.">
+    <meta name="keywords" content="mental health" >
+    <meta name="title" content="Our Client Terms &amp; Conditions | BetterHelp">
+                    <meta property="og:type"               content="website" />
+        <meta property="og:title"              content="Our Client Terms &amp; Conditions | BetterHelp" />
+                    <meta property="og:url"                content="http://www.betterhelp.com" />
+            <meta property="og:description"        content="BetterHelp offers private, affordable online counseling when you need it from licensed, board-accredited therapists. Get help, you deserve to be happy!" />
+            <meta property="og:image"              content="https://dy7glz37jgl0b.cloudfront.net/brand/betterhelp/betterhelp-fb-small.jpg" />
+            <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@betterhelp">
+    <meta name="twitter:title" content="Our Client Terms &amp; Conditions | BetterHelp">
+                    <meta name="twitter:description" content="BetterHelp offers private, affordable online counseling when you need it from licensed, board-accredited therapists. Get help, you deserve to be happy!">
+            <meta name="twitter:image" content="https://dy7glz37jgl0b.cloudfront.net/brand/betterhelp/betterhelp-fb-small.jpg">
+                <link rel="shortcut icon" href="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/favicon.ico" type="image/x-icon">
+    <!-- Apple Touch Icons for mobile safari -->
+    <link rel="apple-touch-icon" href="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/apple-touch-icon-120x120.png">
+    <!-- End Apple Touch Icons for mobile safari -->
+
+        
+    <link rel="stylesheet" href="//static.betterhelp.com/css/contrib/jquerymobile/1.4.5/jquery.mobile.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//static.betterhelp.com/css/contrib/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="//static.betterhelp.com/css/contrib/font-awesome-animation/0.0.7/css/font-awesome-animation.min.css">
+        <link rel="stylesheet" href="//static.betterhelp.com/css/betterhelp/bh_style.min.3001.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700' rel='stylesheet' type='text/css'>
+    
+        
+            
+
+    
+        
+            <!-- Sweeps Tracking -->
+            <script>zarazData = {
+                                z_product_code_name: 'betterhelp',                z_loadExtraScripts: 'GTM-KP7H4QL' };
+            </script>
+            <script src="https://zrz.co/z-6547/i.js"></script>
+            <!-- End Sweeps Tracking -->
+
+         <!-- end no sweeps -->
+
+        <!-- end no special event -->
+
+
+    <!-- Mixpanel Code -->
+    <script>(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);</script>
+
+    <!-- Multisite Mixpanel Code -->
+            <script>
+            mixpanel.init('86b58a29fdd839ffd0d68941ef274e1f', {'loaded': function() {on_mixpanel_ready();}}, 'multisite');</script>
+    
+                        <script>mixpanel.multisite.identify();</script>
+            
+    <script>
+                    mixpanel.multisite.register({'is_app': 0});
+            mixpanel.multisite.register({'is_multi_site': 'true' });
+                            mixpanel.multisite.register({'COOKIE_CONSENT_COOKIEPRO': 'control'});
+                                                                                        mixpanel.multisite.register({'is_no_trial_bh_2': 'true' });
+                                        mixpanel.multisite.register_once({ 'landing page': window.location.pathname.substring(1, window.location.pathname.indexOf("/", 1)) });
+            </script>
+    
+        
+    
+</head>
+
+<body id="terms" class="" cdn="static.betterhelp.com">
+            <script>
+            function remove_url_parameter(url, parameter) {
+                //prefer to use l.search if you have a location/link object
+                var url_parts= url.split('?');
+                if (url_parts.length>=2) {
+                    var prefix= encodeURIComponent(parameter)+'=';
+                    var pars= url_parts[1].split(/[&;]/g);
+
+                    //reverse iteration as may be destructive
+                    for (var i= pars.length; i-- > 0;) {
+                        //idiom for string.startsWith
+                        if (pars[i].lastIndexOf(prefix, 0) !== -1) {
+                            pars.splice(i, 1);
+                        }
+                    }
+
+                    url= url_parts[0] + (pars.length > 0 ? '?' + pars.join('&') : "");
+                    return url;
+                } else {
+                    return url;
+                }
+            }
+            try {
+                var clean_url = remove_url_parameter(window.location.href, 'email');
+                clean_url = remove_url_parameter(clean_url, 'e');
+                clean_url = remove_url_parameter(clean_url, 'pe');
+                clean_url = remove_url_parameter(clean_url, 'pn');
+                clean_url = remove_url_parameter(clean_url, 'organization_name');
+                window.history.replaceState('', '', clean_url);
+            }
+            catch (e) {}
+        </script>
+         <!-- end sweep -->
+     <!-- end not automation and not amp -->
+            <div class="overlay-loading-layer hidden" id="loading_overlay">
+            <div class="overlay-loading"></div>
+        </div>
+     <!-- end not amp -->
+    <div id="body-container">
+        
+            <header class="">
+    
+    <!-- Branding -->
+            <a class="brand-logo" href="/" >
+            <div class="hidden-sm brand">
+                                    <img  src="//dy7glz37jgl0b.cloudfront.net/brand/tmp/betterhelp/icon-color.png?v=26" alt="BetterHelp logo medium Please visit www.betterhelp.com/accessible to view the accessible version of our site.">
+                                            </div>
+        </a>
+                    <a class="brand-icon" href="/" ><div class="hidden-xs hidden-md hidden-lg brand"><img src="//dy7glz37jgl0b.cloudfront.net/brand/betterhelp/icon-color-md.png?v=26" alt="BetterHelp small logo Please visit www.betterhelp.com/accessible to view the accessible version of our site."></div></a>
+                            
+        <!-- Mobile menu button -->
+    <div class="mobilemenu-toggle"><i class="fa fa-bars"></i></div>                <!-- Menu -->
+        <div class="menu ">
+
+            <!-- Left side menu - logged in users only -->
+                            <ul class="main">
+                                    </ul>
+            
+            <!-- Right side menu -->
+                            <ul class="right">
+                                                                                    <a href="/about/" id="about-nav"><li>About</li></a>
+            <a href="/advice/" id="advice-nav"><li>Advice</li></a>
+                <a href="/faq/" id="faq-nav"><li>FAQ</li></a>
+                <a href="/reviews/" id="reviews-nav"><li>Reviews</li></a>
+        <a href="/counselor_application/" id="counselor-nav"><li>Counselor Jobs</li></a>
+        <a href="/contact/" id="support-nav"><li>Contact</li></a>
+        <a href="/login/" class="btn btn-info" id="login-nav">Login</a>
+                                <a href="/start/" class="btn btn-primary" id="get-started-nav">Get started</a>
+                                                                </ul>
+                    </div>
+        
+                        </header>
+<div id="notification"></div>
+
+        
+        <div id="content-container" class="">
+                <div class="container">
+        <form>
+            <h1>Terms and Conditions</h1>
+        </form>
+       <ol id="terms" class="privacy-terms-list">
+    <li>
+        The Terms and Conditions
+        <p>The following are the Terms and Conditions (the "Agreement") which govern your access and use of our online platform through which counseling may be provided (collectively the "Platform"). This website is owned and operated by Compile, Inc. d.b.a. BetterHelp. The Platform may be provided or be accessible via multiple websites or applications whether owned and/or operated by us or by third parties, including, without limitation, the website <a href="/"><var domain_address>betterhelp.com</var></a> and its related apps.</p>
+        <p>By accessing or using the Platform, you are entering into this Agreement. You should read this Agreement carefully before starting to use the Platform. If you do not agree to be bound to any term of this Agreement, you must not access the Platform.</p>
+        <p>When the terms "we", "us", "our" or similar are used in this Agreement, they refer to any company that owns and operates the Platform (the "Company").</p>
+    </li>
+    <li>
+        The Counselors and Counselor Services
+        <p>The Platform may be used to connect you with a Counselor who will provide services to you through the Platform (“Counselor Services”).</p>
+        <p>We require every Counselor providing Counselor Services on the Platform to be an accredited, trained, and experienced licensed psychologist (PhD / PsyD), licensed marriage and family therapist (LMFT), licensed clinical social worker (LCSW), licensed professional counselor (LPC), or similar applicable recognized professional certification based on their state and/or jurisdiction. Counselors must have a relevant academic degree in their field, at least 3 years of experience, at least 1,000 hours of hands-on experience, and have to be qualified and certified by their respective professional board after successfully completing the necessary education, exams, training and practice requirements as applicable.</p>
+        <p>The Counselors are independent providers who are neither our employees nor agents nor representatives. The Platform’s role is limited to enabling the Counselor Services while the Counselor Services themselves are the responsibility of the Counselor who provides them. If you feel the Counselor Services provided by the Counselor do not fit your needs or expectations, you may change to a different Counselor who provides services through the Platform.</p>
+        <p>While we hope the Counselor Services are beneficial to you, you understand, agree and acknowledge that they may not be the appropriate solution for everyone’s needs and that they may not be appropriate for every particular situation and/or may not be a complete substitute for a face-to-face examination and/or care in every particular situation.</p>
+        <p>IF YOU ARE THINKING ABOUT SUICIDE OR IF YOU ARE CONSIDERING HARMING YOURSELF OR OTHERS OR IF YOU FEEL THAT ANY OTHER PERSON MAY BE IN ANY DANGER OR IF YOU HAVE ANY MEDICAL EMERGENCY, YOU MUST IMMEDIATELY CALL THE EMERGENCY SERVICE NUMBER (911 IN THE US) AND NOTIFY THE RELEVANT AUTHORITIES. SEEK IMMEDIATE IN PERSON ASSISTANCE.  THE PLATFORM IS NOT DESIGNED FOR USE IN ANY OF THE AFOREMENTIONED CASES AND THE COUNSELORS CANNOT PROVIDE THE ASSISTANCE REQUIRED IN ANY OF THE AFOREMENTIONED CASES.</p>
+        <p>THE PLATFORM IS NOT INTENDED FOR THE PROVISION OF CLINICAL DIAGNOSIS REQUIRING AN IN-PERSON EVALUATION AND YOU SHOULD NOT USE IT IF YOU NEED ANY OFFICIAL DOCUMENTATION OR APPROVALS FOR PURPOSES SUCH AS, BUT NOT LIMITED TO, COURT-ORDERED COUNSELING OR EMOTIONAL SERVICE DOG CERTIFICATION. IT IS ALSO NOT INTENDED FOR ANY INFORMATION REGARDING WHICH DRUGS OR MEDICAL TREATMENT MAY BE APPROPRIATE FOR YOU, AND YOU SHOULD DISREGARD ANY SUCH ADVICE IF DELIVERED THROUGH THE PLATFORM.</p>
+        <p>DO NOT DISREGARD, AVOID, OR DELAY IN OBTAINING IN-PERSON CARE FROM YOUR DOCTOR OR OTHER QUALIFIED PROFESSIONAL BECAUSE OF INFORMATION OR ADVICE YOU RECEIVED THROUGH THE PLATFORM.</p>
+    </li>
+    <li>
+        Privacy and Security
+        <p>Protecting and safeguarding any information you provide through the Platform is extremely important to us.  Information about our security and privacy practices can be found on our Privacy Policy available at <a href="/privacy/">https://www.<var domain_address>betterhelp.com</var>/privacy</a> (The ‘Privacy Policy’).</p>
+        <p>BY AGREEING TO THIS AGREEMENT AND/OR BY USING THE PLATFORM, YOU ARE ALSO AGREEING TO THE TERMS OF THE PRIVACY POLICY. THE PRIVACY POLICY IS INCORPORATED INTO AND DEEMED A PART OF THIS AGREEMENT. THE SAME RULES THAT APPLY REGARDING CHANGES AND REVISIONS OF THIS AGREEMENT ALSO APPLY TO CHANGES AND REVISIONS OF THE PRIVACY POLICY.</p>
+    </li>
+    <li>
+        Third Party Content
+        <p>The Platform may contain other content, products or services which are offered or provided by third parties ("Third Party Content"), links to Third Party Content (including but not limited to links to other websites) or advertisements which are related to Third Party Content. We have no responsibility for the creation of any such Third Party Content, including (but not limited to) any related products, practices, terms or policies, and we will not be liable for any damage or loss caused by any Third Party Content.</p>
+    </li>
+    <li>
+        Disclaimer of Warranty and Limitation of Liability
+        <p>YOU HEREBY RELEASE US AND AGREE TO HOLD US HARMLESS FROM ANY AND ALL CAUSES OF ACTION AND CLAIMS OF ANY NATURE RESULTING FROM THE COUNSELOR SERVICES OR THE PLATFORM, INCLUDING (WITHOUT LIMITATION) ANY ACT, OMISSION, OPINION, RESPONSE, ADVICE, SUGGESTION, INFORMATION AND/OR SERVICE OF ANY COUNSELOR AND/OR ANY OTHER CONTENT OR INFORMATION ACCESSIBLE THROUGH THE PLATFORM.</p>
+        <p>YOU UNDERSTAND, AGREE AND ACKNOWLEDGE THAT THE PLATFORM IS PROVIDED "AS IS" WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES OF ANY KIND, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, NON-INFRINGEMENT, SECURITY, FITNESS FOR A PARTICULAR PURPOSE OR ACCURACY. THE USE OF THE PLATFORM IS AT YOUR OWN RISK. TO THE FULLEST EXTENT OF THE LAW, WE EXPRESSLY DISCLAIM ALL WARRANTIES OF ANY KIND, WHETHER EXPRESSED OR IMPLIED.</p>
+        <p>YOU UNDERSTAND, AGREE AND ACKNOWLEDGE THAT WE SHALL NOT BE LIABLE TO YOU OR TO ANY THIRD PARTY FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, PUNITIVE OR EXEMPLARY DAMAGES.</p>
+        <p>YOU UNDERSTAND, AGREE AND ACKNOWLEDGE THAT OUR AGGREGATE LIABILITY FOR DAMAGES ARISING WITH RESPECT TO THIS AGREEMENT AND ANY AND ALL USE OF THE PLATFORM WILL NOT EXCEED THE TOTAL AMOUNT OF MONEY PAID BY YOU THROUGH THE PLATFORM IN THE 3 MONTHS PERIOD PRIOR TO THE DATE OF THE CLAIM.</p>
+        <p>If the applicable law does not allow the limitation of liability as set forth above, the limitation will be deemed modified solely to the extent necessary to comply with applicable law.</p>
+        <p>This section (limitation of liability) shall survive the termination or expiration of this Agreement.</p>
+    </li>
+    <li>
+        Your account, representations, conduct and commitments
+        <p>You hereby confirm that you are legally able to consent to receive Services, or have the consent of a parent or guardian, and that you are legally able to enter into a contract.</p>
+        <p>You hereby confirm and agree that all the information that you provided in or through the Platform, and the information that you will provide in or through the Platform in the future, is accurate, true, current and complete. Furthermore, you agree that during the term of this Agreement you will make sure to maintain and update this information so it will continue to be accurate, current and complete.</p>
+        <p>You agree, confirm and acknowledge that you are responsible for maintaining the confidentiality of your password and any other security information related to your account (collectively "Account Access"). We advise you to change your password frequently and to take extra care in safeguarding your password.</p>
+        <p>You agree to notify us immediately of any unauthorized use of your Account Access or any other concern for breach of your account security.</p>
+        <p>You agree, confirm and acknowledge that we will not be liable for any loss or damage that incurred as a result of someone else using your account, either with or without your consent and/or knowledge.</p>
+        <p>You agree, confirm and acknowledge that you are solely and fully liable and responsible for all activities performed using your Account Access. You further acknowledge and agree that we will hold you liable and responsible for any damage or loss incurred as a result of the use of your Account Access by any person whether authorized by you or not, and you agree to indemnify us for any such damage or loss.</p>
+        <p>You agree and commit not to use the account or Account Access of any other person for any reason.</p>
+        <p>You agree and confirm that your use of the Platform, including the Counselor Services, are for your own personal use only and that you are not using the Platform or the Counselor Services for or behalf of any other person or organization.</p>
+        <p>You agree and commit not to interfere with or disrupt, or attempt to interfere with or disrupt, any of our systems, services, servers, networks or infrastructure, or any of the Platform's systems, services, servers, networks or infrastructure, including without limitation obtaining unauthorized access to the aforementioned.</p>
+        <p>You agree and commit not to make any use of the Platform for the posting, sending or delivering of either of the following: (a) unsolicited email and/or advertisement or promotion of goods and services; (b) malicious software or code; (c) unlawful, harassing, privacy invading, abusive, threatening, vulgar, obscene, racist or potentially harmful content; (d) any content that infringes a third party right including intellectual property rights; (e) any content that may cause damage to a third party; (f) any content which may constitute, cause or encourage a criminal action or violate any applicable law.</p>
+        <p>You agree and commit not to violate any applicable local, state, national or international law, statute, ordinance, rule, regulation or ethical code in relation to your use of the Platform and your relationship with the Counselors and us.</p>
+        <p>If you receive any file from us or from a Counselor, whether through the Platform or not, you agree to check and scan this file for any virus or malicious software prior to opening or using this file.</p>
+        <p>You will indemnify us, defend us, and hold us harmless from and against any and all claims, losses, causes of action, demands, liabilities, costs or expenses (including, but not limited to, litigation and reasonable attorneys' fees and expenses) arising out of or relating to any of the following: (a) your access to or use of the Platform; (b) any actions made with your account or Account Access whether by you or by someone else; (c) your violation of any of the provisions of this Agreement; (d) non-payment for any of the services (including Counselor Services) which were provided through the Platform; (e) your violation of any third party right, including, without limitation, any intellectual property right, publicity, confidentiality, property or privacy right. This clause shall survive expiration or termination of this Agreement.</p>
+        <p>You confirm and agree to use only credit cards or other payment means (collectively “Payment Means”) which you are duly and fully authorized to use, and that all payment related information that you provided and will provide in the future, to or through the Platform, is accurate, current and correct and will continue to be accurate, current and correct.</p>
+        <p>You agree to pay all fees and charges associated with your Account on a timely basis and according to the fees schedule, the terms and the rates as published in the Platform. By providing us with your Payment Means you authorize us to bill and charge you through that Payment Means and you agree to maintain valid Payment Means information in your Account information.</p>
+        <p>If you have any concerns about a bill or a payment, please contact us immediately by sending an email to <u><a notranslate href="mailto:contact@betterhelp.com">contact@<var notranslate>betterhelp.com</var></a></u>. We will evaluate your issue on a case by case basis and, at our discretion, take steps to resolve any issue, including but not limited to helping you find a new Counselor, extending your subscription at no cost to you, and issuing partial or full refunds when applicable.</p>
+    </li>
+    <li>
+        Modifications, Termination, Interruption and Disruptions to the Platform
+        <p>You understand, agree and acknowledge that we may modify, suspend, disrupt or discontinue the Platform, any part of the Platform or the use of the Platform, whether to all clients or to you specifically, at any time with or without notice to you. You agree and acknowledge that we will not be liable for any of the aforementioned actions or for any losses or damages that are caused by any of the aforementioned actions.</p>
+        <p>The Platform depends on various factors such as software, hardware and tools, either our own or those owned and/or operated by our contractors and suppliers. While we make commercially reasonable efforts to ensure the Platform’s reliability and accessibility, you understand and agree that no platform can be 100% reliable and accessible and so we cannot guarantee that access to the Platform will be uninterrupted or that it will be accessible, consistent, timely or error-free at all times.</p>
+    </li>
+    <li>
+        Notices
+        <p>We may provide notices or other communications to you regarding this agreement or any aspect of the Platform, by email to the email address that we have on record, by regular mail or by posting it online. The date of receipt shall be deemed the date on which such notice is given. Notices sent to us must be delivered by email to <u><a notranslate href="mailto:legal@betterhelp.com">legal@betterhelp.com</a></u>.</p>
+        <p>Notice to California Residents:</p>
+        <p>The Board of Behavioral Sciences receives and responds to complaints regarding services provided within the scope of practice of (marriage and family therapists, clinical social workers, or professional clinical counselors). You may contact the board online at www.bbs.ca.gov, or by calling (916) 574-7830.</p>
+
+    </li>
+    <li>
+        Important notes about our Agreement
+        <p>This Agreement and our relationship with you shall both be interpreted solely in accordance with the laws of the State of Delaware excluding any rules governing choice of laws.</p>
+        <p>You irrevocably agree that the exclusive venue for any action or proceeding arising out of relating to this Agreement or our relationship with you, regardless of theory, shall be the U.S. District Court for the Northern District of California, or the state courts located in Santa Clara County in California. You irrevocably consent to the personal jurisdiction of the aforementioned courts and hereby waive any objection to the exercise of jurisdiction by the aforementioned courts.</p>
+        <p>THIS AGREEMENT CONSTITUTES THE ENTIRE AGREEMENT BETWEEN YOU AND US. YOU CONFIRM THAT YOU HAVE NOT RELIED UPON ANY PROMISES OR REPRESENTATIONS BY US EXCEPT AS SET FORTH IN THIS AGREEMENT.</p>
+        <p>We may change this Agreement by posting modifications on the Platform. Unless otherwise specified by us, all modifications shall be effective upon posting. Therefore, you are encouraged to check the terms of this Agreement frequently. The last update date of this Agreement is posted at the bottom of the Agreement. By using the Platform after the changes become effective, you agree to be bound by such changes to the Agreement. If you do not agree to the changes, you must terminate access to the Platform and participation in its services.</p>
+        <p>We may freely transfer or assign this Agreement or any of its obligations hereunder.</p>
+        <p>The paragraph headings in this Agreement are solely for the sake of convenience and will not be applied in the interpretation of this Agreement.</p>
+        <p>If any provision of this Agreement is held by a court of competent jurisdiction to be illegal, invalid, unenforceable, or otherwise contrary to law, the remaining provisions of this Agreement will remain in full force and effect.</p>
+        <p>To clear any doubt, all clauses regarding limitations of liabilities and indemnification shall survive the termination or expiration of this Agreement.</p>
+    </li>
+</ol>
+Last Updated: September 11, 2020    </div>
+        </div>
+
+                    <div id="modal-timeout" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <div class="h2-style">Your session is about to expire!</div>
+                                <p>You will be logged out in <span id="dialog-countdown" style="font-weight:bold"></span> seconds.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal" id="modal-timeout-resume">Keep me active</button>
+                <button class="btn btn-dismiss" id="modal-timeout-logout">Log out</button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="csrf_token" value="5fc70c9b3235259ac7400a12c16cf8cbd1c59991888e289bcf0d401aae57a92a11b5e8ab431b3d0e3874cf16a29017eb9e9cff0afdd18b2db197c21dc3156895">
+</div>
+    
+<footer>
+    <div id="upperbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ">
+                                                                        If you are in a crisis or any other person may be in danger - don't use this site. <a href="/gethelpnow/">These resources</a> can provide you with immediate help.
+                                                            </div>
+                <div class="col-md-6 right">
+                                                                        <a href="http://www.mentalhealthamerica.net/" target="_blank"><img src="//dy7glz37jgl0b.cloudfront.net/home/mha-badge-3.png?v=26" alt="MHA Logo" id="mha-logo"></a>
+                            <a href="http://www.hhs.gov/ocr/privacy/" target="_blank"><img src="//dy7glz37jgl0b.cloudfront.net/home/hipaa.png?v=26" alt="HIPAA Logo"></a>
+                            <a href="https://www.ssllabs.com/ssltest/analyze.html?d=www.betterhelp.com/" target="_blank"><img src="//dy7glz37jgl0b.cloudfront.net/home/ssl-secure-bw-logo.png?v=26" alt="SSL Secure Logo"></a>
+                            <a href="http://www.ismho.org" target="_blank"><img src="//dy7glz37jgl0b.cloudfront.net/home/ismho.png?v=26" alt="ISMHO Logo"></a>
+                                                            </div>
+            </div>
+        </div>
+    </div>
+    <div id="lowerbar" >
+        <div class="container">
+                            <ul class="upper">
+                                        <div class="social facebook">
+                        <div class="fb-like" data-href="https://www.facebook.com/BetterHelp" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                    </div>
+                    <a href="https://facebook.com/BetterHelp" target="_blank"><li class="social facebook"><i class="fa fa-facebook-f"></i></li></a>
+                    <a href="https://www.linkedin.com/company/betterhelp-com" target="_blank"><li class="social linkedin"><i class="fa fa-linkedin"></i></li></a>
+                    <a href="https://www.pinterest.com/betterhelp/" target="_blank"><li class="social pinterest"><i class="fa fa-pinterest-p"></i></li></a>
+                    <a href="https://twitter.com/betterhelp" target="_blank"><li class="social twitter"><i class="fa fa-twitter"></i></li></a>
+                                        <a href="/" id="footer-home"><li>Home</li></a>
+                                        <a href="/about/"><li>About</li></a>
+                                                            <a href="/faq/"><li>FAQ</li></a>
+                                                            <a href="/reviews/" id="footer-reviews"><li>Reviews</li></a>
+                                                                <a href="/advice/"><li>Advice</li></a>
+                                                            <a href="/jobs/" id="footer-jobs"><li>Jobs</li></a>
+                                                                <a href="/therapists/"><li>Find a Therapist</li></a>
+                                        <a href="/contact/"><li>Contact</li></a>
+                                            <a href="/counselor_application/"><li>For Counselors</li></a>
+                                                        </ul>
+                        <ul class="lower">
+                                                <a href="/terms/"><li>Terms &amp; Conditions</li></a>
+                <a href="/privacy/"><li>Privacy Policy</li></a>
+                <a href="/accessibility/"><li>Web Accessibility</li></a>
+                <li>&copy; 2020 BetterHelp</li>
+                            </ul>
+        </div>
+    </div>
+</footer>
+                            <div class="cookie-footer">
+                    <div class="cookie-wrap">
+                        <div class="cookie-text-confirm">
+                            <div class="cookie-text">
+                                We use BetterHelp and third-party cookies and web beacons to help the site function properly, analyze usage, and measure the effectiveness of our ads. Read our <a href="/privacy/">Privacy Policy</a> to learn more.
+                            </div>
+                            <div class="cookie-confirm">
+                                <a href="#" class="btn btn-primary" id="cookie_consent_ok">
+                                    OK
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cookie-close" id="cookie_consent_close">
+                            <a href="#">
+                                &times;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+        
+                                    <!-- BEGIN TRACKJS -->
+<script src="//static.betterhelp.com/js/contrib/trackjs/v3/t.js?v=14" ></script>
+<script>
+    window.TrackJS && TrackJS.install({
+        token: "8e343f2dd24f4a45bf5e416e9c3b37e4",
+        userId: ''
+    });
+</script>
+<!-- END TRACKJS -->
+            
+            <script src="//static.betterhelp.com/js/contrib/jquery/2.2.2/jquery.min.js?v=14" ></script>
+                        <script src="//static.betterhelp.com/js/contrib/bootstrap/3.3.6/js/bootstrap.min.js?v=14" ></script>
+            <script>jQuery.fn.bootstrap_tooltip = jQuery.fn.tooltip;</script> 
+            <script src="//static.betterhelp.com/js/everywhere.min.3001.js"></script>
+            
+                        
+            
+                            <script>
+                    // Fix for android app trying to use sockets on pause/resume events without checking whether sockets are available on the given page
+                    var socket = {
+                        on: function() {
+                            return false;
+                        },
+                        disconnect: function () {
+                            return false;
+                        },
+                        emit: function () {
+                            return false;
+                        }
+                    };
+
+                    var reconnectSocket = function() {
+                        return false;
+                    }
+                </script>
+            
+                        <script src="//static.betterhelp.com/js/contrib/jstz.min.js?v=14"></script>
+            <script src="//static.betterhelp.com/js/loggedout.min.3001.js"></script>
+
+            
+                            <script>
+                    (function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                </script>
+            
+        
+        
+            
+            
+            
+        
+    </div>
+
+            <script>
+
+            function addFormNonces() {
+                var forms = document.querySelectorAll('form');
+                for (var i = 0; i < forms.length; i++) {
+                    addFormNonce(forms[i]);
+                }
+            }
+
+            function addFormNonce(form) {
+                // Nonce unique per user per form with random identifier
+                var nonce = page_info.user_type + ":" + page_info.user_id + ":" + form.getAttribute('id') + ":" + Date.now(),
+                    nonce_el = form.querySelector('[name=nonce]');
+
+                if (nonce_el) {
+                    nonce_el.value = nonce;
+                } else {
+                    nonce_el = document.createElement('input');
+                    nonce_el.type = 'hidden';
+                    nonce_el.name = 'nonce';
+                    nonce_el.value = nonce;
+                    form.appendChild(nonce_el);
+                }
+            }
+
+            addFormNonces();
+        </script>
+                
+    <script>
+        if (mixpanel && false) {
+            mixpanel.single_domain.track("Viewed terms Template");
+        }
+    </script>
+
+
+
+
+
+
+        </body>
+</html>
