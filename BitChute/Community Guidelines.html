@@ -1,0 +1,291 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"56aae830c8","applicationID":"15354177","transactionName":"JllXTUtXClVdF00NCwpBVVxdXwNmWgQRA0oOWFZOVV0CXl1KEQ4KEg==","queueTime":2,"applicationTime":89,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"56aae830c8",applicationID:"15354177"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script><![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BitChute &mdash; Community Guidelines</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+    
+    
+        <meta name="description" content="Welcome to BitChute, a peer-to-peer content sharing platform and associated services. BitChute aims to put creators first and provide them with a service t" />
+        <meta property="og:description" content="Welcome to BitChute, a peer-to-peer content sharing platform and associated services. BitChute aims to put creators first and provide them with a service t" />
+    
+    
+	<link rel="shortcut icon" href="https://static.helpjuice.com/helpjuice_production/uploads/upload/image/6342/536625/favicon.png" type="image/vnd.microsoft.icon">
+    <link href="https://s3.amazonaws.com/assets.helpjuice.com/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="https://static.helpjuice.com/helpjuice_production/uploads/account/6342/main_css_6342-a81fac4e90958e008dd17333b634ee2e523133dc89ee28d9fd9944ab5943f34f.css" media="all" rel="stylesheet" />
+    
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700,600,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+<meta name="question-id" content="543577"><meta name="category-id" content="93629"><meta name="flow-id" content=""><meta name="knowledge-base-url" content="https://support.bitchute.com/"><meta name="current-user-id" content=""><meta name="ignore-users-analytics" content="false"><meta name="reading-timeout" content="10000"></head>
+<body class="question_page fontfix">
+
+    <header class="header js_header_nav inner_header">
+      <nav class="header_nav clearfix">
+        <div class="wrapper">
+          <a href="https://www.bitchute.com" class="header_nav_logo ir"></a>
+          <ul class="header_nav_buttons">
+            <li><button class="header_nav_button iconf-search js_header_button"><span class="ir">Search</span></button></li>
+            <li><button class="header_nav_button iconf-menu js_header_button"><span class="ir">Navigation</span></button></li>
+          </ul>
+          <!-- top navigation -->
+          <ul class="header_nav_links header_nav_section">
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact-us">Contact Us</a></li>
+            <li><a href="#" class="toggle-mode"><i class="fas fa-moon"></i><i class="fas fa-sun"></i> Day/Night</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="wrapper">
+        
+        <div class="search_block header_nav_section">
+          <form autocomplete="off">
+            <i class="licon-magnifier"></i><input id="search" name="search" size="30" type="text" autocomplete="off" placeholder="Search our knowledge base..." />
+          </form>
+        </div>
+        <p class="common-searches">Popular topics: 
+        
+          <a href="/policy/guidelines">Community Guidelines</a>, 
+        
+          <a href="/policy/cookie">Cookie Policy</a>
+        
+        </p>
+      </div>
+    </header>
+
+    <article id="search_results">
+      <div class="page_title">
+        <div class="wrapper">
+          <h1></h1>
+        </div>
+      </div>
+
+      <div class="wrapper" id="results"> 
+        <div class="grid grid_is_centered page_is_list">
+          <div class="grid_item page_content">
+            <ul class="list search-results">
+              <!-- load search results here -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="wrapper hidden" id="no-results">
+          <div class="no-results-wrap js_equalise_is_landing">
+            <!-- if no results found => show contact form -->
+          
+              <div class="contact_form">
+
+                  <form accept-charset='UTF-8' action='/questions' class='form floating-labels' id='new_question' method='post'>
+                  
+                    <fieldset>
+                    
+                      <legend>Sorry, we didn't find any relevant articles for you.</legend>
+                      
+                      <p>Please fill out the contact form below and we will reply as soon as possible.</p>
+                      
+                      <!-- Don't modify or delete this below -->
+                      
+                      <input type='hidden' value='' name='question[account_id]' id='question_account_id'>
+                      
+                      <div class="icon">
+                        <label class="label" for="question_email">Your email</label>
+                        <input class="email" type="email" name='question[email]' id='question_email' required>
+                      </div> 
+                        
+                      <div class="icon">
+                        <label class="label" for="question_name">Your question</label>
+                        <input type="text" class="message" placeholder='' name='question[name]' id='question_name' required>
+                      </div> 
+                        
+                      <div class="icon">
+                        <label class="label" for="textarea">Description (details)</label>
+                        <textarea class="message" type='text' name='question[description]' id='question_description'></textarea>
+                      </div>
+                      
+                      <div>
+                        <input type="submit" id='question_submit' name='commit' value="Contact Support" class="button">
+                      </div>
+                      
+                    </fieldset>
+                    
+                </form>
+            
+              </div>
+          </div>
+      </div>
+    </article>
+
+    <article id="page_content">
+      <div class="page_title">
+        <div class="wrapper">
+          <h1></h1>
+        </div>
+        
+      </div>
+
+      
+      <div class="wrapper">
+      
+        
+          <div class="grid grid_is_level_3 page_is_level_3 js_grid">
+          
+            <div class="grid_item l_one_quarter grid_item_is_sidebar js_subnav_container" data-set="subnav">
+              <div class="subnav" id="js_subnav">
+                <h3 class="text_impact subnav_heading">Table of Contents</h3>
+                <ul class="grid subnav_list js_subnav_list">
+                <!-- load Quick Navigation here -->
+                </ul>
+              </div>
+            </div>
+            
+            <div id="js_page_content" class="grid_item one_whole l_five_sixths page_content text_block">
+
+        
+        
+        
+        <div class="breadcrumbs">
+          
+            <a href="/">Support Home</a>
+              
+                <i class="licon-arrowright"></i>
+                <a href="/policy">Policies</a>
+              
+          
+        </div>
+        
+
+        <h1 class="question_title">Community Guidelines</h1>
+
+
+
+<p>Welcome to BitChute, a peer-to-peer content sharing platform and associated services. BitChute aims to put creators first and provide them with a service that they can use to flourish and express their ideas freely.</p><p>These Community Guidelines give an overview of the behaviour that is expected from you and the rest of the BitChute community. By continuing to use the site, you are agreeing with and accepting these Community Guidelines in their entirety. They should be read and understood in conjunction with <a href="/policy/our-commitment" title=""><span style="color: rgb(239, 65, 54);"><strong>Our Commitment</strong></span></a> to the BitChute community.</p><h2>Respect &amp; Decency</h2><p>All members of the community and wider society should be treated as equals with the same rights, regardless of their race, age, sex, religion, political beliefs, or any other immutable attribute or self-assigned designation.</p><p>We expect members of the BitChute community to act maturely and in a decent manner that is respectful to other members of the community and wider society.</p><h2>Personal Responsibility</h2><p>As an individual, you are responsible for your own actions, and you will be held accountable for any content that you add to the BitChute platform, along with any related metadata such as titles, descriptions, thumbnails, hashtags, etc.</p><p>You are not responsible for the actions of others on the site; however, you are expected to consider that others may be influenced and/or incited by the content you produce.</p><p>It is the responsibility of the content creator to ensure that they do not add content that violates the <a href="https://support.bitchute.com/policy/guidelines#prohibited-content" title=""><span style="color: rgb(239, 65, 54);"><strong>Prohibited Content</strong></span></a> or <a href="https://support.bitchute.com/policy/guidelines#platform-misuse" title=""><span style="color: rgb(239, 65, 54);"><strong>Platform Misuse</strong></span></a> guidelines, and that any content that they do add to the BitChute platform has the correct <a href="https://support.bitchute.com/policy/guidelines#content-sensitivity" title=""><span style="color: rgb(239, 65, 54);"><strong>Content Sensitivity</strong></span></a> assigned to it.</p><p>All members of the BitChute community have a responsibility to each other to ensure these guidelines are always complied with.</p><h2>Compliance with Law</h2><p>You own and are legally responsible for all the content you add to the BitChute platform.</p><p>We expect members of the BitChute community to follow the laws of their domicile pertaining to online conduct, communication and content. BitChute will respect applicable laws pertaining to online communications.</p><p>Before sharing content on BitChute, please be sure you have the right to do so. We expect you to respect copyrights, trademarks, and other legal rights of third parties. You are expected to reference applicable fair use laws appropriately when adding content to the BitChute platform. See the <a href="/policy/copyright" title=""><span style="color: rgb(239, 65, 54);"><strong>Copyright Policy</strong></span></a> for more details on how we handle copyright.</p><p>When requested to do so by the authorities, we may apply filters on specific content that is considered illegal within their country. These filters will be applied so that they do not impact viewing of the content in other countries where the content is still considered legal.</p><h2>Content Sensitivity</h2><p>To help users control the content that is presented to them, they can adjust the content sensitivity level via their account settings. By default, all content will be marked as <strong>Normal</strong> sensitivity and will be visible to all users. Creators are expected to mark their content as <strong>Not Safe For Work (NSFW)</strong> or <strong>Not Safe For Life (NSFL)</strong> if appropriate before making the content public. <a href="/policy/content-moderation" title=""><span style="color: rgb(239, 65, 54);"><strong>Content Moderation</strong></span></a> processes will be employed to ensure the appropriate sensitivity level is applied to content, and inappropriately marked content should be flagged via those processes when encountered.</p><p><strong>Please note:</strong> The creator’s ability to change the sensitivity of a piece of content will be removed if the sensitivity has been set through the moderation process.</p><p>Content sensitivity levels are defined as follows:</p><h4>Normal</h4><p>This is the default sensitivity level for content on the platform. Content should only be left as Normal sensitivity if it does not meet the thresholds to be marked Not Safe For Work (NSFW) or Not Safe For Life (NSFL).</p><h4>Not Safe For Work (NSFW)</h4><p>Content that is not safe for viewing in the workplace, or similar environments, must be marked as such by the content creator prior to publishing.</p><p>Content containing discriminatory language, drug use, nudity and/or moderate violence should be marked as Not Safe For Work (NSFW).</p><p>Not Safe For Work (NSFW) is equivalent to the <a href="https://www.bbfc.co.uk/about-classification/15" rel="noopener noreferrer" target="_blank" title=""><span style="color: rgb(239, 65, 54);"><strong>British Board of Film Classification (BBFC) ‘15’ rating</strong></span></a>.</p><h4>Not Safe For Life (NSFL)</h4><p>This level of sensitivity goes beyond Not Safe For Work (NSFW), as it does not matter where you view the material; many if not most people will find this content upsetting.</p><p>Material that contains graphic content, which should be viewed with discretion, must be marked as Not Safe For Life (NSFL) by the content creator prior to publishing.</p><p>Not Safe For Life (NSFL) is equivalent to the <a href="https://www.bbfc.co.uk/about-classification/18" rel="noopener noreferrer" target="_blank" title=""><span style="color: rgb(239, 65, 54);"><strong>British Board of Film Classification (BBFC) ‘18’ rating</strong></span></a>.</p><h2>Prohibited Content</h2><p>Posting, endorsing, promoting or linking to content that falls within the following categories is strictly prohibited on the BitChute platform. Repeated offences will lead to account termination.</p><p>If you discover any such material on the BitChute platform, then we expect you to report it to us immediately using the <a href="https://support.bitchute.com/policy/content-moderation#flagging--reporting" title=""><span style="color: rgb(239, 65, 54);"><strong>Flagging &amp; Reporting</strong></span></a> tools provided.</p><h4>Abhorrent Violence</h4><p>We define abhorrent violence as real-life non-consensual acts of kidnapping, attempted murder, murder, mutilation, rape or torture.</p><p>Any individuals, organisations or other entities that are engaged in abhorrent violence are not permitted to have a presence on the platform.</p><p>Any material that is produced by, endorsing, promoting or empowering individuals, organisations or any other entity engaging in abhorrent violence is not permitted and will not be tolerated on the platform.</p><p>We acknowledge that showing and/or referencing acts of abhorrent violence may be necessary to hold the perpetrators to account. If this your objective then you must clearly state this within the content, be respectful to victims and ensure that your content cannot be exploited to endorse, promote or empower individuals, organisations or any other entity engaging in abhorrent violence.</p><h4>Animal Cruelty</h4><p>Any material threatening, inciting, promoting, endorsing, encouraging or celebrating cruelty to animals is not permitted and will not be tolerated on the platform.</p><h4>Child Abuse or Endangerment</h4><p>Any material threatening, inciting, promoting, endorsing, encouraging or celebrating the abuse, sexualisation, endangerment or exploitation of children is not permitted and will not be tolerated on the platform.</p><h4>Harassment</h4><p>Any harassment that is determined to be unlawful within the domiciles of either the originator or the target is not permitted and will not be tolerated on the platform.</p><p>Any material disclosing sensitive personal information without permission of the individual is not permitted and will not be tolerated on the platform. This includes but is not limited to addresses, social security numbers, passport numbers, phone numbers or bank account numbers.</p><h4>Harmful Activities</h4><p>Any material promoting, endorsing, encouraging or celebrating activities that are likely to lead to someone getting badly hurt or worse is not permitted and will not be tolerated on the platform. This includes but is not limited to injection or ingestion of dangerous substances, self-harm and suicide.</p><h4>Sexually Explicit</h4><p>Any material that is sexually explicit, portraying sexual acts or showing sexual arousal is not permitted and will not be tolerated on the platform. If this describes your content, especially if it is of yourself, then do not post it on BitChute.</p><h4>Terrorism &amp; Violent Extremism</h4><p>We define terrorism and violent extremism as any act of violence or intimidation carried out with the intention of furthering a religious, political or any other ideological objective.</p><p>Any individuals, organisations or other entities that are engaged in terrorism or violent extremism are not permitted to have a presence on the platform.</p><p>Any material that is produced by, endorsing, promoting or empowering individuals, organisations or any other entity engaging in terrorism or violent extremism is not permitted and will not be tolerated on the platform.</p><p>BitChute maintains and publishes a <a href="/policy/proscribed-terrorist-violent-extremist" title=""><span style="color: rgb(239, 65, 54);"><strong>Proscribed Terrorist &amp; Violent Extremist List</strong></span></a> that is utilised when identifying terrorist and violent extremist material. As this list will evolve over time, we suggest that all users regularly check it to ensure they are not breaching the guidelines.</p><p>We acknowledge that showing and/or referencing acts of terrorist and/or violent extremism may be necessary to hold the perpetrators to account. If this your objective then you must clearly state this within the content, be respectful to victims and ensure that your content cannot be exploited to endorse, promote or empower individuals, organisations or any other entity engaging in terrorism or extreme violence.</p><h4>Threats or Incitement to Violence</h4><p>Any material containing credible threats of violence or incitement to violence is not permitted and will not be tolerated on the platform.</p><h2>Platform Misuse</h2><p>Misuse of the platform and/or the functionality provided is not permitted and should be reported using the <a href="https://support.bitchute.com/policy/content-moderation#flagging--reporting" title=""><span style="color: rgb(239, 65, 54);"><strong>Flagging &amp; Reporting</strong></span></a> tools provided when discovered. The following are some examples of what we consider to be misuse of the platform:</p><p><strong>Dogpiling or Brigading</strong> - Coordinated group attacks with the aim to shame, silence or otherwise shut down other users.</p><p><strong>Metric Manipulation</strong> – Manipulation of metrics such as views, likes and/or subscriptions. When this is detected such metrics will be adjusted to compensate.</p><p><strong>Misleading Metadata</strong> - Creating misleading titles, descriptions, tags, or thumbnails in order to increase views or otherwise trick users into viewing your content.</p><p><strong>Name Squatting</strong> – Claiming a username, channel name or other similar entity on the site with the intention to trade it, exploit its similarity to another or otherwise trick users into viewing your content.</p><p><strong>Scamming</strong> - Attempts to scam others out of their earnings, views, votes or anything else.</p><p><strong>Spamming</strong> - Posting large amounts of untargeted, unwanted or repetitive content, including comments and private messages. Posting the same content more than once or twice may be considered spam.</p>
+
+<!-- If it's a quesiton, show the 'was this helpful' -->
+<div class="was-this-helpful">
+  <form accept-charset="UTF-8" action="/questions/543577/feedbacks" class="new_feedback" id="new_feedback" method="post">
+    <div style="margin:0;padding:0;display:inline">
+      <input name="authenticity_token" type="hidden" value="W7fIKyhlMGSYY6ZpNZ0EjAuXfvwpXGjx8KK7p9liJk0=">
+    </div>
+
+    <input id="feedback_score" name="feedback[score]" type="hidden" value="0">
+
+    <h4>Was this article helpful? </h4> 
+
+    <a href="#" id="yes" class="response feedback"><span>1955</span></a>
+    <a href="#" id="no" class="response feedback"><span>254</span></a>
+  </form>
+</div> 
+
+<!-- Related questions -->
+
+<div class='related-questions'>
+  <h4>Related Questions: </h4>
+  <ul>
+
+    
+    <li class="grid_item one_whole s_one_half m_one_third">
+      <a href='/policy/contact'>Contact Details</a>
+      <p class="list_content">Please ensure that you use the correct email address when...&hellip;</p>
+    </li>
+    
+    <li class="grid_item one_whole s_one_half m_one_third">
+      <a href='/policy/cookie'>Cookie Policy</a>
+      <p class="list_content">This Cookie Policy outlines the manner in which BitChute uses...&hellip;</p>
+    </li>
+    
+    <li class="grid_item one_whole s_one_half m_one_third">
+      <a href='/policy/privacy'>Privacy Policy</a>
+      <p class="list_content">This Privacy Policy governs the manner in which BitChute collects,...&hellip;</p>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+
+        
+          </div>
+        </div>
+        
+        
+      
+      </div>
+      
+      
+    </article>
+    
+    <section class="contact_us_section">
+      <div class="wrapper">
+        <h1>Can’t find what you’re looking for?</h1>
+        <p>Our customer support team is here for you.</p>
+        <a href="/contact-us?contact_query=Please%20enter%20your%20question" class="button">Contact Support</a>
+      </div>
+    </section>
+
+    
+    
+    <div class="copy">
+        <div class="wrapper">
+            <p>BitChute is a peer-to-peer content sharing platform. Creators are allowed to post content they produce to the platform, so long as they comply with our <a href="https://support.bitchute.com/policy">policies</a>. The content posted to the platform is not reflective or representative of the views of Bit Chute Limited, its staff or owners. &copy;&nbsp;2017-2020&nbsp;Bit&nbsp;Chute&nbsp;Limited. United&nbsp;Kingdom. Company&nbsp;number&nbsp;10637289. 
+        </div>
+    </div>
+    
+    <!-- To show URLs in iframe -->
+    <script src="https://static.helpjuice.com/assets/template-3f2e51d9ad0005605d59696a2ddc0695da17d125d12d5aab335858919cce166c.js"></script>
+    <script src='/assets/easyxdm/easyxdm.min.js'></script>
+    <script src='/assets/questions_widget.js'></script>
+    
+    <!-- Helpjuice JavaScript files -->
+    <!--[if lte IE 9]><script src="https://static.helpjuice.com/helpjuice_production/uploads/upload/image/1856/14896/match.media.combined.js"></script><![endif]-->
+    <script src="https://static.helpjuice.com/assets/knowledge/responsivemenu-34ff8aacb49f64f44fd598d80964920c57c3ad8d2768cfa9e0fad6ccf82748b0.js"></script>
+    <script src="https://static.helpjuice.com/assets/jquery.typewatch-48c82b5982ada397b0a14242b6d6540e2c6319d62fc45ce12620d22227009e0c.js"></script>
+    <script src="https://static.helpjuice.com/assets/knowledge/questions-e2346f411dec56835599f374580cc768e8ee51d265b08ae4f02dc0b6213ce530.js"></script>
+    <script src="https://static.helpjuice.com/assets/knowledge/contactform-970780929c8efe1cf0cec2c5f23f11a3fb140b99c9a5fdc17d3b11849e7048b5.js"></script>
+    <script src="https://static.helpjuice.com/assets/knowledge/decision_trees-b961202262367a5997b34bdf217cc4b945ac72333e21df382789b4e784b64069.js"></script>
+    <script src="https://static.helpjuice.com/assets/knowledge/default_main-4d975b0d91ad03e215f6bce52f66aa8d9926d3892b4b97227b32592803ca78b8.js"></script>
+    <script src="https://static.helpjuice.com/helpjuice_production/uploads/account/6342/main_js_6342-094215a39eb0941d2eb7f18e0f2e5e379a59d47fc0ecc13246552918bd85d116.js"></script>
+    <!-- End of Helpjuice JavaScript files -->
+    
+      <div class="glossary-modal">
+        <header>
+            <h3 id="glossary-term-expression" class="term-expression"></h3>
+
+            
+        </header>
+
+        <div class="body">
+            <p id="glossary-term-definition" class="term-definition"></p>
+        </div>
+
+        <footer>
+            <h4>Definition by <a id="glossary-term-author-link" href="#">Author</a></h4>
+
+            <a id="upvote-glossary-term" class="term-feedback">
+                <div class="thumb-up">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span id="positive-votes">0</span>
+                </div>
+            </a>
+
+            <a id="downvote-glossary-term" class="term-feedback">
+                <div class="thumb-down">
+                    <i class="far fa-thumbs-down"></i>
+                    <span id="negative-votes">0</span>
+                </div>
+            </a>
+        </footer>
+    </div>
+
+      <script src="https://static.helpjuice.com/assets/knowledge/glossary_article-dec226b05996122e41ba625ea234f6ab57f0a4dc7c81a7d3aed22346909d6320.js"></script>
+<script src="https://static.helpjuice.com/assets/helpjuice-69c39d1c98c811a755ee76497701572fb2452e8dcca8e4ffa8aa98b30a82ea2f.js"></script><script src="https://static.helpjuice.com/assets/knowledge/glossary-e4f2f4d825250c06b423adbc9fb9aaca12ce7466261074acdbfe5e9def9926e4.js"></script></body>
+</html>
