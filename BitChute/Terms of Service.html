@@ -1,0 +1,299 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"56aae830c8","applicationID":"15354177","transactionName":"JllXTUtXClVdF00NCwpBVVxdXwNmWgQRA0oOWFZOVV0CXl1KEQ4KEg==","queueTime":4,"applicationTime":85,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"56aae830c8",applicationID:"15354177"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script><![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BitChute &mdash; Terms & Conditions</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+    
+    
+        <meta name="description" content="Welcome to BitChute, a peer-to-peer content sharing platform and associated services (collectively known as the "Service"). Please ensure that you read the" />
+        <meta property="og:description" content="Welcome to BitChute, a peer-to-peer content sharing platform and associated services (collectively known as the "Service"). Please ensure that you read the" />
+    
+    
+	<link rel="shortcut icon" href="https://static.helpjuice.com/helpjuice_production/uploads/upload/image/6342/536625/favicon.png" type="image/vnd.microsoft.icon">
+    <link href="https://s3.amazonaws.com/assets.helpjuice.com/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="https://static.helpjuice.com/helpjuice_production/uploads/account/6342/main_css_6342-a81fac4e90958e008dd17333b634ee2e523133dc89ee28d9fd9944ab5943f34f.css" media="all" rel="stylesheet" />
+    
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700,600,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+<meta name="question-id" content="543602"><meta name="category-id" content="93629"><meta name="flow-id" content=""><meta name="knowledge-base-url" content="https://support.bitchute.com/"><meta name="current-user-id" content=""><meta name="ignore-users-analytics" content="false"><meta name="reading-timeout" content="10000"></head>
+<body class="question_page fontfix">
+
+    <header class="header js_header_nav inner_header">
+      <nav class="header_nav clearfix">
+        <div class="wrapper">
+          <a href="https://www.bitchute.com" class="header_nav_logo ir"></a>
+          <ul class="header_nav_buttons">
+            <li><button class="header_nav_button iconf-search js_header_button"><span class="ir">Search</span></button></li>
+            <li><button class="header_nav_button iconf-menu js_header_button"><span class="ir">Navigation</span></button></li>
+          </ul>
+          <!-- top navigation -->
+          <ul class="header_nav_links header_nav_section">
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact-us">Contact Us</a></li>
+            <li><a href="#" class="toggle-mode"><i class="fas fa-moon"></i><i class="fas fa-sun"></i> Day/Night</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="wrapper">
+        
+        <div class="search_block header_nav_section">
+          <form autocomplete="off">
+            <i class="licon-magnifier"></i><input id="search" name="search" size="30" type="text" autocomplete="off" placeholder="Search our knowledge base..." />
+          </form>
+        </div>
+        <p class="common-searches">Popular topics: 
+        
+          <a href="/policy/guidelines">Community Guidelines</a>, 
+        
+          <a href="/policy/cookie">Cookie Policy</a>
+        
+        </p>
+      </div>
+    </header>
+
+    <article id="search_results">
+      <div class="page_title">
+        <div class="wrapper">
+          <h1></h1>
+        </div>
+      </div>
+
+      <div class="wrapper" id="results"> 
+        <div class="grid grid_is_centered page_is_list">
+          <div class="grid_item page_content">
+            <ul class="list search-results">
+              <!-- load search results here -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="wrapper hidden" id="no-results">
+          <div class="no-results-wrap js_equalise_is_landing">
+            <!-- if no results found => show contact form -->
+          
+              <div class="contact_form">
+
+                  <form accept-charset='UTF-8' action='/questions' class='form floating-labels' id='new_question' method='post'>
+                  
+                    <fieldset>
+                    
+                      <legend>Sorry, we didn't find any relevant articles for you.</legend>
+                      
+                      <p>Please fill out the contact form below and we will reply as soon as possible.</p>
+                      
+                      <!-- Don't modify or delete this below -->
+                      
+                      <input type='hidden' value='' name='question[account_id]' id='question_account_id'>
+                      
+                      <div class="icon">
+                        <label class="label" for="question_email">Your email</label>
+                        <input class="email" type="email" name='question[email]' id='question_email' required>
+                      </div> 
+                        
+                      <div class="icon">
+                        <label class="label" for="question_name">Your question</label>
+                        <input type="text" class="message" placeholder='' name='question[name]' id='question_name' required>
+                      </div> 
+                        
+                      <div class="icon">
+                        <label class="label" for="textarea">Description (details)</label>
+                        <textarea class="message" type='text' name='question[description]' id='question_description'></textarea>
+                      </div>
+                      
+                      <div>
+                        <input type="submit" id='question_submit' name='commit' value="Contact Support" class="button">
+                      </div>
+                      
+                    </fieldset>
+                    
+                </form>
+            
+              </div>
+          </div>
+      </div>
+    </article>
+
+    <article id="page_content">
+      <div class="page_title">
+        <div class="wrapper">
+          <h1></h1>
+        </div>
+        
+      </div>
+
+      
+      <div class="wrapper">
+      
+        
+          <div class="grid grid_is_level_3 page_is_level_3 js_grid">
+          
+            <div class="grid_item l_one_quarter grid_item_is_sidebar js_subnav_container" data-set="subnav">
+              <div class="subnav" id="js_subnav">
+                <h3 class="text_impact subnav_heading">Table of Contents</h3>
+                <ul class="grid subnav_list js_subnav_list">
+                <!-- load Quick Navigation here -->
+                </ul>
+              </div>
+            </div>
+            
+            <div id="js_page_content" class="grid_item one_whole l_five_sixths page_content text_block">
+
+        
+        
+        
+        <div class="breadcrumbs">
+          
+            <a href="/">Support Home</a>
+              
+                <i class="licon-arrowright"></i>
+                <a href="/policy">Policies</a>
+              
+          
+        </div>
+        
+
+        <h1 class="question_title">Terms & Conditions</h1>
+
+
+
+<p>Welcome to BitChute, a peer-to-peer content sharing platform and associated services (collectively known as the "Service"). Please ensure that you read these Terms &amp; Conditions, the <a href="/policy/privacy" title=""><span style="color: rgb(239, 65, 54);"><strong>Privacy Policy</strong></span></a> and the <a href="/policy/cookie" title=""><span style="color: rgb(239, 65, 54);"><strong>Cookie Policy</strong></span></a> carefully. These are collectively known as the "Terms".</p><h4>Your acceptance of these Terms</h4><p>By using the Service, you are agreeing to be bound by these Terms. If you do not agree with these Terms, then please do not use the Service. Your continued use of the Service following the posting of changes to these Terms will be deemed as your acceptance of those changes. If you are accessing and using the Service on behalf of a company (such as your employer) or another legal entity, then you represent and warrant that you have the authority to bind that company or other legal entity to these Terms. In that case, "you" and "your" will refer to that company or other legal entity.</p><h4>Changes to the Terms and/or Service</h4><p>BitChute has the discretion to update these Terms at any time. When we do, we will revise the updated date at the bottom of this page. It is important that you frequently review the Terms for any changes to stay informed. By using the Service, you acknowledge and agree that it is your responsibility to review the Terms periodically to become aware of modifications. As our Service is constantly evolving over time, we may change or discontinue all or any part of the Service, at any time and without notice, at our sole discretion.</p><h4>Privacy Policy</h4><p>Please refer to the <a href="/policy/privacy" title=""><span style="color: rgb(239, 65, 54);"><strong>Privacy Policy</strong></span></a> for more information on how we collect, use and disclose the information we collect from our users.</p><h4>Cookie Policy</h4><p>Please refer to the <a href="/policy/cookie" title=""><span style="color: rgb(239, 65, 54);"><strong>Cookie Policy</strong></span></a> for more information on cookies we utilise.</p><h2>Who may use the Service</h2><p>Users can use the Service either anonymously or through a registered account ("Account").</p><h4>Anonymous Users</h4><p>You may use the Service anonymously only if you are aged 16 years or over and are not barred from using the Service under any applicable law. If you are aged 16 years or over, but still a minor or lack the required legal capacity to enter into a contract where you live, then you must have a parent or legal guardian's permission to use the Service, and your parent or legal guardian must agree to be bound by these Terms on your behalf.</p><h4>Registered Users</h4><p>If you want to use certain features of the Service, such as making a post, commenting, subscribing or voting on content, then you will have to register an Account. It is important that you provide us with accurate, complete and up-to-date information for your Account, and that you update such information, as necessary, to keep it accurate, complete and up-to-date. If you do not, then we retain the right to suspend or terminate your Account. Furthermore, you agree that you will notify us immediately of any unauthorised use of your Account. You are responsible for all activities that are carried out or occur under your Account, whether or not you know about them.</p><p>To register an Account on the Service you will be required to confirm the following:</p><ul>
+<li>that you are aged 16 or over,</li>
+<li>that you agree to comply with these Terms &amp; Conditions and the <a href="/policy/guidelines" title=""><span style="color: rgb(239, 65, 54);"><strong>Community Guidelines</strong></span></a>,</li>
+<li>that you consent to the BitChute <a href="/policy/privacy" title=""><span style="color: rgb(239, 65, 54);"><strong>Privacy Policy</strong></span></a>.</li>
+</ul><h2>Feedback</h2><p>Feedback on the Service is always welcome. If you have any comments, feedback or suggestions for the Service, then you can submit them by emailing us at <a href="mailto:support@bitchute.com" title=""><span style="color: rgb(239, 65, 54);"><strong>support@bitchute.com</strong></span></a>. By doing so you grant us a perpetual, free and transferable license, with a right to sublicense, use, copy, modify, create derivative works and/or otherwise exploit the feedback in any form and media and for any purpose.</p><h2>Content</h2><p>For the purposes of these Terms, "Content" refers to all text, graphics, images, music, software, audio, video, media, works of authorship of any kind, and information or other materials that are posted, generated, provided or otherwise made available through the Service.</p><h4>Ownership, Responsibility and Removal</h4><p>BitChute does not claim any ownership rights to any Content posted to the Service. Nothing in these Terms will be deemed sufficient to restrict any rights that you may have to use and exploit your Content via the Service or elsewhere.</p><p>BitChute and it's licensors exclusively own all rights, titles and interest in and to the services and Content that form the base of the Service, including all associated intellectual property rights. You acknowledge that this Service and Content are protected by copyright, trademark and other laws. Furthermore, you agree not to remove, alter or obscure any copyright, trademark, service mark or other proprietary rights notices incorporated in or accompanying the Service or Content.</p><p>BitChute reserves the right to restrict or remove any Content posted to the Service that does not comply with these Terms or the <a href="/policy/guidelines" title=""><span style="color: rgb(239, 65, 54);"><strong>Community Guidelines</strong></span></a>.</p><h4>Content Rights Granted by You</h4><p>By making any Content available through the Service you grant to BitChute a worldwide, royalty-free, transferable license, with the right to sublicense, to use, copy, modify, create derivative works, display, perform and distribute your Content in order to operate, provide and promote the Service and Content to you and other users of the Service.</p><p>You are solely responsible for all of your Content. You represent and warrant that you own all of your Content or you have all rights that are necessary to grant us the license rights in your Content under these Terms. You also represent and warrant that your Content, your use and provision of your Content to be made available through the Service, and any use of your Content by BitChute on or through the Service will not infringe, misappropriate or violate a third party's intellectual property rights, or rights of publicity or privacy, or result in the violation of any applicable law or regulation.</p><p>You can remove your Content by specifically deleting it. However, in certain instances, some of your Content (such as comments or messages you make) may not be completely removed and copies of your Content may continue to exist on the Service. We are not responsible or liable for the removal or deletion of (or the failure to remove or delete) any of your Content.</p><h4>Content Rights Granted by BitChute</h4><p>Subject to your compliance with these Terms, BitChute grants you a limited, non-exclusive, non-transferable, non-sublicensable license to view, copy, display and perform the Content solely in connection with your permitted use of the Service and solely for personal and non-commercial purposes.</p><h4>Indemnification</h4><p>You will indemnify, defend and hold harmless BitChute and it's affiliates, directors, officers, employees and agents, from and against all third party actions that:</p><ul>
+<li>arise from your activities on the Service,</li>
+<li>assert a violation by you of any of these Terms, or</li>
+<li>assert that any content you submitted to the Service violates any law or infringes any third party right, including any intellectual property or privacy right.</li>
+</ul><h4 id="copyright">Third Party Copyrights and Other Rights</h4><p>For more information on how BitChute handles third party copyrights and other third party rights, please consult our <a href="/policy/guidelines" title=""><span style="color: rgb(239, 65, 54);"><strong>Community Guidelines</strong></span></a> and <a href="/policy/copyright" title=""><span style="color: rgb(239, 65, 54);"><strong>Copyright Policy</strong></span></a>.</p><h2>Refunds &amp; Returns</h2><h4>Premium Membership</h4><p>Premium membership packages are digital products and therefore considered used upon purchase, as such they are non-refundable.</p><h4>Loyalty Rewards</h4><p>Loyalty rewards, such as the mugs, caps and t-shirts provided following a set number of months of active membership, are non-refundable. However, if these arrive damaged, faulty or incorrect then a replacement can be requested. To do so contact us via email at <a href="mailto:support@bitchute.com" title=""><span style="color: rgb(239, 65, 54);"><strong>support@bitchute.com</strong></span></a> with a subject line beginning with '<strong>Damaged Loyalty Reward</strong>'.</p><h2>Termination</h2><p>We may terminate your access to and use of the Service at our sole discretion, at any time and without notice to you. You may cancel your Account at any time from within the Service. Upon any termination, discontinuation or cancellation of the Service or your Account, the following provisions will survive: Feedback; Content Ownership, Responsibility and Removal; Warranty Disclaimers; Limitation of Liability; General Terms; Severability; Jurisdiction and this sentence of Termination.</p><h2>Warranty Disclaimers</h2><p>THE SERVICE AND CONTENT ARE PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND. WITHOUT LIMITING THE FOREGOING, WE EXPLICITLY DISCLAIM ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE. WE MAKE NO WARRANTY THAT THE SERVICE WILL MEET YOUR REQUIREMENTS OR BE AVAILABLE ON AN UNINTERRUPTED, SECURE, OR ERROR-FREE BASIS. WE MAKE NO WARRANTY REGARDING THE QUALITY, ACCURACY, TIMELINESS, TRUTHFULNESS, COMPLETENESS OR RELIABILITY OF ANY CONTENT.</p><h2>Limitation of Liability</h2><p>NEITHER BITCHUTE NOR ANY OTHER PARTY INVOLVED IN CREATING, PRODUCING, OR DELIVERING THE SERVICE OR CONTENT WILL BE LIABLE FOR ANY INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, LOSS OF DATA OR GOODWILL, SERVICE INTERRUPTION, COMPUTER DAMAGE OR SYSTEM FAILURE OR THE COST OF SUBSTITUTE SERVICES ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR FROM THE USE OF OR INABILITY TO USE THE SERVICE OR CONTENT, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT BITCHUTE HAS BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE, EVEN IF A LIMITED REMEDY SET FORTH HEREIN IS FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU.</p><p>IN NO EVENT WILL BITCHUTE'S TOTAL LIABILITY ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR FROM THE USE OF OR INABILITY TO USE THE SERVICE (OR CONTENT) EXCEED THE AMOUNTS YOU HAVE PAID TO BITCHUTE FOR USE OF THE SERVICE (OR CONTENT), OR ONE HUNDRED DOLLARS ($100) IF YOU HAVE NOT HAD ANY PAYMENT OBLIGATIONS TO BITCHUTE, AS APPLICABLE. THE EXCLUSIONS AND LIMITATIONS OF DAMAGES SET FORTH ABOVE ARE FUNDAMENTAL ELEMENTS OF THE BASIS OF THE BARGAIN BETWEEN BITCHUTE AND YOU.</p><h2>General Terms</h2><p>These Terms constitute the entire and exclusive agreement and understanding between BitChute and you regarding the Service and Content. These Terms supersede and replace any and all prior agreements or understanding (oral, written or otherwise) between BitChute and you regarding the Service or Content. If for any reason a court of competent jurisdiction finds any provision of these Terms invalid or unenforceable, that provision will be enforced to the maximum extent permissible and the other provisions of these Terms will remain in full force and effect. You may not assign or transfer these Terms, by operation of law or otherwise, without BitChute's prior written consent. Any attempt by you to assign or transfer these Terms, without such consent, will be null and void. BitChute may freely assign or transfer these Terms without restriction. Subject to the foregoing, these Terms will bind and inure to the benefit of the parties, their successors and permitted assigns.</p><p>Any notices or other communications provided by BitChute under these Terms, including those regarding modifications to these Terms, will be given by posting to the Service. BitChute's failure to enforce any right or provision of these Terms will not be considered a waiver of such right or provision. The waiver of any such right or provision will be effective only if in writing and signed by a duly authorised representative of BitChute. Except as expressly set forth in these Terms, the exercise by either party of any of its remedies under these Terms will be without prejudice to its other remedies under these Terms or otherwise.</p><h2>Severability</h2><p>If any term, clause or provision of these Terms is deemed to be unlawful, void or for any reason unenforceable, then that term, clause or provision shall be deemed severable from these Terms and shall not affect the validity and enforceability of any remaining provisions.</p><h2>Jurisdiction</h2><p>The Terms, and your relationship with BitChute under the Terms, shall be governed by English law. You and BitChute agree to submit to the exclusive jurisdiction of the courts of England to resolve any legal matter arising from the Terms. Notwithstanding this, you agree that BitChute shall still be allowed to apply for injunctive remedies (or other equivalent types of urgent legal remedy) in any jurisdiction.</p>
+
+<!-- If it's a quesiton, show the 'was this helpful' -->
+<div class="was-this-helpful">
+  <form accept-charset="UTF-8" action="/questions/543602/feedbacks" class="new_feedback" id="new_feedback" method="post">
+    <div style="margin:0;padding:0;display:inline">
+      <input name="authenticity_token" type="hidden" value="W7fIKyhlMGSYY6ZpNZ0EjAuXfvwpXGjx8KK7p9liJk0=">
+    </div>
+
+    <input id="feedback_score" name="feedback[score]" type="hidden" value="0">
+
+    <h4>Was this article helpful? </h4> 
+
+    <a href="#" id="yes" class="response feedback"><span>1551</span></a>
+    <a href="#" id="no" class="response feedback"><span>142</span></a>
+  </form>
+</div> 
+
+<!-- Related questions -->
+
+<div class='related-questions'>
+  <h4>Related Questions: </h4>
+  <ul>
+
+    
+    <li class="grid_item one_whole s_one_half m_one_third">
+      <a href='/policy/contact'>Contact Details</a>
+      <p class="list_content">Please ensure that you use the correct email address when...&hellip;</p>
+    </li>
+    
+    <li class="grid_item one_whole s_one_half m_one_third">
+      <a href='/policy/cookie'>Cookie Policy</a>
+      <p class="list_content">This Cookie Policy outlines the manner in which BitChute uses...&hellip;</p>
+    </li>
+    
+    <li class="grid_item one_whole s_one_half m_one_third">
+      <a href='/policy/copyright'>Copyright Policy</a>
+      <p class="list_content">BitChute complies with copyright law and requires you to do...&hellip;</p>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+
+        
+          </div>
+        </div>
+        
+        
+      
+      </div>
+      
+      
+    </article>
+    
+    <section class="contact_us_section">
+      <div class="wrapper">
+        <h1>Can’t find what you’re looking for?</h1>
+        <p>Our customer support team is here for you.</p>
+        <a href="/contact-us?contact_query=Please%20enter%20your%20question" class="button">Contact Support</a>
+      </div>
+    </section>
+
+    
+    
+    <div class="copy">
+        <div class="wrapper">
+            <p>BitChute is a peer-to-peer content sharing platform. Creators are allowed to post content they produce to the platform, so long as they comply with our <a href="https://support.bitchute.com/policy">policies</a>. The content posted to the platform is not reflective or representative of the views of Bit Chute Limited, its staff or owners. &copy;&nbsp;2017-2020&nbsp;Bit&nbsp;Chute&nbsp;Limited. United&nbsp;Kingdom. Company&nbsp;number&nbsp;10637289. 
+        </div>
+    </div>
+    
+    <!-- To show URLs in iframe -->
+    <script src="https://static.helpjuice.com/assets/template-3f2e51d9ad0005605d59696a2ddc0695da17d125d12d5aab335858919cce166c.js"></script>
+    <script src='/assets/easyxdm/easyxdm.min.js'></script>
+    <script src='/assets/questions_widget.js'></script>
+    
+    <!-- Helpjuice JavaScript files -->
+    <!--[if lte IE 9]><script src="https://static.helpjuice.com/helpjuice_production/uploads/upload/image/1856/14896/match.media.combined.js"></script><![endif]-->
+    <script src="https://static.helpjuice.com/assets/knowledge/responsivemenu-34ff8aacb49f64f44fd598d80964920c57c3ad8d2768cfa9e0fad6ccf82748b0.js"></script>
+    <script src="https://static.helpjuice.com/assets/jquery.typewatch-48c82b5982ada397b0a14242b6d6540e2c6319d62fc45ce12620d22227009e0c.js"></script>
+    <script src="https://static.helpjuice.com/assets/knowledge/questions-e2346f411dec56835599f374580cc768e8ee51d265b08ae4f02dc0b6213ce530.js"></script>
+    <script src="https://static.helpjuice.com/assets/knowledge/contactform-970780929c8efe1cf0cec2c5f23f11a3fb140b99c9a5fdc17d3b11849e7048b5.js"></script>
+    <script src="https://static.helpjuice.com/assets/knowledge/decision_trees-b961202262367a5997b34bdf217cc4b945ac72333e21df382789b4e784b64069.js"></script>
+    <script src="https://static.helpjuice.com/assets/knowledge/default_main-4d975b0d91ad03e215f6bce52f66aa8d9926d3892b4b97227b32592803ca78b8.js"></script>
+    <script src="https://static.helpjuice.com/helpjuice_production/uploads/account/6342/main_js_6342-094215a39eb0941d2eb7f18e0f2e5e379a59d47fc0ecc13246552918bd85d116.js"></script>
+    <!-- End of Helpjuice JavaScript files -->
+    
+      <div class="glossary-modal">
+        <header>
+            <h3 id="glossary-term-expression" class="term-expression"></h3>
+
+            
+        </header>
+
+        <div class="body">
+            <p id="glossary-term-definition" class="term-definition"></p>
+        </div>
+
+        <footer>
+            <h4>Definition by <a id="glossary-term-author-link" href="#">Author</a></h4>
+
+            <a id="upvote-glossary-term" class="term-feedback">
+                <div class="thumb-up">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span id="positive-votes">0</span>
+                </div>
+            </a>
+
+            <a id="downvote-glossary-term" class="term-feedback">
+                <div class="thumb-down">
+                    <i class="far fa-thumbs-down"></i>
+                    <span id="negative-votes">0</span>
+                </div>
+            </a>
+        </footer>
+    </div>
+
+      <script src="https://static.helpjuice.com/assets/knowledge/glossary_article-dec226b05996122e41ba625ea234f6ab57f0a4dc7c81a7d3aed22346909d6320.js"></script>
+<script src="https://static.helpjuice.com/assets/helpjuice-69c39d1c98c811a755ee76497701572fb2452e8dcca8e4ffa8aa98b30a82ea2f.js"></script><script src="https://static.helpjuice.com/assets/knowledge/glossary-e4f2f4d825250c06b423adbc9fb9aaca12ce7466261074acdbfe5e9def9926e4.js"></script></body>
+</html>
