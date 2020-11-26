@@ -1,0 +1,939 @@
+<!doctype html>
+<!-- Report problems to https://www.fark.com/feedback/error -->
+<!-- Duke Sucks -->
+<html class="no-js" lang="en">
+<head>
+<title>FARK.com: Frequently Asked Questions: Legal Stuff</title>   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Humorous views on interesting, bizarre and amusing articles, submitted by a community of millions of news junkies, with regular Photoshop contests.">
+<meta name="keywords" content="Fark, Fark.com, Drew Curtis, News, Community News, Social News, News Flash, Funny News, Weird News, Odd News, Strange News, Satirical News, Humor, Photoshop, Photoshop Contest, Memes, Caturday, Comments, News Commentary, Political News, Celebrity News, Sports News, Geek News">
+
+ <meta property="fb:admins" content="741339004,690298743,503216953">
+<meta property="og:type" content="website">  <meta property="og:image" content="https://img.fark.net/images/2013/site/farkLogo2Big.gif">  <link rel="image_src" type="image/gif" href="https://img.fark.net/images/2013/site/farkLogo2Big.gif">      <meta name="viewport" content="minimum-scale=0.35, width=device-width"> <link rel="shortcut icon" href="https://www.fark.com/favicon.ico">
+<link rel="apple-touch-icon" href="https://img.fark.net/images/2008/site/fark-webclip.png"> 
+
+  <meta name="referrer" content="always">      <link rel="stylesheet" href="https://www.fark.com/css/farkstyle_desktop.min_1606035608.css" media="screen">           <script src="https://www.fark.com/js/farktools_desktop.min_1606035608.js"></script>   <script>fark.page.isAllHouseAds = true;</script>   <script>
+    // fark.page.headerbidTargeting = "";
+    fark.page.rcPageName = "default_fark";
+    fark.page.isMobile = false;
+    fark.page.isDesktop = true;
+
+    $.ajaxSetup({ timeout: 15000 });
+    fark.ajax.ajaxSpinner = new Image();
+    fark.ajax.ajaxSpinner.src = 'https://img.fark.net/images/2011/site/ajax-loader.gif';
+    fark.ajax.ajaxSpinnerRaw = '<\img alt="..." src="https://img.fark.net/images/2011/site/ajax-loader.gif" width="16" height="16">';
+</script>
+
+   <!-- CONFIANT CODE -->
+
+<script>
+window.confiant = window.confiant || {};
+window.confiant.callback = function(blockingType, blockingId, isBlocked, wrapperId, tagId, impressionData) {
+    //console.log('----test_refresh--callback', impressionData , tagId);
+
+    var slot_path = '';
+    var order_num = '';
+    var line_item_num = '';
+    var container_div = '';
+    if (typeof impressionData != 'undefined' && typeof impressionData.dfp != 'undefined') {
+        slot_path = impressionData.dfp.A;
+        order_num = impressionData.dfp.o;
+        line_item_num = impressionData.dfp.l;
+        container_div = impressionData.dfp.s;
+    }
+    ga( "send", "event", "Confiant Blocked", slot_path, order_num + '/' + line_item_num, { "nonInteraction": 1 } );
+
+    // check if ad is blocked and we haven't refreshed this slot
+    // (this only allows for one refresh)
+    if( isBlocked && fark.page.confiant_refresh_slots.indexOf(slot_path) == -1 ){
+        //console.log('---test_refresh--blocked--');
+
+        // mark it as refreshed so it won't refresh multiple time
+        fark.page.confiant_refresh_slots.push(slot_path);
+
+        var targArray = []; // for setTargetingForGPTAsync (will be one element)
+        var refArray = []; // for googletag.pubads().refresh (will be one element)
+        fark.page.adSlots.forEach(function(i) {
+             if (i.id == container_div) {
+                targArray.push(i.id);
+            }
+        });
+
+        var slots = googletag.pubads().getSlots();
+        //var slot_length = slots.length;
+
+        slots.forEach(function(slot) {
+             if (slot_path == slot.getAdUnitPath() ) {
+                slot.setTargeting('rf', 3);
+                refArray.push(slot);
+            }
+        });
+
+        if ( typeof pbjs !== "undefined" && pbjs.que ) {
+            pbjs.que.push( function() {
+                pbjs.requestBids( {
+                    timeout: 1000,  adUnitCodes: [ 
+                            fark.globals.leaderboardTopAdSlot.getSlotElementId(), 
+                            fark.globals.billboardTopAdSlot.getSlotElementId(), 
+                            fark.globals.billboardMidAdSlot.getSlotElementId(), 
+                            fark.globals.billboardBotAdSlot.getSlotElementId(), 
+                            fark.globals.billboardStickyAdSlot.getSlotElementId(), 
+                            fark.globals.leaderboardBotAdSlot.getSlotElementId(),
+                            fark.globals.intellidisplayAdSlot.getSlotElementId(),
+                            fark.globals.aboveCommentBoxAdSlot.getSlotElementId() 
+                      ],  bidsBackHandler: function() {
+                        pbjs.setTargetingForGPTAsync( targArray );
+                        fark.page.headerbidTargeting = pbjs.getAdserverTargeting();
+                        googletag.pubads().refresh( refArray );
+                    }
+                } );
+            } );
+        }
+    }
+};
+</script>  <script async="" src="https://confiant-integrations.global.ssl.fastly.net/cEfft1aujoR3mcJAi8Jzh_8If_c/gpt_and_prebid/config.js"></script>  <!-- END CONFIANT CODE --> <script src="https://s.adaptiveads.com/v2/11a657c19e4342fa890c2e070e184026/wwwfarkcom/ad-lite.min.js" async></script>  <!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-225200-1', 'auto');    ga('set', 'dimension1', 'Lurker');
+
+ var pixelRatio = (window.devicePixelRatio >= 1.5) ? "high" : "normal";
+ga('set', 'dimension2', pixelRatio);
+
+ ga('set', 'dimension3', 'd');
+
+  
+
+
+ga('send', 'pageview');
+
+// Enable Analytics for Prebid
+if (typeof pbjs !== "undefined") {
+  pbjs.que.push(function() {
+      pbjs.enableAnalytics({
+          provider: 'ga',
+          options: {
+              global: 'ga', // <string> name of GA global. Default is 'ga'
+              enableDistribution: true,
+          }
+      });
+  });
+};
+
+
+
+</script>
+<!-- End Google Analytics -->          <style> .headlineRow:hover, .headlineRow:hover:nth-child(odd) { background-color: #eeeeff; } </style> <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script>
+window.supertagapi = window.supertagapi || {}; 
+window.supertagapi.que=window.supertagapi.que || []; 
+window.supertagapi.que.push( function()
+{
+    var intellistring = `    
+        if(document.querySelector('intelli-1')){
+            // ad already exists; do nothing 
+        } else {
+            googletag.cmd.push(function(){
+                // set up intellidisplay slot
+                var node = document.querySelector('.rightColContent #intelli-1');
+                node.style.marginTop="10px";
+                var parent = node.parentElement;
+                parent.style.display="block";
+                
+                window.fark.globals.intellidisplayAdSlot = googletag.defineSlot(
+                    '/1055466/Intellidisplay',
+                    [  [300, 250],  [300, 600],  ],
+                    'intelli-1'
+                ).addService(googletag.pubads());
+            });
+
+            googletag.cmd.push(function(){
+                pbjs.que.push( function() {
+                    pbjs.addAdUnits({
+                        "code": "intelli-1",
+                        "mediaTypes": {
+                            "banner": {
+                                "sizes": [[300, 250], [300, 600]]
+                            }
+                        },
+                        "bids": [  {
+                            "bidder": "appnexus",
+                            "params": {
+                                "placementId": "18576580",
+                            }
+                        }, {
+                            "bidder": "districtmDMX",
+                            "params": {
+                                "dmxid": 496594,
+                                "memberid": 100704
+                            }
+                        }, {   
+                            "bidder": "districtm",
+                            "params": {
+                                "placementId": 18576452,
+                            }
+            //                }, {
+            //                   "bidder": "brightcom",
+            //                   "params": {
+            //                       "publisherId": '8437', 
+            //                   }
+                        }, {
+                           "bidder": "emx_digital",
+                           "params": {
+                               "tagid": '95671', 
+                           }
+                        }, {
+                            "bidder": "sonobi",
+                            "params": {
+                                "ad_unit": '/1055466/Intellidisplay', 
+                                "dom_id": 'intelli-1'
+                            }
+                        }, {
+                            "bidder": "rubicon",
+                            "params": {
+                                "accountId": "9659",
+                                "siteId": "17567",
+                                "zoneId": "1590324",
+                                "position": "atf",
+                            }
+                        }, {
+                            "bidder": "aol",
+                            "params": {
+                                "network": '10601.1', 
+                                "placement": '5196909'
+                            }
+                        },  {
+                            "bidder": "sovrn",
+                            "params": {
+                                "tagid": 687826
+                            }
+                        }, {
+                            "bidder": "openx",
+                            "params": {
+                                "delDomain": "fark-d.openx.net",
+                                 "unit": "540976197",
+                            }
+                        }, {
+                            "bidder": 'smartrtb',
+                            "params": {
+                                "zoneId": 'zrTzIwiw9E0DDLUmSQOY'
+                            }
+                        }, {
+                            "bidder": "33across",
+                            "params": {
+                                "siteId": 'bQ5HVyt2er6OoWaKkGJozW', 
+                                "productId": 'siab'
+                            }
+                        }]
+                    });
+                    pbjs.requestBids( {
+                        timeout: 1000,
+                        adUnitCodes: ['intelli-1'],
+                        bidsBackHandler: function() {
+                            pbjs.setTargetingForGPTAsync( [ window.fark.globals.intellidisplayAdSlot.getSlotElementId() ] );
+                            //fark.page.headerbidTargeting = pbjs.getAdserverTargeting();
+                            googletag.display('intelli-1');
+                             }
+                    } );
+                } );
+            } );
+        }   
+
+        function showIntellidisplayReportAdLink() {
+            var reportAdBlock = document.querySelector('#intelli-1-reportLink');
+            reportAdBlock.style.display="block";  }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', (event) => {
+                showIntellidisplayReportAdLink();
+            });
+        } else {
+            showIntellidisplayReportAdLink(); 
+        }
+
+    `
+
+    var intellistring2 = `
+        function hideIntellidisplayAndShowFns() {
+            var node = document.querySelector('#intelli-1');
+            var parent = node.parentElement;
+            parent.style.display="none";
+/*
+            var kids = parent.children;
+             for (i=0;i<3;i++){
+                parent.removeChild(kids[0])
+            }
+*/  }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', (event) => {
+                hideIntellidisplayAndShowFns();
+            });
+        } else {
+            hideIntellidisplayAndShowFns();
+        }
+    `
+
+    makeRule("display-ad",intellistring,100,1).addAttribute(new Check('=','PageViews',1)).activateRule();
+    makeRevenueRule("intelli-1",intellistring,100,false).addAttribute(new Check('>','AvgPageRevenue',2.95)).addAttribute(new Check('>','NumberRevenueEvents',4)).activateRule();    
+    makeRule("display-ad",intellistring2,100,1).addAttribute(new Check('>','PageViews',1)).activateRule();
+});
+</script>  <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('dataProcessingOptions', ['LDU'], 0, 0);
+fbq('init', '382341359441320');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=382341359441320&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- And more Facebook Tracking -->  <!-- End more Facebook Tracking -->
+
+</head>  <body >        <a href="#newsContainer" class="skipToContent" tabindex="1">Skip to content</a><!-- BEGIN left 2020-11-26 05:46:46--> <div class="fullwidthheaderbackground"></div>
+
+  <div class="fullwidthheaderbackground">&nbsp;</div>
+<div id="container">
+<table id="newLayoutTable">
+<tr>
+<td colspan="2">
+    
+<div id="header">  <div class="tryBareFark">
+        <a href="https://www.fark.com/barefarksignup" target="_blank">Try Ads-Free Fark</a>
+    </div>   <a id='logo' class='retina header_logo' href='https://www.fark.com'><img src='https://img.fark.net/images/2013/site/farkLogoBig.png' srcset='https://img.fark.net/images/2013/site/farkLogoBig.png 1x, https://img.fark.net/images/2013/site/farkLogoBig-2x.png 2x' alt='Fark'></a>   <div class="ad_container top">  <div id="topAd728x90"><script src="https://www.fark.com/aptminus/size1"></script></div>  <div class="reportAdBlock"  id="topAd728x90-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('topAd728x90'); return false;">Report</a></div>    </div> <div id="headerBottom">  <div id="tagLine">It's Not News, It's Fark </div>  </div>
+</div>  </td>
+</tr>
+<tr>
+<td colspan="2">
+
+ <div id="headerMenuContainer"> <!-- Top navigation menu -->
+    <ul id="headerMenu">
+    <li class="menuSelected"><a href="https://www.fark.com/">Fark</a></li>
+    <li><a href="https://total.fark.com/commented">TotalFark</a></li>
+    <li><a href="https://www.fark.com/users"><em>my</em>Fark</a></li>
+    <li><a href="https://www.fark.com/farq/">About/FArQ</a></li>  <li><a href="https://www.fark.com/contests/">Contests</a></li>   <li><a href="https://www.fark.com/shop" style="color: blue;">Store (new!)</a></li>
+    <li><a href="https://www.fark.com/feedback">Contact Us</a></li>
+    <li><a href="https://m.fark.com">Mobile</a></li>
+    </ul>
+
+     <div id="searchBar">
+        <form method="get" action="https://www.fark.com/hlsearch" name="topSearchFrm" target="_top" class="killspacehack">
+            <noscript>Search:</noscript>
+            <input type="text" placeholder="Search Fark" name="qq" id="searchInput" maxlength="255">
+            <input type="submit" class="searchSubmButton" value="Go">
+        </form>
+    </div>
+    
+</div> <!-- headerMenuContainer -->  <!-- headerMenuContainer NOSCRIPT -->         <div class="invis"><strong><small>If you can read this, either the style sheet didn't load or you have an older browser that doesn't support 
+style sheets. Try clearing your browser cache and refreshing the page.</small></strong></div>
+
+</td>
+</tr>
+ <tr><td id="leftColSpacer"><!-- --></td><td id="rightColSpacer"><!-- --></td></tr>
+<tr>
+<td id="leftCol">
+
+ <ul id="catMenu">
+
+     
+        <li><a href="https://www.fark.com/"> Main</a></li>
+        <li><a href="https://www.fark.com/discussion/"> Discussion</a></li>
+        <li><a href="https://www.fark.com/sports/"> Sports</a></li>
+        <li><a href="https://www.fark.com/business/"> Business</a></li>
+        <li><a href="https://www.fark.com/fandom/"> Fandom</a></li>
+        <li><a href="https://www.fark.com/entertainment/"> Entertainment</a></li>
+        <li><a href="https://www.fark.com/stem/"> STEM</a></li>
+        <li><a href="https://www.fark.com/dawww/"> D'awww</a></li>
+        <li><a href="https://www.fark.com/food/"> Food</a></li>
+        <li><a href="https://www.fark.com/politics/"> Politics</a></li>        </ul> <div id="newsContainer"><!-- TOP end -->
+<!-- Temporary announcements go here -->
+<!-- $Id: motd 32891 2020-08-06 17:49:51Z mandrews $ -->
+
+<div class="mainerr" style="text-align:center; text-align:center;">
+</div>
+
+<div class="main">
+<blockquote> <div class="mw-parser-output">
+<div id="toc" role="navigation" aria-labelledby="mw-toc-heading">
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="en" dir="ltr">
+<h2 id="mw-toc-heading">Contents</h2>
+<span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span>
+</div>
+<ul>
+<li>
+<a href="#Legal_Stuff">1 Legal Stuff</a>
+<ul>
+<li>
+<a href="#Fark.27s_Legal_and_Privacy_Statement">1.1 Fark's Legal and Privacy Statement</a>
+<ul>
+<li><a href="#Terms_Of_Service">1.1.1 Terms Of Service</a></li>
+<li><a href="#Copyright_Notice">1.1.2 Copyright Notice</a></li>
+<li><a href="#Fark_logos_and_trademarks">1.1.3 Fark logos and trademarks</a></li>
+<li><a href="#Fark.27s_Privacy_Policy">1.1.4 Fark's Privacy Policy</a></li>
+<li><a href="#Third_Party_Notices">1.1.5 Third Party Notices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span id="Legal_Stuff">Legal Stuff</span></h2>
+<h3>
+<span id="Fark's_Legal_and_Privacy_Statement"></span><span id="Fark.27s_Legal_and_Privacy_Statement">Fark's Legal and Privacy Statement</span>
+</h3>
+<h4><span id="Terms_Of_Service">Terms Of Service</span></h4>
+<p>Text comments and Photoshopped images posted on Fark by registered users may not be reposted or broadcast without the express written permission or license from Fark.com, and must attribute Fark.com as the source.
+</p>
+<p>By using Fark, You agree that you will not use any robot, harvesting bots, spider, scraper, or other automated means to access the site for any purpose without our express written permission.  You further agree that You will not take any action that imposes or may impose (in our sole discretion) an unreasonable or disproportionately large load on our infrastructure or interfere or attempt to interfere with the proper working of the site or any activities conducted on the site.
+</p>
+<h4><span id="Copyright_Notice">Copyright Notice</span></h4>
+<p>By posting an image or other content or by making a comment, you represent and warrant to Fark that (1) doing so does not violate or infringe anyone else's rights; and (2) you created the file or other content you are uploading, or otherwise have sufficient intellectual property rights to upload the material consistent with these terms. 
+</p>
+<p>By posting content, you are confirming that the content is yours and that the uploading and use of your content does not violate the privacy rights, publicity rights, copyrights, contract rights, trademark right, or any other intellectual property rights of  any other party. If we learn, or become aware, that you are infringing the rights of others or are using content that is not your own (or have the permission to use same), Fark retains the right to remove this content and you agree that you are responsible for any costs, fees, fines, penalties, judgments and/or legal fees  associated with the infringement, regardless of whether the infringement occurred with or without your knowledge (i.e. the responsibility is yours to ensure you are the owner or have rights to post prior to posting)  
+</p>
+<p>When you make your content public (i.e. by posting or submitting to our website), you grant Fark a worldwide, non-exclusive, royalty-free license (with sublicense and assignment rights) to copy, distribute, stream, post publicly display (e.g. post it elsewhere), reproduce and create derivative works from it (meaning things based on it), anywhere, whether in print or any kind of electronic version that exists now or is later developed, to create derivative works of, to allow downloads of, and/or distribute any such file or content for any purpose, including a commercial purpose.
+</p>
+<p>Copyrights and Copyright Agents.  We respect the intellectual property of others, and we ask you to do the same. If you believe that your work has been copied in a way that constitutes copyright infringement, please provide our Copyright Agent with the following information (see 17 U.S.C. 512 (c)(3) for further detail):
+</p>
+<ul>
+<li>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright interest;</li>
+<li>Description of the copyrighted work that you claim has been infringed;</li>
+<li>A description of where the material that you claim is infringing is located on Fark.com;</li>
+<li>Your address, telephone number, and email address;</li>
+<li>A statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law; and</li>
+<li>A statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.</li>
+</ul>
+<p>Our Copyright Agent for notice of claims of copyright infringement on Fark.com is Drew Curtis, who can be reached through farkback at: <a rel="nofollow" target="_top" href="https://www.fark.com/feedback/legal">https://www.fark.com/feedback/legal</a>
+</p>
+<p>Fark, TotalFark, Foobies, Fark This, and the Fark, TotalFark, and Foobies logos, are registered trademarks of Fark, Inc.  Farked is a trademark of Fark, Inc.
+</p>
+<p>Fark respects the intellectual property rights of others and expects its users to do the same. In accordance with the Digital Millennium Copyright Act ("DMCA"), the text of which may be found on the U.S. Copyright Office website at <a rel="nofollow" target="_top" href="http://www.copyright.gov/legislation/dmca.pdf">http://www.copyright.gov/legislation/dmca.pdf</a>, Fark will respond expeditiously to notices of alleged infringement that are reported to our designated agent, identified in the sample notice below.
+</p>
+<p>If you see anything on our site that you believe infringes your copyright rights, you may notify our Digital Millennium Copyright Act ("DMCA") agent by sending the following information:
+</p>
+<p>Identification of the copyrighted work or works claimed to have been infringed;
+Identification of the material on our servers that is claimed to be infringing and that is to be removed, including the URL of the Fark thread in question or other information to enable us to locate the material;
+A statement that you have a good faith belief that use of the material in the manner complained of is not authorized by you as copyright owner, or by your agent, or by law;
+A statement that the information in your notice is accurate, and under penalty of perjury, that you are the owner (or authorized to act on behalf of the owner) of the exclusive copyright right that is allegedly being infringed.
+Your physical or electronic signature, or of someone authorized to act on your behalf;
+Instructions on how we may contact you: preferably email, but also address and phone
+</p>
+<p>Our agent to receive such notifications of claimed infringement is Drew Curtis.
+</p>
+<p>DMCA/Copyright infringement contact email: dmca@fark.com
+</p>
+<p>Fark utilizes the same procedure(s) for any claimed trademark violations or other infringements. If we receive a DMCA notice and remove something you submitted anonymously, we will have no way of notifying you, you will have to contact us if you think that may have occurred. Keep in mind that Fark reserves the right to remove any content, at any time, whether or not it infringes or violates any of our policies.
+</p>
+<p><br>
+</p>
+<h4><span id="Fark_logos_and_trademarks">Fark logos and trademarks</span></h4>
+<p>Fark welcomes the use of the Fark logo and trademark to promote, reference, or link back to Fark.com or associated accounts. Below are some logos that can be used for this purpose:
+</p>
+<p><br>
+Smallest light: <img src="https://img.fark.net/images/2014/site/farklogo_smallest_light.jpg" alt="farklogo_smallest_light.jpg">
+</p>
+<p>Small light: <img src="https://img.fark.net/images/2014/site/farklogo_small_light.jpg" alt="farklogo_small_light.jpg">
+</p>
+<p>Medium light: <img src="https://img.fark.net/images/2014/site/farklogo_medium_light.jpg" alt="farklogo_medium_light.jpg">
+</p>
+<p>Large light: <img src="https://img.fark.net/images/2014/site/farklogo_large_light.png" alt="farklogo_large_light.png">
+</p>
+<p>Medium transparent: <img src="https://img.fark.net/images/2014/site/farklogo_medium_transparent.png" alt="farklogo_medium_transparent.png">
+</p>
+<p>Smallest dark: <img src="https://img.fark.net/images/2014/site/farklogo_smallest_dark.jpg" alt="farklogo_smallest_dark.jpg">
+</p>
+<p>Small dark: <img src="https://img.fark.net/images/2014/site/farklogo_small_dark.jpg" alt="farklogo_small_dark.jpg">
+</p>
+<p>Medium dark: <img src="https://img.fark.net/images/2014/site/farklogo_medium_dark.jpg" alt="farklogo_medium_dark.jpg">
+</p>
+<p>Large dark: <img src="https://img.fark.net/images/2014/site/farklogo_large_dark.jpg" alt="farklogo_large_dark.jpg">
+</p>
+<p><img src="https://img.fark.net/images/2007/site/farkLogo.gif" alt="farkLogo.gif">
+</p>
+<p>Fark consents to the above logos being slightly cropped or adjusted to fit a differently-sized standard on other sites, as long as the name "Fark" is still clearly legible. For legibility, the logo should be no less than 25 pixels in height.
+</p>
+<h4>
+<span id="Fark's_Privacy_Policy"></span><span id="Fark.27s_Privacy_Policy">Fark's Privacy Policy</span>
+</h4>
+<p><b>Short Version</b>
+</p>
+<p>We will not give your addresses to third parties. We hate spammers. Bunch of jackasses is what they are.
+</p>
+<p><b>Longer Official Version</b>
+</p>
+<p>Fark is committed to user privacy in our products and services. This policy outlines our personal information handling practices. If you give us personal information, we will treat it according to this policy.
+</p>
+<p>Fark encourages you to read this privacy policy and those of all web sites you visit. Below is a summary of Fark's online privacy policy.
+</p>
+<p><b>Types and uses of personal information</b>
+</p>
+<p>Your personal information is used in the following ways:
+</p>
+<ul>
+<li>User IDs and Passwords. Provides you with access to your profile areas and to protected content.</li>
+<li>Account Information. These tell us more about who you are, how to contact you, and your shipping and billing information.</li>
+<li>Customer Feedback and Support. Provides a mechanism for requesting information from Fark. Also used to tell us how we can improve our products, services and site designs.</li>
+<li>Email Correspondence. Used to raise and respond to issues and inquiries of all types. Also used to distribute information about Fark, our products, and services.</li>
+<li>Transactions. Shows which products and services you have requested.</li>
+</ul>
+<p>We will only use your personal information in the ways specified when it was collected. We will not subsequently change the way in which we use your personal information unless you consent to the new usage.
+</p>
+<p><b>Security measures</b>
+</p>
+<p>We protect the personal information you share with us.
+</p>
+<p>Authorized third party agents may also need access to some of your personal information. For example, if we need to ship something to you, we must share your name and address with a shipping company. We only provide third party agents with the minimum amount of information needed to complete the requested service or transaction. We do not otherwise share your personal information with third parties unless you have granted us permission to do so.
+</p>
+<p><b>Data Retention</b>
+</p>
+<p>Fark will not retain your personal information longer than is necessary for the purposes for which it was collected.
+</p>
+<p><b>Linked web sites</b>
+</p>
+<p>We provide links to third party sites. Since we do not control these Web sites, we encourage you to review the privacy policies posted on these (and all) third party sites.
+</p>
+<p><b>Children's privacy</b>
+</p>
+<p>We do not knowingly collect personal information from children under the age of 13. If we learn that we have personal information on a child under the age of 13, we will delete that information from our systems.
+</p>
+<p>Fark encourages parents to go online with their kids. Here are a few tips to help make a child's online experience safer:
+</p>
+<ul>
+<li>Teach kids never to give personal information, unless supervised by a parent or responsible adult. Includes name, address, phone, school, etc</li>
+<li>Know the sites your kids are visiting and which sites are appropriate.</li>
+<li>Look for Web site privacy policies. Know how your child's information is treated.</li>
+</ul>
+<p>Check out the FTC's site(1) for more tips on protecting children's privacy online.
+</p>
+<p>We may display advertisements from third parties. Third party ad-serving companies control which ads are shown. These ad-serving companies may use cookies to collect non-personally identifiable information from you. Advertisers use this information to target the ads and measure their impact.
+</p>
+<p><b>Third Party Advertising</b>
+</p>
+<p>We use third-party advertising companies to serve ads when you visit our Web site. These companies may use information (not including your name, address, email address or telephone number) about your visits to this and other Web sites in order to provide advertisements on this site and other sites about goods and services that may be of interest to you. For more information on online behavioral advertising, privacy, cookies, and how this all works, please see the <a rel="nofollow" target="_top" href="http://www.networkadvertising.org/managing/learn_more.asp">Network Advertising Initiative</a> page on this topic.
+</p>
+<p><b>Third Party Cookies</b>
+</p>
+<p>In the course of serving advertisements to this site, our third-party advertisers may place or recognize a unique "cookie" on your browser. 
+</p>
+<p>You can opt-out of Google Adsense advertising cookies by going to <a rel="nofollow" target="_top" href="http://www.google.com/ads/preferences">http://www.google.com/ads/preferences</a>.
+</p>
+<p>You can opt-out of other third-party advertising cookies by using the Network Advertising Initiative opt-out tool at <a rel="nofollow" target="_top" href="http://www.networkadvertising.org/managing/opt_out.asp">http://www.networkadvertising.org/managing/opt_out.asp</a>.
+</p>
+<p><b>Audience Analytics</b>
+</p>
+<p>In order to understand our audience, and understand how our audience interacts with Fark, we use a few different analytics products.  Each of these places a cookie on your computer to gather information about the Fark pages you visit, how long you stay on the site, etc.  
+</p>
+<p>This information is aggregated so we can see general patterns.  None of the information you provide on sign-up or while using the site is ever provided.  
+</p>
+<div id="google_uid">
+<p>One of these analytics products is Google Analytics.  We send the Fark Account Number assigned to you at sign-up time to Google Analytics to understand how our users use Fark across different devices.  Google has no way to associate this with any other personally identifiable information inside of Analytics.  If you don't want us to send your Fark Account Number to Google Analytics, you can check the box in your <a rel="nofollow" target="_top" href="https://www.fark.com/users/0/prefs">Preferences</a> that says "Don't send my Fark Account Number to Google Analyics".
+</p>
+</div>
+<p><b>Policy updates</b>
+</p>
+<p>All updates to this policy will be posted here.
+</p>
+<p>Note: This policy also covers the personal information you provide to Fark Customer Support.
+</p>
+<h4><span id="Third_Party_Notices">Third Party Notices</span></h4>
+<p>Embedded YouTube videos and their metadata are covered by the <a rel="nofollow" target="_top" href="https://www.youtube.com/static?gl=GB&amp;template=terms">Google Terms Of Service</a> and <a rel="nofollow" target="_top" href="https://policies.google.com/privacy?hl=en-US">Google's Privacy Policy</a>.
+</p>
+<p>Tags on links are provided by the <a rel="nofollow" target="_top" href="https://www.ibm.com/cloud/watson-natural-language-understanding">IBM Watson's Natural Language Understanding</a> service.
+</p>
+
+
+
+
+</div>
+ </blockquote>
+</div>    <!-- BOTTOM start -->
+</div> <!-- end #newsContainer -->
+        </td>
+        <td id="rightCol">
+            <div class="rightColContent">  <div style="padding: 10px;margin-top: 40px;">
+
+                 <div class="ad_container">  <div id="intelli-1"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock" style="display:none;" id="intelli-1-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('intelli-1'); return false;">Report</a></div>    </div> </div>  <div class="sidebar_callout_container tfark_callout">
+                    <p style="font-size:13px;">If you like these links, you'll love</p>
+                    <!--<img src="https://img.fark.net/images/2017/site/totalfark_logo_2017.png" srcset="https://img.fark.net/images/2017/site/totalfark_logo_2017.png 1x, https://img.fark.net/images/2017/site/totalfark_logo_2017-2x.png 2x" class="retina" alt="TotalFark">-->
+                    <img src="https://img.fark.net/images/2017/site/totalfark_logo_2017.png" srcset="https://img.fark.net/images/2017/site/totalfark_logo_2017.png 1x, https://img.fark.net/images/2017/site/totalfark_logo_2017-2x.png 2x" class="retina" alt="TotalFark">
+                    <p class="tf-callout-text">Total access<br>Total knowledge<br>Total Fark</p>
+
+                    <a href="https://www.fark.com/farq/about/#What_is_TotalFark.3F">learn more</a> | <a href="/totalfarksignup">sign up</a>
+                </div>   <br>
+
+               <div class="top_right_container"> <div class="ad_container rightTop">  <div id="rightAd300x250"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock"  id="rightAd300x250-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('rightAd300x250'); return false;">Report</a></div>    </div> </div>   <div id="supportfark">
+            <hr>
+            <a href="https://www.fark.com/supportfark">Support Fark</a>
+            <hr>
+        </div>
+
+        <div class="sidebar_callout_container newsletter_callout">
+            <p>Sign up for the Fark NotNewsletter!</p>
+              <form name="newsletter_signup" action="https://www.fark.com/newslettersignup" method="post" class="ajaxsubmit">
+                <input type="text" name="nnl_e" placeholder="you@you.com">
+                <input type="hidden" name="submitbutton" value="Sign Me Up!"> <input type="hidden" name="e0$FaTk_fK1nthx34v_glBewFURZqmq1Cc$LNojL" value="FaDk-CMMNRdMlh855eVmF4hg_egrWJW47iqi4NBQAHUmTJb3NZsQUFgv1UPnJOr2CfPXvaZS6G_SsmzmIfqdKXeuXqYSP-e6U1F4Z">
+ <input type="submit" class="gradientbutton" value="Go&raquo;">
+            </form>
+            <a href="https://www.fark.com/farq/services/#What_is_the_Fark_NotNewsletter.3F" style="display: inline-block; margin-top: 5px; ">learn more</a>
+        </div>  <hr>
+        <div id="hotw"><a href="https://www.fark.com/hotw/">Headlines of the Week</a><br>
+                       <a href="https://www.fark.com/blog/DisseminationMonkey">Fark NotNewsletter</a>
+        </div> 
+
+        <hr>
+        <ul class="sidebarLinks">  <li><a target="_top" href="https://www.fark.com/totalfarksignup">TotalFark signup</a></li>   <li><a target="_top" href="https://www.fark.com/barefarksignup">BareFark signup</a></li>  <li><a target="_top" href="https://www.fark.com/farks2give">Purchase Farks2Give</a></li>
+            <li><a target="_top" href="https://www.fark.com/ohfark">Purchase OhFark</a></li>
+        </ul>
+
+        <hr>
+
+        <ul class="sidebarLinks">
+            <li><a href="https://www.fark.com/top/links/">Top Links</a></li>
+            <li><a href="https://www.fark.com/top/comments/">Top Comments</a></li>
+            <li><a href="https://www.fark.com/top/submitters/">Top Submitters</a></li>
+            <li><a href="https://www.fark.com/top/comments/smart/">Top Smart Comments</a></li>
+            <li><a href="https://www.fark.com/top/source-topic/">Top Sources/Topics</a></li>
+            <li><a href="https://www.fark.com/top/comments/funny/">Top Funny Comments</a></li>
+            <li><a href="https://www.fark.com/publicity/">Press/Publicity</a></li>
+        </ul>
+
+        <hr>
+
+          <div class="ad_container right">  <div id="rightAd300x250Middle"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock"  id="rightAd300x250Middle-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('rightAd300x250Middle'); return false;">Report</a></div>    </div>  <div id="facebook"><div class="fb-like" data-href="https://www.facebook.com/fark" data-send="false" data-layout="button_count" data-width="78" data-show-faces="false"></div>&nbsp;&nbsp;<a target="_blank" href="https://www.facebook.com/fark">Like Fark!</a></div>
+ <div id="twitter">
+            <a href="https://twitter.com/Fark" class="twitter-follow-button" data-show-count="false">&nbsp;Follow @Fark</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            <a target="_blank" href="https://www.twitter.com/fark">On Twitter</a>
+        </div>
+
+        <hr>
+        <ul class="sidebarLinks">
+            <li><a href="https://www.fark.com/combined/">All Latest</a></li>
+            <li><a href="https://www.fark.com/comments/1">Fark Forum</a></li>  <li><a href="https://www.fark.com/linkvote/">Link Voting</a></li>
+            <li><a href="https://www.fark.com/comments/2">Sports Forum</a></li>
+
+            <li><a href="https://www.fark.com/blog/DisseminationMonkey">Fark Blogs</a></li>
+            <li><a href="https://www.fark.com/comments/4">Fandom Forum</a></li>
+
+            <li><a target="_blank" href="https://www.amazon.com/Its-Not-News-Fark-Media/dp/1592402917/sr=8-1/qid=1168639219/ref=pd_bbs_sr_1/102-1500276-2229705?ie=UTF8&amp;s=books&amp;tag=farkcom-20">Fark Book</a></li>
+            <li><a href="https://www.fark.com/comments/3">Entertainment Forum</a></li>
+
+            <li><a href="https://www.fark.com/quiz">Fark Quiz</a></li>
+            <li><a href="https://www.fark.com/comments/5">Politics Forum</a></li>
+
+            <li><a href="https://www.fark.com/farkparty/">Fark Parties</a></li>
+            <li><a href="https://www.fark.com/comments/550396">Fark Party Forum</a></li>
+
+            <li><a href="https://www.fark.com/psbrowser">PS/Photo Browser</a></li>
+            <li><a href="https://www.fark.com/comments/6">Photoshop Forum</a></li>
+
+            <li><a target="_blank" rel="nofollow" href="http://chat.mibbit.com/#fark@irc.fdfnet.net">Fark Chat</a></li>
+            <li><a href="https://www.fark.com/comments/7">Farktography Forum</a></li>
+
+            <li>&nbsp;</li>
+            <li><a href="https://www.fark.com/comments/8">Discussion/TF Live Forum</a></li>
+
+        </ul>
+        <hr>
+
+
+        <br>
+           <div class="ad_container right">  <div id="rightAd300x250Lower"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock"  id="rightAd300x250Lower-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('rightAd300x250Lower'); return false;">Report</a></div>    </div>      <div id="rightBottomWidget">
+            <div id="rightBottomWidgetLinks"> <div id="widgetTopHeadlinescontainer">
+    <div id="widgetTopHeadlinesheader">
+        <div id="widgetTopHeadlinesfark_logo">Fark.com</div>
+        <div id="widgetTopHeadlinesheadertitles" class="headertitles">
+            Top Commented
+        </div>
+    </div>
+
+    <div class="widgetOptions">
+        <a id="widgetSelected" onclick="toggleDropdown()">
+            <span id="widgetHeader">Top Commented</span> <span class="arrow">&#x25BC;</span>
+        </a>
+        <ul id="widgetOptionsDropdown"> 
+            <li><a onclick="changeWidgetLink('topcommented'); return false;" id="widgetDropdown-topcommented">Top Commented</a></li>
+            <li><a onclick="changeWidgetLink('topclicked'); return false;" id="widgetDropdown-topclicked">Top Clicked</a></li>
+            <li><a onclick="changeWidgetLink('topvoted'); return false;" id="widgetDropdown-topvoted">Top Voted</a></li>
+            <li><a onclick="changeWidgetLink('mycommented'); return false;" id="widgetDropdown-mycommented">My Recent Commented</a></li>
+            <li><a onclick="changeWidgetLink('mytagged'); return false;" id="widgetDropdown-mytagged">Recent Mentions</a></li>
+        </ul>
+    </div>
+
+    <div id="widgetTopHeadlineslinkbody">
+        <div id="widgetContent">
+            <div style="margin: 20px 10px; ">Javascript is required to view headlines in widget.</div>
+            <script>
+            $("#widgetContent").html("<p style='margin-left: 15px;'>Loading headlines...</p>").load('/widget?ajax=1', function() {
+                refreshIconAnimation(false);
+            });
+            </script>
+        </div>
+    </div>
+</div>
+<div id="widgetTopHeadlinesrefreshListing">
+    <a onclick="refreshIconAnimation(true); changeWidgetLink(openWidget);"><svg height="32" id="refresh" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg"><path d=" M16 2 A14 14 0 0 0 2 16 A14 14 0 0 0 16 30 A14 14 0 0 0 26 26 L 23.25 23 A10 10 0 0 1 16 26 A10 10 0 0 1 6 16 A10 10 0 0 1 16 6 A10 10 0 0 1 23.25 9 L19 13 L30 13 L30 2 L26 6 A14 14 0 0 0 16 2 "></path></svg></a>
+</div>
+<script>
+    var stickyWidget = "rbw";
+    function toggleDropdown() {
+        var dropdown = document.getElementById('widgetOptionsDropdown');
+        var is_view = (dropdown.style.display == 'block') ? true : false;
+        if (is_view) {
+            dropdown.style.display = "none";
+        } else {
+            dropdown.style.display = "block";
+        }
+    }
+
+    function refreshIconAnimation(doit) {
+        if (doit) {
+            document.getElementById('widgetTopHeadlinesrefreshListing').classList.add('active');
+        } else {
+            document.getElementById('widgetTopHeadlinesrefreshListing').classList.remove('active');
+        }
+    }
+
+    var openWidget;
+    function changeWidgetLink(value, skipRedirect) {
+        $("#widgetOptionsDropdown a").removeClass("active_widget");
+        $("#widgetDropdown-"+value).addClass("active_widget");
+        openWidget = value;
+        if (typeof skipRedirect !==  undefined && skipRedirect != true) { 
+            refreshIconAnimation(true);
+        }
+        var headertitle = document.getElementById('widgetHeader');
+            headertext = "";
+        switch (value) {
+            case "topcommented":
+                headertext = "Top Commented";
+                break;
+            case "topclicked":
+                headertext = "Top Clicked";
+                break;
+            case "topvoted":
+                headertext = "Top Voted";
+                break;
+            case "mycommented":
+                headertext = "My Recent Commented";
+                break;
+            case "mytagged":
+                headertext = "Recent Mentions";
+                break;
+        }
+        headertitle.innerHTML = headertext;
+        // if (typeof skipRedirect !==  undefined && skipRedirect != true) { document.getElementById("sidebarWidgetIframe").src = "/widget/"+value; }
+        if (typeof skipRedirect !==  undefined && skipRedirect != true) { 
+            document.getElementById("widgetOptionsDropdown").style.display = 'none';
+            $("#widgetContent").text("");
+            $("#widgetContent").load("/widget/"+value+"?ajax=1", function() {
+                setTimeout(function() {
+                    refreshIconAnimation(false);
+                }, 500);
+            });
+        }
+    }
+</script> </div>
+              <div id="rightBottomWidgetVids">
+                    <a href="javascript:void();" onClick="close_sticky_vids(); return false;" id="closeVid">X</a> <div class="ad_container">  <div id="stickyAd300x250"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock"  id="stickyAd300x250-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('stickyAd300x250'); return false;">Report</a></div>    </div> </div>  </div>
+
+
+    </div>
+        </td>
+        </tr>
+        <tr>
+        <td colspan="2"><script>
+/*
+var loadNewer = new Vue({
+  el: '#load_newer_container',
+  data: {
+    newer: 0,
+    count: 25,
+    getCount: function() {
+        return (this.newer > this.count ) ? this.count : this.newer
+    },
+    isLoading: false,
+    showLoadNewer: true,
+    linkText: fark.ajax.headlineAjaxCheckNewer,
+    getText: function () {
+        this.showLoadNewer = true;
+        if ( this.newer == 0 && this.getCount() == 0 ) {
+            if ( fark.page.isDesktop ) {
+                // this.showLoadNewer = false;
+            }
+            return fark.ajax.headlineAjaxCheckNewer;
+        } else if ( (this.newer < this.count) || this.newer >= 1000 ) {
+            var return_msg = "Load "+this.newer+" newer headlines";
+            if ( this.isLoading ) {
+                return_msg = return_msg.replace('Load', 'Loading');
+            }
+            return return_msg;
+        } else {
+            var return_msg = fark.ajax.headlineAjaxLoadNewer.replace( "XX", this.getCount() );
+            return_msg = return_msg.replace( "YY", this.newer );
+            if ( this.isLoading ) {
+                return_msg = return_msg.replace('Load', 'Loading');
+            }
+            return return_msg;
+        }
+    }
+  }
+});
+*/
+</script>
+
+ <ol id="joyRideTipContent">
+    <li data-class="headlineRow" data-text="Next" class="walkthrough_headline">
+        <!--<h2>Stop #1</h2>-->
+        <p>Links are submitted by members of the Fark community.</p>
+    </li>
+    <li data-class="headlineText" data-button="Next" data-options="tipLocation:top;tipAnimation:fade" class="walkthrough_subject">
+        <!--<h2>Stop #2</h2>-->
+        <p>When community members submit a link, they also write a custom headline for the story.</p>
+    </li>
+    <li data-class="headlineComments" data-button="Next" data-options="tipLocation:left" class="walkthrough_comments">
+        <!--<h2>Stop #3</h2>-->
+        <p>Other Farkers comment on the links. This is the number of comments. Click here to read them.</p>
+    </li>
+    <li data-id="loginLinks" data-button="Next" data-options="tipLocation:top;nubPosition:top-right" class="walkthrough_login">
+        <!--<h2>Stop #4</h2>-->
+        <p>You need to create an account to submit links or post comments.</p>
+    </li>
+    <li data-class="submitLink" data-button="Done" data-options="tipLocation:left" class="walkthrough_submit">
+        <!--<h2>Stop #5</h2>-->
+        <p>Click here to submit a link.</p>
+    </li>
+</ol>
+<script>
+    function run_walkthrough(trackInfo) {
+        $('#joyRideTipContent').joyride({
+            autoStart : true,
+            modal : true,
+            expose: false
+        });
+        // console.log("Tracking Walkthrough Click: "+trackInfo);
+        ga('send', 'event', 'Walkthrough', 'How to Fark', trackInfo);
+    }
+    // check if the get params contain "walkthrough" and if so 
+    // run the walkthrough automatically
+    // we do this to auto run the walkthrough when users aren't on headline pages
+    var getParams = window.location.search.replace("?", "");
+    if (getParams.indexOf("walkthrough") > -1) { run_walkthrough(); }
+</script>
+ <div id="footer">  <p class="alsoOnFark">Also on Fark</p>
+        <table id="alsoOnFarkTable">
+            <tbody>      <tr>
+                        <td class="alsoOnFarkLabel"><a href="https://www.fark.com/">Main</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11031624" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Main');">California judge orders Google to handover the personal emails of an oligarch&#39;s son in his dad&#39;s $600 million divorce. The oligarch, Farkhad Akhmedov, is one of Putin&#39;s buddies. Farkedhard, forever known as the &#1057;&#1082;&#1091;&#1087;&#1086;&#1081; &#1088;&#1091;&#1095;&#1082;&#1072; who let his kid use Gmail</a> ( <a rel='nofollow' class='outbound_link id11031624 '  data-farkdomain='thehill.com' target='_blank' href='https://www.fark.com/goto/11031624'>thehill.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11031624/California-judge-orders-Google-to-handover-personal-emails-of-an-oligarchs-son-in-his-dads-$600-million-divorce-The-oligarch-Farkhad-Akhmedov-is-one-of-Putins-buddies-Farkedhard-forever-known-as-who-let-his-kid-use-Gmail" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Main');">(10 comments)</a></td>
+                    </tr>      <tr>
+                        <td class="alsoOnFarkLabel"><a href="https://www.fark.com/discussion/">Discussion</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11031290" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Discussion');">Can Hikaru Shida retain the AEW Women&#39;s Title from the Dark Order&#39;s Anna Jay? Will the Undisputed ERA or Team McAfee gain the advantage for War Games? Who attacked Jon Moxley last week? The Wednesday Night Wars rage on @ 8pm ET on TNT, USA</a> ( <a rel='nofollow' class='outbound_link id11031290 '  data-farkdomain='allelitewrestling.com' target='_blank' href='https://www.fark.com/goto/11031290'>allelitewrestling.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11031290/Can-Hikaru-Shida-retain-AEW-Womens-Title-from-Dark-Orders-Anna-Jay-Will-Undisputed-ERA-Team-McAfee-gain-advantage-for-War-Games-Who-attacked-Jon-Moxley-last-week-The-Wednesday-Night-Wars-rage-on-8pm-ET-on-TNT-USA" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Discussion');">(218 comments)</a></td>
+                    </tr>      <tr>
+                        <td class="alsoOnFarkLabel"><a href="https://www.fark.com/sports/">Sports</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11031509" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Sports');">Apparently the Cowboys strength coach wasn&#39;t strong enough</a> ( <a rel='nofollow' class='outbound_link id11031509 '  data-farkdomain='sports.yahoo.com' target='_blank' href='https://www.fark.com/goto/11031509'>sports.yahoo.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11031509/Apparently-Cowboys-strength-coach-wasnt-strong-enough" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Sports');">(0 comments)</a></td>
+                    </tr>      <tr>
+                        <td class="alsoOnFarkLabel"><a href="https://www.fark.com/business/">Business</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11031524" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Business');">Tequila Mockingbird</a> ( <a rel='nofollow' class='outbound_link id11031524 '  data-farkdomain='boredpanda.com' target='_blank' href='https://www.fark.com/goto/11031524'>boredpanda.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11031524/Tequila-Mockingbird" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Business');">(8 comments)</a></td>
+                    </tr>      <tr>
+                        <td class="alsoOnFarkLabel"><a href="https://www.fark.com/fandom/">Fandom</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11031398" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Fandom');">The best of Adam Savage&#39;s favorite things for 2020</a> ( <a rel='nofollow' class='outbound_link id11031398 '  data-farkdomain='boingboing.net' target='_blank' href='https://www.fark.com/goto/11031398'>boingboing.net</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11031398/The-best-of-Adam-Savages-favorite-things-for-2020" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Fandom');">(11 comments)</a></td>
+                    </tr>      <tr>
+                        <td class="alsoOnFarkLabel"><a href="https://www.fark.com/entertainment/">Entertainment</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11031656" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Entertainment');">Why WAP came up dry</a> ( <a rel='nofollow' class='outbound_link id11031656 '  data-farkdomain='hollywoodreporter.com' target='_blank' href='https://www.fark.com/goto/11031656'>hollywoodreporter.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11031656/Why-WAP-came-up-dry" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Entertainment');">(7 comments)</a></td>
+                    </tr>      <tr>
+                        <td class="alsoOnFarkLabel"><a href="https://www.fark.com/stem/">STEM</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11031481" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'STEM');">The penis spinning</a> ( <a rel='nofollow' class='outbound_link id11031481 '  data-farkdomain='youtube.com' target='_blank' href='https://www.fark.com/goto/11031481'>youtube.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11031481/The-penis-spinning" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'STEM');">(7 comments)</a></td>
+                    </tr>      <tr>
+                        <td class="alsoOnFarkLabel"><a href="https://www.fark.com/dawww/">D'awww</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11031592" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'D\'awww');">Do corgis posses the capability for evil? Well these two confirm that they can, just with a look</a> ( <a rel='nofollow' class='outbound_link id11031592 '  data-farkdomain='twitter.com' target='_blank' href='https://www.fark.com/goto/11031592'>twitter.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11031592/Do-corgis-posses-capability-for-evil-Well-these-two-confirm-that-they-can-just-with-a-look" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'D\'awww');">(2 comments)</a></td>
+                    </tr>      <tr>
+                        <td class="alsoOnFarkLabel"><a href="https://www.fark.com/food/">Food</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11031671" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Food');">So-called &quot;craft casual&quot; chain Torchy&#39;s Tacos scores $400 million from investors who believe Austin-style Trailer Park Trashy tacos can appeal to all Americans</a> ( <a rel='nofollow' class='outbound_link id11031671 '  data-farkdomain='sacurrent.com' target='_blank' href='https://www.fark.com/goto/11031671'>sacurrent.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11031671/So-called-craft-casual-chain-Torchys-Tacos-scores-$400-million-from-investors-who-believe-Austin-style-Trailer-Park-Trashy-tacos-can-appeal-to-all-Americans" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Food');">(7 comments)</a></td>
+                    </tr>      <tr>
+                        <td class="alsoOnFarkLabel"><a href="https://www.fark.com/politics/">Politics</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11031538" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Politics');">The domain name DonaldTrump2024.com has been taken, and most definitely not by Donald Trump</a> ( <a rel='nofollow' class='outbound_link id11031538 '  data-farkdomain='theguardian.com' target='_blank' href='https://www.fark.com/goto/11031538'>theguardian.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11031538/The-domain-name-DonaldTrump2024com-has-been-taken-most-definitely-not-by-Donald-Trump" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Politics');">(8 comments)</a></td>
+                    </tr>  </tbody>
+        </table>   <ul id="footerFarkLinks">
+        <li>Fark :: <a href="https://www.fark.com/">Main</a> | <a href="https://www.fark.com/discussion/">Discussion</a> | <a href="https://www.fark.com/sports/">Sports</a> | <a href="https://www.fark.com/business/">Business</a> | <a href="https://www.fark.com/fandom/">Fandom</a> | <a href="https://www.fark.com/entertainment/">Entertainment</a> | <a href="https://www.fark.com/stem/">STEM</a> | <a href="https://www.fark.com/dawww/">D'awww</a> | <a href="https://www.fark.com/food/">Food</a> | <a href="https://www.fark.com/politics/">Politics</a></li>
+        <li>Total Fark :: <a href="https://total.fark.com/">TotalFark</a> | <a href="https://total.fark.com/live/">TF Live</a> | <a href="https://total.fark.com/advice/">TF Advice</a> | <a href="https://total.fark.com/tfdiscussion/">TF Discussion</a> | <a href="https://total.fark.com/commented/">Commented</a> | <a href="https://total.fark.com/linkvote/">Top Voted</a> | <a href="https://total.fark.com/greenlit/">Greenlit</a></li>
+        <li>FArQ :: <a href="https://www.fark.com/farq/about#What_is_Fark.3F">About Us</a> | <a href="https://www.fark.com/farq/faq#Quick_Answers">Quick Answers</a> | <a href="https://www.fark.com/farq/posting#Posting_Rules">Posting Rules</a> | <a href="https://www.fark.com/farq/farkisms#Farkisms">Farkisms</a></li>
+        <li>Contests :: <a href="https://www.fark.com/topic/photoshop">Photoshop</a> | <a href="https://www.fark.com/topic/farktography">Farktography</a> | <a href="https://www.fark.com/topic/fartiste">Fartist Friday</a> | <a href="https://www.fark.com/topic/caption">Caption</a></li>
+        <li>Buy Fark :: <a href="https://www.amazon.com/Its-Not-News-Fark-Media/dp/1592402917/sr=8-1/qid=1168639219/ref=pd_bbs_sr_1/102-1500276-2229705?ie=UTF8&amp;s=books&amp;tag=farkcom-20">Fark Book</a> | <a href="https://www.fark.com/shop">Fark Store</a></li>
+    </ul>
+    <p class="submitLinkcontainer"><a href="https://www.fark.com/submit/" class="submitLink">Submit a Link &raquo;</a></p>
+    <p id="copyrightInfo">
+        Copyright &copy; 1999 - 2020 Fark, Inc | Last updated: Nov 26 2020 05:46:46<br>
+        <a href="https://www.fark.com/feedback">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.fark.com/feedback/error">Report a bug/error msg</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.fark.com/farq/legal">Terms of service/legal/privacy policy</a><br>
+<img src="https://www.fark.com/ll" width="4" height="1" alt="">  </p>
+
+</div>  </td>
+</tr>
+</table> <!-- newLayoutTable -->
+</div> <!-- container -->
+<script>
+    var is_tfark = (typeof fark.page.ajaxTabGroup != "undefined" && fark.page.ajaxTabGroup == "TotalFark") ? true : false;
+</script>
+
+
+<!-- Facebook API script (for Like button) -->
+<div id="fb-root"></div>
+ <script src="https://connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=127082864039"></script>
+<script>
+  trackFacebook();
+</script>
+<script>
+     $(function() {
+        process_lazy_load();
+    });
+</script>
+  <noscript>
+<img src="https://img.fark.net/imagesnoc/trans.gif?usertype=Lurker" width="16" height="1" alt="">
+</noscript>   <script src="/js/plugins/footer-ad.js"></script>      <div class="ad_container bottom">  <div id="bottomAd728x90"><script src="https://www.fark.com/aptminus/size1"></script></div>  <div class="reportAdBlock"  id="bottomAd728x90-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('bottomAd728x90'); return false;">Report</a></div>    </div> <br><br>
+
+  <div id="modal">
+        <a href="#" onclick="Custombox.modal.close()" class="modal_close">X</a>
+
+        <div class="modal_header">
+            <span class="modal_header_title"></span>
+        </div>
+        <div class="modal_content"></div>
+    </div>
+    <script>
+        // Instantiate new modal
+        fark.modal = new Custombox.modal({
+            content: {
+                effect: 'fadein',
+                target: '#modal',
+                onClose: function() {
+                    // clear classes when closing
+                    document.getElementById("modal").className = ''; 
+                }
+            }
+        });
+
+        function processGTEventListener(event) {
+            // process any googletag stuff we need for specific ads
+            if (event.slot.getSlotElementId() == "stickyAd300x250" && event.advertiserId === 4920996698) {
+                // right sticky video ad
+                document.querySelector("#stickyAd300x250 iframe").setAttribute("height",175);
+            }
+        }
+    </script>
+
+
+
+</body>
+</html>
