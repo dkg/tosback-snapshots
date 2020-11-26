@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/res/css/main.css?1.4" />
+        <link rel="stylesheet" href="/res/css/ionicons.min.css">
+        <link type="application/rss+xml" rel="alternate"
+      title="The Off Topical Podcast" href="http://feed.offtopical.net"/>
+        <meta http-equiv="content-type" content="text/php; charset=utf-8" />
+        <meta name="theme-color" content="#852d66" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta property="og:title" content="The Off Topical Podcast">
+        <meta property="og:description" content="The Off Topical Podcast is a tech podcast from Gardiner Bryant (The Linux Gamer) and Raven67854. It's a gaming, tech, and news podcast.">
+        <meta property="og:image" content="https://offtopical.net/res/img/mark.png">
+        <meta property="og:url" content="https://offtopical.net/">
+        <meta property="og:image:alt" content="Off Topical Logomark">
+        <meta property="og:type" content="website">
+        <title>Home | The Off Topical Podcast</title>
+    </head>
+    
+<body>
+    <nav>
+        <ul id="nav">
+            <li name="listen"></li>
+            <li name="hosts"></li>
+            <li name="contact"></li>
+            <li name="privacy"></li>
+        </ul>
+    </nav><episode-player>
+    <b>Latest Episode:</b>
+    <episode-ticker><ticker-contents>&quot;Litigious Larry,&quot; and an especially off topic Off Topical</ticker-contents></episode-ticker>
+
+    <audio id='podcastAudio' controls>
+        <source src="/pg/media/2020-01-10_ot-podcast-52.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <label title='Created by coolmax10 on the Heavy Element forums!'>
+        <input id='enableVisualization' type='checkbox' onchange='toggle(this)'>
+        <box-improv></box-improv> Enable visualization
+    </label>
+    <sup>Looking for <a href='/pg/'>the web archive</a>?</sup>
+</episode-player>
+<splash-panel id='home'>
+    <div id='one' class='fold' value='.3'></div>
+    <div id='two' class='fold' value='.2'></div>
+    <div id='three' class='fold' value='.1'></div>
+</splash-panel>
+
+<div id='hosts' name='hosts' class='offscreen_modal'>
+    <a class='close' href='#'>x</a>
+    <h1>Your Hosts</h1>
+    <div style='overflow-y:scroll; height:80%;'>
+        <div id='raven' class='host' style='width:100%'>
+            <h3>Raven67854</h3>
+            <div class='flex_row' style='flex-wrap:nowrap;'>
+                <div class='social-media-overlay'>
+                    <a href="https://youtube.com/raven67854" class="ion-social-youtube"></a>
+                    <!-- <a href="https://linuxrocks.online/web/accounts/93245" class="sprite mastodon"></a> -->
+                    <a href="https://twitch.tv/raven67854" class="ion-social-twitch-outline"></a>
+                    <a href="https://twitter.com/raven67854" class="ion-social-twitter"></a>
+                </div>
+                <div>
+                    <p>[No biography available]</p>
+                    <p style='text-align:right;'><a href='https://youtube.com/raven67854' class="ytLink"><span class='ion-social-youtube'></span> Raven67854</a></p>
+                </div>
+            </div>
+        </div>
+        <div id='gardiner' class='host' style='width:100%'>
+            <h3>Gardiner Bryant</h3>
+            <div class='flex_row' style='flex-wrap:nowrap;'>
+                <div class='social-media-overlay'>
+                    <a href="https://youtube.com/thelinuxgamer" class="ion-social-youtube"></a>
+                    <a href="https://linuxrocks.online/web/accounts/93245" class="sprite mastodon"></a>
+                    <a href="https://twitch.tv/xondak" class="ion-social-twitch-outline"></a>
+                    <a href="https://twitter.com/thelinuxgamer" class="ion-social-twitter"></a>
+                </div>
+                <div>
+                    <p>A software developer and all-around nerd from a small coastal town in Maine, Gardiner has been a FOSS enthusiast for over a decade.</p>
+                    <p>Best known for his YouTube channel <em>The Linux Gamer</em> for the last four years, he has been the host and primary creative force behind his YouTube channel.</p>
+                    <p>Being on YouTube has taught Gardiner grew unhappy with the abusive relationship Google and YouTube have with creators on their platform. Thus <em>Off Topical</em> born.</p>
+                    <ul>
+                        <li>Give the audience better alternatives to proprietary services like YouTube</li>
+                        <li>Control the distribution of his content</li>
+                            <ul>
+                                <li>(Rather than leaving it to the whims of a fickle algorithm)</li>
+                            </ul>
+                        <li>To have fun and participate in challenging work</li>
+                    </ul>
+                    <p></p>
+                    <p style='text-align:right;'><a href='https://youtube.com/thelinuxgamer' class="ytLink"><span class='ion-social-youtube'></span> The Linux Gamer</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id='contact' name='contact' class='offscreen_modal'>
+    <a class='close' href='#'>x</a>
+    <h1>Contact</h1>
+    <div class='flex_row' style='flex-wrap:nowrap;'>
+        <div>
+            <h3>Join the Forum</h3>
+            <a href='https://forum.heavyelement.io/' style='display: block;text-align:center;margin-bottom:3em'><img src='https://forum.heavyelement.io/assets/logo-uj80xtwl.png'></a>
+            <!-- <div class='mergefield'>
+                <input type='text' name='subject' placeholder='What kind of news is it?'/>
+                <div class='fieldmerge'>
+                    <textarea name='body' placeholder='Submit your news.'></textarea>
+                    <button id='send' class='ion-android-send'></button>
+                </div>
+            </div> -->
+        </div>
+        <div>
+            <h3>Send us an email</h3>
+            <p>Send us an email and we'll be sure to read it on air!</p>
+            <div class='copy-input'>
+                <input type='email' id='rss-feed' class='copy-url' readonly='readonly' value='show@offtopical.net'/>
+                <span class='ion-clipboard'></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id='listen' name='listen' class='offscreen_modal'>
+    <a class='close' href='#'>x</a>
+    <div>
+        <h1>Listen To the Podcast</h1>
+        <h4 style='text-align:center'>New episodes released every Friday.</h4>
+    </div>
+    <div class='flex_page' style='text-align:center'>
+        <div id='prev' class='ui-controls ion-chevron-left'>
+        </div>
+        <div id='next' class='ui-controls ion-chevron-right'>
+        </div>
+        <div class='grouping'>
+            <h3>Subscribe to the RSS Audio Feed</h3>
+            <p>Subscribe to the audio feed and enjoy the show from any podcast app.</p>
+            <div class='flex_row'>
+                <a href='itpc://feed.offtopical.net/' title='Pocket Casts for Android & iOS' class='podcast-button'>
+                    <img src='/res/img/podcast-button-pc.svg' alt='Pocket Casts for Android & iOS'/>
+                </a>
+                <a href='itpc://feed.offtopical.net/' title='PodcastAddict' class='podcast-button'>
+                    <img src='/res/img/podcast-button-pa.svg' alt='PodcastAddict'/>
+                </a>
+                <a href='https://open.spotify.com/show/6KQK5lxBMJxQtfSVFdRauT' title='Follow us on Spotify' class='podcast-button'>
+                    <img src='/res/img/podcast-button-sp.svg' alt='Spotify'/>
+                </a>
+                <a href='https://www.google.com/podcasts?feed=aHR0cDovL29mZnRvcGljYWwubmV0L3BnL2ZlZWQueG1s' title='Listen on Google Play' class='podcast-button'>
+                    <img src='/res/img/podcast-button-gp.svg' alt='Google Podcast'/>
+                </a>
+            </div>
+            <p>Don't have an app? No problem, just <a href='javascript:void()' onclick='scrollToTheDamnDiv("2");'>click here!</a></p>
+        </div>
+        <div class='grouping'>
+            <div style='width:100%'>
+                <h3>The Old Fashioned Way</h3>
+                <p>Add this URL to your favorite RSS reader or podcast app:</p>
+                <div class='copy-input'>
+                    <input type='url' id='contact' class='copy-url' readonly='readonly' value='http://feed.offtopical.net/'/>
+                    <span class='ion-clipboard'></span>
+                </div>
+                <div id='clipboard' style='text-align:center;width:100%'></div>
+                <p>(Just tap the link and it will copy to your clipboard automatically)</p>
+            </div>
+        </div>
+        <!-- <div class='grouping'>
+            <h3>Become a Patron</h3>
+            <div style='text-align:center; width:100%;'>
+                <p>Patron subscribers get <b>early access</b> to the podcast.</p>
+                <a href='https://patreon.com/thelinuxgamer'>
+                    <img src='/res/img/patreon_logo_animation.gif' width='50%'/>
+                </a>
+            </div>
+        </div> -->
+        <div class='grouping'>
+            <h3>Listen on the Web</h3>
+            <p>If you'd prefer a more <em>in-browser</em> experience, check out the <a href='http://offtopical.net/pg/' class='ytLink'>web archive.</a></p>
+        </div>
+        <div class='grouping'>
+            <h3>Third Party Hosts</h3>
+            <p>Enjoy clips and highlights from the show on <a href='https://www.youtube.com/playlist?list=PLF-hjtblU_WiDd6kPMeLQMHNdkf_iWwSl' class="ytLink">YouTube</a> or <a href='https://www.bitchute.com/channel/xondak/' class="ytLink">BitChute</a>.</p>
+        </div>
+    </div>
+</div>
+
+<div id='privacy' name='privacy' class='offscreen_modal'>
+    <a class='close' href='#'>x</a>
+    <h1>Privacy is our Policy</h1>
+    <div style='overflow-y:scroll; height:80%;'>
+        <p><i>Effective 12 October 2018*</i></p>
+        <h3>What We Collect</h3>
+        <p>Our podcast feed is handled by a self-hosted instance of <a href='http://www.podcastgenerator.net/home' title='Learn more about PodcastGenerator'>PodcastGenerator</a> (GPL v3). Our traffic is monitored by our hosting's built-in <a href='https://www.awstats.org/' title='Learn more about awstats.'>awstats</a> (GPL v3).</p>
+        <h3>How we use this data</h3>
+        <p>We use this info to get a rough idea of listership. This is an important metric for a podcast, since this ratio gives us insight into the topics that our listeners might be interested in hearing more--or less--of.</p>
+        <p>Given how flakey YouTube has been with who actually sees new videos, we're curious to discover the real ratio between subscriber vs download.</p>
+        <h3>Personally Identifiable Information</h3>
+        <p>We do not collect personally identifiable information from our listeners.</p>
+        <h3>Our Pledge</h3>
+        <p>We believe in <b>transparency</b>.</p>
+        <p>Should we ever find ourselves needing to change the types of information we collect, we pledge to make an announcement at the very beginning of our podcasts at least one week ahead of the change.</p>
+        <blockquote>*10 Oct 2018 - Previous to this change, we were using a custom built analytics/rss engine that was quickly shown to be unstable and incompatible with popular podcasting apps. As such, we switched to PodcastGenerator and awstat.</blockquote>
+    </div>
+</div>
+<canvas id="audioCanvas" style="position: absolute; left: 0; top: 0;z-index: 1;" width="0" height="0"></canvas>
+
+    </body>
+
+    <footer>
+        <div class="footer">
+            <div>
+            <!--<b>Copyright - 2018</b>-->
+            </div>
+        </div>
+    </footer>
+    <script src="/res/js/jquery.js?1.4"></script>
+    <script src="/res/js/main.js?1.4"></script>
+</html>
