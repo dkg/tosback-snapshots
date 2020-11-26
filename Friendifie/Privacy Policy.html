@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="author" content="Friendifie, Inc.">
+    <meta name="description" content="Woopr Messenger is a new generation of secure private messaging offered by Friendifie, Inc.">
+    <meta name="keywords" content="Friendifie, Woopr, Messenger, Messaging, Secure, Security, Private, Transparency, Transparent, Encrypted, Safe, Fun">
+
+    <meta name="msapplication-TileColor" content="#11C1F3">
+    <meta name="msapplication-TileImage" content="../imgs/woopr-logo.png">
+    <meta name="theme-color" content="#EF473A">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>Woopr</title>
+
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/icon" href="../imgs/favicon.ico"/>
+
+    <!-- ionic/angularjs js -->
+    <script src="../lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="../js/ng-cordova.js"></script>
+    <script src="../cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../js/ie-emulation-modes-warning.js"></script>
+    <script src="../js/app.js"></script>
+  </head>
+  <body ng-app="woopr">
+    <script>
+      $(document).ready(function() {
+        $('a#back').click(function(){
+          /*
+                parent.history.back();
+                return false;
+          */
+          window.location.href = "index.html";
+        });
+      });
+    </script>
+    <ion-pane>
+      <ion-header-bar id="bar-legal" class="bar-assertive" align-title="center">
+        <a id="back" class="button" side="left"><i class="ion-chevron-left"></i></a>
+          <h2 class="title">Woopr</h2>
+      </ion-header-bar>
+      <ion-content class="padding">
+        <h3 class="center">Privacy Policy</h3>
+          <div class="alert alert-danger">
+            <p>
+              Friendifie, Inc. is a United States based company and the Android App Service
+              offered as "Woopr Messenger" via Google Play is subject only to United States laws,
+              jurisdictions and regulations. This Privacy Policy is offered only in English.
+            </p>
+          </div>
+        <h4>How We Use Your Information</h4>
+        <p>
+          Friendifie, Inc. ("Friendifie, Inc.", "Woopr", "us", "we", "our") does <strong>NOT</strong> nor will we ever sell, share, trade
+          or in any other shape or form exploit your personal information for any reason. But, Friendifie, Inc. does
+          reserve the right to export any information (display name, username, email, age, messages, etc.) for
+          any legal requests. We can <strong>NOT</strong> refuse to cooperate with law enforcement or government
+          agencies.
+        </p>
+        <div class="alert alert-info">
+          <p>
+            If you don't break the law, you have nothing to worry about.
+            No one will ever know what you're talking about ever because it'll always be encrypted.
+          </p>
+        </div>
+        <h4>Terminated Access</h4>
+        <p>
+          For the natural security of Friendifie, Inc. we have a few filtering algorthims in place.
+        </p>
+        <hr>
+        <p class="padding">
+          &copy; Friendifie, Inc.
+        </p>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
