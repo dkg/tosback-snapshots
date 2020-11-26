@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W2QF6T8');</script>
+<!-- End Google Tag Manager -->
+<script>/*DO NOT ALTER *** FreedomPop*/(function(e){var t="1651",n=document,r,i,s={http:"http://cdn.mplxtms.com/s/MasterTMS.min.js",https:"https://secure-cdn.mplxtms.com/s/MasterTMS.min.js"},o=s[/\w+/.exec(window.location.protocol)[0]];i=n.createElement("script"),i.type="text/javascript",i.async=!0,i.src=o+"#"+t,r=n.getElementsByTagName("script")[0],r.parentNode.insertBefore(i,r),i.readyState?i.onreadystatechange=function(){if(i.readyState==="loaded"||i.readyState==="complete")i.onreadystatechange=null}:i.onload=function(){try{e()}catch(t){}}})(function(){});</script>
+     
+<meta http-equiv="cache-control" content="max-age=0" />
+       <meta http-equiv="cache-control" content="no-cache" />
+       <meta http-equiv="expires" content="0" />
+       <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+       <meta http-equiv="pragma" content="no-cache" />
+       <meta name="google-site-verification" content="4G-Ljh30iGRiZiuyjqHTOihIQAoWEQ9AcxjXWPGD2LU" />
+       
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+                    <meta name="description" content="Red Pocket Mobile Privacy  " />
+            <meta name="keywords" content="Red Pocket Mobile Privacy  " />
+            
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900|Open+Sans:400,500,600,700|Oswald" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <meta charset="utf-8">
+        <title>Red Pocket Mobile Privacy  </title>
+        <meta name="viewport" content="width&#x3D;device-width,&#x20;initial-scale&#x3D;1.0">
+<meta http-equiv="X-UA-Compatible" content="IE&#x3D;edge">
+        <!-- Le styles -->
+        <link href="&#x2F;css&#x2F;bootstrap.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;css&#x2F;bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;css&#x2F;style.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;img&#x2F;favicon.ico" rel="shortcut&#x20;icon" type="image&#x2F;x-icon">
+        <!-- Scripts -->
+        <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;jquery-3.1.0.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;js&#x2F;bootstrap.min.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;js&#x2F;jquery.form.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;js&#x2F;redpocket.js"></script>
+<script type="text&#x2F;javascript" src="&#x2F;js&#x2F;pixel.js&#x3F;v&#x3D;1"></script>
+<script type="text&#x2F;javascript" src="&#x2F;js&#x2F;cj.js&#x3F;v&#x3D;9"></script>
+        <link href="/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/css/tooltipster.bundle.min.css"/>
+        <link href="/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-noir.min.css" rel="stylesheet">
+        <link href="/css/custom.css?v=10" rel="stylesheet">
+        <link href="/css/stripe.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+        <script src="/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/address-3.50.css" />
+<script type="text/javascript" src="/js/address-3.50.js"></script>
+
+    <script type="text/javascript" src="/js/tooltipster.bundle.min.js"></script>
+    
+    <script type="text/javascript" src="/js/custom.js"></script>  
+   <script type="text/javascript" src="/js/debug.js"></script> 
+
+
+<script type="text/javascript" src="/js/ajax-manage-lines.js?v=7"></script>
+<script type="text/javascript" src="/js/preview.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/account.css?v=6" />
+
+
+<script type="text/javascript">
+
+
+function getCartNum(){
+jQuery.ajax({
+    url: "/shop/get-cart-num",
+    type: "POST",
+    data:{},
+    dataType: 'json',
+    beforeSend:function(data){
+    },
+    success: function(data){
+	 if(data.return_code=1){
+	    $('#shopping_cart').html('<i class="fa fa-shopping-cart"></i> Cart (' + data.return_data.num +')');
+	    $('#shopping_cart1').html('<i class="fa fa-shopping-cart"></i> Cart (' + data.return_data.num +')');
+	};
+    },
+    error:function(data){
+    }
+});
+};
+//display_div_id is the div id to display product list
+//area _ids is the array of id for ex. display_product_list('test_div',[1,2,3])
+function display_product_list(display_div_id,area_ids)
+{
+    jQuery.ajax({
+        url: "/shop/display-random-product",
+        type: "POST",
+        data:{areas:area_ids},
+        beforeSend: function (data) {},
+        success: function (data) {
+            $("#"+display_div_id).empty();
+            $("#"+display_div_id).html(data);
+        },
+        error: function (data) {}
+    });
+
+}
+
+
+$(document).ready(function(){
+
+
+getCartNum();
+
+});
+</script>
+
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function()
+{n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}
+
+;if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '238288056365100',
+{ em: 'cs@goredpocket.com' }
+
+);
+fbq('init', '1436068876537655',
+{ em: 'cs@goredpocket.com' }
+
+);
+
+
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"src="https://www.facebook.com/tr?id=238288056365100&ev=PageView&noscript=1"/>
+<img height="1" width="1" style="display:none"src="https://www.facebook.com/tr?id=1436068876537655&ev=PageView&noscript=1"/>
+</noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+    </head>
+
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2QF6T8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        <header class="navbar-fixed-top">
+            <div class="top-bar hidden-xs">
+                <div class="container">
+
+                    <div class="col-md-6">
+                      <p class="header_so"></p>
+                    </div>
+
+                    <div class="col-md-6">
+                      <ul class="head-cart pull-right">
+                        <li><a  href="/shop/cart" id="shopping_cart"><i class="fa fa-shopping-cart"></i> Cart ()</a></li>
+
+
+					                        <li><a href="/line-details"><i class="fa fa-unlock"></i> Login</a></li>
+
+
+
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation">
+                              <nav class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <ul class="head-cart pull-right hidden-sm hidden-md hidden-lg">
+                <li><a href="/shop/cart" id="shopping_cart1"><i class="fa fa-shopping-cart"></i> Cart (0)</a></li>
+
+                                            <li><a href="/refill/user"><i class="fa fa-unlock"></i> Login</a></li>
+
+            </ul>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand hidden-xs" href="/">
+
+                    <img src="/images/logo-rpm.gif" alt="Red Pocket Mobile"/>
+
+            </a>
+            <a class="navbar-brand hidden-sm hidden-md hidden-lg fp_logo_mobile" href="/">
+                <img src="/images/freedom_pop/fp_logo_mobile.png" alt="Red Pocket Mobile"/>
+            </a>
+            <a class="navbar-brand hidden-sm hidden-md hidden-lg fp_logo_mobile_hidden" href="/">
+                <img src="/images/logo-small.png" alt="Red Pocket Mobile"/>
+            </a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right animate-on-hover">
+                                                                                                                                                                        <li>
+                                <a href="/">
+                                    Home                                </a>
+                            </li>
+                                                                                                                                                                                            <li class="nav dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plans <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                                                                                                                            <li >
+                                                                              <a href="/plans">
+                                            Monthly Plans                                        </a>
+                                                                            </li>
+                                                                                                                                            <li >
+                                                                              <a href="/plans/family">
+                                            Family Plan                                        </a>
+                                                                            </li>
+                                                                                                                                            <li >
+                                                                              <a href="/global">
+                                            Global Data Plans                                        </a>
+                                                                            </li>
+                                                                                                                                            <li >
+                                                                              <a href="/broadband">
+                                            Domestic Data Plans                                        </a>
+                                                                            </li>
+                                                                                                                                            <li >
+                                                                              <a href="/plans/ebay">
+                                            Annual Plans                                        </a>
+                                                                            </li>
+                                                            </ul>
+                        </li>
+                                                                                                                                                                                                <li>
+                                <a href="/shop">
+                                    Shop                                </a>
+                            </li>
+                                                                                                                                                                                                <li>
+                                <a href="/activate">
+                                    Activate                                </a>
+                            </li>
+                                                                                                                                                                                                <li>
+                                <a href="/refill">
+                                    Refill                                </a>
+                            </li>
+                                                                                                                                                                                                <li>
+                                <a href="/coverage">
+                                    Coverage                                </a>
+                            </li>
+                                                                                                                                                                                            <li class="nav dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Support <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                                                                                                                            <li >
+                                                                              <a href="/user/account">
+                                            My Account                                        </a>
+                                                                            </li>
+                                                                                                                                            <li >
+                                                                              <a target="_blank" href="https://help.redpocket.com/hc/en-us">
+                                            Help Center                                        </a>
+                                                                            </li>
+                                                                                                                                            <li >
+                                                                              <a href="/contact-us">
+                                            Contact Us                                        </a>
+                                                                            </li>
+                                                            </ul>
+                        </li>
+                                                                <li class="hidden-sm hidden-md hidden-lg close-menu"><div data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-times" aria-hidden="true"></i></div></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+            </div>            
+            
+        </header>
+
+        <div class="content">
+            <div class="container">
+            <div id="error-text"></div>
+        	    <div id="alertbox-waiting-text"></div>
+
+                <div style="text-align:left;">
+
+<div id="content" class="fine-print">
+<h1 style="color:#eb0000">Privacy</h1>	
+<p><strong>Red Pocket Privacy Policy</strong></p>
+<p><strong>Last Updated: April 21, 2020</strong></p>
+<p>Red Pocket is committed to protecting the privacy of its subscribers and visitors to its website. This Privacy Policy (“Policy”) describes how Red Pocket Mobile™ (Red Pocket, Inc. and/or “Red Pocket”) , including its parents, subsidiaries, and/or affiliates, ("Company"),will collect, access, use or disclose your Personal Information. It applies to all of our products and services, including our customer portal (collectively, “Services”). It does not apply to third-party or affiliated services, which are governed by separate privacy policies. By using our Services, you consent to the terms of this Privacy Policy. For more information about our Services, please review our Terms and Conditions which may be found <a href="/terms_and_conditions">here</a> and our Consumer Broadband Disclosure which may be found <a href="/openinternet">here</a>.</p>
+
+<p>We may modify the terms of this policy from time to time, and will notify of any material changes in the manner required by law. Please check this page regularly for updates.</p>
+
+<p class="heading">What is Customer Proprietary Information?</p>
+<p>Customer Proprietary Information (Customer PI or Personal Information) includes Personally Identifiable Information (PII), Customer Proprietary Network Information (CPNI), and the content of your communications.</p>
+<p>PII is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Personal Information does not include information that is not used to identify you, such as aggregate or anonymous information. Federal and state law require Company to protect the confidentiality of Personal Information.</p>
+<p>CPNI is information related to a subscriber’s use of Company’s network (e.g., broadband traffic statistics, device identifiers, call detail information) and information contained within Company subscribers’ voice-service bills. CPNI does not include directory information such as name, postal address, or telephone number. As Company provides our Services to you, Company obtains information about the quantity, technical configuration, type, location and destination of telecommunications services we provide to you, as well as some other information found on your Company bills. This information may constitute CPNI, as defined by federal law. Any CPNI that Company collects from you will be handled in accordance with federal law, the Company’s internal CPNI Policy and this Privacy Policy. Under federal law, you have the right, and Company has the duty, to protect the confidentiality of your CPNI.</p>
+
+<p class="heading">What information do we collect and how do we collect it?</p>
+<p>We collect Personal Information in a number of ways. We automatically collect information when you use our Services. We also collect information about you that you provide to us, or that we obtain from third-party sources.</p>
+<p><i>Information that we automatically collect.</i> We automatically collect certain types of information when you use our Services. We may collect information about your Company device, including but not limited to your device type, operating system version, signal strength, power status (on/off), and device identifiers. With your consent, we may also collect information related to your use of the device and the services you access through it, including but not limited to your call and data usage and history, your geolocation, the websites you visit, the apps you purchase, download, or use, and information about devices you tether to your Company device. We may link information we automatically collect from you with Personal Information, including information you provide to us and information we gather from other sources. We may use software to follow your use of our Services and other applications, including the use of cookies, web beacons, and other mechanisms, in addition to analysis of network and device information. For example, we may allow analytic service providers(s) to collect site click-stream and cookie data to help track the use of our Services on an aggregate or individual basis. We may also use cookies or other tracking mechanisms on our Services to facilitate your use of our Services.</p>
+<p><i>Information you provide to us.</i> You may give us Personal Information in a variety of ways, including when you sign up for our Services, enroll in Lifeline, communicate with customer care, register on www.redpocket.com, or use our Services. The types of Personal Information we collect from you may include your name, postal address, telephone number, password, e-mail address, date of birth, last-4 digits of your social security number or other government identification number, demographics, activities, location information, and personal preferences.  We also collect information you submit through our Live Chat feature on our website. The information you may be asked to provide includes your name, e-mail address, order ID, and any questions or issues you submit through the Live Chat feature. Do not submit any sensitive Personal Information (e.g., passwords, Social Security Numbers, medical information, or financial information) through the Live Chat feature. Third-party providers, including third-party applications, may collect information from you as well, but unless otherwise noted, such collection and use of your information is governed by those third parties’ privacy policies—not this one.</p>
+<p><i>Information collected from other sources.</i> We may obtain Personal Information about you from other sources, including from commercially available sources such as data aggregators and public databases, as well as from our affiliates and partners (including pre installed applications). This information may include your name, demographic information, interests and publicly-observed data, such as from social media and shopping behavior, or other information. We may combine this information with the information we collect from and about you to help us tailor our communications to you, to improve our Services, and to provide you with offers, promotions, and advertisements.</p>
+
+<p class="heading">How do we use your information?</p>
+<p>We may use the information we collect from you in the following ways: To provide our Services, manage our network, and protect the security or integrity of the Services, our business, and other customers. To develop new products or services. To contact you about Company or third-party products, services, and offers that we believe you may find of interest. To personalize your experience of our Services and to allow us to deliver the type of content and product offerings in which you are most interested. To allow us to better serve you in responding to your customer service requests. To quickly process your transactions. To administer a contest, promotion, survey or similar purposes (including retention and winback marketing). To contact you by email, phone, or direct mail. To respond to legal processes and emergencies. For any other legitimate business purpose within the course of our customer-carrier relationship.</p>
+<p>We may also use your Personal Information as described to you at the point of collection, with your consent. Where required, we will seek and obtain your consent to use your CPNI or other Personal Information for marketing purposes. If you would like to restrict the Company’s use of your CPNI or other Personal Information for the marketing of certain products or services, please mail your request to:</p>
+<p>Red Pocket, Inc.<br>
+Attn: CPNI<br>
+2060D Avenida de los Arboles<br>
+Suite 288<br>
+Thousand Oaks, CA 91362</p>
+
+<p class="heading">How do we protect information?</p>
+<p>We implement a variety of reasonable physical, technical, and administrative security measures to maintain the safety of your Personal Information. Your Personal Information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential. When you place orders or access your personal information, we offer the use of a secure server. All sensitive/credit information you supply is transmitted via Secure Socket Layer (SSL) technology and then encrypted into our databases to be only accessed as stated above.</p>
+
+<p class="heading">Do we disclose the information we collect to outside parties?</p>
+<p>Subject to applicable legal restrictions on our use of Personal Information, applicable federal and state law, and your instructions to us, Company may disclose information we collect from and about you to third parties as follows (or as otherwise described to you at the point of collection):</p>
+<ul style="list-style:disc;">
+<li><strong>Affiliates.</strong> We may share your Personal and non-Personal Information with affiliated entities for certain business purposes.</li><br>
+<li><strong>Agents.</strong> We may share your Personal Information with third parties who perform services on our behalf.</li><br>
+<li><strong>Third Party Verification Services.</strong> We may share limited Personal Information (e.g., name, postal address, phone number, or credit card information) about you with non-Company entities to assist with identity verification, payment transactions and to prevent fraud and identity theft. These third party verification services are governed by those entities’ separate privacy policies and not this policy.</li><br>
+<li><strong>Other Third Parties with Your Consent.</strong> We may share your Personal Information with other third parties with your consent. For example, you may permit Company to share your Personal Information with other third parties so that they may contact you about their products and services. The use of the information you agree to share will be subject to those third parties’ separate privacy policies.</li><br>
+<li><strong>Business Transfers.</strong> Your Personal Information may be disclosed as part of any merger, acquisition, sale of company assets or transition of service to another provider. In the unlikely event of an insolvency, bankruptcy or receivership, your Personal Information may also be transferred as a business asset.</li><br>
+<li><strong>Protection of Company and Others.</strong> We may access, monitor, use or disclose your Personal Information or communications to do things such as: to comply with valid legal requests; in case of emergency, to protect our rights, property, or safety or those of our customers; to protect against fraud, malice, abuse, or illegal activity; to defend ourselves in court or other proceedings; to report to credit bureaus or collection agencies or to obtain payment for previously-billed products and services; where authorized by you; or to share with outside auditors or regulators.</li>
+</ul>
+
+<p><i>De-identified or aggregated information.</i> We may share Personal Information that is de-identified or in an aggregated form that does not directly identify you to improve our products, support our business, provide customer service, advertise our products, conduct market research, assist with research studies, assist with municipal or other government activities (e.g., planning), or to prepare internal or external reports. If we do so, we will take measures as required by federal law to protect de-identified data from re-identification.</p>
+
+<p><i>Your use of third party applications and services.</i> When using our Services, you may choose to use services and products offered by third parties, such as third party applications. When you leave our network, you may also use mobile roaming services provided by third parties. Your use of such services and applications may result in these third parties collecting your Personal Information and obtaining information from Company, including location information (when applicable). You may also choose to give your Personal Information directly to third parties when using our wireless services or devices. The Personal Information you give to a third party will be subject to that third party’s terms, conditions and policies—not this Privacy Policy. You should always review a third party’s privacy policy and terms of service before providing your Personal Information to them or using their services or products.</p>
+
+<p><i>Pre Installed third party applications</i> Company has partnered with selected third-party application developers to enhance your Red Pocket experience, and their applications may be found on your device that you use with our service. These applications may or may not be branded as Company applications and may be preinstalled on your device when you obtain it from Company or installed on your device via over-the-air download at no cost to you. These applications may require Company to share certain Personal Information with the third-party application for them to function. When you use these applications, they may also share certain Personal Information with Company, which Company may use to provide you with enhanced Services, to market our offerings to you, or for any other purposes consistent with this policy. When you first subscribe to our Services, you will be given a choice to permit sharing Personal Information to facilitate the functioning of these applications. You may decline to opt-in to sharing Personal Information with these applications at that time or later by contacting us at the address above and following any required instructions. If you decline to opt-in, you may not be able to use these third party applications, and certain features of these applications may not function.</p>
+
+<p><i>Third-party compliance with Red Pocket Privacy Policy.</i> If we use any of the third parties as noted above, and those third parties require the use of Personal Information, we require that such third parties take reasonable steps to protect the confidentiality of that information. If you would like to restrict the disclosure of your Personal Information for the marketing of certain products or services, you may contact us at the address above.</p>
+
+<p class="heading">How can you opt-out, remove or modify information you have provided to us?</p>
+<p>If you would like to change your privacy choices, you may do so at any time by contacting us at the address above.</p>
+
+<p class="heading">How will you let me know if this policy changes?</p>
+<p>If we decide to change our privacy policy, we will post those changes on this page. We may modify the terms of this policy from time to time, and will notify of any material changes in the manner required by law. We may also seek your consent to have any changes to our privacy policy apply retroactively to information we collected from you prior to the change in policy. Please check this page regularly for updates.</p>
+
+<p class="heading">What if I visit or use a third-party website, application, or service?</p>
+<p>In an attempt to provide you with increased value, we may include third party links in our Services. These linked sites have separate and independent privacy policies. We therefore have no responsibility or liability for the content and activities of these linked sites. Nonetheless, we seek to protect the integrity of our site and welcome any feedback about these linked sites (including if a specific link does not work).</p>
+
+<p class="heading">What policies apply to children under the age of 13?</p>
+<p>If we make available offers and products online where a child informs us that he or she is under the age of 13, we will ask a parent to confirm his/her consent in advance of further collection, use or disclosure of personal information from that child. You should be aware, however, that wireless devices and services purchased for family use may be used by minors without the knowledge of Company. If that happens, any information collected from the usage will appear to be the personal information of the actual adult subscriber and treated as such under this Policy.</p>
+
+<p class="heading">What special rights apply to California consumers?</p>
+<p>The California “Shine the Light” law, California Civil Code Section 1798.83, entitles California consumers to request information concerning whether a business has disclosed Personal Information to any third parties for that business’ direct marketing purposes. Company may share Personal Information between Company affiliates and marketing agents for marketing purposes. We do not share your Personal Information with unaffiliated third parties for their own independent marketing purposes without your consent. California residents may request the categories of Personal Information Company shared with its affiliates during the previous calendar year, if any. To make your request for information or to opt-out of the disclosure of Personal Information to third parties for their direct marketing purposes, send contact us using the address above or below. Please be aware that not all information sharing is covered by the "Shine the Light" requirements and only information on covered sharing will be included in our response.</p>
+
+<p>Written requests may be sent to:</p>
+<p>Red Pocket, Inc.<br>
+Attn: Opt Out<br>
+2060D Avenida de los Arboles<br>
+Suite 288<br>
+Thousand Oaks, CA 91362</p>
+
+<p>Company will make every reasonable effort to respond to these requests within 30 days. Requests that come to Company through means other than email or mail to the above-listed addresses may result in a delayed response.</p>
+
+<p class="heading">Questions and feedback</p>
+<p>We welcome your questions, comments, and concerns about privacy. Please send us any and all feedback pertaining to privacy or any other issue. Thank you for choosing Red Pocket Mobile.</p>
+
+<!-- end #content --></div>
+<!-- end #container --></div>            </div>
+        </div>
+
+        
+        <footer>
+            <div class="container">
+              <div class="inner-footer clearfix">
+                  <div class="col-md-2 col-xs-6">
+                      <h3>Make the Switch</h3>
+                      <ul>
+                        <li><a href="/plans">Wireless Plans</a></li>
+                        <li><a href="/activate">Transfer Your Number</a></li>
+                        <li><a href="/international-calling">Check International Rates</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-md-2 col-xs-6">
+                      <h3>Get Started</h3>
+                      <ul>
+                        <li><a href="/activate">Activate Your SIM</a></li>
+                        <li><a href="/configure-handset">Configure Your Device</a></li>
+                        <li><a href="/refill">Refill Your Account</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-md-2 col-xs-6">
+                      <h3>Join Us</h3>
+                      <ul>
+                        <li><a href="https://redpocket.refersion.com/" >Become an Affiliate</a></li>
+                        <li><a href="/dealers">Become a Dealer</a></li>
+                        <li><a href="http://my.redpocketmobile.com/">Dealer Login</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-md-3 col-xs-6">
+                      <h3>Explore</h3>
+                      <ul>
+                        <li><a href="/about-us">About Us</a></li>
+                        <li><a href="https://help.redpocket.com/">Help Desk</a></li>
+                        <li><a href="/my-lines">Visit Your Account</a></li>
+                        <li><a href=""></a></li>
+                      </ul>
+                  </div>
+                  <div class="col-md-3 col-xs-12">
+                      <h3>Follow</h3>
+                      <ul class="footer-social-list">
+                        <li><a target="_blank" href="https://www.facebook.com/redpocketmobile/"><img src="/images/RP FB Icon.png" /></a></li>
+                        <li><a target="_blank" href="https://twitter.com/RedPocketMobile"><img src="/images/RP TW Icon.png" /></a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/redpocketmobile/"><img src="/images/RP IG Icon.png" /></a></li>
+                        <li><a target="_blank" href="http://weibo.com/redpocketmobile"><img src="/images/RP Weibo Icon .png" /></a></li>
+                      </ul>
+                      <a href="https://www.bbb.org/us/ca/thousand-oaks/profile/cell-phone-supplies/red-pocket-mobile-1236-92011052/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-santabarbara.bbb.org/seals/blue-seal-120-61-bbb-92011052.png" style="border: 0px none; max-width: 99px;" alt="Red Pocket Mobile BBB Business Review"></a>
+                  </div>
+              </div>
+              <div class="copyright">
+                <p>© 2006-<script type="text/x-javascript">
+				
+				// Return today's date and time
+				var currentTime = new Date()
+				
+				// returns the year (four digits)
+				var year = currentTime.getFullYear()
+				
+				// write output MM/dd/yyyy
+				document.write(year);
+				
+				</script> Red Pocket Mobile. All rights reserved.</p>
+                <ul>
+                  <li><a href="/terms_and_conditions">Terms and Conditions</a></li>
+                  <li><a href="/privacy">Privacy Statement</a></li>
+                  <li><a href="/return-policy">Return Policy</a></li>
+                  <li><a href="/hac">HAC</a></li>
+                  <li><a href="/openinternet">Open Internet Statement</a></li>
+                </ul>
+              </div>
+            </div>
+        </footer>
+
+<!-- Start of LiveChat (www.livechatinc.com) code -->
+
+<script type="text/javascript">
+    
+window.__lc = window.__lc || {};
+window.__lc.license = 8944739;
+(function() {
+  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+})();
+
+</script>
+<!-- End of LiveChat code -->
+
+<div class="sc-popup">
+<div class="container sc-popup-inner">
+
+<div class="col-md-9">
+<p>RedPocket.com uses cookies to ensure you get the best experience on our website. By continuing to browse our site, you accept the use of cookies. </p>
+</div>
+<div class="col-md-3"><a id="cookies_agreed_btn" style="cursor:pointer;">I Agree</a></div>
+
+</div>
+<!--sc-popup-inner-->
+</div>
+<!--sc-popup-->
+<script type="text/javascript" src="/js/account.js?v=1.5"></script>
+
+
+    </body>
+</html>
