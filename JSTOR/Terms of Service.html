@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-58DMWCL');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"6406409950",applicationID:"62396429"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+            
+	<!-- This site is optimized with the Yoast SEO plugin v15.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Terms and Conditions of Use | About JSTOR</title>
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://about.jstor.org/terms/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Terms and Conditions of Use | About JSTOR" />
+	<meta property="og:description" content="Welcome to the JSTOR digital library and platform found at jstor.org (“JSTOR”). Your use of JSTOR is subject to the following Terms and Conditions, which should be read in their entirety. Who can use JSTOR? What’s in JSTOR? What can I do with Content? What use of JSTOR and its Content is prohibited? How does [&hellip;]" />
+	<meta property="og:url" content="https://about.jstor.org/terms/" />
+	<meta property="og:site_name" content="About JSTOR" />
+	<meta property="article:publisher" content="http://www.facebook.com/JSTOR.org" />
+	<meta property="article:modified_time" content="2020-11-04T15:22:46+00:00" />
+	<meta property="og:image" content="https://about.jstor.org/wp-content/uploads/2017/08/j_logo_widescreen_480.jpg" />
+	<meta property="og:image:width" content="480" />
+	<meta property="og:image:height" content="251" />
+	<meta property="fb:app_id" content="1740547476235368" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:creator" content="@JSTOR" />
+	<meta name="twitter:site" content="@JSTOR" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://about.jstor.org/#website","url":"https://about.jstor.org/","name":"About JSTOR","description":"","potentialAction":[{"@type":"SearchAction","target":"https://about.jstor.org/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://about.jstor.org/terms/#webpage","url":"https://about.jstor.org/terms/","name":"Terms and Conditions of Use | About JSTOR","isPartOf":{"@id":"https://about.jstor.org/#website"},"datePublished":"2017-02-20T02:03:35+00:00","dateModified":"2020-11-04T15:22:46+00:00","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://about.jstor.org/terms/"]}]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//about.jstor.org' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/about.jstor.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.3"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://about.jstor.org/wp-includes/css/dist/block-library/style.min.css?ver=5.5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://about.jstor.org/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='fetch-tweets-53bfd2bf771bbdfa1de47f8e8d5b1ee8-css'  href='https://about.jstor.org/wp-content/plugins/fetch-tweets/template/plain/style.css?ver=5.5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='fetch-tweets-5204a781aa969d7f1a987d3a7df4b678-css'  href='https://about.jstor.org/wp-content/plugins/fetch-tweets/template/single/style.css?ver=5.5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='fetch-tweets-40c7e82e05210e6e8a3d7e23fdba3cd9-css'  href='https://about.jstor.org/wp-content/plugins/fetch-tweets/template/sidebar/style.css?ver=5.5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='fetch-tweets-ab07c02a9f55e41fb9fe6179b19efafb-css'  href='https://about.jstor.org/wp-content/plugins/fetch-tweets/template/twitter/style.css?ver=5.5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='jm_fts_css-css'  href='https://about.jstor.org/wp-content/themes/aboutjstor2017/static/lloyd.css?ver=1.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='foundation_icons_css-css'  href='https://about.jstor.org/wp-content/themes/aboutjstor2017/static/foundation-icons/foundation-icons.css?ver=1.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='jm_custom_css-css'  href='https://about.jstor.org/wp-content/themes/aboutjstor2017/static/style.css?ver=1.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='jm_offcanvas_css-css'  href='https://about.jstor.org/wp-content/themes/aboutjstor2017/static/offcanvas.css?ver=1.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery_ui_css-css'  href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css?ver=1.12.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://about.jstor.org/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
+<link rel="https://api.w.org/" href="https://about.jstor.org/wp-json/" /><link rel="alternate" type="application/json" href="https://about.jstor.org/wp-json/wp/v2/pages/66" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://about.jstor.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://about.jstor.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.5.3" />
+<link rel='shortlink' href='https://about.jstor.org/?p=66' />
+<link rel="alternate" type="application/json+oembed" href="https://about.jstor.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fabout.jstor.org%2Fterms%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://about.jstor.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fabout.jstor.org%2Fterms%2F&#038;format=xml" />
+<!-- Favicon Rotator -->
+<link rel="shortcut icon" href="https://about.jstor.org/wp-content/uploads/2017/08/JSTOR.png" />
+<link rel="apple-touch-icon-precomposed" href="https://about.jstor.org/wp-content/uploads/2017/08/JSTOR_Final_512px.png" />
+<!-- End Favicon Rotator -->
+<link rel="icon" href="https://about.jstor.org/wp-content/uploads/2017/05/j_favicon_512x512-180x180.png" sizes="32x32" />
+<link rel="icon" href="https://about.jstor.org/wp-content/uploads/2017/05/j_favicon_512x512.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://about.jstor.org/wp-content/uploads/2017/05/j_favicon_512x512-180x180.png" />
+<meta name="msapplication-TileImage" content="https://about.jstor.org/wp-content/uploads/2017/05/j_favicon_512x512.png" />
+		<style type="text/css" id="wp-custom-css">
+			.custom-label{
+	color: #333333;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-top: .5rem;
+}
+
+/* For Librarians custom styling */
+.page-id-8429  .content-row { margin-top: 0;}
+
+.page-id-8429  .hero { min-height:300px;}
+
+.page-id-8429 .librarian-banner {
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+.page-id-8429 .librarian-banner h1 {
+	margin: 30px auto;
+}
+
+.page-id-8429 .librarian-banner-caption {
+	position: absolute;
+    bottom: -100px;
+    right: 0;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.2em;
+    text-align: right;
+}
+
+/* webinar page padding override*/
+.page-id-9387 .callout {
+	padding:2rem 1rem 0 0;
+}
+
+/*
+34.9375em //560px
+$mobile: 42.79464rem; // 600px
+$tablet: 59.9375rem;  // 840px
+$laptop: 91.36607rem; // 1280px
+*/
+
+@media screen and (max-width:34.9375em) {
+	
+}
+
+.pubtable tbody td {
+	padding: 1.5rem;
+	font-size: 16px;
+}
+
+.top-margin-xl {
+	margin-top: 80px;
+}
+
+.jred {
+	color: #990000;
+}
+
+h3 span.speaker-title {
+	color: #676765;
+	line-height: 1rem;
+}
+
+
+.bottom-section ul.social-icons li {
+    margin-right: .5rem;
+    display: inline-block;
+}
+
+.footer .icon-link svg {
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease-in-out;
+    fill: #004152;
+}
+
+.footer .icon-link svg:hover {
+    fill: #1291ae;
+}		</style>
+		
+    <script>
+        // remove no-js and add 'js' to the HTML
+        var doc = document;
+        doc.documentElement.className = doc.documentElement.className.replace("no-js","");
+        doc.documentElement.className += " js ";
+    </script>
+</head>
+
+<body class="page-template&#x20;page-template-page-policy&#x20;page-template-page-policy-php&#x20;page&#x20;page-id-66" data-template="base.twig">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58DMWCL"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="skipNav"><a class="show-on-focus" href="#tocontent">Skip to Main Content</a></div>
+
+<div class="off-canvas position-right show-for-small-only" id="offCanvasRight" data-off-canvas>
+	<!-- Close button -->
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+    
+    <div class="primary-menu">
+       	<ul class="menu&#x20;vertical"  data-close-on-click-inside="false">
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-home&#x20;menu-item-50&#x20;menu-item-has-children">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;">About JSTOR</a>
+				<ul class="menu&#x20;vertical"  data-close-on-click-inside="false">
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-49">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;mission-history&#x2F;">Mission and history</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-466">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;platform-features&#x2F;">Platform features</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-385">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;library-advisory-group&#x2F;">Library Advisory Group</a>
+					</li>
+		</ul>
+		</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-51&#x20;menu-item-has-children">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;whats-in-jstor&#x2F;">What's in JSTOR</a>
+				<ul class="menu&#x20;vertical"  data-close-on-click-inside="false">
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-467">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;whats-in-jstor&#x2F;">Overview</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-52">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;librarians&#x2F;journals&#x2F;">Journals</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-53">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;librarians&#x2F;books&#x2F;">Books</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-54">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;librarians&#x2F;primary-sources&#x2F;">Primary Sources</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-3833">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;librarians&#x2F;thematic-collections&#x2F;">Thematic Collections</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-7033">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;whats-in-jstor&#x2F;open-community-collections&#x2F;">Open Community Collections</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-7164">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;oa-and-free&#x2F;">Open and free content</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-386">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;whats-in-jstor&#x2F;text-mining-support&#x2F;">Text Mining Support</a>
+					</li>
+		</ul>
+		</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-55">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;get-jstor&#x2F;">Get JSTOR</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-56">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;news&#x2F;">News</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-custom&#x20;menu-item-object-custom&#x20;menu-item-421">
+			<a href="&#x2F;webinars&#x2F;">Webinars</a>
+					</li>
+		</ul>
+    </div><!--/.nav-primary-->
+    <div class="utility-menu">
+        	<ul class="menu&#x20;vertical"  data-close-on-click-inside="false">
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-home&#x20;menu-item-727">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;">About</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-9940">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;librarians&#x2F;">For Librarians</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-custom&#x20;menu-item-object-custom&#x20;menu-item-9272">
+			<a href="https&#x3A;&#x2F;&#x2F;support.publishers.jstor.org&#x2F;">For Publishers</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-custom&#x20;menu-item-object-custom&#x20;menu-item-59">
+			<a href="http&#x3A;&#x2F;&#x2F;support.jstor.org&#x2F;">Support</a>
+					</li>
+		</ul>
+    </div><!--/.nav-secondary-->
+</div><!-- /.off-canvas -->
+
+<div class="off-canvas-content" data-off-canvas-content>
+    <header aria-label="header">
+        <nav role="navigation" aria-label="primary" class="nav row">
+                             <div class="logo" role="banner">
+                     <a class="logo-link" href="http://www.jstor.org/" rel="JSTOR"><div class="logo_img"></div></a>
+                     <span class="show-for-sr">JSTOR.org</span>
+                 </div>
+                 <div class="small-12 columns">
+                     <div class="show-for-small-only">
+                         <button type="button" class="button hollow primary float-right off-canvas-menu-button" data-toggle="offCanvasRight">Menu</button>
+                         <div class="home-link-mobile-wrapper"><a href="/" class="home-link-mobile">About JSTOR</a></div>
+                     </div>
+                     <div class="nav-secondary show-for-medium">
+                         	<ul class="list-horizontal&#x20;no-bullet&#x20;m0"  data-close-on-click-inside="false">
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-home&#x20;menu-item-727">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;">About</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-9940">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;librarians&#x2F;">For Librarians</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-custom&#x20;menu-item-object-custom&#x20;menu-item-9272">
+			<a href="https&#x3A;&#x2F;&#x2F;support.publishers.jstor.org&#x2F;">For Publishers</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-custom&#x20;menu-item-object-custom&#x20;menu-item-59">
+			<a href="http&#x3A;&#x2F;&#x2F;support.jstor.org&#x2F;">Support</a>
+					</li>
+		</ul>
+                     </div><!--/.nav-secondary-->
+                     <div class="nav-primary show-for-medium">
+                         	<ul class="nav-primary--menu&#x20;dropdown&#x20;menu" data-dropdown-menu data-close-on-click-inside="false">
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-home&#x20;menu-item-50&#x20;menu-item-has-children">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;">About JSTOR</a>
+				<ul class="nav-primary--menu&#x20;dropdown&#x20;menu" data-dropdown-menu data-close-on-click-inside="false">
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-49">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;mission-history&#x2F;">Mission and history</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-466">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;platform-features&#x2F;">Platform features</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-385">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;library-advisory-group&#x2F;">Library Advisory Group</a>
+					</li>
+		</ul>
+		</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-51&#x20;menu-item-has-children">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;whats-in-jstor&#x2F;">What's in JSTOR</a>
+				<ul class="nav-primary--menu&#x20;dropdown&#x20;menu" data-dropdown-menu data-close-on-click-inside="false">
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-467">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;whats-in-jstor&#x2F;">Overview</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-52">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;librarians&#x2F;journals&#x2F;">Journals</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-53">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;librarians&#x2F;books&#x2F;">Books</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-54">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;librarians&#x2F;primary-sources&#x2F;">Primary Sources</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-3833">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;librarians&#x2F;thematic-collections&#x2F;">Thematic Collections</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-7033">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;whats-in-jstor&#x2F;open-community-collections&#x2F;">Open Community Collections</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-7164">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;oa-and-free&#x2F;">Open and free content</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-386">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;whats-in-jstor&#x2F;text-mining-support&#x2F;">Text Mining Support</a>
+					</li>
+		</ul>
+		</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-55">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;get-jstor&#x2F;">Get JSTOR</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-56">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;news&#x2F;">News</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-custom&#x20;menu-item-object-custom&#x20;menu-item-421">
+			<a href="&#x2F;webinars&#x2F;">Webinars</a>
+					</li>
+		</ul>
+                     </div><!--/.nav-primary-->
+                 </div>
+                    </nav>
+    </header>
+
+<main>
+        
+    <div class="content-row row&#x20;layout-right-sidebar">
+                    <div class="small-12 columns" data-sc="content:header">
+            <div class="article-header">
+                <h1 class="article-h1  header">Terms and Conditions of Use</h1>
+                            </div>
+        </div>
+            <div id="tocontent" class="content medium-8&#x20;small-12&#x20;columns">
+                <div class="content-wrapper" data-sc="content:page">
+        <article class="post-type-page" id="post-66">
+                            <section class="article-content">
+                    <div class="article-body">
+                        <div class="text-justify">
+<p>Welcome to the JSTOR digital library and platform found at jstor.org (“JSTOR”). Your use of JSTOR is subject to the following Terms and Conditions, which should be read in their entirety.</p>
+<ol>
+<li style="margin-bottom: 8px;"><a href="#who-can-use">Who can use JSTOR?</a></li>
+<li style="margin-bottom: 8px;"><a href="#whats-in-jstor">What’s in JSTOR?</a></li>
+<li style="margin-bottom: 8px;"><a href="#content-use">What can I do with Content?</a></li>
+<li style="margin-bottom: 8px;"><a href="#prohibited-use">What use of JSTOR and its Content is prohibited?</a></li>
+<li style="margin-bottom: 8px;"><a href="#ongoing-access">How does JSTOR ensure ongoing access to Content?</a></li>
+<li style="margin-bottom: 8px;"><a href="#responsibilities">What are my responsibilities to JSTOR?</a></li>
+<li style="margin-bottom: 8px;"><a href="#service">What level of service does JSTOR provide?</a></li>
+<li style="margin-bottom: 8px;"><a href="#intellectual-property-rights">What intellectual property rights apply?</a></li>
+<li style="margin-bottom: 8px;"><a href="#jstor-responsibility">To what extent is JSTOR responsible for its platform and the Content?</a></li>
+<li style="margin-bottom: 8px;"><a href="#personal-information">How does JSTOR protect my personal information?</a></li>
+<li style="margin-bottom: 8px;"><a href="#other-legal-terms">What other legal terms apply?</a></li>
+</ol>
+<ol class="top-margin-m" style="list-style: none; margin-left: 0;">
+<li>
+<h2 id="who-can-use" class="h3">1   Who can use JSTOR?</h2>
+<p>We define our “Authorized Users” as:</p>
+<ol class="w-indent" style="list-style-type: lower-alpha;">
+<li>People with access through an institution licensing JSTOR on their behalf, namely a college, university, secondary school, public library, museum, foundation, government agency, research center, corporate/for-profit organization or scholarly society (“Institutional Licensee”).  This includes individuals i)  permitted to be on the premises of an Institutional Licensee and access JSTOR while on site and ii) who may also access JSTOR remotely, specifically:
+<ul class="w-indent top-margin-s">
+<li>current students</li>
+<li>affiliated researchers and lecturers</li>
+<li>staff</li>
+<li>patrons of a public library which has licensed remote access</li>
+<li>members of a scholarly society</li>
+<li>individuals who have a degree from an Institutional Licensee that has licensed access for alumni)</li>
+</ul>
+<p>Please note that if you access JSTOR through an Institutional Licensee, your use of JSTOR may be subject to a separate agreement between JSTOR and such Institutional Licensee. If that agreement has different terms, those terms will have precedence over these Terms and Conditions of Use.  If you have questions about your Institutional Licensee&#8217;s license agreement (“Institutional Participation Agreement”), please contact your librarian.</li>
+<li>People who come to JSTOR directly for access.  This includes individuals who:
+<ul class="w-indent top-margin-s">
+<li>register for a free individual account that enables access to a limited number of available read-only Content items for fixed periods of time (“Read Only Users”);</li>
+<li>pay to use our JPASS service to access certain JSTOR Collection Content for unlimited read-only access and a limited number of downloaded content items per month (“JPASS Users”);</li>
+<li>use our Data for Research platform (described in Section 4 below);</li>
+<li>purchase an individual item of Content from publishers via JSTOR; and/or</li>
+<li>access openly available content on JSTOR, including but not limited to Early Journal Content, the Open JSTOR Collection or relevant portions of the Community Collection (defined in Section 3 below). (“Open Content Users”).</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<h2 id="whats-in-jstor" class="h3">2   What’s in JSTOR?</h2>
+<p>JSTOR offers many types of scholarly content and materials (collectively referred to as “Content”), including the following:</p>
+<ol class="w-indent top-margin-s" style="list-style-type: lower-alpha;">
+<li><strong>JSTOR Collection</strong>: Content in the “JSTOR Collection” is selected by JSTOR’s editors to be included in JSTOR digital library. Access to the JSTOR Collection typically is limited to Authorized Users who have a license to view this Content (either directly or through an Institutional Licensee), although from time to time portions of the JSTOR Collection may be made openly available by JSTOR.  The portions of the JSTOR Collection that you have permission to access are referred to as “Licensed Content”.<br />
+The JSTOR Collection includes:</p>
+<ul class="w-indent top-margin-s">
+<li>“Books”, specifically, complete books and/or portions of such books, such as book chapters.</li>
+<li>“Journals Hosting Content”, specifically, journals that are not part of the JSTOR Collections Content but that are hosted by JSTOR on behalf of individual publishers.</li>
+<li>“JSTOR Archive Collections Content”, specifically, journal volumes and issues curated by JSTOR editors into Archive and Thematic Collections.</li>
+<li>“Primary Source Materials”, specifically, the Cultural Heritage Sites, Landscapes, and Struggles for Freedom in South Africa Collections, Global Plants plant specimens, and any other primary source materials curated by JSTOR.</li>
+</ul>
+</li>
+<li><strong>Open JSTOR Collection:</strong> JSTOR’s editors may also choose to include certain Content in an open model where access is available to any Authorized Users who agree to these Terms and Conditions of Use.<br />
+The Open JSTOR Collection includes:</p>
+<ul class="w-indent top-margin-s">
+<li>“Early Journal Content”, specifically, journal content published prior to the last ninety-five years in the United States or prior to the last one hundred forty-three years if initially published internationally.  For example, this means that in 2019, Early Journal Content will include content published prior to 1924 in the United States and prior to 1876 internationally.</li>
+<li>“Open Access Content”, specifically, books, journals, primary source materials, as well as grey literature, including but not limited to research reports, white papers, working papers, policy papers, government documents, and newsletters, which JSTOR’s contributing publishers have agreed to make openly available to all Authorized Users, possibly under the terms of an indicated Creative Commons license.</li>
+<li><span style="font-weight: 400;">“Reveal Digital Content”, specifically, periodicals, newspapers, and other historical materials for which rightsholders contributing content to Reveal Digital  have agreed to make openly available to all Authorized Users </span><span style="font-weight: 400;">and/or which is being made available in reliance on fair use and/or other provisions of the United States copyright or other laws</span><span style="font-weight: 400;">. </span></li>
+</ul>
+</li>
+<li><strong>Artstor Collection and Open Artstor Collection:</strong> Authorized Users may encounter on or via the JSTOR platform Content from the Artstor Digital Library (“Artstor Content”), a companion service focusing on image-based material.  The Artstor Content has been selected by Artstor editors for inclusion in the Artstor Digital Library. Artstor Content is subject solely to the <a href="https://www.artstor.org/artstor-terms">Artstor Terms and Conditions of Use</a> (or Institutional Licensee’s Artstor agreement) and are not subject to these Terms and Conditions.<br />
+Artstor Content includes:</p>
+<ul class="w-indent top-margin-s">
+<li>“Artstor Collection”: Artstor Content which is made available to Authorized Users if the Authorized User’s Institutional Licensee has licensed access to such Content.</li>
+<li>“Open Artstor Collection”:  Artstor Content which is made available on a free-of-charge basis, possibly under the terms of an indicated Creative Commons license.</li>
+</ul>
+</li>
+<li><strong>Community Collection</strong>: JSTOR may allow Institutional Licensees or Authorized Users to select and add Content, such as images, videos, audio files, texts, cataloging information, graphics, and all other materials, to the JSTOR platform. JSTOR does not screen, select, or clear the rights to the Community Collection.</li>
+</ol>
+</li>
+<li>
+<h2 id="content-use" class="h3">3   What can I do with Content?</h2>
+<p>JSTOR encourages Authorized Users to engage in research activities, including downloading or printing Content for non-commercial, scholarly purposes, as well as use the Content on its platform in the following ways (as long as you abide by the prohibited uses in Section 4 below and noting that Artstor Collection will be subject to the separate terms indicated above):</p>
+<ul class="w-indent top-margin-s">
+<li>classroom or organizational instruction and activities (for example, a discreet handout or projection of a Content item within a classroom setting);</li>
+<li>in student assignments, educational presentations or in research papers or dissertations, including reproductions of the dissertations (provided such reproductions do not include Books and are only for personal use, library deposit, and/or use solely within your Institutional Licensee);</li>
+<li>sharing of portions of Content with other individuals for the purposes of collaboration and discussion (for example, sending an individual Content item to a fellow scholar for the purpose of collaboration on a research project);</li>
+<li>if you are an author or other creator of a journal article, incorporating your article into other databases or websites as long as you have any needed prior permission from the publisher and/or other rights holders;</li>
+<li>linking, specifically, incorporating stable URLs JSTOR provides for each Content item into other online spaces to facilitate or direct access (for example, incorporating a link to an assigned Content item into an online syllabi);</li>
+<li>use JSTOR’s Data for Research service, which has a self-service site (<a href="https://www.jstor.org/dfr/">https://www.jstor.org/dfr/</a>), for certain types of text and data mining across selected Content from the JSTOR database.  Data for Research also accepts requests to enter into more complex text and data mining research projects which JSTOR may grant in its discretion subject to additional terms of use.</li>
+<li>interlibrary loan (“ILL”), specifically, requests your library makes on your behalf to an Institutional Licensee for an item of JSTOR Collections Content, Journals Hosting Content, and/or Books (“Interlibrary Loan” or “ILL”).  Institutional Licensees may fulfill such requests via secure means provided that such use is not at a volume that would substitute for a subscription to the journal or acquisition of access to a Book (for example, ILL of a Book shall be restricted to a single copy of a Book chapter); and</li>
+<li>use in accordance with the principles of fair use under <a href="https://www.copyright.gov/title17/92chap1.html#107">Section 107 of the United States Copyright Act</a>.</li>
+</ul>
+<p>Please note different, possibly broader, use may apply to certain types of Content, specifically:</p>
+<ul class="w-indent top-margin-s">
+<li><u>Early Journal Content</u>. In addition to all permitted uses described above, you are free to copy, use, and redistribute the Early Journal Content in part or in whole for non-commercial purposes. Please be considerate of other users and do not use robots or other devices or coordinate activity that may disrupt the JSTOR platform to systematically download these works.  We ask that you please acknowledge JSTOR as the source of the Early Journal Content by either linking directly to the JSTOR site using the stable URL for the Content item or, if using the Early Journal Content offline, by stating “Courtesy of JSTOR.”</li>
+<li><u>Open JSTOR Collection and Community Collection.</u> The Open JSTOR Collection and Community Collection Content may be subject to the terms of a Creative Commons license or other rights statement or license, as indicated in the copyright statement or metadata for the content.  If an Open JSTOR Collection or Community Collection item has different terms posted where the content appears, those terms have precedence over these Terms and Conditions of Use.</li>
+</ul>
+<p>Please note that Licensed Content downloaded or printed in a manner consistent with these Terms and Conditions may continue to be used as permitted by these Terms and Conditions even if the license allowing such access later terminates or expires.</li>
+<li>
+<h2 id="prohibited-use" class="h3">4   What use of JSTOR and its Content is prohibited?</h2>
+<p>It is important that JSTOR respects the permissions it receives from publishers, rightsholders, and contributors and ensures the JSTOR platform is reliably available. Therefore, unless otherwise expressly permitted for Early Journal Content, Open JSTOR Collection Content, or Community Collection Content, Institutional Licensees and users may not:</p>
+<ul class="w-indent top-margin-s">
+<li>use or authorize the use of JSTOR or its Content for commercial purposes or gains, such as selling access to the JSTOR service or any part of the Content (but not including research which may later be incorporated into something sold, for example, a book containing academic research).</li>
+<li>except for the purpose of collaboration or discussion or with respect to an author’s own articles as described in Section 4, provide and/or authorize access to the Content to persons or entities other than Authorized Users, including but not limited to by incorporating Content items into an unrestricted database or website;</li>
+<li>attempt to override, circumvent, or disable any encryption features or software protections employed by JSTOR or undertake any activity such as the use of computer programs that automatically download or export Content as those computer programs may interfere with, disrupt or otherwise burden the JSTOR server(s) or any third-party server(s) being used or accessed in connection with JSTOR;</li>
+<li>systematically print out, download, reproduce or distribute (or collaborate with others to systematically print out, download, reproduce or distribute) significant portions or a bulk of the Content, including but not limited to, downloading or printing substantial portions of a run of a journal or stocking or replacing print holdings;</li>
+<li>include the Content or portions thereof in course packs, electronic reserves, repositories, or organizational intranets (as linking may be used instead);</li>
+<li>for Read Only Users or JPASS Users, violate the download restrictions which apply to the service;</li>
+<li>modify, obscure, or remove any copyright notice or other attribution included in the Content; or</li>
+<li>make any use, display, performance, reproduction, or distribution that exceeds or violates these Terms and Conditions of Use.</li>
+</ul>
+</li>
+<li>
+<h2 id="ongoing-access" class="h3">5   How does JSTOR ensure ongoing access to Content?</h2>
+<p>JSTOR provides for long-term preservation and access to scholarly materials and provides specific long-term access assurances for certain Content in its database.</p>
+<ul class="w-indent top-margin-s">
+<li><u>Archiving of JSTOR Archive Collections Content</u>. JSTOR provides long term preservation of the JSTOR Archive Collections, supported by an endowment, redundant storage and multiple back-up files, and for those items of JSTOR Archive Collections Content that have print editions, establishing a dedicated repository at a participating institution to house and preserve the print copies under archival-quality conditions. For Licensed Content, access will be available as long as the applicable license is in effect and all applicable fees have been paid.</li>
+<li><u>Post Cancellation Access for Journals Hosting Content.</u> The applicable publisher of a journal in Journals Hosting Content shall provide a method for post-cancellation access. The applicable publisher shall also be responsible for ensuring Institutional Licensees and Authorized Users receive post-cancellation access to titles in accordance with the NISO Transfer Code of Practice.</li>
+<li><u>Perpetual Access for Books</u>. If an Institutional Licensee cancels or does not renew its Institutional Participation Agreement, JSTOR shall provide access to any previously licensed Books through either JSTOR (with possible limitations on access and functionality) or Portico (many of the Books which are available in JSTOR are also part of the Portico digital preservation service) as selected in JSTOR’s discretion.</li>
+</ul>
+</li>
+<li>
+<h2 id="responsibilities" class="h3">6   What are my responsibilities to JSTOR?</h2>
+<ol class="w-indent" style="list-style-type: lower-alpha;">
+<li><u>Security</u>. Authorized Users opening user accounts are responsible for maintaining security of their usernames and/or passwords and for usage or activity made through their account.  Institutional Licensees are responsible for making reasonable efforts to limit access to the Licensed Content to valid Authorized Users (and update the status of its Authorized Users as needed), to protect the Content from unpermitted use, and to cooperate with JSTOR by providing information or assistance necessary for JSTOR to implement its user authentication processes.</li>
+<li><u>Unpermitted Use</u>. Institutional Licensees or Authorized Users must notify JSTOR of any unpermitted use of JSTOR or security breach affecting access to JSTOR of which they are aware. Institutional Licensees and Authorized Users shall work cooperatively with JSTOR to resolve problems of unpermitted use. If there is an unauthorized use or a violation of these Terms and Conditions of Use, JSTOR may suspend or terminate, or request Institutional Licensee assist in suspending or terminating where practicable, access to a specific user, IP address(es), or other authorization and authentication mechanisms used to gain access for the unauthorized use.  JSTOR shall make reasonable efforts to contact the Institutional Licensee prior to suspension or termination of access and to restore access promptly following successful resolution of the matter.</li>
+<li><u>Posted Material</u>. With respect to individual Authorized Users, where you are able to submit material and/or post comments on JSTOR, you represent and warrant that you will not upload or otherwise publish through JSTOR any materials that: (a) violate copyright, other intellectual property or third party rights; (b) are libelous, defamatory, obscene, pornographic, hateful, abusive, or invasive of another’s privacy; or (c) contain a virus, spyware, or other harmful component, advertising of any kind, or false or misleading indications of origin or statements of fact. You acknowledge and agree that JSTOR may edit, remove or modify any material or comments that you submit or post. In addition, JSTOR may reproduce, distribute, or otherwise use any material or comments you make publicly available via JSTOR.</li>
+</ol>
+</li>
+<li>
+<h2 id="service" class="h3">7   What level of service does JSTOR provide?</h2>
+<ol class="w-indent" style="list-style-type: lower-alpha;">
+<li>JSTOR uses reasonable efforts to provide 24/7 availability of the JSTOR platform subject to periodic downtime for maintenance or updates to the server, platform, or equipment (&#8220;Maintenance Downtime&#8221;). If JSTOR fails to provide online availability to the JSTOR platform for more than 72 hours during any period of 30 consecutive calendar days Institutional Licensee may, upon written request, (a) be granted its choice of a refund or a credit of a prorated portion of its annual access fee for each 30-day period so affected or (b) terminate its agreement by providing written notice to JSTOR.   If you experience any issue with the JSTOR service, please contact us (see  <a href="https://support.jstor.org/">https://support.jstor.org/</a>).</li>
+<li>JSTOR may occasionally withdraw JSTOR Collection Content or Open JSTOR Collection Content for a good cause reason, for example, because of a legal claim with respect to a specific item of such Content. JSTOR makes reasonable efforts to minimize any inconveniences caused by such withdrawals but JSTOR will in no way be held liable for such withdrawals.  For Institutional Licensees, if JSTOR withdraws a material amount of JSTOR Collection Content, Institutional Licensee may submit a written request to receive a prorated refund or credit of its annual access fee under its Institutional Participation Agreement in effect or to terminate such Institutional Participation Agreement without penalty.  Please note contributors of Community Collection Content may withdraw such Content in their discretion at any time.</li>
+<li>JSTOR is committed to supporting and working with industry standards and best practices for online information delivery as these standards are developed.  Specifically, JSTOR shall use reasonable efforts to ensure that:
+<ul class="w-indent top-margin-s">
+<li>the JSTOR Collection and Open JSTOR Collection is produced by digitizing print textual material and is a complete and faithful replication of the print version of the Content in these collections.</li>
+<li>JSTOR platform is compliant with Section 508 of the Rehabilitation Act and W3C WAI WCAG 2.1 Level AA.  Please note that (i) the Primary Source Materials include a large number of images, maps and other heavily visual forms of content, and in cases where the magnification feature of the image viewer does not suffice, JSTOR will only be able to provide access to metadata regarding images; (ii) <span style="font-weight: 400;">the Reveal Digital Content, which contains scanned primary source materials that may be in partial conformance</span> and (iii) Community Collection Content may be in partial conformance, as the accessibility of Community Collection Content depends on the third-party contributor, and is outside of JSTOR’s control.  More information regarding JSTOR’s accessibility compliance, including available VPAT documents, may be accessed at <a href="https://about.jstor.org/accessibility/">https://about.jstor.org/accessibility/</a>.</li>
+<li>the JSTOR platform meets ANSI/NISO z39.88-2004 OpenURL standards and is compatible with the NISO Metasearch XML Gateway (MXG) protocol in development, XML and SRU/SRW search interfaces; and</li>
+<li>it makes available to Institutional Licensees COUNTER-compliant usage statistics.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<h2 id="intellectual-property-rights" class="h3">8   What intellectual property rights apply?</h2>
+<ol class="w-indent" style="list-style-type: lower-alpha;">
+<li><u>The JSTOR Platform and Content.</u> The JSTOR platform and any trademarks, issued patents and patent applications, copyrights and copyright registrations and applications, rights in ideas, designs, works of authorship, derivative works, and all other intellectual property rights (collectively, &#8220;Intellectual Property&#8221;) relating to the JSTOR platform are proprietary to JSTOR and all Intellectual Property related to the Content provided by JSTOR’s participating libraries, universities, publishers, scholarly societies, and other Content contributors are proprietary to them, subject to the rights of third parties.</li>
+<li><u>JSTOR and Institutional Licensee Trademarks.</u> JSTOR’s and Institutional Licensee’s names or trademarks may not be used without permission except: (i) JSTOR may use Institutional Licensees&#8217; names and/or the names of their libraries alongside the names of other participants in brochures or other materials identifying JSTOR participating institutions, and (ii) Institutional Licensees are encouraged to use JSTOR&#8217;s name and logo to announce participation to Authorized Users and to train Authorized Users on the use of JSTOR.</li>
+<li><u>DMCA Notifications.</u> If you believe that content in the Primary Source Materials or Community Collection violates your copyright or otherwise violates your rights, please send a written notice to JSTOR directed to the Office of the General Counsel, JSTOR, 101 Greenwich Street 18th Floor, New York, NY, 10006 or send an email to the address listed at <a href="https://dmca.copyright.gov/osp/publish/history.html?search=jstor&amp;id=3c708725126b8f444e9163396ea939e5">the U.S. Copyright Office DMCA Designated Agent Directory</a>. Please provide with your notice the following information, consistent with the Digital Millennium Copyright Act: (a) a physical or electronic signature of a person authorized to act on behalf of the copyright owner; (b) identification of the copyrighted work(s) claimed to have been infringed; (c) identification of the infringing material and information that will permit JSTOR to locate the material; (d) information that will permit us to contact you, including an address, telephone number, and, if available, an electronic mail address at which you may be contacted; (e) a statement by you that, in your good faith belief, use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law; and (f) a statement that the information in the notification is accurate, and that you are authorized to act on behalf of the owner of an exclusive right that is allegedly infringed. Once JSTOR receives this notification, or if JSTOR learns of the claim from another source, JSTOR may remove such content pending the resolution of the claim.</li>
+</ol>
+</li>
+<li>
+<h2 id="jstor-responsibility" class="h3">9   To what extent is JSTOR responsible for its platform and the Content?</h2>
+<ol class="w-indent" style="list-style-type: lower-alpha;">
+<li>Based on its arrangements with publishers, rightsholders, and other Content contributors, JSTOR represents and warrants under the laws of the United States that to its knowledge use of the JSTOR platform and Licensed Content (other than Primary Source Materials) by Authorized Users in accordance with these Terms and Conditions of Use will not infringe the copyright of any third party. This representation and warranty does not apply, however, to (i) the Community Collection (as JSTOR does not screen, select, edit or review Community Collection Content for legal purposes, accuracy or usefulness); (ii) any modifications or derivative works of the Content created by Institutional Licensees, Authorized Users or by any third party or (iii) any usage of JSTOR or Content in violation of these Terms and Conditions of Use. JSTOR also does not make any representation or warranty, and users shall assume sole responsibility for obtaining permission as needed to address, third-party rights besides copyright (such as rights of publicity and privacy) in the Early Journal Content.<br />
+With respect to Primary Source Content, JSTOR represents and warrants it has made diligent efforts to either locate and seek permission from rightsholders or rely on U.S. fair use or similar provisions of copyright law in making the Primary Source Materials available. JSTOR agrees to indemnify Institutional Licensees against damages for copyright infringement (and related legal fees and expenses) arising out of use of the Primary Source Materials for its intended purposes in accordance with these Terms and Conditions of Use to the extent stated in 9(b) below, provided that Institutional Licensee notifies JSTOR promptly of any such claim and allow JSTOR to control the defense and/or settlement of the dispute.</li>
+<li>JSTOR will not be liable, and Institutional Licensees and Authorized Users agree that they will not hold JSTOR liable for any loss, injury, claim, liability, damages, costs, and/or attorneys’ fees of any kind that result from the unavailability, delays, or interruption of JSTOR, Content, or other JSTOR services, or arising out of or in connection with Institutional Licensee&#8217;s or Authorized Users&#8217; use of JSTOR or Content in violation of these Terms and Conditions of Use. As JSTOR is a not-for-profit organization responsible for ensuring the long-term availability and access of Content, in no event will JSTOR&#8217;s liability to an Institutional Licensee exceed the fees paid to JSTOR by that Institutional Licensee for the term of the agreement then in effect. OTHER THAN ANY EXPRESS WARRANTIES STATED IN THIS SECTION 11, JSTOR, CONTENT, INFORMATION, MATERIALS, ACCESS SOFTWARE, OR OTHER SERVICES ARE PROVIDED ON AN &#8220;AS IS&#8221; BASIS, AND JSTOR AND ANY AND ALL THIRD PARTY CONTENT AND SOFTWARE PROVIDERS AND/OR LICENSORS (&#8220;CONTENT PROVIDERS&#8221;) DISCLAIM ANY AND ALL OTHER WARRANTIES, CONDITIONS, OR REPRESENTATIONS OF ANY KIND (EXPRESS, IMPLIED, ORAL, OR WRITTEN) RELATING THERETO OR TO ANY PART THEREOF, INCLUDING WITHOUT LIMITATION, ANY AND ALL IMPLIED WARRANTIES OF QUALITY, PERFORMANCE, NON-INFRINGEMENT, COMPATIBILITY, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. JSTOR and its content providers make no warranties with respect to any harm that may be caused by the transmission of a computer virus or other such harmful computer program, except that JSTOR will exercise a reasonable level of care to prevent such occurrences.</li>
+</ol>
+</li>
+<li>
+<h2 id="personal-information" class="h3">10   How does JSTOR protect my personal information?</h2>
+<p>Any personal information you may provide JSTOR will be used only in accordance with the terms of our JSTOR&#8217;s Privacy Policy, available <a href="https://www.ithaka.org/privacypolicy">https://www.ithaka.org/privacypolicy</a> as it may be amended from time to time.  JSTOR does not knowingly collect personal information from anyone under the age of 16 and, if it learns it has collected such personal information, promptly will delete that information.</li>
+<li>
+<h2 id="other-legal-terms" class="h3">11 What other legal terms apply?</h2>
+<ol class="w-indent" style="list-style-type: lower-alpha;">
+<li>These Terms and Conditions of Use will be interpreted and construed in the English language (which shall control over any other language version) according to the laws of the United States and any laws or conventions that might direct the application of the laws of another jurisdiction shall not apply. If an Institutional Licensee is a United States public educational or government institution, those portions of this Agreement which are invalid or unenforceable against such Institutional Licensee due to applicable state or federal law, shall be construed in a manner most consistent with applicable governing law.</li>
+<li>If any provision of these Terms and Conditions of Use are held to be invalid, illegal, unenforceable, or in conflict with the law of any jurisdiction, all other provisions shall remain in full force and effect. A waiver of any breach of these Terms and Conditions of Use will not be deemed a waiver of other breaches of these Terms and Conditions of Use.</li>
+<li>Neither JSTOR nor Institutional Licensees or Authorized Users will be liable for failures or delays in performing their obligations pursuant to this contract arising from any cause beyond their control, including but not limited to, act of God, acts of civil or military authority, terrorism, fires, strikes, lockouts or labor disputes, epidemics, wars, riots, earthquakes, storms, typhoons and floods and in the event of any such delay, the time for either party’s performance will be extended for a period equal to the time lost by reason of the delay. If the conditions giving rise to the delay continue beyond thirty (30) consecutive days, either party may terminate its agreement with the other by giving written notice to the other party.</li>
+<li>To manage the evolving needs of Institutional Licensees, Authorized Users, and Content providers and contributors, JSTOR reserves the right to reasonably modify these Terms and Conditions, or any aspect of JSTOR, at any time, however, JSTOR intends that such modifications shall not materially detract from the scope of Permitted Uses outlined herein. The most updated of these Terms and Conditions of Use will be posted on the JSTOR website, and JSTOR will notify Institutional Licensees via email of material modifications. Subject to any terms to the contrary in an applicable Institutional Participation Agreement, a modification will become effective for an Institutional Licensee if it does not object in writing to JSTOR within 60 (sixty) days from the time JSTOR emails notice of the modification. In the event of such an objection, JSTOR shall make reasonable efforts to address any concerns or the Institutional Licensee will have the right to terminate the Agreement on 30 (thirty) days written notice.</li>
+</ol>
+</li>
+<li><em>Last updated on July 2, 2020</em></li>
+</ol>
+</div>
+
+                                            </div>
+                </section>
+                    </article>
+    </div><!-- /content-wrapper -->
+        </div><!--/.content-->
+                            <aside class="sidebar-right medium-4&#x20;small-12&#x20;columns">
+                &nbsp;
+            </aside>
+            </div>
+
+        </main>
+
+    <footer class="footer" aria-label="footer">
+        <div class="row">
+    <div class="small-12 columns">
+        <div class="h2 heading mb1">Explore JSTOR</div>
+    </div>
+</div>
+<div class="row bottom-section">
+    <div class="medium-12 large-9 columns">
+        <div class="row">
+            <div class="medium-12 large-9 columns">
+                <div class="row">
+                    <div class="small-12  medium-6 columns">
+                        <div class="row">
+                            <div class="small-6 columns">
+                                <ul class="no-bullet bottom-margin-s">
+                                    <li>
+                                        <a href="http://www.jstor.org/subjects">By Subject</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.jstor.org/action/showJournals?browseType=title">By Title</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.jstor.org/publishers">By Publisher</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.jstor.org/action/showAdvancedSearch">Advanced Search</a>
+                                    </li>
+<li><a href="http://www.jstor.org/dfr/">Data for Research</a></li>
+                                </ul>
+                            </div>
+                            <div class="small-6 columns">
+                                <ul class="no-bullet bottom-margin-s">
+                                    <li>
+                                        <a href="https://support.jstor.org/hc/en-us/articles/360000313328">Get Access</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://support.jstor.org/">Support</a>
+                                    </li>
+<li>
+                                        <a href="https://guides.jstor.org/">LibGuides</a>
+                                    </li>
+<li>
+                                        <a href="https://guides.jstor.org/researchbasics">Research Basics</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-12  medium-6 columns">
+                        <div class="row">
+                            <div class="small-6 columns column-divider">
+                                <ul class="no-bullet bottom-margin-s">
+                                    <li>
+                                        <a href="/">About JSTOR</a>
+                                    </li>
+                                    <li>
+                                        <a href="/mission-history/">Mission and History</a>
+                                    </li>
+                                    <li>
+                                        <a href="/whats-in-jstor/">What's in JSTOR</a>
+                                    </li>
+                                    <li>
+                                        <a href="/get-jstor/">Get JSTOR</a>
+                                    </li>
+                                    <li>
+                                        <a href="/news/">News</a>
+                                    </li>
+                                    <li>
+                                        <a href="/webinars/">Webinars</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="small-6 columns">
+                                <ul class="no-bullet bottom-margin-s">
+<li><a href="http://labs.jstor.org/" target="_blank" title="This link opens in a new window">JSTOR Labs</a></li>
+                    <li><a href="https://daily.jstor.org/" target="_blank" title="This link opens in a new window">JSTOR Daily</a></li>
+                    <li><a href="https://www.ithaka.org/careers/" target="_blank" title="This link opens in a new window">Careers</a></li>
+                    <li><a href="http://www.jstor.org/contact-us/" target="_blank" title="This link opens in a new window">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="medium-12 large-3 end columns">
+                <ul class="no-bullet bottom-margin-s">
+                    <li>
+                        <a class="button secondary" href="/librarians">For Librarians</a>
+                    </li>
+                    <li>
+                        <a class="button secondary" href="https://support.publishers.jstor.org/">For Publishers</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="medium-12 large-3 end columns">
+        <ul class="no-bullet list-horizontal social-icons compact-bottom">
+            <li>
+                <a href="https://twitter.com/JSTOR" class="icon-link">
+                    <span class="show-for-sr">Twitter</span>
+                    <i class="fi-social-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.facebook.com/JSTOR.org" class="icon-link">
+                    <span class="show-for-sr">Facebook</span>
+                    <i class="fi-social-facebook"></i>
+                </a>
+            </li>
+        </ul>
+        <p>
+            <small>
+                JSTOR is part of <a href="https://www.ithaka.org">ITHAKA</a>, a not-for-profit organization helping the
+                academic community use digital technologies to preserve the
+                scholarly record and to advance research and teaching in
+                sustainable ways.
+            </small>
+        </p>
+        <p class="compact-bottom">
+            <small>
+                ©2000-2020 ITHAKA. All Rights Reserved. JSTOR®, the JSTOR
+                logo, JPASS®, Artstor®, Reveal Digital™, and ITHAKA® are registered trademarks of ITHAKA.
+            </small>
+        </p>
+    </div>
+</div>
+
+
+
+
+<div class="expanded row">
+    <div class="row">
+        <div class="medium-12 large-9 columns">
+            	<ul class="list-horizontal&#x20;no-bullet"  data-close-on-click-inside="false">
+			<li class="&#x20;menu-item&#x20;menu-item-type-custom&#x20;menu-item-object-custom&#x20;menu-item-887">
+			<a href="http&#x3A;&#x2F;&#x2F;www.jstor.org">JSTOR.org</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;current-menu-item&#x20;page_item&#x20;page-item-66&#x20;current_page_item&#x20;menu-item-74">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;terms&#x2F;">Terms and Conditions of Use</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-custom&#x20;menu-item-object-custom&#x20;menu-item-4070">
+			<a href="https&#x3A;&#x2F;&#x2F;www.ithaka.org&#x2F;privacypolicy">Privacy Policy</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-custom&#x20;menu-item-object-custom&#x20;menu-item-4059">
+			<a href="https&#x3A;&#x2F;&#x2F;www.ithaka.org&#x2F;cookies">Cookie Policy</a>
+					</li>
+			<li class="&#x20;menu-item&#x20;menu-item-type-post_type&#x20;menu-item-object-page&#x20;menu-item-77">
+			<a href="https&#x3A;&#x2F;&#x2F;about.jstor.org&#x2F;accessibility&#x2F;">Accessibility</a>
+					</li>
+		</ul>
+        </div>
+        <div class="medium-12 large-3 columns">
+            <div id="google_translate_element"></div><script type="text/javascript">
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+                }
+            </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </div>
+    </div>
+</div>
+
+    </footer>
+    			<script>
+				// Used by Gallery Custom Links to handle tenacious Lightboxes
+				jQuery(document).ready(function () {
+
+					function mgclInit() {
+						if (jQuery.fn.off) {
+							jQuery('.no-lightbox, .no-lightbox img').off('click'); // jQuery 1.7+
+						}
+						else {
+							jQuery('.no-lightbox, .no-lightbox img').unbind('click'); // < jQuery 1.7
+						}
+						jQuery('a.no-lightbox').click(mgclOnClick);
+
+						if (jQuery.fn.off) {
+							jQuery('a.set-target').off('click'); // jQuery 1.7+
+						}
+						else {
+							jQuery('a.set-target').unbind('click'); // < jQuery 1.7
+						}
+						jQuery('a.set-target').click(mgclOnClick);
+					}
+
+					function mgclOnClick() {
+						if (!this.target || this.target == '' || this.target == '_self')
+							window.location = this.href;
+						else
+							window.open(this.href,this.target);
+						return false;
+					}
+
+					// From WP Gallery Custom Links
+					// Reduce the number of  conflicting lightboxes
+					function mgclAddLoadEvent(func) {
+						var oldOnload = window.onload;
+						if (typeof window.onload != 'function') {
+							window.onload = func;
+						} else {
+							window.onload = function() {
+								oldOnload();
+								func();
+							}
+						}
+					}
+
+					mgclAddLoadEvent(mgclInit);
+					mgclInit();
+
+				});
+			</script>
+		<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/about.jstor.org\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://about.jstor.org/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.3' id='contact-form-7-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js?ver=3.1.1' id='jquery_js-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/js/foundation.min.js?ver=6.3.0' id='foundation_js-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js?ver=2.8.3' id='modernizr_js-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js?ver=1.12.1' id='jquery_ui_js-js'></script>
+<script type='text/javascript' src='https://about.jstor.org/wp-content/themes/aboutjstor2017/static/site.js?ver=1.1.2' id='jm_custom_js-js'></script>
+<script type='text/javascript' src='https://about.jstor.org/wp-includes/js/wp-embed.min.js?ver=5.5.3' id='wp-embed-js'></script>
+
+
+</div><!-- /.off-canvas-content -->
+
+<script src="https://static.ithaka.org/gdpr-banner/js/banner.js" type="text/javascript"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"6406409950","applicationID":"62396429","transactionName":"NFEBYBNZVksEUhJZDA0bIlcVUVdWSkEHVwZORAxYCFtB","queueTime":0,"applicationTime":160,"atts":"GBYCFltDRUU=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
