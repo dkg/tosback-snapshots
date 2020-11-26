@@ -1,0 +1,886 @@
+  
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"7579c0c6e8","applicationID":"6827321","transactionName":"JVcNEkVbXFRVSxxAAgFdEElHRllOUVpKbxMJVAoFTg==","queueTime":0,"applicationTime":24,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"7579c0c6e8",applicationID:"6827321"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+    <title>Privacy Policy, VPN Network Services | Private Internet Access</title>
+    <link rel="apple-touch-icon" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-b55a0cff11a717c9b39c21c4fddb5b29e01e0d80f8502c74f6ee37755add9827.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-114x114-dbd99960150201ca989e0cb86b715d723d24d8e5ef16f1ba0d86e4988b7289d4.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-60x60-40444ea401e9610a7a9bc708e3e3c9c1e20df88fc392d8b81387fb615f852ef5.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-120x120-08d7c6c79279221c21b062933fd3d2a90cfdd47628c155dffbdc30c4b9e9f7eb.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-72x72-577c2d94cb44f355987f945581355b615ae131b34e60a154732cfa1b97bea746.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-144x144-e13639295a0fe399cfa08d757ec89557c2f4e02f85f65c05c66362f99fac3216.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-76x76-bf8bdba152c015ea656a38f3cf1c4db0fdc816034e730752916333d2974e140c.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-152x152-47beee8c2297a4ff0af9e1bfdd2749aed441e65393896ef86ebf5e150ddbde7d.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-180x180-b55a0cff11a717c9b39c21c4fddb5b29e01e0d80f8502c74f6ee37755add9827.png">
+<link rel="apple-touch-icon" sizes="57x57" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-57x57-5a18bdb570da7ba81b6d2e1ff2590ec62033e8c786a36e587eab94365710c252.png">
+<link rel="apple-touch-icon-precomposed" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-precomposed-3a1219e49f9d439f6f17c33fbc89d763a1d8c905ea367412060e5c7cbc54611f.png">
+<meta name="msapplication-config" content="none">
+
+    <meta name="description" content="Details the privacy policy in place for Private Internet Access.  For safe browsing, always use protection.®  Secure, private and anonymous VPN service." >
+    <meta name="robots" content="INDEX,FOLLOW">
+    <link rel="canonical" href="https://www.privateinternetaccess.com/pages/privacy-policy/">    <link rel="alternate" href="https://www.privateinternetaccess.com/pages/privacy-policy/" hreflang="en">
+<link rel="alternate" href="https://www.privateinternetaccess.com/pages/privacy-policy/" hreflang="x-default">    <script>
+(function () {
+  var _rollbarConfig = {
+      accessToken: "ff90de1c3b2a4f98b8caef3889d4c3d8",
+      captureUncaught: true,
+      captureUnhandledRejections: true,
+      scrubTelemetryInputs: true,
+      scrubFields: ["password","bigdata","userpass","user","pass","new_pass","new_pass_confirm","card_first_6","card_last_4","secret","changes","client_id","token","tokens","new_email","card_country","new_email_repeat"],
+      hostWhiteList: ["www.privateinternetaccess.com","fra.privateinternetaccess.com","deu.privateinternetaccess.com","jpn.privateinternetaccess.com","nld.privateinternetaccess.com","dnk.privateinternetaccess.com","tur.privateinternetaccess.com","mex.privateinternetaccess.com","bra.privateinternetaccess.com","chi.privateinternetaccess.com","cht.privateinternetaccess.com","rus.privateinternetaccess.com","ita.privateinternetaccess.com","tha.privateinternetaccess.com","kor.privateinternetaccess.com","ara.privateinternetaccess.com","pol.privateinternetaccess.com","nor.privateinternetaccess.com","www.privateinternetaccess.com"],
+      uncaughtErrorLevel: 'warning',
+      captureIp: false,
+      payload: {
+        environment: 'production',
+        client: {
+          javascript: {
+            code_version: '83c7fae570893deb4c63a5198c2312b8b2630c4d',
+            guess_uncaught_frames: true
+          }
+        }
+      },
+      checkIgnore: function (isUncaught, args, payload) {
+        if ('production' === 'development') {
+          return true
+        }
+        var userAgent = window.navigator && navigator.userAgent
+        if (typeof(userAgent) === 'string' &&
+            userAgent.indexOf('AhrefsBot') > -1) {
+          return true
+        }
+      }
+  };
+  !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.19.2/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+})();
+</script>
+
+      <link rel="shortcut icon" href=https://www.privateinternetaccess.com/favicon.ico >
+  <link rel="stylesheet" href="https://www.privateinternetaccess.com/assets/application/application-13f7106e6fb6b1714d84c98b04daacd306e9b0bf9cf35daa2208ce24564bd1c5.css" />
+    <script>
+(function () {
+  var _rollbarConfig = {
+      accessToken: "ff90de1c3b2a4f98b8caef3889d4c3d8",
+      captureUncaught: true,
+      captureUnhandledRejections: true,
+      scrubTelemetryInputs: true,
+      scrubFields: ["password","bigdata","userpass","user","pass","new_pass","new_pass_confirm","card_first_6","card_last_4","secret","changes","client_id","token","tokens","new_email","card_country","new_email_repeat"],
+      hostWhiteList: ["www.privateinternetaccess.com","fra.privateinternetaccess.com","deu.privateinternetaccess.com","jpn.privateinternetaccess.com","nld.privateinternetaccess.com","dnk.privateinternetaccess.com","tur.privateinternetaccess.com","mex.privateinternetaccess.com","bra.privateinternetaccess.com","chi.privateinternetaccess.com","cht.privateinternetaccess.com","rus.privateinternetaccess.com","ita.privateinternetaccess.com","tha.privateinternetaccess.com","kor.privateinternetaccess.com","ara.privateinternetaccess.com","pol.privateinternetaccess.com","nor.privateinternetaccess.com","www.privateinternetaccess.com"],
+      uncaughtErrorLevel: 'warning',
+      captureIp: false,
+      payload: {
+        environment: 'production',
+        client: {
+          javascript: {
+            code_version: '83c7fae570893deb4c63a5198c2312b8b2630c4d',
+            guess_uncaught_frames: true
+          }
+        }
+      },
+      checkIgnore: function (isUncaught, args, payload) {
+        if ('production' === 'development') {
+          return true
+        }
+        var userAgent = window.navigator && navigator.userAgent
+        if (typeof(userAgent) === 'string' &&
+            userAgent.indexOf('AhrefsBot') > -1) {
+          return true
+        }
+      }
+  };
+  !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.19.2/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+})();
+</script>
+
+  <meta name="copyright" content="Copyright (c) 2010 Private Internet Access, Inc." >
+  <meta name="author" content="Private Internet Access, Inc." >
+  <meta name="distribution" content="Global" >
+  <meta name="rating" content="General" >
+  <meta name="expires" content="Never" >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="FxIuNgKz3W043ZRt02oXnX1Pr_kiJ_nVfo4_AywDr2A" >
+  <meta name="msvalidate.01" content="850A277FE771818CC7899A343AD33CF8" />
+  <meta name="DC.title" content="Private Internet Access Anonymous VPN" />
+  <meta name="geo.region" content="US-MI" />
+  <meta name="geo.placename" content="Grandville" />
+  <meta name="geo.position" content="42.91272;-85.75508" />
+  <meta name="ICBM" content="42.91272, -85.75508" />
+  
+  <script id='script-keys'
+  type='text/x-data'
+  data-amazon-client-id='amzn1.application-oa2-client.a0d3838d77ef411fa9635e3e9dd39372'
+  data-amazon-merchant-id='A3CV2ZGVYRWWGQ'
+  data-paypal-tokenization-key='production_wfvvry6v_hgkc8vphzdyxjzsx'>
+</script>
+
+  <script>
+  <!-- Google Analytics -->
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  var params = window.location.search.replace(new RegExp("&?(buyerEmail|buyerName|email|q|address_or_email)=.*&?"),'')
+  var page = window.location.pathname + params
+  ga('create', 'UA-26585402-1', 'auto')
+  ga('require', 'linkid', 'linkid.js')
+  ga('set', 'anonymizeIP', true)
+  ga('set', 'location', page)
+  ga('set', 'dimension3', Math.floor(Date.now() / 1000))
+  ga('set', 'dimension4', '');
+  ga('send', 'pageview')
+  <!-- End Google Analytics -->
+  </script>
+
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="zDkMhjP6sKXgrP01yA68UFxRTtClowuORS7Qc238QLRw+WLFP5s5SSEq6GIG2QA8y/S7El14LpE3GFnZ9aGE3w==" />
+    
+    
+  </head>
+  <body class="pages privacy_policy">
+
+
+      
+<nav id="myNavmenu" class="navmenu navmenu-default navmenu-pia navmenu-fixed-left offcanvas" role="navigation">
+  <a href=https://www.privateinternetaccess.com title="Private Internet Access Home Page" class="navmenu-brand">
+    <img src='https://www.privateinternetaccess.com/assets/PIALogo1x-w-c04847e27cfb0595209f83a7a982f1c404c39072ce0762a0c49ce8c5ad16382f.png' alt='Private Internet Access Logo' width='209' height='28' class='img-responsive center-block' title='Go to the Private Internet Access home page.' srcset='https://www.privateinternetaccess.com/assets/PIALogo1x-w-c04847e27cfb0595209f83a7a982f1c404c39072ce0762a0c49ce8c5ad16382f.png 1x, https://www.privateinternetaccess.com/assets/PIALogo2x-w-b8337d6b5bb4d0a88f3d9c31cdd3c298e9739d124e202c4eb14ffd56bedd3e06.png 2x' style='height: inherit !important;'>  </a>
+  <ul class="nav navmenu-nav">
+
+      <li class=''>
+    <a href=https://www.privateinternetaccess.com/pages/how-it-works/ title="How It Works">How It Works</a>
+  </li>
+  <li class=''>
+    <a href=https://www.privateinternetaccess.com/pages/download title="Download">Download</a>
+  </li>
+  <li>
+    <a href="https://www.privateinternetaccess.com/helpdesk/" rel="noopener nofollow" title="Support">Support</a>
+  </li>
+  <li class=''>
+    <a href=https://www.privateinternetaccess.com/pages/client-control-panel title="My Account">My Account</a>
+  </li>
+
+
+    <li class="dropdown">
+      <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" class="topbar__link--text dropdown-toggle">
+       <span class='lang-flag-small lang-flag-icon lang-flag-en lang-flag-selected-mobile'></span>
+       English&nbsp;<span class="caret" style="border-top-color: #fff; border-bottom-color: #fff;"></span>
+      </a>
+      <ul class="dropdown-menu language-dropdown" aria-labelledby="dropdownMenu1">
+        <li><a style='display: block;' title='English' href='https://www.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-en'></span>English</a></li><li><a style='display: block;' title='Dansk' href='https://dnk.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-da'></span>Dansk</a></li><li><a style='display: block;' title='Português (Brasil)' href='https://bra.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-pt-br'></span>Português (Brasil)</a></li><li><a style='display: block;' title='Nederlands' href='https://nld.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-nl'></span>Nederlands</a></li><li><a style='display: block;' title='Français' href='https://fra.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-fr'></span>Français</a></li><li><a style='display: block;' title='Deutsch' href='https://deu.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-de'></span>Deutsch</a></li><li><a style='display: block;' title='Italiano' href='https://ita.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-it'></span>Italiano</a></li><li><a style='display: block;' title='日本語' href='https://jpn.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-ja'></span>日本語</a></li><li><a style='display: block;' title='Русский' href='https://rus.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-ru'></span>Русский</a></li><li><a style='display: block;' title='Español (México)' href='https://mex.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-es-mx'></span>Español (México)</a></li><li><a style='display: block;' title='Türkçe' href='https://tur.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-tr'></span>Türkçe</a></li><li><a style='display: block;' title='ไทย' href='https://tha.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-th'></span>ไทย</a></li><li><a style='display: block;' title='한국어' href='https://kor.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-ko'></span>한국어</a></li><li><a style='display: block;' title='العربية' href='https://ara.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-ar'></span>العربية</a></li><li><a style='display: block;' title='简体中文' href='https://chi.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-zh-cn'></span>简体中文</a></li><li><a style='display: block;' title='繁體中文' href='https://cht.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-zh-tw'></span>繁體中文</a></li><li><a style='display: block;' title='Polski' href='https://pol.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-pl'></span>Polski</a></li><li><a style='display: block;' title='Norsk' href='https://nor.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-no'></span>Norsk</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="navbar-pia-wrapper">
+  <noscript><div style="width:100%; max-height:70px; position:fixed; bottom:0px; left:0px;background: #F4A800; color:#000; padding:10px 20px; text-align:center;"><b>Javascript is disabled in your browser.</b> Some features of the site may not work as intended.</div></noscript>
+
+  <div class="top-wrapper">
+    <div class="topbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <a href="/pages/buy-vpn/" title="Select plan" style="display: block; text-decoration: none;">
+              <ul class="topbar__list topbar__list--marker
+               not-secured
+              ">
+                <li class="topbar__item topbar__item-ip">Your IP Address: 162.211.64.106</li>
+                <li class="topbar__item topbar__item-ip nodot">Your ISP:  Secure Dragon LLC.</li>
+                  <li class="topbar__item">You are not protected</li>
+                  <li class="topbar__item">
+                    <span class="topbar__link--more">
+                      Select plan&nbsp;»
+                    </span>
+                  </li>
+              </ul>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-4 hidden-sm hidden-xs topbar__list--wrap">
+            <ul class="topbar__list--links pull-right">
+              <li class="dropdown">
+                <span class='lang-flag-small lang-flag-icon lang-flag-en lang-flag-selected'></span>
+                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="topbar__link--text dropdown-toggle">
+                  English&nbsp;<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a style='display: block;' title='English' href='https://www.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-en'></span>English</a></li><li><a style='display: block;' title='Dansk' href='https://dnk.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-da'></span>Dansk</a></li><li><a style='display: block;' title='Português (Brasil)' href='https://bra.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-pt-br'></span>Português (Brasil)</a></li><li><a style='display: block;' title='Nederlands' href='https://nld.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-nl'></span>Nederlands</a></li><li><a style='display: block;' title='Français' href='https://fra.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-fr'></span>Français</a></li><li><a style='display: block;' title='Deutsch' href='https://deu.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-de'></span>Deutsch</a></li><li><a style='display: block;' title='Italiano' href='https://ita.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-it'></span>Italiano</a></li><li><a style='display: block;' title='日本語' href='https://jpn.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-ja'></span>日本語</a></li><li><a style='display: block;' title='Русский' href='https://rus.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-ru'></span>Русский</a></li><li><a style='display: block;' title='Español (México)' href='https://mex.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-es-mx'></span>Español (México)</a></li><li><a style='display: block;' title='Türkçe' href='https://tur.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-tr'></span>Türkçe</a></li><li><a style='display: block;' title='ไทย' href='https://tha.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-th'></span>ไทย</a></li><li><a style='display: block;' title='한국어' href='https://kor.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-ko'></span>한국어</a></li><li><a style='display: block;' title='العربية' href='https://ara.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-ar'></span>العربية</a></li><li><a style='display: block;' title='简体中文' href='https://chi.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-zh-cn'></span>简体中文</a></li><li><a style='display: block;' title='繁體中文' href='https://cht.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-zh-tw'></span>繁體中文</a></li><li><a style='display: block;' title='Polski' href='https://pol.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-pl'></span>Polski</a></li><li><a style='display: block;' title='Norsk' href='https://nor.privateinternetaccess.com/pages/privacy-policy/'><span class='lang-flag-small lang-flag-icon lang-flag-no'></span>Norsk</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="top_bar" class="navbar navbar-default navbar-pia">
+      <div id="navigation" class="container">
+        <div id="header_holder" class="navbar-header">
+          <button type="button" class="btn navbar-toggle collapsed" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body" data-autohide="true" data-recalc="true">
+            <i class="fa fa-fw fa-2x fa-navicon"></i>
+          </button>
+          <div class="navbar-brand">
+            <a href=https://www.privateinternetaccess.com title="Home">
+              <img src='https://www.privateinternetaccess.com/assets/PIALogo1x-62b63f96feba002326935631a63b6411b7d8a000fcb824c56ccc5d3568d0e3d7.png' alt='PIA' width='209' height='28' class='img-responsive center-block' title='PIA' srcset='https://www.privateinternetaccess.com/assets/PIALogo2x-84413b002e788098871d6ecd79b23cc242b1eeb9864fc65a42d3cce7915c287f.png 1x, https://www.privateinternetaccess.com/assets/PIALogo2x-84413b002e788098871d6ecd79b23cc242b1eeb9864fc65a42d3cce7915c287f.png 2x' style='height: inherit !important;'>            </a>
+          </div>
+
+
+          <a href=https://www.privateinternetaccess.com/pages/buy-vpn/ class="mobile-join btn btn-orange navbar-join pull-right visible-xs visible-sm"
+          style="margin-top:7px;margin-bottom:7px;margin-right:8px;">Join Now</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="mainnavhedaer">
+          <ul class="nav navbar-nav navbar-right">
+
+              <li class=''>
+    <a href=https://www.privateinternetaccess.com/pages/how-it-works/ title="How It Works">How It Works</a>
+  </li>
+  <li class=''>
+    <a href=https://www.privateinternetaccess.com/pages/download title="Download">Download</a>
+  </li>
+  <li>
+    <a href="https://www.privateinternetaccess.com/helpdesk/" rel="noopener nofollow" title="Support">Support</a>
+  </li>
+  <li class=''>
+    <a href=https://www.privateinternetaccess.com/pages/client-control-panel title="My Account">My Account</a>
+  </li>
+
+
+            <li class='navbar-btn '>
+              <a id="join-now-header-bt" class="btn btn-orange" href=https://www.privateinternetaccess.com/pages/buy-vpn/ title="Join Now">Join Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="alert" class="pia-alert">
+  <p><span></span><i style="cursor: pointer !important;" class="fa fa-close"></i></p>
+</div>
+</div>
+<div class="clear"></div>
+
+
+
+  <style>
+  .privacy-policy h2 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .privacy-policy h2, .privacy-policy h3, b {
+    font-weight: bold;
+  }
+  .privacy-policy section {
+    margin-top: 2em;
+  }
+  .privacy-policy p {
+    text-align: justify;
+    margin-bottom: 1.5em;
+  }
+  .privacy-policy ul {
+    padding-left: 2.2em;
+    margin-bottom: 2em;
+  }
+  .privacy-policy li {
+    padding-left: 1.5em;
+  }
+  address {
+    padding-left: 2em;
+    font-style: normal;
+  }
+  #last_revised {
+    margin-top: 3em;
+    margin-bottom: 1em;
+    color: #999;
+  }
+</style>
+
+<div class="privacy-policy container">
+  <div class="row">
+    <div class="col-md-12 xpage">
+      <section id="intro">
+        <h2>PRIVATE INTERNET ACCESS PRIVACY POLICY</h2>
+        <p>
+          This privacy policy (“Privacy Policy” or “Policy”) sets forth the privacy practices of Private Internet Access, Inc., (collectively, ‘We,’ ‘Us,’ ‘Data Controller,’ ‘Company,’ or 'PIA’)  and applies to users (“User(s)” or “You”) of the PIA’s services, including, inter alia, the PIA VPN service (“Service”) and PIA website at www.privateinternetaccess.com (“Website”).
+        </p>
+        <p>
+          The processing of personal data, such as the e-mail address or payment information of a data subject shall always be in line with the General Data Protection Regulation (GDPR), and in accordance with the country-specific data protection regulations applicable to PIA. By means of this data protection declaration and Privacy Policy, we are informing the general public of the nature, scope, and purpose of the personal data we collect, use and process. Furthermore, data subjects are informed, by means of this data protection declaration, of the rights to which they are entitled.
+        </p>
+        <p>
+          As the data controller for personal data, we administer strict policies safeguarding your privacy and security. By agreeing herein, you also signify your acceptance of, and agree to be bound by this Policy interpreted in line with the <a href="/pages/terms-of-service/">Terms of Service</a>, the Cookie Policy, the <a href="dmca-policy">Digital Millennium Copyright Act (DMCA) policy</a> which are hereby incorporated herein by reference (the DMCA policy, Terms of Service, and the Privacy Policy are sometimes referred to collectively as the “Policies") into this Privacy Policy.
+        </p>
+      </section>
+
+      <section id="table_of_contents">
+        <h3>TABLE OF CONTENTS</h3>
+        <br>
+        <a href="#personal_information_we_collect" onclick="adjustScrollToMenu();">Personal Information we Collect</a><br>
+        <a href="#non_personal_information_we_collect" onclick="adjustScrollToMenu();">Non-Personal Data</a><br>
+        <a href="#uses_of_personal_information_collected_by_us" onclick="adjustScrollToMenu();">Uses of Personal Data Collected by Us</a><br>
+        <a href="#website_registration" onclick="adjustScrollToMenu();">Website Registration</a><br>
+        <a href="#disclosure_and_use_of_personal_information" onclick="adjustScrollToMenu();">Disclosure and Use of Personal Data</a><br>
+        <a href="#data_retention" onclick="adjustScrollToMenu();">Data Retention</a><br>
+        <a href="#cal_oppa_statement" onclick="adjustScrollToMenu();">CalOPPA Statement</a><br>
+        <a href="#name_and_address_of_data_protection_officer_and_name_and_address_of_controller" onclick="adjustScrollToMenu();">Name and Address of Data Protection Officer and Name and Address of Data Controller</a><br>
+        <a href="#ccpa_statement" onclick="adjustScrollToMenu();">CCPA Statement</a><br>
+        <a href="#maintaining_the_security_of_your_private_information" onclick="adjustScrollToMenu();">Maintaining the Security of Your Personal Information</a><br>
+        <a href="#how_we_transfer_information_collected_internationally" onclick="adjustScrollToMenu();">How We Transfer Information Collected Internationally</a><br>
+        <a href="#coppa_disclosure" onclick="adjustScrollToMenu();">COPPA Disclosure</a><br>
+        <a href="#rights_of_the_data_subject" onclick="adjustScrollToMenu();">Rights of the Data Subject</a><br>
+        <a href="#changes_to_this_privacy_policy" onclick="adjustScrollToMenu();">Changes to this Privacy Policy</a><br>
+      </section>
+
+      <section id="personal_information_we_collect">
+        <h3>PERSONAL INFORMATION WE COLLECT (“PERSONAL DATA”)</h3>
+        <br>
+        <p>Personal Data means any information that relates or may be associated to an identifiable person. The personal Data will collect vary depending on your use of PIA’s Website or Service, as follows:</p>
+        <span>From Clients of our Service</span>
+        <ul>
+          <li>E-mail Address for the purposes of account management and protection from abuse.</li>
+          <li>Payment Data for the purposes of processing payments as required by our third-party payment processors. Note that we do not save your full credit card details.</li>
+          <li>Cookie identifiers (see our Cookie Policy);</li>
+          <li>State or Territory of origin and zip code.</li>
+        </ul>
+        <span>From visitors to the PIA website and Email</span>
+        <ul>
+          <li>Information included in any submissions on the 'Contact Us' page.</li>
+          <li>The email address of any e-mails we receive.</li>
+        </ul>
+      </section>
+
+      <section id="non_personal_information_we_collect">
+        <h3>NON-PERSONAL DATA</h3>
+        <br>
+        <p>Non-personal Data is not associated with or linked to your Personal Information. Thus, Non-personal Data does not permit the identification of individual persons. Non personal data we collect include:</p>
+        <ul>
+          <li>Google analytics data (this data is anonymized).</li>
+          <li>Internationalisation (i18n).</li>
+          <li>System information.</li>
+        </ul>
+      </section>
+
+      <section id="uses_of_personal_information_collected_by_us">
+        <h3>USES OF PERSONAL DATA COLLECTED BY US</h3>
+        <br>
+        <ul>
+          <li>We collect your name and e-mail address to send you subscription information, payment confirmation, customer correspondence and PIA promotional offers only</li>
+          <li>(to the extent you accept or subscribe to our marketing list). Additionally, we may collect state, and zip code to ensure compliance with our statutory tax obligations and for fraud detection.</li>
+          <li>Furthermore, we may collect payment data to manage client signups, payments, and cancellations. We may also process the above data in compliance with valid legal process, to comply with statutory obligations and to comply with contractual obligations.</li>
+        </ul>
+        <span>The above-mentioned Personal Data is not, at any point, associated with any kind of activity done by the user inside the Private Internet Access VPN which is NOT recorded, logged or stored at all.</span>
+      </section>
+
+      <section id="website_registration">
+        <h3>WEBSITE REGISTRATION</h3>
+        <br>
+        <p>
+          You have the option to register on PIA website by inserting your username and password. The Personal Data entered is collected and stored exclusively for internal use by PIA, and for its own purposes. By registering on the website, the payment method, login ID, date and time of the registration are also stored. The storage of this data takes place against the background that this is the only way to prevent the misuse of our services, and, if necessary, to make it possible to investigate committed offenses. Insofar, the storage of this data is necessary to secure the controller. This data is not passed on to third parties except as stated herein. Through registering on PIA’s website, you may exercise your rights as indicated below, through the website.
+        </p>
+        <p>
+          The registration of your data is intended to enable the controller to offer the data subject contents or services that may only be offered to registered users.
+        </p>
+      </section>
+
+      <section id="disclosure_and_use_of_personal_information">
+        <h3>DISCLOSURE AND USE OF PERSONAL DATA</h3>
+        <br>
+        <p>
+          PIA strives to protect the privacy rights of our clients. We do not share, sell, rent or trade your Personal Data with third parties other than as disclosed within this Privacy Policy. We may disclose your Personal Data to any member of our group of companies (this means our subsidiaries, our ultimate holding company and all its subsidiaries) insofar as reasonably necessary for the purposes set out in this Policy.
+        </p>
+        <p>
+          Additionally, although we will comply with all valid subpoena requests, our legal team scrutinizes each and every legal request that we receive for compliance with both the "spirit" and letter of the law. For invalid or overly broad subpoenas, we will often question or attempt to narrow the scope of any subject matter sought. Moreover, when it is possible and a valid option, we will provide the user an opportunity to object to any requested disclosures. PIA will not participate with any law enforcement request that is unconstitutional.
+        </p>
+        <p>
+          Furthermore, we may share your personal information with third part service provides that we may engage to improve the Service. In particular, in order to assist you if you have questions while using our Website or regarding your order and provide comprehensive customer support, we offer the possibility of online chat. For the use of such online chat, you will be requested to provide Personal Data such as name and email. When a user visits the Private Internet Access online chat page we use Deskpro, Deskpro stores in its own database: visitor_id (a unique identifier randomly generated when someone visits the page, stored in their cookies), browser used to log in, country, and date visited.  Name, account ID, and email address may be collected and stored if this information is provided for support tickets submitted to Private Internet Access. We may also use Deskpro as a medium for communications, either through email, or through direct messages within the Deskpro platform. As such, any messages sent via live online chat, tickets, or emailed to helpdesk@privateinternetaccess.com will be stored on Private Internet Access servers.   We may use the data collected via Deskpro in order to improve customer experience. Your data may be internally analyzed to understand trends in customer behavior, demographics, and selections. We will never sell information to any third-parties. Deskpro maintains its own separate privacy policy that is separate from Private Internet Access and can be located at <a target="_blank" rel="nofollow noopener" href="https://www.deskpro.com/legal/privacy/">https://www.deskpro.com/legal/privacy/</a>.
+        </p>
+        <p>
+          PIA itself does not process any orders or payments. We work exclusively with payment processors such as Stripe, Amazon payments, Bitpay and Paypal. You can find information about the payment services providers' privacy policies and practices at <a target="_blank" rel="nofollow noopener" href="https://stripe.com/us/privacy">https://stripe.com/us/privacy</a> (Stripe), <a target="_blank" rel="nofollow noopener" href="https://pay.amazon.com/help/201212430">https://pay.amazon.com/help/201212430</a> (Amazon), <a target="_blank" rel="nofollow noopener" href="https://bitpay.com/about/privacy/">https://bitpay.com/about/privacy/</a> (Bitpay), and <a target="_blank" rel="nofollow noopener" href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full">https://www.paypal.com/us/webapps/mpp/ua/privacy-full</a> (Paypal). The payment processors privacy policy governs the collection and use of the information collected during the check-out process which we recommend you review prior to placing an order or providing any information.
+        </p>
+      </section>
+
+      <section id="data_retention">
+        <h3>DATA RETENTION</h3>
+        <br>
+        <p>
+          We may rectify, replenish or remove incomplete or inaccurate information, at any time and at our own discretion as detailed above. Please note that unless you instruct us otherwise, we retain the information we collect for as long as needed to provide the Service and to comply with our legal obligations, resolve disputes and enforce our agreements.
+        </p>
+      </section>
+
+      <section id="cal_oppa_statement">
+        <h3>CalOPPA STATEMENT</h3>
+        <br>
+        <p>
+          The State of California requires us to post specific language related to our Privacy Policy. By default, PIA does not share your Personal Data with any third parties aside from the disclosures already made in this Privacy Policy. However, if you wish to inquire into how PIA does not share our user's Personal Data with third parties for direct marketing purposes, you may contact:
+        </p>
+      </section>
+
+      <section id="name_and_address_of_data_protection_officer_and_name_and_address_of_controller">
+        <h3>NAME AND ADDRESS OF DATA PROTECTION OFFICER AND NAME AND ADDRESS OF CONTROLLER</h3>
+        <br>
+        <p>Our current data protection officer can be reached at the following information below.</p>
+        <address>
+          Dr. Venetia Argyropoulou<br>
+          Private Internet Access, Inc.<br>
+          5555 DTC Parkway<br>
+          Suite 360<br>
+          Greenwood Village, CO 80111<br>
+          United States (347)586-9467 (Ext. 904)<br>
+          <a target="_blank" rel="noopener nofollow" href="mailto:privacy@privateinternetaccess.com">privacy@privateinternetaccess.com</a>
+        </address>
+      </section>
+
+      <section id="ccpa_statement">
+        <h3>CALIFORNIA CONSUMER PRIVACY ACT (“CCPA”) STATEMENT</h3>
+        <br>
+        <p>
+          Pursuant to California Civil Code Section 1798.83, if you live in the State of California and your business relationship with us is mainly for personal, family or household purposes, you may ask PIA about the information we release to other organizations for their marketing purposes. To make such a request, please send an email to <a href="mailto:privacy@privateinternetaccess.com">privacy@privateinternetaccess.com</a> with “CCPA privacy request” as the subject. You are allowed under California law to request this information one time each calendar year. We will email you a list of categories of Personal Data we may have revealed to any third parties in the last calendar year, along with their names and addresses. Not all Personal Data shared in this form is included under Section 1798.83 of the California Civil Code.  Please also see this California specific privacy notice for more details related to your rights as a California resident under the CCPA.
+        </p>
+      </section>
+
+      <section id="maintaining_the_security_of_your_private_information">
+        <h3>MAINTAINING THE SECURITY OF YOUR PRIVATE INFORMATION</h3>
+        <br>
+        <p>
+          Only key employees of PIA and PIA’s Group with a need to administer or process Personal Data are granted access to the servers and information where Personal Data is stored. Personal Data is maintained in an encrypted form.
+        </p>
+      </section>
+
+      <section id="how_we_transfer_information_collected_internationally">
+        <h3>HOW WE TRANSFER INFORMATION COLLECTED INTERNATIONALLY</h3>
+        <br>
+        <p>
+          We collect information globally and primarily store that information in the United States. If we transfer your Personal Data from the United States, we will request your consent.
+        </p>
+      </section>
+
+      <section id="coppa_disclosure">
+        <h3>COPPA DISCLOSURE - About Children’s Online Privacy</h3>
+        <br>
+        <p>
+          The Children’s Online Privacy Protection Act (COPPA) was passed to give parents increased control over what information is collected from their children online and how such information is used. The law applies to websites and services directed to, and which knowingly collect information from, children under the age of 13.  Our online services are not directed to children under the age of 13, nor is information knowingly collected from them.  For additional information on COPPA protections, please see the FTC website at: <a target="_blank" rel="noopener nofollower" href="https://www.consumer.ftc.gov/articles/0031-protecting-your-childs-privacy-online">https://www.consumer.ftc.gov/articles/0031-protecting-your-childs-privacy-online</a>
+        </p>
+      </section>
+
+      <section id="rights_of_the_data_subject">
+        <h3>RIGHTS OF THE DATA SUBJECT</h3>
+          <br>
+          <p>
+            Your principal rights under data protection law in relation to your Personal Data are:
+          </p>
+          <ul>
+            <li>(a) the right to access and information which is provided to you through your account;</li>
+            <li>(b) the right to rectification;</li>
+            <li>(c) the right to erasure;</li>
+            <li>(d) the right to restrict processing;</li>
+            <li>(e) the right to object to processing;</li>
+            <li>(f) the right to data portability;</li>
+            <li>(g) the right to complain to a supervisory authority; and</li>
+            <li>(h) the right to withdraw consent.</li>
+          </ul>
+          <p>
+            We provide you with the ability to exercise the above rights along with certain choices and controls in connection with our treatment of your Personal Data. To exercise your rights through your account please contact our Data Protection Officer (“DPO”) at:
+          </p>
+          <address>
+            Dr. Venetia Argyropoulou<br>
+            Private Internet Access, Inc.<br>
+            5555 DTC Parkway<br>
+            Suite 360<br>
+            Greenwood Village, CO 80111<br>
+            United States (347)586-9467 (Ext. 904)<br>
+            <a target="_blank" rel="noopener nofollower" href="mailto:privacy@privateinternetaccess.com">privacy@privateinternetaccess.com</a>
+          </address>
+          <br>
+        <p>In the event you make such request, note that we may require certain information from you in order to verify your identity and locate your data and that the process of locating and deleting the data may take reasonable time and effort. Data privacy and related laws in your jurisdiction may provide you with different or additional rights related to the data we collect from you, which may also apply.</p>
+      </section>
+
+      <section id="changes_to_this_privacy_policy">
+        <h3>CHANGES TO THIS PRIVACY POLICY</h3>
+      </section>
+
+      <section id="footer">
+        <p>
+          If we decide to make changes to our Privacy Policy, at our sole discretion, such changes and updates will be effective immediately upon the display of the revised Privacy Policy. Thus, we encourage you to check this Privacy Policy regularly for updates, so that you are fully informed on how your data is collected and used by the Company and your related rights. The last revision date will be reflected in the "Last Modified" heading. Your continued use of the Services following the display of such amendments constitutes your acknowledgement and consent to such amendments to the Privacy Policy and your agreement to be bound by the terms of such amended policy.
+        </p>
+        <p>
+          If we make material changes to this Privacy Policy, we will notify you through the account or the Website and make best efforts to notify you via email, or by means of a notice on our home page prior to the change becoming effective.
+        </p>
+        <p>
+          PIA does not share a data subject’s personal information with third parties for direct marketing purposes. Please contact <a target="_blank" href="mailto:privacy@privateinternetaccess.com">privacy@privateinternetaccess.com</a> for further information.
+        </p>
+        <p>For all civil or law enforcement requests, please contact <a target="_blank" href="mailto:legal@privateinternetaccess.com">legal@privateinternetaccess.com</a>. If you have a request that requires mailing or courier, please use the information below:</p>
+        <address>
+          Private Internet Access Inc.<br>
+          Attn: Legal Department<br>
+          5555 DTC Parkway<br>
+          Suite 360<br>
+          Greenwood Village, CO 80111<br>
+          United States<br>
+        </address>
+        <br>
+        <p>
+          While PIA agrees to accept service of law enforcement requests based on the above method listed above, PIA does NOT waive any legal rights based on this accommodation.
+        </p>
+      </section>
+      <br>
+    </div>
+
+    <section id="last_revised">
+      <span><i>Last revised Jul 07th, 2020</i></span>
+    </section>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function adjustScrollToMenu() {
+    setTimeout(function(){
+      window.scrollBy(0, -120);
+    }, 0);
+  }
+  window.onload = adjustScrollToMenu;
+</script>
+
+  </div>
+  <div class="clear"></div>
+  <div id="lightgreen_container" >
+  <div class="container">
+  <div id="footer" class="row">
+    <div class="col-md-8 col-sm-12">
+          <div class="row">
+    <div class="col-md-4 col-sm-4">
+      <p class="footer-heading">Why</p>
+      <ul class="nav_list clearfix">
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/whats-my-ip/ title="What&#39;s my IP?">What's my IP?</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/hide-my-ip/ title="Hide My IP">Hide My IP</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/browse-anonymously/ title="Browse Anonymously">Browse Anonymously</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/public-wifi-security/ title="Public Wifi Security">Public Wifi Security</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/identity-protection/ title="Identity Protection">Identity Protection</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/internet-security/ title="Internet Security">Internet Security</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/iot-security/ title="Internet of Things Security">Internet of Things Security</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/prevent-data-theft/ title="Prevent Data Theft">Prevent Data Theft</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/hide-my-location/ title="Hide My Location">Hide My Location</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/faceniff-and-firesheep/ title="FaceNiff and Firesheep">FaceNiff and Firesheep</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/tor-vpn-proxy title="Tor vs VPN vs Proxy">Tor vs VPN vs Proxy</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/free-versus-paid-vpn title="Free vs. Paid VPN">Free vs. Paid VPN</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/united-nations-recommends-using-encryption title="UN Recommends Encryption">UN Recommends Encryption</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/stop-internet-connection-records title="Snooper&#39;s Charter">Snooper's Charter</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/krack title="WiFi KRACK">WiFi KRACK</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/privacy-from-internet-service-provider-isp title="Privacy from your ISP">Privacy from your ISP</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/wireguard-vpn-protocol title="WireGuard® VPN protocol">WireGuard® VPN protocol</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/split-tunneling title="VPN Split Tunneling">VPN Split Tunneling</a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <p class="footer-heading">Service</p>
+      <ul class="nav_list clearfix">
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/how-it-works/ title="How It Works">How It Works</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/buy-vpn/ title="Buy VPN">Buy VPN</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/vpn-encryption title="VPN Encryption">VPN Encryption</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/download title="Downloads">Downloads</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/network/ title="Network">Network</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/android-vpn-app title="Android VPN App">Android VPN App</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/ios-vpn-app title="iOS VPN App">iOS VPN App</a>
+        </li>
+      </ul>
+      <p class="footer-heading">Company</p>
+      <ul class="nav_list clearfix">
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/about-us/ title="About Us">About Us</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/team title="PIA Team">PIA Team</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/jobs title="Jobs">Jobs</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/transparency-report title="Transparency Report">Transparency Report</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/press title="Press Area">Press Area</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/media title="PIA In The Media">PIA In The Media</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/vpn-review-sites title="PIA On The Web">PIA On The Web</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/vpn-reviews/ title="VPN Reviews">VPN Reviews</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/companies-we-sponsor title="Companies We Support">Companies We Support</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-4 col-sm-4">
+      <p class="footer-heading">Resources</p>
+      <ul class="nav_list clearfix">
+        <li>
+          <a href="/pages/contact-us" title="Contact Us">Contact Us</a>
+        </li>
+        <li>
+          <a href="https://www.privateinternetaccess.com/helpdesk/" title="Support Portal">Support Portal</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/client-support/ title="Tutorials">Tutorials</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/blog title="Blog">Blog</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/pia-wasp title="Whitehat Program">Whitehat Program</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/sitemap.html title="PIA Site Map">PIA Site Map</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/vpn-router title="VPN Router">VPN Router</a>
+        </li>
+      </ul>
+       <p class="footer-heading">Programs</p>
+      <ul class="nav_list clearfix">
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/reseller-program title="Become a Partner">Become a Partner</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/affiliates/ title="Affiliates">Affiliates</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/refer-a-friend title="Refer a friend">Refer a friend</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/student-discount title="Student Discount">Student Discount</a>
+        </li>
+      </ul>
+      <p class="footer-heading">Tools</p>
+      <ul class="nav_list clearfix">
+        <li>
+          <a href="http://dnsleak.com/" title="DNS Leak Test">DNS Leak Test</a>
+        </li>
+        <li>
+          <a href="http://ipv6leak.com/" title="IPv6 Leak Test">IPv6 Leak Test</a>
+        </li>
+        <li>
+          <a href="http://emailipleak.com/" title="Email Leak Test">Email Leak Test</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+    </div>
+    <div class="col-md-4 col-sm-12" style="margin-bottom: 40px;">
+      <p class="footer-heading">About</p>
+      <p class="footer_text">
+        Private Internet Access is the leading VPN Service provider specializing in secure, encrypted VPN tunnels which create several layers of privacy and security providing you safety on the internet. Our service is backed by multiple gateways worldwide with access in 75+ countries, 126+ regions.      </p>
+
+      <p class="footer-heading">Connect with us</p>
+      <ul class="footer-social-list clearfix text-center-xs">
+        <li>
+          <a rel="noreferrer noopener" target="_blank" class="topbar__link--social facebook" style="" href="http://www.facebook.com/privateinternetaccess">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a rel="noreferrer noopener" target="_blank" class="topbar__link--social twitter" href="https://twitter.com/buyvpnservice">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a rel="noreferrer noopener" target="_blank" class="topbar__link--social linkedin" href="https://www.linkedin.com/company/private-internet-access">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a rel="noreferrer noopener" target="_blank" class="topbar__link--social reddit" href="https://www.reddit.com/r/PrivateInternetAccess/">
+            <span class="fa-stack fa-lg"><i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a rel="noreferrer noopener" target="_blank" class="topbar__link--social youtube" href="https://www.youtube.com/user/vpnservice/videos">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="footer-heading">Payment Methods</p>
+      <div class="payments-icon icon-paypal"></div>
+      <div class="payments-icon icon-visa"></div>
+      <div class="payments-icon icon-mastercard"></div>
+      <div class="payments-icon icon-amex"></div>
+      <div class="payments-icon icon-discover"></div>
+      <div class="payments-icon icon-amazon"></div>
+      <div class="payments-icon icon-bitcoin"></div>
+      <div class="payments-icon icon-paygarden"></div>
+      <div class="payments-icon icon-target"></div>
+      <div class="payments-icon icon-starbucks"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copyright_footer">Copyright &copy; Private Internet Access, Inc. All Rights Reserved.</div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 footer_legal">
+        <ul class="nav_list clearfix">
+          <li>
+            <a href=https://www.privateinternetaccess.com/pages/terms-of-service/ title="Terms Of Service">Terms Of Service</a>
+          </li>
+          <li>
+            <a href=https://www.privateinternetaccess.com/pages/privacy-policy/ title="Privacy Policy"><b>Privacy Policy</b></a>
+          </li>
+          <li>
+            <a href=https://www.privateinternetaccess.com/pages/privacy-policy#personal_information_we_collect title="Cookies Policy">Cookies Policy</a>
+          </li>
+          <li>
+            <a href=https://www.privateinternetaccess.com/pages/dmca-policy title="DMCA Policy">DMCA Policy</a>
+          </li>
+          <li>
+            <a href=https://www.privateinternetaccess.com/pages/export-control-policy title="Export Control Policy">Export Control Policy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row footerdisclaimers">
+      <div class="col-md-12">
+        <p class="footer_text muted">
+          Map data provided by <a rel="nofollow" href="https://www.openstreetmap.org/">OpenStreetMap</a>.        </p>
+        <p class="footer_text muted">
+          PC Mag Editor’s Choice award image reprinted with permission. © 2012 Ziff Davis, LLC. All Rights Reserved.        </p>
+        <p class="footer_text muted">
+          PC Mag quote reprinted from www.pcmag.com with permission. © 2012 Ziff Davis, LLC. All Rights Reserved.        </p>
+        <p class="footer_text muted">
+          "WireGuard" is a registered trademark of Jason A. Donenfeld
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <script src="https://www.privateinternetaccess.com/packs/layouts/application-1402c4dbc5807a86a68f.js"></script>
+        <script type="text/javascript">
+      window.DESKPRO_MESSENGER_ASSET_URL = "https://www.privateinternetaccess.com/helpdesk/assets/48207/pub/build/messenger/";
+      window.DESKPRO_MESSENGER_OPTIONS = {
+        language: {
+          id: "1",
+          locale: "en-US"
+        },
+        proactive: {
+          "autoStart": false,
+        },
+        helpdeskURL: "https://www.privateinternetaccess.com/helpdesk/",
+        baseUrl: "https://www.privateinternetaccess.com/helpdesk/assets/48207/pub/build/messenger/",
+      }
+    </script>
+    <script id="dp-messenger-loader" src="https://www.privateinternetaccess.com/helpdesk/dyn-assets/pub/build/messenger/loader.js?v=1596112721"></script>
+  <script id="accept-lang-template" type="text/x-mustache" data-href="">
+    We noticed your language is set to {{presentLanguage}}, would you like to view this content in <a href="{{refererHref}}">{{refererLanguage}}</a> instead?  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var node = document.querySelector('script#accept-lang-template')
+      var href = node.getAttribute('data-href')
+      var template = node.innerHTML
+      app.localeMiddlewareAlert({href: href, template: template})
+    })
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // Disable scroll on mobile, when menubar is open
+      $(".offcanvas").on("show.bs.offcanvas", function () {
+        $("body").css("overflow", "hidden");
+        $("body").css("overflow-x", "hidden");
+        $("body").css("overflow-y", "hidden");
+        $("body").on("touchmove.bs", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        });
+
+      });
+
+      // Enable scroll on mobile, when menubar is closed
+      $(".offcanvas").on("hidden.bs.offcanvas", function () {
+        $("body").css("overflow", "auto");
+        $("body").css("overflow-x", "auto");
+        $("body").css("overflow-y", "auto");
+        $("body").off("touchmove.bs");
+      });
+    });
+  </script>
+
+    <script>
+      $(document).ajaxSend(function(e, xhr, options) {
+        var token = $("meta[name='csrf-token']").attr("content");
+        xhr.setRequestHeader("X-CSRF-Token", token);
+      })
+    </script>
+  </body>
+</html>
+
