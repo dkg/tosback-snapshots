@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OsmAnd - Offline Mobile Maps and Navigation</title>
+  <meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/css/site.css?v=20"/>
+<script type="text/javascript" src="/scripts/jquery-3.1.0.min.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/images/favicons/manifest.json">
+<link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/images/favicons/favicon.ico">
+<meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body>
+  <div class="maincontainer">
+    <div class="main">
+      <div>
+
+<div class="simpleheader">
+  
+  <div class="shadowline">
+    <div class="menu-wrapper">
+      <a href="/blog/10-years" class="headerlogo-link"><div class="headerlogo"></div></a>
+      <ul class="menu">
+        <li class="mobile-sign">Menu</li>
+        <li class="lang_switcher mobile-only">
+          <div class="dropbtn" id="lang_switcher_btn">EN</div>
+          <div class="dropdown-content" id="lang_dropdown">
+            <a href="/" class="current">English</a>
+            <a href="/ru/" class="">Русский-Russian</a>
+            <a href="/de/" class="">Deutsch-German</a>
+          </div>
+        </li>
+        <li><a data-gatag="header_features" href="/features">Features</a></li>
+        <li><a data-gatag="header_blog" href="/blog">Blog</a></li>
+        <li><a data-gatag="header_osm_live" href="/osm_live">OsmAnd Live</a></li>
+        <li><a data-gatag="header_build_it" href="/build_it">Build It</a></li>
+        <li class="activeitem"><a data-gatag="header_help" href="/help-online">Help</a></li>
+        <li><a data-gatag="header_dvr" href="/dvr">DVR</a></li>
+        <li class="lang_switcher desktop-only">
+          <div class="dropbtn">EN</div>
+          <div class="dropdown-content">
+            <a href="/" class="current">English</a>
+            <a href="/ru/" class="">Русский-Russian</a>
+            <a href="/de/" class="">Deutsch-German</a>
+          </div>
+        </li>
+        <li class="mobile-only">
+            <a data-gatag="header_downloads" href="/downloads">Downloads</a>
+        </li>
+      </ul>
+      <div class="menu-hamburger"></div>
+    </div>
+  </div>
+
+    
+    <div class="header-caption">
+        <div class="headertext">HELP</div>
+        
+        
+       
+  </div>
+  
+</div>
+
+<script>
+  $('.menu-hamburger').on('click', function() {
+    $('.maincontainer').toggleClass('menu-open');
+    if ($(document).width() < 321) {
+      $(this).toggleClass('in-menu');
+    }
+    if ($('.menu').hasClass('active')) {
+      setTimeout(function() {
+        $('.menu').removeClass('active')
+      }, 500)
+    } else {
+      $('.menu').addClass('active');
+    }
+  });
+
+  $(window).on('resize', function(){
+
+    if (!$('.menu-hamburger').is(':visible')) {
+      $('.menu').removeClass('active');
+      $('.maincontainer').removeClass('menu-open');
+    }
+
+  });
+
+  $('body').on('click', function() {
+    if ($('.maincontainer').hasClass('menu-open')) {
+      $('.menu-hamburger').click();
+    }
+  });
+
+  $('.menu-hamburger, .menu').on('click', function(e) {
+    e.stopPropagation();
+  });
+  
+  $('.download-btn').on('click', function(e) {
+    e.stopPropagation();
+  });
+</script>
+
+<script  type="text/javascript">
+  function toggle_lang(){
+    langs_down = document.getElementsByClassName('dropdown-content');
+    langs_down_showed = document.getElementsByClassName('dropbtn');
+    for (i = 0; i < langs_down.length; ++i) {
+      langs_down[i].classList.toggle("show_dropdown");
+    }
+    for (i = 0; i < langs_down_showed.length; ++i) {
+      langs_down_showed[i].classList.toggle("showed_dropdown");
+    }
+  }
+  drop_langs = document.getElementsByClassName('dropbtn');
+  for (i = 0; i < drop_langs.length; ++i) {
+    drop_langs[i].onclick = function() {toggle_lang()};
+  }
+</script>
+</div>
+      <div class="articles">
+        <div class="articlescontainer">
+          
+          <div class="article"><div class="main">
+  <h1 id="top">Privacy Policy</h1>
+    <h4>1. Who we are</h4>
+  <p>1.1 We are OsmAnd B.V. located at   Logger 41, 1186 RM, Amstelveen, the Netherlands.</p>  
+  <p>1.2 OsmAnd B.V. ("Company") and its subsidiaries recognize the importance of the user privacy and protection of personal data.</p>
+    <h4>2. This Privacy Policy</h4>
+  <p>2.1 This Privacy Policy describes the way the Company collects and processes the information provided by the end users, including personalized or non-personalized types of data. Personalized data is understood as the information may include the data that identifies or describes a user or another identifiable individual. Non-personalized data is the information that does not identify any user, in particular, providing anonymous, generalized information.</p>
+  <p>2.2 The Company is committed to the principles of personal data security and only uses the information to provide better service to the users.</p>
+    <h4>3 The information Company collects</h4>
+  <p>3.1 Company aggregates non-personal data which cannot identify a user. Such data includes the apps' installs, the frequency of the launches and the use of different screens in the application. We also collect non-personalized data about the devices' models, software versions, the countries where the application is used, and the language. Also, the users may be asked to leave an email to get access to certain additional features and to participate in marketing activities.</p>
+  <p>3.2 We strongly believe in the principle of data protection and safety, thus, the Company does not collect, store, process or transfer any personal information of users besides the cases when such information is provided by the users with their clear consent.</p>
+  <p>3.3 The Company may disclose the information provided by the users or collected otherwise in certain exceptional cases including a legal process or by request of the law enforcement agencies. It is also possible in case of investigations, including those concerning possible fraud, terms of use infringement or other cases that are potentially harmful to the Company. Besides that, data can be shared or disclosed to prevent harm or damage to the users.</p>
+  <p>3.4 If Company faces reformation such as acquisition by another business, company merger, or other, the information collected by the Company can be transferred to the according parties.</p>
+  <p>3.5 Certain parts of non-personalized data can be shared with the partners of the Company in the amounts, necessary to ensure cooperation between the Company and its partners or service providers.</p>
+  <p>3.6 You provide your mobile number to us for identify Telegram Account. We do not collect your mobile number, the Company only transfer this to Telegram (<a href="https://telegram.org/privacy">Privacy Policy of Telegram</a>) with your agreement. The Company follows Privacy Policy and uses Telegram Library to send messages which follows <a href="https://telegram.org/privacy">Telegram Privacy Policy</a>. The Company will store your location information for up to 48 hours in order to provide a stable data buffer. (These data will be protected and not shared with third parties).</p>
+    <h4>4. Changes to this Policy</h4>
+  <p>4.1 This Policy can be updated anytime at the discretion of the Company. By using the Company’s products, the users agree to fully comply with the Policy and understand that their data can be processed under the rules mentioned here.</p>
+  <p>4.2 If this Privacy Policy changes in any way, we will post an updated version on this page.  We recommend you regularly review this page to ensure that you are always aware of our information practices and any changes to such.</p>
+    <h4>5. Contact Us</h4>
+  <p>5.1 In case of any issues or concerns related to this Privacy Policy or its fulfillment, please contact us at contactus@osmand.net. So we can deal with your enquiry effectively, please quote this Privacy Policy. We will aim to respond to you within 30 days from receipt of request.</p>
+    <h4>Last updated: February 05, 2019</h4>
+</div>
+</div>
+
+          <div class="article-menu-wrapper">
+            <div class="modal-menu-button"></div>
+            <div class="article-menu">
+              <div class="acticlestitles">
+                <h2>Help</h2>
+                <ul class="articlelinklist">
+                  <!-- 
+                  <li><div id="google_translate_element"></div><script type="text/javascript">
+                    function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                }
+                </script>
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></li> -->
+                  <li><a data-gatag='faq' href="/help-online/faq">FAQ</a></li>
+                  <li><a data-gatag='downloads' href="/downloads">Downloads</a></li>
+                  <li><a data-gatag='map-legend' href="/help-online/map-legend">Map Legend</a></li>
+                  <li><a data-gatag='technical' href="/help-online/technical-articles">Technical Articles</a></li>
+                  <li><a data-gatag='technical' href="/help-online/privacy-policy">Privacy Policy</a></li>
+                  <li><a data-gatag='technical' href="/help-online/terms-of-use">Terms Of Use</a></li>
+                  <li><a data-gatag='license' href="/help-online/license">License</a></li>
+                  <li><a data-gatag='about' href="/help-online/about">About</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+function contactus() {
+  var link = "m" + "ail" + "to" + ':';
+  link = link + "contactus" + "@" + "osmand.net";
+  window.location = link;
+}
+</script>
+
+<div class="footer">
+    <div class="footercontent">
+        <div class="logoblock">
+            <a href="/" class="footerlogo"></a>  
+            <a data-gatag="contactus" href="javascript:contactus();" class="contactus">Contact Us</a>
+        </div>
+        <div class="menublock">
+            <div class="footerlinks">
+                <div class="footerlinkstitle">Website</div>
+                <ul>
+                    <li><a data-gatag="home" href="/">Home</a></li>
+                    <li><a data-gatag="features" href="/features">Features</a></li>
+                    <li><a data-gatag="blog" href="/blog">Blog</a></li>
+                    <li><a data-gatag="osm_live" href="/osm_live">OsmAnd Live</a></li>
+                    <li><a data-gatag="giveaway" href="/giveaway">Giveaway</a></li>
+                    <li><a data-gatag="help" href="/help-online">Help</a></li>
+                    <li><a data-gatag="dvr" href="/dvr">DVR</a></li>
+                    <li><a data-gatag="downloads" href="/downloads">Downloads</a></li>
+                </ul>
+            </div>
+            <div class="footerlinks">
+                <div class="footerlinkstitle">External links</div>
+                <ul>
+                    <li><a data-gatag="merch" href="https://www.redbubble.com/people/osmand/works/26426633-osmand">Get OsmAnd Merchandise</a></li>
+                    <li><a data-gatag="osm" href="https://www.openstreetmap.org/">OpenStreetMap</a></li>
+                    <li><a data-gatag="fb" href="https://www.facebook.com/osmandapp">OsmAnd Facebook</a></li>
+                    <li><a data-gatag="twitter" href="https://twitter.com/osmandapp">OsmAnd Twitter</a></li>
+                    <li><a data-gatag="source_code" href="https://github.com/osmandapp/">OsmAnd Source code</a></li>
+                    <li><a data-gatag="google_groups" href="https://groups.google.com/forum/#!forum/osmand">Google groups (forum)</a></li>
+                    <li><a data-gatag="osmand_cz" href="https://osmand.cz/">OsmAnd CZ Manuals</a></li>
+                </ul>
+                <div class="footerlinkstitle">Telegram - Chat</div>
+                <ul>
+                    <li><a href="https://t.me/OsmAndMaps">Telegram English</a></li>
+                    <li><a href="https://t.me/frosmand">Telegram French</a></li>
+                    <li><a href="https://t.me/deosmand">Telegram German</a></li>
+                    <li><a href="https://t.me/itosmand">Telegram Italian</a></li>
+                    <li><a href="https://t.me/ruosmand">Telegram Russian</a></li>
+                    <li><a href="https://t.me/uaosmand">Telegram Ukrainian</a></li>
+                </ul>
+            </div>       
+        </div>
+    </div>
+</div>
+
+    </div>
+  </div>
+  <script>
+    $('.modal-menu-button').on('click', function(e) {
+      e.preventDefault();
+      $(this).toggleClass('active');
+      $('.article-menu').slideToggle();
+    });
+
+    $('body').on('click', function() {
+      if ($('.modal-menu-button').hasClass('active')) {
+        $('.modal-menu-button').toggleClass('active');
+        $('.article-menu').slideToggle();
+      }
+    });
+
+    $(window).on('resize', function() {
+      if ($(document).width() > 900) {
+        $('.article-menu').attr('style', false);
+        $('.question').removeClass('active');
+        $('.question .content').attr('style', false);
+      }
+    });
+
+    $('.article-menu-wrapper').on('click', function(e) {
+      e.stopPropagation();
+    });
+
+    $('.question .subtitle').on('click', function(e) {
+      e.preventDefault();
+
+      if ($(document).width() < 900) {
+        $(this).parent().toggleClass('active');
+        $(this).next().slideToggle();
+      }
+    });
+  </script>
+</body>
+</html>
