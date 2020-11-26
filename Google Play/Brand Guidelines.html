@@ -31,14 +31,14 @@
     
       <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons">
       
-      <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v85e39fe21f53c758adf6c791fb94a7a2182cff2705b3dc8ed7c59fc745471159/android/css/app.css">
+      <link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v73fbca10ce7899da426d451b3f74ee09bc6846fcf427552c7e8e85261505ef2c/android/css/app.css">
     
 
     <noscript>
       
     </noscript>
-    <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v85e39fe21f53c758adf6c791fb94a7a2182cff2705b3dc8ed7c59fc745471159/android/images/favicon.png">
-    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v85e39fe21f53c758adf6c791fb94a7a2182cff2705b3dc8ed7c59fc745471159/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/distribute/marketing-tools/brand-guidelines"><link rel="search" type="application/opensearchdescription+xml"
+    <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v73fbca10ce7899da426d451b3f74ee09bc6846fcf427552c7e8e85261505ef2c/android/images/favicon.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v73fbca10ce7899da426d451b3f74ee09bc6846fcf427552c7e8e85261505ef2c/android/images/touchicon-180.png"><link rel="canonical" href="https://developer.android.com/distribute/marketing-tools/brand-guidelines"><link rel="search" type="application/opensearchdescription+xml"
             title="Android Developers" href="https://developer.android.com/s/opensearch.xml">
       
 
@@ -85,8 +85,6 @@
 
   
 
-  
-
   <meta name="title" value="Brand guidelines" />
 
 
@@ -96,6 +94,7 @@
         class=""
         
         layout="docs"
+        
         
         
         pending>
@@ -130,7 +129,7 @@
 
 
 
-<div class="devsite-header--inner">
+<div class="devsite-header--inner nocontent">
   <div class="devsite-top-logo-row-wrapper-wrapper">
     <div class="devsite-top-logo-row-wrapper">
       <div class="devsite-top-logo-row">
@@ -148,7 +147,8 @@
    track-name="androidDevelopers" track-metadata-position="nav"
    track-metadata-eventDetail="nav">
 
-  <img src="https://www.gstatic.com/devrel-devsite/prod/v85e39fe21f53c758adf6c791fb94a7a2182cff2705b3dc8ed7c59fc745471159/android/images/lockup.svg" class="devsite-site-logo" alt="Android Developers">
+  <img src="https://www.gstatic.com/devrel-devsite/prod/v73fbca10ce7899da426d451b3f74ee09bc6846fcf427552c7e8e85261505ef2c/android/images/lockup.svg" class="devsite-site-logo"
+       alt="Android Developers">
 
 </a>
 
@@ -185,7 +185,7 @@
       
         
           <tab  >
-            <a href="/about"
+            <a href="https://developer.android.com/about"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -206,7 +206,7 @@
       
         
           <tab  >
-            <a href="/studio"
+            <a href="https://developer.android.com/studio"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -227,7 +227,7 @@
       
         
           <tab  active>
-            <a href="/distribute"
+            <a href="https://developer.android.com/distribute"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -248,7 +248,7 @@
       
         
           <tab  >
-            <a href="/jetpack"
+            <a href="https://developer.android.com/jetpack"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -269,7 +269,7 @@
       
         
           <tab  >
-            <a href="/kotlin"
+            <a href="https://developer.android.com/kotlin"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -290,7 +290,7 @@
       
         
           <tab  >
-            <a href="/docs"
+            <a href="https://developer.android.com/docs"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -311,7 +311,7 @@
       
         
           <tab  >
-            <a href="/news"
+            <a href="https://developer.android.com/news"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -338,6 +338,8 @@
            </div>
           
 <devsite-search
+    aria-expanded="false"
+    aria-haspopup="listbox"
     enable-signin
     enable-search
     enable-suggestions
@@ -348,22 +350,28 @@
     
     
     
-    >
+    
+    
+    role="combobox">
   <form class="devsite-search-form" action="https://developer.android.com/s/results" method="GET">
     <div class="devsite-search-container">
       <div class="devsite-searchbox">
         <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
           
           aria-label="Search"
           aria-haspopup="false"
+          aria-multiline="false"
+          aria-label="Search box"
           autocomplete="off"
           class="devsite-search-field devsite-search-query"
           name="q"
           
           placeholder="Search"
-          role="combobox"
           type="text"
-          value="">
+          value=""
+          >
         <div class="devsite-search-image material-icons" aria-hidden="true"></div>
       </div>
       <button type="button"
@@ -595,7 +603,7 @@
     
     
       
-  <a href="/distribute"
+  <a href="https://developer.android.com/distribute"
       
         class="devsite-breadcrumb-link gc-analytics-event"
       
@@ -604,6 +612,14 @@
         data-label="Lower Header"
       
         data-value="1"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="1"
+      
+        track-metadata-eventdetail=""
       
     >
     
@@ -636,7 +652,7 @@
       
         
           <tab  >
-            <a href="/distribute"
+            <a href="https://developer.android.com/distribute"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -657,7 +673,7 @@
       
         
           <tab  >
-            <a href="/distribute/console"
+            <a href="https://developer.android.com/distribute/console"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -678,7 +694,7 @@
       
         
           <tab  >
-            <a href="/distribute/google-play"
+            <a href="https://developer.android.com/distribute/google-play"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -699,7 +715,7 @@
       
         
           <tab  >
-            <a href="/distribute/play-billing"
+            <a href="https://developer.android.com/distribute/play-billing"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -720,7 +736,7 @@
       
         
           <tab  >
-            <a href="/distribute/play-policies"
+            <a href="https://developer.android.com/distribute/play-policies"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -741,7 +757,7 @@
       
         
           <tab  >
-            <a href="/distribute/play-services"
+            <a href="https://developer.android.com/distribute/play-services"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -762,7 +778,7 @@
       
         
           <tab  >
-            <a href="/distribute/games"
+            <a href="https://developer.android.com/distribute/games"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -783,7 +799,7 @@
       
         
           <tab  >
-            <a href="/distribute/best-practices"
+            <a href="https://developer.android.com/distribute/best-practices"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -804,7 +820,7 @@
       
         
           <tab  active>
-            <a href="/distribute/marketing-tools"
+            <a href="https://developer.android.com/distribute/marketing-tools"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -825,7 +841,7 @@
       
         
           <tab  >
-            <a href="/stories"
+            <a href="https://developer.android.com/stories"
    class="gc-analytics-event "
    track-type="globalNav"
    track-metadata-position="nav"
@@ -907,7 +923,7 @@
    track-name="androidDevelopers" track-metadata-position="nav"
    track-metadata-eventDetail="nav">
 
-  <img src="https://www.gstatic.com/devrel-devsite/prod/v85e39fe21f53c758adf6c791fb94a7a2182cff2705b3dc8ed7c59fc745471159/android/images/lockup.svg" class="devsite-site-logo" alt="Android Developers">
+  <img src="https://www.gstatic.com/devrel-devsite/prod/v73fbca10ce7899da426d451b3f74ee09bc6846fcf427552c7e8e85261505ef2c/android/images/lockup.svg" class="devsite-site-logo" alt="Android Developers">
 
 </a>
 
@@ -1595,15 +1611,14 @@
 
 
 <article class="devsite-article">
-  <article class="devsite-article-inner">
-    
-    
-    
+  
+  
+  
 
-    <div class="devsite-article-meta">
-      
-      
-      <ul class="devsite-breadcrumb-list"
+  <div class="devsite-article-meta">
+    
+    
+    <ul class="devsite-breadcrumb-list"
   
     role="navigation"
     aria-label="Breadcrumb">
@@ -1614,7 +1629,7 @@
     
     
       
-  <a href="/"
+  <a href="https://developer.android.com/"
       
         class="devsite-breadcrumb-link gc-analytics-event"
       
@@ -1623,6 +1638,14 @@
         data-label="Breadcrumbs"
       
         data-value="1"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="1"
+      
+        track-metadata-eventdetail="Google Play"
       
     >
     
@@ -1642,7 +1665,7 @@
     
     
       
-  <a href="/distribute/marketing-tools"
+  <a href="https://developer.android.com/distribute/marketing-tools"
       
         class="devsite-breadcrumb-link gc-analytics-event"
       
@@ -1651,6 +1674,14 @@
         data-label="Breadcrumbs"
       
         data-value="2"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="2"
+      
+        track-metadata-eventdetail=""
       
     >
     
@@ -1662,28 +1693,27 @@
   </li>
   
 </ul>
+    
       
-        
     <devsite-page-rating position="header" selected-rating="0" hover-rating-star="0">
     </devsite-page-rating>
   
+    
+  </div>
+  
+  
+    <h1 class="devsite-page-title">Brand guidelines</h1>
+  
+
+  <devsite-toc class="devsite-nav" devsite-toc-embedded
+               >
+  </devsite-toc>
+
+  <div class="devsite-article-body clearfix
+    ">
+
+    
       
-    </div>
-
-    
-    
-      <h1 class="devsite-page-title">Brand guidelines</h1>
-    
-
-    <devsite-toc class="devsite-nav" devsite-toc-embedded
-                 >
-    </devsite-toc>
-
-    <div class="devsite-article-body clearfix
-      ">
-
-      
-        
 
 
 <p>The &quot;Android&quot; name, the Android logo, the &quot;Google Play&quot; brand, and other Google
@@ -1700,7 +1730,7 @@ relevant legal guidelines on how to display our trademarks. Use the
 <a href="https://support.google.com/contact/partner_brand_approval">brand request form</a>
 to submit your marketing for review.</p>
 
-<h2 id="brand-android" data-text="Android" tabindex="0">Android</h2>
+<h2 id="brand-android" data-text="Android">Android</h2>
 
 <p>The use of the &quot;Android&quot; trademark on hardware, packaging or marketing materials
 of device is restricted to
@@ -1711,7 +1741,7 @@ can be used for compatible devices. For detailed guidance, please consult the
 
 <p>The following are guidelines for the Android brand and related assets.</p>
 
-<h3 id="android_in_text" data-text="Android in text" tabindex="0">Android in text</h3>
+<h3 id="android_in_text" data-text="Android in text">Android in text</h3>
 
 <p><img src="/images/brand/mediaplayer.png" alt="" class="attempt-right"></p>
 
@@ -1752,7 +1782,7 @@ applications&quot;</li>
 </ul></li>
 </ul>
 
-<h3 id="android_robot" data-text="Android robot" tabindex="0">Android robot</h3>
+<h3 id="android_robot" data-text="Android robot">Android robot</h3>
 
 <div class="attempt-right"
      style="text-align:center;width:200px;background:#fff">
@@ -1780,16 +1810,16 @@ applications for or claim trademark rights to the Android robot logo or any
 derivatives thereof. Google retains all trademark rights to the Android robot.
 We want to ensure that the Android robot remains available for all to use.</p>
 
-<h3 id="android_wordmark" data-text="Android wordmark" tabindex="0">Android wordmark</h3>
+<h3 id="android_wordmark" data-text="Android wordmark">Android wordmark</h3>
 
 <p><img src="/images/brand/android_logo_no_2x.png" alt="" width="200"></p>
 
 <p>Unless expressly authorized by Google through written agreement, the Android
 wordmark and custom typeface may not be used.</p>
 
-<h2 id="google-play" data-text="Google Play" tabindex="0">Google Play</h2>
+<h2 id="google-play" data-text="Google Play">Google Play</h2>
 
-<h3 id="google_play_name_and_icon" data-text="Google Play name and icon" tabindex="0">Google Play name and icon</h3>
+<h3 id="google_play_name_and_icon" data-text="Google Play name and icon">Google Play name and icon</h3>
 
 <p>Use of the &quot;Google Play&quot; name and the Google Play Store icon is allowed only in
 association with devices
@@ -1797,7 +1827,7 @@ association with devices
 For a list of devices licensed to use Google Play, refer to
 <a href="https://support.google.com/googleplay/answer/1727131">Supported devices</a>.</p>
 
-<h3 id="google_play_badge" data-text="Google Play badge" tabindex="0">Google Play badge</h3>
+<h3 id="google_play_badge" data-text="Google Play badge">Google Play badge</h3>
 
 <p><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
      class="attempt-right" alt="The Google Play badge" width="215"></p>
@@ -1810,13 +1840,13 @@ generate a visual that can be used in marketing materials.</p>
   Visit badge generator
 </a></p>
 
-<h3 id="other" data-text="Other" tabindex="0">Other</h3>
+<h3 id="other" data-text="Other">Other</h3>
 
 <p>For all other uses of the Google Play brand, please consult guidance on the
 <a href="http://partnermarketinghub.withgoogle.com">Partner Marketing Hub</a> and submit
 your request using the inquiry form below.</p>
 
-<h2 id="marketing-review" data-text="Marketing reviews and brand inquiries" tabindex="0">Marketing reviews and brand inquiries</h2>
+<h2 id="marketing-review" data-text="Marketing reviews and brand inquiries">Marketing reviews and brand inquiries</h2>
 
 <p>Use the <a href="https://support.google.com/contact/partner_brand_approval">brand request form</a>
 to submit any marketing reviews or brand inquires. Typical response time is at
@@ -1826,33 +1856,32 @@ least one week.</p>
   Submit brand inquiry
 </a></p>
 
-      
-
-      
-    </div>
-
     
 
     
+  </div>
+
+  
+
+  
+    
       
-        
     <devsite-page-rating position="footer" selected-rating="0" hover-rating-star="0">
     </devsite-page-rating>
   
-         
-      
-      
+       
     
+    
+  
 
-    
-    
-  </article>
+  
+  
 </article>
 
 
 <devsite-content-footer class="nocontent">
   <p>Content and code samples on this page are subject to the licenses described in the <a href="/license">Content License</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
-  <p>Last updated 2020-04-16 UTC.</p>
+  <p>Last updated 2020-11-18 UTC.</p>
 </devsite-content-footer>
 
 
@@ -2212,7 +2241,7 @@ least one week.</p>
        data-category="Site-Wide Custom Events"
        data-label="Footer Google Developers Link">
       <img class="devsite-footer-sites-logo"
-           src="https://www.gstatic.com/devrel-devsite/prod/v85e39fe21f53c758adf6c791fb94a7a2182cff2705b3dc8ed7c59fc745471159/android/images/lockup-developers.svg"
+           src="https://www.gstatic.com/devrel-devsite/prod/v73fbca10ce7899da426d451b3f74ee09bc6846fcf427552c7e8e85261505ef2c/android/images/lockup-developers.svg"
            loading="lazy"
            alt="Google Developers">
     </a>
@@ -2528,21 +2557,14 @@ least one week.</p>
       </section></section>
     <devsite-sitemask></devsite-sitemask>
     
-<devsite-snackbar type="notification-survey"
-                  
-                  notification-survey-link-txt="Take survey"
-                  notification-survey-link="https://developer.android.com/surveySep2020"
-                  
-                  notification-survey-message="Please help us improve the Android Developer experience by taking a survey."
-                  notification-survey-store-key
-                  >
-</devsite-snackbar>
+<devsite-snackbar 
+                  ></devsite-snackbar>
 
     <devsite-tooltip ></devsite-tooltip>
     <devsite-heading-link></devsite-heading-link>
-    <devsite-analytics >
+    <devsite-analytics enable-analytics-iframe>
       
-        <script type="application/json" analytics>[{"gaid": "UA-5831155-1", "dimensions": {"dimension5": "en", "dimension3": false, "dimension6": "en", "dimension4": "Google Play", "dimension1": "Signed out", "dimension11": false}, "metrics": {"ratings_value": "metric1", "ratings_count": "metric2"}}, {"gaid": "UA-49880327-2", "dimensions": {"dimension5": "en", "dimension3": false, "dimension6": "en", "dimension4": "Google Play", "dimension1": "Signed out", "dimension11": false}, "metrics": {"ratings_value": "metric1", "ratings_count": "metric2"}}]</script>
+        <script type="application/json" analytics>[{"gaid": "UA-5831155-1", "dimensions": {"dimension5": "en", "dimension11": false, "dimension1": "Signed out", "dimension3": false, "dimension4": "Google Play", "dimension6": "en"}, "metrics": {"ratings_value": "metric1", "ratings_count": "metric2"}}]</script>
 <script type="application/json" gtm>{"parameters": {"freeTrialEligibleUser": "False", "internalUser": "False", "language": {"machineTranslated": "False", "requested": "en", "served": "en"}, "pageType": "article", "projectName": "Google Play", "scriptsafe": null, "signedIn": "False", "tenant": "android"}, "tags": ["GTM-KMSWPCJ"]}</script>
       
     </devsite-analytics>
@@ -2550,12 +2572,12 @@ least one week.</p>
       <devsite-badger></devsite-badger>
     
     
-    <script>
+    <script nonce="uM7c30Vx/WotKgps+5d/1Cs9bOpVSD">
   
   (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
     t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
     E.parentNode.insertBefore(t,E);})(window, document, 'script',
-    'https://www.gstatic.com/devrel-devsite/prod/v85e39fe21f53c758adf6c791fb94a7a2182cff2705b3dc8ed7c59fc745471159/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v85e39fe21f53c758adf6c791fb94a7a2182cff2705b3dc8ed7c59fc745471159","https://www.gstatic.com/devrel-devsite/prod/v85e39fe21f53c758adf6c791fb94a7a2182cff2705b3dc8ed7c59fc745471159/android","https://android-dot-devsite-v2-prod.appspot.com",null,null,["/_pwa/android/manifest.json","/_static/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v85e39fe21f53c758adf6c791fb94a7a2182cff2705b3dc8ed7c59fc745471159/android/images/favicon.png","https://www.gstatic.com/devrel-devsite/prod/v85e39fe21f53c758adf6c791fb94a7a2182cff2705b3dc8ed7c59fc745471159/android/images/lockup.svg","https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons"],1]')
+    'https://www.gstatic.com/devrel-devsite/prod/v73fbca10ce7899da426d451b3f74ee09bc6846fcf427552c7e8e85261505ef2c/android/js/app_loader.js', '[3,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v73fbca10ce7899da426d451b3f74ee09bc6846fcf427552c7e8e85261505ef2c","https://www.gstatic.com/devrel-devsite/prod/v73fbca10ce7899da426d451b3f74ee09bc6846fcf427552c7e8e85261505ef2c/android","https://android-dot-devsite-v2-prod.appspot.com",null,null,["/_pwa/android/manifest.json","/_static/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v73fbca10ce7899da426d451b3f74ee09bc6846fcf427552c7e8e85261505ef2c/android/images/favicon.png","https://www.gstatic.com/devrel-devsite/prod/v73fbca10ce7899da426d451b3f74ee09bc6846fcf427552c7e8e85261505ef2c/android/images/lockup.svg","https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons"],1,null,[1,6,8,12,14,17,21,25,40,50,63,70,75,76,80,87,88,91,92,93,97,98,101,102,103,105,107,111]]')
   
 </script>
   </body>
