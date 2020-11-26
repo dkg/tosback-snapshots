@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- website title -->
+	<title>Seats2meet.com | Privacy</title>
+
+	<!-- meta data -->
+	<meta name="description" content="See here how we handle your privacy." />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="content-language" content="en-US">
+
+	<!-- linking | icon -->
+    
+	<link rel="alternate" hreflang="de" href="https://www.seats2meet.com/de/privacy">
+	<link rel="alternate" hreflang="en" href="https://www.seats2meet.com/en/privacy">
+	<link rel="alternate" hreflang="ja" href="https://www.seats2meet.com/ja/privacy">
+	<link rel="alternate" hreflang="nl" href="https://www.seats2meet.com/nl/privacy">
+	<link rel="alternate" hreflang="pt" href="">
+
+	
+	<script type="text/javascript">
+		var profileKey;
+		var ProfileObject;
+		var ARR_CALENDARLABELS;
+		
+		// var t = 'false';
+
+		var nsHeader = {
+			profileKey: '',
+			profileObject: ''
+		};
+	</script>
+
+	<script src="/scripts/frontend/mainScripts?v=ZIZwU8bpyyWGpTbjKDS_EYdH19gPD_FgfJk4C6C9vVM1"></script>
+
+    <script src="/signalr/hubs"></script>
+    <script src="/scripts/frontend/masterpage?v=if4O7vQPSijxWcT4Q46_jQReW1SIOtfaEYnMnCRglKI1"></script>
+
+
+	<script type="text/javascript">
+		$(function () {
+			var cookieUrl = 'https://cookies.seats2meet.com'
+            var channelId = 1
+
+            var masterpageVM = new MasterpageModule.MasterPageViewModel({ChannelId: channelId, CookieUrl: cookieUrl});
+            ko.applyBindings(masterpageVM, document.getElementById('systemNotificationContent'));
+
+            $('#showPersonalMenu').click(function (e) {
+				e.stopPropagation(); //stops click event from reaching document
+			});
+			$(document).click(function () {
+				if ($('#manageProfileListHolder').is(':visible')) {
+					ToggleProfileLocations('#showPersonalMenu');
+				}
+			});
+
+			var headerMenuVM = new HeaderMenuModule.HeaderMenuViewModel({
+				MenuViewIsInverted: false
+			});
+			ko.applyBindings(headerMenuVM, document.getElementById('menuHolder'));
+		});
+    </script>
+
+
+	
+		<!-- Google Tag Manager -->
+		<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+				new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-MGDWDM4');</script>
+		<!-- End Google Tag Manager -->
+	
+
+	<!--[if lte IE 8]>
+		<script type="text/javascript" src="/scripts/IEFallback/IE8Functions.js"></script>
+	<![endif]-->
+
+	<!--[if lte IE 7]>
+		<script type="text/javascript" src="/scripts/IEFallback/json2-min.js"></script>
+		<script type="text/javascript" src="/scripts/IEFallback/IE7Functions.js"></script>
+	<![endif]-->
+
+	
+	
+	<link href="/Channels/s2m/Style/frontend/defaultpagestyling?v=2lcL1YMP34gSu6ruFBkmGQn540YLpf95WLcWVYTpqCg1" rel="stylesheet"/>
+
+
+</head>
+<body id="ctl00_bodyId">
+	
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGDWDM4"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+	
+
+    <div id="systemNotificationContent">
+        
+        <div id="popup-overlay" class="popup-overlay opacityDark80" data-bind="visible: $root.ShowTermsPopup() === true" style="display: none;"></div>
+	    <div id="popup-holder" class="popup-holder terms-popup-holder" data-bind="visible: $root.ShowTermsPopup() === true" style="display: none;">
+		    <div class="padding header">
+				<h2 class="align_left">We updated our terms</h2>
+		    </div>
+
+			<div class="contentWrapper">
+				<div class="content">
+					<!-- ko if: $root.LatestTerms().Changes() !== '' -->
+					<div data-bind="html: $root.LatestTerms().Changes"></div>
+					<hr />
+					<!-- /ko -->
+					<strong data-bind="html: $root.LatestTerms().Version"></strong>
+					<hr />
+					<div data-bind="html: $root.LatestTerms().Text"></div>
+				</div>
+			</div>
+
+            <div class="padding footer">
+				<label class="customCheckbox">
+					<input type="checkbox"  data-bind="checked: $root.UserHasAgreed" />
+					<span class="checkmark">
+					  <i class="text_accent_white font-icon s2m-icon-check-mark"></i>
+					</span>
+					<span class="shortDescription">I agree to these terms</span>
+				</label>
+
+                <a href="javascript:" data-bind="event: { click: function () { $root.SaveTermsAgreement(); return true; } }, css: {'callToAction': $root.UserHasAgreed(), 'disabled':!$root.UserHasAgreed()}" class="button">Agree &close</a>
+            </div>
+	    </div>
+
+        <div id="cookieBar" data-bind="visible: $root.ShowCookieBar" class="part no_margin" style="display: none;">
+			<div class="content">
+				
+				<div class="col-left hide_mobile">
+				  <strong>SEATS2MEET.COM USES COOKIES</strong><br/>These are categorized in functional, analytical, advertising, social media and experimental cookies.<br/>
+ 
+Advertising and social media cookies gather information about activities of individual users. Seats2meet uses these to follow and improve the effectiveness of moments of contact with users outside of the platform.
+				</div>
+				<div class="show_mobile">
+					Seats2meet.com make use of cookies
+				</div>
+				<a href="javascript:" class="button button-height-normal callToAction" data-bind="event: { click: function (data) { $root.GoToCookieConsent(); return true; } }" >Cookie settings</a>
+			</div>
+        </div>
+    </div>
+
+	<div id="site_body_wrapper">
+		<form name="aspnetForm" method="post" action="./privacy" id="aspnetForm" autocomplete="off">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="9rYms2LfciP4BssdvcP+n4gHYmZ1S/CC+dttn8ceWGJl7qKIKq4g2tmJX50QFrQaC7gQq3sZb9cyKHiIcrCKqV7A/cKmA8a46EgvO4ldN+k=" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BD7C4EEF" />
+			
+			<header role="navigation" id="menuHolder">
+				<div class="part main_menu main_website_menu no_padding">
+					<div class="clearfix content">
+						<div class="column width_1_of_1 align_right">
+							<a aria-label="menu" aria-expanded="true" class="hamburger show_tablet show_mobile" onclick="$('#hamburger').animate({height: 'toggle'});">
+								<i aria-hidden="true" class="font-icon s2m-icon-navicon" style="color: black; display: none;""></i>
+							</a>
+							<a href="/" class="main_logo">
+								<img src="/Content/images/spacer.gif" alt="Seats2meet.com | Book your meeting-, training- or event space, workspace or temporary office online">
+							</a>
+							<nav>
+								<ul class="clear-list hide_tablet hide_mobile">
+									
+											<li>
+												<a href="/en" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Home', '', 1);" class=" " >Home</a>
+												
+											</li>
+										
+											<li>
+												<a href="/en/locations" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Locations', '', 1);" class=" " >Locations</a>
+												
+											</li>
+										
+											<li>
+												<a href="/en/events" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Events', '', 1);" class=" " >Events</a>
+												
+											</li>
+										
+											<li>
+												<a href="https://now.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Network', '', 1);" class=" " >Network</a>
+												
+											</li>
+										
+											<li>
+												<a href="https://passport.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Passport', '', 1);" class=" " >Passport</a>
+												
+											</li>
+										
+											<li>
+												<a href="https://magazine.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Magazine', '', 1);" class=" " >S2M Stories</a>
+												
+											</li>
+										
+											<li>
+												<a href="https://host.seats2meet.com/" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Host', '', 1);" class=" " >Join with your location</a>
+												
+											</li>
+										
+								</ul>
+							</nav>
+
+							<div class="holder-profileLoggedIn margin_left">
+								<div id="profileLoggedInHolder" class="profileContainer"></div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				
+
+				
+				<div id="hamburger" class="part color_secundary main_menu main_mobile_menu no_padding" style="display: none">
+					<div class="content show_mobile show_tablet no_padding_vertical">
+						<nav>
+							<ul class="clear-list">
+								
+										<li>
+											<a href="/en" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Home', '', 1);" class="" >Home</a>
+											
+										</li>
+									
+										<li>
+											<a href="/en/locations" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Locations', '', 1);" class="" >Locations</a>
+											
+										</li>
+									
+										<li>
+											<a href="/en/events" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Events', '', 1);" class="" >Events</a>
+											
+										</li>
+									
+										<li>
+											<a href="https://now.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Network', '', 1);" class="" >Network</a>
+											
+										</li>
+									
+										<li>
+											<a href="https://passport.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Passport', '', 1);" class="" >Passport</a>
+											
+										</li>
+									
+										<li>
+											<a href="https://magazine.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Magazine', '', 1);" class="" >S2M Stories</a>
+											
+										</li>
+									
+										<li>
+											<a href="https://host.seats2meet.com/" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Host', '', 1);" class="" >Join with your location</a>
+											
+										</li>
+									
+							</ul>
+						</nav>
+					</div>
+				</div>
+				
+			
+			</header>
+			
+
+			
+			<div class="siteTopContentHolder">
+				
+	<div id="page-standard">PrivacyStatement
+		
+		<div class="part color_accent_3 landing height_auto"> 
+			<div class="content">
+				<div class="column width_1_of_1">
+					<h1>Privacy</h1>
+				</div>
+			</div>
+		</div>
+		
+
+		
+		<div class="part color_primary"> 
+			<div class="content">
+				<div class="column width_1_of_1"><h2 style="text-align:center">Privacy Statement</h2>
+
+<p style="text-align:center">This Privacy Statement was most recently revised on February 1st 2019.</p>
+
+<p><br />
+On the Seats2meet.com website and platform we may acquire certain personal data from you. We deem careful handling of your personal data very important. Personal data are therefore carefully processed and secured in accordance with the requirements for the processing of personal data as laid down in the General Data Protection Regulation (GDPR). In this Privacy Statement, we explain which personal data we collect and use and for what purposes. If you wish to know more details about how we process personal data, please visit <a href="https://gdpr.seats2meet.com" target="_blank">gdpr.seats2meet.com</a><br />
+ </p>
+
+<p><strong>1. You are in control of your personal data with your Profile Passport</strong><br />
+Seats2meet provides you a Profile Passport (your user account) that enables you to take full control over the personal data you provide us and share on our platform. We guarantee that your personal data will not be sold to any third party without your explicit consent.</p>
+
+<p>From your Passport you can:</p>
+
+<p>view your personal data;</p>
+
+<ul>
+	<li>correct, improve and amend your personal data;</li>
+	<li>restrict our possibilities to to communicate with you and to monitor your use of our services. Note that these restrictions may affect our ability to service you to the best of our abilities;</li>
+	<li>delete your profile and remove your personal data.</li>
+</ul>
+
+<p>If you wish to extract your personal data, Seats2meet.com can provide you with this data in a generic/simple exchange format upon a request at <a href="mailto:privacy@seats2meet.com">privacy@seats2meet.com</a>.<br />
+ </p>
+
+<p><strong>2. Which personal data we collect, when, why and for how long</strong><br />
+At Seats2meet.com we process your bookings for Meetingspaces and Workspaces and seek to facilitate serendipitous exchanges between you and the other users of our services and visitors of our locations. </p>
+
+<p>We collect personal data during the following interactions:</p>
+
+<ul>
+	<li>When you visit our webpages and you are <strong>not logged</strong> in: we collect anonymous usage statistics that help us to monitor the platform. We use Google Analytics cookies to do so, but these are not relatable to natural persons and therefore don’t require your consent. Please see below under 8 and our Cookie Statement for more information. We do so to continue improvement and development of our platform.</li>
+	<li>When you <strong>create bookings on our platform</strong>: based on our contract, your Meetingspace and Workspace Booking and Billing details that are needed to fulfil your booking request are stored in your Profile Passport until you delete your account, or two years after your last activity. We do so to deliver our services and products. Additionally, we store your Billing details for seven years. We are required to do so by law for the Dutch tax authority.</li>
+	<li>When you <strong>register an account and create a Profile Passport for our services</strong>: on the basis of our contract, a profile is created containing your name, surname, e-mail address, profile image, billing address, telephone number, links to social media profiles and tags that describe your areas of expertise. We do so to deliver our services and products. Your Profile Passport is stored until you delete your account or two years after your last activity.</li>
+	<li>The <strong>Serendipity Machine</strong> is part of your Profile Passport: through your Profile Passport, you get matched by an AI driven algorithm to other users, locations, events, content and questions made by the S2M ecosystem. Your matches are based on your use of the S2M ecosystem. We use the Serendipity Machine to provide our services and products to you: to facilitate serendipitous encounters and connections between users and to facilitate knowledge exchange between users. This information is also stored until you delete your account or two years after your last activity. You have the right to object to our profiling activities. This may mean that you cannot longer use our service since this way of profiling is part of the actual service. Please contact our Data Protection Officer (privacy@seats2meet.com) if you wish to do so.</li>
+	<li>After<strong> logging in with your Profile Passport</strong>: we work with <strong>Google Analytics</strong> to monitor individual navigation behaviour on our platform to adequately understand how our services are being used. More specific information about this is given below under 8. We do so to continue improvement and development of our platform.</li>
+	<li>When you <strong>check in</strong> on our platform: by checking in on a location, your temporal presence at this location, your tags and your function will be visible to other users:
+	<ul>
+		<li>when they visit the Seats2meet.com Ecosystem map;</li>
+		<li>when they receive suggested profile matches;</li>
+		<li>on a screen that is available in a public area of the Working spaces (only on some locations).</li>
+	</ul>
+	You can either physically check in at the location, or from the Seats2meet.com website. When you provide us with your location coordinates upon our request, you consent to sharing your location with Google Maps. We store this data until you delete your account, two years after your last activity or until you withdraw your consent.</li>
+	<li>When you<strong> connect with other users, send messages </strong>and<strong> ask questions with your Profile Passport in the S2M ecosystem</strong>: these interactions are stored and combined by us to provide relevant / tailored suggestions we make to you when you use our platform. This information is also stored until you delete your account, or two years after your last activity.<br />
+	 </li>
+</ul>
+
+<p><strong>3.  Our platform learns</strong><br />
+The usage of the Seats2meet.com platform by users allows us to collect anonymized and aggregated data. This data cannot be related to natural persons. We use this data to optimize and develop our services to our users online and on locations.<br />
+ </p>
+
+<p><strong>4. Sharing with third parties</strong><br />
+Seats2meet.com provides an Application Programming Interface (API) to application developers to process some of your data following the same principles and conditions as laid down in this Statement.</p>
+
+<p>Additionally, we engage with several parties to deliver our services. We have obliged them to handle your personal data confidentially and securely through a processor agreement:</p>
+
+<ol>
+	<li>Cloudflare, Inc.</li>
+	<li>IcePay B.V.</li>
+	<li>JURR B.V.</li>
+	<li>Freshworks, Inc.</li>
+	<li>Google LLC (Google Analytics, Maps and Youtube)</li>
+	<li>Sendgrid, Inc.</li>
+	<li>The Rocket Science Group LLC (MailChimp)</li>
+</ol>
+
+<p><br />
+<strong>5. Third-party websites</strong><br />
+We provide many connections with third-party websites, for example for events, locations, and web shops. This Privacy Statement does not apply to these third-party websites. We cannot guarantee that these third parties handle your personal data carefully and securely. We recommend that you read the privacy statements of their website before you make use of these websites.<br />
+ </p>
+
+<p><strong>6. Security</strong><br />
+Seats2meet.com is committed to the necessary measures and ongoing efforts to secure and protect the personal data that is stored on our systems and on the systems of the Processors we work with.<br />
+ </p>
+
+<p><strong>7. Cookies</strong><br />
+Seats2meet.com uses cookies. A cookie is a small data file with text stored on your hard drive via your browser. Information that is being saved there can be sent back to our server again at your next visit.</p>
+
+<p>We use several kinds of cookies for several purposes. Some cookies are necessary to make the Seats2meet.com homepage as user friendly as possible, or to collect statistics about the use of our website. For more information about the different kinds of cookies, our use thereof and your consent to do so, please see our Cookie Statement.</p>
+
+<p>Generally enabling or disabling cookies can be set via your browser (e.g. Internet Explorer, Safari, Firefox or Google Chrome). Deleting cookies is done via your browser as well. Furthermore, you can exactly select which cookies you would like to accept and which cookies you would like to reject. Since the making of these adjustments can vary from browser to browser it might be helpful to use the ‘help’ function of your browser.<br />
+ </p>
+
+<p><strong>8. Google Analytics</strong><br />
+We employ the Analytics service provided by the US company Google, with which we have concluded a data processing agreement. We mask IP-addresses and do not allow Google to share this data with other Google services or third parties. Google is Privacy Shield-certified.</p>
+
+<p>For registered and logged in Profile Passports only, we allow the <strong>USER-ID</strong> property to track how individual users interact with the platform. We do so with your consent only. When you prefer to opt out of this function, you can do so in the Passport section of your Profile Passport.</p>
+
+<p>Google is allowed to obtain access to this data only if Google is obliged to do so by law or court order. Seats2meet.com has no influence over this process.<br />
+ </p>
+
+<p><strong>9. Social media buttons</strong><br />
+On our website you will find buttons with which you can promote the website on social network platforms (e.g. a “like” on Facebook or a “Share” on Twitter). These buttons function with the help of pieces of code that are provided by these social platforms. We cannot block cookies from being placed by means of these codes. Please read the privacy statements of these platforms regularly, since they can be adjusted frequently.<br />
+ </p>
+
+<p><strong>10. Information Requests</strong><br />
+On your request Seats2meet.com will inform you at most within four weeks if and how your personal data is processed. This information will include the goals of the processing of your personal data, which data is saved exactly and how long, the (categories of) receivers and the origin of your personal data. </p>
+
+<p>If your personal data is incorrect or incomplete or if your personal data does not serve goals mentioned above, you can edit or delete your personal data from your Profile Passport or object via the contact details below. You may also withdraw your consent at any time.</p>
+
+<p>Seats2meet.com will inform you as soon as possible (within four weeks after your request) about the measures that will be taken regarding your request. If your question is very complex, we will inform you so within four weeks and we will get back to you within two additional months at the utmost.</p>
+
+<p>To secure adequate checks & balances and guarantee protection of your data, Seats2meet has appointed an external Data Protection Officer that is registered at the Dutch data protection authority, <a href="https://autoriteitpersoonsgegevens.nl/" target="_blank">Autoriteit Persoonsgegevens</a>, with ID: FG002135. Any privacy related request can be sent directly to our Data Protection Officer at <a href="mailto:privacy@seats2meet.com">privacy@seats2meet.com</a> (preferred) or on physical media to:</p>
+
+<p>Seats2meet.com International BV<br />
+Moreelsepark 65<br />
+3511EP Utrecht, the Netherlands<br />
+(+31)30-7400033</p>
+
+<p>VAT number: NL822786746B01<br />
+Bank account: 49.52.92.575<br />
+Dutch Chamber of Commerce number: 50516167<br />
+ </p>
+
+<p><strong>11. Supervisory authority</strong><br />
+Of course, we will happily help you if you have any complaints about the processing of your personal data. Based on privacy legislation, you also have the right to lodge a complaint with the national supervisory authority responsible for the protection of personal data against our processing of your personal data. For the Netherlands, this is the Autoriteit Persoonsgegevens, with which you can file a complaint <a href="https://autoriteitpersoonsgegevens.nl/nl/zelf-doen/privacyrechten/klacht-indienen-bij-de-ap" target="_blank">here</a>.</p>
+</div>
+                <div class="column width_1_of_1"><em>S2MPS 20190201</em></div>
+			</div>
+		</div>
+	</div>
+
+
+                
+			</div>
+			
+
+
+			
+			<footer>
+				<div class="part color_accent_4 footer">
+					<div class="content">
+						
+								<div class="column width_1_of_4">
+									<h6>About us</h6>
+									
+											<ul>
+										
+											<li>
+												<a href="https://host.seats2meet.com/about-seats2meet" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('for host', 'footer | about', 'link', 1);" target="">
+													About Seats2meet
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://gdpr.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('GDPR', 'footer', 'link', 1);" target="_blank">
+													GDPR compliant
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/Locations"  target="">
+													Locations
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://host.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('for host', 'footer | sign-up-location', 'link', 1);" target="">
+													Sign up your location
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://magazine.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('magazine', 'footer', 'link', 1);" target="_blank">
+													S2M Stories
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/contact"  target="">
+													Contact Seats2meet
+												</a>
+											</li>
+										
+											</ul>
+										
+								</div>
+							
+								<div class="column width_1_of_4">
+									<h6>What we do</h6>
+									
+											<ul>
+										
+											<li>
+												<a href="https://now.seats2meet.com"  target="">
+													Network
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/meetings"  target="">
+													Meetings
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/coworking"  target="">
+													Coworking
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/deskspace"  target="">
+													Temporary office
+												</a>
+											</li>
+										
+											<li>
+												<a href="http://serendipitymachine.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('serendipitymachine', 'footer', 'link', 1);" target="_blank">
+													The Serendipity Machine
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://locals.seats2meet.com/" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('s2m for locals', 'footer', 'link', 1);" target="_blank">
+													Seats2meet for Locals
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://seats4silence.seats2meet.com/nl" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('Seats4silence', 'footer', 'link', 1);" target="_blank">
+													Seats4silence
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/events"  target="">
+													Event Calendar
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://magazine.seats2meet.com/collaborations" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('magazine', 'footer | collaborations', 'link', 1);" target="_blank">
+													Our partners
+												</a>
+											</li>
+										
+											</ul>
+										
+								</div>
+							
+								<div class="column width_1_of_4">
+									<h6>General</h6>
+									
+											<ul>
+										
+											<li>
+												<a href="/en/privacy"  target="">
+													Privacy Policy
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/terms"  target="">
+													Terms
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://shop.seats2meet.com"  target="_blank">
+													Seats2meet Shop
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://shop.seats2meet.com/styleguide/"  target="_blank">
+													Seats2meet styleguide
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://cookies.seats2meet.com"  target="">
+													Cookie settings
+												</a>
+											</li>
+										
+											</ul>
+										
+								</div>
+							
+
+						<div class="column width_1_of_4" style="float: right;">
+							<div id="ctl00_RowSocialMedia" class="row row-socialMedia">
+								<h6>Social</h6>
+								<a href="https://www.linkedin.com/company/628137?trk=tyah&trkInfo=idx%3A3-2-8%2CtarId%3A1423664334134%2Ctas%3Aseats" id="ctl00_SocialLogoLinked" class="sprite_social px32 linkedIn" title="LinkedIn"></a>
+								<a href="https://www.facebook.com/Seats2meetcom" id="ctl00_SocialLogoFacebook" class="sprite_social px32 facebook" title="Facebook"></a>
+								<a href="https://twitter.com/s2m" id="ctl00_SocialLogoTwitter" class="sprite_social px32 twitter" title="Twitter"></a>
+							</div>
+							<div class="row row-language">
+								<label for="languageSelector">
+									Language
+								</label>
+								
+										<select id="languageSelector" name="languageSelector" onchange="SetLanguage(this.value);">
+									
+										<option value="nl-NL">Dutch (Netherlands)</option>
+									
+										<option value="en-US">English</option>
+									
+										<option value="de">German</option>
+									
+										<option value="ja">Japanese</option>
+									
+										<option value="pt">Portuguese</option>
+									
+										<option value="es-ES">Spanish (Spain)</option>
+									
+										</select>
+									
+							</div>
+							<div id="ctl00_RowCountrySelector" class="row row-country">
+								<label for="countrySelector">
+									Country
+								</label>
+								
+										<select id="countrySelector" name="countrySelector" onchange="SetCountry(this.value);">
+									
+										<option  value="18">Argentina</option>
+									
+										<option  value="26">Bangladesh</option>
+									
+										<option  value="29">Belgium</option>
+									
+										<option  value="35">Bosnia-Herzegovina</option>
+									
+										<option  value="37">Brazil</option>
+									
+										<option  value="44">Canada</option>
+									
+										<option  value="49">Chile</option>
+									
+										<option  value="50">China</option>
+									
+										<option  value="67">Ecuador</option>
+									
+										<option  value="77">Finland</option>
+									
+										<option  value="78">France</option>
+									
+										<option  value="84">Germany</option>
+									
+										<option  value="87">Greece</option>
+									
+										<option  value="101">India</option>
+									
+										<option  value="102">Indonesia</option>
+									
+										<option  value="109">Japan</option>
+									
+										<option  value="111">Kazakhstan</option>
+									
+										<option  value="114">North Korea</option>
+									
+										<option  value="140">Mexico</option>
+									
+										<option  value="152">Netherlands</option>
+									
+										<option  value="155">New Zealand</option>
+									
+										<option  value="168">Peru</option>
+									
+										<option  value="172">Portugal</option>
+									
+										<option  value="190">Singapore</option>
+									
+										<option  value="192">Slovenia</option>
+									
+										<option  value="195">South Africa</option>
+									
+										<option  value="196">Spain</option>
+									
+										<option  value="202">Switzerland</option>
+									
+										<option  value="206">Thailand</option>
+									
+										<option  value="217">Ukraine</option>
+									
+										<option  value="219">United Kingdom</option>
+									
+										<option selected value="220">United States</option>
+									
+										<option  value="233"></option>
+									
+										</select>
+									
+							</div>
+						</div>
+					</div>
+					<div class="content">
+						
+						<div id="ctl00_BCorpsLogo" class="column width_1_of_4">
+							<a id="bCorpLogo" href="http://bcorporation.eu/community/seats2meetcom-international-bv" target="_blank">
+								<img src="/Content/Frontend/Images/Website/B_BCorp_logo_NEG.png" style="margin: 0;" /></a>
+						</div>
+					</div>
+				</div>
+			</footer>
+			
+			<div id="siteBottomContainer" class="pageBlockRow pageBlockRowDark darkBackground opacityDark100">
+				
+
+			</div>
+		</form>
+
+		
+		<div data-bind="foreach: Growls, beforeRemove: HideGrowl, visible: Growls().length !== 0" id="holder-crowls" class="crowls-holder" style="display: none;">
+			<div data-bind="css: 'growl-' + Type()" class="crowl content-holder">
+				<span class="popup-close-button buttonCancel button-height-normal" data-bind="event: { click: function (data, event) { $root.RemoveGrowl(data); } }">&#x2715;</span>
+				<div class="content-holder">
+					<!-- ko if: Type() === 'confirm' -->
+					<i class="font-icon s2m-icon-check-circle"></i>
+					<!-- /ko -->
+					<!-- ko if: Type() === 'warning' -->
+					<i class="font-icon s2m-icon-exclamation"></i>
+					<!-- /ko -->
+					<!-- ko if: Type() === 'info' -->
+					<i class="font-icon s2m-icon-question-circle"></i>
+					<!-- /ko -->
+					<div class="text">
+						<h4 class="article-header" data-bind="text: Subject"></h4>
+						<div data-bind="text: Message"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--[if lte IE 9]>
+		<script type="text/javascript" src="/scripts/IEFallback/jquery.html5-placeholder-shim.js"></script>
+	<![endif]-->
+
+	<!--[if lte IE 8]>
+		<script type="text/javascript" src="/scripts/IEFallback/jquery.backgroundSize.js"></script>
+	<![endif]-->
+
+	<!--[if lte IE 8]>
+		<script type="text/javascript">
+			$(function(){
+				$('div.landing').css('background-size', 'cover');
+			});
+		</script>
+	<![endif]-->
+
+    
+	<script type="text/javascript" src="https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.js"></script>
+	<script type="text/javascript">
+		if (typeof FreshWidget !== 'undefined') {
+            FreshWidget.init("", { "queryString": "&widgetType=popup&searchArea=no", "widgetType": "popup", "buttonType": "text", "buttonText": "Feedback", "buttonColor": "white", "buttonBg": "#999999", "alignment": "2", "offset": "75%", "formHeight": "500px", "url": "https://seats2meet.freshdesk.com" });
+            let t = setTimeout(function () {	
+                if (document.getElementById('freshwidget-button')) {
+                    document.getElementById('freshwidget-button').setAttribute("aria-hidden", true);
+                }
+                clearTimeout(t);
+            }, 1000);
+        }
+
+		$(function () {
+			var channelId = GetCookie('ChannelId');
+			channelId = Number(channelId);
+			//if (typeof channelId === 'number' && channelId !== 1) {
+			//	document.getElementById('bCorpLogo').style.display = "none";
+			//}
+			if (typeof jQuery.ui !== 'undefined') {
+				ARR_CALENDARLABELS = $.datepicker.regional["en"];
+				$.datepicker.setDefaults($.datepicker.regional["en"]);
+            }
+		});
+	</script>
+    </body>
+</html>
