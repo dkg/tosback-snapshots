@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!--
+                             _ _
+ _ __   __ _ _ __   ___ _ __| (_)
+| '_ \ / _` | '_ \ / _ \ '__| | |
+| |_) | (_| | |_) |  __/ | _| | |
+| .__/ \__,_| .__/ \___|_|(_)_|_|
+|_|         |_|
+
+
+-->
+<html
+  lang="en"
+  class="no-js"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:fb="http://ogp.me/ns/fb#"
+  xmlns:paperli="http://paper.li/ns#">
+  
+  <head>
+    
+    <title>Paper.li - Terms of Service</title>
+    <meta charset="utf-8">
+      <meta content="Build your digital presence with Paper.li" data-react-helmet="true" property="og:title" />
+  <meta content="We&#x27;ll bring you daily content on the topics you choose, to add to your own webpage, share on social and deploy your newsletter. Market yourself and your ideas." data-react-helmet="true" property="og:description" />
+  <meta content="website" property="og:type" />
+  <meta content="https://paper.li/terms.html" property="og:url" />
+  <meta content="https://d197nsfq0bri0.cloudfront.net/images/fb-post-logo-2020.png" property="og:image" />
+  <meta content="paper.li" property="og:site_name" />
+  <meta content="362293833600" property="fb:app_id" />
+  
+  <meta content="en_US" property="og:locale" />
+
+      <meta content="en_US" property="og:locale:alternate" />
+      <meta content="de_DE" property="og:locale:alternate" />
+      <meta content="fr_FR" property="og:locale:alternate" />
+      <meta content="es_ES" property="og:locale:alternate" />
+      <meta content="pt_PT" property="og:locale:alternate" />
+  
+  <link href="https://d197nsfq0bri0.cloudfront.net/images/fb-post-logo-2020.png" rel="image_src" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="apple-touch-icon" href="/favicon.ico">
+
+    
+  <link rel="dns-prefetch" href="//img.paper.li">
+  <link rel="dns-prefetch" href="//d38hokjm2drjyk.cloudfront.net">
+  <link rel="dns-prefetch" href="//connect.facebook.net">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//platform.twitter.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script type="text/javascript">
+      paperli = window.paperli || {};
+      paperli.locale = 'en';
+      paperli.logged_in = false;
+      paperli.host = 'paper.li';
+      paperli.imageproxy_token = {"tokenValidity":"1606391788328","token":"65ce098410a9a41534873a910a7b5893cc6035d2"};
+      paperli.images_host = "d38hokjm2drjyk.cloudfront.net";
+    </script>
+
+    <link href="//d2k854fi3lpqb8.cloudfront.net/assets/application-fbf30d83b8370ab75a5755a277214362.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="//d2k854fi3lpqb8.cloudfront.net/assets/icons-5e81c14961e53668202ba1529aa93dee.css" media="all" rel="stylesheet" type="text/css" />
+    
+    <!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','nx8si');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+
+<script>
+  "seo ignore"; // seo hint;
+  
+  var _ga = _ga || {};
+  
+  _ga.getSocialActionTrackers_ = function(socialNetwork, socialAction, socialTarget) {
+    return function() {
+      var trackers = ga.getAll();
+      for (var i = 0, tracker; tracker = trackers[i]; i++) {
+        tracker.send('social', socialNetwork, socialAction, socialTarget);
+      }
+    };
+  };
+  
+  _ga.trackFacebook = function() {
+    try {
+      if (FB && FB.Event && FB.Event.subscribe) {
+        FB.Event.subscribe('edge.create', function(targetUrl) {
+          ga(_ga.getSocialActionTrackers_('facebook', 'like', targetUrl));
+        });
+        FB.Event.subscribe('edge.remove', function(targetUrl) {
+          ga(_ga.getSocialActionTrackers_('facebook', 'unlike', targetUrl));
+        });
+        FB.Event.subscribe('message.send', function(targetUrl) {
+          ga(_ga.getSocialActionTrackers_('facebook', 'send', targetUrl));
+        });
+      }
+    } catch (e) {}
+  };
+  
+  
+  _ga.trackTwitterHandler_ = function(intent_event) {
+    var targetUrl = ''; // must be present
+    if (intent_event && intent_event.type == 'tweet' || intent_event.type == 'click') {
+      if (intent_event.target.nodeName == 'IFRAME') {
+        targetUrl = _ga.extractParamFromUri_(intent_event.target.src, 'url');
+      }
+      var socialAction = intent_event.type + ((intent_event.type == 'click') ? '-' + intent_event.region : ''); //append the type of click to action
+      ga(_ga.getSocialActionTrackers_('twitter', socialAction, targetUrl));
+    }
+  };
+  
+  _ga.trackTwitter = function() {
+    intent_handler = function(intent_event) {
+      _ga.trackTwitterHandler_(intent_event);
+    };
+  
+    //bind twitter Click and Tweet events to Twitter tracking handler
+    twttr.events.bind('click', intent_handler);
+    twttr.events.bind('tweet', intent_handler);
+  };
+  
+  
+  _ga.extractParamFromUri_ = function(uri, paramName) {
+    if (!uri) {
+      return;
+    }
+    var regex = new RegExp('[\\?&#]' + paramName + '=([^&#]*)');
+    var params = regex.exec(uri);
+    if (params != null) {
+      return unescape(params[1]);
+    }
+    return;
+  };    
+</script>    
+
+    <script type="text/javascript">
+  "seo ignore"; // seo hint;
+  
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));
+  
+  // Wait for the asynchronous resources to load
+  twttr.ready(function(twttr) {
+    _ga.trackTwitter(); //Google Analytics tracking
+  });
+</script>
+
+
+    <!-- vendor plugins -->
+    <script src="//d2k854fi3lpqb8.cloudfront.net/assets/vendor-a9c986d4e0336fcddaa6f475becab578.js" type="text/javascript"></script>
+
+    <!-- language -->
+    <script src="//d2k854fi3lpqb8.cloudfront.net/assets/i18n/en-e10311ba0c4fa94784e06f873e57c7b7.js" type="text/javascript"></script>
+    <script src="//d2k854fi3lpqb8.cloudfront.net/assets/i18n/left-sidebar/en-62a707b4cedfb6049db46ab91d797730.js" type="text/javascript"></script>
+    <script src="//d2k854fi3lpqb8.cloudfront.net/assets/i18n/i18n-b7fb7788d0db87c7a1285ccc95fce495.js" type="text/javascript"></script>
+
+    <!-- plugin language initialization -->
+    
+    
+
+      <script type="text/javascript">
+        paperli.reCaptcha = '6LdWYOIUAAAAAAlxx41rd4v9-0iFllIcogHeXjDg';
+      </script>
+      <script src="https://www.google.com/recaptcha/api.js?render=6LdWYOIUAAAAAAlxx41rd4v9-0iFllIcogHeXjDg" type="text/javascript"></script>
+    
+    <script>
+  if (!window.paperli) {
+    window.paperli = {};
+  }
+
+  paperli.origin_data = {
+    identifier: 'paper.li:main',
+    kiosk: false,
+    paper_on_domain_alias: false,
+    assets_host: 'd2k854fi3lpqb8.cloudfront.net',
+    payable: true
+  };
+
+
+  if (!paperli.conf) {
+    paperli.conf = {};
+  }
+  paperli.conf.ui_options = null;
+</script>
+
+    <!-- main inclusion -->
+    <script src="//d2k854fi3lpqb8.cloudfront.net/assets/app-d8d892c905b0216813ebb60467796ff2.js" type="text/javascript"></script>
+
+      <link href="//d2k854fi3lpqb8.cloudfront.net/assets/static-41495a3a584c2213cbdbabc662d6bd7b.css" media="all" rel="stylesheet" type="text/css" />
+
+    
+  </head>
+  <body class=" ">
+    <script>
+  "seo ignore"; // seo hint;
+  window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+    'event': 'pageload',
+    'pageType': 'Terms Page'
+  });
+
+</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WHR7NJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WHR7NJ');</script>
+<!-- End Google Tag Manager -->
+
+    <div id="fb-root"></div>
+<script>
+  "seo ignore"; // seo hint;
+  
+  window.FBAppId = '362293833600'; // set app id so can be reused in cloudinary
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '362293833600',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v4.0'
+    });
+
+    // Additional initialization code here
+    $(document).trigger('fb.init');
+    
+    _ga.trackFacebook(); // Google Analytics tracking
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+    <div class="page-wrapper">
+      <!-- WEBSITE MAIN WRAPPER -->
+      <div id="wrapper" class="page-frame">
+          <!-- Main header with sidebar controls -->
+            <div class="nav-controls ">
+    
+    <div class="controls-left">
+      <a id="ls_control" href="/" class="cnt-sidebar">
+        <i class="fa fa-bars fa-lg visible-phone"></i>
+        <img class="paperli-logo logo-black" alt="Paper.li" src="//d2k854fi3lpqb8.cloudfront.net/assets/logos/logo_paperli_dark-703245db4e6e29c72e73634f6241a416.svg" />
+      </a>
+    </div>
+    
+    <div class="controls-right hidden-phone">
+    </div>
+  </div>
+
+          
+          <!-- Custom header -->
+  
+        <!-- Sticky container for flash messages -->
+        <div id="sticky-container">
+          
+          <div id="flash-message-js"></div>
+        </div>
+    
+        <!-- Main content -->
+        
+
+
+<div class="container">
+  <div class="row">
+    <div id="page-sidebar" class="span3">
+      <h1 class="ph-title">Terms of Service</h1>
+      <h2 class="ph-subtitle">Last revised July 3, 2020</h2>
+      <p>Please read these Terms carefully before using the services offered at <a href="https://paper.li/">paper.li</a> or any affiliated sites.</p>
+    </div>
+    <div id="page-window" class="span9">
+      <div id="page-body" class="text-style">
+        <p>These Terms of Service ("Terms") are a legal agreement between <a href="https://finity.ai/">Finity SA</a> ("Finity", "Paper.li" or "we"), incorporated in Switzerland at Innovation Park EPFL, 1015 Lausanne, and you ("you" or "user"), the user accessing one of our Services. It is essential for Finity to clarify the legal relationship with you in order to ensure an adequate level of service and its development for the benefit of all users.</p>
+        <p>By using or accessing any service powered by Finity, you agree to be bound by these Terms. On the contrary, if you do not agree to or wish to be bound by these Terms, the <a href="/privacy.html">Privacy Policy</a>, or the <a href="/ip.html">Copyright and Intellectual Property Policy</a>, please refrain from using our Services.</p>
+        <p>As Finity may, in its sole discretion, modify or revise these Terms at any time to continue to offer you an adequate level of service, you agree to be bound by such modifications or revisions.</p>
+
+        <p>You should periodically review the most up-to-date Terms at <a href="/terms.html">https://paper.li/terms.html</a>.</p>
+
+        <h2><a href="#services" name="services">Services</a></h2>
+        <p>The different services proposed and powered by Finity include all services accessible via the Paper.li URL (<a href="https://paper.li/">paper.li</a>), the Finity URL (<a href="https://finity.ai/">finity.ai</a>) and our different Apps including, but not limited to, the <a href="https://www.wix.com/app-market/newspaper">News Page App for WIX</a>. All together defined as Services.</p>
+        <p>Our Services offer you the possibility to monitor, aggregate and organize links, information, or any other publicly available material (Content) shared on third-party websites into an easy-to-discover, read and share format.</p>
+        <p>It is important to note that we value content creators/authors and that we respect their rights and interests. For this reason, we only display a short extract of the Content and invite users to read the full Content on the third-party sites where the Content resides.</p>
+        <p>Our Services display extracts of Content from third-party sites determined by the following: a) the criteria you choose in your content sources, and/or b) any content search features made available by the Services. Our Services then display the links and Content abstracts and determine their placement and location in our Services.</p>
+        <p>The Services are accessed by you under the following terms and conditions:</p>
+
+        <h2><a href="#access" name="access">Access</a></h2>
+        <p>You may use all Finity Services solely in strict compliance with these Terms and all applicable local, state, national, and international laws, rules and regulations. You acknowledge that the use of our Services may involve the access and use of Content (abstracts), links, information and data from third-party sites and services. All use of third-party services is subject to the third party’s terms and conditions and policies.</p>
+        
+        <h2><a href="#modification" name="modification">Modification and Availability</a></h2>
+        <p>Our Services are constantly evolving and may change from time to time without prior notice to you. We frequently add new features and are continually optimizing our Services.</p>
+        <p>We may change, suspend or terminate all or any aspect of our Services for any reason or no reason at any time, including the availability of any feature or application of the Services, content or any third-party service and may not be able to provide you with prior notice. We also retain the right to create limits on use and storage and/or restrict your access to parts or all of the Services without prior notice or liability to you.</p>
+        <p>We will use reasonable efforts to ensure that the Services are available twenty-four hours a day. However, there will be occasions when the Services may be interrupted for maintenance, upgrades and/or emergency repairs. Furthermore, we have no control over the availability of any third-party service or Content, which may impact your use of the Services. We will not be liable to you or to any other party for any suspension, modification discontinuance or lack of availability of one of our Services, Content or any third-party services.</p>
+        
+        <h2><a href="#registration" name="registration">Registration information</a></h2>
+        <p>As a preliminary step to using our Services, you may be required to supply one of our Services with certain registration information, including information for third-party services you access through <a href="https://paper.li/">Paper.li</a>. When registering, you must provide accurate and complete information. We reserve the right to refuse a registration or cancel a registration at our discretion.</p>
+        <p>You may not use another user’s account or registration information for our Services or any third-party service you access through our Services without permission.</p>
+        <p>If requested to do so, we shall be authorized to disclose your personally identifiable information to any national government agency or in response to any judicial process.</p>
+
+        <h2><a href="#third-party" name="third-party">Third Party Services and Content</a></h2>
+        <p>Upon your own source selection decisions (defined as "users’ Content curation decisions"), the <a href="https://paper.li/">Paper.li</a> Service and the <a href="https://www.wix.com/app-market/newspaper">News Page App for WIX</a> aggregate abstracts of Content originated and made publicly accessible by third-party services, and contain links pointing to such third-party websites or resources for full Content discovery and reading.</p>
+        <p>Finity cannot take responsibility for such Content. Any use or reliance on any Content or materials posted, submitted or displayed on or through the Services shall be your own responsibility and at your own risk.</p>
+        <p>Third-party services are not within the supervision or control of <a href="https://paper.li/">Paper.li</a> or Finity. Our Services may contain links to third-party services displaying Content that some people may find offensive or inappropriate. Unless explicitly otherwise provided, Finity makes no representations or warranties whatsoever about any third-party service nor endorses the Content, products or services offered through such third-party services.</p>
+        <p>You acknowledge and agree that we are not responsible or liable for any third-party services, Content, product or services, or third-party resources, and/or the functionality of third-party services. Finity makes no representations or warranties as to the security of any information (including, without limitation, credit card and other personal information) you might be requested to give to any third party.</p>
+        <p>You hereby irrevocably waive any claim against Finity with respect to such third-party websites, Content, services, applications or widgets. You acknowledge and agree that in addition to these Terms, any use of third-party services is subject to the terms and conditions applicable to such third-party services and you agree to comply with all third-party service terms.</p>
+        <p>More about our <a href="/ip.html">Copyright and Intellectual Property Policy here</a>.</p>
+        
+        <h2><a href="#trademarks" name="trademarks">Trademarks and other Rights</a></h2>
+        <p>All rights, title, and interest, including without limitation all Intellectual Property Rights, in and to Finity and affiliated websites are and will remain the exclusive property of Finity. Finity, <a href="https://paper.li/">Paper.li</a> and all other Finity logos, marks and designations are trademarks or registered trademarks of Finity.</p>
+        <p>The Services are protected by copyright and other laws of both Switzerland and foreign countries. These Terms and the use of Services do not grant a license or the authorization to use the name of <a href="https://paper.li/">Paper.li</a> or any of the Finity trademarks, logos or domain names.</p>
+        <p>All other trademarks mentioned in our Services are the property of their respective owners. The trademarks and logos displayed on our Services may not be used without the prior written consent of Finity or their respective owners. For our policy regarding intellectual property, please refer to our <a href="/ip.html">Intellectual Property Policy</a>.</p>
+        
+        <h2><a href="#comments" name="comments">User comments</a></h2>
+        <p>We value your comments, ideas, suggestions and feedback in relation to our Services. Any comments, suggestions, ideas or feedback ("Comments") submitted to one of our Services shall become the property of Finity. Finity will have exclusive ownership of all present and future existing rights to the Comments of every kind and nature everywhere and will be entitled to use the Comments for any purpose whatsoever without compensation to you or any other person.</p>
+
+        <h2><a href="#general-use" name="general-use">General Use of the Paper.li Service – Permission and Restrictions</a></h2>
+        <p>You agree not to distribute to any medium any part of our Services without our written authorization unless Finity issues a general authorization for a specific use of the Services or makes available the means for such distribution through functionality offered by the Services.</p>
+        <p>You also agree not to modify, alter, translate or otherwise create derivative works of any part of the Services. If you embed any part of our Services on any other web service, blog or webpage, you agree not to modify, alter, build upon, or block any part or functionality or feature of our Services.</p>
+        <p>You agree not to decipher, decompile, reverse engineer or otherwise attempt to derive any source code or underlying ideas or algorithms of any part of the Services.</p>
+        <p>You agree not to use any part of our Services to violate the security of any computer network, crack passwords or security encryption codes, to obtain password, account, or private information from any user. You agree not to run malware, email blasts, any form of auto-responder, or spam on any of our Services or through or in communication with our Services.</p>
+        <p>In order to guarantee that the Content accessible through the Services is secure and lawful, you represent, warrant and agree that you will not contribute or add to any of our Services any Content, Comments, feedback that:</p>
+        <ul>
+          <li><p>infringes, violates or otherwise interferes with any copyright or trademark of another party, or any intellectual property of another party;</p></li>
+          <li><p>is defamatory, obscene, pornographic, threatening, harassing, hateful, racially or ethnically objectionable, or otherwise violates any law or right of any third party;</p></li>
+          <li><p>contains a virus, trojan horse, worm, time bomb or other computer programming routine or engine that is intended to damage, detrimentally interfere with, or expropriate any system, data or information.</p></li>
+        </ul>
+        <p>We may remove any user Content from our Services at any time, for any reason or for no reason.</p>
+        
+        <h2><a href="#charges" name="charges">Charges and Billing</a></h2>
+        <p>When and if you subscribe to a <a href="/pro.html">paid Paper.li plan</a>, a Paper.li Agency Plan, or any other paid service operated by us, you agree to pay all fees or charges incurred by your account, including applicable taxes at the time that the applicable fees or charges become payable. Unless otherwise indicated, all prices are in US Dollars and subscriptions renew automatically unless canceled before the end of the billing cycle. We may add new products and services for additional fees and charges at any time in our sole discretion. You represent to us that you are an authorized user of the chosen method of payment used to pay any fees, charges and applicable taxes incurred.</p>
+        <p>Since <a href="https://paper.li/">Paper.li paid plan</a> is offering non-tangible irrevocable goods during a certain period of time (monthly or yearly), we do not issue refunds once the order is accomplished and the license to use is granted. Learn more about our no-refund policy and its exceptions <a href="/refund-policy.html">here</a>.</p>
+        <p>YOU ACKNOWLEDGE AND AGREE THAT YOU ARE FULLY LIABLE FOR ALL FEES AND CHARGES MADE THROUGH YOUR ACCOUNT.</p>
+
+        <h2><a href="#trial" name="trial">Free trial</a></h2>
+        <p>Newly created papers go through a 10-day free trial. The trial is cardless, meaning that you do not have to enter credit card, Paypal, or any other payment details in advance of the trial. Subscription to a paid Paper.li plan only happens if you take explicit actions. If you do not subscribe during the 10-day period, your paper will turn to the Free plan. Once this occurs, you can still upgrade your paper to Starter or Pro, but will not have the option to again have an additional free trial.</p>
+        
+        <h2><a href="#warranty" name="warranty">Warranty disclaimer</a></h2>
+        <p>You agree that your use of the Services shall be at your own risk. To the fullest extent permitted by law, Finity, its officers, directors, employees, and agents disclaim all warranties, express or implied, in connection with the Services and their use thereof.</p>
+        <p>YOU ACKNOWLEDGE AND AGREE THAT THE CONTENT YOU HAVE CURATED INTO ANY OF OUR SERVICES IS THE RESULT OF YOUR DECISION AND THAT YOU MAY ONLY CURATE SUCH CONTENT IF YOU ARE FULLY AUTHORIZED TO DO SO.</p>
+        <p>You release <a href="https://paper.li/">Paper.li</a> and Finity from all liability for you having accessed or not accessed Content through the Services. Finity makes no representations concerning any Content contained in or accessed through the Services, and will not be responsible or liable for the accuracy, copyright, trademark or any other intellectual property law compliance, legality or decency of material contained in or accessed through the Services.</p>
+        <p>Finity makes no warranties or representations about the accuracy or completeness of the Content or the Content contained in third-party services and assumes no liability or responsibility for any harm, loss or damage resulting from:</p>
+        <ul>
+          <li><p>use of the Services;</p></li>
+          <li><p>use of Content contained in or accessed through the Services;</p></li>
+          <li><p>errors, mistakes, inaccuracies or omissions in any Content contained in, made available or accessed through the Services;</p></li>
+          <li><p>completeness, accuracy, availability, timeliness, security or reliability of the Services and any content displayed thereon;</p></li>
+          <li><p>temporary or permanent interruption or cessation of our Services;</p></li>
+          <li><p>any viruses, bugs, worms, trojan horses, or the like, which may be transmitted by any third party to or through our Services to your computer system;</p></li>
+          <li><p>any content posted in any community area of the <a href="https://paper.li/">Paper.li</a> site;</p></li>
+          <li><p>unauthorized disclosure of information, images or any other data resulting from the use of the Services;</p></li>
+          <li><p>non-compliance by third-party services and/or their users with applicable laws and regulations.</p></li>
+        </ul>
+        <p>Finity does not warrant, endorse, guarantee, or assume responsibility for any product or services offered or advertised by a third party through the Services (for example, hyperlinked services featured in a banner or other advertising), and Finity will not be a party to or in any way be responsible for any transaction between you and any third-party providers of products or services.</p>
+        <p>For clarity, you agree that Finity has no fiduciary duty to you. In particular, Finity has no duty to take any action to control or otherwise supervise which users gain access to and cannot guarantee the identity of any other users with whom you may interact in the course of using the Services or the authenticity of data provided by other users. Finity has no control whatsoever over the Content of third-party services you access via the Services, and therefore cannot be held liable. Furthermore, Finity assumes no responsibility for any use or interpretation of the Content by you, for any effect the Content may have on you, or for any action you may take as a result of having been exposed to the Content.</p>
+        
+        <h2><a href="#indemnity" name="indemnity">Indemnity</a></h2>
+        <p>To the extent permitted by applicable law, you agree to defend, indemnify and hold harmless Finity, its directors, officers, employees, agents, and representatives, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, including costs and attorney fees, arising from any claim or demand made by any third party due to or arising out of:</p>
+        <ul>
+          <li><p>your access to or use of the Services;</p></li>
+          <li><p>your violation of any of these Terms;</p></li>
+          <li><p>your infringement, or the infringement by any third party using your registration information, of any third-party right, including without limitation any copyright, property;</p></li>
+          <li><p>any claim that your use of the Services caused damage to a third party.</p></li>
+        </ul>
+        <p>This indemnification obligation will survive these Terms of Use and your use of the Services.</p>
+
+        <h2><a href="#liability" name="liability">Limitation of liability</a></h2>
+        <p>In no event shall Finity, its directors, officers, shareholders, employees, or agents be liable to you or any third party for any direct, indirect, incidental, special, punitive, or consequential damages of any kind whatsoever resulting from any:</p>
+        <ul>
+          <li><p>use of or inability to access or use the Services;</p></li>
+          <li><p>use of information or content contained in or accessed, or obtained, through the Services;</p></li>
+          <li><p>errors, mistakes, inaccuracies or omissions in any Content contained in, made available or accessed through the Services;</p></li>
+          <li><p>any viruses, bugs, worms, trojan horses, or the like, which may be transmitted to or through our Services by any third party to your computer system;</p></li>
+          <li><p>any content posted by users or third parties in any community area of the Services;</p></li>
+          <li><p>unauthorized disclosure of information, images or any other data resulting from the use of the Services;</p></li>
+          <li><p>any conduct or content of any third party on the Services, including without limitation, any defamatory, offensive or illegal conduct of other users or third party, or</p></li>
+          <li><p>any unauthorized use of copyright, trademark or any other intellectual property rights by any third-party services and/or their users.</p></li>
+        </ul>
+        
+        <h2><a href="#termination" name="termination">Termination</a></h2>
+        <p>Either party may terminate any one of our Services at any time. Finity may also terminate or suspend any and all Services immediately, without prior notice or liability, if you breach any of the terms or conditions of these Terms. Upon any such termination, your right to use or access the Services and any Content will immediately cease. All provisions of these Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, and limitations of liability.</p>
+        
+        <h2><a href="#law" name="law">Law and jurisdiction</a></h2>
+        <p>These Terms and any action related thereto shall be governed by and construed in accordance with the laws of Switzerland.</p>
+        <p>All claims, legal proceedings or litigation arising from or relating to the subject matter of these Terms shall be brought solely in Lausanne, Switzerland, and you consent to the jurisdiction of and venue in such courts and waive any objection thereto.</p>
+
+        <h2><a href="#children" name="children">Our Policy Towards Children</a></h2>
+        <p>Our Services are not designed for individuals under 16 years of age. We do not knowingly collect personal information on children under the age of 16. If we become aware that a child under 16 has provided us personal information, we will take steps to delete the information. If you become aware that a child has provided us personal information, please <a href="https://support.paper.li/hc/en-us/requests/new" target=_blank>contact us</a>.</p>
+        
+        <h2><a href="#misc" name="misc">Miscellaneous</a></h2>
+        <p>Both parties agree that these Terms, together with the <a href="/privacy.html">Privacy Policy</a>, <a href="/ip.html">Intellectual Property Policy</a> and any other operating rules, policies and procedures posted through the Services comprise the complete and exclusive statement of the mutual understanding of the parties and supersede and cancel all previous written and oral agreements, communications and other understandings relating to the subject matter of these Terms. If any provision of these Terms is found to be unenforceable or invalid by a court of competent jurisdiction, that provision shall be construed so as to best accomplish its intended objectives. The remaining provisions of these Terms shall remain in full force and effect.</p>
+        <p>The Terms of Use are not intended to benefit, nor will it be deemed to give rise to, any rights to any third party.</p>
+      </div>
+    </div>
+  </div>
+</div>
+  
+        <!-- ALERTS AND NOTIFICATIONS AREA -->
+        <div id="alerts">
+          
+<div id="cookies_banner" class="m-banner m-warning">
+  <div class="message"></div>
+</div>
+          
+<div id="ie_banner" class="m-banner m-warning">
+  <a class="close hide-me pull-right" href="#"><i class="fa fa-times"></i></a>
+  <div class="message"></div>
+</div>
+
+          <noscript>
+  <div id="alertbar" class="m-banner m-warning" style="display:block">
+    <div class="message">
+      <span style="font-size: 16px;">Please enable Javascript to correctly display the content on Paper.li</span>
+    </div>
+  </div>
+</noscript>
+        </div>
+  
+        <div id="push"></div>
+      </div>
+      <!-- Main footer -->
+      <div id="footer" class="page-row">
+        <div class="footer">
+  <ul class="footer-menu">
+    <li>
+        <a href="https://about.paper.li/about/" data-navigation="About Paper.li" rel="noopener" target="_blank">About Paper.li</a>
+    </li>
+    <li><a href="https://blog.paper.li" data-navigation="Blog">Blog</a></li>
+    <li><a href="https://support.paper.li" data-navigation="Help">Help</a></li>
+    <li><a href="/stop-mentions.html" data-navigation="Stop mentions">Stop mentions</a></li>
+    <li><a href="/terms.html" data-navigation="Terms">Terms</a></li>
+    <li><a href="/privacy.html" data-navigation="Privacy">Privacy</a> </li>
+  </ul>
+  <ul class="footer-social">
+    <li><a href="https://twitter.com/paper_li" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="https://www.facebook.com/pages/Paperli/199618576802286" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="https://www.instagram.com/paperli_/" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a></li>
+  </ul>
+  <ul class="footer-languages" style="visibility: hidden;">
+    <li><a href="/terms.html?lang=en" class="current">EN</a></li>
+    <li><a href="/terms.html?lang=de" class="">DE</a></li>
+    <li><a href="/terms.html?lang=fr" class="">FR</a></li>
+    <li><a href="/terms.html?lang=es" class="">ES</a></li>
+    <li><a href="/terms.html?lang=pt" class="">PT</a></li>
+  </ul>
+  <div class="copyright">
+    <p><a href="https://finity.ai/" target="_blank" rel="noopener">© Finity SA 2020</a></p>
+  </div>
+ </div>
+      </div>
+    </div>
+
+    <!-- Specific page javascripts -->
+      <script>
+      $(document).ready(function() {
+        if (navigator.cookieEnabled === false) {
+          $('#cookies_banner')
+            .find('.message').html(paperli.util.translate('banner.cookies.disabled')).end()
+            .slideDown();
+        }
+      });
+  </script>
+  <script>
+    $(document).ready(function(){
+      if ($.browser.msie && parseInt($.browser.version) <= 8){
+        $('#ie_banner')
+          .find('.message').html(paperli.util.translate('message.ie_not_supported')).end()
+          .show();
+        
+        $('#ie_banner .close').click(function(e){
+          e && e.preventDefault();
+          $('#ie_banner').slideUp();
+        });
+      };        
+    });
+  </script>
+
+
+  </body>
+</html>
