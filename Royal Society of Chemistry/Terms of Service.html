@@ -1,0 +1,981 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js ie8" lang="en-GB"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9" lang="en-GB"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en-GB">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"eec2473e72","applicationID":"451292939","transactionName":"ZFUBZhEEDUQEBhBbDl0fLmQgSiIFMQAJQg1SRAZiAgIGdAoLEEAOX1wGQEwMDVMAHQ==","queueTime":0,"applicationTime":154,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"eec2473e72",applicationID:"451292939"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terms &amp; conditions</title>
+    <meta name="description" content="The terms which you agree to when using the Royal Society of Chemistry&#39;s websites and associated services.">
+
+
+<link rel="schema.DC" href="https://purl.org/dc/elements/1.1/">
+<link rel="schema.DCTERMS" href="https://purl.org/dc/terms/">
+
+<link rel="canonical" href="https://www.rsc.org/help-legal/legal/terms-conditions/">
+
+<!-- Start Dublin Core -->
+
+<meta name="DC.Title" xml:lang="en" content="Terms &amp; conditions">
+<meta name="DC.Creator" content="Royal Society of Chemistry">
+
+    <meta name="DC.Subject" xml:lang="en" content="Terms &amp; conditions">
+
+<meta name="DC.Description" xml:lang="en" content="The terms which you agree to when using the Royal Society of Chemistry&#39;s websites and associated services.">
+<meta name="DC.Publisher" content="Royal Society of Chemistry">
+<meta name="DC.Contributor" content="Royal Society of Chemistry">
+
+    <meta name="DC.Date" content="2014-04-02">
+<meta name="DC.Format" schema="DCterms:IMT" content="text/html">
+    <meta name="DC.Type" content="web page">
+
+<meta name="DC.Identifier" schema="DCterms:URI" content="https://www.rsc.org/help-legal/legal/terms-conditions/">
+
+
+<meta name="DC.Language" content="en">
+<meta name="DC.Relation">
+
+
+<meta name="DC.Copyright" content="Royal Society of Chemistry">
+
+<!-- End Dublin Core -->
+<!-- Start Open Graph -->
+
+    <meta property="og:title" content="Terms &amp; conditions">
+
+    <meta property="og:description" content="The terms which you agree to when using the Royal Society of Chemistry&#39;s websites and associated services.">
+
+<meta property="og:type" content="Website">
+
+
+<meta property="og:url" content="https://www.rsc.org/help-legal/legal/terms-conditions/">
+
+    <meta property="og:site_name" content="Royal Society of Chemistry">
+
+<!-- End Open Graph -->
+
+
+    <link rel="shortcut icon" href="https://www.rsc-cdn.org/oxygen/assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.rsc-cdn.org/oxygen/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.rsc-cdn.org/oxygen/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.rsc-cdn.org/oxygen/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://www.rsc-cdn.org/oxygen/assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="https://www.rsc-cdn.org/oxygen/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <!--[if IE 8]><link rel="stylesheet" href="/public/css/screen.min.css" /><![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://epi-rsc.rsc-cdn.org/public/css/screen.min.css?version=20201110030600">
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="/public/css/ie.css">
+        <script src="/Scripts/html5shiv.js" type="text/javascript"></script>
+        <script src="/Scripts/respond.js" type="text/javascript"></script>
+    <![endif]-->
+    <!-- Modernizr -->
+    <script src="https://epi-rsc.rsc-cdn.org/public/js/modernizr-custom.min.js?version=20201110030602"></script>
+    <script src="https://epi-rsc.rsc-cdn.org/Scripts/jquery-1.11.1.min.js?version=20201110030604"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+
+
+</head>
+
+<body class="">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KW8L" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push(
+                { 'gtm.start': new Date().getTime(), event: 'gtm.js' }
+            ); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KW8L');
+    </script>
+    <!-- End Google Tag Manager -->
+<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+    googletag.cmd.push(function ()
+    {
+        googletag.defineSlot('/97414310/Corp_mpu_1', [300, 250], 'div-dfp-ad-1').addService(googletag.pubads());
+        googletag.defineSlot('/97414310/Corp_mpu_Spotlight', [300, 250], 'div-dfp-ad-2').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+
+</script>
+
+
+
+
+
+
+
+    
+
+    <a href="#maincontent" class="skiptocontent">Skip to main content</a>
+    <div class="cookiepolicy">
+        <div class="cookiepolicy__inner">
+            <span>We use cookies to support your experience on our website. Further details, including advice on disabling cookies, are available in our <a href="/help-legal/legal/privacy/" target="_blank">privacy and cookies policy.</a></span>
+            <a href="#" class="cookiepolicy__inner-close">Close</a>
+            <div class="cookiepolicy__inner-clearfix"></div>
+        </div>
+    </div>
+
+    
+    
+
+
+<div class="global-nav-bar--container">
+
+    <header class="global-header" role="banner">
+
+        <div class="global-header__top">
+
+            <a class="global-header__logo" href="/">
+                <img src="https://epi-rsc.rsc-cdn.org/public/img/template/rsc-logo.png?version=20201110030602" alt="Royal Society of Chemistry" title="Royal Society of Chemistry">
+            </a>
+
+            <div class="global-header__right">
+
+
+                    <div class="account">
+                        <span><a href="https://members.rsc.org/">Members&#39; area</a></span>
+                        <span class="ie-pseudo-last"><a href="/support-us/">Support us</a></span>
+                    </div>
+                <div class="search-box">
+                    <label for="gsc-i-id1" class="visuallyhidden">Search: </label>
+                    <gcse:searchbox-only resultsurl="/search-results/" newwindow="false" autocompletemaxcompletions="5" autocompletematchtype='any'></gcse:searchbox-only>
+                    <noscript class="no-js-header-search">
+                        <form id="cse-search-box" action="https://google.com/cse">
+                            <input type="hidden" name="cx" value="001058750563069951656:udsuknhw-80">
+                            <input type="hidden" name="ie" value="UTF-8">
+                            <div class="no-js-inner-wrapper">
+                                <input type="text" name="q" size="31">
+                                <div>
+                                    <input class="gsc-search-button" type="submit" name="sa" value="Search">
+                                </div>
+                            </div>
+                            <input type="hidden" name="nojs" value="1">
+                        </form>
+                        <img src="https://cse.google.com/images/google_custom_search_smwide.gif">
+                    </noscript>
+                </div>
+            </div>            
+
+        </div>        
+
+        <div class="mobile-header-search-menu">            
+
+            <a class="add-icon-after-hamburger expand-global-nav" href="#" data-mobilenav-trigger=""></a>
+
+            <div class="search-box">
+                <label for="gsc-i-id2" class="visuallyhidden">Search: </label>
+                <gcse:searchbox-only resultsurl="/search-results/" newwindow="false" autocompletemaxcompletions="5" autocompletematchtype='any'></gcse:searchbox-only>
+            </div>           
+
+        </div>
+
+    </header>
+
+    <div class="global-nav-bar">
+
+        <div class="grid-container">
+
+            <nav>
+                <ul class="global-nav" role="navigation">
+                    <li class="">
+<a href="/covid-19-response/">COVID-19 response</a>
+                    </li><li class="">
+<a href="/about-us/">About us</a>
+                    </li><li class="">
+<a href="/membership-and-community/">Membership &amp; professional community</a>
+                    </li><li class="">
+<a href="/new-perspectives/">Policy &amp; perspectives</a>
+                    </li><li class="">
+<a href="/journals-books-databases/">Journals, books &amp; databases</a>
+                    </li><li class="">
+<a href="/teaching-and-learning/">Teaching &amp; learning</a>
+                    </li><li class="">
+<a href="/news-events/">News &amp; events</a>
+                    </li><li class="">
+<a href="/locations-contacts/">Locations &amp; contacts</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </div>
+    <div class="grid-container">
+        <div class="sub-menu sub-menu--mobile">
+
+
+        <div class="sub-menu__header" data-expandable="" aria-controls="mobile-sub-menu">
+            Help &amp; legal<span class="add-icon-after-hamburger sub-menu__expand"></span>
+        </div>
+
+<nav class="content-block__expandable">
+    <ul class="sub-menu__level-1" role="navigation" data-status="is-expanded" aria-expanded="true" id="mobile-sub-menu">
+    <li class="sub-menu__level-1">
+        <a href="/help-legal/help/">
+            Help
+        </a>
+
+
+    </li>
+    <li class="sub-menu__level-1">
+        <a href="/help-legal/legal/">
+            Legal
+        </a>
+
+            <ul class="sub-menu__level-2" role="navigation">
+                    <li class="is-active">
+
+        <a href="/help-legal/legal/terms-conditions/"><b class="add-icon-after-link-arrow"></b>Terms of use</a>
+
+        
+    </li>
+    <li>
+
+        <a href="/help-legal/legal/modern-slavery-act-statement/"><b class="add-icon-after-link-arrow"></b>Modern Slavery Act statement</a>
+
+        
+    </li>
+    <li>
+
+        <a href="/help-legal/legal/privacy/"><b class="add-icon-after-link-arrow"></b>Privacy statement</a>
+
+        
+    </li>
+    <li>
+
+        <a href="/help-legal/legal/copyright-permissions/"><b class="add-icon-after-link-arrow"></b>Copyright &amp; permissions</a>
+
+        
+    </li>
+    <li>
+
+        <a href="/help-legal/legal/accessibility/"><b class="add-icon-after-link-arrow"></b>Accessibility</a>
+
+        
+    </li>
+
+            </ul>
+
+    </li>
+    </ul>
+</nav>
+
+        </div>
+    </div>
+
+
+
+<div class="breadcrumbs">
+        <ul class="breadcrumbs__links">
+            <li class="breadcrumb-first">
+                <a href="/">Home</a>
+            </li>
+                        <li class="breadcrumb-middle">
+                <a href="/help-legal/">Help &amp; legal</a>
+            </li>
+            <li class="breadcrumb-middle">
+                <a href="/help-legal/legal/">Legal</a>
+            </li>
+            <li class="breadcrumb-last">
+                Terms of use
+            </li>
+ 
+        </ul>
+    </div>
+</div>
+
+    
+
+
+
+
+
+
+
+<main class="main layout-a2 header-spacer" role="main" id="maincontent">
+    
+    <div class="grid-container">
+
+        <div class="layout-a2__col-a">
+
+                <h1 class="home-header-with-drop">Terms of use</h1>
+            
+            
+
+
+
+
+<div><div class="block standardonelinetextblock "><div class="hashtaglink">
+	<p>Last updated on 27 April 2020</p>
+</div>
+
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+    
+    
+
+<ul>
+<li>Any reference to ‘We’, ‘Us’ and ‘Our’ is to <a href="/about-us/corporate-information/">The Royal Society of Chemistry as an organisation</a>.</li>
+<li>Any reference to ‘Our Websites’ is to websites available within rsc.org and www.chemspider.com.</li>
+<li>Any reference to ‘You’ and Your’ is to you as an individual user of Our Websites.</li>
+<li>Any reference to ‘Terms’ is to all terms and conditions set out on this web page and linked to from this web page.</li>
+<li>Any reference to ‘Interactive Services’ is to services which includes but not limited to commenting, connecting to others, uploading and publishing content on Our Websites (‘Contribution’).</li>
+</ul>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+    
+    
+
+<hr>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+        <h2>Revising our Terms</h2>
+    
+    
+
+<p>We may revise our Terms at any time by amending this page. Please ensure that you review these terms each time you use Our Websites as you will be deemed to have accepted any changes we make if you continue to use Our Websites after the update has been published.&nbsp;</p>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+    
+    
+
+<hr>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+        <h2>Using Our Websites</h2>
+    
+    
+
+<p>Our Websites are protected by copyright.</p>
+<p>We will, wherever possible, ensure that the information contained on Our Websites is accurate and up-to-date, but we accept no liability for omissions or errors therein or their consequences. We reserve the right to make changes to the information published on Our Websites at any time.</p>
+<h3>Browsing, downloading and printing information</h3>
+<p>You may browse, download or print out one copy of the material displayed on Our Websites for your personal, non-commercial, non-public use, but you must retain all copyright and other proprietary notices contained on these materials.</p>
+<h3>Prohibited uses</h3>
+<p>You may use Our Websites only for lawful purposes. You must not use Our Websites:</p>
+<ul>
+<li>in any way that breaches any applicable local, national or international law or regulation</li>
+<li>in any way that is unlawful or fraudulent, or has any unlawful or fraudulent purpose or effect</li>
+<li>in any way that subjects or may subject us to any derogatory treatment, misrepresents us, brings us into disrepute, or causes us to incur liability to any third party</li>
+<li>to bully, intimidate, harass, harm, offend or discriminate against any user</li>
+<li>to solicit sign-in information or access an account belonging to anyone else</li>
+<li>to transmit or procure the sending of any unauthorised advertising or promotional materials, or any other form of solicitation (spam)</li>
+<li>to knowingly transmit any material that contains viruses or any other harmful program or computer code that is designed to adversely affect the operation of any computer software or hardware</li>
+<li>to promote sexually explicit material, violence or terrorism</li>
+<li>to send, knowingly receive, upload, download, use or re-use any material which does not comply with the Terms of using our Interactive Services</li>
+<li>to share information about any individual without their express consent</li>
+<li>to store or use the personal data of other users of Our Websites</li>
+<li>to knowingly use or reuse any material which does not comply with these terms and conditions</li>
+<li>to further copy, distribute or otherwise use any of the materials from Our Websites without our written consent</li>
+<li>to interfere with, damage or disrupt software or hardware used to operate Our Websites.</li>
+</ul>
+<h3>Using our Interactive Services</h3>
+<p>Some of Our Websites provide Interactive Services which include the option to contact and connect to other users, or make a Contribution by publishing information on Our Websites. Please note that further terms and conditions may apply when using our Interactive Services. These terms and conditions and policies may reference each other and are not mutually exclusive.</p>
+<p>In addition to the Terms set out above in respect to 
+��Prohibited uses’, you must comply with the spirit of the following standards as well as the letter when using our Interactive Services. These additional standards apply to each part of any Contribution, as well as to its whole.</p>
+<p>A Contribution must:</p>
+<ul>
+<li>be accurate and up-to-date (where they state facts)</li>
+<li>be genuinely held (where they state opinions)</li>
+</ul>
+<p>A Contribution must not:</p>
+<ul>
+<li>be dishonest, inaccurate or likely to deceive any person</li>
+<li>contain any material which is defamatory of any person</li>
+<li>contain any material which is obscene, offensive, hateful or inflammatory</li>
+<li>promote sexually explicit material or violence</li>
+<li>put the welfare of children at risk</li>
+<li>advertise, promotes or offer to trade any goods or services, except in areas (if any) specifically designated for such purpose</li>
+<li>promote, encourage or facilitate terrorism or other activities that risk national security</li>
+<li>promote discrimination based on race, sex, religion, nationality, disability, gender, marital status, sexual orientation or age</li>
+<li>violate and/or infringe any applicable law, such as copyright, database right or trade mark of any other person</li>
+<li>be made in breach of any legal duty owed to a third party, such as a contractual duty or a duty of confidence.</li>
+<li>promote, facilitate or encourage any illegal activity such as (by way of example only) copyright infringement or computer misuse</li>
+<li>be threatening, cause annoyance, inconvenience or needless anxiety, abuse, invade, infringe or try to infringe another's privacy.&nbsp; This includes you storing or trying to store personal data or usage details of other users of our Site and/or Interactive Services</li>
+<li>be likely to harass, upset, embarrass, alarm or annoy any other person</li>
+<li>be used to impersonate any person, or to misrepresent your identity or affiliation with any person</li>
+<li>give the impression that they emanate from Us, if this is not the case</li>
+<li>suggest any endorsement or approval by The Royal Society of Chemistry of a product or service (for instance, a personal website) or any non-Royal Society of Chemistry entity, product or content or any belief or opinion expressed within a product or service.</li>
+</ul>
+<p>Where Interactive Services are in use on Our Websites:</p>
+<ul>
+<li>please be mindful of your own safety and use your best judgment when submitting information and/or content, whether via a Contribution or otherwise to Our Websites.&nbsp; In particular we discourage divulging personal telephone numbers, email addresses and postal addresses or other information that can be used to identify or locate you in public areas of Our Websites&nbsp;</li>
+<li>we may assess any possible risks for users (and in particular, for children) from third parties when they use any interactive service provided on Our Websites, and we will decide in each case whether it is appropriate to use moderation of the relevant service (including what kind of moderation to use) in the light of those risks. However, we are under no obligation to oversee, monitor or moderate any interactive service we provide on Our Websites, and we expressly exclude our liability for any loss or damage arising from the use of any interactive service by a user in contravention of our content standards, whether the service is moderated or not</li>
+<li>the use of any of our Interactive Services by children is subject to the consent of their parent or guardian. If you permit your child to use a web enabled device to access or view any of our Interactive Services you are solely responsible for deciding whether the content is appropriate for that child to access or view.&nbsp; We advise parents who permit their children to use an interactive service that it is important that they communicate with their children about their safety online, as moderation (if undertaken) is not fool-proof. Children who are using any interactive service should be made aware of the potential risks to them</li>
+<li>where we do moderate an interactive service, we will normally provide you with a means of contacting the moderator, should a concern or difficulty arise.</li>
+</ul>
+<h4>Contribution and copyright</h4>
+<p>By contributing information to Our Websites through Interactive Services:</p>
+<ul>
+<li>you warrant that you are entitled to submit the Contribution to us and that the Contribution is accurate, not confidential, and not in violation of any contractual restrictions or other third party rights</li>
+<li>you agree that you own the copyright in your Contribution and that you may request its deletion at any time, unless you have shared information or content with others and they have not deleted it, or it was copied or stored by other users</li>
+<li>you confirm that you have the consent of anyone who is identifiable in your Contribution or the consent of their parent/guardian if they are under the age of 16</li>
+<li>you agree to grant Us a non-exclusive licence to use that Contribution.&nbsp; Although you will still own the copyright in your Contribution, We will have the right to freely use, copy, edit, alter, modify, display, reproduce, publish, distribute, archive and/or store the material contained in your Contribution.&nbsp; This licence will be free of charge, irrevocable, worldwide, perpetual, unlimited and capable of assignment and/or sub-licence.&nbsp; We may exercise all copyright and publicity rights in the material contained in your Contribution in all jurisdictions, to their full extent and for the full period for which any such rights exist in that material.If you are not in a position to grant a licence to Us as set out under this clause or you do not want to grant Us such a licence to use your Contribution in accordance with Our Terms, please do not share or submit a Contribution to us</li>
+<li>you warrant that any Contribution you make does comply with Our Terms and you will be liable to us and indemnify us for any breach of this warranty.&nbsp; If you are a consumer user, this means you will be responsible for any loss or damage we suffer as a result of your breach of this warranty</li>
+<li>you grant Us the right to use and publish your name and/or preferred display name (“PDN”) against any content you submit to Our Websites and the name that you choose in relation to publications (where applicable)</li>
+<li>you acknowledge that we cannot guarantee that users will not use the ideas and/or information that you post via your Contribution and we are not responsible for a user’s misuse or misappropriation of any content and/or information in your Contribution</li>
+<li>we will not be responsible, or liable to any third party, for the content or accuracy of any Contribution posted by you or any other user of Our Websites</li>
+<li>the views expressed by other users on Our Websites do not represent our views or values.&nbsp; We do not control or direct users’ actions on Our Websites, nor do we endorse any Contribution and we are not responsible for the content or information users transmit or share on Our Websites.</li>
+</ul>
+<h4>Our right to edit and remove your information</h4>
+<ul>
+<li>Any Contribution you make may be moderated by Us which means that they may be reviewed, edited and/or removed.</li>
+<li>We reserve the right to remove any of a Contribution if we believe that your Contribution or any part of it does not comply with Our Terms.&nbsp; For the avoidance of doubt we reserve the right to remove any of your a Contribution if we deem to be potentially defamatory of any person or which we deem unlawful or in violation of any third party rights.</li>
+<li>We reserve the right to disclose any content or information you submit to us, whether part of a Contribution or otherwise as necessary to satisfy any law, regulation or Governmental request.</li>
+</ul>
+<h4>Suspension and termination</h4>
+<ul>
+<li>We will determine, in our discretion, whether there has been a breach of Our Terms through your use of Our Websites and we reserve the right to disable or close access to Our Websites and/or Interactive Services.&nbsp; When a breach of our Terms has occurred, we may take such action as we deem appropriate.&nbsp;</li>
+<li>Failure to comply with Our Terms may result in our taking all or any of the following actions:
+<ul>
+<li>immediate, temporary or permanent withdrawal of your right to use Our Websites</li>
+<li>immediate, temporary or permanent removal of any posting or material uploaded by you to Our Websites</li>
+<li>issue of a warning to you</li>
+<li>legal proceedings against you for reimbursement of all costs on an indemnity basis (including, but not limited to, reasonable administrative and legal costs) resulting from the breach</li>
+<li>further legal action against you</li>
+<li>disclosure of such information to law enforcement authorities as we reasonably feel is necessary.</li>
+</ul>
+</li>
+<li>We exclude liability for actions taken in response to breaches of Our Terms.&nbsp; The responses described in Our Terms are not limited, and we may take any other action we reasonably deem appropriate.</li>
+</ul>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+    
+    
+
+<hr>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+        <h2>Liability of our services</h2>
+    
+    
+
+<p>We shall not be liable for any direct consequential or indirect consequential loss or damage of any nature whatsoever alleged to be caused by errors or omissions in the information contained on Our Websites.</p>
+<p>In no event shall we be liable for any general, special, direct, indirect, consequential or incidental damages, or any damages whatsoever, resulting from loss of use, data or profits, whether in an action of contract, negligence or other tortious action, arising out of or in connection with the use of information available from Our Websites.</p>
+<p>In no event shall we be liable for any damage to your computer equipment or software which may occur on account of your access to or use of Our Websites, or your downloading of materials, data, text, or images from Our Websites, whether caused by a virus, bug or otherwise.</p>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+    
+    
+
+<hr>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+        <h2>Warranties and disclaimers</h2>
+    
+    
+
+<p>We make no representations whatsoever about the suitability of the information contained in any information on Our Websites. All information is provided "as is" without warranty of any kind, express or implied, without limitations, warranties of title or implied warranties of merchantability or fitness for a particular purpose.</p>
+<p>You warrant that any Contribution you make through our Interactive Services complies with these terms and conditions, and you will be liable to us and indemnify us for any breach of this warranty. You are responsible for any loss or damage we suffer as a result of your breach of this warranty.</p>
+<p>Our Websites contain links to third party websites. These websites are outside our control and we are not responsible for the contents of any linked site or any link contained in a linked site. We provide these links only as a convenience, and the inclusion of any link does not imply endorsement or approval by the Royal Society of Chemistry.</p>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+    
+    
+
+<hr>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+        <h2>Websites and services not covered by Our Terms</h2>
+    
+    
+
+<p><span style="font-family: Arial, sans-serif;">Third-party websites and services we link to through Our Websites have their own terms and conditions policies, independent of us. We hold no responsibility or liability for these independent policies. We encourage you to look for and review the policies of any third-party website you visit.&nbsp;</span></p>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+    
+    
+
+<hr>            
+</div>
+</div><div class="block downloadablecontentblock ">
+
+<h2 class="hashtaglink">Terms and Conditions of Purchase</h2>
+
+    <ul class="links-list">
+            <li>
+                <a href="/globalassets/13-help-legal/legal/terms-conditions/po-terms-and-conditions---2020.pdf" class="pdf" rel="external">Netsuite PO Terms &amp; Conditions</a>
+            </li>
+    </ul>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+    
+    
+
+<hr>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+        <h2>Declarations</h2>
+    
+        <h3>Amazon Associates Programme</h3>
+    
+
+<p>The Royal Society of Chemistry is a participant in the Amazon Europe S.à r.l. Associates Programme, an affiliate advertising programme designed to provide a means for sites to earn advertising fees by advertising and linking to <a href="http://www.amazon.co.uk/">Amazon.co.uk</a>.</p>            
+</div>
+</div><div class="block a2maintextblock ">
+
+<div class="content-block hashtaglink">
+
+    
+    
+
+<hr>            
+</div>
+</div></div>
+            
+        </div>
+
+        <div class="layout-a2__col-b">
+            
+            <div class="sub-menu sub-menu--global">
+                
+
+
+
+
+    <div class="sub-menu__header">
+        <h3><a href="/help-legal/" title="Help &amp; legal">Help &amp; legal</a> </h3>
+    </div>
+
+<nav>
+    <ul class="sub-menu__level-1" role="navigation">
+    <li class="sub-menu__level-1">
+        <a href="/help-legal/help/">
+            Help
+        </a>
+        
+
+    </li>
+    <li class="sub-menu__level-1">
+        <a href="/help-legal/legal/">
+            Legal
+        </a>
+        
+            <ul class="sub-menu__level-2" role="navigation">
+                    <li class="is-active">
+        
+        <a href="/help-legal/legal/terms-conditions/"><b class="add-icon-after-link-arrow"></b>Terms of use</a>
+
+        
+    </li>
+    <li>
+        
+        <a href="/help-legal/legal/modern-slavery-act-statement/"><b class="add-icon-after-link-arrow"></b>Modern Slavery Act statement</a>
+
+        
+    </li>
+    <li>
+        
+        <a href="/help-legal/legal/privacy/"><b class="add-icon-after-link-arrow"></b>Privacy statement</a>
+
+        
+    </li>
+    <li>
+        
+        <a href="/help-legal/legal/copyright-permissions/"><b class="add-icon-after-link-arrow"></b>Copyright &amp; permissions</a>
+
+        
+    </li>
+    <li>
+        
+        <a href="/help-legal/legal/accessibility/"><b class="add-icon-after-link-arrow"></b>Accessibility</a>
+
+        
+    </li>
+
+            </ul>
+
+    </li>
+    </ul>
+</nav>
+
+            </div>
+
+            <div><div class="block contactblocklarge "><div class="contacts-box">
+    <h3>Web team</h3>
+
+
+<div itemscope="" itemtype="https://schema.org/Person">
+        <span itemprop="name">For queries regarding the website</span>
+    
+    
+    <dl>
+        
+
+            <dt>Email: </dt>
+            <dd>
+                <!-- this link triggers the #modal-email-mainContact popup -->
+                <a href="#" class="open-modal-popup" data-open-popup="contactForm">
+                    Send us an email
+                    <input id="modalEmailId" name="modalEmailId" type="hidden" value="modal-email-mainContactf3882826-72ad-47ae-94b0-03fbbeff8dbf">
+                    <input id="modalHeader" name="header" type="hidden" value="Webmaster">
+                    <input id="modalFailureMessage" name="failureMessage" type="hidden" value="&lt;p&gt;Sorry but your email wasn&#39;t sent. Please can you call us on +44 (0) 20 7440 3311 and we will be happy to help with your enquiry.&lt;/p&gt;
+&lt;p&gt;Kind regards,&lt;/p&gt;
+&lt;p&gt;Web team.&lt;/p&gt;">
+                    <input id="modalMainContactEmail" name="mainContactEmails" type="hidden" value="zhepdvwhuCuvf1ruj">
+                    <input id="modalSuccessMessage" name="successMessage" type="hidden" value="&lt;p&gt;Thank you for sending us an email. We will reply within a couple of days.&lt;/p&gt;
+&lt;p&gt;Kind regards,&lt;/p&gt;
+&lt;p&gt;Web team.&lt;/p&gt;">
+                </a>
+            </dd>
+       
+    </dl>
+</div>
+
+    
+    
+</div>
+</div></div>
+
+            <!--
+
+<!-- this link triggers the #modal-share-by-email popup -->
+<h3>Share</h3>
+<ul class="share-links">
+    <li><a target="_blank" class="fb-share" href="#">FB</a></li>
+    <li><a target="_blank" class="twitter-share" href="#">Twitter</a></li>
+    <li><a target="_blank" class="linkedin-share" href="">LinkedIn</a></li>
+    
+    <li><a href="#" data-open-popup="modal-email-a-friendf159d252-e5c9-4d46-8fa4-2fa06d83cdcc" class="email-share">icon</a></li>
+</ul>
+<!-- content for the 'shere this' popup modal
+    This content will be hidden, and the JS module will move this markup to the bottom of the page -->
+<div class="modal-popup modal-form" id="modal-email-a-friendf159d252-e5c9-4d46-8fa4-2fa06d83cdcc">
+    <a href="#" class="modal-popup-close">close</a>
+    <form parsley-validate="" ajax-form="share">
+
+        <fieldset>
+
+            <legend></legend>
+
+            <div class="form-row">
+                <label for="toemail">To email address: <span class="mandatory">* (required)</span></label>
+                <input type="text" placeholder="to@email.com" name="toemail" id="toemail" parsley-required="true" parsley-type="email" parsley-trigger="change">
+            </div>
+            <div class="form-row">
+                <label for="fromemail">From email address: <span class="mandatory">* (required)</span></label>
+                <input type="text" placeholder="from@email.com" name="fromemail" id="fromemail" parsley-required="true" parsley-type="email" parsley-trigger="change">
+            </div>
+
+            <div class="form-row">
+                <label for="message-block">Message: <span class="mandatory">* (required)</span></label>
+                <textarea name="message" id="message-block" cols="30" rows="10" parsley-required="true" parsley-trigger="change"></textarea>
+            </div>
+
+            <div class="form-row">
+                <label for="CaptchaInputText2" class="hidden">Captcha: </label>
+
+
+                <input name="_multiple_" type="hidden" value="2">
+                <input id="imageElementId" name="imageElementId" type="hidden" value="CaptchaImage2">
+                <input id="tokenElementId" name="tokenElementId" type="hidden" value="CaptchaDeText2">
+                <input id="inputElementId" name="inputElementId" type="hidden" value="CaptchaInputText2">
+
+                
+<br>
+<img id="CaptchaImage2" src="/DefaultCaptcha/Generate?t=155a37a3ef964523882acde84dfc8e2b&_multiple_=2"><input id="CaptchaDeText2" name="CaptchaDeText2" type="hidden" value="155a37a3ef964523882acde84dfc8e2b"> <br><a href="#CaptchaImage2" id="2a7b726ee5544b128c28997d012e5398" onclick="______60e6f1f43dc4435e8e9961b7b184efca________()" style="display:none;">Refresh</a><br>Input symbols<br><input autocomplete="off" autocorrect="off" id="CaptchaInputText2" name="CaptchaInputText2" type="text" value=""><br>
+                
+<script type="text/javascript">
+$(function () {$('#2a7b726ee5544b128c28997d012e5398').show();});
+function ______60e6f1f43dc4435e8e9961b7b184efca________() { $('#2a7b726ee5544b128c28997d012e5398').hide(); $.post("/DefaultCaptcha/Refresh?_multiple_=2", { t: $('#CaptchaDeText2').val() }, function(){$('#2a7b726ee5544b128c28997d012e5398').show();}); return false; }</script>
+                <span class="captcha-error-msg-friend" style="color:#C8102E"></span>
+            </div>
+        </fieldset>
+
+        <div class="ajax-error-message"><p>&lt;p&gt;We&#39;re sorry, your email could not be sent. Please contact webmaster@rsc.org.&lt;/p&gt;</p></div>
+
+        <input type="submit" class="btn" value="Share via email">
+
+        <input type="hidden" name="PreMessageContent">
+
+        <input type="hidden" name="Subject">
+
+        <input type="hidden" name="PageUrl" value="https://www.rsc.org/help-legal/legal/terms-conditions/">
+
+    </form>
+
+    <div class="success-message">
+        <p>&lt;p&gt;Your email has been sent.&lt;/p&gt;</p>
+    </div>
+
+</div>
+
+<!-- /content for the 'shere this' popup modal -->
+
+<div class="share-clearfix"></div>
+
+
+            <div class="advertising-spotlights-container">
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+
+
+
+
+<footer role="contentinfo">
+    <a href="#" onclick="scrollToTop();return false" class="returntotop">
+    	<span class="returntotop__image"></span>
+    	<span class="returntotop__text">Back to top</span>
+    </a>
+    <div class="grid-container">
+        
+<div class="master-footer__col-a">
+    <div class="footer-links">
+    </div>
+</div>
+
+        <!-- /.master-footer__col-a -->
+
+        <div class="master-footer__col-b">
+            <div class="footer-links">
+                <h3>Not a member?</h3>
+                <ul>
+        <li><a href="/membership-and-community/join/">Apply for membership</a></li>
+</ul>
+
+                
+            </div>
+        </div>
+        
+        
+        <!-- /.master-footer__col-b -->
+
+        
+        <div class="master-footer__col-c">
+            <nav>
+            <ul class="main-section-links">
+                <li>
+                    <noscript data-slimmage="true" data-img-class="main-section-links__curve slimmage-exclude" data-img-src="https://epi-rsc.rsc-cdn.org/public/img/template/bg-section-link-blue.png?version=20201110030602" data-img-alt="Curved Image"><img class="main-section-links__curve slimmage-exclude" src="https://epi-rsc.rsc-cdn.org/public/img/template/bg-section-link-blue.png?version=20201110030602" alt="Curved Image"></noscript>
+
+        <noscript data-slimmage="true" data-img-class="main-section-links__img slimmage hashtaglink" data-img-src="https://epi-rsc.rsc-cdn.org/globalassets/00-sitewide/media/footer/main-section-publishing.jpg?version=3f1b965a&amp;width=800&amp;format=jpg&amp;quality=80" data-img-title="Journals &amp; books" data-img-alt="image block"><img class="main-section-links__img slimmage hashtaglink" src="https://epi-rsc.rsc-cdn.org/globalassets/00-sitewide/media/footer/main-section-publishing.jpg?version=3f1b965a&amp;width=800&amp;format=jpg&amp;quality=80" title="Journals &amp; books" alt="Journals &amp; books" alt="image block"></noscript>
+
+
+    <a href="/journals-books-databases/" class="h3 h3--theme-dark">
+    
+Journals
+    </a>
+        
+
+
+
+
+                </li>
+                <li>
+                    <noscript data-slimmage="true" data-img-class="main-section-links__curve slimmage-exclude" data-img-src="https://epi-rsc.rsc-cdn.org/public/img/template/bg-section-link-mulberry.png?version=20201110030602" data-img-alt="Curved Image"><img class="main-section-links__curve slimmage-exclude" src="https://epi-rsc.rsc-cdn.org/public/img/template/bg-section-link-mulberry.png?version=20201110030602" alt="Curved Image"></noscript>
+
+        <noscript data-slimmage="true" data-img-class="main-section-links__img slimmage hashtaglink" data-img-src="https://epi-rsc.rsc-cdn.org/globalassets/00-sitewide/media/footer/main-section-network.jpg?version=3f1b965a&amp;width=800&amp;format=jpg&amp;quality=80" data-img-title="Networks" data-img-alt="image block"><img class="main-section-links__img slimmage hashtaglink" src="https://epi-rsc.rsc-cdn.org/globalassets/00-sitewide/media/footer/main-section-network.jpg?version=3f1b965a&amp;width=800&amp;format=jpg&amp;quality=80" title="Networks" alt="Networks" alt="image block"></noscript>
+
+
+    <a href="/membership-and-community/" class="h3 h3--theme-dark">
+    
+Networks
+    </a>
+        
+
+
+
+
+                </li>
+                <li>
+                    <noscript data-slimmage="true" data-img-class="main-section-links__curve slimmage-exclude" data-img-src="https://epi-rsc.rsc-cdn.org/public/img/template/bg-section-link-tangerine.png?version=20201110030602" data-img-alt="Curved Image"><img class="main-section-links__curve slimmage-exclude" src="https://epi-rsc.rsc-cdn.org/public/img/template/bg-section-link-tangerine.png?version=20201110030602" alt="Curved Image"></noscript>
+
+        <noscript data-slimmage="true" data-img-class="main-section-links__img slimmage hashtaglink" data-img-src="https://epi-rsc.rsc-cdn.org/globalassets/00-sitewide/media/footer/main-section-contact.jpg?version=3f1b9659&amp;width=800&amp;format=jpg&amp;quality=80" data-img-title="Contacts" data-img-alt="image block"><img class="main-section-links__img slimmage hashtaglink" src="https://epi-rsc.rsc-cdn.org/globalassets/00-sitewide/media/footer/main-section-contact.jpg?version=3f1b9659&amp;width=800&amp;format=jpg&amp;quality=80" title="Contacts" alt="Contacts" alt="image block"></noscript>
+
+
+    <a href="/locations-contacts/" class="h3 h3--theme-dark">
+    
+Contacts
+    </a>
+        
+
+
+
+
+                </li>
+            </ul>
+            </nav>
+        
+
+            <ul class="social-links">
+                <li><a class="social-links__link social-links__link--facebook" href="https://www.facebook.com/RoyalSocietyofChemistry" target="_blank"><span class="visuallyhidden">Facebook</span></a></li>
+                <li><a class="social-links__link social-links__link--twitter" href="https://twitter.com/RoySocChem" target="_blank"><span class="visuallyhidden">Twitter</span></a></li>
+                <li><a class="social-links__link social-links__link--linkedin" href="http://www.linkedin.com/company/23105" target="_blank"><span class="visuallyhidden">Linked In</span></a></li>
+                <li><a class="social-links__link social-links__link--you-tube" href="http://www.youtube.com/user/wwwRSCorg" target="_blank"><span class="visuallyhidden">YouTube</span></a></li>
+                
+            </ul>
+            
+            </div>
+        
+        <div class="master-footer__row-b">
+
+            <div class="master-footer__nav">
+                <ul class="footer-nav">
+        <li><a href="/help-legal/help/" title="Frequently asked questions">Help</a></li>
+        <li><a href="/advertise/">Advertise</a></li>
+        <li><a href="/help-legal/legal/">Legal</a></li>
+        <li><a href="/help-legal/legal/privacy/" title="Privacy &amp; cookies policy">Privacy</a></li>
+        <li><a href="/help-legal/legal/accessibility/" title="Accessibility statement">Accessibility</a></li>
+</ul>
+
+            </div>
+
+            <div class="master-footer__copyright"> 
+                <p>&copy; Royal Society of Chemistry 2020. Registered charity number 207890. </p>
+            </div>
+
+            
+
+        </div>
+        
+        </div>
+
+        <!-- /.master-footer__col-c -->
+       
+    
+</footer>
+
+
+
+    <!-- content for the email contact popup modal -->
+    <div class="modal-popup modal-form contact-modal-form" id="contactForm">
+        <a href="#" class="modal-popup-close">close</a>
+        <form parsley-validate="" ajax-form="email">
+
+            <fieldset>
+
+                <legend></legend>
+
+                <div class="form-row">
+                    <label for="name">Your name: <span class="mandatory">* (required)</span></label>
+                    <input type="text" placeholder="" name="name" id="name" parsley-required="true" parsley-trigger="change">
+                </div>
+                <div class="form-row">
+                    <label for="email">Your email: <span class="mandatory">* (required)</span></label>
+                    <input type="text" placeholder="" name="email" id="email" parsley-required="true" parsley-type="email" parsley-trigger="change">
+                </div>
+                <div class="form-row">
+                    <label for="subject">Subject: <span class="mandatory">* (required)</span></label>
+                    <input type="text" placeholder="Question request" name="subject" id="subject" parsley-required="true" parsley-trigger="change">
+                </div>
+
+                <div class="form-row">
+                    <label for="message">Message: <span class="mandatory">* (required)</span></label>
+                    <textarea placeholder="My question is this..." name="message" id="message" cols="30" rows="10" parsley-required="true" parsley-trigger="change"></textarea>
+                </div>
+                <div class="form-row">
+                    <label for="CaptchaInputText1" class="hidden">Captcha: </label>
+
+
+                    <input id="imageElementId" name="imageElementId" type="hidden" value="CaptchaImage1">
+                    <input id="tokenElementId" name="tokenElementId" type="hidden" value="CaptchaDeText1">
+                    <input id="inputElementId" name="inputElementId" type="hidden" value="CaptchaInputText1">
+                    <input name="_multiple_" type="hidden" value="1">
+
+                    
+<br>
+<img id="CaptchaImage1" src="/DefaultCaptcha/Generate?t=9ddda46de0fb478895f242f705468d99&_multiple_=1"><input id="CaptchaDeText1" name="CaptchaDeText1" type="hidden" value="9ddda46de0fb478895f242f705468d99"> <br><a href="#CaptchaImage1" id="8de8835d86a84e9d8e8841e46366b3f3" onclick="______6b27517a0438427495e63d87fcf29484________()" style="display:none;">Refresh</a><br>Input symbols<br><input autocomplete="off" autocorrect="off" id="CaptchaInputText1" name="CaptchaInputText1" type="text" value=""><br>
+                    
+<script type="text/javascript">
+$(function () {$('#8de8835d86a84e9d8e8841e46366b3f3').show();});
+function ______6b27517a0438427495e63d87fcf29484________() { $('#8de8835d86a84e9d8e8841e46366b3f3').hide(); $.post("/DefaultCaptcha/Refresh?_multiple_=1", { t: $('#CaptchaDeText1').val() }, function(){$('#8de8835d86a84e9d8e8841e46366b3f3').show();}); return false; }</script>
+                    <span class="captcha-error-msg-contact" style="color:#C8102E"></span>
+                </div>
+            </fieldset>
+            <div class="ajax-error-message"></div>
+            <input type="submit" class="btn" value="submit">
+            <input type="hidden" class="hidden-modal-email" name="maincontactemail" value="">
+
+        </form>
+
+        <div class="success-message">
+
+        </div>
+    </div>
+    <!-- /content for the email contact popup modal -->
+    <!-- Image resizer quality parameter -->
+    <span id="imageResizerMobile" data-value="60" style="display:none"></span>
+    <span id="imageResizerTablet" data-value="70" style="display:none"></span>
+    <span id="imageResizerDesktop" data-value="80" style="display:none"></span>
+
+    <!-- Main JS script -->
+    <script src="https://epi-rsc.rsc-cdn.org/public/js/app.min.js?version=20201110030602"></script>
+
+    
+
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptchaElements"></script>
+    <script type="text/javascript" src="/public/js/epiForms.js"></script>
+
+</body>
+</html>
