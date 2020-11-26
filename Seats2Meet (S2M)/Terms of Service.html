@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- website title -->
+	<title>Oops... error</title>
+
+	<!-- meta data -->
+	<meta name="description" content="" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="content-language" content="en-US">
+
+	<!-- linking | icon -->
+    
+	<link rel="alternate" hreflang="de" href="">
+	<link rel="alternate" hreflang="en" href="">
+	<link rel="alternate" hreflang="ja" href="">
+	<link rel="alternate" hreflang="nl" href="">
+	<link rel="alternate" hreflang="pt" href="">
+
+	
+	<script type="text/javascript">
+		var profileKey;
+		var ProfileObject;
+		var ARR_CALENDARLABELS;
+		
+		// var t = 'false';
+
+		var nsHeader = {
+			profileKey: '',
+			profileObject: ''
+		};
+	</script>
+
+	<script src="/scripts/frontend/mainScripts?v=ZIZwU8bpyyWGpTbjKDS_EYdH19gPD_FgfJk4C6C9vVM1"></script>
+
+    <script src="/signalr/hubs"></script>
+    <script src="/scripts/frontend/masterpage?v=if4O7vQPSijxWcT4Q46_jQReW1SIOtfaEYnMnCRglKI1"></script>
+
+
+	<script type="text/javascript">
+		$(function () {
+			var cookieUrl = 'https://cookies.seats2meet.com'
+            var channelId = 1
+
+            var masterpageVM = new MasterpageModule.MasterPageViewModel({ChannelId: channelId, CookieUrl: cookieUrl});
+            ko.applyBindings(masterpageVM, document.getElementById('systemNotificationContent'));
+
+            $('#showPersonalMenu').click(function (e) {
+				e.stopPropagation(); //stops click event from reaching document
+			});
+			$(document).click(function () {
+				if ($('#manageProfileListHolder').is(':visible')) {
+					ToggleProfileLocations('#showPersonalMenu');
+				}
+			});
+
+			var headerMenuVM = new HeaderMenuModule.HeaderMenuViewModel({
+				MenuViewIsInverted: false
+			});
+			ko.applyBindings(headerMenuVM, document.getElementById('menuHolder'));
+		});
+    </script>
+
+
+	
+		<!-- Google Tag Manager -->
+		<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+				new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-MGDWDM4');</script>
+		<!-- End Google Tag Manager -->
+	
+
+	<!--[if lte IE 8]>
+		<script type="text/javascript" src="/scripts/IEFallback/IE8Functions.js"></script>
+	<![endif]-->
+
+	<!--[if lte IE 7]>
+		<script type="text/javascript" src="/scripts/IEFallback/json2-min.js"></script>
+		<script type="text/javascript" src="/scripts/IEFallback/IE7Functions.js"></script>
+	<![endif]-->
+
+	
+	
+	<link href="/Channels/s2m/Style/frontend/defaultpagestyling?v=2lcL1YMP34gSu6ruFBkmGQn540YLpf95WLcWVYTpqCg1" rel="stylesheet"/>
+
+
+</head>
+<body id="ctl00_bodyId">
+	
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGDWDM4"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+	
+
+    <div id="systemNotificationContent">
+        
+        <div id="popup-overlay" class="popup-overlay opacityDark80" data-bind="visible: $root.ShowTermsPopup() === true" style="display: none;"></div>
+	    <div id="popup-holder" class="popup-holder terms-popup-holder" data-bind="visible: $root.ShowTermsPopup() === true" style="display: none;">
+		    <div class="padding header">
+				<h2 class="align_left">We updated our terms</h2>
+		    </div>
+
+			<div class="contentWrapper">
+				<div class="content">
+					<!-- ko if: $root.LatestTerms().Changes() !== '' -->
+					<div data-bind="html: $root.LatestTerms().Changes"></div>
+					<hr />
+					<!-- /ko -->
+					<strong data-bind="html: $root.LatestTerms().Version"></strong>
+					<hr />
+					<div data-bind="html: $root.LatestTerms().Text"></div>
+				</div>
+			</div>
+
+            <div class="padding footer">
+				<label class="customCheckbox">
+					<input type="checkbox"  data-bind="checked: $root.UserHasAgreed" />
+					<span class="checkmark">
+					  <i class="text_accent_white font-icon s2m-icon-check-mark"></i>
+					</span>
+					<span class="shortDescription">I agree to these terms</span>
+				</label>
+
+                <a href="javascript:" data-bind="event: { click: function () { $root.SaveTermsAgreement(); return true; } }, css: {'callToAction': $root.UserHasAgreed(), 'disabled':!$root.UserHasAgreed()}" class="button">Agree &close</a>
+            </div>
+	    </div>
+
+        <div id="cookieBar" data-bind="visible: $root.ShowCookieBar" class="part no_margin" style="display: none;">
+			<div class="content">
+				
+				<div class="col-left hide_mobile">
+				  <strong>SEATS2MEET.COM USES COOKIES</strong><br/>These are categorized in functional, analytical, advertising, social media and experimental cookies.<br/>
+ 
+Advertising and social media cookies gather information about activities of individual users. Seats2meet uses these to follow and improve the effectiveness of moments of contact with users outside of the platform.
+				</div>
+				<div class="show_mobile">
+					Seats2meet.com make use of cookies
+				</div>
+				<a href="javascript:" class="button button-height-normal callToAction" data-bind="event: { click: function (data) { $root.GoToCookieConsent(); return true; } }" >Cookie settings</a>
+			</div>
+        </div>
+    </div>
+
+	<div id="site_body_wrapper">
+		<form name="aspnetForm" method="post" action="./Oops" id="aspnetForm" autocomplete="off">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="9+PtGpYBZTB+AAcOemfcd1lj0EoXoxOSngyokPlFr5C9sEVHb73u08i19AhDedZovSLtSNsX/BzZ4PbCK1YaVl8eDlKIf++X3yiFOULXfqI=" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="FAACAEE9" />
+			
+			<header role="navigation" id="menuHolder">
+				<div class="part main_menu main_website_menu no_padding">
+					<div class="clearfix content">
+						<div class="column width_1_of_1 align_right">
+							<a aria-label="menu" aria-expanded="true" class="hamburger show_tablet show_mobile" onclick="$('#hamburger').animate({height: 'toggle'});">
+								<i aria-hidden="true" class="font-icon s2m-icon-navicon" style="color: black; display: none;""></i>
+							</a>
+							<a href="/" class="main_logo">
+								<img src="/Content/images/spacer.gif" alt="Seats2meet.com | Book your meeting-, training- or event space, workspace or temporary office online">
+							</a>
+							<nav>
+								<ul class="clear-list hide_tablet hide_mobile">
+									
+											<li>
+												<a href="/en" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Home', '', 1);" class=" " >Home</a>
+												
+											</li>
+										
+											<li>
+												<a href="/en/locations" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Locations', '', 1);" class=" " >Locations</a>
+												
+											</li>
+										
+											<li>
+												<a href="/en/events" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Events', '', 1);" class=" " >Events</a>
+												
+											</li>
+										
+											<li>
+												<a href="https://now.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Network', '', 1);" class=" " >Network</a>
+												
+											</li>
+										
+											<li>
+												<a href="https://passport.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Passport', '', 1);" class=" " >Passport</a>
+												
+											</li>
+										
+											<li>
+												<a href="https://magazine.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Magazine', '', 1);" class=" " >S2M Stories</a>
+												
+											</li>
+										
+											<li>
+												<a href="https://host.seats2meet.com/" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Host', '', 1);" class=" " >Join with your location</a>
+												
+											</li>
+										
+								</ul>
+							</nav>
+
+							<div class="holder-profileLoggedIn margin_left">
+								<div id="profileLoggedInHolder" class="profileContainer"></div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				
+
+				
+				<div id="hamburger" class="part color_secundary main_menu main_mobile_menu no_padding" style="display: none">
+					<div class="content show_mobile show_tablet no_padding_vertical">
+						<nav>
+							<ul class="clear-list">
+								
+										<li>
+											<a href="/en" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Home', '', 1);" class="" >Home</a>
+											
+										</li>
+									
+										<li>
+											<a href="/en/locations" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Locations', '', 1);" class="" >Locations</a>
+											
+										</li>
+									
+										<li>
+											<a href="/en/events" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Events', '', 1);" class="" >Events</a>
+											
+										</li>
+									
+										<li>
+											<a href="https://now.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Network', '', 1);" class="" >Network</a>
+											
+										</li>
+									
+										<li>
+											<a href="https://passport.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Passport', '', 1);" class="" >Passport</a>
+											
+										</li>
+									
+										<li>
+											<a href="https://magazine.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Magazine', '', 1);" class="" >S2M Stories</a>
+											
+										</li>
+									
+										<li>
+											<a href="https://host.seats2meet.com/" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('SiteTopMenu', 'link-Host', '', 1);" class="" >Join with your location</a>
+											
+										</li>
+									
+							</ul>
+						</nav>
+					</div>
+				</div>
+				
+			
+			</header>
+			
+
+			
+			<div class="siteTopContentHolder">
+				
+	
+	<div class="part color_accent_3 landing height_auto"> 
+		<div class="content">
+			<h1 style="margin: 0;">Seats2meet is temporarily unreachable due to a technical problem.</h1>
+		</div>
+	</div>
+	
+
+	
+	<div class="part color_secundary"> 
+		<div class="content" style="text-align: center;">
+			<img width="55%" src="/content/frontend/images/pages/customerror/s2m-error.png" alt="Seats2meet is temporarily unreachable due to a technical problem." />
+		</div>
+	</div>
+
+
+                
+			</div>
+			
+
+
+			
+			<footer>
+				<div class="part color_accent_4 footer">
+					<div class="content">
+						
+								<div class="column width_1_of_4">
+									<h6>About us</h6>
+									
+											<ul>
+										
+											<li>
+												<a href="https://host.seats2meet.com/about-seats2meet" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('for host', 'footer | about', 'link', 1);" target="">
+													About Seats2meet
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://gdpr.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('GDPR', 'footer', 'link', 1);" target="_blank">
+													GDPR compliant
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/Locations"  target="">
+													Locations
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://host.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('for host', 'footer | sign-up-location', 'link', 1);" target="">
+													Sign up your location
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://magazine.seats2meet.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('magazine', 'footer', 'link', 1);" target="_blank">
+													S2M Stories
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/contact"  target="">
+													Contact Seats2meet
+												</a>
+											</li>
+										
+											</ul>
+										
+								</div>
+							
+								<div class="column width_1_of_4">
+									<h6>What we do</h6>
+									
+											<ul>
+										
+											<li>
+												<a href="https://now.seats2meet.com"  target="">
+													Network
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/meetings"  target="">
+													Meetings
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/coworking"  target="">
+													Coworking
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/deskspace"  target="">
+													Temporary office
+												</a>
+											</li>
+										
+											<li>
+												<a href="http://serendipitymachine.com" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('serendipitymachine', 'footer', 'link', 1);" target="_blank">
+													The Serendipity Machine
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://locals.seats2meet.com/" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('s2m for locals', 'footer', 'link', 1);" target="_blank">
+													Seats2meet for Locals
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://seats4silence.seats2meet.com/nl" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('Seats4silence', 'footer', 'link', 1);" target="_blank">
+													Seats4silence
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/events"  target="">
+													Event Calendar
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://magazine.seats2meet.com/collaborations" onclick="(new GoogleModule.GA_EventMeasurement()).PushTrackEvent('magazine', 'footer | collaborations', 'link', 1);" target="_blank">
+													Our partners
+												</a>
+											</li>
+										
+											</ul>
+										
+								</div>
+							
+								<div class="column width_1_of_4">
+									<h6>General</h6>
+									
+											<ul>
+										
+											<li>
+												<a href="/en/privacy"  target="">
+													Privacy Policy
+												</a>
+											</li>
+										
+											<li>
+												<a href="/en/terms"  target="">
+													Terms
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://shop.seats2meet.com"  target="_blank">
+													Seats2meet Shop
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://shop.seats2meet.com/styleguide/"  target="_blank">
+													Seats2meet styleguide
+												</a>
+											</li>
+										
+											<li>
+												<a href="https://cookies.seats2meet.com"  target="">
+													Cookie settings
+												</a>
+											</li>
+										
+											</ul>
+										
+								</div>
+							
+
+						<div class="column width_1_of_4" style="float: right;">
+							<div id="ctl00_RowSocialMedia" class="row row-socialMedia">
+								<h6>Social</h6>
+								<a href="https://www.linkedin.com/company/628137?trk=tyah&trkInfo=idx%3A3-2-8%2CtarId%3A1423664334134%2Ctas%3Aseats" id="ctl00_SocialLogoLinked" class="sprite_social px32 linkedIn" title="LinkedIn"></a>
+								<a href="https://www.facebook.com/Seats2meetcom" id="ctl00_SocialLogoFacebook" class="sprite_social px32 facebook" title="Facebook"></a>
+								<a href="https://twitter.com/s2m" id="ctl00_SocialLogoTwitter" class="sprite_social px32 twitter" title="Twitter"></a>
+							</div>
+							<div class="row row-language">
+								<label for="languageSelector">
+									Language
+								</label>
+								
+										<select id="languageSelector" name="languageSelector" onchange="SetLanguage(this.value);">
+									
+										<option value="nl-NL">Dutch (Netherlands)</option>
+									
+										<option value="en-US">English</option>
+									
+										<option value="de">German</option>
+									
+										<option value="ja">Japanese</option>
+									
+										<option value="pt">Portuguese</option>
+									
+										<option value="es-ES">Spanish (Spain)</option>
+									
+										</select>
+									
+							</div>
+							<div id="ctl00_RowCountrySelector" class="row row-country">
+								<label for="countrySelector">
+									Country
+								</label>
+								
+										<select id="countrySelector" name="countrySelector" onchange="SetCountry(this.value);">
+									
+										<option  value="18">Argentina</option>
+									
+										<option  value="26">Bangladesh</option>
+									
+										<option  value="29">Belgium</option>
+									
+										<option  value="35">Bosnia-Herzegovina</option>
+									
+										<option  value="37">Brazil</option>
+									
+										<option  value="44">Canada</option>
+									
+										<option  value="49">Chile</option>
+									
+										<option  value="50">China</option>
+									
+										<option  value="67">Ecuador</option>
+									
+										<option  value="77">Finland</option>
+									
+										<option  value="78">France</option>
+									
+										<option  value="84">Germany</option>
+									
+										<option  value="87">Greece</option>
+									
+										<option  value="101">India</option>
+									
+										<option  value="102">Indonesia</option>
+									
+										<option  value="109">Japan</option>
+									
+										<option  value="111">Kazakhstan</option>
+									
+										<option  value="114">North Korea</option>
+									
+										<option  value="140">Mexico</option>
+									
+										<option  value="152">Netherlands</option>
+									
+										<option  value="155">New Zealand</option>
+									
+										<option  value="168">Peru</option>
+									
+										<option  value="172">Portugal</option>
+									
+										<option  value="190">Singapore</option>
+									
+										<option  value="192">Slovenia</option>
+									
+										<option  value="195">South Africa</option>
+									
+										<option  value="196">Spain</option>
+									
+										<option  value="202">Switzerland</option>
+									
+										<option  value="206">Thailand</option>
+									
+										<option  value="217">Ukraine</option>
+									
+										<option  value="219">United Kingdom</option>
+									
+										<option selected value="220">United States</option>
+									
+										<option  value="233"></option>
+									
+										</select>
+									
+							</div>
+						</div>
+					</div>
+					<div class="content">
+						
+						<div id="ctl00_BCorpsLogo" class="column width_1_of_4">
+							<a id="bCorpLogo" href="http://bcorporation.eu/community/seats2meetcom-international-bv" target="_blank">
+								<img src="/Content/Frontend/Images/Website/B_BCorp_logo_NEG.png" style="margin: 0;" /></a>
+						</div>
+					</div>
+				</div>
+			</footer>
+			
+			<div id="siteBottomContainer" class="pageBlockRow pageBlockRowDark darkBackground opacityDark100">
+				
+
+			</div>
+		</form>
+
+		
+		<div data-bind="foreach: Growls, beforeRemove: HideGrowl, visible: Growls().length !== 0" id="holder-crowls" class="crowls-holder" style="display: none;">
+			<div data-bind="css: 'growl-' + Type()" class="crowl content-holder">
+				<span class="popup-close-button buttonCancel button-height-normal" data-bind="event: { click: function (data, event) { $root.RemoveGrowl(data); } }">&#x2715;</span>
+				<div class="content-holder">
+					<!-- ko if: Type() === 'confirm' -->
+					<i class="font-icon s2m-icon-check-circle"></i>
+					<!-- /ko -->
+					<!-- ko if: Type() === 'warning' -->
+					<i class="font-icon s2m-icon-exclamation"></i>
+					<!-- /ko -->
+					<!-- ko if: Type() === 'info' -->
+					<i class="font-icon s2m-icon-question-circle"></i>
+					<!-- /ko -->
+					<div class="text">
+						<h4 class="article-header" data-bind="text: Subject"></h4>
+						<div data-bind="text: Message"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--[if lte IE 9]>
+		<script type="text/javascript" src="/scripts/IEFallback/jquery.html5-placeholder-shim.js"></script>
+	<![endif]-->
+
+	<!--[if lte IE 8]>
+		<script type="text/javascript" src="/scripts/IEFallback/jquery.backgroundSize.js"></script>
+	<![endif]-->
+
+	<!--[if lte IE 8]>
+		<script type="text/javascript">
+			$(function(){
+				$('div.landing').css('background-size', 'cover');
+			});
+		</script>
+	<![endif]-->
+
+    
+	<script type="text/javascript" src="https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.js"></script>
+	<script type="text/javascript">
+		if (typeof FreshWidget !== 'undefined') {
+            FreshWidget.init("", { "queryString": "&widgetType=popup&searchArea=no", "widgetType": "popup", "buttonType": "text", "buttonText": "Feedback", "buttonColor": "white", "buttonBg": "#999999", "alignment": "2", "offset": "75%", "formHeight": "500px", "url": "https://seats2meet.freshdesk.com" });
+            let t = setTimeout(function () {	
+                if (document.getElementById('freshwidget-button')) {
+                    document.getElementById('freshwidget-button').setAttribute("aria-hidden", true);
+                }
+                clearTimeout(t);
+            }, 1000);
+        }
+
+		$(function () {
+			var channelId = GetCookie('ChannelId');
+			channelId = Number(channelId);
+			//if (typeof channelId === 'number' && channelId !== 1) {
+			//	document.getElementById('bCorpLogo').style.display = "none";
+			//}
+			if (typeof jQuery.ui !== 'undefined') {
+				ARR_CALENDARLABELS = $.datepicker.regional["en"];
+				$.datepicker.setDefaults($.datepicker.regional["en"]);
+            }
+		});
+	</script>
+    </body>
+</html>
