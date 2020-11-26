@@ -1,0 +1,1088 @@
+  
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"7579c0c6e8","applicationID":"6827321","transactionName":"JVcNEkVbXFRVSxxAAgFdEElDUUJVQ2ZcVjwVXREQXldV","queueTime":0,"applicationTime":21,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"7579c0c6e8",applicationID:"6827321"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+    <title>Terms of Service | Virtual Private Internet Access Network</title>
+    <link rel="apple-touch-icon" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-b55a0cff11a717c9b39c21c4fddb5b29e01e0d80f8502c74f6ee37755add9827.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-114x114-dbd99960150201ca989e0cb86b715d723d24d8e5ef16f1ba0d86e4988b7289d4.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-60x60-40444ea401e9610a7a9bc708e3e3c9c1e20df88fc392d8b81387fb615f852ef5.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-120x120-08d7c6c79279221c21b062933fd3d2a90cfdd47628c155dffbdc30c4b9e9f7eb.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-72x72-577c2d94cb44f355987f945581355b615ae131b34e60a154732cfa1b97bea746.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-144x144-e13639295a0fe399cfa08d757ec89557c2f4e02f85f65c05c66362f99fac3216.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-76x76-bf8bdba152c015ea656a38f3cf1c4db0fdc816034e730752916333d2974e140c.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-152x152-47beee8c2297a4ff0af9e1bfdd2749aed441e65393896ef86ebf5e150ddbde7d.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-180x180-b55a0cff11a717c9b39c21c4fddb5b29e01e0d80f8502c74f6ee37755add9827.png">
+<link rel="apple-touch-icon" sizes="57x57" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-57x57-5a18bdb570da7ba81b6d2e1ff2590ec62033e8c786a36e587eab94365710c252.png">
+<link rel="apple-touch-icon-precomposed" href="https://www.privateinternetaccess.com/assets/apple-touch-icon-precomposed-3a1219e49f9d439f6f17c33fbc89d763a1d8c905ea367412060e5c7cbc54611f.png">
+<meta name="msapplication-config" content="none">
+
+    <meta name="description" content="Terms of Service and Acceptable Use Policies for Private Internet Access. For safe browsing, always use protection.®  Secure, private and anonymous VPN service." >
+    <meta name="robots" content="INDEX,FOLLOW">
+    <link rel="canonical" href="https://www.privateinternetaccess.com/pages/terms-of-service/">    <link rel="alternate" href="https://www.privateinternetaccess.com/pages/terms-of-service/" hreflang="en">
+<link rel="alternate" href="https://www.privateinternetaccess.com/pages/terms-of-service/" hreflang="x-default">    <script>
+(function () {
+  var _rollbarConfig = {
+      accessToken: "ff90de1c3b2a4f98b8caef3889d4c3d8",
+      captureUncaught: true,
+      captureUnhandledRejections: true,
+      scrubTelemetryInputs: true,
+      scrubFields: ["password","bigdata","userpass","user","pass","new_pass","new_pass_confirm","card_first_6","card_last_4","secret","changes","client_id","token","tokens","new_email","card_country","new_email_repeat"],
+      hostWhiteList: ["www.privateinternetaccess.com","fra.privateinternetaccess.com","deu.privateinternetaccess.com","jpn.privateinternetaccess.com","nld.privateinternetaccess.com","dnk.privateinternetaccess.com","tur.privateinternetaccess.com","mex.privateinternetaccess.com","bra.privateinternetaccess.com","chi.privateinternetaccess.com","cht.privateinternetaccess.com","rus.privateinternetaccess.com","ita.privateinternetaccess.com","tha.privateinternetaccess.com","kor.privateinternetaccess.com","ara.privateinternetaccess.com","pol.privateinternetaccess.com","nor.privateinternetaccess.com","www.privateinternetaccess.com"],
+      uncaughtErrorLevel: 'warning',
+      captureIp: false,
+      payload: {
+        environment: 'production',
+        client: {
+          javascript: {
+            code_version: '83c7fae570893deb4c63a5198c2312b8b2630c4d',
+            guess_uncaught_frames: true
+          }
+        }
+      },
+      checkIgnore: function (isUncaught, args, payload) {
+        if ('production' === 'development') {
+          return true
+        }
+        var userAgent = window.navigator && navigator.userAgent
+        if (typeof(userAgent) === 'string' &&
+            userAgent.indexOf('AhrefsBot') > -1) {
+          return true
+        }
+      }
+  };
+  !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.19.2/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+})();
+</script>
+
+      <link rel="shortcut icon" href=https://www.privateinternetaccess.com/favicon.ico >
+  <link rel="stylesheet" href="https://www.privateinternetaccess.com/assets/application/application-13f7106e6fb6b1714d84c98b04daacd306e9b0bf9cf35daa2208ce24564bd1c5.css" />
+    <script>
+(function () {
+  var _rollbarConfig = {
+      accessToken: "ff90de1c3b2a4f98b8caef3889d4c3d8",
+      captureUncaught: true,
+      captureUnhandledRejections: true,
+      scrubTelemetryInputs: true,
+      scrubFields: ["password","bigdata","userpass","user","pass","new_pass","new_pass_confirm","card_first_6","card_last_4","secret","changes","client_id","token","tokens","new_email","card_country","new_email_repeat"],
+      hostWhiteList: ["www.privateinternetaccess.com","fra.privateinternetaccess.com","deu.privateinternetaccess.com","jpn.privateinternetaccess.com","nld.privateinternetaccess.com","dnk.privateinternetaccess.com","tur.privateinternetaccess.com","mex.privateinternetaccess.com","bra.privateinternetaccess.com","chi.privateinternetaccess.com","cht.privateinternetaccess.com","rus.privateinternetaccess.com","ita.privateinternetaccess.com","tha.privateinternetaccess.com","kor.privateinternetaccess.com","ara.privateinternetaccess.com","pol.privateinternetaccess.com","nor.privateinternetaccess.com","www.privateinternetaccess.com"],
+      uncaughtErrorLevel: 'warning',
+      captureIp: false,
+      payload: {
+        environment: 'production',
+        client: {
+          javascript: {
+            code_version: '83c7fae570893deb4c63a5198c2312b8b2630c4d',
+            guess_uncaught_frames: true
+          }
+        }
+      },
+      checkIgnore: function (isUncaught, args, payload) {
+        if ('production' === 'development') {
+          return true
+        }
+        var userAgent = window.navigator && navigator.userAgent
+        if (typeof(userAgent) === 'string' &&
+            userAgent.indexOf('AhrefsBot') > -1) {
+          return true
+        }
+      }
+  };
+  !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.19.2/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+})();
+</script>
+
+  <meta name="copyright" content="Copyright (c) 2010 Private Internet Access, Inc." >
+  <meta name="author" content="Private Internet Access, Inc." >
+  <meta name="distribution" content="Global" >
+  <meta name="rating" content="General" >
+  <meta name="expires" content="Never" >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="FxIuNgKz3W043ZRt02oXnX1Pr_kiJ_nVfo4_AywDr2A" >
+  <meta name="msvalidate.01" content="850A277FE771818CC7899A343AD33CF8" />
+  <meta name="DC.title" content="Private Internet Access Anonymous VPN" />
+  <meta name="geo.region" content="US-MI" />
+  <meta name="geo.placename" content="Grandville" />
+  <meta name="geo.position" content="42.91272;-85.75508" />
+  <meta name="ICBM" content="42.91272, -85.75508" />
+  
+  <script id='script-keys'
+  type='text/x-data'
+  data-amazon-client-id='amzn1.application-oa2-client.a0d3838d77ef411fa9635e3e9dd39372'
+  data-amazon-merchant-id='A3CV2ZGVYRWWGQ'
+  data-paypal-tokenization-key='production_wfvvry6v_hgkc8vphzdyxjzsx'>
+</script>
+
+  <script>
+  <!-- Google Analytics -->
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  var params = window.location.search.replace(new RegExp("&?(buyerEmail|buyerName|email|q|address_or_email)=.*&?"),'')
+  var page = window.location.pathname + params
+  ga('create', 'UA-26585402-1', 'auto')
+  ga('require', 'linkid', 'linkid.js')
+  ga('set', 'anonymizeIP', true)
+  ga('set', 'location', page)
+  ga('set', 'dimension3', Math.floor(Date.now() / 1000))
+  ga('set', 'dimension4', '');
+  ga('send', 'pageview')
+  <!-- End Google Analytics -->
+  </script>
+
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="g2qYeKPIUwODXpyuJI2jAbzIU8GpYWheyWn+X2HqkqqAmeM2EGZeEOCby0T4vyHg4kmgPOrvk8I1hpoj0Jk9bw==" />
+    
+    
+  </head>
+  <body class="pages terms_of_service">
+
+
+      
+<nav id="myNavmenu" class="navmenu navmenu-default navmenu-pia navmenu-fixed-left offcanvas" role="navigation">
+  <a href=https://www.privateinternetaccess.com title="Private Internet Access Home Page" class="navmenu-brand">
+    <img src='https://www.privateinternetaccess.com/assets/PIALogo1x-w-c04847e27cfb0595209f83a7a982f1c404c39072ce0762a0c49ce8c5ad16382f.png' alt='Private Internet Access Logo' width='209' height='28' class='img-responsive center-block' title='Go to the Private Internet Access home page.' srcset='https://www.privateinternetaccess.com/assets/PIALogo1x-w-c04847e27cfb0595209f83a7a982f1c404c39072ce0762a0c49ce8c5ad16382f.png 1x, https://www.privateinternetaccess.com/assets/PIALogo2x-w-b8337d6b5bb4d0a88f3d9c31cdd3c298e9739d124e202c4eb14ffd56bedd3e06.png 2x' style='height: inherit !important;'>  </a>
+  <ul class="nav navmenu-nav">
+
+      <li class=''>
+    <a href=https://www.privateinternetaccess.com/pages/how-it-works/ title="How It Works">How It Works</a>
+  </li>
+  <li class=''>
+    <a href=https://www.privateinternetaccess.com/pages/download title="Download">Download</a>
+  </li>
+  <li>
+    <a href="https://www.privateinternetaccess.com/helpdesk/" rel="noopener nofollow" title="Support">Support</a>
+  </li>
+  <li class=''>
+    <a href=https://www.privateinternetaccess.com/pages/client-control-panel title="My Account">My Account</a>
+  </li>
+
+
+    <li class="dropdown">
+      <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" class="topbar__link--text dropdown-toggle">
+       <span class='lang-flag-small lang-flag-icon lang-flag-en lang-flag-selected-mobile'></span>
+       English&nbsp;<span class="caret" style="border-top-color: #fff; border-bottom-color: #fff;"></span>
+      </a>
+      <ul class="dropdown-menu language-dropdown" aria-labelledby="dropdownMenu1">
+        <li><a style='display: block;' title='English' href='https://www.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-en'></span>English</a></li><li><a style='display: block;' title='Dansk' href='https://dnk.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-da'></span>Dansk</a></li><li><a style='display: block;' title='Português (Brasil)' href='https://bra.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-pt-br'></span>Português (Brasil)</a></li><li><a style='display: block;' title='Nederlands' href='https://nld.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-nl'></span>Nederlands</a></li><li><a style='display: block;' title='Français' href='https://fra.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-fr'></span>Français</a></li><li><a style='display: block;' title='Deutsch' href='https://deu.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-de'></span>Deutsch</a></li><li><a style='display: block;' title='Italiano' href='https://ita.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-it'></span>Italiano</a></li><li><a style='display: block;' title='日本語' href='https://jpn.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-ja'></span>日本語</a></li><li><a style='display: block;' title='Русский' href='https://rus.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-ru'></span>Русский</a></li><li><a style='display: block;' title='Español (México)' href='https://mex.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-es-mx'></span>Español (México)</a></li><li><a style='display: block;' title='Türkçe' href='https://tur.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-tr'></span>Türkçe</a></li><li><a style='display: block;' title='ไทย' href='https://tha.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-th'></span>ไทย</a></li><li><a style='display: block;' title='한국어' href='https://kor.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-ko'></span>한국어</a></li><li><a style='display: block;' title='العربية' href='https://ara.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-ar'></span>العربية</a></li><li><a style='display: block;' title='简体中文' href='https://chi.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-zh-cn'></span>简体中文</a></li><li><a style='display: block;' title='繁體中文' href='https://cht.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-zh-tw'></span>繁體中文</a></li><li><a style='display: block;' title='Polski' href='https://pol.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-pl'></span>Polski</a></li><li><a style='display: block;' title='Norsk' href='https://nor.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-no'></span>Norsk</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="navbar-pia-wrapper">
+  <noscript><div style="width:100%; max-height:70px; position:fixed; bottom:0px; left:0px;background: #F4A800; color:#000; padding:10px 20px; text-align:center;"><b>Javascript is disabled in your browser.</b> Some features of the site may not work as intended.</div></noscript>
+
+  <div class="top-wrapper">
+    <div class="topbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <a href="/pages/buy-vpn/" title="Select plan" style="display: block; text-decoration: none;">
+              <ul class="topbar__list topbar__list--marker
+               not-secured
+              ">
+                <li class="topbar__item topbar__item-ip">Your IP Address: 162.211.64.106</li>
+                <li class="topbar__item topbar__item-ip nodot">Your ISP:  Secure Dragon LLC.</li>
+                  <li class="topbar__item">You are not protected</li>
+                  <li class="topbar__item">
+                    <span class="topbar__link--more">
+                      Select plan&nbsp;»
+                    </span>
+                  </li>
+              </ul>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-4 hidden-sm hidden-xs topbar__list--wrap">
+            <ul class="topbar__list--links pull-right">
+              <li class="dropdown">
+                <span class='lang-flag-small lang-flag-icon lang-flag-en lang-flag-selected'></span>
+                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="topbar__link--text dropdown-toggle">
+                  English&nbsp;<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a style='display: block;' title='English' href='https://www.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-en'></span>English</a></li><li><a style='display: block;' title='Dansk' href='https://dnk.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-da'></span>Dansk</a></li><li><a style='display: block;' title='Português (Brasil)' href='https://bra.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-pt-br'></span>Português (Brasil)</a></li><li><a style='display: block;' title='Nederlands' href='https://nld.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-nl'></span>Nederlands</a></li><li><a style='display: block;' title='Français' href='https://fra.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-fr'></span>Français</a></li><li><a style='display: block;' title='Deutsch' href='https://deu.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-de'></span>Deutsch</a></li><li><a style='display: block;' title='Italiano' href='https://ita.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-it'></span>Italiano</a></li><li><a style='display: block;' title='日本語' href='https://jpn.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-ja'></span>日本語</a></li><li><a style='display: block;' title='Русский' href='https://rus.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-ru'></span>Русский</a></li><li><a style='display: block;' title='Español (México)' href='https://mex.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-es-mx'></span>Español (México)</a></li><li><a style='display: block;' title='Türkçe' href='https://tur.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-tr'></span>Türkçe</a></li><li><a style='display: block;' title='ไทย' href='https://tha.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-th'></span>ไทย</a></li><li><a style='display: block;' title='한국어' href='https://kor.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-ko'></span>한국어</a></li><li><a style='display: block;' title='العربية' href='https://ara.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-ar'></span>العربية</a></li><li><a style='display: block;' title='简体中文' href='https://chi.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-zh-cn'></span>简体中文</a></li><li><a style='display: block;' title='繁體中文' href='https://cht.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-zh-tw'></span>繁體中文</a></li><li><a style='display: block;' title='Polski' href='https://pol.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-pl'></span>Polski</a></li><li><a style='display: block;' title='Norsk' href='https://nor.privateinternetaccess.com/pages/terms-of-service/'><span class='lang-flag-small lang-flag-icon lang-flag-no'></span>Norsk</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="top_bar" class="navbar navbar-default navbar-pia">
+      <div id="navigation" class="container">
+        <div id="header_holder" class="navbar-header">
+          <button type="button" class="btn navbar-toggle collapsed" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body" data-autohide="true" data-recalc="true">
+            <i class="fa fa-fw fa-2x fa-navicon"></i>
+          </button>
+          <div class="navbar-brand">
+            <a href=https://www.privateinternetaccess.com title="Home">
+              <img src='https://www.privateinternetaccess.com/assets/PIALogo1x-62b63f96feba002326935631a63b6411b7d8a000fcb824c56ccc5d3568d0e3d7.png' alt='PIA' width='209' height='28' class='img-responsive center-block' title='PIA' srcset='https://www.privateinternetaccess.com/assets/PIALogo2x-84413b002e788098871d6ecd79b23cc242b1eeb9864fc65a42d3cce7915c287f.png 1x, https://www.privateinternetaccess.com/assets/PIALogo2x-84413b002e788098871d6ecd79b23cc242b1eeb9864fc65a42d3cce7915c287f.png 2x' style='height: inherit !important;'>            </a>
+          </div>
+
+
+          <a href=https://www.privateinternetaccess.com/pages/buy-vpn/ class="mobile-join btn btn-orange navbar-join pull-right visible-xs visible-sm"
+          style="margin-top:7px;margin-bottom:7px;margin-right:8px;">Join Now</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="mainnavhedaer">
+          <ul class="nav navbar-nav navbar-right">
+
+              <li class=''>
+    <a href=https://www.privateinternetaccess.com/pages/how-it-works/ title="How It Works">How It Works</a>
+  </li>
+  <li class=''>
+    <a href=https://www.privateinternetaccess.com/pages/download title="Download">Download</a>
+  </li>
+  <li>
+    <a href="https://www.privateinternetaccess.com/helpdesk/" rel="noopener nofollow" title="Support">Support</a>
+  </li>
+  <li class=''>
+    <a href=https://www.privateinternetaccess.com/pages/client-control-panel title="My Account">My Account</a>
+  </li>
+
+
+            <li class='navbar-btn '>
+              <a id="join-now-header-bt" class="btn btn-orange" href=https://www.privateinternetaccess.com/pages/buy-vpn/ title="Join Now">Join Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="alert" class="pia-alert">
+  <p><span></span><i style="cursor: pointer !important;" class="fa fa-close"></i></p>
+</div>
+</div>
+<div class="clear"></div>
+
+
+
+  <style>
+  .legaltext {
+  margin-top:20px;
+  margin-bottom:20px;
+  overflow: hidden;
+  text-align:justify;
+  }
+  .xpagesubtitle {
+    margin-top:20px;
+  }
+  .explainer {
+    color: #3896CD;
+    font-size: 14px;
+    padding-left:20px;
+  }
+  .explainer.mt {
+    padding-top: 80px;
+  }
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 xpage"><br>
+      <h1 class="xpagetitle">Terms of Service</h1>
+      <div class="legal" style="font-size:16px">
+        <div class="legaltext">
+          <div class="col-xs-8">
+            This Terms of Service Agreement (“Agreement”) covers the scope of your use and access to the Private Internet Access, Inc. (&quot;PIA&quot;) website (“Site”) located at www.privateinternetaccess.com and virtual private networking (&quot;VPN&quot;) services (“Service(s)”). By visiting the Site, purchasing a subscription, and/or using the Services, You (“You” or “Subscriber”) (“PIA” and “Subscriber” collectively known as &quot;Parties&quot;) acknowledge that you have read the Agreement, fully understand the terms and agree to be bound by all of the terms of the Agreement.
+          </div>
+          <div class="col-xs-4 explainer">
+            Annotations to the right of the Terms of Service are not legally binding and are summary descriptions of the Terms of Service language for your easier access and understanding.<br>
+            This document is an agreement that you agree to by accessing the Private Internet Access VPN service.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            NOTE: THIS AGREEMENT CONTAINS A BINDING INDIVIDUAL ARBITRATION AND CLASS ACTION WAIVER PROVISION IN &quot;BINDING INDIVIDUAL ARBITRATION&quot; SECTION THAT AFFECTS YOUR RIGHTS UNDER THIS AGREEMENT WITH RESPECT TO ANY &quot;DISPUTE&quot; (AS DEFINED BELOW) BETWEEN YOU AND PIA, ITS AFFILIATES, PARENTS OR SUBSIDIARIES (COLLECTIVELY, &quot;PIA ENTITIES&quot;). YOU HAVE A RIGHT TO OPT OUT OF THE BINDING ARBITRATION AND CLASS ACTION WAIVER PROVISIONS AS DESCRIBED IN &quot;BINDING INDIVIDUAL ARBITRATION&quot; SECTION.
+          </div>
+          <div class="col-xs-4 explainer">
+            This is a legal agreement that includes clauses that gives you the right to settle a dispute out of court.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Subscriber affirms that they are more than eighteen (18) years of age, a valid legal entity, or an emancipated minor, or possess legal parental or guardian consent, and are fully able and competent to enter into the terms, conditions, obligations, affirmations, representations, and warranties set forth in these Terms of Service, and to abide by and comply with all of these terms contained herein.
+          </div>
+          <div class="col-xs-4 explainer">
+            If you are not an adult you must receive permission from a parent or legal guardian.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            If you are under the age of eighteen (18) years of age and between thirteen (13) and seventeen (17) years of age, then you must find a legal parent or guardian to purchase and activate the Services for you. If you are unable to find a legal parent or guardian to purchase and activate this service for you or if you are under thirteen (13) years of age, you are not permitted to use the Site or Services.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext" id="acceptance">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">ACCEPTANCE</b>
+            By using and/or visiting the PIA Site or Services, Subscriber agrees in full to all of the terms provided herein, the terms and conditions of PIA&#39;s Privacy Policy, and the PIA Digital Millennium Copyright Act (“DMCA”) policy, in addition to all amendments and modifications (collectively referred to as the &quot;Agreements&quot;). By entering this Site and/or subscribing to the Services, Subscriber agrees to be bound by these terms and conditions. If Subscriber does not agree to be bound to the terms and conditions contained herein, then access to the PIA Site and/or its Services is prohibited.
+
+
+          </div>
+          <div class="col-xs-4 explainer mt">
+            You need to agree to the complete Terms of Service to gain access to the PIA service.
+          </div>
+        </div>
+        <div class="legaltext" id="license">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">LICENSE</b>
+            PIA grants you a limited, revocable, non-transferable, non-exclusive license to access an account for your personal, private, commercial, non-transferable, limited uses solely as set forth herein to use the Services and download and use the software offered by PIA as set forth in any additional documentation and/or agreements applicable to the Services accessed by You. All intellectual property rights for the PIA software, mobile applications, and the PIA website are owned by Private Internet Access, Inc. and are protected by United States and international copyright, trade dress, patent, and trademark laws, international conventions, and other laws protecting intellectual property and related proprietary rights. You may not copy or download any content from the PIA Site unless you fully agree to be bound by all of the terms of this Agreement. You agree not to remove, obscure, or alter copyright, patent, trademark, or other proprietary rights notices affixed to PIA content. Your rights are subject to your compliance with this Agreement as well as any other agreements applicable to PIA. New or future services that may be offered by PIA will require a separate subscription or agreement. Subscriber understands that this Agreement is limited to VPN Services only and do not include any other services herein.
+
+          </div>
+          <div class="col-xs-4 explainer mt">
+            You are purchasing access to a license that gives you the right to use the PIA service.
+          </div>
+        </div>
+        <div class="legaltext" id="changes_to_this_agreement">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">CHANGES TO THIS AGREEMENT</b>
+            Client understands that the present Agreement is subject to changes made by PIA at any time at its sole discretion, and you agree to be bound by any and all modifications, changes and/or revisions to this Agreement. If the proposed amendments include material alterations that affect your rights or obligations under this Agreement, PIA shall notify you in advance of the changes by reasonable means, which may include notification through the Site or via email. Non-material changes to the Agreement shall take effect upon publication of the amendments to the Site. You understand that it is your obligation to periodically review this webpage in order to account for any changes made, as they will be binding upon assent.
+
+          </div>
+          <div class="col-xs-4 explainer mt">
+            The Terms of Service may change, so it is important to review this webpage periodically.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            This Agreement shall apply to all users of PIA whether a &#39;visitor,&#39; &#39;commercial user,&#39; a &#39;subscriber,&#39; or a &#39;client&#39; and you are only authorized to use PIA if you agree to abide by all applicable federal and state laws and be legally bound by all of the terms of this Agreement.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext" id="conduct">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">CONDUCT</b>
+            You agree to comply with all applicable laws and regulations in connection with use of the Services. You must also agree that you and any other user that you have provided access to will not engage in any of the following activities:
+
+          </div>
+          <div class="col-xs-4 explainer mt">
+            You must conduct yourself in a way that would not violate these rules of conduct.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            <ul style="margin-left:20px;">
+              <li>Sending or receiving unsolicited and/or commercial emails in violation of law, promotional materials, &quot;junk mail,&quot; &quot;spam,&quot; &quot;chain letters,&quot; or &quot;pyramid schemes&quot;;</li>
+              <li>Exploiting, possessing, producing, receiving, transporting, or distributing any illegal content, including but not limited to any sexually explicit depiction of children;</li>
+              <li>Uploading, possessing, receiving, transporting, or distributing any copyrighted, trademark, or patented content which you do not own or lack written consent or a license from the content owner;</li>
+              <li>Forging headers or otherwise manipulating e-mail identifiers in order to mask or mislead the origins of certain content;</li>
+              <li>Interfering with the service to any other user, client, host or network which reduces the quality of service for other clients and users;</li>
+              <li>Using the service to engage in Denial-of-service (“DOS”) attacks to any third-parties or to PIA;</li>
+              <li>Accessing data, systems or networks including attempts to probe scan or test for vulnerabilities of a system or network or to breach security or authentication measures without written consent from the owner of the system or network;</li>
+              <li>Transmitting any material (by email, uploading, posting, or otherwise) that abuses, bullies, threatens or encourages bodily harm, injury or destruction of property, defames one or more third parties, or promotes any act of cruelty to animals; or</li>
+              <li>Accessing the service to violate any laws at the local, state and federal level in the United States of America or the country/territory in which you reside.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="legaltext" id="export_controls">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">EXPORT CONTROLS</b>
+            The PIA service offered as part of this Agreement is subject to all relevant United Nations resolutions or the trade or economic sanctions United States, European Union, United Kingdom export control laws and regulations and follows any sanction, prohibition or restriction placed therefrom (“Sanctions”). PIA makes no representation that this Site or the Services is appropriate or available for use in other locations outside the United States. By using this Site or the Services, you represent and warrant that: (i) you are not a Sanctioned person or currently the subject or target of any Sanctions or (ii) have taken any action, directly or indirectly, that would result in a violation of Sanctions or any Anti-Corruption Laws. ; (ii) you are not located in a country that is subject to embargo by the United States (currently Cuba, Iraq, Libya, North Korea, Sudan, Syria, or the Taliban Occupied Part of Afghanistan); (iii) you are not engaged, directly or indirectly, in the design, development, production, stockpiling, or use of nuclear, chemical, or biological weapons or missiles; and (iv) you will not, without prior authorization from the Bureau of Export Administration, (a) knowingly re-export the technical data received from you to any destination or (b) export the direct product of the technical data, directly or indirectly, to a country listed in Country Group D:1 or E:2 in Supplement No. 1 to Part 740 of the Export Administration Regulations (Albania, Armenia, Azerbaijan, Belarus, Bulgaria, Cambodia, Cuba, Estonia, Georgia, Kazakhstan, Kyrgyzstan, Laos, Latvia, Libya, Lithuania, Macau, Moldova, Mongolia, North Korea, People&#39;s Republic of China, Romania, Russia, Tajikistan, Turkmenistan, Ukraine, Uzbekistan, or Vietnam).
+
+          </div>
+          <div class="col-xs-4 explainer mt">
+            Pay attention to import/export rules.
+          </div>
+        </div>
+        <div class="legaltext" id="breach">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">BREACH</b>
+            PIA abides by a ZERO TOLERANCE policy relating to any activity which breaches or violates this Agreement.
+          </div>
+          <div class="col-xs-4 explainer mt">
+            We can disable your account if you break our rules.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Along with the ZERO TOLERANCE policy, Clients who materially breach this Agreement will have their account or a subscription removed without any refund. Additionally, Client understands that PIA expressly reserves the right to hold the Client or any third-party using the service on Client’s behalf responsible for any and all financial damages and losses which may be incurred arising out of said breach or breaches, including, but not limited to attorneys fees, fees for expert witnesses, court costs, and other charges.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Subscriber understands that PIA reserves the right in its sole discretion to enforce breaches of this Agreement. Failure to comply with the present Agreement constitutes a material breach of contract, and may result in one or more of the following actions:
+            <ul style="margin-left:20px;">
+              <li>Issuance of a warning;</li>
+              <li>Immediate, temporary, or permanent revocation of your PIA account with no refund;</li>
+              <li>Legal actions against you for reimbursement of any costs incurred via indemnity resulting from a breach;</li>
+              <li>Independent legal action by PIA as a result of a breach; or</li>
+              <li>Disclosure of such information to law enforcement authorities as deemed reasonably necessary.</li>
+            </ul>
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            PIA reserves the right to take any other actions deemed necessary to enforce and protect its rights. If you find that your PIA account or subscription has been suspended, then you may contact: helpdesk@privateinternetaccess.com.
+          </div>
+        </div>
+        <div class="legaltext" id="service_level_agreement">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">SERVICE LEVEL AGREEMENT</b>
+            Service coverage, speeds, locations and quality are not guaranteed. While PIA will make every attempt to maintain the Services availability at all times, the Services may be subject to unavailability for numerous reasons including maintenance, emergencies, third party service failures, transmission errors, equipment failures, network issues, interference, natural disaster, amongst other reasons. PIA does not guarantee that data, messages, or packets will be delivered and shall not be held responsible in the event data, messages, or packets are lost, not delivered, delayed, misdirected or are otherwise inaccessible.
+          </div>
+          <div class="col-xs-4 explainer mt">
+            Sometimes hardware malfunctions - we will do our best to have 100% uptime.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Additionally, we may impose usage limits to the Services, suspend or block services, or cancel any and all Services at our sole discretion at any time. Finally, we do not guarantee the accuracy and timeliness of any data received.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            We make no guarantee that the Services will be accessible at any time. However, we will do our best to keep the service up and running for our beloved clients.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext" id="multiple_accounts">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">MULTIPLE ACCOUNTS</b>
+            Multiple accounts may be purchased in bulk from PIA. You understand that by purchasing multiple accounts in bulk from PIA, you may be eligible for a discount which will be reflected at the time of purchase. Both the purchaser and the individual sub-account user is fully responsible for complying with all of these terms of service. At this time, you may not purchase any bulk account orders with different subscription lengths. If you purchase multiple accounts in bulk from PIA, you must pay using a credit card. No other forms of payment are accepted for bulk account purchases. You understand that all new codes for all bulk account purchases shall be sent to you via email where they can then be redeemed and activated.
+          </div>
+          <div class="col-xs-4 explainer mt"></div>
+        </div>
+        <div class="legaltext" id="client_responsibilities">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">CLIENT RESPONSIBILITIES</b>
+            As a client of PIA, you are responsible for:
+            <ul style="margin-left:20px;">
+              <li>Maintaining the confidentiality and security of the account you are provided.</li>
+              <li>Ensuring that subscriber connections to the PIA network are limited to no more than ten (10) simultaneous connections.</li>
+              <li>Providing valid and accurate identifying information related to the user account.</li>
+              <li>Liability for any use and/or abuse which occurs while you or any third-party is logged into the PIA service with your account credentials.</li>
+            </ul>
+          </div>
+          <div class="col-xs-4 explainer mt">
+            Please - Try and stay secure.
+          </div>
+        </div>
+        <div class="legaltext" id="fees">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">FEES</b>
+            You acknowledge that PIA offers a subscription service through one or more third party merchants. With each account you may have only one active subscription at a time. Payments will be charged on the day you sign up for Services and will cover use of that service for the duration of one (1) month, six (6) months, one (1) year, or two (2) years depending on the service level plan. A subscription plan is an automatic payment recurring based on the service plan. All accounts are offered “as-is” at the time of purchase. Future services offered by Private Internet Access, Inc., or its partners may not be included with the cost of the subscription. You may cancel the subscription at anytime; the account will remain active for the remainder of your billing cycle.
+          </div>
+          <div class="col-xs-4 explainer mt">
+            This is a subscription service.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            PIA reserves the right to change the fees at any time and at its discretion. Subscriber understands that PIA is not obligated to honor errors due to typographical errors and is not responsible for misinformation provided on third party websites or affiliates. Subscriber also understands that any gift-card based transactions for Services are not subject to any reductions in price, discounts, promotional rates, or other lowered subscription rates.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext" id="apple_auto_renewing_subscriptions">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">APPLE AUTO-RENEWING SUBSCRIPTIONS TERMS AND CONDITIONS</b>
+            For Apple app store specific purchases, payment will be charged to your Apple ID upon confirmation of purchase. All subscriptions shall automatically renew unless the subscription is canceled by You at least twenty-four (24) hours before the end of the current subscription period. Your Apple ID will be charged for the subscription renewal within 24 hours prior to the end of the current subscription period. You can manage and cancel your active subscriptions with Apple by visiting your account settings on the App Store.
+          </div>
+          <div class="col-xs-4 mt explainer" style="margin-top: 40px">
+            Your Subscription will automatically renew unless you cancel it.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Certain Paid Subscriptions may offer a free trial prior to charging your payment method. If you decide to unsubscribe from a Paid Subscription before we start charging your payment method, you must cancel the subscription at least 24 hours before the free trial ends.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Free trials are only available to new users who have never signed up for a PIA account and are offered at our sole discretion. If You attempt to sign up for more than one free trial, you will be immediately charged with the standard yearly Subscription Fee.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            We reserve the right to revoke your free trial at any time. Any unused portion of your free trial period shall be forfeited upon purchase of a subscription.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Signing up for a subscription constitutes acceptance of all of the terms of this Agreement.
+          </div>
+        </div>
+        <div class="legaltext" id="cancellation">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">CANCELLATION</b>
+            You understand and agree that PIA shall maintain your email address after your subscription ends. You may access the Client Control Panel to reactivate your subscription at any time.
+          </div>
+        </div>
+        <div class="legaltext" id="refund_policy">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">REFUND POLICY</b>
+            If you are less than 100% satisfied with the Services, we will gladly refund your payment if the refund is requested within thirty (30) days from the date of the initial purchase and/or renewal. Requests made after the 30 day purchase date window will be denied. If you have initiated the refund process under this Section, and you fail to provide requested verification information related to your account from PIA sent to your account e-mail address within (30) days from the date of the request sent by PIA, you understand that you are forfeiting the entire refund request and that you are not eligible for a refund under this Section. You understand that if you purchase a new account within three (3) months of being issued a refund on a previous account purchase, you will not be eligible for a refund on that new account, even if you request one during or after the (30) day period.
+          </div>
+          <div class="col-xs-4 explainer mt">
+            If you are any less than 100% satisfied, we will refund you within thirty (30) days of your purchase.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            In the event of a unauthorized chargeback, your account details shall be blacklisted.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            If you are seeking a refund after paying for the Services via a cryptocurrency, then you must provide to PIA a wallet address for the refund to be credited.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            You understand that by paying for PIA using cryptocurrency as a transaction method, you are using a payment means that is not backed by an official governmental entity or international financial institution, and that the payment system may be prone to large fluctuations in value in a short period of time. The Parties agree that any refunds for transactions using a specific cryptocurrency will be assessed on the cryptocurrency’s exchange rate to USD at the time of the refund disbursement, and not at the time of the original transaction or refund request.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Due to limitations with 3rd party payment processors, certain accounts cannot be refunded by PIA directly. Accounts purchased through the Apple Store, Giftcards or 3rd party deal sites, can only be refunded by the payment processor.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext" id="our_rights">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">OUR RIGHTS</b>
+            PIA reserves the right to close your account at any given time without any given notice. While PIA will, at its best interest, attempt to provide full and complete service to its users, this right is reserved for reasons which may arise at a later date.
+
+          </div>
+          <div class="col-xs-4 explainer mt">
+            We are allowed to notify you if we’re scaling back or shutting down.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Subscriber understands that PIA also reserves the right to scale back or throttle bandwidth originating from subscriber accounts that may breach the present Agreement or in the event of excessive usage on the PIA network.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Subscriber also understands that PIA for reasons beyond its control may shut down and terminate services. If PIA ceases operations, subscribers will be notified with at least thirty (30) days advance notice. Subscribers will not be eligible for a pro-rated, partial, or complete refund in the event of a shut down.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext" id="warranties">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">WARRANTIES</b>
+            Subscriber represents and warrants that all of the identifying information provided to PIA to use the PIA Site is accurate and current and you have all necessary right, power, and authority to enter into this Agreement and to perform the acts required of you hereunder.
+          </div>
+          <div class="col-xs-4 explainer mt">
+            You promise you are who you claim to be and you will respect our privacy policy.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            As a condition to using the PIA Site or its Services, you must agree to all of the terms of PIA&#39;s privacy policy, Digital Millennium Copyright Act (“DMCA”) policy, and any modifications and/or updates. You acknowledge and agree that the technical processing and transmission of the Site may involve transmissions over various networks; and changes to conform and adapt to technical requirements of connecting networks or devices. You further acknowledge and agree that other data collected and maintained by PIA with regard to its users may be disclosed in accordance with the PIA Privacy Policy.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext" id="warranty_disclaimer">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">WARRANTY DISCLAIMER</b>
+            SUBSCRIBER UNDERSTANDS THAT THE PIA SITE AND SERVICES ARE PROVIDED AS-IS. SUBSCRIBER AGREES THAT USE OF THE PIA SITE OR SERVICES SHALL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, PIA, ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SITE AND SERVICES AND YOUR USE THEREOF. PIA MAKES NO WARRANTIES, EXPRESS, OR IMPLIED, NOR ANY REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THIS SITE&#39;S CONTENT OR THE CONTENT OF ANY SITES LINKED TO THIS SITE AND ASSUMES NO LIABILITY OR RESPONSIBILITY FOR ANY:
+            <li>ERRORS, MISTAKES, OR INACCURACIES OF CONTENT,</li>
+            <li>PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SITE OR SERVICES,</li>
+            <li>ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN,a</li>
+            <li>ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM OUR SITE AND/OR SERVICES, ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH OUR SITE BY ANY THIRD PARTY,</li>
+            <li>ANY ERRORS OR OMISSIONS IN ANY CONTENT OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, EMAILED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SITE.</li>
+            </ul>
+            PIA DOES NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH THE SITE OR ANY HYPERLINKED WEBSITE OR FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND PIA WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES. AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE. THE FOREGOING LIMITATION OF LIABILITY SHALL APPLY TO THE FULLEST EXTENT PERMITTED BY LAW IN THE APPLICABLE JURISDICTION. YOU SPECIFICALLY ACKNOWLEDGE THAT PIA SHALL NOT BE LIABLE FOR DEFAMATORY, OFFENSIVE, OR ILLEGAL CONDUCT OF ANY THIRD PARTY AND THAT THE RISK OF HARM OR DAMAGE FROM THE FOREGOING RESTS ENTIRELY WITH YOU.
+          </div>
+          <div class="col-xs-4 explainer mt">
+            Unless we specifically state as such, we make no warranties.
+          </div>
+        </div>
+        <div class="legaltext" id="limitation_of_liability">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">LIMITATION OF LIABILITY</b>
+            IN NO EVENT SHALL PIA, ITS OFFICERS, AFFILIATES, DIRECTORS, CONTRACTORS, EMPLOYEES, OR AGENTS, BE LIABLE TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES WHATSOEVER RESULTING FROM ANY USE OF THE PIA SERVICE IN AN AREA OR COUNTRY WHICH PROHIBITS SUCH ACTIONS ERRORS, MISTAKES, OR INACCURACIES OF CONTENT, PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF OUR SITE OR SERVICES, ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM OUR SITE AND/OR SERVICES ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE, WHICH MAY BE TRANSMITTED TO OR THROUGH OUR SITE BY ANY THIRD PARTY, AND/OR ANY ERRORS OR OMISSIONS IN ANY CONTENT OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF YOUR USE OF ANY CONTENT POSTED, EMAILED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SITE, WHETHER BASED ON WARRANTY, CONTRACT, TORT, OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT PIA IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            THE FOREGOING LIMITATION OF LIABILITY SHALL APPLY TO THE FULLEST EXTENT PERMITTED BY LAW IN THE APPLICABLE JURISDICTION. YOU SPECIFICALLY ACKNOWLEDGE THAT PIA SHALL NOT BE LIABLE FOR DEFAMATORY, OFFENSIVE, OR ILLEGAL CONDUCT OF ANY THIRD PARTY AND THAT THE RISK OF HARM OR DAMAGE FROM THE FOREGOING RESTS ENTIRELY WITH YOU.
+          </div>
+          <div class="col-xs-4 explainer">
+            Our Liability to you is limited.
+          </div>
+        </div>
+        <div class="legaltext" id="indemnity">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">INDEMNITY</b>
+            Subscriber agrees to defend, indemnify and hold harmless PIA, its parent corporation, officers, affiliates, directors, contractors, employees and agents, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney&#39;s fees) arising from:
+            <li>your use of and access to the Site and/or Services;</li>
+            <li>your material breach of any term of this Agreement;</li>
+            <li>your violation of any third party right, including without limitation any copyright, patent, trademark, property, or privacy right; or</li>
+            <li>Any claim that your use caused damage or injury to any third party.</li>
+            </ul>
+            This defense and indemnification obligation will survive termination of this Agreement and Your use of the Site.
+          </div>
+          <div class="col-xs-4 explainer mt">
+            We are not liable for costs incurred by you for use of the service.
+          </div>
+        </div>
+        <div class="legaltext" id="dispute_resolution">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">DISPUTE RESOLUTION</b>
+            Purpose. The term &quot;Dispute&quot; means any dispute, claim, or controversy between you and PIA regarding the Services or the use of the Services, whether based in contract, statute, regulation, ordinance, tort (including, but not limited to, fraud, misrepresentation, fraudulent inducement, or negligence), or any other legal or equitable theory, and includes the validity, enforceability or scope of this &quot;BINDING INDIVIDUAL ARBITRATION&quot; Section (with the exception of the enforceability of the Class Action Waiver clause below). &quot;Dispute&quot; is to be given the broadest possible meaning that will be enforced. If you have a Dispute with PIA or any company, subsidiary, parent, vendor associated with PIA that cannot be resolved through negotiation within the time frame described in the &quot;Notice of Dispute&quot; clause below, you and PIA that you have a Dispute with agree to seek resolution of the Dispute only through arbitration of that Dispute in accordance with the terms of this Section, and not litigate any Dispute in court, except for those matters listed in the Exclusions from Arbitration clause. Arbitration means that the Dispute will be resolved by a neutral arbitrator instead of in a court by a judge or jury.
+          </div>
+          <div class="col-xs-4 explainer mt">
+            Disputes may be settled outside of court.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Exclusions from Arbitration. YOU AND PIA AGREE THAT ANY CLAIM FILED BY YOU OR BY PIA IN SMALL CLAIMS COURT ARE NOT SUBJECT TO THE ARBITRATION TERMS CONTAINED IN THIS SECTION.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+          RIGHT TO OPT OUT OF BINDING ARBITRATION AND CLASS ACTION WAIVER WITHIN 30 DAYS. IF YOU DO NOT WISH TO BE BOUND BY THE BINDING ARBITRATION AND CLASS ACTION WAIVER IN THIS SECTION, YOU MUST NOTIFY PIA IN WRITING WITHIN 30 DAYS OF THE DATE THAT YOU ACCEPT THIS AGREEMENT UNLESS A LONGER PERIOD IS REQUIRED BY APPLICABLE LAW. YOUR WRITTEN NOTIFICATION MUST BE MAILED TO 5555 DTC PARKWAY SUITE 360 GREENWOOD VILLAGE, CO 80111, UNITED STATES, ATTN: LEGAL DEPARTMENT/ARBITRATION AND MUST INCLUDE: (1) YOUR NAME, (2) YOUR ADDRESS, (3) YOUR PIA ONLINE ID, AND (4) A CLEAR STATEMENT THAT YOU DO NOT WISH TO RESOLVE DISPUTES WITH PIA THROUGH ARBITRATION.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Notice of Dispute. IF YOU HAVE A DISPUTE WITH ANY PIA SERVICE, YOU MUST SEND WRITTEN NOTICE TO 5555 DTC PARKWAY SUITE 360 GREENWOOD VILLAGE, CO 80111, UNITED STATES, ATTN: LEGAL DEPARTMENT/ARBITRATION, ATTN: PIA.COM: DISPUTE RESOLUTION&quot; TO GIVE PIA THE OPPORTUNITY TO RESOLVE THE DISPUTE INFORMALLY THROUGH NEGOTIATION. You agree to negotiate resolution of the Dispute in good faith for no less than 60 days after you provide notice of the Dispute. If PIA does not resolve your Dispute within 60 days from receipt of notice of the Dispute, you or PIA may pursue your claim in arbitration pursuant to the terms in this Section.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            CLASS ACTION WAIVER. ANY DISPUTE RESOLUTION PROCEEDINGS, WHETHER IN ARBITRATION OR COURT, WILL BE CONDUCTED ONLY ON AN INDIVIDUAL BASIS AND NOT IN A CLASS OR REPRESENTATIVE ACTION OR AS A NAMED OR UNNAMED MEMBER IN A CLASS, CONSOLIDATED, REPRESENTATIVE OR PRIVATE ATTORNEY GENERAL ACTION, UNLESS BOTH YOU AND PIA SPECIFICALLY AGREE TO DO SO IN WRITING FOLLOWING INITIATION OF THE PROCEEDINGS. THIS PROVISION DOES NOT PRECLUDE YOUR PARTICIPATION AS A MEMBER IN A CLASS ACTION FILED ON OR BEFORE AUGUST 20, 2011. THIS PROVISION IS NOT APPLICABLE TO THE EXTENT SUCH WAIVER IS PROHIBITED BY LAW.
+          </div>
+          <div class="col-xs-4 explainer">
+            No class action lawsuits.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Initiation of Arbitration Proceeding/Selection of Arbitrator. If you or PIA elects to resolve your Dispute through arbitration, the party initiating the arbitration proceeding may initiate it with the American Arbitration Association ("AAA"), <a href=\"https://www.adr.org\">www.adr.org</a>, or JAMS <a href=\"https://www.jamsadr.org\">www.jamsadr.com</a>. The terms of this Section govern in the event they conflict with the rules of the arbitration organization selected by the parties.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Arbitration Procedures. Because the software and/or service provided to you by PIA, you may have a Dispute with concern interstate commerce, the Federal Arbitration Act ("FAA") governs the arbitrability of all Disputes. However, applicable federal or state law may also apply to the substance of any Disputes. For claims of less than $75,000, the AAA's Supplementary Procedures for Consumer-Related Disputes ("Supplementary Procedures") shall apply including the schedule of arbitration fees set forth in Section C-8 of the Supplementary Procedures; for claims over $75,000, the AAA's Commercial Arbitration Rules and relevant fee schedules for non-class action proceedings shall apply. The AAA rules are available at <a href=\"https://www.adr.org\">www.adr.org</a> or by calling 1-800-778-7879. Further, if your claims do not exceed $75,000 and you provided notice to and negotiated in good faith with PIA as described above, if the arbitrator finds that you are the prevailing party in the arbitration, you may be entitled to recover reasonable attorneys' fees and costs as determined by the arbitrator, in addition to any rights to recover the same under controlling state or federal law afforded to PIA. The arbitrator will make any award in writing but need not provide a statement of reasons unless requested by a party. Such award will be binding and final, excerpt for any right of appeal provided by the FAA, and may be entered in any court having jurisdiction over the parties for purposes of enforcement.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            Location of Arbitration. You or PIA may initiate arbitration in either Los Angeles County, California or the United States county in which you reside. In the event that you select the county of your United States residence, PIA may transfer the arbitration to Los Angeles, County in the event that it agrees to pay any additional fees or costs you incur as a result of the change in location as determined by the arbitrator.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <div class="legaltext" id="assignment">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">ASSIGNMENT</b>
+            The Terms and Conditions contained herein and any rights and licenses granted hereunder, may not be transferred or assigned by you, but may be assigned by PIA without restriction.
+          </div>
+          <div class="col-xs-4 explainer mt">
+            We may assign the terms of this Agreement in the event of a transaction.
+          </div>
+        </div>
+        <div class="legaltext" id="severance">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">SEVERANCE</b>
+            If any term, clause or provision of the present agreement is held invalid or unenforceable by a court of competent jurisdiction, such invalidity shall not affect the validity or operation of any term, clause or provision and such invalid term, clause or provision shall be deemed to be severed from this Agreement.
+
+          </div>
+          <div class="col-xs-4 explainer mt">
+            If one part of this agreement is found to not apply, the rest of the agreement shall continue to apply otherwise.
+          </div>
+        </div>
+        <div class="legaltext" id="choice_of_law">
+          <div class="col-xs-8">
+            <b class="xpagesubtitle">CHOICE OF LAW</b>
+            This Agreement shall be governed by and construed in accordance with the laws of the State of Colorado, county of Denver, without regard to conflicts of law principles. The sole and exclusive jurisdiction and venue for any action or proceeding arising out of or related to this Agreement shall be in an appropriate state or federal court located in the State of Colorado, county of Denver. You hereby submit to the jurisdiction and venue of said Courts. You consent to service of process in any legal proceeding.
+          </div>
+          <div class="col-xs-4 explainer mt">
+            The Parties choose the state of Colorado for choice of law.
+          </div>
+        </div>
+        <div class="legaltext">
+          <div class="col-xs-8">
+            If Subscriber agrees to all of the foregoing terms and conditions, Subscriber may gain access to and use the Services after completing payment and the account sign up process.
+          </div>
+          <div class="col-xs-4 explainer"></div>
+        </div>
+        <br>
+        <b class="xpagesubtitle" style="font-size:12px; color:#999;"><i>Last revised -  July 01, 2020</i></b>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  ;(function() {
+    var anchorId = window.location.hash.substr(1)
+    if (document.getElementById(anchorId)) {
+      setTimeout(function() {
+        window.scrollBy(0, -document.querySelector('.top-wrapper').offsetHeight)
+      }, 0)
+    }
+  })()
+</script>
+
+  </div>
+  <div class="clear"></div>
+  <div id="lightgreen_container" >
+  <div class="container">
+  <div id="footer" class="row">
+    <div class="col-md-8 col-sm-12">
+          <div class="row">
+    <div class="col-md-4 col-sm-4">
+      <p class="footer-heading">Why</p>
+      <ul class="nav_list clearfix">
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/whats-my-ip/ title="What&#39;s my IP?">What's my IP?</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/hide-my-ip/ title="Hide My IP">Hide My IP</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/browse-anonymously/ title="Browse Anonymously">Browse Anonymously</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/public-wifi-security/ title="Public Wifi Security">Public Wifi Security</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/identity-protection/ title="Identity Protection">Identity Protection</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/internet-security/ title="Internet Security">Internet Security</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/iot-security/ title="Internet of Things Security">Internet of Things Security</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/prevent-data-theft/ title="Prevent Data Theft">Prevent Data Theft</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/hide-my-location/ title="Hide My Location">Hide My Location</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/faceniff-and-firesheep/ title="FaceNiff and Firesheep">FaceNiff and Firesheep</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/tor-vpn-proxy title="Tor vs VPN vs Proxy">Tor vs VPN vs Proxy</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/free-versus-paid-vpn title="Free vs. Paid VPN">Free vs. Paid VPN</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/united-nations-recommends-using-encryption title="UN Recommends Encryption">UN Recommends Encryption</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/stop-internet-connection-records title="Snooper&#39;s Charter">Snooper's Charter</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/krack title="WiFi KRACK">WiFi KRACK</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/privacy-from-internet-service-provider-isp title="Privacy from your ISP">Privacy from your ISP</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/wireguard-vpn-protocol title="WireGuard® VPN protocol">WireGuard® VPN protocol</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/split-tunneling title="VPN Split Tunneling">VPN Split Tunneling</a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <p class="footer-heading">Service</p>
+      <ul class="nav_list clearfix">
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/how-it-works/ title="How It Works">How It Works</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/buy-vpn/ title="Buy VPN">Buy VPN</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/vpn-encryption title="VPN Encryption">VPN Encryption</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/download title="Downloads">Downloads</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/network/ title="Network">Network</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/android-vpn-app title="Android VPN App">Android VPN App</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/ios-vpn-app title="iOS VPN App">iOS VPN App</a>
+        </li>
+      </ul>
+      <p class="footer-heading">Company</p>
+      <ul class="nav_list clearfix">
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/about-us/ title="About Us">About Us</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/team title="PIA Team">PIA Team</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/jobs title="Jobs">Jobs</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/transparency-report title="Transparency Report">Transparency Report</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/press title="Press Area">Press Area</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/media title="PIA In The Media">PIA In The Media</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/vpn-review-sites title="PIA On The Web">PIA On The Web</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/vpn-reviews/ title="VPN Reviews">VPN Reviews</a>
+        </li>
+
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/companies-we-sponsor title="Companies We Support">Companies We Support</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-4 col-sm-4">
+      <p class="footer-heading">Resources</p>
+      <ul class="nav_list clearfix">
+        <li>
+          <a href="/pages/contact-us" title="Contact Us">Contact Us</a>
+        </li>
+        <li>
+          <a href="https://www.privateinternetaccess.com/helpdesk/" title="Support Portal">Support Portal</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/client-support/ title="Tutorials">Tutorials</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/blog title="Blog">Blog</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/pia-wasp title="Whitehat Program">Whitehat Program</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/sitemap.html title="PIA Site Map">PIA Site Map</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/vpn-router title="VPN Router">VPN Router</a>
+        </li>
+      </ul>
+       <p class="footer-heading">Programs</p>
+      <ul class="nav_list clearfix">
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/reseller-program title="Become a Partner">Become a Partner</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/affiliates/ title="Affiliates">Affiliates</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/refer-a-friend title="Refer a friend">Refer a friend</a>
+        </li>
+        <li>
+          <a href=https://www.privateinternetaccess.com/pages/student-discount title="Student Discount">Student Discount</a>
+        </li>
+      </ul>
+      <p class="footer-heading">Tools</p>
+      <ul class="nav_list clearfix">
+        <li>
+          <a href="http://dnsleak.com/" title="DNS Leak Test">DNS Leak Test</a>
+        </li>
+        <li>
+          <a href="http://ipv6leak.com/" title="IPv6 Leak Test">IPv6 Leak Test</a>
+        </li>
+        <li>
+          <a href="http://emailipleak.com/" title="Email Leak Test">Email Leak Test</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+    </div>
+    <div class="col-md-4 col-sm-12" style="margin-bottom: 40px;">
+      <p class="footer-heading">About</p>
+      <p class="footer_text">
+        Private Internet Access is the leading VPN Service provider specializing in secure, encrypted VPN tunnels which create several layers of privacy and security providing you safety on the internet. Our service is backed by multiple gateways worldwide with access in 75+ countries, 126+ regions.      </p>
+
+      <p class="footer-heading">Connect with us</p>
+      <ul class="footer-social-list clearfix text-center-xs">
+        <li>
+          <a rel="noreferrer noopener" target="_blank" class="topbar__link--social facebook" style="" href="http://www.facebook.com/privateinternetaccess">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a rel="noreferrer noopener" target="_blank" class="topbar__link--social twitter" href="https://twitter.com/buyvpnservice">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a rel="noreferrer noopener" target="_blank" class="topbar__link--social linkedin" href="https://www.linkedin.com/company/private-internet-access">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a rel="noreferrer noopener" target="_blank" class="topbar__link--social reddit" href="https://www.reddit.com/r/PrivateInternetAccess/">
+            <span class="fa-stack fa-lg"><i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a rel="noreferrer noopener" target="_blank" class="topbar__link--social youtube" href="https://www.youtube.com/user/vpnservice/videos">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="footer-heading">Payment Methods</p>
+      <div class="payments-icon icon-paypal"></div>
+      <div class="payments-icon icon-visa"></div>
+      <div class="payments-icon icon-mastercard"></div>
+      <div class="payments-icon icon-amex"></div>
+      <div class="payments-icon icon-discover"></div>
+      <div class="payments-icon icon-amazon"></div>
+      <div class="payments-icon icon-bitcoin"></div>
+      <div class="payments-icon icon-paygarden"></div>
+      <div class="payments-icon icon-target"></div>
+      <div class="payments-icon icon-starbucks"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copyright_footer">Copyright &copy; Private Internet Access, Inc. All Rights Reserved.</div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 footer_legal">
+        <ul class="nav_list clearfix">
+          <li>
+            <a href=https://www.privateinternetaccess.com/pages/terms-of-service/ title="Terms Of Service"><b>Terms Of Service</b></a>
+          </li>
+          <li>
+            <a href=https://www.privateinternetaccess.com/pages/privacy-policy/ title="Privacy Policy">Privacy Policy</a>
+          </li>
+          <li>
+            <a href=https://www.privateinternetaccess.com/pages/privacy-policy#personal_information_we_collect title="Cookies Policy">Cookies Policy</a>
+          </li>
+          <li>
+            <a href=https://www.privateinternetaccess.com/pages/dmca-policy title="DMCA Policy">DMCA Policy</a>
+          </li>
+          <li>
+            <a href=https://www.privateinternetaccess.com/pages/export-control-policy title="Export Control Policy">Export Control Policy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row footerdisclaimers">
+      <div class="col-md-12">
+        <p class="footer_text muted">
+          Map data provided by <a rel="nofollow" href="https://www.openstreetmap.org/">OpenStreetMap</a>.        </p>
+        <p class="footer_text muted">
+          PC Mag Editor’s Choice award image reprinted with permission. © 2012 Ziff Davis, LLC. All Rights Reserved.        </p>
+        <p class="footer_text muted">
+          PC Mag quote reprinted from www.pcmag.com with permission. © 2012 Ziff Davis, LLC. All Rights Reserved.        </p>
+        <p class="footer_text muted">
+          "WireGuard" is a registered trademark of Jason A. Donenfeld
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <script src="https://www.privateinternetaccess.com/packs/layouts/application-1402c4dbc5807a86a68f.js"></script>
+        <script type="text/javascript">
+      window.DESKPRO_MESSENGER_ASSET_URL = "https://www.privateinternetaccess.com/helpdesk/assets/48207/pub/build/messenger/";
+      window.DESKPRO_MESSENGER_OPTIONS = {
+        language: {
+          id: "1",
+          locale: "en-US"
+        },
+        proactive: {
+          "autoStart": false,
+        },
+        helpdeskURL: "https://www.privateinternetaccess.com/helpdesk/",
+        baseUrl: "https://www.privateinternetaccess.com/helpdesk/assets/48207/pub/build/messenger/",
+      }
+    </script>
+    <script id="dp-messenger-loader" src="https://www.privateinternetaccess.com/helpdesk/dyn-assets/pub/build/messenger/loader.js?v=1596112721"></script>
+  <script id="accept-lang-template" type="text/x-mustache" data-href="">
+    We noticed your language is set to {{presentLanguage}}, would you like to view this content in <a href="{{refererHref}}">{{refererLanguage}}</a> instead?  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var node = document.querySelector('script#accept-lang-template')
+      var href = node.getAttribute('data-href')
+      var template = node.innerHTML
+      app.localeMiddlewareAlert({href: href, template: template})
+    })
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // Disable scroll on mobile, when menubar is open
+      $(".offcanvas").on("show.bs.offcanvas", function () {
+        $("body").css("overflow", "hidden");
+        $("body").css("overflow-x", "hidden");
+        $("body").css("overflow-y", "hidden");
+        $("body").on("touchmove.bs", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        });
+
+      });
+
+      // Enable scroll on mobile, when menubar is closed
+      $(".offcanvas").on("hidden.bs.offcanvas", function () {
+        $("body").css("overflow", "auto");
+        $("body").css("overflow-x", "auto");
+        $("body").css("overflow-y", "auto");
+        $("body").off("touchmove.bs");
+      });
+    });
+  </script>
+
+    <script>
+      $(document).ajaxSend(function(e, xhr, options) {
+        var token = $("meta[name='csrf-token']").attr("content");
+        xhr.setRequestHeader("X-CSRF-Token", token);
+      })
+    </script>
+  </body>
+</html>
+
