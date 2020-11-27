@@ -38,20 +38,16 @@
   
 
 
-    <link rel="stylesheet" href="/css/style_globals.d8b089662e.css" />
+    <link rel="stylesheet" href="/css/style.41836e2e9c.css" />
 
   
   
-<link rel="stylesheet" href="/css/legal.ebdaf6b1ce.css" />
-
-<link rel="stylesheet" href="/css/two-column-layout.40599afa66.css" />
-
 
 
 <script>
-  window.SENTRY_RELEASE_NAME = 'production_20201126-1450_NRNwUinPkSgj'
+  window.SENTRY_RELEASE_NAME = 'production_20201127-0218_w4wRMbC3j3mu'
 </script>
-<script defer src="/js/sentry.6271fa636c1d4e474335.js"></script>
+<script defer src="/js/sentry.8da83ba7e8f28cb8f63e.js"></script>
 
 
 
@@ -75,26 +71,28 @@
 </script>
 <script defer src="https://www.google-analytics.com/analytics.js"></script>
 
-  <script defer src="/js/script.6271fa636c1d4e474335.js"></script>
+  <script defer src="/js/script.8da83ba7e8f28cb8f63e.js"></script>
 
   
-<script defer="" src="/js/sticky-sidebar.6271fa636c1d4e474335.js"></script>
+<script src="/js/algoliasearch.min.js"></script>
 
-<script defer="" src="/js/legal.6271fa636c1d4e474335.js"></script>
+<script src="/js/autocomplete.min.js"></script>
 
 
 </head>
 
 <body
-  class=" legal"
+  class="bg-hero-default-top-mono main-nav-offset "
   itemscope
   itemtype="http://schema.org/Product">
   
 
-
+<a href="#content" class="main-nav-skip">
+    Skip Navigation
+  </a>
 
 <header
-  class="main-nav main-nav--dark main-nav--transparent"
+  class="main-nav main-nav--flat"
   data-controller="main-nav"
   data-action="resize@window->main-nav#resized keydown@document->main-nav#keyPressed storage@window->main-nav#checkLoginState"
   data-target="scrollable.sticky"
@@ -251,23 +249,6 @@
   <ol class="main-nav__subnav__sublist main-nav__subnav__sublist--community">
       <li class="main-nav__subnav__subitem">
         <a
-          href="/community/groups/munich/?event=2020-11-25"
-          class="main-nav__subnav__sublink">
-          <span class="main-nav__subnav__time-wrapper">
-            <time
-              data-controller="relative-date"
-              data-relative-date-date="2020-11-25"
-              data-relative-date-proximity="near"
-              class="main-nav__subnav__time "
-              datetime="2020-11-25"
-              title="2020-11-25"
-            >Nov 25</time>
-          </span>
-          <span>Workshops for Designers: The Why, How and What</span>
-        </a>
-      </li>
-      <li class="main-nav__subnav__subitem">
-        <a
           href="/community/groups/johannesburg/?event=2020-11-30"
           class="main-nav__subnav__sublink">
           <span class="main-nav__subnav__time-wrapper">
@@ -298,6 +279,23 @@
             >Dec  4</time>
           </span>
           <span>Sketch 70 - What's around the corner</span>
+        </a>
+      </li>
+      <li class="main-nav__subnav__subitem">
+        <a
+          href="/community/groups/santa-clara/?event=2020-12-08"
+          class="main-nav__subnav__sublink">
+          <span class="main-nav__subnav__time-wrapper">
+            <time
+              data-controller="relative-date"
+              data-relative-date-date="2020-12-08"
+              data-relative-date-proximity="near"
+              class="main-nav__subnav__time "
+              datetime="2020-12-08"
+              title="2020-12-08"
+            >Dec  8</time>
+          </span>
+          <span>UXW for better products with Yvonne Gando of Google</span>
         </a>
       </li></ol>
 
@@ -429,51 +427,67 @@
 </header>
 
 
+  <main id="content">
   
 
 
- 
+<section
+  class="secondary-nav pad-viewport"
+  data-target="scrollable.sticky"
+  data-controller="search-input-container">
+  <!-- prettier-ignore -->
+  <div class="wrapper secondary-nav__content"><div class="secondary-nav__nav-items">
+          
+          <a class="secondary-nav__nav-item" href="/legal/">Legal</a>
+          
+        </div>
+        
 
-<section class="masthead background-dark">
-  <div class="wrapper extra">
-    <header class="section-header span-10">
-      <h1>Sketch Terms &amp; Policies</h1>
-    </header>
+
+
+<div
+  class="algolia-search secondary-nav__search"
+  data-controller="search"
+  data-action="resize@window->search#resize"
+  data-search-filters="NOT search_categories:Blog"
+  data-search-show-recommendations="true"
+  data-search-recommendations-heading="Frequently Asked Questions"
+  data-search-index-name="knowledge_base"
+>
+  <input
+    type="search"
+    data-target="search.input"
+    data-action="focus->search#showOverlay blur->search#hideOverlay keydown->search#keyPressed"
+    autocomplete="off"
+    class="form-input form-input--wide form-input--search algolia-search__input secondary-nav__search__input"
+    placeholder="Search FAQs and Documentation"
+  />
+</div>
+
+      
   </div>
 </section>
 
 
-<section class="two-column-layout">
-  <div class="wrapper">
-    <div class="columns-wrapper">
-      <aside role="complementary">
-        
-<div class="sticky-sidebar toc-nav-aside js-toggleable" data-sticky-container="aside" data-sticky-content=".main-content">
-  <div class="ss-content">
-    <div class="toc-nav-header">
-      <h1 class="h3 toc-nav-heading">Contents</h1>
-      <button class="nav-toggle js-toggleable-toggle">
-        <span class="visuallyhidden">Show/Hide Contents</span>
-      </button>
-    </div>
-    <nav role="navigation">
-      <a href="/legal/" class="toc-section-topic">Overview</a><h2 class="heading-caption">Terms of Service</h2><a href="/tos/" class="toc-section-topic ">Terms of Service</a><a href="/eula/" class="toc-section-topic ">License Agreement</a><h2 class="heading-caption">Policies</h2><a href="/privacy/" class="toc-section-topic active">Privacy Statement</a><a href="/social/" class="toc-section-topic ">Social Media House Rules</a><h2 class="heading-caption">Security</h2><a href="/security/sketch-cloud/" class="toc-section-topic ">Sketch Cloud Security</a><a href="/security/disclosure/" class="toc-section-topic ">Responsible Disclosure Policy</a></nav>
-  </div>
-</div>
 
-      </aside>
-      <div class="main-content" role="main">
-        <div class="main-content-wrapper">
-          
-<h1 id="privacy-statement">Privacy Statement</h1>
 
-<p>This Privacy Statement informs you about the type of personal data that is collected and received through our website https://www.sketch.com (“website”) and our cloud-based services that relate to the application Sketch (“Sketch Cloud”), and about how we use, share, retain and protect such personal data.</p>
 
-<h2 id="who-we-are">Who we are</h2>
+
+<div class="pane pad-viewport">
+  <header class="legal__heading wrapper  wrapper--small">
+    <h1 class="legal__heading__title">Privacy Statement</h1>
+    <h2 class="legal__heading__version">Version 07 May 2020</h2>
+  </header>
+  <div class="wrapper  wrapper--small">
+    <div class="row legal__content">
+      <div class="col span-12 styled-text ">
+      <p class="lead">This Privacy Statement informs you about the type of personal data that is collected and received through our website https://www.sketch.com (“website”) and our cloud-based services that relate to the application Sketch (“Sketch Cloud”), and about how we use, share, retain and protect such personal data.</p>
+
+<h3 id="who-we-are">Who we are</h3>
 
 <p>We are the Dutch company Sketch B.V. (“we”, or “us”) with place of business at Flight Forum 40, Ground floor, 5657 DB Eindhoven, the Netherlands with chamber of commerce registration number 60360461 and VAT number NL8538.75.273.B01. We are the controller responsible for the processing of personal data through the website and Sketch Cloud.</p>
 
-<h2 id="how-we-obtain-personal-data">How we obtain personal data</h2>
+<h3 id="how-we-obtain-personal-data">How we obtain personal data</h3>
 
 <p>We collect and receive personal data through the website and Sketch Cloud. Personal data means any information relating to an identified or identifiable natural person. First of all, we collect personal data that you choose to voluntarily provide to us for your use of the website and Sketch Cloud. Also, we collect personal information through Sketch Cloud. In addition, we collect certain personal data by using cookies, including similar technologies such as local storage when you visit the website. Cookies are bits of text that are placed on your computer’s hard drive or mobile device when you visit certain websites. Cookies hold information that may be accessible by the party that places the cookie, which is either the website itself (first party cookie) or a third party (third party cookies). You do have control over cookies, and can refuse the use of cookies by selecting the appropriate setting on your browser. Most browsers will tell you how to stop accepting new cookies, how to be notified when you receive a new cookie, and how to disable or delete existing cookies. Please note, however, that by not accepting or deleting the use of cookies, you may not be able to use the website and Sketch Cloud.</p>
 
@@ -485,7 +499,7 @@
   <li>for the purpose listed under 1, we use Google Analytics. Google Analytics is a web analytics service provided by Google, Inc., which uses cookies to help. The information generated by the cookie about your use of our website (such as your IP address, the URL visited, the date and time the page was viewed) will be transmitted and stored by Google on servers in the United States or any other country in which Google maintains facilities. Your IP address will be masked by setting the last octet of your IP address to zero before it is stored by Google. Google will use this information to monitor your use of our website, and to compile reports on website activity for us. Based on our agreement with Google, Google is not allowed to use this information for their own purposes and may only transfer this information to third parties where required by law, or where such third parties process information on Google’s behalf.</li>
 </ol>
 
-<h2 id="the-types-of-personal-data-we-may-obtain">The types of personal data we may obtain</h2>
+<h3 id="the-types-of-personal-data-we-may-obtain">The types of personal data we may obtain</h3>
 
 <p>We may collect and receive the following personal data from you:</p>
 
@@ -502,7 +516,7 @@
 
 <p>We may collect other types of personal data if required under applicable law or if necessary for the purposes listed below. We will then inform you and ensure that there is a valid legal basis for doing so.</p>
 
-<h2 id="how-we-may-use-personal-data">How we may use personal data</h2>
+<h3 id="how-we-may-use-personal-data">How we may use personal data</h3>
 
 <p>We may use the personal data we collect and receive for the following purposes:</p>
 
@@ -516,7 +530,7 @@
 
 <p>We process personal data because this is necessary for the performance of the contract between you and us, for our compliance with our legal obligations and for the purpose of our legitimate interests. In particular, our legitimate interests are our commercial company interest (e.g. to improve our products and services), our interest to make use of direct marketing, our interest to prevent fraud and our interest to report possible criminal acts or threats to competent authorities. Some of the personal data that we process is required for us to meet our legal obligations, for example we cannot create an account for you if you choose not to share your personal data with us.</p>
 
-<h2 id="how-we-may-share-personal-data">How we may share personal data</h2>
+<h3 id="how-we-may-share-personal-data">How we may share personal data</h3>
 
 <p>We may share the personal data we collect and receive on a need to know basis with the following third parties</p>
 
@@ -529,21 +543,21 @@
 
 <p>We do not sell, rent or trade your personal data.</p>
 
-<h2 id="data-transfers-outside-the-eea">Data transfers outside the EEA</h2>
+<h3 id="data-transfers-outside-the-eea">Data transfers outside the EEA</h3>
 
 <p>We may transfer the personal data we obtain to third parties in countries outside the European Economic Area (EEA). The laws in those countries may not offer an adequate level of data protection. In particular, personal data may be transferred to the United States.</p>
 
 <p>When we transfer your personal data outside the EEA, we will protect your personal data as described in this Privacy Statement and in accordance with applicable law, such as by entering into the European Commission’s Standard Contractual Clauses for the transfer of personal data to a processor located outside of the European Union.</p>
 
-<h2 id="how-we-protect-personal-data">How we protect personal data</h2>
+<h3 id="how-we-protect-personal-data">How we protect personal data</h3>
 
 <p>We maintain appropriate technical and organizational security safeguards designed to protect your personal data against accidental, unlawful or unauthorized destruction, loss, alteration, access, disclosure or use. However, due the inherent open nature of the Internet, we cannot guarantee that communications between you and us or the personal information stored is absolutely secure. We will notify you of any data breach that is likely to have unfavorable consequences for your privacy in accordance with applicable law.</p>
 
-<h2 id="how-long-we-retain-personal-data">How Long We Retain Personal Data</h2>
+<h3 id="how-long-we-retain-personal-data">How Long We Retain Personal Data</h3>
 
 <p>We retain personal data for as long as necessary to fulfil the purposes for which we collect or receive the personal data, except if required otherwise by applicable law. Typically, we will retain most of the personal data for the duration of your use of the website and Sketch Cloud, until you have removed your account, unless a longer applicable statutory retention period applies. Note that after the deletion of your account your comments may be left on Sketch Cloud, while your name and avatar will be replaced by “deleted user”. If you would like to us remove your comments, please contact us as described below.</p>
 
-<h2 id="your-rights">Your Rights</h2>
+<h3 id="your-rights">Your Rights</h3>
 
 <p>You have the following rights in relation to your personal data:</p>
 
@@ -556,27 +570,20 @@
 
 <p>Moreover, subject to this Privacy Statement, you have the right to lodge a complaint with the competent supervisory authority.</p>
 
-<h2 id="updates-to-this-privacy-statement">Updates to this Privacy Statement</h2>
+<h3 id="updates-to-this-privacy-statement">Updates to this Privacy Statement</h3>
 
 <p>We may update this Privacy Statement from time to time. We will notify you of any significant changes to this Privacy Statement on the website or through other appropriate communication channels. All changes shall be effective from the date of publication, unless otherwise provided in the notification.</p>
 
-<h2 id="how-to-contact-us">How to Contact Us</h2>
+<h3 id="how-to-contact-us">How to Contact Us</h3>
 
 <p>If you have any comments or inquiries about the information in this Privacy Statement, if you would like us to update your personal data, or to exercise your rights, please contact us by email at <a href="mailto:privacy@sketch.com">privacy@sketch.com</a>.</p>
 
-
-          
-
-        </div>
       </div>
-    </div>
     
-
   </div>
-</section>
+</div>
 
-
-
+</main>
 
 
   
