@@ -869,7 +869,7 @@ if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+
     })(window,document,'script','dataLayer','GTM-KBCQMF');</script>
     <!-- End Google Tag Manager -->
         <script type="text/javascript">
-    var currencyList = {"EUR":{"label":"Euro","symbol":"&euro;","toEUR":1,"fromEUR":1,"h":1},"USD":{"label":"US Dollar","symbol":"US$","toEUR":1.1965,"fromEUR":0.8359876,"h":1},"GBP":{"label":"British Pound","symbol":"&pound;","toEUR":0.89879,"fromEUR":1.1139083,"h":1}};
+    var currencyList = {"EUR":{"label":"Euro","symbol":"&euro;","toEUR":1,"fromEUR":1,"h":1},"USD":{"label":"US Dollar","symbol":"US$","toEUR":1.1965218,"fromEUR":0.8359662,"h":1},"GBP":{"label":"British Pound","symbol":"&pound;","toEUR":0.8987363,"fromEUR":1.1139189,"h":1}};
 
     for (var code in currencyList) {
         if (currencyList.hasOwnProperty(code)) {
@@ -908,13 +908,13 @@ if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+
         var dateFrom = new Date(
             Number('2020'),
             Number('11') - 1,
-            Number('29')
+            Number('30')
         );
 
         var dateTo = new Date(
             Number('2020'),
             Number('11') - 1,
-            Number('29')
+            Number('30')
         );
 
         if (dateFrom.getTime() < today.getTime()) {
@@ -983,8 +983,8 @@ if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+
         HwReg.set('monthNames', [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]);
         HwReg.set('abbrMonthNames', [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]);
     
-            HwReg.set('dateFrom', '2020-11-30');
-        HwReg.set('dateTo', '2020-12-03');
+            HwReg.set('dateFrom', '2020-12-01');
+        HwReg.set('dateTo', '2020-12-04');
     
     Date.format = 'dd mmm yyyy';
     WRI.eventBus.trigger('hwreg:init');
