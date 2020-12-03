@@ -44,6 +44,7 @@ top:17px;
 /*#loginsignup {display:none;font-family:Verdana, sans-serif;}*/
 #mypagediv {display:none;}
 .login:hover {background-color:#46a049;color:#fff}
+.login:focus {outline:none}
 #nav_login .signup {padding:10px;background-color:#2196F3;color:#fff;text-decoration:none;}
 span.usergetspoint {xright:50px;display:inline-block;line-height:normal;position:absolute;bottom:3px;font-size:12px;font-family:consolas;background-color:transparent;color:transparent;border-radius:5px;padding:1px 3px;}
 span#usergetstutpoint {animation-name:tutpoint;animation-duration:3s;animation-timing-function:linear;}
@@ -301,6 +302,7 @@ span.marked, span.deprecated {
 .loginmodaldiv .login_submit_container {text-align:right;}
 .loginmodaldiv button {width:30%;min-width:120px;border:none;border-radius:5px;padding:6px 10px;background-color:#4CAF50;color:#fff;cursor:pointer;}
 .loginmodaldiv button:hover {background-color:#46a049;color:#fff;}
+.loginmodaldiv button:focus {outline:none}
 .loginmodaldiv a {padding:0 !important;color:#000;}
 .login_newusertext {width:auto;float:right;text-align:right;}
 .login_forgotpasswordtext {width:auto;float:left;}
@@ -700,7 +702,7 @@ function w3_getStyleValue(elmnt,style) {
 
   <div id="loginactioncontainer" class='w3-right'>
     <div id="mypagediv"></div>
-    <a id="w3loginbtn" style="display:none;" class="login w3-right" href='javascript:void(0);' onclick='w3_open_nav("login")'>LOG IN</a>
+    <button id="w3loginbtn" style="display:none;border:none;cursor:pointer" class="login w3-right" onclick='w3_open_nav("login")'>LOG IN</button>
   </div>
 
   <div id="theworldsgreatest" class='w3-right w3-hide-small w3-wide toptext' style="font-family:'Segoe UI',Arial,sans-serif">
@@ -792,6 +794,7 @@ function w3_getStyleValue(elmnt,style) {
           <a class="w3-bar-item w3-button" href='/java/default.asp'>Learn Java</a>
           <a class="w3-bar-item w3-button" href='/cpp/default.asp'>Learn C++</a>
           <a class="w3-bar-item w3-button" href='/cs/default.asp'>Learn C#</a>
+          <a class="w3-bar-item w3-button" href='/r/default.asp'>Learn R</a>
           <a class="w3-bar-item w3-button" href='/python/python_ml_getting_started.asp'>Learn Machine Learning</a>
           <a class="w3-bar-item w3-button" href='/datascience/default.asp'>Data Science</a>
           <div class="w3-hide-small"><br class="w3-hide-medium w3_hide-small"><br class="w3-hide-medium w3_hide-small"></div>
@@ -1370,8 +1373,8 @@ us at help@w3schools.com</p>
 
 <div class="sidesection" style="margin-left:auto;margin-right:auto;max-width:230px">
 <!--<h4><a class="w3-button w3-green w3-block" href="https://shop.w3schools.com/" target="_blank" style="text-decoration:none;margin-top:1px;margin-bottom:1px">SHOP</a></h4>-->
-<a href="https://shop.w3schools.com/collections/certifications" target="_blank" title="Buy Certificate">
-  <img src="/images/certificate_shop.gif" style="max-width:100%;border:1px solid #aaa;">
+<a href="https://shop.w3schools.com/" target="_blank" title="Buy W3Schools Merchandize">
+  <img src="/images/tshirt.jpg" style="max-width:100%;">
 </a>
 </div>
 
