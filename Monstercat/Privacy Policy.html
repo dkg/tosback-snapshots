@@ -45,7 +45,6 @@
     <link rel="manifest" href="manifest.json">
 
     <script type="text/javascript">window.prerenderReady = false</script>
-    <script type="text/javascript" src="https://apis.google.com/js/platform.js?onload=initSocials" async defer></script>
     <script type="text/javascript" src="/js/marked.js"></script>
     <script type="text/javascript" src="/js/handlebars.js"></script>
     <script type="text/javascript" src="/js/declare/core.js"></script>
@@ -95,9 +94,9 @@
     <script type="text/javascript" src="/js/new-release.js"></script>
     <script type="text/javascript" src="/js/bowser.js"></script>
     <script type="text/javascript" src="/js/countdown-banner.js"></script>
-    <script type="text/javascript" src="/js/bfcm2018.js"></script>
     <script type="text/javascript" src="/js/boardgame.js"></script>
     <script type="text/javascript" src="/js/careers.js"></script>
+    <script type="text/javascript" src="/js/google-auth.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
     <script src="//maps.googleapis.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyCcu9dh49U16LBwmdY8UNJqAMoDqazsTCk" type="text/javascript"></script>
     <script type="text/javascript">
@@ -1500,7 +1499,7 @@ var EVENT_FALLBACK_IMG_URL = 'https://assets.monstercat.com/event-fallback.jpg'
       <input type="checkbox" class="check" name="subscriptionOpts[merch]"{{#optins.merch}} checked="checked"{{/optins.merch}} value="1" />
       <i class="fa fa-square-o unchecked"></i>
       <i class="far fa fa-check-square-o checked"></i>
-      Shop Discounts &amp; Promotions
+      Shop discounts &amp; promotions
     </label>
   </div>
 </script>
@@ -1515,7 +1514,7 @@ var EVENT_FALLBACK_IMG_URL = 'https://assets.monstercat.com/event-fallback.jpg'
       <input type="checkbox" class="check" name="subscriptionOpts[events]"{{#optins.events}} checked="checked"{{/optins.events}} value="1" />
       <i class="fa fa-square-o unchecked"></i>
       <i class="far fa fa-check-square-o checked"></i>
-      Event Announcements &amp; Info
+      Event announcements &amp; info
     </label>
   </div>
 </script>
@@ -2742,22 +2741,16 @@ data-template="eight-year-comic">
     </section>
 
 </script>
-<script type="text/html"
-        data-partial
-        data-template="bestof-banner-top"
-        >
-<div class="banner banner--scaled">
-  <div class="banner" style="background-image:url('{{bestOf.background}}')">
+<script type="text/html" data-partial data-template="bestof-banner-top">
+<div class="banner banner--scaled banner--bestof" style="background-image:url('{{bestOf.background}}')">
+  <div class="banner ">
     <div class="banner-shade"></div>
     <div class="gradient"></div>
   </div>
 </div>
 </script>
 
-<script type="text/html"
-        data-template="best-of"
-        data-process="processBestOfPage">
-
+<script type="text/html" data-template="best-of" data-process="processBestOfPage">
 {{#if loading}}
   {{>loading-view}}
 {{else}}
@@ -2765,11 +2758,17 @@ data-template="eight-year-comic">
     {{>error}}
   {{else}}
     {{#data}}
-    <div class="bestof bestof-page white">
+    {{#status.open}}
+      {{#status.hasVoted}}  
+        {{#unless verified}}
+          {{>bestof-verify}}
+        {{/unless}}
+      {{/status.hasVoted}}
+    {{/status.open}}
+  <div class="bestof bestof-page white" style="background-image:url('{{bestOf.background}}');">
       <div class="top-banner">
-        {{>bestof-banner-top}}
         <div class="container">
-          <div class="bestof-header">
+          <div class="bestof-header fade-in">
             {{^status.open}}
             <div class="bestof-centered">
               <h1 class="uppercase bestof-logo">{{bestOf.title}}</h1>
@@ -2782,9 +2781,6 @@ data-template="eight-year-comic">
                 <div class="bestof-centered">
                   <h1 class="uppercase bestof-logo">{{bestOf.title}}</h1>
                   {{> (bestOf.thankYouTemplate)}}
-                  {{#unless verified}}
-                    {{>bestof-verify}}
-                  {{/unless}}
                   <a class="button button-bestof mt-4 mb-3" href="/{{bestOf.url}}/results">View Results</a>
                 </div>
               {{/status.hasVoted}}
@@ -2805,15 +2801,20 @@ data-template="eight-year-comic">
     {{/data}}
   {{/if}}
 {{/if}}
-
-
 </script>
 
 <script type="text/html"
         data-partial
         data-template="bestof-verify"
         >
-  <p class="text center mt-2 mb-2">You must <strong style="color: red;">verify your email address</strong> for your votes to count. <br> <a onclick="onClickSubscribe(event)" class="link">Resend verification email</a></p>
+  <div class="verify-notice text center">
+    <div class="container d-flex">
+      <span class="flex-grow-1">
+        You must <strong>verify your email address</strong> for your votes to count. <br> <a onclick="onClickSubscribe(event)" class="link">Resend verification email</a>
+      </span>
+      <button onclick="hideVerifyNotification()" class="button button--cta button--transparent ml-3 p-0"><i class="fa fa-close"></i></button>
+    </div>
+  </div>
 </script>
 
 <script type="text/html"
@@ -2827,9 +2828,6 @@ data-template="eight-year-comic">
     </div>
     <div class="m-auto-0">
     <h3 class="parentoption-name">{{bestOf.exampleTitle}}</h3>
-    {{#unless bestOf.noChildren}}
-    <p><i class="fa fa-heart mr-1"></i> {{bestOf.exampleSubTitle}}</p>
-    {{/unless}}
     </div>
   </li>
 </ul>
@@ -2839,20 +2837,19 @@ data-template="eight-year-comic">
         data-partial
         data-template="bestof-voting"
         >
-<div class="bestof-voting">
+<div class="bestof-voting slide-down-fast">
   <form role="bestof" onsubmit="submitBestOf(event, '{{bestOf.key}}')">
     {{#if isSignedIn}}
     {{>bestof-picks}}
     <div class="bestof-selection">
       <i class="fa fa-search"></i>
-      <input role="parentoption-filter" placeholder="{{bestOf.searchPlaceholder}}" value="" onkeyup="filterBestOfOptions(event, this)" onkeydown="bestOfFilterKeydown(event)">
+      <input role="options-filter" placeholder="{{bestOf.searchPlaceholder}}" value="" onkeyup="filterBestOfOptions(event, this)" onkeydown="bestOfFilterKeydown(event)">
     </div>
     <div class="content-row select-row select-row-results">
-      {{#each parentOptions}}
-      <div class="bestof-search-result" data-option-id="{{_id}}" onclick="openAddBestOfArtistModal(event, this)">
-        <span class="parentoption-name-search">{{title}}</span>
-        {{#if subtitle}}<span>({{subtitle}})</span>{{/if}}
-        <button class="faux add-childoption">
+      {{#each Options}}
+      <div class="bestof-search-result" data-option-id="{{Id}}" onclick="onClickBestOfOpt(event, this)">
+        <span class="parentoption-name-search">{{Title}}</span>
+        <button class="faux add-childoption pl-2">
           <i class="fa fa-plus"></i>
         </button>
       </div>
@@ -2866,7 +2863,7 @@ data-template="eight-year-comic">
     </div>
     {{else}}
     <div class="submit-container">
-      <a class="button button-bestof mt-4" href="/signin?continueUrl=%2F{{bestOf.key}}&continueLabel={{bestOf.title}}">Sign in to Submit Your Votes</a>
+      <a class="button button-bestof" href="/signin?continueUrl=%2F{{bestOf.key}}&continueLabel={{bestOf.title}}">Sign in to Submit Your Votes</a>
     </div>
     {{/if}}
   </form>
@@ -2878,96 +2875,38 @@ data-template="eight-year-comic">
         data-partial
         data-template="bestof-row"
         >
-<li class="row flex content-row parentoption-row parentoption-row-picks {{_id}}" id="">
-  <input type="hidden" name="parentOptionIds[{{rank}}]" value="{{parentOptionId}}" />
-  <input type="hidden" name="childOptionIds[{{rank}}]" value="{{childOptionId}}" />
-  <div class="banner" style='background-image: url("{{albumArt}}")'></div>
-  <div class="flex" style="flex: 1 1 auto;">
+<li class="row flex content-row parentoption-row parentoption-row-picks {{id}} slide-down-fast">
+  <input type="hidden" name="optionId[]" value="{{id}}" />
+  <div class="banner" style='background-image: url("{{albumArt}}?image_width=1080")'></div>
+  <div class="flex" style="flex: 1 1 auto; flex-wrap:nowrap">
     <div class="m-auto-0 parentoption-ranking">
       <h3></h3>
     </div>
-    <div class="artist-circle m-auto-0 ml-3 mr-3">
-      <img src="{{artistImg}}">
+    <div class="bestof-art-square">
+      <img src="{{albumArt}}?image_width=128">
     </div>
     <div class="m-auto-0">
-      <h3 class="parentoption-name"><span class="bestof-mobile">.</span> {{artistName}}</h3>
-      {{#unless bestOf.noChildren}}
-      <p class="song-title song-title-edit num-options-{{numChildOptions}}">
-        <a data-option-id="{{_id}}" onclick="openBestOfArtistModal(event, this)" data-rank="{{rank}}">
-          <i class="fa fa-heart"></i>
-          <i class="fa fa-pencil"></i>
-          {{songName}}
-        </a>
-      </p>
-      {{/unless}}
+      <h3 class="parentoption-name"><span class="bestof-mobile">.</span> {{songName}} {{#if trackVer}}({{trackVer}}){{/if}}</h3>
+      <div class="d-flex align-item-center">
+        <ul class="bestof-artists list--inline list--tool-tip">
+          {{#each artists}}
+          <li>
+            <div class="artist-circle">
+              <img src="{{artistArt}}?image_width=64" title="{{Name}}"/>
+            </div>
+          </li>
+          {{/each}}
+        </ul> 
+        <p class="artist-name num-options-1">{{artistName}}</p>
+      </div>
     </div>
   </div>
   <div class="close-container">
-    <button class="button-remove-artist" onclick="clickRemoveParentOption(event, this, '{{_id}}')" type="button">
+    <button class="button-remove-artist" onclick="onClickRemoveBestOfOption(event, this, '{{id}}')" type="button">
       <i class="fa fa-close"></i>
     </button>
   </div>
 </li>
-</script>
-
-
-<script type="text/html"
-        data-template="add-childoption"
-        >
-<div class="modal">
-  <div class="panel pointer-events">
-    <h2 class="mv-0">Select Your Favorite {{artistName}} Track</h2>
-    <div>
-      <form onsubmit="onSubmitArtistTrack(event, this)">
-        <div class="bestof-selection bestof-selection-modal mt-3">
-          {{#if rank}}
-          <input type="hidden" name="rank" value="{{rank}}">
-          {{/if}}
-          <input type="hidden" name="parentId" value="{{optionId}}" />
-          <select class="bestof-track-select" name="pollTrackId">
-            <option value="" selected="true" disabled="disabled">Select a track</option>
-           {{#each options}}
-            <option value="{{_id}}">{{title}}</option>
-            {{/each}}
-          </select>
-        </div>
-        <button class="mt-3">{{buttonLabel}}</button>
-      </form>
-    </div>
-    <button class="button--close faux" onclick="closeModal(event, this)">
-        <i class="fa fa-remove"></i>
-    </button>
-  </div>
-</div>
-</script>
-
-<script type="text/html"
-        data-template="edit-childoption"
-        >
-<div class="modal">
-  <div class="panel pointer-events">
-    <h2 class="mv-0">Update Your Favorite Track</h2>
-    <div>
-      <form onsubmit="onUpdateArtistTrack(event, this)">
-        <div class="bestof-selection bestof-selection-modal mt-3">
-          <input type="hidden" name="parentId" value="{{pollId}}" >
-          {{#if rank}}
-          <input type="hidden" name="rank" value="{{rank}}">
-          {{/if}}
-          <select class="bestof-track-select" name="pollTrackId">
-           {{#each options}}
-            <option value="{{_id}}">{{title}}</option>
-            {{/each}}
-          </select>
-        </div>
-        <button class="mt-3">Save</button>
-      </form>
-    </div>
-    <button class="button--close faux" onclick="closeModal(event, this)">
-        <i class="fa fa-remove"></i>
-    </button>
-  </div>
-</div>
 </script>
 
 <script type="text/html"
@@ -2979,45 +2918,54 @@ data-template="eight-year-comic">
     {{#if results.length}}
       <ul>
       {{#each results}}
-        <li class="row flex content-row parentoption-row cl-white">
-          <div class="banner" style='background-image: url("{{winningChild.image}}?image_width=512")'></div>
-          <div class="flex" style="flex: 1 1 auto;">
+        <li class="row flex content-row parentoption-row cl-white slide-down">
+          <div class="banner" style='background-image: url("{{image}}?image_width=1080")'></div>
+          <div class="flex" style="flex: 1 1 auto; flex-wrap:nowrap">
             <div class="m-auto-0 artist-ranking">
               <h3>{{rank}}</h3>
             </div>
-            <div class="artist-circle m-auto-0 ml-3 mr-3">
-             <img src="{{option.image}}?image_width=128">
+            <div class="bestof-art-square">
+             <img src="{{image}}?image_width=128"/>
             </div>
-            <div class="m-auto-0">
-              <h3 class="parentoption-name"><span class="bestof-mobile">{{rank}}.</span> {{option.title}}</h3>
-              {{#unless ../bestOf.noChildren}}
-                <p class="song-title"><i class="fa fa-music mr-1"></i>{{winningChild.title}}</p>
-              {{/unless}}
+            <div class="m-auto-0 flex-grow-1">
+              <h3 class="parentoption-name"><span class="bestof-mobile">{{rank}}.</span> {{songName}} {{#if trackVer}}({{trackVer}}){{/if}}</h3>
+              <div class="d-flex align-item-center">
+                <ul class="bestof-artists list--inline list--tool-tip">
+                  {{#each artistImages}}
+                  <li>
+                    <div class="artist-circle">
+                      <img src="{{artistArt}}?image_width=64" title="{{Name}}"/>
+                    </div>
+                  </li>
+                  {{/each}}
+                </ul> 
+                <p class="artist-name num-options-1">{{artistName}}</p>
+              </div>
             </div>
+            <p class="parentoption-votes num-votes-{{votes}}">{{votes}} vote</p>
           </div>
-          <p class="parentoption-votes num-votes-{{votes}}">{{votes}} vote</p>
         </li>
       {{/each}}
       </ul>
     {{else}}
-      <p class="text center">No votes yet!</p>
+      <div class="text center content-row m-auto mt-4" style="padding: 3em 0; border: 1px solid rgba(255, 255, 255, 0.1)"><h3>No votes yet!</h3></div>
     {{/if}}
     <div class="col-xs-12 panel subscribe-cta"  id="updates">
       <h2>Stay up to date with Monstercat!</h2>
       {{#if loggedIn}}
-        <form onsubmit="submitSaveSubscriptions(event)">
+        <form onsubmit="submitSaveSubscriptions(event)" id="bestof-subscribe">
           <div data-process="processAccountEmailOptinsWithCheck" data-source>
               <div class="loading" style="justify-content: flex-start; min-height: auto">
                   <span class="loader"></span>
               </div>
           </div>
-          <button class="actionier mt-2">
+          <button class="actionier mt-3 button-bestof">
               <span class="actionier-off">Save Subscriptions</span>
               <span class="actionier-on">Saving...</span>
           </button>
         </form>
        {{else}}
-       <a class="button button-sm button--black button--icon" href="/sign-up" target="_blank">Sign in to Subscribe<i class="fa fa-chevron-right"></i></a>
+       <a class="button button-sm button--black button--icon button-bestof" href="/sign-up" target="_blank">Sign in to Subscribe<i class="fa fa-chevron-right"></i></a>
       {{/if}}
     </div>
   {{/data}}
@@ -3036,20 +2984,27 @@ data-template="eight-year-comic">
   {{#if error}}
     {{>error}}
   {{else}}
-    <div class="bestof bestof-page cl-white">
+
+    <div class="bestof bestof-page cl-white" style="background-image:url('{{bestOf.background}}');">
       <div class="top-banner">
-        {{>bestof-banner-top}}
         <div class="container">
           {{#data}}
+          {{#if UserStatus.Voted}}
+            {{#unless verified}}
+              {{>bestof-verify}}
+            {{/unless}}
+          {{/if}}
           <div class="flex">
-            <div class="bestof-header-results">
+            <div class="bestof-header-results fade-in">
               <h1 class="title uppercase bestof-logo text center m-auto">{{bestOf.title}} <span class="title-results">Results</span></h1>
-                {{#unless breakdown.status.hasVoted}}
+
+                {{#unless UserStatus.Voted}}
                   {{> (bestOf.resultsPageNotVoted) }}
                   <a href="/{{bestOf.url}}" class="button button-bestof mt-4">Vote Now</a>
                 {{else}}
                   {{> (bestOf.resultsPageVoted) }}
-                  <a href="{{tweetUrl}}" target="_blank" class="button button-bestof mt-4"><i class="fa fa-twitter"></i> Tweet Your Picks</a>
+
+                  <button class="button button-bestof mt-4" onclick="openTweetModal()"><i class="fa fa-twitter"></i> Tweet Your Picks</button>
                   {{#if bestOf.customButton}}
                     {{> (bestOf.customButton)}}
                   {{/if}}
@@ -3063,6 +3018,37 @@ data-template="eight-year-comic">
     </div>
   {{/if}}
 {{/if}}
+</script>
+
+<!-- Modal -->
+<script type="text/html"
+  data-template="tweet-preview-modal">
+  <div class="modal modal--tweet">
+      <div class="panel pointer-events">
+          <h1>Tweet Your Picks</h1>
+          <div class="section">
+            <div class="flex align-item-center">
+              <p class="mb-1">Tweet Preview</p>
+              <textarea class="copycredits" id="bestof-tweet-box" readonly>For Best of 2020, I voted for{{#each artists}}{{#if selected}} @{{TwitterHandle}}{{/if}}{{/each}} monstercat.com/bestof2020 #McatBestof2020</textarea>
+              <div id="char-count"></div>
+              <div class="mt-1 mb-1 mr-2">
+                  <p>Select Artists</p>
+              </div>
+              <ul class="tweet-checkbox">
+                {{#each artists}}
+                  <li><input type="checkbox" {{#if selected}}checked="checked"{{/if}} id="twitter-handle-{{TwitterHandle}}" data-handle="@{{TwitterHandle}}" onclick="onClickBestOfTwitterHandle(event, this)"><label for="twitter-handle-{{TwitterHandle}}">@{{TwitterHandle}}</label></li>
+                {{/each}}
+              </ul>
+            </div>
+            <div class="mt-2 text center">
+              <a id="bestof-tweet-button" class="button button--cta" target="_blank"><i class="fa fa-twitter"></i> Tweet My 2020 Picks</a>
+            </div>
+          </div>
+          <button class="button--close faux" onclick="closeModal(event)">
+              <i class="fa fa-remove"></i>
+          </button>
+      </div>
+  </div>
 </script>
 <script type="text/html"
         data-route="^(?:news|blog)\/(article|[\d+\-]+|posts|preview)\/([^\/\?]*)\/?"
@@ -5018,228 +5004,223 @@ data-template="9YearAnniversary"
 </script>
 
 <script type="text/html" data-template="countdown-banner">
-<div class="container">
-    <a class="info" href="{{urlInfo}}">
-        {{{info}}}
-    </a>
-    <div class="actions">
-        <div class="button-container">
-            <a href="{{urlButton}}" class="button button--cta">{{buttonLabel}}</a>
-        </div>
-        <div class="countdown-container">
-            <div class="label">{{label}}</div>
-            <div class="countdown" show-days="1" role="countdown" to="{{to}}" completed="countdownBannerCompleted"></div>
-        </div>
-    </div>
-    </div>
-</script>
-
-
-<script type="text/html" data-template="front-form">
-<button class="button--close faux" onclick="closeFrontForm(event, this)">
-    <i class="fa fa-remove"></i>
-</button>
-<h3>Message Support</h3>
-<form
-  method="POST"
-  name="fa-form-1"
-  action="https://webhook.frontapp.com/forms/monstercat/e7bf54a291645762ba696daeba632a299169715243305549824d591af3ee6ea1"
-  enctype="multipart/form-data"
-  accept-charset="utf-8"
-  onsubmit="submitFrontForm(event)"
-  data-set="front-form">
-    {{#meta}}
-    <input type="hidden" name="{{name}}" value="{{value}}" />
-    {{/meta}}
-    <p class="mb-2">Have a suggestion? <a href="https://feedback.monstercat.com">Post it here</a>.</p>
-    {{>errors}}
-    <div class="form-group form-group-inline row">
-        <div class="col-sm-2">
-            <label for="email">Name</label>
-        </div>
-        <div class="col-sm-10">
-            <input type="text" name="name" value="{{name}}">
-        </div>
-    </div>
-
-    <div class="form-group form-group-inline row">
-        <div class="col-sm-2">
-            <label for="email">Email</label>
-        </div>
-        <div class="col-sm-10">
-            <input type="email" name="email" value="{{email}}">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label>Message</label>
-        <textarea name="body" onkeydown="keyDownSuperEnter(event)"></textarea>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn--cta" data-set-target="front-form" >Submit</button>
-    </div>
-    </form>
-</script>
-
-<script type="text/html" data-template="loading-view" data-partial>
-    <div class="loading">
-        <span class="loader"></span>
-    </div>
-</script>
-
-<script type="text/html" data-template="errors" data-partial>
-{{#errors.length}}
-    <ul class="errors">
-    {{#errors}}
-        <li>{{.}}</li>
-    {{/errors}}
-    </ul>
-{{/errors.length}}
-</script>
-
-<script type="text/html" data-template="error" data-partial>
-<div class="container">
-    <div class="errors-container">
-        {{message}}
-    </div>
-</div>
-</script>
-
-<script type="text/html" data-template="loading-view-black" data-partial>
-    <div class="loading loading--black">
-        <span class="loader"></span>
-    </div>
-</script>
-
-<script type="text/html" data-template="loading-inner-view" data-partial>
-    <div class="loading loading-inner">
-        <span class="loader"></span>
-    </div>
-</script>
-
-<script type="text/html" data-template="loading-table-view" data-partial>
-<tr>
-    <td class="loading-table" colspan="10">
-        <span class="loader"></span>
-    </td>
-</tr>
-</script>
-
-<script type="text/html" data-template="navigation">
-{{#data}}
-{{#user}}
-<a class="silent nav-item" onclick="closeNav()" href="/playlists"><i class="fa fa-bars"></i>Playlists</a>
-<a class="silent nav-item" onclick="closeNav()" href="/account"><i class="fa fa-gear"></i>Account</a>
-<a class="silent nav-item" onclick="closeNav()" href="/account/gold"><i class="fa fa-paw"></i>Gold</a>
-<a class="silent nav-item" onclick="closeNav()" href="/account/licenses"><i class="fa fa-check-circle-o"></i>Licenses</a>
-{{/user}}
-{{^user}}
-<a class="silent nav-item" onclick="closeNav()" href="/signin{{#if currentUrl}}?continueUrl={{currentUrl}}{{/if}}"><i class="fa fa-sign-in"></i>Sign In</a>
-{{/user}}
-{{/data}}
-</script>
-
-<script type="text/html"
-        data-template="404"
-        data-title="Page Not Found">
     <div class="container">
-        <h1>Page Not Found</h1>
-        <div class="panel">
-            <p>The page you are looking for is not here.</p>
-        </div>
-    </div>
-</script>
-
-<script type="text/html"
-  data-route="^help\/?$"
-  data-title="Help"
-  data-process="processPage"
-  data-template="help-page">
-  <div class="container">
-    <h1>Help</h1>
-    <div class="panel md-container">
-        <h2>Contact Us</h2>
-        <p>
-            Email Us: <a
-                href="mailto:support@monstercat.com">support@monstercat.com</a>.
-
-            <br />Discord: <a href="https://discord.gg/JrSmQmc">join #monstercat-support channel</a>
-        </p>
-      <h2>Notices & Important Information</h2>
-      <ul class="ml-3">
-        <li><a href="/faqs/migration-notice">Connect Migration Notice</a></li>
-        <li><a href="/twitch-policy">Twitch Policy</a></li>
-        <li><a href="/privacy-policy">Privacy Policy</a></li>
-        <li><a href="/terms-of-service">Terms of Service</a></li>
-      </ul>
-      <h2>Frequently Asked Questions</h2>
-      <p>
-        Have any questions about this platform or the services provided? Please
-        check the links below that may point you in the right direction.
-      </p>
-      <h3>Topics</h3>
-      <ul class="ml-3">
-        <li><a href="/faqs/general">General Site</a></li>
-        <li><a href="/faqs/whitelisting">Content Creators &amp; Whitelisting</a></li>
-      </ul>
-
-    </div>
-  </div>
-</script>
-
-<script type="text/html" data-template="toast">
-    <div class="toast{{#error}} error{{/error}}" >
-        <p>{{{message}}}</p>
-    </div>
-</script>
-
-
-<script type="text/html"
-        data-template="shop-banner"
->
-<div id="black-friday-banner">
-    <div class="banner-container container">
-        <div class="desktop">
-            <div class="banner-left">
-                <img src="https://assets.monstercat.com/b/bf2020/icon.png?image_width=512" alt="Black Friday" class="mr-2">
-                <div class="countdown-container">
-                    <span class="sale-ends-text"></span>
-                    <label>
-                        <span class="countdown" show-days="1" role="countdown" to="{{to}}" completed="countdownBannerCompleted"></span></h3> 
-                    </label>
-                </div>
-                <span class="button-holder">
-                    <span class="rotating-buttons">
-                        <a href="https://www.flipsnack.com/monstercat/monstercat-blackfriday-sale-2020/full-view.html?utm_source=website&utm_medium=banner&utm_campaign=BFCM2020" class="shop-btn" target="_blank"> <img src="https://assets.monstercat.com/b/bf2020/lookbook.png?image_width=512" alt=Lookbook></a>
-                        <a href="https://evt.mx/Dofi3xaC" class="shop-btn" target="_blank"> <img src="https://assets.monstercat.com/b/bf2020/add-to-calendar.png?image_width=512" alt="Add to Calendar"></a>
-                    </span>
-                    <button onclick="hideShopBanner()" class="button button--cta button--transparent ml-3 p-0"><i class="fa fa-close"></i></button>
-                </span>
+        <a class="info" href="{{urlInfo}}">
+            {{{info}}}
+        </a>
+        <div class="actions">
+            <div class="button-container">
+                <a href="{{urlButton}}" class="button button--cta">{{buttonLabel}}</a>
+            </div>
+            <div class="countdown-container">
+                <div class="label">{{label}}</div>
+                <div class="countdown" show-days="1" role="countdown" to="{{to}}" completed="countdownBannerCompleted"></div>
             </div>
         </div>
-        <div class="mobile">
-            <img src="https://assets.monstercat.com/b/bf2020/icon.png?image_width=512" alt="Black Friday" class="mr-1">
-            <span class="rotating-buttons">
-                <a href="https://www.flipsnack.com/monstercat/monstercat-blackfriday-sale-2020/full-view.html?utm_source=website&utm_medium=banner&utm_campaign=BFCM2020" class="shop-btn" target="_blank"> <img src="https://assets.monstercat.com/b/bf2020/lookbook.png?image_width=512" alt=Lookbook></a>
-                <a href="https://evt.mx/Dofi3xaC" class="shop-btn shop-btn-main mobile-shop-btn"> <img src="https://assets.monstercat.com/b/bf2020/add-to-calendar.png?image_width=512" alt="Add to Calendar"></a>
-            </span>
+        </div>
+    </script>
+    
+    
+    <script type="text/html" data-template="front-form">
+    <button class="button--close faux" onclick="closeFrontForm(event, this)">
+        <i class="fa fa-remove"></i>
+    </button>
+    <h3>Message Support</h3>
+    <form
+      method="POST"
+      name="fa-form-1"
+      action="https://webhook.frontapp.com/forms/monstercat/e7bf54a291645762ba696daeba632a299169715243305549824d591af3ee6ea1"
+      enctype="multipart/form-data"
+      accept-charset="utf-8"
+      onsubmit="submitFrontForm(event)"
+      data-set="front-form">
+        {{#meta}}
+        <input type="hidden" name="{{name}}" value="{{value}}" />
+        {{/meta}}
+        <p class="mb-2">Have a suggestion? <a href="https://feedback.monstercat.com">Post it here</a>.</p>
+        {{>errors}}
+        <div class="form-group form-group-inline row">
+            <div class="col-sm-2">
+                <label for="email">Name</label>
+            </div>
+            <div class="col-sm-10">
+                <input type="text" name="name" value="{{name}}">
+            </div>
+        </div>
+    
+        <div class="form-group form-group-inline row">
+            <div class="col-sm-2">
+                <label for="email">Email</label>
+            </div>
+            <div class="col-sm-10">
+                <input type="email" name="email" value="{{email}}">
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label>Message</label>
+            <textarea name="body" onkeydown="keyDownSuperEnter(event)"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn--cta" data-set-target="front-form" >Submit</button>
+        </div>
+        </form>
+    </script>
+    
+    <script type="text/html" data-template="loading-view" data-partial>
+        <div class="loading">
+            <span class="loader"></span>
+        </div>
+    </script>
+    
+    <script type="text/html" data-template="errors" data-partial>
+    {{#errors.length}}
+        <ul class="errors">
+        {{#errors}}
+            <li>{{.}}</li>
+        {{/errors}}
+        </ul>
+    {{/errors.length}}
+    </script>
+    
+    <script type="text/html" data-template="error" data-partial>
+    <div class="container">
+        <div class="errors-container">
+            {{message}}
         </div>
     </div>
-</div>
-</script>
-
-<script type="text/html"
-        data-template="mc2020-banner"
->
-    <a href="{{url}}">
+    </script>
+    
+    <script type="text/html" data-template="loading-view-black" data-partial>
+        <div class="loading loading--black">
+            <span class="loader"></span>
+        </div>
+    </script>
+    
+    <script type="text/html" data-template="loading-inner-view" data-partial>
+        <div class="loading loading-inner">
+            <span class="loader"></span>
+        </div>
+    </script>
+    
+    <script type="text/html" data-template="loading-table-view" data-partial>
+    <tr>
+        <td class="loading-table" colspan="10">
+            <span class="loader"></span>
+        </td>
+    </tr>
+    </script>
+    
+    <script type="text/html" data-template="navigation">
+    {{#data}}
+    {{#user}}
+    <a class="silent nav-item" onclick="closeNav()" href="/playlists"><i class="fa fa-bars"></i>Playlists</a>
+    <a class="silent nav-item" onclick="closeNav()" href="/account"><i class="fa fa-gear"></i>Account</a>
+    <a class="silent nav-item" onclick="closeNav()" href="/account/gold"><i class="fa fa-paw"></i>Gold</a>
+    <a class="silent nav-item" onclick="closeNav()" href="/account/licenses"><i class="fa fa-check-circle-o"></i>Licenses</a>
+    {{/user}}
+    {{^user}}
+    <a class="silent nav-item" onclick="closeNav()" href="/signin{{#if currentUrl}}?continueUrl={{currentUrl}}{{/if}}"><i class="fa fa-sign-in"></i>Sign In</a>
+    {{/user}}
+    {{/data}}
+    </script>
+    
+    <script type="text/html"
+            data-template="404"
+            data-title="Page Not Found">
+        <div class="container">
+            <h1>Page Not Found</h1>
+            <div class="panel">
+                <p>The page you are looking for is not here.</p>
+            </div>
+        </div>
+    </script>
+    
+    <script type="text/html"
+      data-route="^help\/?$"
+      data-title="Help"
+      data-process="processPage"
+      data-template="help-page">
+      <div class="container">
+        <h1>Help</h1>
+        <div class="panel md-container">
+            <h2>Contact Us</h2>
+            <p>
+                Email Us: <a
+                    href="mailto:support@monstercat.com">support@monstercat.com</a>.
+    
+                <br />Discord: <a href="https://discord.gg/JrSmQmc">join #monstercat-support channel</a>
+            </p>
+          <h2>Notices & Important Information</h2>
+          <ul class="ml-3">
+            <li><a href="/faqs/migration-notice">Connect Migration Notice</a></li>
+            <li><a href="/twitch-policy">Twitch Policy</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+          </ul>
+          <h2>Frequently Asked Questions</h2>
+          <p>
+            Have any questions about this platform or the services provided? Please
+            check the links below that may point you in the right direction.
+          </p>
+          <h3>Topics</h3>
+          <ul class="ml-3">
+            <li><a href="/faqs/general">General Site</a></li>
+            <li><a href="/faqs/whitelisting">Content Creators &amp; Whitelisting</a></li>
+          </ul>
+    
+        </div>
+      </div>
+    </script>
+    
+    <script type="text/html" data-template="toast">
+        <div class="toast{{#error}} error{{/error}}" >
+            <p>{{{message}}}</p>
+        </div>
+    </script>
+    
+    
+    <script type="text/html"
+            data-template="shop-banner"
+    >
         <div id="notice--shop">
-            <div class="text cl-white center">
-            <h2>{{label}}</h2>
+            <div class="banner-container container">
+                <div class="desktop">
+                    <div class="banner-left">
+                        <h2>{{label}}</h2>
+                    </div>
+                    <div class="banner-right">
+                        <a href="{{url}}" class="button  button-bestof ">
+                            Vote Now
+                        </a>
+                        <button
+                        onclick="hideShopBanner()"
+                        class="button button--cta button--transparent ml-3 p-0">
+                        <i class="fa fa-close"></i>
+                    </button>
+                    
+                </div>
+            </div>
+            <div class="mobile">
+                <a href="{{url}}">
+                    <h3>{{label}}</h3>
+                </a>
             </div>
         </div>
-    </a>
-</script>
-<script type="text/html"
+    </script>
+    
+    <script type="text/html"
+            data-template="mc2020-banner"
+    >
+        <a href="{{url}}">
+            <div id="notice--shop">
+                <div class="text cl-white center">
+                <h2>{{label}}</h2>
+                </div>
+            </div>
+        </a>
+    </script>
+    <script type="text/html"
         data-template="release-art-modal">
     <div class="modal modal--artwork">
         <div class="pointer-events">
@@ -6191,6 +6172,70 @@ data-template="9YearAnniversary"
         {{>gold-panel}}
       </div>
     {{/unless}}
+</script>
+<script type="text/html"
+        data-route="^bestof2020$"
+        data-title="Best of 2020"
+        data-template="bestof-2020-page"
+        data-process="processBestOfPage"
+        data-bestofkey="bestof2020"
+></script>
+
+<script type="text/html"
+        data-route="^[Bb]est[Oo]f2020\/results$"
+        data-template="bestof-2020-results"
+        data-title="Best of 2020 Results"
+        data-process="processBestOfResultsPage"
+        data-bestofkey="bestof2020"
+></script>
+
+
+<script type="text/html" data-partial data-template="bestof2020-intro">
+    <p>Select up to 10 of your favourite songs of 2020!</p>
+    <p class='mt-2'><strong>Voting ends Friday Dec 4 @ 5pm PT</strong></p>
+</script>
+
+<script type="text/html"
+        data-partial
+        data-template="bestof2020-thanks"
+>
+    <h2>Thanks for voting!</h2>
+</script>
+
+<script type="text/html"
+        data-partial
+        data-template="bestof2020-closed"
+>
+    <h2>Voting is now over!</h2>
+</script>
+
+<script type="text/html"
+        data-partial
+        data-template="bestof2020-results-not-voted"
+>
+    <p class="mt-2">Here’s the leaderboard for the top 40 tracks.
+    <br />Note: Final tally will be adjusted to remove any less-than-legitimate voting</p>
+
+    <p class='mt-2'><strong>Voting ends Friday Dec 4 @ 5pm PT</strong></p>
+</script>
+
+<script type="text/html"
+        data-partial
+        data-template="bestof2020-results-voted"
+>
+    <p class="mt-2">Thanks for submitting your Best of 2020 picks.
+    <br>Here's the leaderboard for the top 40!
+    <br />Note: Final tally will be adjusted to remove any less-than-legitimate voting</p>
+
+    <p class='mt-2'><strong>Voting ends Friday Dec 4 @ 5pm PT</strong></p>
+</script>
+
+
+<script type="text/html"
+        data-partial
+        data-template="bestof2020-custom-button"
+>
+    <a href="https://monster.cat/2020survey" target="_blank" class="button button-bestof mt-4">2020 Community Survey</a>
 </script>
 <script type="text/html"
   data-route="^twitchpromo$"
@@ -8333,6 +8378,16 @@ data-template="9YearAnniversary"
 
 <!-- END SEARCH -->
 <script type="text/html"
+        data-route="^google-auth$"
+        data-process="processGoogleAuth"
+        data-template="google-auth"
+>
+    {{#loading}}
+    {{>loading-view}}
+    {{/loading}}
+
+
+</script><script type="text/html"
         data-route="^[Mm]ix[Cc]ontest2016\/votes"
         data-title="Mix Contest 2016 Votes"
         transform="transformMixContest">
