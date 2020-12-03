@@ -37,8 +37,9 @@
 <script>
                 var propertag = {};
                 propertag.cmd = [];
+								var propervideotag = [];
             </script>
-<link rel="stylesheet" href="/design/assets/bundle.css?rev=9e9e82e7fc1a89443cd78c6d3cfa1e21865ff91a" />
+<link rel="stylesheet" href="/design/assets/bundle.css?rev=fd008d9e729bcf8e354c4862939e4dbf4589d0f2" />
 <script>
                 function object(objectId) {
                     if (document.getElementById && document.getElementById(objectId)) {
@@ -174,10 +175,12 @@
                     is_logged_in         : "",
                     handle               : "",
                     get_astri_stream     : "",
-										revnum               : "9e9e82e7fc1a89443cd78c6d3cfa1e21865ff91a",
+										revnum               : "fd008d9e729bcf8e354c4862939e4dbf4589d0f2",
 										img_domain           : "https://static.tvtropes.org",
 										adblock              : "1",
 										adblock_url          : "propermessage.io",
+										proper_video_url     : "https://player.propervideo.io/new_rtp/main.js",
+										proper_video_host_url: "https://player.propervideo.io",
 										pause_editing        : "0",
 										pause_editing_msg    : "",
 										pause_site_changes   : ""
@@ -237,8 +240,8 @@
 <a href="#close-search" class="mobile-on mobile-search-toggle close-x"><i class="fa fa-close"></i></a>
 </div>
 <div id="random-box">
-<a href="/pmwiki/pmwiki.php/Main/Letterbox" class="button-random-trope" rel="nofollow" onclick="ga('send', 'event', 'button', 'click', 'random trope');"></a>
-<a href="/pmwiki/pmwiki.php/Music/JeffHealey" class="button-random-media" rel="nofollow" onclick="ga('send', 'event', 'button', 'click', 'random media');"></a>
+<a href="/pmwiki/pmwiki.php/Main/MallSanta" class="button-random-trope" rel="nofollow" onclick="ga('send', 'event', 'button', 'click', 'random trope');"></a>
+<a href="/pmwiki/pmwiki.php/Roleplay/WarriorCatsRPG" class="button-random-media" rel="nofollow" onclick="ga('send', 'event', 'button', 'click', 'random media');"></a>
 </div>
 </div>
 </div>
@@ -580,6 +583,9 @@ We reserve the right to make changes to this policy. Any changes to this policy 
 <div class='proper-ad-unit ad-sticky'>
 <div id='proper-ad-tvtropes_sticky_ad'> <script>propertag.cmd.push(function() { proper_display('tvtropes_sticky_ad'); });</script> </div>
 </div>
+<div class='proper-ad-unit '>
+<div id='proper-ad-tvtropes_oop'> <script>propertag.cmd.push(function() { proper_display('tvtropes_oop'); });</script> </div>
+</div>
 <footer id="main-footer">
 <div id="main-footer-inner">
 <div class="footer-left">
@@ -623,7 +629,7 @@ We reserve the right to make changes to this policy. Any changes to this policy 
 <li><a href="/pmwiki/dmca.php">DMCA Notice</a></li>
 <li><a href="/pmwiki/privacypolicy.php">Privacy Policy</a></li>
 </ul>
- </div>
+</div>
 <div id="desktop-on-mobile-toggle" class="text-center gutter-top gutter-bottom tablet-on">
 <a href="/pmwiki/switchDeviceCss.php?mobileVersion=1" rel="nofollow">Switch to <span class="txt-desktop">Desktop</span><span class="txt-mobile">Mobile</span> Version</a>
 </div>
@@ -723,7 +729,7 @@ We reserve the right to make changes to this policy. Any changes to this policy 
         var elem = document.createElement('script');
         elem.async = true;
 
-        elem.src = '/design/assets/bundle.js?rev=9e9e82e7fc1a89443cd78c6d3cfa1e21865ff91a';
+        elem.src = '/design/assets/bundle.js?rev=fd008d9e729bcf8e354c4862939e4dbf4589d0f2';
 
         elem.onload = function() {
                                  }
