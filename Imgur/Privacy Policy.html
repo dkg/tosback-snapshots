@@ -19,10 +19,10 @@
     <link rel="apple-touch-icon-precomposed" href="//s.imgur.com/images/favicon-152.png">
     <meta name="msapplication-TileColor" content="#2cd63c">
     <meta name="msapplication-TileImage" content="//s.imgur.com/images/favicon-144.png">
-            <link rel="stylesheet" type="text/css" href="//s.imgur.com/min/global.css?1606759903" />
+            <link rel="stylesheet" type="text/css" href="//s.imgur.com/min/global.css?1606956791" />
 
     
-        <link rel="stylesheet" type="text/css" href="//s.imgur.com/min/subpage_queries.css?1606759903" />
+        <link rel="stylesheet" type="text/css" href="//s.imgur.com/min/subpage_queries.css?1606956791" />
 
             <!--[if IE 9]><link rel="stylesheet" href="//imgur.com/include/css/ie-sucks.css?0" type="text/css" /><![endif]-->
     
@@ -78,25 +78,159 @@
         }
     </script>
     
-        <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M6N38SF');</script>
-<!-- End Google Tag Manager -->
+        <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async=true>
+    (function () {
+        var host = 'imgur.com';
+        var element = document.createElement('script');
+        var firstScript = document.getElementsByTagName('script')[0];
+        var url = 'https://quantcast.mgr.consensu.org'
+            .concat('/choice/', 'f8oruOqDFlMeI', '/', host, '/choice.js')
+        var uspTries = 0;
+        var uspTriesLimit = 3;
+        element.async = true;
+        element.type = 'text/javascript';
+        element.src = url;
+        element.onload = function () {
+            var event = document.createEvent('Event');
+            event.initEvent('cmpLoaded', true, true);
+            window.dispatchEvent(event);
+        };
+        firstScript.parentNode.insertBefore(element, firstScript);
+        function makeStub() {
+            var TCF_LOCATOR_NAME = '__tcfapiLocator';
+            var queue = [];
+            var win = window;
+            var cmpFrame;
+            function addFrame() {
+                var doc = win.document;
+                var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+                if (!otherCMP) {
+                    if (doc.body) {
+                        var iframe = doc.createElement('iframe');
+                        iframe.style.cssText = 'display:none';
+                        iframe.name = TCF_LOCATOR_NAME;
+                        doc.body.appendChild(iframe);
+                    } else {
+                        setTimeout(addFrame, 5);
+                    }
+                }
+                return !otherCMP;
+            }
+            function tcfAPIHandler() {
+                var gdprApplies;
+                var args = arguments;
+                if (!args.length) {
+                    return queue;
+                } else if (args[0] === 'setGdprApplies') {
+                    if (
+                        args.length > 3 &&
+                        args[2] === 2 &&
+                        typeof args[3] === 'boolean'
+                    ) {
+                        gdprApplies = args[3];
+                        if (typeof args[2] === 'function') {
+                            args[2]('set', true);
+                        }
+                    }
+                } else if (args[0] === 'ping') {
+                    var retr = {
+                        gdprApplies: gdprApplies,
+                        cmpLoaded: false,
+                        cmpStatus: 'stub'
+                    };
+                    if (typeof args[2] === 'function') {
+                        args[2](retr);
+                    }
+                } else {
+                    queue.push(args);
+                }
+            }
+            function postMessageEventHandler(event) {
+                var msgIsString = typeof event.data === 'string';
+                var json = {};
+                try {
+                    if (msgIsString) {
+                        json = JSON.parse(event.data);
+                    } else {
+                        json = event.data;
+                    }
+                } catch (ignore) { }
+                var payload = json.__tcfapiCall;
+                if (payload) {
+                    window.__tcfapi(
+                        payload.command,
+                        payload.version,
+                        function (retValue, success) {
+                            var returnMsg = {
+                                __tcfapiReturn: {
+                                    returnValue: retValue,
+                                    success: success,
+                                    callId: payload.callId
+                                }
+                            };
+                            if (msgIsString) {
+                                returnMsg = JSON.stringify(returnMsg);
+                            }
+                            event.source.postMessage(returnMsg, '*');
+                        },
+                        payload.parameter
+                    );
+                }
+            }
+            while (win) {
+                try {
+                    if (win.frames[TCF_LOCATOR_NAME]) {
+                        cmpFrame = win;
+                        break;
+                    }
+                } catch (ignore) { }
+                if (win === window.top) {
+                    break;
+                }
+                win = win.parent;
+            }
+            if (!cmpFrame) {
+                addFrame();
+                win.__tcfapi = tcfAPIHandler;
+                win.addEventListener('message', postMessageEventHandler, false);
+            }
+        };
+        makeStub();
+        var uspStubFunction = function () {
+            var arg = arguments;
+            if (typeof window.__uspapi !== uspStubFunction) {
+                setTimeout(function () {
+                    if (typeof window.__uspapi !== 'undefined') {
+                        window.__uspapi.apply(window.__uspapi, arg);
+                    }
+                }, 500);
+            }
+        };
+        var checkIfUspIsReady = function () {
+            uspTries++;
+            if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+                console.warn('USP is not accessible');
+            } else {
+                clearInterval(uspInterval);
+            }
+        };
+        if (typeof window.__uspapi === 'undefined') {
+            window.__uspapi = uspStubFunction;
+            var uspInterval = setInterval(checkIfUspIsReady, 6000);
+        }
+    })();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
 
 
     
-    <!--[if lte IE 8]><script type="text/javascript" src="//s.imgur.com/min/iepoly.js?1606759903"></script>
+    <!--[if lte IE 8]><script type="text/javascript" src="//s.imgur.com/min/iepoly.js?1606956791"></script>
 <![endif]-->
     
 </head>
 <body class="">
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6N38SF"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    
     <div id="drop-layer"></div>
                         <div id="div-ad-uppermost-container"></div>
 <div id="cta-container-placeholder2" class='nodisplay'></div>
@@ -370,15 +504,15 @@ if(typeof jQuery === 'undefined') {
 
 
 
-                    <script type="text/javascript" src="//s.imgur.com/min/react15.js?1606759903"></script>
+                    <script type="text/javascript" src="//s.imgur.com/min/react15.js?1606956791"></script>
 
         
-        <script type="text/javascript" src="//s.imgur.com/min/global.js?1606759903"></script>
+        <script type="text/javascript" src="//s.imgur.com/min/global.js?1606956791"></script>
 
         <script type="text/javascript">
             Imgur.Environment = {
-                galleryScripts:             ["\/\/s.imgur.com\/min\/gallery.js?1606759903"],
-                galleryCSS:                 ["\/\/s.imgur.com\/min\/gallery.css?1606759903"],
+                galleryScripts:             ["\/\/s.imgur.com\/min\/gallery.js?1606956791"],
+                galleryCSS:                 ["\/\/s.imgur.com\/min\/gallery.css?1606956791"],
                 isDev:                      false,
                 isSubdomain:                Imgur.Util.isSubdomain('imgur.com'),
                 amplitudeKey:               'f1fc2abcb6d136bd4ef338e7fc0b9d05',
@@ -392,7 +526,7 @@ if(typeof jQuery === 'undefined') {
                 signed:                     false,
                 auth:                       {},
                 recaptcha_key:              '6LdqeaoUAAAAAKCYTa33bVxx-XiIZyfbeBFfo6Jv',
-                msid:                       '37692d1aaba4d6ea29a55be259eef55a',
+                msid:                       'ecac18da5de9517284eab02f65ed966d',
                 beta:                       {
                     enabled: false,
                     inBeta:  false
@@ -410,7 +544,7 @@ if(typeof jQuery === 'undefined') {
                 apiClientId:                '546c25a59c58ad7',
                 adsEnabled:                 true,
                 sponsoredReactionGifs:      null || {},
-                countryCode:                'FI',
+                countryCode:                'DE',
                 subscription:               {
                     isSubscribed:               false,
                     subscriptionBeta:           false,
