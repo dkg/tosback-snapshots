@@ -2942,7 +2942,7 @@ data-template="eight-year-comic">
                 <p class="artist-name num-options-1">{{artistName}}</p>
               </div>
             </div>
-            <p class="parentoption-votes num-votes-{{votes}}">{{votes}} vote</p>
+            <!-- Votes displayed here -->
           </div>
         </li>
       {{/each}}
@@ -2997,6 +2997,7 @@ data-template="eight-year-comic">
           <div class="flex">
             <div class="bestof-header-results fade-in">
               <h1 class="title uppercase bestof-logo text center m-auto">{{bestOf.title}} <span class="title-results">Results</span></h1>
+              {{#if status.open}}
 
                 {{#unless UserStatus.Voted}}
                   {{> (bestOf.resultsPageNotVoted) }}
@@ -3008,7 +3009,11 @@ data-template="eight-year-comic">
                   {{#if bestOf.customButton}}
                     {{> (bestOf.customButton)}}
                   {{/if}}
+
                 {{/unless}}
+                {{else}}
+                  {{> (bestOf.closedResults) }}
+                {{/if}}
               {{/data}}
             </div>
           </div><!-- .flex -->
@@ -6221,13 +6226,21 @@ data-template="9YearAnniversary"
 
 <script type="text/html"
         data-partial
-        data-template="bestof2020-results-voted"
+        data-template="bestof2020-results-closed"
 >
-    <p class="mt-2">Thanks for submitting your Best of 2020 picks.
-    <br>Here's the leaderboard for the top 40!
+    <h2>Voting is now over!</h2>
+    <p class="mt-2">Here’s the leaderboard for the top 40 tracks.
     <br />Note: Final tally will be adjusted to remove any less-than-legitimate voting</p>
 
-    <p class='mt-2'><strong>Voting ends Friday Dec 4 @ 5pm PT</strong></p>
+</script>
+
+<script type="text/html"
+        data-partial
+        data-template="bestof2020-results-voted"
+>
+    <h2>Voting is now over!</h2>
+    <br>Here's the leaderboard for the top 40!
+    <br />Note: Final tally will be adjusted to remove any less-than-legitimate voting</p>
 </script>
 
 
