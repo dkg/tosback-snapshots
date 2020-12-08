@@ -12,7 +12,7 @@
 <link  rel="stylesheet" type="text/css" href="https://resource.csnstatic.com/retail/vendors/jquery.colorbox/1.6.4/colorbox.css"   />
 <link  rel="stylesheet" type="text/css" href="https://resource.csnstatic.com/retail/vendors/csn-themes/v1.1/carsales.min.css"   />
 <link  rel="stylesheet" type="text/css" href="https://resource.csnstatic.com/retail/cmp-retail-staticpages/lightbox-assets-aa832ca0c5466daa1ee9.css"   />
-<link  rel="stylesheet" type="text/css" href="https://resource.csnstatic.com/retail/cmp-retail-staticpages/common-assets-48ddac0c6e12de5730ce.css"   />
+<link  rel="stylesheet" type="text/css" href="https://resource.csnstatic.com/retail/cmp-retail-staticpages/common-assets-a198f875fba2439f3ccd.css"   />
 <script src="https://resource.csnstatic.com/retail/sitenav/topnav-desktop-top-assets-a1e6d606e4f73ab651d8.js" ></script>
 <script src="https://dd.cdn.csnglobal.net/tags.js" ></script>
 <script src="https://resource.csnstatic.com/retail/vendors/jquery/3.3.1/jquery-3.3.1.min.js" ></script>
@@ -185,7 +185,7 @@
                 <li class="vip"><a href="https://www.carsales.com.au/car-valuations/" data-webm-clickvalue="Value cars">Value cars</a></li>
                 <li class="vip"><a href="https://www.carsales.com.au/car-research/" data-webm-clickvalue="Research cars">Research cars</a></li>
                 <li class="vip"><a href="https://www.carsales.com.au/editorial/car-comparisons/" data-webm-clickvalue="Compare cars">Compare cars</a></li>
-                <li class="vip"><a href="https://www.strattonfinance.com.au/" data-webm-clickvalue="car-finance" target="_blank">Car Finance</a></li>
+                <li class="vip"><a href="https://www.carsales.com.au/car-finance" data-webm-clickvalue="car-finance" target="_self">Car Finance</a></li>
                 <li><a href="https://www.tyresales.com.au/" data-webm-clickvalue="Find Tyres" target="_blank">Find Tyres</a></li>
                 <li><a href="https://www.carsales.com.au/facts" target="_blank" data-webm-clickvalue="CarFacts History Reports">carsales FACTS+</a></li>
                 <li><a href="https://www.redbook.com.au/inspect/" target="_blank" data-webm-clickvalue="Car Inspection">Car Inspection</a></li>
@@ -363,7 +363,8 @@
         </ul>
     </nav>
     
-</div>    <div class="container layout-main">
+</div>
+    <div class="container layout-main">
 
 <div class="row">
   <div class="content-header align-items-end d-flex">
@@ -763,7 +764,7 @@
 <script src="https://resource.csnstatic.com/retail/vendors/popper/1.12.9/popper.min.js" ></script>
 <script src="https://resource.csnstatic.com/retail/vendors/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
 <script src="https://resource.csnstatic.com/retail/cmp-retail-staticpages/lightbox-assets-aa832ca0c5466daa1ee9.js" ></script>
-<script src="https://resource.csnstatic.com/retail/cmp-retail-staticpages/common-assets-48ddac0c6e12de5730ce.js" ></script>
+<script src="https://resource.csnstatic.com/retail/cmp-retail-staticpages/common-assets-a198f875fba2439f3ccd.js" ></script>
 <script src="https://resource.csnstatic.com/retail/cmp-retail-staticpages/page-assets-32040bc59f82a024e064.js" ></script>
 
 <div class="carsales">
@@ -1008,7 +1009,7 @@ General Help                            </h3>
         </section>
     </footer>
 </div>
-<!-- Generated At 2020-12-04 12:36:27Z -->
+<!-- Generated At 2020-12-08 12:43:15Z -->
 <script>
 
     window.CsnInsights = window.CsnInsights || {};
@@ -1502,6 +1503,20 @@ General Help                            </h3>
              else if (absScrollPercent >= 25)
                  scrolltext = "Viewed more than Or equal to" + absScrollPercent + " %";
              return scrolltext;
+             },
+             isIPad: function (fieldsObject) {                 
+                const uAgent = window.navigator.userAgent.toLowerCase();
+                const isIPad = (uAgent.indexOf('ipad') > -1 || uAgent.indexOf('mac') > -1) &&
+                    window.navigator.maxTouchPoints && window.navigator.maxTouchPoints > 0 &&
+                    'ontouchend' in document;
+
+                if (isIPad === true) {
+                    /* convert json string to object and add a new key/value then convert it back to json string*/
+                    var cd11 = JSON.parse(fieldsObject['dimension11']);
+                    cd11['isipad'] = true;
+                    fieldsObject['dimension11'] = JSON.stringify(cd11);
+                }
+                return fieldsObject;               
              }
          };
         return {
@@ -1516,6 +1531,9 @@ General Help                            </h3>
             },
             getScrollText: function (absScrollPercent) {
                 return methods.getScrollText(absScrollPercent);
+            },
+            isIPad: function(fieldsObject) {
+                return methods.isIPad(fieldsObject);
             }
          }
 
@@ -2010,9 +2028,9 @@ General Help                            </h3>
                 if (nonInteraction === true) {
                     fieldsObject['nonInteraction'] = 1;
                 }
-            },
+            },        
             sendEventMetadata: function (eventData, fieldsObject) {
-                if ((eventData) && (Object.keys(eventData).length !== 0)) {
+                if ((eventData) && (Object.keys(eventData).length !== 0)) {                    
                     var evdata = {};
                     Object.keys(eventData).forEach(function (key, index) {
                         if ((eventData[key] || '').length <= 100) {
@@ -2028,6 +2046,10 @@ General Help                            </h3>
             },
             sendPageView: function (pageUrl, fieldsObject, originalEventUrl, nonInteraction ) {
                 methods.processNIE(fieldsObject, nonInteraction);
+                try { 
+                    fieldsObject = window.CsnInsightsHelper.isIPad(fieldsObject);
+                } catch (e) { }
+
                 if ((pageUrl !== undefined) && (pageUrl !== '')) {
                     var pageUrlWithQueryStringParams = pageUrl;
                     if ((location.search !== '') && (location.search !== undefined)) {
@@ -2055,7 +2077,7 @@ General Help                            </h3>
                 }
             },
             sendEvent: function (eventCategory, eventLabel, eventAction, eventData, fieldsObject, pageUrl, originalEventUrl, nonInteraction) {
-                var pageUrlWithQueryStringParams = pageUrl;
+                var pageUrlWithQueryStringParams = pageUrl;               
                 if ((pageUrl !== undefined) && (pageUrl !== '')) {
 
                     if ((location.search !== '') && (location.search !== undefined)) {
@@ -2111,7 +2133,10 @@ General Help                            </h3>
                 methods.updateDataParamKeys(eventContext, fieldsObject);
                 methods.setContentGroupsInDimension(fieldsObject);
                 methods.extractQueryParams(fieldsObject);
-
+               
+                try {
+                    fieldsObject = window.CsnInsightsHelper.isIPad(fieldsObject);
+                } catch (e) { }
 
                 if ((searchResults) && Object.keys(searchResults).length > 0) {
                     methods.appendEcommerceImpressionTagsIfApplicable(eventContext, searchResults);
@@ -2713,7 +2738,19 @@ fbq('init', '247251645467298');        <img height="1" width="1" style="display:
                 this.trackPageLoad();
                 this.trackListing(eventObject, eventData, searchResults);
             }
-            else {
+            else if (pageType === '/comenzar-venta' || (area === 'seller' && pageType === 'item-select') &&
+                window.CsnInsights.Constants.tkappname.indexOf('chileautos') > -1) {
+                this.trackPageLoad();
+                this.trackPrivateSell(eventObject, eventData);
+            }           
+            else if (area === 'seller' && pageType === 'thankyou-cash-payment' &&
+                window.CsnInsights.Constants.tkappname.indexOf('chileautos') > -1) {
+                this.trackPageLoad();
+                this.trackInitiateCheckout(eventObject, eventData);
+                this.trackAddPaymentInfo(eventObject, eventData);                
+            }           
+            else
+            {
             }
 
             this.trackPurchase(eventData, orderItems);
@@ -2731,7 +2768,11 @@ fbq('init', '247251645467298');        <img height="1" width="1" style="display:
                 this.trackSaveEvent(eventObject, fbEventLabel);
                 return;
             }
-
+            if (eventLabel === 'select-item' && eventCategory === 'private-sell' &&
+                window.CsnInsights.Constants.tkappname.indexOf('chileautos') > -1) {
+                this.trackAddToCart(eventObject);
+                return;
+            } 
             if ((eventCategory === 'join' && eventLabel === 'create account') ||
                 (eventCategory === 'auth_join' && eventLabel === 'create_an_account')) {
                 this.trackCustom('MembershipSignup');
@@ -2926,25 +2967,49 @@ if (!(CsnInsights.fireOnLoad === undefined || CsnInsights.fireOnLoad === true)) 
             var that = this;
             var cart = undefined
             try {
+
                 if ((typeof (orderItems) !== 'undefined') && (orderItems) && (orderItems instanceof Array)) {
                     cart = orderItems
                 }
                 else if ((typeof (orderItems) !== 'undefined') && (orderItems || '') != "") {
                     cart = JSON.parse(orderItems);
                 }
-
+                var prod = (eventData.contentGroup1 || eventData.contentgroup1 || eventData.area || '')
+                var pageType = (eventData.contentGroup2 || eventData.contentgroup2 || eventData.pagetype || eventData.pageType || '')
                 if ((typeof (cart) !== 'undefined') && (cart instanceof Array) && (cart.length > 0)) {
                     prod_cat = ( cart[0]['productcode'] || eventData['productcode'] || '')
-                    prod = (eventData.contentGroup1 || eventData.contentgroup1 || eventData.area ||  '')
+                    //prod = (eventData.contentGroup1 || eventData.contentgroup1 || eventData.area ||  '')
 
                     fbq('track', 'Purchase', { content_type: "product", currency: eventData['currency'], value: cart[0]['price'], content_category : prod_cat, content_name : prod});
                 }
-
+                /* chileauto private sell funnel */
+                if (prod === 'seller' && pageType === 'thankyou-cash-payment' &&
+                    window.CsnInsights.Constants.tkappname.indexOf('chileautos') > -1) {
+                    prod_cat = 'private_sell';                  
+                    fbq('track', 'Purchase', { content_type: "product", currency: eventData['currency'], content_category: prod_cat, content_name: prod });
+                }
             } catch (e) {
 
             }
-            
-
+        },
+        trackInitiateCheckout: function (eventObject) {
+            var area = (eventData.contentGroup1 || eventData.contentgroup1 || eventData.area || '')
+            prod_cat = 'private_sell';
+            fbq('track', 'InitiateCheckout', { content_type: "product", currency: eventData['currency'], content_category: prod_cat, content_name: area });         
+        },
+        trackAddPaymentInfo: function (eventObject) {
+            var area = (eventData.contentGroup1 || eventData.contentgroup1 || eventData.area || '')
+            prod_cat = 'private_sell';         
+            fbq('track', 'AddPaymentInfo', { content_type: "product", currency: eventData['currency'], content_category: prod_cat, content_name: area });           
+        },
+        trackAddToCart: function (eventObject) {
+            var area = (eventData.contentGroup1 || eventData.contentgroup1 || eventData.area || '')
+            //var pageType = (eventData.contentGroup2 || eventData.contentgroup2 || eventData.pagetype || eventData.pageType || '')           
+            fbq('track', 'AddToCart', { content_type: "product", content_category: 'private_sell', content_name: area });
+        },
+        trackPrivateSell: function (eventObject, eventData) {           
+            eventObject['content_category'] = 'private_sell';
+            fbq('track', 'ViewContent', eventObject);
         }
     };
 
@@ -2979,7 +3044,13 @@ if (!(CsnInsights.fireOnLoad === undefined || CsnInsights.fireOnLoad === true)) 
         window.FacebookPixelTracker = window.FacebookPixelTracker || new FacebookPixelTracker();
 
         if ((CsnInsights.fireOnLoad === undefined || CsnInsights.fireOnLoad === true)) {
-            window.FacebookPixelTracker.sendPageView(CsnInsights.metaData, undefined, undefined, (((CsnInsights || {}).searchResultsV2) || ((CsnInsights || {}).searchResultsv2))
+            var eventData = CsnInsights.metaData || {};
+            if (Object.keys(CsnInsights.metaData).length === 0 && CsnInsights.metaData.constructor === Object &&
+                Object.keys(CsnInsights.fieldsObject).length !== 0) {
+                eventData = CsnInsights.fieldsObject;
+            }
+
+            window.FacebookPixelTracker.sendPageView(eventData, undefined, undefined, (((CsnInsights || {}).searchResultsV2) || ((CsnInsights || {}).searchResultsv2))
                 , null, CsnInsights.LoadEventId, (eventContext.orderItems || null));
         }
 
@@ -3155,6 +3226,5 @@ if (!(CsnInsights.fireOnLoad === undefined || CsnInsights.fireOnLoad === true)) 
         }
 
     })(window);
-    </script>
-</body>
+    </script></body>
 </html>
