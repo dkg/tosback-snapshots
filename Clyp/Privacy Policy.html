@@ -25,7 +25,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://static.clyp.it/site/images/favicons/apple-touch-icon-precomposed.png">
 
     <link href="//static.clyp.it/site/css/siteinformation-1.0.6.css" rel="stylesheet"/>
-    <link href="//static.clyp.it/site/css/clyp-1.0.35.css" rel="stylesheet"/>
+    <link href="//static.clyp.it/site/css/clyp-1.0.36.css" rel="stylesheet"/>
 
     <script>
     window.clypCampaigns = [
@@ -444,7 +444,8 @@
             <div data-bind="visible: calloutVisible(), css: calloutColor()" class="upload-time-remaining-callout">
     <div data-bind="text: calloutText()"></div>
     <div>
-        <a href="/premium-pricing" onclick="return trackPremiumCalloutClick();">Upgrade to Premium</a> for unlimited uploads.
+        <a data-bind="text: linkText()" href="/premium-pricing" onclick="return trackPremiumCalloutClick();"></a>
+        <span data-bind="text: benefitText()"></span>
     </div>
 </div>
             <!-- /ko -->
@@ -463,7 +464,7 @@
                 <!-- ko 'if': name === 'Upload' -->
                 <div class="upload-tab tab" data-bind="css: { 'active': $parent.activeTab() === 'Upload' && name === 'Upload' }">
                     <form class="row file-upload-box" id="file-upload-box" method="post" enctype="multipart/form-data">
-                        <div class="upload-zone" data-bind="with: uploadBoxVm">
+                        <div class="upload-zone" data-bind="with: uploadBoxVm, css: { 'disabled': $parent.cursorDisabled() }">
                             <!-- ko 'if': isProcessing() -->
                             <div class="upload-processing-text">Processing ...</div>
                             <!-- /ko -->
@@ -552,7 +553,7 @@
     </div>
 </div>
 
-    <script src="//static.clyp.it/site/js/global-1.0.70.js"></script>
+    <script src="//static.clyp.it/site/js/global-1.0.72.js"></script>
 <script src="https://www.google.com/recaptcha/api.js?render=6LeHdeEUAAAAAMAK_VmVxt3NvbT6B6erhVAG_bfW"></script>
 
 <script>
