@@ -115,8 +115,8 @@ layout orion app
 
 </script>
 <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="x0fakUKQ/GHaznjLJjC1k02fqXPfhgY+B+iDuptpWMk1yKrXFxIVXuI5XJXFy/fuqvGx+ZQyiL7dpTvB56I+Cw==" />
-<script src="https://d3nn82uaxijpm6.cloudfront.net/packs/js/chunking_runtime-8f9cc0a5749e1232eb8c.js"></script>
+<meta name="csrf-token" content="/xdRC9DQq0tqSBcIhfRTwz2LAXNFKRTvIkQjSqjKKS7jUVaaG8pGFDJU2U/FjSccZg6MIWm4O4ULy9bpDRaU2w==" />
+<script src="https://d3nn82uaxijpm6.cloudfront.net/packs/js/chunking_runtime-a3891f94950a3461e089.js"></script>
 <script src="https://d3nn82uaxijpm6.cloudfront.net/packs/js/global-891fd1279d696a4abf6a.chunk.js"></script>
 <script src="https://d3nn82uaxijpm6.cloudfront.net/assets/strava-head-d0f4c1f1472bbfd71048d6bbbe5e3b9041ec1330343ab67cfc3a6099b8fee09e.js"></script>
 
@@ -150,9 +150,7 @@ layout orion app
   
     window.Strava = window.Strava || {};
     var _enabled = true;
-    var _snowplow = true;
     var _options = options;
-    var _ready = null;
     var _snowplowReady = null;
   
     window.Strava.ExternalAnalytics = window.Strava.ExternalAnalytics || (
@@ -160,17 +158,8 @@ layout orion app
         isEnabled: function() {
           return _enabled;
         },
-        snowplowEnabled: function() {
-          return _snowplow;
-        },
         isDebug: function() {
           return _options.debug;
-        },
-        track: function() {
-          if(this.isEnabled()) {
-            analytics.track.apply(analytics, arguments)
-            this.log('%ctrack %O', arguments)
-          }
         },
         trackV2: function(event) {
           var eventData = {
@@ -180,7 +169,7 @@ layout orion app
             'element': event.element || null,
             'properties': event.properties || {}
           }
-          if (this.snowplowEnabled()) {
+          if (this.isEnabled()) {
             snowplow('trackSelfDescribingEvent', {
               schema: 'iglu:com.strava/track/jsonschema/1-0-0',
               data: eventData
@@ -188,42 +177,21 @@ layout orion app
           } else {
             !!console.table && console.table(eventData);
           }
-          this.track(event.category, eventData);
         },
-        page: function(category, name, properties, options) {
+        page: function(pageProperties) {
           if(this.isEnabled()) {
-            var _category = category;
-            var _name = name;
-            if(!_name) {
-              _name = category;
-              _category = null;
-            }
-            var _properties = properties || {};
-            _properties.is_mobile = _options.is_mobile;
-            _properties.mobile_os = _options.os;
-            _properties.athlete_id = _options.athlete_id;
-            _properties.locale = _options.locale;
-            analytics.page(_category, _name, _properties, options)
-            this.log('%canalytics %O', [_category, _name, _properties, options])
-          }
-          if(this.snowplowEnabled()) {
-            snowplow('trackPageView');
+            snowplow(
+              'trackPageView',
+              null,
+              [{
+                schema: 'iglu:com.acme/static_context/jsonschema/1-0-0',
+                data: pageProperties
+              }]
+            );
           }
         },
-        trackLink: function() {
-          if(this.isEnabled()) {
-            analytics.trackLink.apply(analytics, arguments)
-            this.log('%cattaching to track link %O', arguments)
-          }
-        },
-        trackForm: function() {
-          if(this.isEnabled()) {
-            analytics.trackForm.apply(analytics, arguments);
-            this.log('%cattaching to track form %O', arguments);
-          }
-        },
-        identifyV2: function(athleteId, options, eventName) {
-          if (this.snowplowEnabled()) {
+        identify: function(athleteId, options, eventName) {
+          if (this.isEnabled()) {
             var properties = options || {}
             properties.athlete_id = athleteId;
             var eventData = {
@@ -238,20 +206,9 @@ layout orion app
               data: eventData
             });
           }
-          this.identify(athleteId, options);
-        },
-        identify: function() {
-          if(this.isEnabled()) {
-            analytics.identify.apply(analytics, arguments);
-            this.log('%cidentify(%O)', arguments);
-          }
         },
         reset: function() {
           if(this.isEnabled()) {
-            analytics.reset.apply(analytics, arguments);
-            this.log('%creset(%O)', arguments);
-          }
-          if(this.snowplowEnabled()) {
             snowplow('setUserId', null)
             var spCookie = document.cookie.match('_sp_id\\.[a-f0-9]+')
             if(spCookie != null) {
@@ -260,34 +217,18 @@ layout orion app
           }
         },
         setupSnowplow: function(id) {
-          if(this.snowplowEnabled()) {
+          if(this.isEnabled()) {
             snowplow("newTracker", "cf", "c.strava.com", {
               appId: "strava-web",
               platform: "web"
             });
             snowplow('setUserId', id);
+            snowplow('enableFormTracking');
           }
-        },
-        anonymousId: function() {
-          var d = jQuery.Deferred();
-          if (this.isEnabled()) {
-            if (!_ready) {
-              _ready = jQuery.Deferred();
-              analytics.ready(function(){
-                _ready.resolve(analytics.user().anonymousId());
-              });
-            }
-            _ready.always(function(anonymousId){
-              d.resolve(anonymousId);
-            });
-          } else {
-            d.reject(null);
-          }
-          return d;
         },
         getDomainUserId: function() {
           var d = jQuery.Deferred();
-          if (this.snowplowEnabled()) {
+          if (this.isEnabled()) {
             if (!_snowplowReady) {
               _snowplowReady = jQuery.Deferred();
               snowplow(function(){
@@ -324,48 +265,13 @@ layout orion app
 <script>
   !function(){
     var analytics = window.analytics = window.analytics || [];
-    if(!analytics.initialize) {
-      if(analytics.invoked) {
-        window.console && console.error && console.error("Segment snippet included twice.");
-      } else {
-        analytics.invoked = !0;
-        analytics.methods = ["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];
-        analytics.factory = function(t) {
-          return function() {
-            var e = Array.prototype.slice.call(arguments);
-            e.unshift(t);
-            analytics.push(e);
-            return analytics
-          }
-        };
-        for(var t = 0; t < analytics.methods.length; t++) {
-          var e = analytics.methods[t];
-          analytics[e] = analytics.factory(e)
-        }
-        analytics.load = function(t) {
-          var e = document.createElement("script");
-          e.type = "text/javascript";
-          e.async = !0;
-          e.src = ("https:" === document.location.protocol ? "https://" : "http://") + "cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js";
-          var n = document.getElementsByTagName("script")[0];
-          n.parentNode.insertBefore(e,n)
-        };
-        analytics.SNIPPET_VERSION = "4.0.0";
-        analytics.load("4U9hx9LX3VDSlP3o5AoG4vHoGdJY340J");
+    if(analytics.invoked) {
+      window.console && console.error && console.error("Segment snippet included twice.");
+    } else {
+      (function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://dy9z4910shqac.cloudfront.net/1oG5icild0laCtJMi45LjA.js","snowplow"));
+      Strava.ExternalAnalytics.setupSnowplow();
   
-        if (true) {
-          (function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://dy9z4910shqac.cloudfront.net/1oG5icild0laCtJMi45LjA.js","snowplow"));
-          Strava.ExternalAnalytics.setupSnowplow();
-        }
-  
-        if(Strava.ExternalAnalytics.isDebug()) {
-          analytics.debug();
-        } else {
-          analytics.debug(false);
-        }
-  
-        Strava.ExternalAnalytics.page(null, null, null);
-      }
+      Strava.ExternalAnalytics.page(null);
     }
   }();
 </script>
@@ -423,23 +329,15 @@ layout orion app
           } else {
   
             Strava.ExternalAnalytics
-              .anonymousId()
-              .always(function(anonymousId){
-                if (anonymousId) {
-                  options.data['anonymousId'] = anonymousId;
+              .getDomainUserId()
+              .always(function(domainUserId){
+                if (domainUserId) {
+                  options.data['domainUserId'] = domainUserId;
                 }
   
-                Strava.ExternalAnalytics
-                  .getDomainUserId()
-                  .always(function(domainUserId){
-                    if (domainUserId) {
-                      options.data['domainUserId'] = domainUserId;
-                    }
-  
-                    if(that.isEnabled()) {
-                      branch.link(options, callback);
-                    };
-                });
+                if(that.isEnabled()) {
+                  branch.link(options, callback);
+                };
             });
           }
           return d;
@@ -530,7 +428,7 @@ layout orion app
 </noscript>
 
 <header id='global-header'><!--
-deploy: fc0a9429a0a2cf1fef8e09ff6d3132cbdf93d320
+deploy: 0698d4d4a801f3e8e01be05e1c4a5f3df2f0892c
 -->
 <!--[if lte IE 8]>
 <div class='alert alert-warning message warning mb-0 text-center'>
@@ -1281,23 +1179,11 @@ Terms and Conditions
 </script>
 <script>
   jQuery(document).ready(function() {
-    jQuery('a').each(addSegmentAttr);
-    jQuery('button').each(addSegmentAttr);
-    function addSegmentAttr(index, element){
-      var $element = jQuery(element);
-      var data = $element.data();
-      var external_analytics_event = data.segioevent;
-      if (external_analytics_event && external_analytics_event.name) {
-        var props = jQuery.extend({}, external_analytics_event);
-        delete props.name;
-  
-        Strava.ExternalAnalytics.trackLink($element, external_analytics_event.name, props);
-      }
-    }
-  
     // Scroll Tracking
     jQuery(document).one('scroll', function(){
-      Strava.ExternalAnalytics.track('Page Scrolled', null, null, null);
+      Strava.ExternalAnalytics.trackV2({
+        category: 'page_scrolled'
+      });
     });
   });
 </script>
