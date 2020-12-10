@@ -27,15 +27,15 @@
  
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-<link rel="stylesheet" href="https://pwimages-a.akamaihd.net/arcportal_static/css/thirdparty.min.css">
-<link rel="stylesheet" href="https://pwimages-a.akamaihd.net/arcportal_static/css/major.min.css">
-<link rel="stylesheet" href="https://pwimages-a.akamaihd.net/arcportal_static/css/style.min.css">
-<link rel="stylesheet" href="https://pwimages-a.akamaihd.net/arcportal_static/css/style.en.min.css">
-<link rel="stylesheet" href="https://pwimages-a.akamaihd.net/arcportal_static/css/account-base.min.css">
-<link rel="stylesheet" href="https://pwimages-a.akamaihd.net/arcportal_static/css/my-account.min.css">
+<link rel="stylesheet" href="http://images-cdn.perfectworld.com/arcportal_static/css/thirdparty.min.css">
+<link rel="stylesheet" href="http://images-cdn.perfectworld.com/arcportal_static/css/major.min.css">
+<link rel="stylesheet" href="http://images-cdn.perfectworld.com/arcportal_static/css/style.min.css">
+<link rel="stylesheet" href="http://images-cdn.perfectworld.com/arcportal_static/css/style.en.min.css">
+<link rel="stylesheet" href="http://images-cdn.perfectworld.com/arcportal_static/css/account-base.min.css">
+<link rel="stylesheet" href="http://images-cdn.perfectworld.com/arcportal_static/css/my-account.min.css">
 <!--arc client-->
 <!--arc overlay-->
-<!--[if lt IE 9]> <script src="https://pwimages-a.akamaihd.net/arcportal_static/js/html5.min.js"></script> <![endif]-->
+<!--[if lt IE 9]> <script src="http://images-cdn.perfectworld.com/arcportal_static/js/html5.min.js"></script> <![endif]-->
 
 <script>
 	var arrScripts = [];
@@ -55,7 +55,7 @@
 	pageInfo['subdomain'] = subdomain_defined ? "www" : 'www';
 	pageInfo['action'] = "terms";
 		pageInfo['redirect_after_login'] = "";
-		pageInfo['JSON2'] = "https:\/\/pwimages-a.akamaihd.net\/arcportal_static\/easyXDM\/json2.js";
+		pageInfo['JSON2'] = "http:\/\/images-cdn.perfectworld.com\/arcportal_static\/easyXDM\/json2.js";
 	
 	pageInfo['need_captcha'] = false;
 	
@@ -90,7 +90,7 @@
     var billingCartUrl = "https:\/\/billing.arcgames.com\/en";
     var recaptchaSiteKey = "6Lc7EQATAAAAAHVqJRWd6jG2iw51yGKG6GoZnJpu";
 </script>
-<script src="https://pwimages-a.akamaihd.net/arcportal_static/dist/js/script.min.js"></script>
+<script src="http://images-cdn.perfectworld.com/arcportal_static/dist/js/script.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadRecaptchaCallback&render=explicit&hl=en" async defer></script>
 
 </head>
@@ -274,7 +274,7 @@ FBLogin.init({
         <div class="defender-line"></div>
         <div class="defender-content">
         	<div class="arc-defender">
-                <img src="https://pwimages-a.akamaihd.net/arcportal_static/images/web-defender/arc-defender.png" />
+                <img src="http://images-cdn.perfectworld.com/arcportal_static/images/web-defender/arc-defender.png" />
                 <h3>Arc Defender</h3>
             </div>
             <p class="overview">Looks like you are logging in with a new computer or browser. For your security, please verify your account prior to logging in. We have emailed you a pin to verify you are the owner of this account.</p>
@@ -299,7 +299,7 @@ FBLogin.init({
         <div class="defender-line"></div>
         <div class="defender-content">
         	<div class="arc-defender">
-                <img src="https://pwimages-a.akamaihd.net/arcportal_static/images/web-defender/arc-defender.png" />
+                <img src="http://images-cdn.perfectworld.com/arcportal_static/images/web-defender/arc-defender.png" />
                 <h3>Arc Defender</h3>
             </div>
             <p class="overview">Great! We have verified that you have appropriate access to this account.</p>
@@ -1341,7 +1341,7 @@ WebFontConfig = {
 
 (function() {
 	var wf = document.createElement('script');
-	wf.src = 'https://pwimages-a.akamaihd.net/arcportal_static/js/webfont.min.js';
+	wf.src = 'http://images-cdn.perfectworld.com/arcportal_static/js/webfont.min.js';
 	wf.type = 'text/javascript';
 	wf.async = 'true';
 	var s = document.getElementsByTagName('script')[0];
@@ -1376,20 +1376,20 @@ if(!Modernizr.mq('only all') && !$.cookie("pushDownBrowserMessage_status")){
 Modernizr.load([
 	{
 		test: window.matchMedia,
-		nope: 'https://pwimages-a.akamaihd.net/arcportal_static/js/media.match.min.js'
+		nope: 'http://images-cdn.perfectworld.com/arcportal_static/js/media.match.min.js'
 	},
 	{
 		test: Modernizr.input.placeholder,
-		nope: 'https://pwimages-a.akamaihd.net/arcportal_static/js/jquery.placeholder.min.js',
+		nope: 'http://images-cdn.perfectworld.com/arcportal_static/js/jquery.placeholder.min.js',
 		callback: function(){
 			$('input[type="text"]').placeholder();
 		}
 	},
 	{
-		load: 'https://pwimages-a.akamaihd.net/arcportal_static/js/colorbox/jquery.colorbox.js',
+		load: 'http://images-cdn.perfectworld.com/arcportal_static/js/colorbox/jquery.colorbox.js',
 	},
 	{
-		load: 'https://pwimages-a.akamaihd.net/arcportal_static/js/enquire.min.js',
+		load: 'http://images-cdn.perfectworld.com/arcportal_static/js/enquire.min.js',
 		complete: function () {
       		var topMenu = $('.header .dropdown-content');
       		enquire
@@ -1424,5 +1424,5 @@ Modernizr.load([
     src="https://www.facebook.com/tr?id=1643497985891270&ev=PageView&noscript=1"
     /></noscript>
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5W7VQB"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"b60617cf0c","applicationID":"118713629","transactionName":"Z1BVMEBVWRFWVhANWl4adgdGXVgMGFEBAlRFWUNLU1ZYF0MaEAFHXUY=","queueTime":0,"applicationTime":252,"atts":"SxdCRghPSk4VVEZeTk1I","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"b60617cf0c","applicationID":"118713629","transactionName":"Z1BVMEBVWRFWVhANWl4adgdGXVgMGFEBAlRFWUNLU1ZYF0MaEAFHXUY=","queueTime":0,"applicationTime":264,"atts":"SxdCRghPSk4VVEZeTk1I","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
 </html>
