@@ -51,7 +51,8 @@
                   siteIdentifier: "main site",
                   pageCategory: "",
                   pageSubCategory: "",
-                  type: ""
+                  type: "",
+                  appVersion: "",
                 },
                 content: {
                   name: "privacy policy",
@@ -71,7 +72,8 @@
                     targetExperience: "",
                     responsiveSiteVersion: "desktop",
                     visitorType: "",
-                    gaCampaign: ""
+                    gaCampaign: "",
+                    salesrepFlag: "no"
                   }
                 }
               },
@@ -98,10 +100,27 @@
         (function(){
             var width = ( window.innerWidth != "undefined" ) ? window.innerWidth : document.documentElement.clientWidth;
             digitalData.user.profile.profileInfo.responsiveSiteVersion = ( width < 720 ) ? "mobile" : ( width < 992 ) ? "tablet" : "desktop";
+            var isSalesRep = "no", lsObject = JSON.parse(localStorage.getItem('vng.cart')), urlParams = new URLSearchParams(window.location.search);
+            if (lsObject !== null && lsObject.salesRepId !== null) { isSalesRep = "yes"; } else { if (urlParams.has('salesRepId')) { isSalesRep = "yes"; }}
+            digitalData.user.profile.profileInfo.salesrepFlag = isSalesRep;
         })();
 
     </script>
-<link rel="stylesheet" href="/etc.clientlibs/vonage/clientlibs/clientlib-site.min.4d8dbdb2486a83d028e1d5cd258e06c9.css" type="text/css">
+<script type="text/javascript">
+    var eCommerceConfig = {
+        b2bApiUrl: "https:\/\/www.vonage.com\/Vonage\/services\/apexrest\/v1\/",
+        storefrontName: "Vonage",
+        priceBook: "VBC Pricebook",
+        zuora: {
+          pageId: "",
+          iframeUrl: "https:\/\/rest.zuora.com\/apps\/PublicHostedPageLite.do"
+        },
+        addressValidation: {
+            apiUrl: "https:\/\/api.vonagebusiness.com\/"
+        }
+    }
+</script>
+<link rel="stylesheet" href="/etc.clientlibs/vonage/clientlibs/clientlib-site.min.287a2523a9d403726099c314cdfcbf90.css" type="text/css">
 <link rel="shortcut icon" type="image/x-icon" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/favicon.ico" />
 <link rel="icon" type="image/x-icon" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/favicon.ico" />
 </head>
@@ -142,6 +161,16 @@
 <path fill="currentColor" d="M662.8662,108.6001 L679.5432,69.5551 C679.6372,69.3361 679.9462,69.3361 680.0392,69.5551 L696.7162,108.6001 L662.8662,108.6001 Z M679.7912,51.1071 C672.8172,51.1071 668.5552,56.3981 665.7452,61.6891 C662.8662,67.1111 628.4302,147.8001 628.4302,147.8001 L646.1242,147.8001 L656.0112,124.6511 L703.5712,124.6511 L713.4582,147.8001 L731.1512,147.8001 C731.1512,147.8001 696.7162,67.1111 693.8372,61.6891 C691.0272,56.3981 686.7642,51.1071 679.7912,51.1071 L679.7912,51.1071 Z"></path>
 <path fill="currentColor" d="M779.0156,110.9336 L809.3046,110.9336 C809.1626,125.7876 795.2966,134.2006 780.5996,134.2006 C762.1676,134.2006 750.0976,121.9986 750.0976,99.9996 C750.0976,76.2466 761.2716,65.6606 781.6336,65.6606 C794.3806,65.6606 804.9786,70.8726 807.2096,82.8856 L824.7716,82.8856 C821.6926,61.8536 802.3226,49.9996 780.5996,49.9996 C751.7376,49.9996 733.1746,68.9996 733.1746,99.9996 C733.1746,130.9996 751.7376,149.6286 780.5996,149.6286 C792.7686,149.6286 805.0416,143.1036 809.3636,136.2116 L809.3076,147.7996 L825.5076,147.7996 L825.5076,118.3036 L825.5076,96.3036 L779.0156,96.3036 L779.0156,110.9336 Z"></path>
 <polygon fill="currentColor" points="912.5908 68.1992 912.5908 52.2002 843.8578 52.2002 843.8578 147.8002 912.5908 147.8002 912.5908 131.7992 860.7908 131.7992 860.7908 106.6672 908.5508 106.6672 908.5508 90.6662 860.7908 90.6662 860.7908 68.1992"></polygon>
+</svg>
+</a>
+</div>
+<div class="ecomm-link ecomm-link--mobile ">
+<a href="#" class="ecomm-link__btn" aria-label="redirect to cart page">
+<svg width="24" height="21" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" fill-rule="evenodd">
+<path d="M8.22 17.7c-.87 0-1.57.7-1.57 1.57 0 .87.7 1.57 1.57 1.57.87 0 1.57-.7 1.57-1.57 0-.87-.7-1.57-1.57-1.57m9.68 1.57c0 .87-.7 1.57-1.57 1.57-.87 0-1.57-.7-1.57-1.57 0-.87.7-1.57 1.57-1.57.87 0 1.57.7 1.57 1.57m2.1-7.35V6.05H5.2L4.63 4H0v1.12h3.78l.26.94 1.78 6.42-.76 3.6H20v-1.12H6.44l.41-1.95L20 11.92z" fill="#000" fill-rule="nonzero" />
+<circle fill="#FA7655" cx="20" cy="4" r="4" />
+</g>
 </svg>
 </a>
 </div>
@@ -386,6 +415,16 @@ See what industry experts are saying about us.
 </div>
 </div>
 </div>
+<div class="ecomm-link ecomm-link--desktop Vlt-topnav__item Vlt-topnav__item--cart">
+<a href="#" class="ecomm-link__btn" aria-label="redirect to cart page">
+<svg width="24" height="21" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" fill-rule="evenodd">
+<path d="M8.22 17.7c-.87 0-1.57.7-1.57 1.57 0 .87.7 1.57 1.57 1.57.87 0 1.57-.7 1.57-1.57 0-.87-.7-1.57-1.57-1.57m9.68 1.57c0 .87-.7 1.57-1.57 1.57-.87 0-1.57-.7-1.57-1.57 0-.87.7-1.57 1.57-1.57.87 0 1.57.7 1.57 1.57m2.1-7.35V6.05H5.2L4.63 4H0v1.12h3.78l.26.94 1.78 6.42-.76 3.6H20v-1.12H6.44l.41-1.95L20 11.92z" fill="#000" fill-rule="nonzero" />
+<circle fill="#FA7655" cx="20" cy="4" r="4" />
+</g>
+</svg>
+</a>
+</div>
 <div class="Vlt-topnav__item Vlt-topnav__item--contact Vlt-topnav__btn">
 <a class="Vlt-topnav__link" href="/contact-us/" target="_self" aria-label="Go to the Contact us page">Contact us</a>
 </div>
@@ -397,6 +436,7 @@ See what industry experts are saying about us.
 <a class="Vlt-utility-nav__link" href="https://www.vonageforhome.com/" target="_blank" aria-describedby="new-window">Vonage for Home</a>
 </li>
 <li class="Vlt-utility-nav__item">
+
 <a class="Vlt-utility-nav__link" href="/log-in/" target="_self">Log In</a>
 </li>
 <li class="Vlt-utility-nav__item">
@@ -492,6 +532,7 @@ Argentina (Español)
 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
 <div class="landingPageHero aem-GridColumn aem-GridColumn--default--12">
 <header class="landing-page-hero      ">
+
 <section class="breadcrumbs breadcrumbs--light" data-swiftype-index="false">
 <div class="container">
 <div class="row">
@@ -677,6 +718,6 @@ Legal/Policy
 </div>
 </div>
 </div>
-<script type="text/javascript" src="/etc.clientlibs/vonage/clientlibs/clientlib-site.min.cbd24d17a10c6b9e4922d83546ce4822.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/vonage/clientlibs/clientlib-site.min.848ab7b04e2030fcf1400f274a4cfd02.js"></script>
 </body>
 </html>
