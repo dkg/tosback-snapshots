@@ -16,8 +16,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Roboto+Mono:400,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="/news/assets/built/screen.css?v=7fab860145" />
-    <link rel="stylesheet" type="text/css" href="/news/assets/css/algolia-search.css?v=7fab860145" />
+    <link rel="stylesheet" type="text/css" href="/news/assets/built/screen.css?v=b86586ee0c" />
+    <link rel="stylesheet" type="text/css" href="/news/assets/css/algolia-search.css?v=b86586ee0c" />
 
     <script src="https://cdn.freecodecamp.org/news-assets/algolia/algoliasearch-3-33-0/algoliasearch.min.js"></script>
     <script src="https://cdn.freecodecamp.org/news-assets/algolia/autocomplete-0-36-0/autocomplete.min.js"></script>
@@ -261,21 +261,92 @@
     </div>
     <div class="site-nav-right">
         <div class="nav-group">
-            <a class="nav-forum" href=https://forum.freecodecamp.org/>Forum</a>
-
-            <a class="toggle-button-nav" href="https://www.freecodecamp.org/donate/">
-                Donate
-            </a>
+            <a class="nav-item" href=https://forum.freecodecamp.org/>Forum</a>
+            <a class='nav-item' href='https://www.freecodecamp.org/learn'>Curriculum</a>
         </div>
 
     </div>
 </nav>
-        <a class="donation-banner" id="donation-banner-link" href=https://www.freecodecamp.org/>
+        <a class="donation-banner" id="donation-banner-link" href=https://www.freecodecamp.org/donate/>
     <p>
-        Learn to code — <span>free 3,000-hour curriculum</span>
+        Help our nonprofit pay for servers. <span>Donate Now</span>.
     </p>
 </a>
+<script>
+    // Conditionally load stripe
+    const loadStripeList = ['en'];
 
+    if (loadStripeList.includes(`en`)) {
+
+        // Set keys based on environment
+        const stripePublicKey = location.hostname === "www.freecodecamp.org" ?
+            "pk_live_E6Z6xPM8pEsJziHW905zpAvF" : "pk_test_xM2wpbgtyotYqFCK6Ss6noxP008nxRyaE9";
+        const donatePageUrl = 'https://www.freecodecamp.org/donate/';
+        const successUrl = 'https://www.freecodecamp.org/news/thank-you-for-donating/';
+        let stripe;
+
+        const onClick = (e) => {
+            e.preventDefault();
+            if (window.Stripe) {
+                handleStripeCheckoutRedirect();
+            } else if (document.querySelector('#stripe-js')) {
+                document
+                    .querySelector('#stripe-js')
+                    .addEventListener('load', handleStripeLoadAndRedirect);
+            } else {
+                stripeScriptLoader(loadStripeAndRedirect);
+            }
+        }
+
+        const stripeScriptLoader = onload => {
+            let s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.id = 'stripe-js';
+            s.key = 'stripe-js';
+            s.async = true;
+            s.src = 'https://js.stripe.com/v3/';
+            s.onload = onload;
+            document.getElementsByTagName('head')[0].appendChild(s);
+        };
+
+        const loadAndInitializeStripe = () => stripeScriptLoader(() => {
+            handleStripeLoad();
+        });
+
+        const handleStripeLoad = () => {
+            stripe = window.Stripe(stripePublicKey);
+        }
+
+        const handleStripeLoadAndRedirect = () => {
+            handleStripeLoad();
+            handleStripeCheckoutRedirect();
+        }
+
+        const loadStripeAndRedirect = () => {
+            loadAndInitializeStripe();
+            handleStripeCheckoutRedirect();
+        }
+        const handleStripeCheckoutRedirect = async () => {
+            const item = [{
+                plan: `monthly-donation-500`,
+                quantity: 1
+            }];
+            const { error } = await stripe.redirectToCheckout({
+                items: item,
+                successUrl: 'https://www.freecodecamp.org/news/thank-you-for-donating/',
+                cancelUrl: donatePageUrl
+            });
+            if (error) {
+                location.href = donatePageUrl;
+            }
+        }
+
+        document.getElementById("donation-banner-link").addEventListener("click", onClick);
+        loadAndInitializeStripe();
+
+    }
+
+</script>
         <div id="error-message"></div>
 
         
@@ -505,7 +576,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
         </script>
-    <script type="text/javascript" src="/news/assets/built/jquery.fitvids.js?v=7fab860145"></script>
+    <script type="text/javascript" src="/news/assets/built/jquery.fitvids.js?v=b86586ee0c"></script>
 
     <script type="text/javascript" src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism.min.js"></script>
     <script type="text/javascript"
