@@ -115,7 +115,7 @@ layout orion app
 
 </script>
 <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="JzM8l7XnSr+qqjh2NfxwSQS7F2bBOgxUL78m43wLE1/UjLZWTf4LxaneTl/OOHLWGvJsvOu9aQb/3iA4xTrBfg==" />
+<meta name="csrf-token" content="r8duKlu907TwD/t+oALemNy7NonLHODrK6mGYyAHcvtO+hyWdYPhOi38PLTFPOEphx6S300nygcD7i5fVc5Jrw==" />
 <script src="https://d3nn82uaxijpm6.cloudfront.net/packs/js/chunking_runtime-a3891f94950a3461e089.js"></script>
 <script src="https://d3nn82uaxijpm6.cloudfront.net/packs/js/global-891fd1279d696a4abf6a.chunk.js"></script>
 <script src="https://d3nn82uaxijpm6.cloudfront.net/assets/strava-head-d0f4c1f1472bbfd71048d6bbbe5e3b9041ec1330343ab67cfc3a6099b8fee09e.js"></script>
@@ -123,14 +123,6 @@ layout orion app
 
 <link rel="stylesheet" media="screen" href="https://d3nn82uaxijpm6.cloudfront.net/assets/legal/show-789412fa247383dcb604fe23040452854ea76e6e24cb754e8f2e9e3d0706aaac.css" />
 <title>Strava Privacy Policy</title>
-<script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
-    {'gtm.start': new Date().getTime(),event:'gtm.js'}
-    );var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','googleTagManagerDataLayer', "GTM-TP845S");
-</script>
 
 
 <script>
@@ -179,6 +171,12 @@ layout orion app
           } else {
             !!console.table && console.table(eventData);
           }
+        },
+        trackLink: function() {
+        },
+        trackForm: function() {
+        },
+        identifyV2: function () {
         },
         page: function(pageProperties) {
           if(this.isEnabled()) {
@@ -281,7 +279,7 @@ layout orion app
 <script>
   !function(debug){
     window.Strava = window.Strava || {};
-    var _enabled = true;
+    var _enabled = false;
     var _debug = !!debug;
     var _branchData = null;
   
@@ -418,19 +416,12 @@ layout orion app
   }(false);
 </script>
 
-<script>
-  (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
-  branch.init("key_live_lmpPsfj2DP8CflI4rmzfiemerte7sgwm", {});
-</script>
 
 </head>
 <body>
-<noscript>
-<iframe height='0' src='//www.googletagmanager.com/ns.html?id=GTM-TP845S' style='display:none;visibility:hidden' width='0'></iframe>
-</noscript>
 
 <header id='global-header'><!--
-deploy: 95800ce0a6d38265811534279c93a9155a625892
+deploy: 001846c10374072294a43f2e2c8c20a591e2ce1f
 -->
 <!--[if lte IE 8]>
 <div class='alert alert-warning message warning mb-0 text-center'>
