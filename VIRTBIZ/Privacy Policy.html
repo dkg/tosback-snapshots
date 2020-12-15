@@ -69,7 +69,7 @@ padding: 0 !important;
 <!-- <link rel='stylesheet' id='dlmenu-css'  href='https://www.virtbiz.com/wp-content/themes/emily/library/css/dlmenu.css?ver=1.0.0' type='text/css' media='all' /> -->
 <!-- <link rel='stylesheet' id='theme-css'  href='https://www.virtbiz.com/wp-content/themes/emily/theme.css?ver=1.0.0' type='text/css' media='all' /> -->
 <!-- <link rel='stylesheet' id='wp-block-library-css'  href='https://www.virtbiz.com/wp-includes/css/dist/block-library/style.min.css?ver=5.5.3' type='text/css' media='all' /> -->
-<!-- <link rel='stylesheet' id='contact-form-7-css'  href='https://www.virtbiz.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.3' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='contact-form-7-css'  href='https://www.virtbiz.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.3.1' type='text/css' media='all' /> -->
 <!-- <link rel='stylesheet' id='rotatingtweets-css'  href='https://www.virtbiz.com/wp-content/plugins/rotatingtweets/css/style.css?ver=5.5.3' type='text/css' media='all' /> -->
 <!-- <link rel='stylesheet' id='social-widget-css'  href='https://www.virtbiz.com/wp-content/plugins/social-media-widget/social_widget.css?ver=5.5.3' type='text/css' media='all' /> -->
 <!-- <link rel='stylesheet' id='prettify-css'  href='https://www.virtbiz.com/wp-content/themes/emily/library/extensions/prettify/prettify.css?ver=20110601' type='text/css' media='all' /> -->
@@ -80,14 +80,14 @@ padding: 0 !important;
 body.layout-responsive { margin: 0; } .wcnt-bs .container { width: 1080px; max-width: 100%!important; } .content.span9 { margin-left: 0; }@media (min-width: 980px) { .container { width: 1080px!important; max-width:100%; } .container > .wrap { margin: 0 10px; } }
 </style>
 <link rel='stylesheet' id='style-css'  href='https://www.virtbiz.com/wp-content/themes/emily-child/style.css?ver=1.0.0' type='text/css' media='all' />
-<script src='//www.virtbiz.com/wp-content/cache/wpfc-minified/e60yxft6/6eztm.js' type="text/javascript"></script>
-<!-- <script type='text/javascript' src='https://www.virtbiz.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script> -->
-<!-- <script type='text/javascript' src='https://www.virtbiz.com/wp-content/plugins/enable-jquery-migrate-helper/js/jquery-migrate-1.4.1-wp.js?ver=1.4.1-wp' id='jquery-migrate-js'></script> -->
+<script src='//www.virtbiz.com/wp-content/cache/wpfc-minified/6zv424r3/hkfn7.js' type="text/javascript"></script>
+<!-- <script type='text/javascript' src='https://www.virtbiz.com/wp-content/plugins/enable-jquery-migrate-helper/js/jquery/jquery-1.12.4-wp.js?ver=1.12.4-wp' id='jquery-core-js'></script> -->
+<!-- <script type='text/javascript' src='https://www.virtbiz.com/wp-content/plugins/enable-jquery-migrate-helper/js/jquery-migrate/jquery-migrate-1.4.1-wp.js?ver=1.4.1-wp' id='jquery-migrate-js'></script> -->
 <!-- <script type='text/javascript' src='https://www.virtbiz.com/wp-content/themes/emily/library/js/modernizr.min.js?ver=2.6.2' id='modernizr-js-js'></script> -->
 <!-- <script type='text/javascript' src='https://www.virtbiz.com/wp-content/themes/emily/library/js/selectbox.js?ver=0.6.1' id='selectbox-js'></script> -->
 <script type='text/javascript' id='ai-js-js-extra'>
 /* <![CDATA[ */
-var MyAjax = {"ajaxurl":"https:\/\/www.virtbiz.com\/wp-admin\/admin-ajax.php","security":"11999b3a75"};
+var MyAjax = {"ajaxurl":"https:\/\/www.virtbiz.com\/wp-admin\/admin-ajax.php","security":"edcf6b5314"};
 /* ]]> */
 </script>
 <script src='//www.virtbiz.com/wp-content/cache/wpfc-minified/f6da30rh/6eztm.js' type="text/javascript"></script>
@@ -97,13 +97,64 @@ var MyAjax = {"ajaxurl":"https:\/\/www.virtbiz.com\/wp-admin\/admin-ajax.php","s
 <link rel='shortlink' href='https://www.virtbiz.com/?p=17' />
 <link rel="alternate" type="application/json+oembed" href="https://www.virtbiz.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.virtbiz.com%2Fabout%2Ftos%2Fprivacy%2F" />
 <link rel="alternate" type="text/xml+oembed" href="https://www.virtbiz.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.virtbiz.com%2Fabout%2Ftos%2Fprivacy%2F&#038;format=xml" />
+<script type="text/javascript">
+var jQueryMigrateHelperHasSentDowngrade = false;
+window.onerror = function( msg, url, line, col, error ) {
+// Break out early, do not processing if a downgrade reqeust was already sent.
+if ( jQueryMigrateHelperHasSentDowngrade ) {
+return true;
+}
+var xhr = new XMLHttpRequest();
+var nonce = '97692748f9';
+var jQueryFunctions = [
+'andSelf',
+'browser',
+'live',
+'boxModel',
+'support.boxModel',
+'size',
+'swap',
+'clean',
+'sub',
+];
+var match_pattern = /\)\.(.+?) is not a function/;
+var erroredFunction = msg.match( match_pattern );
+// If there was no matching functions, do not try to downgrade.
+if ( typeof erroredFunction !== 'object' || typeof erroredFunction[1] === "undefined" || -1 === jQueryFunctions.indexOf( erroredFunction[1] ) ) {
+return true;
+}
+// Set that we've now attempted a downgrade request.
+jQueryMigrateHelperHasSentDowngrade = true;
+xhr.open( 'POST', 'https://www.virtbiz.com/wp-admin/admin-ajax.php' );
+xhr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+xhr.onload = function () {
+var response,
+reload = false;
+if ( 200 === xhr.status ) {
+try {
+response = JSON.parse( xhr.response );
+reload = response.data.reload;
+} catch ( e ) {
+reload = false;
+}
+}
+// Automatically reload the page if a deprecation caused an automatic downgrade, ensure visitors get the best possible experience.
+if ( reload ) {
+location.reload();
+}
+};
+xhr.send( encodeURI( 'action=jquery-migrate-downgrade-version&_wpnonce=' + nonce ) );
+// Suppress error alerts in older browsers
+return true;
+}
+</script>
 <link rel="icon" href="https://www.virtbiz.com/wp-content/uploads/cropped-SiteIcon-32x32.png" sizes="32x32" />
 <link rel="icon" href="https://www.virtbiz.com/wp-content/uploads/cropped-SiteIcon-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://www.virtbiz.com/wp-content/uploads/cropped-SiteIcon-180x180.png" />
 <meta name="msapplication-TileImage" content="https://www.virtbiz.com/wp-content/uploads/cropped-SiteIcon-270x270.png" />
 <script type="text/javascript">var $ = jQuery.noConflict();</script>
 </head>
-<body data-rsssl=1 class="wordpress ltr en_US child-theme y2020 m12 d02 h21 wednesday logged-out singular singular-page singular-page-17 page-template-default layout-1c bootstrap layout-responsive scheme-royalblue">
+<body data-rsssl=1 class="wordpress ltr en_US child-theme y2020 m12 d14 h15 monday logged-out singular singular-page singular-page-17 page-template-default layout-1c bootstrap layout-responsive scheme-royalblue">
 <div id="dl-menu" class="dl-menuwrapper"><ul id="dl-menu" class="dl-menu"><li id="menu-item-829" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-has-children menu-item-829"><a href="https://www.virtbiz.com/about/">About VIRTBIZ</a>
 <ul class="dl-submenu">
 <li id="menu-item-1092" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1092"><a href="https://www.virtbiz.com/about/history/">Our History</a></li>
@@ -1249,13 +1300,13 @@ data-image-key="3">
 <h3 class="widget-title">Recent Posts</h3>
 <ul>
 <li>
+<a href="https://www.virtbiz.com/still-got-the-blues/">Still got The Blues</a>
+</li>
+<li>
 <a href="https://www.virtbiz.com/update-dallas-following-july-7-shootings/">Update from Dallas following July 7 shootings</a>
 </li>
 <li>
 <a href="https://www.virtbiz.com/welcome-ehostdirect-customers/">Welcome, eHostDirect customers</a>
-</li>
-<li>
-<a href="https://www.virtbiz.com/virtbiz-telephone-contact-numbers/">VIRTBIZ telephone contact numbers</a>
 </li>
 </ul>
 </div></div><div id="text-4" class="widget widget_text widget-widget_text"><div class="widget-wrap widget-inside">			<div class="textwidget"><p><a href="https://www.virtbiz.com/support/index.php?/default_import/Tickets/Submit">Get Support</a> | <a href="https://www.virtbiz.com/about/tos/privacy/">Privacy Policy</a> | <a href="https://www.virtbiz.com/contact-us/">Contact Us</a></p>
@@ -1265,9 +1316,9 @@ data-image-key="3">
 </div><!--/.widget-area-->
 <div id="subsidiary-fixed" class="widget-area widget-area-subsidiary">
 <div class="inner-wrap clearfix">
-<div id="widget_latest_tweets-2" class="widget widget_widget_latest_tweets widget-widget_widget_latest_tweets"><div class="widget-wrap widget-inside"><h3 class="widget-title">Latest Tweets</h3><!-- twitter cache has been updated! -->
+<div id="widget_latest_tweets-2" class="widget widget_widget_latest_tweets widget-widget_widget_latest_tweets"><div class="widget-wrap widget-inside"><h3 class="widget-title">Latest Tweets</h3>
 <div class="widget-latest-tweets widget-latest-tweets-inverse">
-<ul><li><a class="twitter_time" target="_blank" href="http://twitter.com/@virtbiz/statuses/1323047804290347009"><span>@GitGudHosts We remember!  Anytime you need some custom network or cloud connectivity, we're ready!</span><br><span><i class="icon-time icon-white opacity-50"></i> 31 days ago</span></a></li><li><a class="twitter_time" target="_blank" href="http://twitter.com/@virtbiz/statuses/1304111660593020931"><span>Service on the "Rodan" cPanel server are fully restored. Thank you to all impacted users for your patience.</span><br><span><i class="icon-time icon-white opacity-50"></i> 83 days ago</span></a></li><li><a class="twitter_time" target="_blank" href="http://twitter.com/@virtbiz/statuses/1304039019739783169"><span>Websites hosted on the Rodan cPanel server are currently offline.  We're aware of a problem with the cloud environm… ''. ((strlen('https://t.co/3KzPAeEDR7')>=250 ? substr('https://t.co/3KzPAeEDR7',0,250).'...':'https://t.co/3KzPAeEDR7')).''</span><br><span><i class="icon-time icon-white opacity-50"></i> 83 days ago</span></a></li>
+<ul><li><a class="twitter_time" target="_blank" href="http://twitter.com/@virtbiz/statuses/1323047804290347009"><span>@GitGudHosts We remember!  Anytime you need some custom network or cloud connectivity, we're ready!</span><br><span><i class="icon-time icon-white opacity-50"></i> 42 days ago</span></a></li><li><a class="twitter_time" target="_blank" href="http://twitter.com/@virtbiz/statuses/1304111660593020931"><span>Service on the "Rodan" cPanel server are fully restored. Thank you to all impacted users for your patience.</span><br><span><i class="icon-time icon-white opacity-50"></i> 95 days ago</span></a></li><li><a class="twitter_time" target="_blank" href="http://twitter.com/@virtbiz/statuses/1304039019739783169"><span>Websites hosted on the Rodan cPanel server are currently offline.  We're aware of a problem with the cloud environm… ''. ((strlen('https://t.co/3KzPAeEDR7')>=250 ? substr('https://t.co/3KzPAeEDR7',0,250).'...':'https://t.co/3KzPAeEDR7')).''</span><br><span><i class="icon-time icon-white opacity-50"></i> 95 days ago</span></a></li>
 </ul>
 <div class="follow-us-links"><a href="http://www.facebook.com/virtbiz" class="follow-us-icon facebook"></a><a href="http://twitter.com/@@virtbiz" class="follow-us-icon twitter"></a><a href="https://www.linkedin.com/company/virtbiz-internet-services" class="follow-us-icon linkedin"></a></div></div></div></div>			
 </div><!--./inner-wrap-->
@@ -1280,9 +1331,9 @@ data-image-key="3">
 </div>
 </footer><!--/#footer -->
 </div><!--/#container -->
-<!-- <link rel='stylesheet' id='wds_effects-css'  href='https://www.virtbiz.com/wp-content/plugins/slider-wd/css/wds_effects.css?ver=1.2.37' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='wds_effects-css'  href='https://www.virtbiz.com/wp-content/plugins/slider-wd/css/wds_effects.css?ver=1.2.38' type='text/css' media='all' /> -->
 <!-- <link rel='stylesheet' id='wds_font-awesome-css'  href='https://www.virtbiz.com/wp-content/plugins/slider-wd/css/font-awesome/font-awesome.css?ver=4.6.3' type='text/css' media='all' /> -->
-<!-- <link rel='stylesheet' id='wds_frontend-css'  href='https://www.virtbiz.com/wp-content/plugins/slider-wd/css/wds_frontend.css?ver=1.2.37' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='wds_frontend-css'  href='https://www.virtbiz.com/wp-content/plugins/slider-wd/css/wds_frontend.css?ver=1.2.38' type='text/css' media='all' /> -->
 <link rel="stylesheet" type="text/css" href="//www.virtbiz.com/wp-content/cache/wpfc-minified/9k7b7kpn/6eztm.css" media="all"/>
 <script type='text/javascript' src='https://www.virtbiz.com/wp-content/themes/emily/library/bootstrap/js/bootstrap.min.js?ver=2.3.1' id='bootstrap-js-js'></script>
 <script type='text/javascript' id='contact-form-7-js-extra'>
@@ -1290,14 +1341,14 @@ data-image-key="3">
 var wpcf7 = {"apiSettings":{"root":"https:\/\/www.virtbiz.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://www.virtbiz.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.3' id='contact-form-7-js'></script>
+<script type='text/javascript' src='https://www.virtbiz.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.3.1' id='contact-form-7-js'></script>
 <script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LcXabIZAAAAACBS0BeoJrLmURKXnjHvjWjj95oz&#038;ver=3.0' id='google-recaptcha-js'></script>
 <script type='text/javascript' id='wpcf7-recaptcha-js-extra'>
 /* <![CDATA[ */
 var wpcf7_recaptcha = {"sitekey":"6LcXabIZAAAAACBS0BeoJrLmURKXnjHvjWjj95oz","actions":{"homepage":"homepage","contactform":"contactform"}};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://www.virtbiz.com/wp-content/plugins/contact-form-7/modules/recaptcha/script.js?ver=5.3' id='wpcf7-recaptcha-js'></script>
+<script type='text/javascript' src='https://www.virtbiz.com/wp-content/plugins/contact-form-7/modules/recaptcha/script.js?ver=5.3.1' id='wpcf7-recaptcha-js'></script>
 <script type='text/javascript' src='https://www.virtbiz.com/wp-content/themes/emily/library/js/placeholder.js?ver=1.0.0' id='placeholder-js'></script>
 <script type='text/javascript' src='https://www.virtbiz.com/wp-content/themes/emily/library/extensions/fancybox/source/fancybox.js?ver=2.1.4' id='fancybox-js'></script>
 <script type='text/javascript' src='https://www.virtbiz.com/wp-content/themes/emily/library/extensions/prettify/prettify.js?ver=20110601' id='prettify-js'></script>
@@ -1305,7 +1356,7 @@ var wpcf7_recaptcha = {"sitekey":"6LcXabIZAAAAACBS0BeoJrLmURKXnjHvjWjj95oz","act
 <script type='text/javascript' src='https://www.virtbiz.com/wp-content/themes/emily/library/js/dlmenu.js?ver=1.0.0' id='dlmenu-js-js'></script>
 <script type='text/javascript' src='https://www.virtbiz.com/wp-content/themes/emily/library/js/theme.js?ver=1.0.0' id='theme-js-js'></script>
 <script type='text/javascript' src='https://www.virtbiz.com/wp-includes/js/wp-embed.min.js?ver=5.5.3' id='wp-embed-js'></script>
-<script type='text/javascript' src='https://www.virtbiz.com/wp-content/plugins/slider-wd/js/jquery.mobile.js?ver=1.2.37' id='wds_jquery_mobile-js'></script>
+<script type='text/javascript' src='https://www.virtbiz.com/wp-content/plugins/slider-wd/js/jquery.mobile.js?ver=1.2.38' id='wds_jquery_mobile-js'></script>
 <script type='text/javascript' id='wds_frontend-js-extra'>
 /* <![CDATA[ */
 var wds_object = {"is_free":"1","pause":"Pause","play":"Play"};
@@ -1495,7 +1546,7 @@ var wds_params = [];
 }
 wds_params[0] = wds_param;
 </script>
-<script type='text/javascript' src='https://www.virtbiz.com/wp-content/plugins/slider-wd/js/wds_frontend.js?ver=1.2.37' id='wds_frontend-js'></script>
+<script type='text/javascript' src='https://www.virtbiz.com/wp-content/plugins/slider-wd/js/wds_frontend.js?ver=1.2.38' id='wds_frontend-js'></script>
 <!--[if (gte IE 6)&(lte IE 8)]>
 <script type='text/javascript' src='https://www.virtbiz.com/wp-content/themes/emily/library/js/selectivizr-min.js?ver=1.0.2'></script>
 <![endif]-->
@@ -1514,4 +1565,4 @@ type : 'inside'
 });
 </script>
 </body>
-</html><!-- WP Fastest Cache file was created in 0.38564419746399 seconds, on 02-12-20 21:28:41 -->
+</html><!-- WP Fastest Cache file was created in 0.17554593086243 seconds, on 14-12-20 15:30:42 -->
