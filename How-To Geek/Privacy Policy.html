@@ -1419,6 +1419,67 @@ body.darkmode .greybox_callout {
   #purch_Y_R_1_1, #purch_Y_L_0_1, #purch_Y_S_0_1, #purch_Y_R_0_1, #purch_Y_L_1_1, #div-thetop1 {
     display: none;
   }
+
+  .moka-trending-bar {
+    display: none;
+  }
+}
+
+
+.moka-trending-bar {
+  border-left: 0;
+  border-right: 0;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  width: 400px;
+  min-height: 37px;
+  padding: 0;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  -webkit-mask: linear-gradient(-90deg, transparent, black 15%);
+}
+.moka-trending-bar::-webkit-scrollbar {
+  display: none; /* Everyone but IE/Edge and FF */
+}
+.trending-bar-link-separator {
+  color: #BE1522;
+  margin: 0 4px;
+}
+.moka-trending-bar-label {
+  text-transform: uppercase;
+  font-size: small;
+  color: #BE1522;
+  background-color: white;
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0px;
+  margin-left: 2px;
+}
+body.darkmode .moka-trending-bar-label {
+  background-color: black;
+}
+.moka-trending-bar-label svg {
+  stroke: transparent;
+  fill: #BE1522;
+  padding-top: 3px;
+  overflow: visible;
+}
+.moka-trending-bar .inner {
+  position: absolute;
+  left: 0;
+  height: 36px;
+}
+.moka-trending-bar a {
+  margin-right: 5px;
+  text-decoration: none;
+  color: black;
+}
+body.darkmode .moka-trending-bar a {
+  color: white;
 }	body {
   font-family: "Roboto", "Open Sans", sans-serif; }
   @media screen and (max-width: 768px) {
@@ -2024,16 +2085,7 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="10 Ways To Free Up Disk Space on Your Mac Hard Drive" aria-label="10 Ways To Free Up Disk Space on Your Mac Hard Drive" href='https://www.howtogeek.com/184091/5-ways-to-free-up-disk-space-on-a-mac/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/61aa631c9c344e81614070faeac4d708/wp-content/uploads/2016/11/xFullscreen_2_28_17__9_49_AM-650x300.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.6sDkS21ucd.png" alt="" role="presentation"></span></a>
-</div>
-<div class="sfp3">
-<a title="10 Ways To Free Up Disk Space on Your Mac Hard Drive" aria-label="10 Ways To Free Up Disk Space on Your Mac Hard Drive" href='https://www.howtogeek.com/184091/5-ways-to-free-up-disk-space-on-a-mac/' class='title' rel='bookmark'>10 Ways To Free Up Disk Space on Your Mac Hard Drive</a>
-</div>
-<div style="clear:both;"></div>
-</div>
-<div class="sfpost">
-<div class="sfp2" role="presentation">
-<a title="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" aria-label="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" href='https://www.howtogeek.com/259644/nest-vs.-ecobee3-vs.-honeywell-lyric-which-smart-thermostat-should-you-buy/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/f503ba6e86f0c04083b349c971b2d237/wp-content/uploads/2016/06/xsmart-thermostats-copy-650x300.jpg.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.k2ZZQf7r5R.jpg" alt="" role="presentation"></span></a>
+<a title="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" aria-label="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" href='https://www.howtogeek.com/259644/nest-vs.-ecobee3-vs.-honeywell-lyric-which-smart-thermostat-should-you-buy/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/f503ba6e86f0c04083b349c971b2d237/wp-content/uploads/2016/06/smart-thermostats-copy-650x300.jpg" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
 <a title="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" aria-label="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" href='https://www.howtogeek.com/259644/nest-vs.-ecobee3-vs.-honeywell-lyric-which-smart-thermostat-should-you-buy/' class='title' rel='bookmark'>Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?</a>
@@ -2042,37 +2094,19 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="Free Download: GarageBand for iPhone and iPad Is Essential" aria-label="Free Download: GarageBand for iPhone and iPad Is Essential" href='https://www.howtogeek.com/676612/free-download-garageband-for-iphone-and-ipad-is-essential/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/3d8d332b70bcbcc58ae8134902561533/wp-content/uploads/2020/06/xgarageband_logo_featured.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.rC9qM9YPea.png" alt="" role="presentation"></span></a>
+<a title="What&#8217;s New in macOS 10.15 Catalina, Available Now" aria-label="What&#8217;s New in macOS 10.15 Catalina, Available Now" href='https://www.howtogeek.com/439830/whats-new-in-macos-10.15-catalina-available-fall-2019/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/2ad602e88b1126b0e7675d82b90a28c2/wp-content/uploads/2019/09/catalina_featured.jpg" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="Free Download: GarageBand for iPhone and iPad Is Essential" aria-label="Free Download: GarageBand for iPhone and iPad Is Essential" href='https://www.howtogeek.com/676612/free-download-garageband-for-iphone-and-ipad-is-essential/' class='title' rel='bookmark'>Free Download: GarageBand for iPhone and iPad Is Essential</a>
+<a title="What&#8217;s New in macOS 10.15 Catalina, Available Now" aria-label="What&#8217;s New in macOS 10.15 Catalina, Available Now" href='https://www.howtogeek.com/439830/whats-new-in-macos-10.15-catalina-available-fall-2019/' class='title' rel='bookmark'>What&#8217;s New in macOS 10.15 Catalina, Available Now</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="What Does &#8220;IDGI&#8221; Mean, and How Do You Use It?" aria-label="What Does &#8220;IDGI&#8221; Mean, and How Do You Use It?" href='https://www.howtogeek.com/659290/what-does-idgi-mean-and-how-do-you-use-it/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/3155de75b347cace448e8630f121088c/wp-content/uploads/2020/02/444.png.pagespeed.ce.oS-lVnNB49.png" alt="" role="presentation"></span></a>
+<a title="Don&#8217;t Downgrade From Windows 10 to Windows 8.1" aria-label="Don&#8217;t Downgrade From Windows 10 to Windows 8.1" href='https://www.howtogeek.com/401648/dont-downgrade-from-windows-10-to-windows-8.1/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/433e623dd9cea5bc02b10847854f1665/wp-content/uploads/2019/01/rendered-1.jpg" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="What Does &#8220;IDGI&#8221; Mean, and How Do You Use It?" aria-label="What Does &#8220;IDGI&#8221; Mean, and How Do You Use It?" href='https://www.howtogeek.com/659290/what-does-idgi-mean-and-how-do-you-use-it/' class='title' rel='bookmark'>What Does &#8220;IDGI&#8221; Mean, and How Do You Use It?</a>
-</div>
-<div style="clear:both;"></div>
-</div>
-<div class="sfpost">
-<div class="sfp2" role="presentation">
-<a title="PSA: Watch Out for This New Text Message Package Delivery Scam" aria-label="PSA: Watch Out for This New Text Message Package Delivery Scam" href='https://www.howtogeek.com/511049/psa-watch-out-for-this-new-text-message-package-delivery-scam/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/53ce572b4db0143e2754c65747d29ae9/wp-content/uploads/2020/01/lowell-spam-text-on-iphone.jpg" alt="" role="presentation"></span></a>
-</div>
-<div class="sfp3">
-<a title="PSA: Watch Out for This New Text Message Package Delivery Scam" aria-label="PSA: Watch Out for This New Text Message Package Delivery Scam" href='https://www.howtogeek.com/511049/psa-watch-out-for-this-new-text-message-package-delivery-scam/' class='title' rel='bookmark'>PSA: Watch Out for This New Text Message Package Delivery Scam</a>
-</div>
-<div style="clear:both;"></div>
-</div>
-<div class="sfpost">
-<div class="sfp2" role="presentation">
-<a title="How to Take Better Photos with Your iPhone" aria-label="How to Take Better Photos with Your iPhone" href='https://www.howtogeek.com/447105/how-to-take-better-photos-with-your-iphone/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/d6094ed0c41c6413461d8578efe3487f/wp-content/uploads/2019/11/img_5dc62157b8598.jpg" alt="" role="presentation"></span></a>
-</div>
-<div class="sfp3">
-<a title="How to Take Better Photos with Your iPhone" aria-label="How to Take Better Photos with Your iPhone" href='https://www.howtogeek.com/447105/how-to-take-better-photos-with-your-iphone/' class='title' rel='bookmark'>How to Take Better Photos with Your iPhone</a>
+<a title="Don&#8217;t Downgrade From Windows 10 to Windows 8.1" aria-label="Don&#8217;t Downgrade From Windows 10 to Windows 8.1" href='https://www.howtogeek.com/401648/dont-downgrade-from-windows-10-to-windows-8.1/' class='title' rel='bookmark'>Don&#8217;t Downgrade From Windows 10 to Windows 8.1</a>
 </div>
 <div style="clear:both;"></div>
 </div>
@@ -2087,10 +2121,37 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="What&#8217;s the Best Way to Back Up My Computer?" aria-label="What&#8217;s the Best Way to Back Up My Computer?" href='https://www.howtogeek.com/242428/whats-the-best-way-to-back-up-my-computer/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/b77d13a7daf27db3103f7b7a366f912d/wp-content/uploads/2016/02/ximg_56bfe8d1f3492.jpg.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.XYqLrJLMUg.jpg" alt="" role="presentation"></span></a>
+<a title="How to Safely Dispose of (or Sell) Smarthome Hardware" aria-label="How to Safely Dispose of (or Sell) Smarthome Hardware" href='https://www.howtogeek.com/407192/how-to-safely-dispose-of-or-sell-smarthome-hardware/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/f8b9295900c1a46c1f57a87a4cb6839d/wp-content/uploads/2019/03/Hero.jpg" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="What&#8217;s the Best Way to Back Up My Computer?" aria-label="What&#8217;s the Best Way to Back Up My Computer?" href='https://www.howtogeek.com/242428/whats-the-best-way-to-back-up-my-computer/' class='title' rel='bookmark'>What&#8217;s the Best Way to Back Up My Computer?</a>
+<a title="How to Safely Dispose of (or Sell) Smarthome Hardware" aria-label="How to Safely Dispose of (or Sell) Smarthome Hardware" href='https://www.howtogeek.com/407192/how-to-safely-dispose-of-or-sell-smarthome-hardware/' class='title' rel='bookmark'>How to Safely Dispose of (or Sell) Smarthome Hardware</a>
+</div>
+<div style="clear:both;"></div>
+</div>
+<div class="sfpost">
+<div class="sfp2" role="presentation">
+<a title="How to Send and Receive Faxes Online Without a Fax Machine or Phone Line" aria-label="How to Send and Receive Faxes Online Without a Fax Machine or Phone Line" href='https://www.howtogeek.com/168841/how-to-send-and-receive-faxes-online-without-a-fax-machine-or-phone-line/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/7806ce6b23367f98dca4a65c22b417c3/wp-content/uploads/2013/07/xfax-and-copier-machine.jpg.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.Webjw94d-r.jpg" alt="" role="presentation"></span></a>
+</div>
+<div class="sfp3">
+<a title="How to Send and Receive Faxes Online Without a Fax Machine or Phone Line" aria-label="How to Send and Receive Faxes Online Without a Fax Machine or Phone Line" href='https://www.howtogeek.com/168841/how-to-send-and-receive-faxes-online-without-a-fax-machine-or-phone-line/' class='title' rel='bookmark'>How to Send and Receive Faxes Online Without a Fax Machine or Phone Line</a>
+</div>
+<div style="clear:both;"></div>
+</div>
+<div class="sfpost">
+<div class="sfp2" role="presentation">
+<a title="How to Build Your Own Computer, Part One: Choosing Hardware" aria-label="How to Build Your Own Computer, Part One: Choosing Hardware" href='https://www.howtogeek.com/howto/the-geek-blog/building-a-new-computer-part-1-choosing-hardware/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/8a96f4f64b010dad77f3fc9391126ff7/wp-content/uploads/2017/12/img_5a2bf97d91b6f-650x300.jpg" alt="" role="presentation"></span></a>
+</div>
+<div class="sfp3">
+<a title="How to Build Your Own Computer, Part One: Choosing Hardware" aria-label="How to Build Your Own Computer, Part One: Choosing Hardware" href='https://www.howtogeek.com/howto/the-geek-blog/building-a-new-computer-part-1-choosing-hardware/' class='title' rel='bookmark'>How to Build Your Own Computer, Part One: Choosing Hardware</a>
+</div>
+<div style="clear:both;"></div>
+</div>
+<div class="sfpost">
+<div class="sfp2" role="presentation">
+<a title="10 Quick Ways to Speed Up a Slow Mac" aria-label="10 Quick Ways to Speed Up a Slow Mac" href='https://www.howtogeek.com/228180/10-quick-ways-to-speed-up-a-slow-mac/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/a6fd87ca9d510397b7f28c5ac72e57b1/wp-content/uploads/2015/09/xusing-a-macbook.jpg.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.L7E8ThZwm9.jpg" alt="" role="presentation"></span></a>
+</div>
+<div class="sfp3">
+<a title="10 Quick Ways to Speed Up a Slow Mac" aria-label="10 Quick Ways to Speed Up a Slow Mac" href='https://www.howtogeek.com/228180/10-quick-ways-to-speed-up-a-slow-mac/' class='title' rel='bookmark'>10 Quick Ways to Speed Up a Slow Mac</a>
 </div>
 <div style="clear:both;"></div>
 </div>
