@@ -115,7 +115,7 @@ layout orion app
 
 </script>
 <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="ath5Yrvkszx0rOj7v7YWp9duJ55mu8syZTbstbE/I18IhScGj2LOcAOABm5JqOR92d1M/r3i83a4/k4HSyTRbg==" />
+<meta name="csrf-token" content="Pt2tIea5OGYDcWjzUzdsYHdwBFYEIK/CXckTMD1prutCEo5D4WRediWM2ORM/iJd53jxqnNGGT4IzGuMxErs6g==" />
 <script src="https://d3nn82uaxijpm6.cloudfront.net/packs/js/chunking_runtime-a3891f94950a3461e089.js"></script>
 <script src="https://d3nn82uaxijpm6.cloudfront.net/packs/js/global-891fd1279d696a4abf6a.chunk.js"></script>
 <script src="https://d3nn82uaxijpm6.cloudfront.net/assets/strava-head-d0f4c1f1472bbfd71048d6bbbe5e3b9041ec1330343ab67cfc3a6099b8fee09e.js"></script>
@@ -180,14 +180,7 @@ layout orion app
         },
         page: function(pageProperties) {
           if(this.isEnabled()) {
-            snowplow(
-              'trackPageView',
-              null,
-              [{
-                schema: 'iglu:com.acme/static_context/jsonschema/1-0-0',
-                data: pageProperties
-              }]
-            );
+            snowplow('trackPageView');
           }
         },
         identify: function(athleteId, options, eventName) {
@@ -421,7 +414,7 @@ layout orion app
 <body>
 
 <header id='global-header'><!--
-deploy: 8ea370eb8ae2337f96ba5c7fa2c2061e0bedab49
+deploy: ea506606b30e05264c96df235f523e85ad4dc6dc
 -->
 <!--[if lte IE 8]>
 <div class='alert alert-warning message warning mb-0 text-center'>
