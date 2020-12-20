@@ -169,6 +169,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.5.207/build/pdf.min.js"></script>
+
 
 <meta name="msvalidate.01" content="36BE205EA4E68F6649B38033184CC990" />
 
@@ -423,13 +425,17 @@ body.dark-mode nav * {
 body.dark-mode,
 body.dark-mode header * {
     background: rgb(45, 45, 45);
-    color: #f5f5f5;}
+    color: #f5f5f5;
+
+}
 </style>
 <style>
 body.dark-mode,
 body.dark-mode main * {
     background: rgb(45, 45, 45);
-    color: #f5f5f5;}
+    color: lightgray;
+    opacity: 75%;
+}
 </style>
 
       </ul>
@@ -528,8 +534,6 @@ body.dark-mode main * {
     <article role="main" class="blog-post">
         
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
-<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 <div id="TOC">
 <ul>
@@ -804,7 +808,7 @@ body.dark-mode main * {
   </br>
   <div id="footer-text">
   <p>
-    Powered by <a href="https://gohugo.io/"><img class="hugo-logo" src="/images/hugo-logo.svg"/></a>
+    Powered by <a href="/build"><img class="hugo-logo" src="/images/hugo-logo.svg"/></a>
   </p>
   </div>
 </footer>
