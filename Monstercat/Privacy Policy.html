@@ -5182,26 +5182,19 @@ data-template="9YearAnniversary"
     >
         <div id="notice--shop">
             <div class="banner-container container">
-                <div class="desktop">
-                    <div class="banner-left">
-                        <h2>{{label}}</h2>
+                <a href="{{url}}" target="_blank">
+                    <div class="desktop">
+                        <div class="banner-center">
+                            <img src="https://assets.monstercat.com/b/bd2020/text.png?image_width=1920" alt="{{label}}">
+                        </div>
                     </div>
-                    <div class="banner-right">
-                        <a href="{{url}}" class="button  button-bestof ">
-                            Vote Now
-                        </a>
-                        <button
-                        onclick="hideShopBanner()"
-                        class="button button--cta button--transparent ml-3 p-0">
-                        <i class="fa fa-close"></i>
-                    </button>
-                    
-                </div>
-            </div>
-            <div class="mobile">
-                <a href="{{url}}">
-                    <h3>{{label}}</h3>
                 </a>
+                
+                <div class="mobile">
+                    <a href="{{url}}" target="_blank">
+                        <img src="https://assets.monstercat.com/b/bd2020/text-mobile.png?image_width=1080" alt="{{label}}">
+                    </a>
+                </div>
             </div>
         </div>
     </script>
