@@ -884,13 +884,13 @@ if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+
         var dateFrom = new Date(
             Number('2020'),
             Number('12') - 1,
-            Number('26')
+            Number('27')
         );
 
         var dateTo = new Date(
             Number('2020'),
             Number('12') - 1,
-            Number('26')
+            Number('27')
         );
 
         if (dateFrom.getTime() < today.getTime()) {
@@ -959,8 +959,8 @@ if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+
         HwReg.set('monthNames', [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]);
         HwReg.set('abbrMonthNames', [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]);
     
-            HwReg.set('dateFrom', '2020-12-27');
-        HwReg.set('dateTo', '2020-12-30');
+            HwReg.set('dateFrom', '2020-12-28');
+        HwReg.set('dateTo', '2020-12-31');
     
     Date.format = 'dd mmm yyyy';
     WRI.eventBus.trigger('hwreg:init');
