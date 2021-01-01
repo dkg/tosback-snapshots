@@ -571,7 +571,7 @@
         <div class="copyright px-1">
             <div class="footer_legal pb-1">
                 <div class="securebadge"></div>
-                <span>© 1999–2020 Hostelworld.com Limited</span>
+                <span>© 1999–2021 Hostelworld.com Limited</span>
                 <div class="legal-info">
                     <a href="https://www.hostelworld.com/securityprivacy.php" target="_blank" rel="noopener noreferrer">Data Protection Notice</a> |
                     <a href="https://www.hostelworld.com/hosteltermsandconditions.php" target="_blank" rel="noopener noreferrer">Terms & Legal</a> |
@@ -845,7 +845,7 @@ if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+
     })(window,document,'script','dataLayer','GTM-KBCQMF');</script>
     <!-- End Google Tag Manager -->
         <script type="text/javascript">
-    var currencyList = {"EUR":{"label":"Euro","symbol":"&euro;","toEUR":1,"fromEUR":1,"h":1},"USD":{"label":"US Dollar","symbol":"US$","toEUR":1.2283972,"fromEUR":0.8141702,"h":1},"GBP":{"label":"British Pound","symbol":"&pound;","toEUR":0.9047255,"fromEUR":1.1055491,"h":1}};
+    var currencyList = {"EUR":{"label":"Euro","symbol":"&euro;","toEUR":1,"fromEUR":1,"h":1},"USD":{"label":"US Dollar","symbol":"US$","toEUR":1.2265564,"fromEUR":0.8154129,"h":1},"GBP":{"label":"British Pound","symbol":"&pound;","toEUR":0.8986463,"fromEUR":1.1130928,"h":1}};
 
     for (var code in currencyList) {
         if (currencyList.hasOwnProperty(code)) {
@@ -882,15 +882,15 @@ if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+
         today.setHours(0, 0, 0, 0);
 
         var dateFrom = new Date(
-            Number('2020'),
-            Number('12') - 1,
-            Number('31')
+            Number('2021'),
+            Number('01') - 1,
+            Number('01')
         );
 
         var dateTo = new Date(
-            Number('2020'),
-            Number('12') - 1,
-            Number('31')
+            Number('2021'),
+            Number('01') - 1,
+            Number('01')
         );
 
         if (dateFrom.getTime() < today.getTime()) {
@@ -959,8 +959,8 @@ if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+
         HwReg.set('monthNames', [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]);
         HwReg.set('abbrMonthNames', [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]);
     
-            HwReg.set('dateFrom', '2021-01-01');
-        HwReg.set('dateTo', '2021-01-04');
+            HwReg.set('dateFrom', '2021-01-02');
+        HwReg.set('dateTo', '2021-01-05');
     
     Date.format = 'dd mmm yyyy';
     WRI.eventBus.trigger('hwreg:init');
