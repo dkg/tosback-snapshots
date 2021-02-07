@@ -15,27 +15,28 @@
 
 
 
-      <!--[if gt IE 9]><!-->
-      <script type="text/javascript">
-        !function(a,b){function c(a,b){return a&&b&&a.type===b.type&&a.name===b.name&&m(a.metaData,b.metaData)}function d(a){try{if("function"!=typeof a)return a;if(!a.bugsnag){var b=i();a.bugsnag=function(){if(F=b,!I){var c=a.apply(this,arguments);return F=null,c}try{return a.apply(this,arguments)}catch(d){throw w("autoNotify",!0)&&(H.notifyException(d,null,null,"error"),D()),d}finally{F=null}},a.bugsnag.bugsnag=a.bugsnag}return a.bugsnag}catch(c){return a}}function e(){if(P){var b=function(a){if(y("autoBreadcrumbsClicks")){var b,c;try{b=n(a.target),c=o(a.target)}catch(d){b="[hidden]",c="[hidden]",l("Cross domain error when tracking click event. See https://docs.bugsnag.com/platforms/browsers/faq/#3-cross-origin-script-errors")}H.leaveBreadcrumb({type:"user",name:"UI click",metaData:{targetText:b,targetSelector:c}})}};a.addEventListener("click",b,!0)}}function f(){function b(a,b){y("autoBreadcrumbsConsole")&&H.leaveBreadcrumb({type:"log",name:"Console output",metaData:{severity:a,message:Array.prototype.slice.call(b).join(", ")}})}if("undefined"!=typeof a.console){var c=console.log,d=console.warn,e=console.error;H.enableAutoBreadcrumbsConsole=function(){H.autoBreadcrumbsConsole=!0,k(console,"log",function(){b("log",arguments)}),k(console,"warn",function(){b("warn",arguments)}),k(console,"error",function(){b("error",arguments)})},H.disableAutoBreadcrumbsConsole=function(){H.autoBreadcrumbsConsole=!1,console.log=c,console.warn=d,console.error=e},y("autoBreadcrumbsConsole")&&H.enableAutoBreadcrumbsConsole()}}function g(){function b(a){return a.split("#")[1]||""}function c(a){var c=a.oldURL,d=a.newURL,e={};return c&&d?(e.from=b(c),e.to=b(d)):e.to=location.hash,{type:"navigation",name:"Hash changed",metaData:e}}function d(){return{type:"navigation",name:"Navigated back"}}function e(){return{type:"navigation",name:"Page hidden"}}function f(){return{type:"navigation",name:"Page shown"}}function g(){return{type:"navigation",name:"Page loaded"}}function h(){return{type:"navigation",name:"DOMContentLoaded"}}function i(a,b,c,d){var e=location.pathname+location.search+location.hash;return{type:"navigation",name:"History "+a,metaData:{from:e,to:d||e,prevState:history.state,nextState:b}}}function j(a,b,c){return i("pushState",a,b,c)}function l(a,b,c){return i("replaceState",a,b,c)}function m(a){return function(){y("autoBreadcrumbsNavigation")&&H.leaveBreadcrumb(a.apply(null,arguments))}}if(P&&a.history&&a.history.state&&a.history.pushState&&a.history.pushState.bind){var n=history.pushState,o=history.replaceState;H.enableAutoBreadcrumbsNavigation=function(){H.autoBreadcrumbsNavigation=!0,k(history,"pushState",m(j)),k(history,"replaceState",m(l))},H.disableAutoBreadcrumbsNavigation=function(){H.autoBreadcrumbsNavigation=!1,history.pushState=n,history.replaceState=o},a.addEventListener("hashchange",m(c),!0),a.addEventListener("popstate",m(d),!0),a.addEventListener("pagehide",m(e),!0),a.addEventListener("pageshow",m(f),!0),a.addEventListener("load",m(g),!0),a.addEventListener("DOMContentLoaded",m(h),!0),y("autoBreadcrumbsNavigation")&&H.enableAutoBreadcrumbsNavigation()}}function h(){Q=!1}function i(){var a=document.currentScript||F;if(!a&&Q){var b=document.scripts||document.getElementsByTagName("script");a=b[b.length-1]}return a}function j(a){var b=i();b&&(a.script={src:b.src,content:w("inlineScript",!0)?b.innerHTML:""})}function k(a,b,c){var d=a[b];a[b]=function(){c.apply(this,arguments),"function"==typeof d&&d.apply(this,arguments)}}function l(b){var c=w("disableLog"),d=a.console;void 0===d||void 0===d.log||c||d.log("[Bugsnag] "+b)}function m(a,b){return s(a)===s(b)}function n(a){var b=a.textContent||a.innerText||"";return("submit"===a.type||"button"===a.type)&&(b=a.value),b=b.replace(/^\s+|\s+$/g,""),p(b,140)}function o(a){var b=[a.tagName];if(a.id&&b.push("#"+a.id),a.className&&a.className.length){var c="."+a.className.split(" ").join(".");b.push(c)}var d=b.join("");if(!document.querySelectorAll||!Array.prototype.indexOf)return d;try{if(1===document.querySelectorAll(d).length)return d}catch(e){return d}if(a.parentNode.childNodes.length>1){var f=Array.prototype.indexOf.call(a.parentNode.childNodes,a)+1;d=d+":nth-child("+f+")"}return 1===document.querySelectorAll(d).length?d:a.parentNode?o(a.parentNode)+" > "+d:d}function p(a,b){var c="(...)";return a&&a.length>b?a.slice(0,b-c.length)+c:a}function q(a){return"[object Array]"===Object.prototype.toString.call(a)}function r(a,b,c){var d=(c||0)+1,e=w("maxDepth",O);if(c>e)return"[RECURSIVE]";if("string"==typeof a)return p(a,b);if(q(a)){for(var f=[],g=0;g<a.length;g++)f[g]=r(a[g],b,d);return f}if("object"==typeof a&&null!=a){var h={};for(var i in a)a.hasOwnProperty(i)&&(h[i]=r(a[i],b,d));return h}return a}function s(b,c,d){var e=w("maxDepth",O);if(d>=e)return encodeURIComponent(c)+"=[RECURSIVE]";d=d+1||1;try{if(a.Node&&b instanceof a.Node)return encodeURIComponent(c)+"="+encodeURIComponent(C(b));var f=[];for(var g in b)if(b.hasOwnProperty(g)&&null!=g&&null!=b[g]){var h=c?c+"["+g+"]":g,i=b[g];f.push("object"==typeof i?s(i,h,d):encodeURIComponent(h)+"="+encodeURIComponent(i))}return f.sort().join("&")}catch(j){return encodeURIComponent(c)+"="+encodeURIComponent(""+j)}}function t(a,b,c){if(null==b)return a;if(c>=w("maxDepth",O))return"[RECURSIVE]";a=a||{};for(var d in b)if(b.hasOwnProperty(d))try{a[d]=b[d].constructor===Object?t(a[d],b[d],c+1||1):b[d]}catch(e){a[d]=b[d]}return a}function u(a,b){a+="?"+s(b)+"&ct=img&cb="+(new Date).getTime();var c=w("notifyHandler");if("xhr"===c){var d=new XMLHttpRequest;d.open("GET",a,!0),d.send()}else{var e=new Image;e.src=a}}function v(a){var b={},c=/^data\-([\w\-]+)$/;if(a)for(var d=a.attributes,e=0;e<d.length;e++){var f=d[e];if(c.test(f.nodeName)){var g=f.nodeName.match(c)[1];b[g]=f.value||f.nodeValue}}return b}function w(a,b){R=R||v(Y);var c=void 0!==H[a]?H[a]:R[a.toLowerCase()];return"false"===c&&(c=!1),void 0!==c?c:b}function x(a){return a&&a.match(S)?!0:(l("Invalid API key '"+a+"'"),!1)}function y(a){var b=w("autoBreadcrumbs",!0);return w(a,b)}function z(b,c){var d=w("apiKey");if(x(d)&&N){N-=1;var e=w("releaseStage","production"),f=w("notifyReleaseStages");if(f){for(var g=!1,h=0;h<f.length;h++)if(e===f[h]){g=!0;break}if(!g)return}var i=[b.name,b.message,b.stacktrace].join("|");if(i!==G){G=i;var j={device:{time:(new Date).getTime()}},k={notifierVersion:W,apiKey:d,projectRoot:w("projectRoot")||a.location.protocol+"//"+a.location.host,context:w("context")||a.location.pathname,user:w("user"),metaData:t(t(j,w("metaData")),c),releaseStage:e,appVersion:w("appVersion"),url:a.location.href,userAgent:navigator.userAgent,language:navigator.language||navigator.userLanguage,severity:b.severity,name:b.name,message:b.message,stacktrace:b.stacktrace,file:b.file,lineNumber:b.lineNumber,columnNumber:b.columnNumber,breadcrumbs:K,payloadVersion:"3"},m=H.beforeNotify;if("function"==typeof m){var n=m(k,k.metaData);if(n===!1)return}return 0===k.lineNumber&&/Script error\.?/.test(k.message)?l("Ignoring cross-domain or eval script error. See https://docs.bugsnag.com/platforms/browsers/faq/#3-cross-origin-script-errors"):void u(w("endpoint")||V,k)}}}function A(){var a,b,c=10,d="[anonymous]";try{throw new Error("")}catch(e){a="<generated>\n",b=B(e)}if(!b){a="<generated-ie>\n";var f=[];try{for(var g=arguments.callee.caller.caller;g&&f.length<c;){var h=T.test(g.toString())?RegExp.$1||d:d;f.push(h),g=g.caller}}catch(i){l(i)}b=f.join("\n")}return a+b}function B(a){return a.stack||a.backtrace||a.stacktrace}function C(a){if(a){var b=a.attributes;if(b){for(var c="<"+a.nodeName.toLowerCase(),d=0;d<b.length;d++)b[d].value&&"null"!==b[d].value.toString()&&(c+=" "+b[d].name+'="'+b[d].value+'"');return c+">"}return a.nodeName}}function D(){J+=1,a.setTimeout(function(){J-=1})}function E(a,b,c){var d=a[b],e=c(d);a[b]=e}var F,G,H={},I=!0,J=0,K=[],L=40,M="BugsnagNotify",N=10,O=5;H.breadcrumbLimit=20,H.noConflict=function(){return a.Bugsnag=b,"undefined"==typeof b&&delete a.Bugsnag,H},H.refresh=function(){N=10},H.notifyException=function(a,b,c,d){if(!a){var e="Bugsnag.notifyException() was called with no arguments";return l(e),void H.notify(M,e)}return"string"==typeof a?(l("Bugsnag.notifyException() was called with a string. Expected instance of Error. To send a custom message instantiate a new Error or use Bugsnag.notify('<string>'). see https://docs.bugsnag.com/platforms/browsers/#reporting-handled-exceptions"),void H.notify.apply(null,arguments)):(b&&"string"!=typeof b&&(c=b,b=void 0),c||(c={}),j(c),void z({name:b||a.name,message:a.message||a.description,stacktrace:B(a)||A(),file:a.fileName||a.sourceURL,lineNumber:a.lineNumber||a.line,columnNumber:a.columnNumber?a.columnNumber+1:void 0,severity:d||"warning"},c))},H.notify=function(b,c,d,e){b||(b=M,c="Bugsnag.notify() was called with no arguments",l(c)),z({name:b,message:c,stacktrace:A(),file:a.location.toString(),lineNumber:1,severity:e||"warning"},d)},H.leaveBreadcrumb=function(a,b){var d="manual",e={type:d,name:"Manual",timestamp:(new Date).getTime()};switch(typeof a){case"object":e=t(e,a);break;case"string":b&&"object"==typeof b?e=t(e,{name:a,metaData:b}):e.metaData={message:a};break;default:return void l("expecting 1st argument to leaveBreadcrumb to be a 'string' or 'object', got "+typeof a)}for(var f=[d,"error","log","navigation","process","request","state","user"],g=!1,h=0;h<f.length;h++)if(f[h]===e.type){g=!0;break}g||(l("Converted invalid breadcrumb type '"+e.type+"' to '"+d+"'"),e.type=d);var i=K.slice(-1)[0];if(c(e,i))i.count=i.count||1,i.count++;else{var j=Math.min(H.breadcrumbLimit,L);e.name=p(e.name,32),K.push(r(e,140)),K.length>j&&(K=K.slice(-j))}};var P="undefined"!=typeof a.addEventListener;H.enableAutoBreadcrumbsConsole=function(){},H.disableAutoBreadcrumbsConsole=function(){},H.enableAutoBreadcrumbsNavigation=function(){},H.disableAutoBreadcrumbsNavigation=function(){},H.enableAutoBreadcrumbsErrors=function(){H.autoBreadcrumbsErrors=!0},H.disableAutoBreadcrumbsErrors=function(){H.autoBreadcrumbsErrors=!1},H.enableAutoBreadcrumbsClicks=function(){H.autoBreadcrumbsClicks=!0},H.disableAutoBreadcrumbsClicks=function(){H.autoBreadcrumbsClicks=!1},H.enableAutoBreadcrumbs=function(){H.enableAutoBreadcrumbsClicks(),H.enableAutoBreadcrumbsConsole(),H.enableAutoBreadcrumbsErrors(),H.enableAutoBreadcrumbsNavigation()},H.disableAutoBreadcrumbs=function(){H.disableAutoBreadcrumbsClicks(),H.disableAutoBreadcrumbsConsole(),H.disableAutoBreadcrumbsErrors(),H.disableAutoBreadcrumbsNavigation()},H.enableNotifyUnhandledRejections=function(){H.notifyUnhandledRejections=!0},H.disableNotifyUnhandledRejections=function(){H.notifyUnhandledRejections=!1};var Q="complete"!==document.readyState;document.addEventListener?(document.addEventListener("DOMContentLoaded",h,!0),a.addEventListener("load",h,!0)):a.attachEvent("onload",h);var R,S=/^[0-9a-f]{32}$/i,T=/function\s*([\w\-$]+)?\s*\(/i,U="https://notify.bugsnag.com/",V=U+"js",W="3.1.0",X=document.getElementsByTagName("script"),Y=X[X.length-1];if(a.atob){if(a.ErrorEvent)try{0===new a.ErrorEvent("test").colno&&(I=!1)}catch(Z){}}else I=!1;if(w("autoNotify",!0)){E(a,"onerror",function(b){return function(c,d,e,f,g){var h=w("autoNotify",!0),i={};if(!f&&a.event&&(f=a.event.errorCharacter),j(i),F=null,h&&!J){var k=g&&g.name||"window.onerror";z({name:k,message:c,file:d,lineNumber:e,columnNumber:f,stacktrace:g&&B(g)||A(),severity:"error"},i),y("autoBreadcrumbsErrors")&&H.leaveBreadcrumb({type:"error",name:k,metaData:{severity:"error",file:d,message:c,line:e}})}b&&b(c,d,e,f,g)}});var $=function(a){return function(b,c){if("function"==typeof b){b=d(b);var e=Array.prototype.slice.call(arguments,2);return a(function(){b.apply(this,e)},c)}return a(b,c)}};E(a,"setTimeout",$),E(a,"setInterval",$),a.requestAnimationFrame&&E(a,"requestAnimationFrame",function(a){return function(b){return a(d(b))}}),a.setImmediate&&E(a,"setImmediate",function(a){return function(){var b=Array.prototype.slice.call(arguments);return b[0]=d(b[0]),a.apply(this,b)}}),"onunhandledrejection"in a&&a.addEventListener("unhandledrejection",function(a){if(w("notifyUnhandledRejections",!1)){var b=a.reason;b&&(b instanceof Error||b.message)?H.notifyException(b):H.notify("UnhandledRejection",b)}}),"EventTarget Window Node ApplicationCache AudioTrackList ChannelMergerNode CryptoOperation EventSource FileReader HTMLUnknownElement IDBDatabase IDBRequest IDBTransaction KeyOperation MediaController MessagePort ModalWindow Notification SVGElementInstance Screen TextTrack TextTrackCue TextTrackList WebSocket WebSocketWorker Worker XMLHttpRequest XMLHttpRequestEventTarget XMLHttpRequestUpload".replace(/\w+/g,function(b){var c=a[b]&&a[b].prototype;c&&c.hasOwnProperty&&c.hasOwnProperty("addEventListener")&&(E(c,"addEventListener",function(a){return function(b,c,e,f){try{c&&c.handleEvent&&(c.handleEvent=d(c.handleEvent))}catch(g){l(g)}return a.call(this,b,d(c),e,f)}}),E(c,"removeEventListener",function(a){return function(b,c,e,f){return a.call(this,b,c,e,f),a.call(this,b,d(c),e,f)}}))})}e(),f(),g(),w("autoBreadcrumbs",!0)&&H.leaveBreadcrumb({type:"navigation",name:"Bugsnag Loaded"}),a.Bugsnag=H,"function"==typeof define&&define.amd?define([],function(){return H}):"object"==typeof module&&"object"==typeof module.exports&&(module.exports=H)}(window,window.Bugsnag);Bugsnag.apiKey = '46cb50026edd215d850d57092f11818f';Bugsnag.appVersion = '41e31a2995b834a0c0fd0c8df7866ad0e414469d';
-      </script>
-      <!--<![endif]-->
+  <script type="text/javascript">
+    window.BUGSNAG_CONFIG = {
+      apiKey: "46cb50026edd215d850d57092f11818f",
+      appVersion: "33f31775d9e0e71ee2017b52fda65c1a383e04af",
+    };
+  </script>
+  <script src="/assets/packs/js/Bugsnag-271061f90f1d57bd24dc.chunk.js"></script>
 
+<link rel="apple-touch-icon" type="image/x-icon" href="/assets/favicons/actblue/apple-touch-icon-7f5195793a662951099845ee207a0f4fe56cb6acd1d4547066699e0169584180.png" />
 
-<link rel="apple-touch-icon" type="image/x-icon" href="/assets/favicons/actblue/apple-touch-icon-d65cc41c2e3c6839b1755e538c23e8307d6bd51b3ab29588d841fba095d2e49f.png" />
-
-<link rel="icon" type="image/x-icon" href="/assets/favicons/actblue/favicon-052c79e773f8473025ac1c6b4818c0aae15833e88b67825756075e3ddec82323.ico" />
+<link rel="icon" type="image/x-icon" href="/assets/favicons/actblue/favicon-ae22425c3739ed004691b362de70e3c9aef3dd733768b83b54b1297e99725089.ico" />
 
 
 <script type="text/javascript">
-  var Indigo = {"baseURI":"https://secure.actblue.com","cookieDomain":".actblue.com","env":"production","domain":"actblue.com","pusher":{"key":"449985a46708136f3d74"},"googleAnalytics":{"id":"UA-159696-1","domain":".actblue.com"},"trackableUrl":"https://secure.actblue.com/trackables","Topaz":{"urls":["https://topaz.production-topaz-b.main.atsint.net/token","https://topaz.production-topaz-a.main.atsint.net/token"]},"MixpanelProperties":{},"googleOAuth":{"clientId":"586851420956-8p7msl04uak0sgc3ha7hptk9osl99h8b.apps.googleusercontent.com"}};
+  var Indigo = {"baseURI":"https://secure.actblue.com","cookieDomain":".actblue.com","env":"production","domain":"actblue.com","pusher":{"key":"449985a46708136f3d74"},"googleAnalytics":{"id":"UA-159696-1","domain":".actblue.com"},"trackableUrl":"https://secure.actblue.com/trackables","Topaz":{"urls":["https://topaz.production-topaz-a.main.atsint.net/token","https://topaz.production-topaz-b.main.atsint.net/token"]},"MixpanelProperties":{},"googleOAuth":{"clientId":"586851420956-8p7msl04uak0sgc3ha7hptk9osl99h8b.apps.googleusercontent.com"}};
 </script>
 
 <script>
 //<![CDATA[
-window.gon={};gon.global={"post_url":"https:\/\/secure.actblue.com\/contributions\/AB187640642","param_name":"contribution"};
+window.gon={};gon.global={"post_url":"https:\/\/secure.actblue.com\/contributions\/AB190635686","param_name":"contribution"};
 //]]>
-</script><link rel="stylesheet" media="screen, print" href="/assets/public-052a0710225d09a1415063dfb6c7bf23556e05940a74c197b872da5eab1cde94.css" />
+</script><link rel="stylesheet" media="screen, print" href="/assets/public-96f0cba77733e16e2d74554b8a179919416f02cf202197cf9d69360c73429a8f.css" />
       <script type="text/javascript">
       //<!--
 (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
@@ -43,18 +44,17 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
         mixpanel.init("1498bce7991dd9e45621a9bf2dbfa01b");
       //-->
       </script>
-    <script src="/assets/packs/js/application-64204f4adfcfd7fcb7c4.chunk.js" data-turbolinks-track="reload"></script>
+    <script src="/assets/packs/js/application-8f5123b59615efbc6974.chunk.js" data-turbolinks-track="reload"></script>
   </head>
 
   <body class='interior show comatose_pages privacy'>
-    <div data-react-class="NavbarContainer" data-react-props="{}" data-react-cache-id="NavbarContainer-0"></div>
+    <div data-react-class="NavbarContainer" data-react-props="{&quot;showImprovedFundraising&quot;:false}" data-react-cache-id="NavbarContainer-0"></div>
 
     <header class='main navbar'>
   <div class="navbar-inner">
     <div id="header_links_container">
-      <div id='logo-link-wrapper'>
-          <a id="logo" href="/"><img alt="ActBlue" src="/assets/layout/actblue-c48a9371d4ef333302c09c7e3666a507e654f47a060e39330f01986f74458eca.png" /></a>
-          
+      <a id="logo" href="/"><img alt="ActBlue" src="/assets/layout/actblue-c42bec7f4bc516a8833ed9013ed1fcfb27c6f807a1ec376b35cf330714dae523.png" /></a>
+      
 
 <nav id='main-links'>
   <ul>
@@ -64,11 +64,11 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
   </ul>
 </nav>
 
+      <!-- # Always include the wrapper even if we don't want to show the search bar so that it takes up space and pushes buttons to the right -->
+      <div id="header_search_wrapper">
+            <div data-react-class="DirectorySearchBox" data-react-props="{&quot;placeholder&quot;:&quot;Find a candidate or cause...&quot;,&quot;trackingLocation&quot;:&quot;navigation&quot;}" data-react-cache-id="DirectorySearchBox-0"></div>
       </div>
-      
-      <nav id='account-links-search'>
-        <div data-react-class="DirectorySearchBox" data-react-props="{&quot;placeholder&quot;:&quot;Search directory&quot;,&quot;alignment&quot;:&quot;right&quot;,&quot;width&quot;:&quot;180px&quot;,&quot;trackingLocation&quot;:&quot;navigation&quot;}" data-react-cache-id="DirectorySearchBox-0"></div>
-
+      <nav id='account-links'>
           <a class="log_in bp-button" href="/signin">Sign in</a>
       </nav>
     </div>
@@ -164,7 +164,7 @@ Questions?  <a href='/contact'>Contact us</a>.
     <div class="container-fluid">
       <div class='row-fluid'>
         <div class='span12'>
-          <a class="logo-img" href="/"><img width="150" alt="ActBlue" src="/assets/layout/actblue-c48a9371d4ef333302c09c7e3666a507e654f47a060e39330f01986f74458eca.png" /></a>
+          <a class="logo-img" href="/"><img width="150" alt="ActBlue" src="/assets/layout/actblue-c42bec7f4bc516a8833ed9013ed1fcfb27c6f807a1ec376b35cf330714dae523.png" /></a>
 
           <div class="like-follow">
             <a class="facebook" title="facebook" href="https://www.facebook.com/ActBlue">
@@ -252,16 +252,16 @@ Questions?  <a href='/contact'>Contact us</a>.
   </div>
 </footer>
 
-      <script src="/assets/packs/js/vendor_stable-382b3eb167020eac14b7.js"></script>
-<script src="/assets/packs/js/vendor-8dedc8629c4ad08d07eb.chunk.js"></script>
+      <script src="/assets/packs/js/vendor_stable-81027ed570c5d93005c6.js"></script>
+<script src="/assets/packs/js/vendor-8af3e156d9cc549bf512.chunk.js"></script>
 <!--We need to include CSS assets that end up in the vendor.
     if we would prefer not to do this, we can manually exclude packages
     that export CSS, like react-quill and react-datepicker.
   -->
-<link rel="stylesheet" media="screen" href="/assets/packs/css/vendor-2c4f1641.chunk.css" />
-<script src="/assets/public-8547f66af95f83ef28539aa6583c1fc5478a446036db1b0e02e93b155ad6299e.js"></script><script src="/assets/packs/js/comatose-c203151ffede48376a85.chunk.js"></script><script src="/assets/packs/js/NavbarContainer-d336aaee3b0118546a07.chunk.js"></script><script src="/assets/packs/js/DirectorySearchBox-aa2fa25bcf269e1a69e5.chunk.js"></script>
+<link rel="stylesheet" media="screen" href="/assets/packs/css/vendor-df312a65.chunk.css" />
+<script src="/assets/public-24b6ff4421e978864e97e9ab9ccbe0d3f5482a7040f8fa5efd177f81482e7516.js"></script><script src="/assets/packs/js/comatose-aa927b9da52e30474977.chunk.js"></script><script src="/assets/packs/js/NavbarContainer-7f6e9fb18d1d7f4fd264.chunk.js"></script><script src="/assets/packs/js/DirectorySearchBox-6fae10c6b09636d33fef.chunk.js"></script>
 <!--[if IE]>
-  <script src="/assets/jquery.placeholder.1.3.min-007c7dc23b237cc7d51b856a4d7f83f966900cae86d951bd5046dda620edc900.js"></script>
+  <script src="/assets/jquery.placeholder.1.3.min-653c8abc01a396852747ebcd6d850e6a7a14b97567532fc13339426dd5ead61d.js"></script>
 <![endif]-->
 
 <script type="text/javascript">
@@ -280,6 +280,6 @@ Questions?  <a href='/contact'>Contact us</a>.
 
 
 
-      <script src="/assets/packs/js/jquery_migrate_production-6247f2800bfd7d2edd1f.chunk.js" data-turbolinks-track="reload"></script>
+      <script src="/assets/packs/js/jquery_migrate_production-52a74eb8c965fb48cfb3.chunk.js" data-turbolinks-track="reload"></script>
   </body>
 </html>
