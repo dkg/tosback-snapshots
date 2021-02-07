@@ -8,8 +8,7 @@
     <link rel="shortcut icon" href="https://cdn2.hubspot.net/hubfs/4008838/website/icons/Tidelift_Favicon.png">
     
 
-    <script src="/hs/hsstatic/jquery-libs/static-1.4/jquery/jquery-1.11.2.js"></script>
-<script>hsjQuery = window['jQuery'];</script>
+    
     <meta property="og:description" content="Thank you for using Tidelift. By using the Tidelift website, APIs, or any other associated software (“Tidelift”, or “the service”) you are agreeing to be bound by the following terms and conditions.">
     <meta property="og:title" content="Terms of service | Tidelift">
     <meta name="twitter:description" content="Thank you for using Tidelift. By using the Tidelift website, APIs, or any other associated software (“Tidelift”, or “the service”) you are agreeing to be bound by the following terms and conditions.">
@@ -23,7 +22,8 @@ a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-b
 </style>
 
 <link rel="stylesheet" href="https://cdn2.hubspot.net/hub/4008838/hub_generated/module_assets/5476029237/1607272871901/module_5476029237_Hero.min.css">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.1/jquery-migrate.min.js"></script>
 
     
 <!--  Added by GoogleAnalytics integration -->
@@ -44,16 +44,17 @@ _hsp.push(['addPrivacyConsentListener', function(consent) { if (consent.allowed 
     <link rel="canonical" href="https://www.tidelift.com/about/tos">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="112f00f0-51d2-47c1-9c8e-d6779364933c" data-blockingmode="auto" type="text/javascript"></script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WDLF7KS');
-gtag('config', 'AW-806670810');
 </script>
 <!-- End Google Tag Manager -->
+
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="112f00f0-51d2-47c1-9c8e-d6779364933c" data-blockingmode="auto" type="text/javascript"></script>
+
 
                 <meta name="msvalidate.01" content="FEE8F007916A14CC06AAF47200EC4231">
 
@@ -98,6 +99,34 @@ fbq('track', 'PageView');
 </script>
 <noscript>&lt;img  height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=705633339897683&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
 <!-- End Facebook Pixel Code -->
+
+<!-- Start of Async Drift Code -->
+<script>
+"use strict";
+!function() {
+  var t = window.driftt = window.drift = window.driftt || [];
+  if (!t.init) {
+    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+    t.factory = function(e) {
+      return function() {
+        var n = Array.prototype.slice.call(arguments);
+        return n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+      var i = document.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(o, i);
+    };
+  }
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('r2w7xpcpy5y2');
+</script>
+<!-- End of Async Drift Code -->
 <meta property="og:image" content="https://cdn2.hubspot.net/hubfs/4008838/Tidelift_Twitter_In-Line_1-580714-edited.jpg#keepProtocol">
 <meta property="og:image:width" content="1024">
 <meta property="og:image:height" content="512">
@@ -107,10 +136,10 @@ fbq('track', 'PageView');
 
 <meta property="og:url" content="https://www.tidelift.com/about/tos">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="//cdn2.hubspot.net/hub/7052064/hub_generated/template_assets/1608583171829/hubspot/hubspot_default/shared/responsive/layout.min.css">
+<link rel="stylesheet" href="//cdn2.hubspot.net/hub/7052064/hub_generated/template_assets/1612211608134/hubspot/hubspot_default/shared/responsive/layout.min.css">
 
 
-<link rel="stylesheet" href="//cdn2.hubspot.net/hub/4008838/hub_generated/template_assets/5575861961/1608231448628/Coded_files/Custom/page/tidelift/tidelift18.css">
+<link rel="stylesheet" href="//cdn2.hubspot.net/hub/4008838/hub_generated/template_assets/5575861961/1611779135723/Coded_files/Custom/page/tidelift/tidelift18.css">
 
 
 
@@ -213,17 +242,21 @@ width:100% !important;
 width:auto;
 }
 .custom-menu-primary .hs-menu-wrapper > ul li.hs-menu-depth-1:last-of-type a {
-border:1px solid black;
-color: black;
+/* border:1px solid black;
+color: black; 
+border-radius: 4px;*/
 padding: 13px 20px;
 font-family: Typold, Sans-serif!important;
 font-size: 14px;
 line-height: 1;
 font-weight: 900;
 letter-spacing: 2px!important;
-border-radius: 4px;
 margin-top:15px;
 margin-right:0 !important;
+background-image:linear-gradient(180deg, #4B4C68 0%, rgba(18, 20, 25, 0.88) 100%);
+border:none; 
+border-radius:25px ;
+color:#ffffff !important;
 }
 .custom-menu-primary ul.hs-menu-children-wrapper li:last-of-type:hover a {
 color:black !important;
@@ -358,7 +391,7 @@ padding-right:0;
                             <div class="span12 widget-span widget-type-rich_text " style="" data-widget-type="rich_text" data-x="0" data-w="12">
                                 <div class="cell-wrapper layout-widget-wrapper">
                                     <span id="hs_cos_wrapper_module_151977542537457" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text">
-                                        <h4><span style="color: #ffffff;"><a href="http://www.tidelift.com/subscription/webinar/accelerate-app-development-by-optimizing-your-organizations-open-source-strategy" style="color: #ffffff;">Webinar: How to optimize your org's open source strategy</a></span></h4>
+                                        <h4><span style="color: #ffffff;">📢 <a href="https://blog.tidelift.com/tidelift-catalogs-and-the-rising-urgency-of-managing-your-open-source-supply-chain" style="color: #ffffff;">Tidelift catalogs: a better way to manage the open source supply chain</a></span></h4>
                                     </span>
                                 </div>
                                 <!--end layout-widget-wrapper -->
@@ -414,8 +447,8 @@ C413.3,482.4,504,379.8,504,256z"></path> </svg> </a></li>
 </ul>
 </div>
 <ul class="graynav-nav">
-<li><span class="graynav-border"><a href="https://tidelift.com/about/lifter?__hstc=233546881.ddf790ed80db4012b9d597d04fb2e792.1538618569361.1606852498697.1606919518772.259&amp;__hssc=233546881.18.1606919518772&amp;__hsfp=3629513924" target="_self" role="menuitem">For Maintainers</a></span></li>
-<li id="loginID"><a href="https://tidelift.com/login" target="_self" role="menuitem">Login</a></li>
+<li><span class="graynav-border"><a href="https://tidelift.com/about/lifter?__hstc=233546881.ddf790ed80db4012b9d597d04fb2e792.1538618569361.1606852498697.1606919518772.259&amp;__hssc=233546881.18.1606919518772&amp;__hsfp=3629513924" target="_self" role="menuitem">For maintainers</a></span></li>
+<li id="loginID"><a href="https://tidelift.com/login" target="_self" role="menuitem">Log in</a></li>
 </ul>
 </div></span></div>
 
@@ -452,8 +485,9 @@ C413.3,482.4,504,379.8,504,256z"></path> </svg> </a></li>
   <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="menu"><a href="https://tidelift.com/subscription/tidelift-tour" aria-haspopup="true" aria-expanded="false" role="menuitem">Product</a>
    <ul class="hs-menu-children-wrapper">
     <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="https://tidelift.com/subscription/tidelift-tour" role="menuitem">Overview</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="https://tidelift.com/catalogs" role="menuitem">Tidelift-managed catalogs</a></li>
     <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="https://tidelift.com/subscription/support" role="menuitem">Scope of support</a></li>
-    <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="https://tidelift.com/subscription/pkg/supported-open-source-packages" role="menuitem">Supported packages</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="https://tidelift.com/subscription/pkg/supported-open-source-packages" role="menuitem">Featured packages</a></li>
     <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="https://tidelift.com/subscription/pricing" role="menuitem">Pricing</a></li>
     <li class="hs-menu-item hs-menu-depth-2" role="menuitem"><a href="https://tidelift.com/solutions/schedule-demo" role="menuitem"><i class="far fa-calendar-alt"></i>&nbsp;SCHEDULE DEMO</a></li>
    </ul></li>
@@ -755,7 +789,7 @@ C413.3,482.4,504,379.8,504,256z"></path> </svg> </a></li>
  <ul>
   <li class="hs-menu-item hs-menu-depth-1"><a href="http://www.tidelift.com/subscription/tidelift-tour" role="menuitem" target="_self"><h4>Product</h4></a></li>
   <li class="hs-menu-item hs-menu-depth-1"><a href="http://www.tidelift.com/subscription/pricing" role="menuitem" target="_self">Pricing</a></li>
-  <li class="hs-menu-item hs-menu-depth-1"><a href="http://www.tidelift.com/subscription/free-demo" role="menuitem" target="_self">Free demo</a></li>
+  <li class="hs-menu-item hs-menu-depth-1"><a href="http://www.tidelift.com/subscription/watch-demo" role="menuitem" target="_self">Free demo</a></li>
   <li class="hs-menu-item hs-menu-depth-1"><a href="https://docs.tidelift.com/" role="menuitem" target="_self">Documentation</a></li>
   <li class="hs-menu-item hs-menu-depth-1"><a href="http://www.tidelift.com/subscription/support" role="menuitem" target="_self">Scope of support</a></li>
  </ul>
@@ -820,7 +854,7 @@ C413.3,482.4,504,379.8,504,256z"></path> </svg> </a></li>
 <div class="cell-wrapper layout-widget-wrapper">
 <span id="hs_cos_wrapper_module_1513189423389125" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html"><script type="text/javascript" src="//cdn2.hubspot.net/hub/4008838/hub_generated/template_assets/5469359505/1607981995032/Coded_files/Custom/page/tidelift/tidelift.js"></script>
 <!-- Theme Foundation Javascript Package -->
-<!-- <script type="text/javascript" src='//cdn2.hubspot.net/hub/7052064/hub_generated/template_assets/1608583166887/hubspot/hubspot_default/shared/responsive/theme-foundation-v1-0.min.js'></script> --></span>
+<!-- <script type="text/javascript" src='//cdn2.hubspot.net/hub/7052064/hub_generated/template_assets/1612211603929/hubspot/hubspot_default/shared/responsive/theme-foundation-v1-0.min.js'></script> --></span>
 </div><!--end layout-widget-wrapper -->
 </div><!--end widget-span -->
 </div><!--end row-->
@@ -889,7 +923,7 @@ if (typeof hsVars !== 'undefined') { hsVars['language'] = 'en'; }
             formsBaseUrl: '/_hcms/forms/',
             portalId: '4008838',
             formId: 'a1e59869-1358-4317-b567-892d9fdf27db',
-            formInstanceId: '4777',
+            formInstanceId: '809',
             pageId: '5607491231',
             
             
@@ -905,7 +939,7 @@ if (typeof hsVars !== 'undefined') { hsVars['language'] = 'en'; }
             rawInlineMessage: "Thanks for your interest in Tidelift",
             
             
-            hsFormKey: "7dbe058aa66abb7f98f10249820ec1e4",
+            hsFormKey: "657a9a193fa0c2329f03ab05716128d0",
             
             
             css: '',
@@ -975,7 +1009,7 @@ _hsq.push(["setContentMetadata", {
 
 <script type="text/javascript">
 var hsVars = {
-    ticks: 1609588727281,
+    ticks: 1612273106582,
     page_id: 5607491231,
 
     content_group_id: 0,
@@ -1003,6 +1037,11 @@ var hsVars = {
   fs.parentNode.insertBefore(t, fs); })
 (window,document,'script','https://tag.demandbase.com/bae904c9.min.js','demandbase_js_lib');  
 </script>
+
+
+ 
+
+
 
 
     
