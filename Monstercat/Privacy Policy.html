@@ -293,6 +293,7 @@ k([38,38,40,40,37,39,37,39,66,65], alert.bind(null, 'Hello there :)'))
 <footer class="flex container">
     <div class="col-xs-12 col-sm-12 col-md-8 text left">
         <ul class="horizontal-list main-list">
+            <li><a class="silent" href="/code-of-ethics">Code of Ethics</a></li>
             <li><a class="silent" href="/privacy-policy">Privacy Policy</a></li>
             <li><a class="silent" href="/terms-of-service">Terms of Service</a></li>
             <li><a class="silent" href="/contact">Contact</a></li>
@@ -413,6 +414,12 @@ s.parentNode.insertBefore(b, s);})();
 <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=243036&fmt=gif" />
 </noscript>
 
+<!-- HITSTEPS TRACKING CODE - Manual 2021-01-21 - DO NOT CHANGE -->
+<script>aid=75111;sid=88296;</script>
+<script type="text/javascript">(function(){var hstc=document.createElement('script');var hstcs='www.';if (document.location.protocol=='https:') hstcs='';hstc.src=document.location.protocol+'//'+hstcs+'hitsteps.net/track.js';hstc.async=true;var htssc = document.getElementsByTagName('script')[0];htssc.parentNode.insertBefore(hstc, htssc);})();
+</script><noscript><a href="http://www.hitsteps.com/"><img src="//log.hitsteps.net/track.php?mode=img&amp;amp;code=7d32e06caf7837db3ba39f518753e948" alt="Realtime Web Statistics" />visitor activity monitor</a></noscript>
+<!-- HITSTEPS TRACKING CODE - DO NOT CHANGE -->
+
 </body>
 </html>
 <script type="text/javascript">
@@ -525,6 +532,15 @@ var EVENT_FALLBACK_IMG_URL = 'https://assets.monstercat.com/event-fallback.jpg'
         data-source="https://raw.githubusercontent.com/monstercat/docs/master/halloween-stencils.md"
         data-template="page-halloween-stencils">
   {{>markdown-basic}}
+</script>
+
+<script type="text/html"
+        data-route="^code-of-ethics\/?$"
+        data-process="processMarkdownPage"
+        data-no-cors
+        data-source="https://raw.githubusercontent.com/monstercat/docs/master/Code%20of%20Ethics.md"
+        data-template="page-ethics">
+    {{>markdown-basic}}
 </script>
 <script
   type="text/html"
@@ -2348,7 +2364,7 @@ data-template="eight-year-comic">
                 <iframe type="text/html"
                     width="90%"
                     height="auto"
-                    src="https://www.youtube.com/embed/Mb_MWO06VOw?&autoplay=1"
+                    src="https://www.youtube.com/embed/Sc--gLe1Zzc?&autoplay=1"
                     frameborder="0"></iframe>
             </div>
         </div>
@@ -3405,12 +3421,16 @@ data-template="eight-year-comic">
                 <h1>Releases</h1>
             </div>
             <div class="col-xs-6 text right">
-                <a href="/browse" class="button button--black button--icon button--transparent">
-                    Browse Advanced Options
+                <a href="/player" no-intercept class="button button--black button--icon button--transparent">
+                    Music Player
                     <i class="fa fa-chevron-right"></i>
                 </a>
+                <!--<a href="/browse" class="button button&#45;&#45;black button&#45;&#45;icon button&#45;&#45;transparent">
+                    Browse
+                    <i class="fa fa-chevron-right"></i>
+                </a>-->
                 <a href="/catalog" class="button button--black button--icon button--transparent">
-                    Explore in Catalog View
+                    Catalog View
                     <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -3651,17 +3671,8 @@ Credit
             <div>{{{about}}}</div>
         </div>
         {{/if}}
-        {{#if contact}}
-        <div class="panel">
-            <h2>Booking &amp; Management</h2>
-            <br/>
-            {{{contact.booking}}}
-            {{{contact.management}}}
-        </div>
-        {{/if}}
         <div data-source="$endpoint2/artist/{{uri}}/releases"
-             data-process="processUserReleases"
-             >
+             data-process="processUserReleases">
         </div>
         {{#if shopifyCollectionId}}
         <div class="panel">
@@ -5110,8 +5121,8 @@ data-template="9YearAnniversary"
     
     <script type="text/html" data-template="navigation">
     {{#data}}
+    <a class="silent nav-item" onclick="closeNav()" href="/player" no-intercept="true"><i class="fa fa-music"></i>Player</a>
     {{#user}}
-    <a class="silent nav-item" onclick="closeNav()" href="/playlists"><i class="fa fa-bars"></i>Playlists</a>
     <a class="silent nav-item" onclick="closeNav()" href="/account"><i class="fa fa-gear"></i>Account</a>
     <a class="silent nav-item" onclick="closeNav()" href="/account/gold"><i class="fa fa-paw"></i>Gold</a>
     <a class="silent nav-item" onclick="closeNav()" href="/account/licenses"><i class="fa fa-check-circle-o"></i>Licenses</a>
