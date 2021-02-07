@@ -62,11 +62,11 @@
       paperli.locale = 'en';
       paperli.logged_in = false;
       paperli.host = 'paper.li';
-      paperli.imageproxy_token = {"tokenValidity":"1609765819311","token":"728bb2008f40d842d5fe68814b610fe5012aede3"};
+      paperli.imageproxy_token = {"tokenValidity":"1612710720919","token":"6e2e7bcc1b7d265a94e1258ddfa2b26f6f1e9100"};
       paperli.images_host = "d38hokjm2drjyk.cloudfront.net";
     </script>
 
-    <link href="//d2k854fi3lpqb8.cloudfront.net/assets/application-34db4b3d1437f58640abdb2ef7366e01.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="//d2k854fi3lpqb8.cloudfront.net/assets/application-9e0d7cf3cec35b1ed333496cbf165050.css" media="all" rel="stylesheet" type="text/css" />
     <link href="//d2k854fi3lpqb8.cloudfront.net/assets/icons-5e81c14961e53668202ba1529aa93dee.css" media="all" rel="stylesheet" type="text/css" />
     
     <!-- Twitter universal website tag code -->
@@ -177,7 +177,7 @@ twq('track','PageView');
     <script src="//d2k854fi3lpqb8.cloudfront.net/assets/vendor-a9c986d4e0336fcddaa6f475becab578.js" type="text/javascript"></script>
 
     <!-- language -->
-    <script src="//d2k854fi3lpqb8.cloudfront.net/assets/i18n/en-3994e429e0e7061ed9515e21c625fab4.js" type="text/javascript"></script>
+    <script src="//d2k854fi3lpqb8.cloudfront.net/assets/i18n/en-48bbac9eb8e52416e87d585703a4074d.js" type="text/javascript"></script>
     <script src="//d2k854fi3lpqb8.cloudfront.net/assets/i18n/left-sidebar/en-62a707b4cedfb6049db46ab91d797730.js" type="text/javascript"></script>
     <script src="//d2k854fi3lpqb8.cloudfront.net/assets/i18n/i18n-b7fb7788d0db87c7a1285ccc95fce495.js" type="text/javascript"></script>
 
@@ -212,7 +212,7 @@ twq('track','PageView');
 </script>
 
     <!-- main inclusion -->
-    <script src="//d2k854fi3lpqb8.cloudfront.net/assets/app-0de596030004b783811f2f7e6a8229e8.js" type="text/javascript"></script>
+    <script src="//d2k854fi3lpqb8.cloudfront.net/assets/app-c706e4d3c17c7f3742b87eafab969852.js" type="text/javascript"></script>
 
     <meta content="This policy sets out our privacy practices and how we handle the information we collect when you visit and use our sites, services, products, and content." name="description" />  <link href="//d2k854fi3lpqb8.cloudfront.net/assets/static-41495a3a584c2213cbdbabc662d6bd7b.css" media="all" rel="stylesheet" type="text/css" />
 
@@ -700,6 +700,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="message"></div>
 </div>
           
+
+<div id="info_banner" class="snackbar">
+  <div class="snackbar-content">
+    <div class="message-wrapper">
+      <span class="message"></span>
+      <a href="https://paper.li/privacy.html#cookies" target="_blank">
+        Learn more
+      </a>
+    </div>
+    <div class="actions">
+      <a class="button hidden-phone" href="https://paper.li/privacy.html#cookies" target="_blank" style="margin-right: 24px;">
+        Learn more
+      </a>
+      <a class="close hide-me" href="#">&times;</a>
+    </div>
+  </div>
+</div>
+          
 <div id="ie_banner" class="m-banner m-warning">
   <a class="close hide-me pull-right" href="#"><i class="fa fa-times"></i></a>
   <div class="message"></div>
@@ -778,6 +796,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .slideDown();
         }
       });
+  </script>
+  <script>
+    $(document).ready(function(){
+      var selector = '#info_banner';
+      if(Cookies.get('cookies_usage') != 'hide'){
+        $(selector)
+          .find('.message').html('This site uses cookies. By continuing you consent to their use.').end()
+          .show();
+      }
+      $(selector + ' a.hide-me').click(function(e){
+        e && $(e.currentTarget).attr('href') == '#' && e.preventDefault();
+        
+        $(selector)
+          .closest('.with-banner').removeClass('with-banner').end()
+          .hide();
+        Cookies.set('cookies_usage', 'hide', {path: '/' , expires: 365});
+      });
+
+      $(selector + ' .message a').click(function(e){
+        $(e.target).trigger('event.analytics', ['UX Analytics', 'Banner click', $(e.target).attr('href')]);
+      })
+    });
   </script>
   <script>
     $(document).ready(function(){
