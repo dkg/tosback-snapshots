@@ -26,7 +26,7 @@
   
   <div class="shadowline">
     <div class="menu-wrapper">
-      <a href="/blog/10-years" class="headerlogo-link"><div class="headerlogo"></div></a>
+     <a href="/" class="headerlogo-link"><div class="headerlogo"></div></a>
       <ul class="menu">
         <li class="mobile-sign">Menu</li>
         <li class="lang_switcher mobile-only">
@@ -40,9 +40,7 @@
         <li><a data-gatag="header_features" href="/features">Features</a></li>
         <li><a data-gatag="header_blog" href="/blog">Blog</a></li>
         <li><a data-gatag="header_osm_live" href="/osm_live">OsmAnd Live</a></li>
-        <li><a data-gatag="header_build_it" href="/build_it">Build It</a></li>
         <li class="activeitem"><a data-gatag="header_help" href="/help-online">Help</a></li>
-        <li><a data-gatag="header_dvr" href="/dvr">DVR</a></li>
         <li class="lang_switcher desktop-only">
           <div class="dropbtn">EN</div>
           <div class="dropdown-content">
@@ -64,7 +62,11 @@
         <div class="headertext">HELP</div>
         
         
-       
+        <!-- 
+       <div class="badges" th:if="${header_id == 'DVR'}">
+          <a class="appstoretopbadge" href="http://itunes.apple.com/us/app/id963873905"><img src="/images/app-store-badge.png"></a>
+        </div>
+        -->
   </div>
   
 </div>
@@ -167,10 +169,11 @@
                 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></li> -->
                   <li><a data-gatag='faq' href="/help-online/faq">FAQ</a></li>
                   <li><a data-gatag='downloads' href="/downloads">Downloads</a></li>
+                  <li><a data-gatag='features' href="https://docs.osmand.net/en/main@latest/osmand">Features (alpha)</a></li>
+                  <li><a data-gatag='technical' href="https://docs.osmand.net/en/main@latest/development">Technical Articles</a></li>
                   <li><a data-gatag='map-legend' href="/help-online/map-legend">Map Legend</a></li>
-                  <li><a data-gatag='technical' href="/help-online/technical-articles">Technical Articles</a></li>
-                  <li><a data-gatag='technical' href="/help-online/privacy-policy">Privacy Policy</a></li>
-                  <li><a data-gatag='technical' href="/help-online/terms-of-use">Terms Of Use</a></li>
+                  <li><a data-gatag='privacy-policy' href="/help-online/privacy-policy">Privacy Policy</a></li>
+                  <li><a data-gatag='terms-of-use' href="/help-online/terms-of-use">Terms Of Use</a></li>
                   <li><a data-gatag='license' href="/help-online/license">License</a></li>
                   <li><a data-gatag='about' href="/help-online/about">About</a></li>
                 </ul>
@@ -201,31 +204,33 @@ function contactus() {
                     <li><a data-gatag="features" href="/features">Features</a></li>
                     <li><a data-gatag="blog" href="/blog">Blog</a></li>
                     <li><a data-gatag="osm_live" href="/osm_live">OsmAnd Live</a></li>
+                    <li><a data-gatag="build" href="/build_it">Build It</a></li>
                     <li><a data-gatag="giveaway" href="/giveaway">Giveaway</a></li>
                     <li><a data-gatag="help" href="/help-online">Help</a></li>
-                    <li><a data-gatag="dvr" href="/dvr">DVR</a></li>
                     <li><a data-gatag="downloads" href="/downloads">Downloads</a></li>
                 </ul>
             </div>
             <div class="footerlinks">
                 <div class="footerlinkstitle">External links</div>
                 <ul>
-                    <li><a data-gatag="merch" href="https://www.redbubble.com/people/osmand/works/26426633-osmand">Get OsmAnd Merchandise</a></li>
-                    <li><a data-gatag="osm" href="https://www.openstreetmap.org/">OpenStreetMap</a></li>
                     <li><a data-gatag="fb" href="https://www.facebook.com/osmandapp">OsmAnd Facebook</a></li>
                     <li><a data-gatag="twitter" href="https://twitter.com/osmandapp">OsmAnd Twitter</a></li>
-                    <li><a data-gatag="source_code" href="https://github.com/osmandapp/">OsmAnd Source code</a></li>
+                    <li><a data-gatag="source_code" href="https://github.com/osmandapp/">OsmAnd Github</a></li>
                     <li><a data-gatag="google_groups" href="https://groups.google.com/forum/#!forum/osmand">Google groups (forum)</a></li>
+                    <li><a data-gatag="merch" href="https://www.redbubble.com/people/osmand/works/26426633-osmand">Get OsmAnd Merchandise</a></li>
                     <li><a data-gatag="osmand_cz" href="https://osmand.cz/">OsmAnd CZ Manuals</a></li>
+                    <li><a data-gatag="osm" href="https://www.openstreetmap.org/">OpenStreetMap</a></li>
                 </ul>
+            </div>
+            <div class="footerlinks">
                 <div class="footerlinkstitle">Telegram - Chat</div>
                 <ul>
-                    <li><a href="https://t.me/OsmAndMaps">Telegram English</a></li>
-                    <li><a href="https://t.me/frosmand">Telegram French</a></li>
-                    <li><a href="https://t.me/deosmand">Telegram German</a></li>
-                    <li><a href="https://t.me/itosmand">Telegram Italian</a></li>
-                    <li><a href="https://t.me/ruosmand">Telegram Russian</a></li>
-                    <li><a href="https://t.me/uaosmand">Telegram Ukrainian</a></li>
+                    <li><a href="https://t.me/OsmAndMaps">English</a></li>
+                    <li><a href="https://t.me/frosmand">French</a></li>
+                    <li><a href="https://t.me/deosmand">German</a></li>
+                    <li><a href="https://t.me/itosmand">Italian</a></li>
+                    <li><a href="https://t.me/ruosmand">Russian</a></li>
+                    <li><a href="https://t.me/uaosmand">Ukrainian</a></li>
                 </ul>
             </div>       
         </div>
