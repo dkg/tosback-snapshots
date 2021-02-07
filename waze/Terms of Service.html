@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html dir='ltr' lang='en'>
 <head>
-<script>
-  dataLayer = [{}];
+<script type='application/json' id='gonJson'>
+  {"locale":"en","urlLocale":null,"config":{"flags":{"pii_tool_countries":["Austria","Belgium","Bulgaria","Brazil","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland","Portugal","Romania","Slovakia","Slovenia","Spain","Sweden","United Kingdom","United States","Liechtenstein","Norway","Iceland"],"delete_data":false,"instant_book":true,"dynamic_loading":false,"carpool_available_country_codes":["US","MX","IL","BR"],"uid_authentication":false,"ga_property":{"website":"UA-6698700-1","aa":"UA-6698700-5","mv":"UA-6698700-6","cpw":"UA-6698700-9"},"carpool_web":{"show_tour":false},"client_error_reporting":{"api_key":"AIzaSyBCaWDnvIXy7MZRIb9XfpAf6LiUTbwOY7w","project_id":"waze-web-am","service":"website"},"verify_email_auto_redirect":true,"cpw_chat":false,"debug_delete_account":false},"country_code":"DE","locale":"en","revision":"v1.20.0","recaptcha":{"login_key":"6LfLjVIUAAAAAEJ5rgYY151d5Zy1qD46Gvc8MP42"},"navigation":{"editor_path":"/editor","livemap_path":"/livemap?utm_source=waze_website\u0026utm_campaign=waze_website","login_path":"/_user/login/multidevice/initiation","login_mobile_path":"/signin","download_data_path":"/account/download_data","universal_carpool_web_path":"/rul?redirect_app=carpool_web\u0026utm_campaign=default\u0026utm_medium=web-legal-tos\u0026utm_source=waze_website","support_path":"http://support.google.com/waze/carpool/answer/9719407","account_path":"/account","carpool_web_path":"/carpool/web?utm_campaign=default\u0026utm_medium=web-legal-tos\u0026utm_source=waze_website","report_issue_path":"https://support.google.com/waze/carpool/contact/wazecarpool_web","carpool_go_path":"/carpool/go?utm_campaign=default\u0026utm_medium=web-legal-tos\u0026utm_source=waze_website","notifications_path":"/notifications"}}}
 </script>
+<script>
+  var gonElement = document.getElementById('gonJson');
+  if (gonElement) { window.gon = JSON.parse(gonElement.textContent); }
+</script>
+<script>
+  dataLayer = [window.gon.data_layer]
+</script>
+
 <!-- Google Tag Manager -->
 <script>
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -11,17 +19,11 @@
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-NCTWGXP')
-</script>
-<!-- End Google Tag Manager -->
+</script><!-- End Google Tag Manager -->
 
 <title>Terms of Use from Waze, the Live Traffic Map Map</title>
 <meta content='Learn more about Waze&#39;s Copyright Policy. How do copyrights help us run our live traffic maps? Remember, road information prevails. Be a cautious driver.' name='description'>
 <meta content='Live Traffic, Map' name='keywords'>
-<script>
-//<![CDATA[
-window.gon={};gon.locale="en";gon.urlLocale=null;gon.config={"flags":{"pii_tool_countries":["Austria","Belgium","Bulgaria","Brazil","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland","Portugal","Romania","Slovakia","Slovenia","Spain","Sweden","United Kingdom","United States","Liechtenstein","Norway","Iceland"],"delete_data":false,"instant_book":true,"dynamic_loading":false,"carpool_available_country_codes":["US","MX","IL","BR"],"uid_authentication":false,"ga_property":{"website":"UA-6698700-1","aa":"UA-6698700-5","mv":"UA-6698700-6","cpw":"UA-6698700-9"},"carpool_web":{"show_tour":false},"client_error_reporting":{"api_key":"AIzaSyBCaWDnvIXy7MZRIb9XfpAf6LiUTbwOY7w","project_id":"waze-web-am","service":"website"},"verify_email_auto_redirect":true,"cpw_chat":false,"debug_delete_account":false},"country_code":"US","locale":"en","revision":"v1.18.3","recaptcha":{"login_key":"6LfLjVIUAAAAAEJ5rgYY151d5Zy1qD46Gvc8MP42"},"navigation":{"editor_path":"/editor","livemap_path":"/livemap?utm_source=waze_website\u0026utm_campaign=waze_website","login_path":"/_user/login/multidevice/initiation","login_mobile_path":"/signin","download_data_path":"/account/download_data","universal_carpool_web_path":"/rul?redirect_app=carpool_web\u0026utm_campaign=default\u0026utm_medium=web-legal-tos\u0026utm_source=waze_website","support_path":"http://support.google.com/waze/carpool/answer/9719407","account_path":"/account","carpool_web_path":"/carpool/web?utm_campaign=default\u0026utm_medium=web-legal-tos\u0026utm_source=waze_website","report_issue_path":"https://support.google.com/waze/carpool/contact/wazecarpool_web","carpool_go_path":"/carpool/go?utm_campaign=default\u0026utm_medium=web-legal-tos\u0026utm_source=waze_website","notifications_path":"/notifications"}};
-//]]>
-</script>
 <link rel="stylesheet" media="all" href="/website/assets/application_legacy-89de71f303b0dcf872da6aacefb526dbcdce8be18ccdf519232c95a666139159.css" />
 <link rel="stylesheet" media="screen" href="/website/assets/packs/css/1-9c6933fa.chunk.css" />
 <link rel="stylesheet" media="screen" href="/website/assets/packs/css/2-825ec315.chunk.css" />
@@ -32,21 +34,21 @@ window.gon={};gon.locale="en";gon.urlLocale=null;gon.config={"flags":{"pii_tool_
 <meta property="og:title" content="Terms of Use from Waze, the Live Traffic Map Map" /><meta property="og:description" content="Learn more about Waze&#39;s Copyright Policy. How do copyrights help us run our live traffic maps? Remember, road information prevails. Be a cautious driver." /><meta property="og:type" content="website" /><meta property="twitter:card" content="summary" /><meta property="twitter:site" content="@waze" /><meta property="twitter:image" content="/website/assets/packs/media/images/og_rebrand/twitter-95a354976ffbf43a5588f8bab8a69b8b.png" /><meta property="twitter:title" content="Terms of Use from Waze, the Live Traffic Map Map" /><meta property="twitter:description" content="Learn more about Waze&#39;s Copyright Policy. How do copyrights help us run our live traffic maps? Remember, road information prevails. Be a cautious driver." /><meta property="og:image" content="/website/assets/packs/media/images/og_rebrand/standard-178b36e338d2091811b3cea4016dfce4.png" /><meta property="og:image:secure_url" content="/website/assets/packs/media/images/og_rebrand/standard-178b36e338d2091811b3cea4016dfce4.png" /><meta property="og:image:type" content="png" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /><meta property="og:image" content="/website/assets/packs/media/images/og_rebrand/whatsapp-921341267b5349f600d8abfcd5d07d6d.png" /><meta property="og:image:secure_url" content="/website/assets/packs/media/images/og_rebrand/whatsapp-921341267b5349f600d8abfcd5d07d6d.png" /><meta property="og:image:type" content="png" /><meta property="og:image:width" content="400" /><meta property="og:image:height" content="400" />
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  
-  ga('create', 'UA-6698700-1', {
+
+  ga('create', gon.config.flags.ga_property.website, {
     cookieDomain: 'waze.com'
-    });
-  
-  try {
-    
-  } catch (e) {
-    console.error(e);
+  });
+  if (window.gon.analytics_plugin) {
+    try {
+      ga('require', 'GTM-PXBJSCH');
+    } catch (e) {
+      console.error(e);
+    }
   }
 </script>
-
 
 </head>
 <body class='legal-controller rebrand-2020 locale-en' id='legal-tos'>
@@ -906,7 +908,7 @@ Select language
 <i class='fa fa-caret-down wz-footer-list-heading-icon'></i>
 </p>
 <div class='wz-footer-list-content'>
-<a class='wz-footer-list-link' href='/livemap?utm_source=waze_website&amp;utm_campaign=waze_website'>Search</a>
+<a class='wz-footer-list-link' href='/livemap?utm_source=waze_website&amp;utm_campaign=waze_website'>Plan a drive</a>
 <a class='wz-footer-list-link' href='/events'>Major events</a>
 <a class='wz-footer-list-link' href='/editor'>Edit the map</a>
 <a class='wz-footer-list-link' href='/location'>Locations</a>
@@ -962,13 +964,17 @@ Copyright Notice
 </footer>
 
 
-<script src="/website/assets/packs/js/runtime-ad5140779611185582e4.js"></script>
-<script src="/website/assets/packs/js/translations/en-72b4bb9e473f8023a106.chunk.js"></script>
-<script src="/website/assets/packs/js/1-b772704c5b186f29cb69.chunk.js"></script>
-<script src="/website/assets/packs/js/2-21c7967d877387989fd0.chunk.js"></script>
-<script src="/website/assets/packs/js/application-dfd75971961e24f2a414.chunk.js"></script>
-
-
+<script type='text/javascript'>
+    var locale = gon.locale;
+    var translationsMap = {"af":"/website/assets/packs/js/translations/af-c0eee6bbe41abe6be81c.chunk.js","ar":"/website/assets/packs/js/translations/ar-65c3d3aa443cbe0db59f.chunk.js","bg":"/website/assets/packs/js/translations/bg-957ee43a8a2cd3c1f3cf.chunk.js","ca":"/website/assets/packs/js/translations/ca-eefb57faec64ddeeee78.chunk.js","cs":"/website/assets/packs/js/translations/cs-f00accba547cc3195dcb.chunk.js","da":"/website/assets/packs/js/translations/da-68eb17c211e410892a98.chunk.js","de":"/website/assets/packs/js/translations/de-3e051971e32ecbb1f4ff.chunk.js","en-GB":"/website/assets/packs/js/translations/en-GB-e2763e253d357146f7eb.chunk.js","en":"/website/assets/packs/js/translations/en-f43b02c1b49334818ec5.chunk.js","es-419":"/website/assets/packs/js/translations/es-419-7b4a0674ede6d5c413ec.chunk.js","es":"/website/assets/packs/js/translations/es-c71bd5c56eb5a7370d03.chunk.js","et":"/website/assets/packs/js/translations/et-3d048785653c01aa2ea6.chunk.js","fi":"/website/assets/packs/js/translations/fi-487e3472917c9c4b8c84.chunk.js","fr":"/website/assets/packs/js/translations/fr-7e90a7b41f5082ea6c44.chunk.js","gl":"/website/assets/packs/js/translations/gl-6036de2ba763fc93da86.chunk.js","he":"/website/assets/packs/js/translations/he-3c192982cd68545f4bf2.chunk.js","hr":"/website/assets/packs/js/translations/hr-77799859fe1db00f4d48.chunk.js","hu":"/website/assets/packs/js/translations/hu-24dda5f6f4cc4cbeb7a6.chunk.js","id":"/website/assets/packs/js/translations/id-1039b13b1339dfbf637f.chunk.js","it":"/website/assets/packs/js/translations/it-9c104639ec8fd5962093.chunk.js","ja":"/website/assets/packs/js/translations/ja-a5937285bffdc55255ea.chunk.js","ko":"/website/assets/packs/js/translations/ko-1f7e28ce64449d2348e0.chunk.js","lt":"/website/assets/packs/js/translations/lt-58e087ab46019cdfd506.chunk.js","lv":"/website/assets/packs/js/translations/lv-05669c4ab58d430ff3b2.chunk.js","ms":"/website/assets/packs/js/translations/ms-7f2a8008450cf1e0d739.chunk.js","nl":"/website/assets/packs/js/translations/nl-0c6f63c32109d3653662.chunk.js","no":"/website/assets/packs/js/translations/no-8784336693da0a46558a.chunk.js","pl":"/website/assets/packs/js/translations/pl-4229c82fc68f927d586f.chunk.js","pt-BR":"/website/assets/packs/js/translations/pt-BR-cda374d202933497598b.chunk.js","pt-PT":"/website/assets/packs/js/translations/pt-PT-7b44d59e239de1eaca8a.chunk.js","ro":"/website/assets/packs/js/translations/ro-e12733d3aa8b96e45868.chunk.js","ru":"/website/assets/packs/js/translations/ru-c8aab1cb56b5e921784a.chunk.js","sk":"/website/assets/packs/js/translations/sk-574b21afe893855f47be.chunk.js","sl":"/website/assets/packs/js/translations/sl-c276932e9e96fadc466c.chunk.js","sr":"/website/assets/packs/js/translations/sr-e7a31cc57b654019b22f.chunk.js","sv":"/website/assets/packs/js/translations/sv-551db6a4a31e8c31dcd2.chunk.js","tr":"/website/assets/packs/js/translations/tr-a02f96e093872c31e969.chunk.js","uk":"/website/assets/packs/js/translations/uk-023324870221fe23d389.chunk.js","zh-TW":"/website/assets/packs/js/translations/zh-TW-adbe598e9d93634158fd.chunk.js","zh":"/website/assets/packs/js/translations/zh-56539804311ffb4aca90.chunk.js"};
+    var translationsChunk = translationsMap[locale];
+    var scripts = [translationsChunk, '/website/assets/packs/js/runtime-ad5140779611185582e4.js','/website/assets/packs/js/1-cb51620cab5e2002f5b2.chunk.js','/website/assets/packs/js/2-6f77a47ef93fd095c506.chunk.js','/website/assets/packs/js/application-df5b0bf0bbd3b5e9c72b.chunk.js'];
+    scripts.forEach(function(scriptUrl) {
+      var s = document.createElement('script');
+      s.async = false; s.src = scriptUrl;
+      document.head.appendChild(s);
+    });
+  </script>
 </body>
 </html>
 
