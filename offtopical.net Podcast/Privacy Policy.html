@@ -4,15 +4,17 @@
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="/res/css/main.css?1.4" />
+        <link rel="stylesheet" type="text/css" href="/res/css/he-palette.css"/>
+        <link rel="stylesheet" type="text/css" href="/res/css/main.css?82" />
         <link rel="stylesheet" href="/res/css/ionicons.min.css">
+
         <link type="application/rss+xml" rel="alternate"
       title="The Off Topical Podcast" href="http://feed.offtopical.net"/>
         <meta http-equiv="content-type" content="text/php; charset=utf-8" />
         <meta name="theme-color" content="#852d66" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta property="og:title" content="The Off Topical Podcast">
-        <meta property="og:description" content="The Off Topical Podcast is a tech podcast from Gardiner Bryant (The Linux Gamer) and Raven67854. It's a gaming, tech, and news podcast.">
+        <meta property="og:description" content="Go beyond the headlines with in-depth discussions of the week's tech, open source, and gaming news.">
         <meta property="og:image" content="https://offtopical.net/res/img/mark.png">
         <meta property="og:url" content="https://offtopical.net/">
         <meta property="og:image:alt" content="Off Topical Logomark">
@@ -22,197 +24,66 @@
     
 <body>
     <nav>
-        <ul id="nav">
+        <!--<ul id="nav">
             <li name="listen"></li>
             <li name="hosts"></li>
             <li name="contact"></li>
             <li name="privacy"></li>
-        </ul>
-    </nav><episode-player>
-    <b>Latest Episode:</b>
-    <episode-ticker><ticker-contents>&quot;Litigious Larry,&quot; and an especially off topic Off Topical</ticker-contents></episode-ticker>
-
-    <audio id='podcastAudio' controls>
-        <source src="/pg/media/2020-01-10_ot-podcast-52.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <label title='Created by coolmax10 on the Heavy Element forums!'>
-        <input id='enableVisualization' type='checkbox' onchange='toggle(this)'>
-        <box-improv></box-improv> Enable visualization
-    </label>
-    <sup>Looking for <a href='/pg/'>the web archive</a>?</sup>
-</episode-player>
-<splash-panel id='home'>
+        </ul>-->
+    </nav><splash-panel id='home'>
     <div id='one' class='fold' value='.3'></div>
     <div id='two' class='fold' value='.2'></div>
     <div id='three' class='fold' value='.1'></div>
 </splash-panel>
-
-<div id='hosts' name='hosts' class='offscreen_modal'>
-    <a class='close' href='#'>x</a>
-    <h1>Your Hosts</h1>
-    <div style='overflow-y:scroll; height:80%;'>
-        <div id='raven' class='host' style='width:100%'>
-            <h3>Raven67854</h3>
-            <div class='flex_row' style='flex-wrap:nowrap;'>
-                <div class='social-media-overlay'>
-                    <a href="https://youtube.com/raven67854" class="ion-social-youtube"></a>
-                    <!-- <a href="https://linuxrocks.online/web/accounts/93245" class="sprite mastodon"></a> -->
-                    <a href="https://twitch.tv/raven67854" class="ion-social-twitch-outline"></a>
-                    <a href="https://twitter.com/raven67854" class="ion-social-twitter"></a>
-                </div>
-                <div>
-                    <p>[No biography available]</p>
-                    <p style='text-align:right;'><a href='https://youtube.com/raven67854' class="ytLink"><span class='ion-social-youtube'></span> Raven67854</a></p>
-                </div>
-            </div>
-        </div>
-        <div id='gardiner' class='host' style='width:100%'>
-            <h3>Gardiner Bryant</h3>
-            <div class='flex_row' style='flex-wrap:nowrap;'>
-                <div class='social-media-overlay'>
-                    <a href="https://youtube.com/thelinuxgamer" class="ion-social-youtube"></a>
-                    <a href="https://linuxrocks.online/web/accounts/93245" class="sprite mastodon"></a>
-                    <a href="https://twitch.tv/xondak" class="ion-social-twitch-outline"></a>
-                    <a href="https://twitter.com/thelinuxgamer" class="ion-social-twitter"></a>
-                </div>
-                <div>
-                    <p>A software developer and all-around nerd from a small coastal town in Maine, Gardiner has been a FOSS enthusiast for over a decade.</p>
-                    <p>Best known for his YouTube channel <em>The Linux Gamer</em> for the last four years, he has been the host and primary creative force behind his YouTube channel.</p>
-                    <p>Being on YouTube has taught Gardiner grew unhappy with the abusive relationship Google and YouTube have with creators on their platform. Thus <em>Off Topical</em> born.</p>
-                    <ul>
-                        <li>Give the audience better alternatives to proprietary services like YouTube</li>
-                        <li>Control the distribution of his content</li>
-                            <ul>
-                                <li>(Rather than leaving it to the whims of a fickle algorithm)</li>
-                            </ul>
-                        <li>To have fun and participate in challenging work</li>
-                    </ul>
-                    <p></p>
-                    <p style='text-align:right;'><a href='https://youtube.com/thelinuxgamer' class="ytLink"><span class='ion-social-youtube'></span> The Linux Gamer</a></p>
-                </div>
-            </div>
-        </div>
+<main id='main-content'>
+    <div class='otp-logo'></div>
+    <p></p>
+    <div class='flex_row'>
+        <a href="https://feed.offtopical.net/"  title='RSS Feed' class='podcast-button'><subscribe-button id="subscribe_RSS"></subscribe-button></a>
+        <a href='itpc://feed.offtopical.net/' title='Pocket Casts for Android & iOS' class='podcast-button'><subscribe-button id="subscribe_PC"></subscribe-button></a>
+        <a href='itpc://feed.offtopical.net/' title='iOS Podcasts' class='podcast-button'><subscribe-button id="subscribe_iOS"></subscribe-button></a>
+        <a href='https://open.spotify.com/show/6KQK5lxBMJxQtfSVFdRauT' title='Follow us on Spotify' class='podcast-button' target="_blank"><subscribe-button id="subscribe_spotify"></subscribe-button></a>
+        <a href='https://www.google.com/podcasts?feed=aHR0cDovL29mZnRvcGljYWwubmV0L3BnL2ZlZWQueG1s' title='Listen on Google Play' class='podcast-button' target="_blank"><subscribe-button id="subscribe_google"></subscribe-button></a>
+        <a href='https://www.youtube.com/offtopical' title='Watch on YouTube' class='podcast-button' target="_blank"><subscribe-button id="subscribe_youtube"></subscribe-button></a>
     </div>
-</div>
+    <p>Use another podcast app? <a href='https://feed.offtopical.net/'>Click here</a> or listen on the <a href='/archive/'>web archive!</a></p>
+</main>
 
-<div id='contact' name='contact' class='offscreen_modal'>
-    <a class='close' href='#'>x</a>
-    <h1>Contact</h1>
-    <div class='flex_row' style='flex-wrap:nowrap;'>
-        <div>
-            <h3>Join the Forum</h3>
-            <a href='https://forum.heavyelement.io/' style='display: block;text-align:center;margin-bottom:3em'><img src='https://forum.heavyelement.io/assets/logo-uj80xtwl.png'></a>
-            <!-- <div class='mergefield'>
-                <input type='text' name='subject' placeholder='What kind of news is it?'/>
-                <div class='fieldmerge'>
-                    <textarea name='body' placeholder='Submit your news.'></textarea>
-                    <button id='send' class='ion-android-send'></button>
-                </div>
-            </div> -->
-        </div>
-        <div>
-            <h3>Send us an email</h3>
-            <p>Send us an email and we'll be sure to read it on air!</p>
-            <div class='copy-input'>
-                <input type='email' id='rss-feed' class='copy-url' readonly='readonly' value='show@offtopical.net'/>
-                <span class='ion-clipboard'></span>
-            </div>
-        </div>
-    </div>
-</div>
+<episode-player id='episode' class='landing'>
+    <container>
+        <episode-icon><img src='https://offtopical.net/pg/images/2021-02-05_2021-02-05-podcast-54.jpg'></episode-icon>
+        <section>
+            <episode-ticker><ticker-contents id='episode-title'>We're BACK! Huawei's Disinfo War PLUS what smartphone is best for everyday consumer's privacy?</ticker-contents></episode-ticker>
+            <audio controls id="episode-player" preload="none">
+                <source src="http://offtopical.net/pg/media/2021-02-05_2021-02-05-podcast-54.mp3" type="audio/mpeg"></source>
+            </audio>
+        </section>
+    </container>
+</episode-player>
 
-<div id='listen' name='listen' class='offscreen_modal'>
-    <a class='close' href='#'>x</a>
-    <div>
-        <h1>Listen To the Podcast</h1>
-        <h4 style='text-align:center'>New episodes released every Friday.</h4>
-    </div>
-    <div class='flex_page' style='text-align:center'>
-        <div id='prev' class='ui-controls ion-chevron-left'>
-        </div>
-        <div id='next' class='ui-controls ion-chevron-right'>
-        </div>
-        <div class='grouping'>
-            <h3>Subscribe to the RSS Audio Feed</h3>
-            <p>Subscribe to the audio feed and enjoy the show from any podcast app.</p>
-            <div class='flex_row'>
-                <a href='itpc://feed.offtopical.net/' title='Pocket Casts for Android & iOS' class='podcast-button'>
-                    <img src='/res/img/podcast-button-pc.svg' alt='Pocket Casts for Android & iOS'/>
-                </a>
-                <a href='itpc://feed.offtopical.net/' title='PodcastAddict' class='podcast-button'>
-                    <img src='/res/img/podcast-button-pa.svg' alt='PodcastAddict'/>
-                </a>
-                <a href='https://open.spotify.com/show/6KQK5lxBMJxQtfSVFdRauT' title='Follow us on Spotify' class='podcast-button'>
-                    <img src='/res/img/podcast-button-sp.svg' alt='Spotify'/>
-                </a>
-                <a href='https://www.google.com/podcasts?feed=aHR0cDovL29mZnRvcGljYWwubmV0L3BnL2ZlZWQueG1s' title='Listen on Google Play' class='podcast-button'>
-                    <img src='/res/img/podcast-button-gp.svg' alt='Google Podcast'/>
-                </a>
-            </div>
-            <p>Don't have an app? No problem, just <a href='javascript:void()' onclick='scrollToTheDamnDiv("2");'>click here!</a></p>
-        </div>
-        <div class='grouping'>
-            <div style='width:100%'>
-                <h3>The Old Fashioned Way</h3>
-                <p>Add this URL to your favorite RSS reader or podcast app:</p>
-                <div class='copy-input'>
-                    <input type='url' id='contact' class='copy-url' readonly='readonly' value='http://feed.offtopical.net/'/>
-                    <span class='ion-clipboard'></span>
-                </div>
-                <div id='clipboard' style='text-align:center;width:100%'></div>
-                <p>(Just tap the link and it will copy to your clipboard automatically)</p>
-            </div>
-        </div>
-        <!-- <div class='grouping'>
-            <h3>Become a Patron</h3>
-            <div style='text-align:center; width:100%;'>
-                <p>Patron subscribers get <b>early access</b> to the podcast.</p>
-                <a href='https://patreon.com/thelinuxgamer'>
-                    <img src='/res/img/patreon_logo_animation.gif' width='50%'/>
-                </a>
-            </div>
-        </div> -->
-        <div class='grouping'>
-            <h3>Listen on the Web</h3>
-            <p>If you'd prefer a more <em>in-browser</em> experience, check out the <a href='http://offtopical.net/pg/' class='ytLink'>web archive.</a></p>
-        </div>
-        <div class='grouping'>
-            <h3>Third Party Hosts</h3>
-            <p>Enjoy clips and highlights from the show on <a href='https://www.youtube.com/playlist?list=PLF-hjtblU_WiDd6kPMeLQMHNdkf_iWwSl' class="ytLink">YouTube</a> or <a href='https://www.bitchute.com/channel/xondak/' class="ytLink">BitChute</a>.</p>
-        </div>
-    </div>
-</div>
+<script type='text/json' id="episode_data">{"rss":{"channel":{"title":"The OffTopical Podcast","link":"http:\/\/offtopical.net\/pg\/","atom:link":[],"atom:link_attr":{"href":"http:\/\/offtopical.net\/pg\/feed.xml","rel":"self","type":"application\/rss+xml"},"description":"Go beyond the headlines with in-depth discussions of the week's tech, open source, and gaming news.","generator":"Podcast Generator 2.7 - http:\/\/www.podcastgenerator.net","lastBuildDate":"Sat, 06 Feb 2021 22:19:23 -0500","language":"en","copyright":"Copyright 2021 - Authorial Integrity License - github.com\/heavyelement\/ail","itunes:image":[],"itunes:image_attr":{"href":"http:\/\/offtopical.net\/pg\/images\/itunes_image.jpg"},"image":{"url":"http:\/\/offtopical.net\/pg\/images\/itunes_image.jpg","title":"The OffTopical Podcast","link":"http:\/\/offtopical.net\/pg\/"},"itunes:summary":"Go beyond the headlines with in-depth discussions of the week's tech, open source, and gaming news.","itunes:subtitle":"A production of Heavy Element, Inc.","itunes:author":"Gardiner Bryant","itunes:owner":{"itunes:name":"Gardiner Bryant","itunes:email":"gardiner@offtopical.net"},"itunes:explicit":[],"itunes:category":{"0":{"itunes:category":[],"itunes:category_attr":{"text":"Tech News"}},"1":{"itunes:category":[],"itunes:category_attr":{"text":"Video Games"}},"0_attr":{"text":"Technology"},"2":[],"2_attr":{"text":"News & Politics"}},"item":[{"title":"We're BACK! Huawei's Disinfo War PLUS what smartphone is best for everyday consumer's privacy?","itunes:subtitle":"Wolfgang and I chat about the news this week. Check it out and show our sponsor some love: https:\/\/linode.com\/offtopical","itunes:summary":"<p>Wolfgang and I chat about the news this week. Check it out and show our sponsor some love: https:\/\/linode.com\/offtopical<\/p>","description":"Wolfgang and I chat about the news this week. Check it out and show our sponsor some love: https:\/\/linode.com\/offtopical","link":"http:\/\/offtopical.net\/pg\/?name=2021-02-05_2021-02-05-podcast-54.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2021-02-05_2021-02-05-podcast-54.mp3","length":"22694789","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2021-02-05_2021-02-05-podcast-54.mp3","itunes:duration":"59:22","itunes:image":[],"itunes:image_attr":{"href":"http:\/\/offtopical.net\/pg\/images\/2021-02-05_2021-02-05-podcast-54.jpg"},"author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"huawei\t\t","itunes:explicit":"no","pubDate":"Fri, 05 Feb 2021 12:51:00 -0500"},{"title":"\"Mr. Picard,\" Sony\/Microsoft Team Up on Cloud Gaming, Star Trek: Picard Leaks, and more!","itunes:subtitle":"Microsoft courts Sony with a \u201ccollaboration\u201d on Cloud gaming services, plus Purism\u2019s Librem One launch hits some roadbumps, Star Trek: Picard has a few photos from set leaked online and MORE https:\/\/forum.heavyelement.io\/d\/624-episode-36-show-notes","itunes:summary":"Microsoft courts Sony with a \u201ccollaboration\u201d on Cloud gaming services, plus Purism\u2019s Librem One launch hits some roadbumps, Star Trek: Picard has a few photos from set leaked online and MORE https:\/\/forum.heavyelement.io\/d\/624-episode-36-show-notes","description":"Microsoft courts Sony with a \u201ccollaboration\u201d on Cloud gaming services, plus Purism\u2019s Librem One launch hits some roadbumps, Star Trek: Picard has a few photos from set leaked online and MORE https:\/\/forum.heavyelement.io\/d\/624-episode-36-show-notes","link":"http:\/\/offtopical.net\/pg\/?name=2019-05-17_ot-podcast-36.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-05-17_ot-podcast-36.mp3","length":"21568285","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-05-17_ot-podcast-36.mp3","itunes:duration":"31:35","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"Librem One, Star Trek, Picard, Patrick Stewart, CBS, Sony, Microsoft, Azure, Cloud Gaming, Google Stadia","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:43:59 -0500"},{"title":"\"I'm gonna stop talking before I get myself into trouble,\" GNOME devs say it's time to stop theming and MORE!","itunes:subtitle":"PlayDate makes for an interesting new *Panic* venture, plus GNOME app devs are fed up with distros theming themselves just to be different, and MORE! https:\/\/forum.heavyelement.io\/d\/628","itunes:summary":"PlayDate makes for an interesting new *Panic* venture, plus GNOME app devs are fed up with distros theming themselves just to be different, and MORE! https:\/\/forum.heavyelement.io\/d\/628","description":"PlayDate makes for an interesting new *Panic* venture, plus GNOME app devs are fed up with distros theming themselves just to be different, and MORE! https:\/\/forum.heavyelement.io\/d\/628","link":"http:\/\/offtopical.net\/pg\/?name=2019-05-24_ot-podcast-37.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-05-24_ot-podcast-37.mp3","length":"21445258","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-05-24_ot-podcast-37.mp3","itunes:duration":"32:54","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"Star Trek: Picard, Facebook, Cryptocurrency, GNOME app developers","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:43:38 -0500"},{"title":"\"Stadia is just confusing,\" New Proton & OpenRA Releases, Stadia Pricing Details & MORE!","itunes:subtitle":"Proton 4.2-6 released, OpenRA blog post details new features, Google Stadia pricing details are just confusing, and just in case you missed my latest video... https:\/\/forum.heavyelement.io\/d\/681","itunes:summary":"<p>Proton 4.2-6 released, OpenRA blog post details new features, Google Stadia pricing details are just confusing, and just in case you missed my latest video... https:\/\/forum.heavyelement.io\/d\/681<\/p>","description":"Proton 4.2-6 released, OpenRA blog post details new features, Google Stadia pricing details are just confusing, and just in case you missed my latest video... https:\/\/forum.heavyelement.io\/d\/681","link":"http:\/\/offtopical.net\/pg\/?name=2019-06-07_ot-podcast-38.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-06-07_ot-podcast-38.mp3","length":"22508917","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-06-07_ot-podcast-38.mp3","itunes:duration":"34:00","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"Proton, Valve, OpenRA, FOSS, Free Software, Google Stadia, ","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:43:31 -0500"},{"title":"\"Raven's Back!\" Plus, Google says it cares about your privacy, Atari VCS Preorders Open, and more!","itunes:subtitle":"Raven is BACK and we\u2019re here with a brand new episode of the show! Atari VCS Preorders are Live, CERN ditches Microsoft over licensing fees, and so much more! https:\/\/forum.heavyelement.io\/d\/692","itunes:summary":"<p>Raven is BACK and we\u2019re here with a brand new episode of the show! Atari VCS Preorders are Live, CERN ditches Microsoft over licensing fees, and so much more!\u00a0https:\/\/forum.heavyelement.io\/d\/692<\/p>","description":"Raven is BACK and we\u2019re here with a brand new episode of the show! Atari VCS Preorders are Live, CERN ditches Microsoft over licensing fees, and so much more! https:\/\/forum.heavyelement.io\/d\/692","link":"http:\/\/offtopical.net\/pg\/?name=2019-06-14_ot-podcast-39.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-06-14_ot-podcast-39.mp3","length":"56317607","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-06-14_ot-podcast-39.mp3","itunes:duration":"1:24:13","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"CERN, FOSS, Linux, Microsoft, Kernel, Google, Atari, VCS, Licensing Fees","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:43:15 -0500"},{"title":"\"This one is R-rated,\" Librem 5 vs. PinePhone, DOTA Underlords impresses, and MORE!","itunes:subtitle":"Librem 5 vs. PinePhone? Ubuntu ends 32-bit, WINE, gaming support. DOTA Underlords released for Linux, mobile. EA Says their gambling mechanics are ethical. Lenovo Laptops can have Linux pre-installed on them? https:\/\/forum.heavyelement.io\/d\/695","itunes:summary":"Librem 5 vs. PinePhone? Ubuntu ends 32-bit, WINE, gaming support. DOTA Underlords released for Linux, mobile. EA Says their gambling mechanics are ethical. Lenovo Laptops can have Linux pre-installed on them? https:\/\/forum.heavyelement.io\/d\/695","description":"Librem 5 vs. PinePhone? Ubuntu ends 32-bit, WINE, gaming support. DOTA Underlords released for Linux, mobile. EA Says their gambling mechanics are ethical. Lenovo Laptops can have Linux pre-installed on them? https:\/\/forum.heavyelement.io\/d\/695","link":"http:\/\/offtopical.net\/pg\/?name=2019-06-21_ot-podcast-40.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-06-21_ot-podcast-40.mp3","length":"50046608","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-06-21_ot-podcast-40.mp3","itunes:duration":"1:13:25","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"\"This one is R-rated,\" Librem 5 vs. PinePhone, DOTA Underlords impresses, and MORE!","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:43:11 -0500"},{"title":"\"Oggling over G3s,\" Jony Ives leaves Apple, Twitter's new rules give special treatment to the world's elite and MORE!","itunes:subtitle":"Twitter clarifies its rules about world leaders breaking its rules. And the rules don\u2019t apply to them, apparently, Jony Ive is leaving Apple, FCC allows Verizon to lock devices for 60 days, and MORE https:\/\/forum.heavyelement.io\/d\/701","itunes:summary":"<p>Twitter clarifies its rules about world leaders breaking its rules. And the rules don\u2019t apply to them, apparently, Jony Ive is leaving Apple, FCC allows Verizon to lock devices for 60 days, and MORE<\/p> <p>https:\/\/forum.heavyelement.io\/d\/701<\/p>","description":"Twitter clarifies its rules about world leaders breaking its rules. And the rules don\u2019t apply to them, apparently, Jony Ive is leaving Apple, FCC allows Verizon to lock devices for 60 days, and MORE https:\/\/forum.heavyelement.io\/d\/701","link":"http:\/\/offtopical.net\/pg\/?name=2019-06-28_ot-podcast-41.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-06-28_ot-podcast-41.mp3","length":"46306454","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-06-28_ot-podcast-41.mp3","itunes:duration":"1:04:59","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"Jony Ives, Apple, Tim Cook, Twitter, Trump, World Leaders, Rules, Verizon, FCC","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:42:31 -0500"},{"title":"\"I'm Too Much of an Optimist,\" Mozilla is an #InternetVillain, Steam Controller 2.0 rumors and MORE!","itunes:subtitle":"Rumor has it, Valve are working on a new Steam Controller. What features would you like to see? A big part of the Internet went down this week, we get to the bottom of it... In the UK, 30,000 online followers makes you an Internet celebrity. Surprisingly, not a \"Cyber Celebrity\" https:\/\/forum.heavyelement.io\/d\/706","itunes:summary":[],"description":"Rumor has it, Valve are working on a new Steam Controller. What features would you like to see? A big part of the Internet went down this week, we get to the bottom of it... In the UK, 30,000 online followers makes you an Internet celebrity. Surprisingly, not a \"Cyber Celebrity\" https:\/\/forum.heavyelement.io\/d\/706","link":"http:\/\/offtopical.net\/pg\/?name=2019-07-05_ot-podcast-42.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-07-05_ot-podcast-42.mp3","length":"36730707","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-07-05_ot-podcast-42.mp3","itunes:duration":"1:02:30","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:42:08 -0500"},{"title":"\"If you have an iPhone, that's on you,\" Plus Siri and Google's Assistant are always listening, and GIVEAWAY CODES!","itunes:subtitle":"Subscribe to the podcast on YouTube! https:\/\/youtu.be\/FaLMy8bvsCU","itunes:summary":"Subscribe to the podcast on YouTube! https:\/\/youtu.be\/FaLMy8bvsCU","description":"Subscribe to the podcast on YouTube! https:\/\/youtu.be\/FaLMy8bvsCU","link":"http:\/\/offtopical.net\/pg\/?name=2019-08-09_ot-podcast-44.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-08-09_ot-podcast-44.mp3","length":"42864057","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-08-09_ot-podcast-44.mp3","itunes:duration":"1:17:21","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:41:42 -0500"},{"title":"\"These companies want to own you,\" Wal-mart wants a cryptocoin, Google wants to authorize your online presence.","itunes:subtitle":"Google says you're still using compromised passwords, Apple sued because iCloud is really Google and Azure--forgot to mention it, Georgia ordered to switch to paper ballots. Walmart wants in on crypto. https:\/\/forum.heavyelement.io\/d\/766","itunes:summary":"<p>Google says you're still using compromised passwords, Apple sued because iCloud is really Google and Azure--forgot to mention it, Georgia ordered to switch to paper ballots. Walmart wants in on crypto. <a href=\"https:\/\/forum.heavyelement.io\/d\/766\">https:\/\/forum.heavyelement.io\/d\/766<\/a><\/p> <p>Georgia, Walmart, Cryptocurrency, Google, Passwords, data breach, google cloud, icloud, azure, amazon web services<\/p>","description":"Google says you're still using compromised passwords, Apple sued because iCloud is really Google and Azure--forgot to mention it, Georgia ordered to switch to paper ballots. Walmart wants in on crypto. https:\/\/forum.heavyelement.io\/d\/766","link":"http:\/\/offtopical.net\/pg\/?name=2019-08-17_ot-podcast-45.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-08-17_ot-podcast-45.mp3","length":"41711170","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-08-17_ot-podcast-45.mp3","itunes:duration":"1:22:58","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"Georgia, Walmart, Cryptocurrency, Google, Passwords, data breach, google cloud, icloud, azure, amazon web services","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:41:32 -0500"},{"title":"\"I won't shut up about this,\" Librem 5 August Update, Valve makes an oopsie, and YouTube news","itunes:subtitle":"Purism shows the August progress for the Librem 5, plus Valve rejects a security researcher's issue, Apple Card is the most Apple thing Apple's ever Apple'd, and YouTube is suddenly being cool, but still YouTube. https:\/\/forum.heavyelement.io\/d\/777","itunes:summary":"<p>Purism shows the August progress for the Librem 5, plus Valve rejects a security researcher's issue, Apple Card is the most Apple thing Apple's ever Apple'd, and YouTube is suddenly being cool, but still YouTube. https:\/\/forum.heavyelement.io\/d\/777<\/p>","description":"Purism shows the August progress for the Librem 5, plus Valve rejects a security researcher's issue, Apple Card is the most Apple thing Apple's ever Apple'd, and YouTube is suddenly being cool, but still YouTube. https:\/\/forum.heavyelement.io\/d\/777","link":"http:\/\/offtopical.net\/pg\/?name=2019-08-23_ot-podcast-46.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-08-23_ot-podcast-46.mp3","length":"39115150","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-08-23_ot-podcast-46.mp3","itunes:duration":"1:15:58","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"Apple, Apple card, Librem 5, Purism, Valve, HackerOne, YouTube, Copyright, DMCA","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:41:05 -0500"},{"title":"\"March of the Librem 5,\" Purism's roll-out plans plus your listener questions!","itunes:subtitle":"Heavy Element","itunes:summary":[],"description":"Heavy Element","link":"http:\/\/offtopical.net\/pg\/?name=2019-09-06_ot-podcast-47.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-09-06_ot-podcast-47.mp3","length":"40261689","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-09-06_ot-podcast-47.mp3","itunes:duration":"1:14:48","itunes:image":[],"itunes:image_attr":{"href":"http:\/\/offtopical.net\/pg\/images\/2019-09-06_ot-podcast-47.jpg"},"author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:40:49 -0500"},{"title":"\"We've been doing this for a YEAR,\"\ud83c\udf82 GNOME 3.34 released, Hello Games continues to support Proton","itunes:subtitle":"GNOME 3.34 releasae, Hello Games improves Linux Proton support for No Man's Sky, Nintendo sues another ROM site https:\/\/forum.heavyelement.io\/d\/802","itunes:summary":"<p>GNOME 3.34 releasae, Hello Games improves Linux Proton support for No Man's Sky, Nintendo sues another ROM site https:\/\/forum.heavyelement.io\/d\/802<\/p>","description":"GNOME 3.34 releasae, Hello Games improves Linux Proton support for No Man's Sky, Nintendo sues another ROM site https:\/\/forum.heavyelement.io\/d\/802","link":"http:\/\/offtopical.net\/pg\/?name=2019-09-13_ot-podcast-48.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-09-13_ot-podcast-48.mp3","length":"39470455","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-09-13_ot-podcast-48.mp3","itunes:duration":"1:17:11","itunes:image":[],"itunes:image_attr":{"href":"http:\/\/offtopical.net\/pg\/images\/2019-09-13_ot-podcast-48.jpg"},"author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"Off Topical,Heavy Element,Gardiner Bryant,Raven67854,Linux Gaming,Hello Games,Gnome 3.34,Nintendo,ROMs","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:40:23 -0500"},{"title":"Interview with Ikey Doherty of LispySnake, LTD","itunes:subtitle":"Watch on YouTube https:\/\/youtu.be\/_C0g0VQ5QJ0","itunes:summary":"Watch on YouTube https:\/\/youtu.be\/_C0g0VQ5QJ0","description":"Watch on YouTube https:\/\/youtu.be\/_C0g0VQ5QJ0","link":"http:\/\/offtopical.net\/pg\/?name=2019-09-27_ot-podcast-49.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-09-27_ot-podcast-49.mp3","length":"16011931","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-09-27_ot-podcast-49.mp3","itunes:duration":"32:53","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"Ikey Doherty, LispySnake, ClearLinux","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:39:56 -0500"},{"title":"\"The Russian Internet will be the death of us all\"","itunes:subtitle":"EU's Highest court rules EU citizens, member countries can block \"illegal\" content worldwide, vaping related illness damages lung tissue like Mustard Gas and more https:\/\/forum.heavyelement.io\/d\/832-episode-49-show-notes","itunes:summary":"<p>EU's Highest court rules EU citizens, member countries can block \"illegal\" content worldwide, vaping related illness damages lung tissue like Mustard Gas and more https:\/\/forum.heavyelement.io\/d\/832-episode-49-show-notes<\/p>","description":"EU's Highest court rules EU citizens, member countries can block \"illegal\" content worldwide, vaping related illness damages lung tissue like Mustard Gas and more https:\/\/forum.heavyelement.io\/d\/832-episode-49-show-notes","link":"http:\/\/offtopical.net\/pg\/?name=2019-10-04_ot-podcast-49.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-10-04_ot-podcast-49.mp3","length":"33522195","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-10-04_ot-podcast-49.mp3","itunes:duration":"1:05:13","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"EU, Europe, Vaping, Chrome, Microsoft, Surface Duo","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:39:51 -0500"},{"title":"\"I Hate Microsoft's Emoji Key\", Hands-on Librem 5 news, Valve's \"Remote Play Together\" and MORE!","itunes:subtitle":"Check out the show notes: https:\/\/forum.heavyelement.io\/d\/846-episode-50-show-notes","itunes:summary":"Check out the show notes: https:\/\/forum.heavyelement.io\/d\/846-episode-50-show-notes","description":"Check out the show notes: https:\/\/forum.heavyelement.io\/d\/846-episode-50-show-notes","link":"http:\/\/offtopical.net\/pg\/?name=2019-10-11_ot-podcast-50.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2019-10-11_ot-podcast-50.mp3","length":"39094505","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2019-10-11_ot-podcast-50.mp3","itunes:duration":"1:14:19","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"Emoji,Keyboard,Microsoft,Valve,Remote Play,Nvidia,Blender,China,Librem 5,Purism,Veloren","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:39:41 -0500"},{"title":"\"You can cut that part out,\" 2020 update, EA Bans Linux Players & More!","itunes:subtitle":"Check out the show notes: https:\/\/forum.heavyelement.io\/d\/885","itunes:summary":"Check out the show notes: https:\/\/forum.heavyelement.io\/d\/885","description":"Check out the show notes: https:\/\/forum.heavyelement.io\/d\/885","link":"http:\/\/offtopical.net\/pg\/?name=2020-01-03_ot-podcast-51.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2020-01-03_ot-podcast-51.mp3","length":"17793048","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2020-01-03_ot-podcast-51.mp3","itunes:duration":"34:44","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:39:21 -0500"},{"title":"\"Litigious Larry,\" and an especially off topic Off Topical","itunes:subtitle":"In this episode we talk about Oracle, Larry Ellison, and the kerfuffle around ZFS and the Linux Kernel. Plus we chat about The Windows Terminal and a few other things. And then we just shoot breeze. https:\/\/forum.heavyelement.io\/d\/886","itunes:summary":"<p>In this episode we talk about Oracle, Larry Ellison, and the kerfuffle around ZFS and the Linux Kernel. Plus we chat about The Windows Terminal and a few other things. And then we just shoot breeze.<\/p>","description":"In this episode we talk about Oracle, Larry Ellison, and the kerfuffle around ZFS and the Linux Kernel. Plus we chat about The Windows Terminal and a few other things. And then we just shoot breeze. https:\/\/forum.heavyelement.io\/d\/886","link":"http:\/\/offtopical.net\/pg\/?name=2020-01-10_ot-podcast-52.mp3","enclosure":[],"enclosure_attr":{"url":"http:\/\/offtopical.net\/pg\/media\/2020-01-10_ot-podcast-52.mp3","length":"39177083","type":"audio\/mpeg"},"guid":"http:\/\/offtopical.net\/pg\/?name=2020-01-10_ot-podcast-52.mp3","itunes:duration":"1:15:46","author":"gardiner@offtopical.net (Gardiner Bryant)","itunes:author":"Gardiner Bryant","itunes:keywords":"larry ellison,oracle,google,linux,zfs,linus,windows terminal,coolretroterm,firefox,zero day,exploit","itunes:explicit":"no","pubDate":"Mon, 02 Nov 2020 23:39:06 -0500"}]}},"rss_attr":{"xmlns:itunes":"http:\/\/www.itunes.com\/dtds\/podcast-1.0.dtd","xml:lang":"en","version":"2.0","xmlns:atom":"http:\/\/www.w3.org\/2005\/Atom"}}</script>
 
-<div id='privacy' name='privacy' class='offscreen_modal'>
-    <a class='close' href='#'>x</a>
-    <h1>Privacy is our Policy</h1>
-    <div style='overflow-y:scroll; height:80%;'>
-        <p><i>Effective 12 October 2018*</i></p>
-        <h3>What We Collect</h3>
-        <p>Our podcast feed is handled by a self-hosted instance of <a href='http://www.podcastgenerator.net/home' title='Learn more about PodcastGenerator'>PodcastGenerator</a> (GPL v3). Our traffic is monitored by our hosting's built-in <a href='https://www.awstats.org/' title='Learn more about awstats.'>awstats</a> (GPL v3).</p>
-        <h3>How we use this data</h3>
-        <p>We use this info to get a rough idea of listership. This is an important metric for a podcast, since this ratio gives us insight into the topics that our listeners might be interested in hearing more--or less--of.</p>
-        <p>Given how flakey YouTube has been with who actually sees new videos, we're curious to discover the real ratio between subscriber vs download.</p>
-        <h3>Personally Identifiable Information</h3>
-        <p>We do not collect personally identifiable information from our listeners.</p>
-        <h3>Our Pledge</h3>
-        <p>We believe in <b>transparency</b>.</p>
-        <p>Should we ever find ourselves needing to change the types of information we collect, we pledge to make an announcement at the very beginning of our podcasts at least one week ahead of the change.</p>
-        <blockquote>*10 Oct 2018 - Previous to this change, we were using a custom built analytics/rss engine that was quickly shown to be unstable and incompatible with popular podcasting apps. As such, we switched to PodcastGenerator and awstat.</blockquote>
-    </div>
-</div>
-<canvas id="audioCanvas" style="position: absolute; left: 0; top: 0;z-index: 1;" width="0" height="0"></canvas>
+<!-- <canvas id="audioCanvas" style="position: absolute; left: 0; top: 0;z-index: 1;" width="0" height="0"></canvas> -->
 
-    </body>
+        </body>
 
-    <footer>
-        <div class="footer">
-            <div>
-            <!--<b>Copyright - 2018</b>-->
-            </div>
-        </div>
-    </footer>
-    <script src="/res/js/jquery.js?1.4"></script>
-    <script src="/res/js/main.js?1.4"></script>
-</html>
+        <footer>
+                <b>&copy;2021 Heavy Element, Inc. &mdash; All Rights Reserved</b>
+        </footer>
+        <script src="/res/js/jquery.js?82"></script>
+        <script src="/res/js/main.js?82"></script>
+    </html>
+<!-- <div class='flex_row'>
+        <a class='subscribe-sprite' href='itpc://feed.offtopical.net/' title='Pocket Casts for Android & iOS' class='podcast-button'>
+            <img src='/res/img/podcast-button-pc.svg' alt='Pocket Casts for Android & iOS'/>
+        </a>
+        <a href='https://open.spotify.com/show/6KQK5lxBMJxQtfSVFdRauT' title='Follow us on Spotify' class='podcast-button' target="_blank">
+            <img src='/res/img/podcast-button-sp.svg' alt='Spotify'/>
+        </a>
+        <a href='https://www.google.com/podcasts?feed=aHR0cDovL29mZnRvcGljYWwubmV0L3BnL2ZlZWQueG1s' title='Listen on Google Play' class='podcast-button' target="_blank">
+            <img src='/res/img/podcast-button-gp.svg' alt='Google Podcast'/>
+        </a>
+        <a href='https://www.youtube.com/offtopical' title='Watch on YouTube' class='podcast-button' target="_blank">
+            <img src='/res/img/podcast-button-yt.svg' alt='YouTube'/>
+        </a>
+    </div> -->
