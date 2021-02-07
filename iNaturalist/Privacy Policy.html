@@ -24,15 +24,26 @@
     <script src="/assets/jquery/jquery-ui-1.9.1.min-df87dfddbe6e5650f35c3aad37c138ac.js"></script>
     <script src="/assets/bootstrap.min-2d088f63208d59ff3818e4df251a9e35.js"></script>
     <script type="text/javascript">
-      I18n = { }
-      I18n.defaultLocale = "en"
-      I18n.locale = "en"
-      I18n.fallbacks = true
+  //<![CDATA[
+    I18n = { }
+    I18n.defaultLocale = "en";
+    I18n.locale = "en";
+    I18n.fallbacks = true;
+  //]]>
+</script>
+
+    <script type="text/javascript">
+        var SITE = {
+          name: "iNaturalist",
+          short_name: "iNat",
+          logo_square: "https://static.inaturalist.org/sites/1-logo_square.png?1573071870"
+        };
       var PREFERRED_PLACE;
+      var CONTROLLER_ACTION = "WikiPagesController::show";
     </script>
-    <script src="/assets/application_bundle-84ecd4f5376fa099b41f1daea91ac4a4.js"></script>
+    <script src="/assets/application_bundle-e1ea8f7c4d3767a58539b5472e2fce22.js"></script>
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="rb6TKkAuw3Q0WDT4EIen387VEQjqe4460ukhJvNGYF5qNb9E1J7UA8BR/BT8HUi6q2/i5kO6XuPpESXxj0FBdQ==" />
+<meta name="csrf-token" content="jyJNM0ag7GDRARwoABZrVm3vbIPzlYKzmOkDJ96TyWCBUwusRyV4q9jVkk67z1mPFJUz/+lpynYULAu0LTVHJQ==" />
     <meta name="config:inaturalist_api_url" content="https://api.inaturalist.org/v1">
     <meta property="og:type" content="website"/>
       <meta property="og:site_name" content="iNaturalist"/>
@@ -41,7 +52,7 @@
     <link rel="stylesheet" media="screen" href="/assets/wiki-81d494f601a007d4091b50100bc5971d.css" />
 
     <script type='text/javascript' src='https://maps.google.com/maps/api/js?v=3.35&key=AIzaSyDsHVgl1tZrI_tlyI8Rg6n6SUEvSHQjfkE'></script>
-<script src="/assets/map_bundle-4e76101515a366e366d3e2b279226ded.js"></script>
+<script src="/assets/map_bundle-bd6821c7cff479a689561600ae5464ed.js"></script>
 <script type="text/javascript">
   //<![CDATA[
     $(document).ready(function() {
@@ -626,7 +637,7 @@ English
 <a title="Catalan" rel="nofollow" href="/set_locale?locale=ca">Català</a>
 </li>
 <li>
-<a title="Czech" rel="nofollow" href="/set_locale?locale=cs">český</a>
+<a title="Czech" rel="nofollow" href="/set_locale?locale=cs">česky</a>
 </li>
 <li>
 <a title="Danish" rel="nofollow" href="/set_locale?locale=da">Dansk</a>
@@ -729,6 +740,9 @@ English
 </li>
 <li>
 <a title="Turkish" rel="nofollow" href="/set_locale?locale=tr">Türkçe</a>
+</li>
+<li>
+<a title="Ukrainian" rel="nofollow" href="/set_locale?locale=uk">Ukrainian</a>
 </li>
 <li>
 <a title="Chinese (simplified)" rel="nofollow" href="/set_locale?locale=zh-CN">简体中文</a>
