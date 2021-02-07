@@ -6,7 +6,10 @@
 <script type="text/javascript" src="https://cdn.cookielaw.org/consent/b680e9a8-3d45-4e4a-998f-7d05f89e4486/OtAutoBlock.js" ></script>
 <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="b680e9a8-3d45-4e4a-998f-7d05f89e4486" ></script>
 <script type="text/javascript">
-function OptanonWrapper() { }
+function OptanonWrapper() { 
+	var cookieBannerContainer = document.getElementById("onetrust-consent-sdk");
+  	document.body.prepend(cookieBannerContainer);
+}
 </script>
 
     <meta charset="utf-8">
@@ -64,31 +67,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="canonical" href="https://www.avast.com/privacy-policy">
     
     
-<link rel="icon" type="image/png" href="https://static3.avast.com/10001620/web/i/favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="https://static3.avast.com/10001620/web/i/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://static3.avast.com/20001198/web/i/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://static3.avast.com/20001198/web/i/favicon-16x16.png" sizes="16x16" />
     
-	<link rel="apple-touch-icon" href="https://static3.avast.com/10001620/web/i/apple-touch-icon-57x57.png" />
-	<link rel="apple-touch-icon" sizes="76x76" href="https://static3.avast.com/10001620/web/i/apple-touch-icon-76x76.png" />
-	<link rel="apple-touch-icon" sizes="120x120" href="https://static3.avast.com/10001620/web/i/apple-touch-icon-120x120.png" />
-	<link rel="apple-touch-icon" sizes="152x152" href="https://static3.avast.com/10001620/web/i/apple-touch-icon-152x152.png" />
+	<link rel="apple-touch-icon" href="https://static3.avast.com/20001198/web/i/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="https://static3.avast.com/20001198/web/i/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="https://static3.avast.com/20001198/web/i/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="https://static3.avast.com/20001198/web/i/apple-touch-icon-152x152.png" />
     
 <meta name="application-name" content="Avast Antivirus"/>
 <meta name="msapplication-TileColor" content="#2d364c" />
-<meta name="msapplication-square150x150logo" content="https://static3.avast.com/10001620/web/i/mstile-150x150.png" />
-<meta name="msapplication-square310x310logo" content="https://static3.avast.com/10001620/web/i/mstile-310x310.png" />
+<meta name="msapplication-square150x150logo" content="https://static3.avast.com/20001198/web/i/mstile-150x150.png" />
+<meta name="msapplication-square310x310logo" content="https://static3.avast.com/20001198/web/i/mstile-310x310.png" />
     
-<meta content="https://static3.avast.com/10001620/web/i/mkt/share/avast-logo.png" property="og:image"/>
+<meta content="https://static3.avast.com/20001198/web/i/mkt/share/avast-logo.png" property="og:image"/>
     
     
-    <link href="https://static3.avast.com/10001620/web/c/common-web-v12.css" rel="stylesheet" media="all">
+    <link href="https://static3.avast.com/20001198/web/c/common-web-v12.css" rel="stylesheet" media="all">
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 	
-    								
     <title>			
       Avast Privacy Policy
     </title>								
     <meta content="This Avast Privacy and Information Security Policy applies to AVAST Software s.r.o., AVAST Software B.V., AVAST Software, Inc., each of their subsidiaries and affiliates (collectively “Avast”), and all of their contractors, representatives, agents, and resellers while they are working on behalf of Avast (collectively “we” or “us”). "/>								
-   	<link href="https://static3.avast.com/10001620/web/c/text.css" media="all" rel="stylesheet" type="text/css"/> 
+   	<link href="https://static3.avast.com/20001198/web/c/text.css" media="all" rel="stylesheet" type="text/css"/> 
     
     <link href="https://f.hubspotusercontent20.net/hubfs/486579/LegalParse/CSS/main.css?q" media="all" rel="stylesheet" type="text/css"/>
     <style>
@@ -97,10 +114,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     </style>
     
-    <link href="https://static3.avast.com/10001620/web/c/download-popup.css" media="all" rel="stylesheet"/>
+    <link href="https://static3.avast.com/20001198/web/c/download-popup.css" media="all" rel="stylesheet"/>
     
-    <link href="https://static3.avast.com/10001620/web/c/local/en-ww/local.css" rel="stylesheet" media="all" />
-    <script src="https://static3.avast.com/10001620/web/j/jquery.js"></script>
+    <link href="https://static3.avast.com/20001198/web/c/local/en-ww/local.css" rel="stylesheet" media="all" />
+    <script src="https://static3.avast.com/20001198/web/j/jquery.js"></script>
     
 
     
@@ -119,9 +136,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         document.documentElement.className = document.documentElement.className.replace("no-js","js"); 
     </script>
   
-  <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="9K3EU-JY7U6-TD3RC-2KCEC-AH4A8",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"9K3EU-JY7U6-TD3RC-2KCEC-AH4A8",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="uljua2tiphoscx7tby5q-f-628d5d7e6-clientnsv4-s.akamaihd.net",i={"ak.v":"29","ak.cp":"175726","ak.ai":parseInt("208113",10),"ak.ol":"0","ak.cr":10,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"83b1761a","ak.r":38258,"ak.a2":e,"ak.m":"dsca","ak.n":"essl","ak.bpcip":"162.211.64.0","ak.cport":45900,"ak.gh":"172.232.42.135","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1609764411","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==LbOJwBicOxVuGTVxtVB4u66p8RM2JlTpYQgW32tdzRUO6HC+p47s1jHR2LVMHN60M/SikEAeNI1BTCg77EKdbSoZMAdKS04OhgCoYlYwTkfKqPtUDKMFE7Z+4COSU49o1/7KlnpvQjBYiunC3ZxDUfRULp+oRzEC/sakQgcjishB2VTEIOxz3oDYKLQkfuFJBOkI0BJujukTB5NsvvxyCqa/oWR+6fQ9c9af0yQDiF3JawFwy7H+6UAhOAO9G/WeUOrAxCr9jSiIkeUW25xDabwFn4SJ1sBfh6itZ0qjGM9kHJPbAMvmF2PZQTPOx+Au5t0wflbGwmA5hgJMD4WbhUCa9WqepLkPQ9+9a6zkn5HjUHJQXA/98+3gTAOJHWumN5yE7n9NnUfk7mX7tXluM1tcJ6v1T0TSlOtnESJS+9I=","ak.pv":"413","ak.dpoabenc":""};if(""!==t)i["ak.ruds"]=t;var _={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))i["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:n,init:function(){if(!_.i){var a=BOOMR.subscribe;a("before_beacon",_.av,null,null),a("onbeacon",_.rv,null,null),_.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+                          <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="9K3EU-JY7U6-TD3RC-2KCEC-AH4A8",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"9K3EU-JY7U6-TD3RC-2KCEC-AH4A8",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="waeuzllinvi2uya77x2q-f-73175c40d-clientnsv4-s.akamaihd.net",i={"ak.v":"30","ak.cp":"175726","ak.ai":parseInt("208113",10),"ak.ol":"0","ak.cr":133,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"c4d303f","ak.r":26490,"ak.a2":e,"ak.m":"dsca","ak.n":"essl","ak.bpcip":"176.9.76.0","ak.cport":55544,"ak.gh":"2.16.181.133","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1612709365","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==W/6hmF+VVrztexPFi7gHveOnOJcPu6Ru5QFBxY+p3RbOHN7TqWqszCWO4r9ktceU1/6p60WWmzCWKMgOZLgqifcDhNjQjQpoQTBuTxO0HKtUkPy8ExfNDixBGqqSs670bUYBnRHx6NSafpD8eUzY+Zc6NHRZ7/ymOzgHyGxKBklEGqhvXABLNuUNcMEbAr9++J1ZIy6M1zzyLQNiJ4kZjMcak29/BdkCesyv5jYu5Ntx61fGuLi/EznHY/sgc0z2ZIovP7EJIjLxMV8RYxwCT54sN9/2DJuNczdn0GdJ/FXglY5115sBYHnl47gJrTZlG82hDoys6cFkHLdEQ4oIwFLp7Ijmm4VeLaySRCwa0ql/lDJOOLVjq1Zk0k+i+EBn3SROKi67Gz/aLCQt5b7RuSpcLONMxUjyBM9WtuR0DEU=","ak.pv":"430","ak.dpoabenc":""};if(""!==t)i["ak.ruds"]=t;var _={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))i["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:n,init:function(){if(!_.i){var a=BOOMR.subscribe;a("before_beacon",_.av,null,null),a("onbeacon",_.rv,null,null),_.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
   
   <body class="tmpl-www mod-en-ww">
+    <div id="onetrust-consent-sdk"></div>
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZ48F8"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -142,7 +160,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="avast-logo">
     <a target="_parent" title="Home" href="/index" data-role="Nav:TopLink" data-cta="logo">
       
-      <img width="113" height="36" alt="Avast" src="https://static3.avast.com/10001620/web/i/v2/components/logos/avast-logo-default.svg">
+      <img width="113" height="36" alt="Avast" src="https://static3.avast.com/20001198/web/i/v2/components/logos/avast-logo-default.svg">
       
     </a>
   </div>
@@ -184,7 +202,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li class="item about-us bi-nav-menu" data-first-menu="about-us" data-bi-nav="About" role="none">
           <a class="category about-us hidden-mobile" href="/about" data-role="Nav:TopLink" data-cta="about" tabindex="0" role="menuitem">About us</a>
           <span class="category hidden-desktop" role="menuitem">About us</span>
-          <span class="text hidden-desktop">Carriers, investors, media, contact</span>
+          <span class="text hidden-desktop">Careers, investors, media, contact</span>
         </li>
         <li class="js-blogs item blogs arrow bi-nav-menu" data-bi-nav="Blogs" role="none">
           <span class="category" tabindex="0" role="menuitem">Blogs</span>
@@ -221,92 +239,92 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li>
                 
                 <a href="/free-antivirus-download" class="content-windows" data-role="Nav:MenuItem" data-cta="homeSecurity">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/free-antivirus.svg" alt="">Free Antivirus</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/free-antivirus.svg" alt="">Free Antivirus</span>
                   
 <span class="os win mac android ios">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Basic protection for all your devices</span>
                 </a>
                 
                 <a href="/free-mac-security" class="content-mac" data-role="Nav:MenuItem" data-cta="homeSecurity">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/free-antivirus.svg" alt="">Free Security</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/free-antivirus.svg" alt="">Free Security</span>
                   
 <span class="os win mac android ios">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Basic protection for all your devices</span>
                 </a>
                 
                 <a href="/free-mobile-security" class="content-android" data-role="Nav:MenuItem" data-cta="homeSecurity">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/free-antivirus.svg" alt="">Free Antivirus</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/free-antivirus.svg" alt="">Free Antivirus</span>
                   
 <span class="os win mac android ios">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Basic protection for all your devices</span>
                 </a>
                 
                 <a href="/free-ios-security" class="content-ios" data-role="Nav:MenuItem" data-cta="homeSecurity">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/free-antivirus.svg" alt="">Free Antivirus</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/free-antivirus.svg" alt="">Free Antivirus</span>
                   
 <span class="os win mac android ios">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Basic protection for all your devices</span>
                 </a>
               </li>
               <li>
                 <a href="/premium-security" data-role="Nav:MenuItem" data-cta="homeSecurity">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/premium.svg" alt="">Premium Security</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/premium.svg" alt="">Premium Security</span>
                   
 <span class="os win mac android ios">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Complete protection against all internet threats</span>
                 </a>
@@ -343,19 +361,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               
               <li>
                 <a href="/secureline-vpn" data-role="Nav:MenuItem" data-cta="homePrivacy">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/secure-line.svg" alt="">SecureLine VPN</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/secure-line.svg" alt="">SecureLine VPN</span>
                   
 <span class="os win mac android ios">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Encrypt your connection to stay safe on public networks</span>
                 </a>
@@ -363,57 +381,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               
               <li>
                 <a href="/antitrack" data-role="Nav:MenuItem" data-cta="homePrivacy">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/anti-track.svg" alt="">AntiTrack</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/anti-track.svg" alt="">AntiTrack</span>
                   
 <span class="os win mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Disguise your digital fingerprint to avoid personalized ads</span>
                 </a>
               </li>
               <li>
                 <a href="/secure-browser" data-role="Nav:MenuItem" data-cta="homePrivacy">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/secure-browser.svg" alt="">Secure Browser</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/secure-browser.svg" alt="">Secure Browser</span>
                   
 <span class="os win mac android ios">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Enjoy safer browsing that’s up to 4x faster</span>
                 </a>
               </li>
               <li>
                 <a href="/breachguard" data-role="Nav:MenuItem" data-cta="homePrivacy">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/breachguard.svg" alt="">BreachGuard</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/breachguard.svg" alt="">BreachGuard</span>
                   
 <span class="os win mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Protect your personal info from being exposed and sold</span>
                 </a>
@@ -432,111 +450,111 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li>
                 
                 <a href="/cleanup" class="content-windows" data-role="Nav:MenuItem" data-cta="homePerformance">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/cleanup.svg" alt="">Cleanup Premium</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/cleanup.svg" alt="">Cleanup Premium</span>
                   
 <span class="os win mac android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Boost your computer’s speed and performance</span>
                 </a>
                 
                 <a href="/cleanup-mac" class="content-mac" data-role="Nav:MenuItem" data-cta="homePerformance">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/cleanup.svg" alt="">Cleanup Premium</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/cleanup.svg" alt="">Cleanup Premium</span>
                   
 <span class="os win mac android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Boost your computer’s speed and performance</span>
                 </a>
                 
                 <a href="/cleanup-android" class="content-android" data-role="Nav:MenuItem" data-cta="homePerformance">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/cleanup.svg" alt="">Cleanup Premium</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/cleanup.svg" alt="">Cleanup Premium</span>
                   
 <span class="os win mac android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Boost your computer’s speed and performance</span>
                 </a>
                 
                 <a href="/cleanup" class="content-ios" data-role="Nav:MenuItem" data-cta="homePerformance">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/cleanup.svg" alt="">Cleanup Premium</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/cleanup.svg" alt="">Cleanup Premium</span>
                   
 <span class="os win mac android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Boost your computer’s speed and performance</span>
                 </a>
               </li>
               <li>
                 <a href="/driver-updater" data-role="Nav:MenuItem" data-cta="homePerformance">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/driver-updater.svg" alt="">Driver Updater</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/driver-updater.svg" alt="">Driver Updater</span>
                   
 <span class="os win">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Automatically update drivers with a single click</span>
                 </a>
               </li>
               <li>
                 <a href="/battery-saver-for-windows" data-role="Nav:MenuItem" data-cta="homePerformance">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/battery-saver.svg" alt="">Battery Saver</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/battery-saver.svg" alt="">Battery Saver</span>
                   
 <span class="os win">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Maximize your battery life </span>
                 </a>
@@ -554,19 +572,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li>
                 
                 <a href="/ultimate" data-role="Nav:MenuItem" data-cta="homeBundles">
-                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/10001620/web/i/navigation/logo/free-antivirus.svg" alt="">Ultimate</span>
+                  <span class="name mobile-link"><img class="logo" src="https://static3.avast.com/20001198/web/i/navigation/logo/free-antivirus.svg" alt="">Ultimate</span>
                   
 <span class="os win mac android ios">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span>
                   <span class="description">Our best security, privacy, and performance apps in one package</span>
                 </a>
@@ -578,7 +596,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <li role="none">              
           <a class="desktop" href="/store" data-role="Nav:MenuItem" data-cta="homeShop" role="menuitem"><span class="subcategory shop">
-            <img class="hidden-mobile" src="https://static3.avast.com/10001620/web/i/v2/components/navigation/cart.svg" alt="">Store
+            <img class="hidden-mobile" src="https://static3.avast.com/20001198/web/i/v2/components/navigation/cart.svg" alt="">Store
             </span></a>              
         </li>        
       </ul>
@@ -587,20 +605,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul class="side mobile-links-top" role="menubar">
         <li class="mobile" role="none">
 
-          <a href="/index" data-role="Nav:MenuItem" data-cta="home" role="menuitem"><span class="subcategory home"><img class="mobile" src="https://static3.avast.com/10001620/web/i/navigation/mobile/ico-mobile-home.svg" alt="">Home</span></a>              
+          <a href="/index" data-role="Nav:MenuItem" data-cta="home" role="menuitem"><span class="subcategory home"><img class="mobile" src="https://static3.avast.com/20001198/web/i/navigation/mobile/ico-mobile-home.svg" alt="">Home</span></a>              
         </li>
         <li role="none">              
-          <a href="https://support.avast.com" data-role="Nav:MenuItem" data-cta="homeSupport" role="menuitem"><span class="subcategory support"><img class="hidden-mobile" src="https://static3.avast.com/10001620/web/i/v2/components/navigation/support.svg" alt=""><img class="mobile" src="https://static3.avast.com/10001620/web/i/navigation/mobile/ico-mobile-support.svg" alt="">Support</span></a>             
+          <a href="https://support.avast.com" data-role="Nav:MenuItem" data-cta="homeSupport" role="menuitem"><span class="subcategory support"><img class="hidden-mobile" src="https://static3.avast.com/20001198/web/i/v2/components/navigation/support.svg" alt=""><img class="mobile" src="https://static3.avast.com/20001198/web/i/navigation/mobile/ico-mobile-support.svg" alt="">Support</span></a>             
         </li>
         <li role="none">              
           <a class="mobile" href="/store" data-role="Nav:MenuItem" data-cta="homeShop" role="menuitem"><span class="subcategory shop">
-            <img src="https://static3.avast.com/10001620/web/i/navigation/mobile/ico-mobile-store.svg" alt="">
+            <img src="https://static3.avast.com/20001198/web/i/navigation/mobile/ico-mobile-store.svg" alt="">
 
             Store
             </span></a>              
         </li>
         <li role="none">              
-          <a href="https://my.avast.com" data-role="Nav:MenuItem" data-cta="homeAccount" role="menuitem"><span class="subcategory account"><img class="hidden-mobile" src="https://static3.avast.com/10001620/web/i/v2/components/navigation/account.svg" alt=""><img class="mobile" src="https://static3.avast.com/10001620/web/i/navigation/mobile/ico-mobile-account.svg" alt="">Account</span></a>              
+          <a href="https://my.avast.com" data-role="Nav:MenuItem" data-cta="homeAccount" role="menuitem"><span class="subcategory account"><img class="hidden-mobile" src="https://static3.avast.com/20001198/web/i/v2/components/navigation/account.svg" alt=""><img class="mobile" src="https://static3.avast.com/20001198/web/i/navigation/mobile/ico-mobile-account.svg" alt="">Account</span></a>              
         </li>
       </ul>
 
@@ -630,20 +648,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <a class="name" href="/business/products/small-office-protection" data-role="Nav:MenuItem" data-cta="businessSolutions">
 
 <div class="product-icon box small smb">
-	<img alt="" src="https://static3.avast.com/10001620/web/i/v2/components/icons/product-icons/32x32/product-icon-small-office-protection_white.svg" title="Protects all your devices, including laptops, mobile, computers and tablets.">
+	<img alt="" src="https://static3.avast.com/20001198/web/i/v2/components/icons/product-icons/32x32/product-icon-small-office-protection_white.svg" title="Protects all your devices, including laptops, mobile, computers and tablets.">
 </div>Small Office Protection</a>
                   <span class="description">
 <span class="os win-smb mac-smb android-smb ios-smb">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span><span class="description-text">Protects all your devices, including laptops, mobile, computers and tablets.</span></span>
 
               </li>
@@ -657,20 +675,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a class="name" href="/business/solutions/endpoint-protection" data-role="Nav:MenuItem" data-cta="businessSolutions">
 
 <div class="product-icon box small smb">
-	<img alt="" src="https://static3.avast.com/10001620/web/i/v2/components/icons/product-icons/32x32/product-icon-endpoint-protection_white.svg" title="Endpoint Protection">
+	<img alt="" src="https://static3.avast.com/20001198/web/i/v2/components/icons/product-icons/32x32/product-icon-endpoint-protection_white.svg" title="Endpoint Protection">
 </div>Endpoint Protection</a>
                 <span class="description">
 <span class="os win-smb mac-smb servers-smb linux-smb">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span><span class="description-text">Safeguard your data, devices, and apps with Next-Gen Antivirus and Patch Management.</span>
 </span>
             </li>
@@ -678,28 +696,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li>
                   <span class="block-header">
                     <span class="header-title">Medium and Large Businesses</span>
-                    <span class="header-info">101-1000 +</span>
+                    <span class="header-info">101-1000+</span>
                   </span>
                   <a class="name" href="/business/solutions/all-in-one-security" data-role="Nav:MenuItem" data-cta="businessSolutions">
 
 <div class="product-icon box small smb">
-	<img alt="" src="https://static3.avast.com/10001620/web/i/v2/components/icons/product-icons/32x32/product-icon-business-ultimate_white.svg" title="All-In-One Protection">
+	<img alt="" src="https://static3.avast.com/20001198/web/i/v2/components/icons/product-icons/32x32/product-icon-business-ultimate_white.svg" title="All-In-One Protection">
 </div>All-In-One Protection</a>
                   <span class="description">
 <span class="os win-smb mac-smb servers-smb">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span></span>
                   <span class="bottom-link">
-                    <a href="/business/solutions/endpoint-protection" data-role="Nav:MenuItem" data-cta="businessSolutions">Endpoint Protection</a><a href="/business/solutions/network-security" data-role="Nav:MenuItem" data-cta="businessSolutions">Cloud Network Security</a>
+                    <a href="/business/solutions/endpoint-protection" data-role="Nav:MenuItem" data-cta="businessSolutions">Endpoint Protection</a>
+                    <a href="/business/solutions/network-security" data-role="Nav:MenuItem" data-cta="businessSolutions">Cloud Network Security</a>
+                    	<a href="/business/business-hub" data-role="Nav:MenuItem" data-cta="businessSolutions">The Hub security platform</a>
                   </span>
               </li>
                
@@ -711,20 +731,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <a class="name" href="/business/solutions/all-in-one-security-msp" data-role="Nav:MenuItem" data-cta="businessSolutions">
 
 <div class="product-icon box small smb">
-	<img alt="" src="https://static3.avast.com/10001620/web/i/v2/components/icons/product-icons/32x32/product-icon-antivirus-for-servers_white.svg" title="Advanced All-In-One Protection">
+	<img alt="" src="https://static3.avast.com/20001198/web/i/v2/components/icons/product-icons/32x32/product-icon-antivirus-for-servers_white.svg" title="Advanced All-In-One Protection">
 </div>Advanced All-In-One Protection</a>
                   <span class="description">
 <span class="os win-smb mac-smb">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios.svg" alt="Available for iOS">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/win-smb.svg" alt="Available for PC">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/servers-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/linux-smb.svg" alt="">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/android-smb.svg" alt="Available for Android">
-  <img src="https://static3.avast.com/10001620/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios.svg" alt="Available for iOS">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/win-smb.svg" alt="Available for PC">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/mac-smb.svg" alt="Available for Mac">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/servers-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/linux-smb.svg" alt="">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/android-smb.svg" alt="Available for Android">
+  <img src="https://static3.avast.com/20001198/web/i/navigation/os/ios-smb.svg" alt="Available for iOS">
 </span></span>
                   <span class="bottom-link">
                     <a href="/business/cloudcare/antivirus" data-role="Nav:MenuItem" data-cta="businessSolutions">Endpoint Protection</a><a href="/business/solutions/network-security" data-role="Nav:MenuItem" data-cta="businessSolutions">Cloud Network Security</a><a href="/business/cloudcare" data-role="Nav:MenuItem" data-cta="businessSolutions">CloudCare Security Platform</a>
@@ -778,7 +798,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </li>
         <li>
                   <a class="desktop" href="/business/store" data-role="Nav:MenuItem" data-cta="businessShop"><span class="subcategory shop">
-                    <img class="hidden-mobile" src="https://static3.avast.com/10001620/web/i/v2/components/navigation/cart.svg" alt="">
+                    <img class="hidden-mobile" src="https://static3.avast.com/20001198/web/i/v2/components/navigation/cart.svg" alt="">
                     Store
                     </span></a>
         </li>
@@ -787,32 +807,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul class="side mobile-links-top" role="menubar">
         <li class="mobile">
           <a href="/business">
-            <span class="subcategory"><img class="mobile" src="https://static3.avast.com/10001620/web/i/navigation/mobile/ico-mobile-home.svg" alt="">Home</span>
+            <span class="subcategory"><img class="mobile" src="https://static3.avast.com/20001198/web/i/navigation/mobile/ico-mobile-home.svg" alt="">Home</span>
           </a>
         </li>
          <li>
-          <a href="/business/cloudcare/talk-to-an-expert" data-role="Nav:MenuItem" data-cta="businessContactSales"><span class="subcategory "><img class="mobile" src="https://static3.avast.com/10001620/web/i/navigation/mobile/ico-mobile-sales.svg" alt="">Contact sales</span></a>
+          <a href="/business/cloudcare/talk-to-an-expert" data-role="Nav:MenuItem" data-cta="businessContactSales"><span class="subcategory "><img class="mobile" src="https://static3.avast.com/20001198/web/i/navigation/mobile/ico-mobile-sales.svg" alt="">Contact sales</span></a>
         </li>
         <li>
           <a href="/business/support" data-role="Nav:MenuItem" data-cta="businessSupport"><span class="subcategory support">
-            <img class="hidden-mobile" src="https://static3.avast.com/10001620/web/i/v2/components/navigation/support.svg" alt="">
-            <img class="mobile" src="https://static3.avast.com/10001620/web/i/navigation/mobile/ico-mobile-support.svg" alt="">Support</span></a>
+            <img class="hidden-mobile" src="https://static3.avast.com/20001198/web/i/v2/components/navigation/support.svg" alt="">
+            <img class="mobile" src="https://static3.avast.com/20001198/web/i/navigation/mobile/ico-mobile-support.svg" alt="">Support</span></a>
         </li>
         <li>
-          <a class="mobile" href="/business/store" data-role="Nav:MenuItem" data-cta="businessShop"><span class="subcategory"><img class="mobile" src="https://static3.avast.com/10001620/web/i/navigation/mobile/ico-mobile-store.svg" alt="">            				
+          <a class="mobile" href="/business/store" data-role="Nav:MenuItem" data-cta="businessShop"><span class="subcategory"><img class="mobile" src="https://static3.avast.com/20001198/web/i/navigation/mobile/ico-mobile-store.svg" alt="">            				
             Store
             
             </span></a>
           
         </li>
         <li data-second-menu="login">
-          <span class="subcategory account arrow" tabindex="0"><img class="hidden-mobile" src="https://static3.avast.com/10001620/web/i/v2/components/navigation/account.svg" alt=""><img class="mobile" src="https://static3.avast.com/10001620/web/i/navigation/mobile/ico-mobile-account.svg" alt="">Account</span>
+          <span class="subcategory account arrow" tabindex="0"><img class="hidden-mobile" src="https://static3.avast.com/20001198/web/i/v2/components/navigation/account.svg" alt=""><img class="mobile" src="https://static3.avast.com/20001198/web/i/navigation/mobile/ico-mobile-account.svg" alt="">Account</span>
           
           <div class="third-menu login">            
             <ul class="block-products">
               <li>
                 <ul>
-                  <li class="mobile-link"><a href="https://id.avast.com/?target=https%3A%2F%2Fbusiness.avast.com%3A443%2F#login" data-role="Nav:MenuItem" data-cta="businessAccount">Management Console</a></li>
+                  
+                  <li class="mobile-link"><a href="https://id.avast.com/?target=https%3A%2F%2Fbusiness.avast.com%3A443%2F#login" data-role="Nav:MenuItem" data-cta="businessAccount">Business Hub</a></li>
+                  
                   <li class="mobile-link"><a href="https://us.cloudcare.avg.com/" data-role="Nav:MenuItem" data-cta="businessAccount">CloudCare</a></li>
                   <li class="mobile-link"><a href="https://partners.avast.com/s/login/" data-role="Nav:MenuItem" data-cta="businessAccount">Reseller portal</a></li>
                 </ul>
@@ -1098,8 +1120,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li class="region el-gr"><a lang="el" class="with-flag" href="/el-gr/index">Ελλάδα</a></li>
           <li class="region he-il"><a lang="he" class="with-flag" href="/he-il/index">ישראל</a></li>
           <li class="region ru-kz"><a lang="ru" class="with-flag" href="/ru-kz/index">Казахстан</a>
+          <li class="region ro-ro"><a lang="ro" class="with-flag" href="/ro-ro/index">România</a></li>
           <li class="region ru-ru"><a lang="ru" class="with-flag" href="//www.avast.ru/privacy-policy">Россия</a></li>
-          <li class="region uk-ua"><a lang="uk" class="with-flag" href="//www.avast.ua/index">Україна (українська)</a></li>
+          <li class="region uk-ua"><a lang="uk" class="with-flag" href="<#regionSelector.link("uk-Româniaua")#>">Україна (українська)</a></li>
           <li class="region ru-ua"><a lang="ru" class="with-flag" href="//www.avast.ua/ru-ua/index">Украина (русский)</a></li>
           <li class="region ar-sa"><a lang="ar" class="with-flag" href="/ar-sa/index">المملكة العربية السعودية</a></li>
           <li class="region ar-ww"><a lang="ar" class="with-flag" href="/ar-ww/index">الدول العربية</a></li>
@@ -1302,7 +1325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="do-not-sell" target="_blank">Do not sell my info</a>
      <a id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</a>
     </p>
-    <p class="copy">1988-2020 Copyright Avast Software s.r.o.</p>   
+    <p class="copy">1988-2021 Copyright Avast Software s.r.o.</p>   
   </div>
   
 </div>
@@ -1450,7 +1473,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <h2>Run the Avast installer</h2>
                       <p>Click the downloaded file at the bottom left corner of your screen.</p>
                     </div>
-                    <img src="https://static3.avast.com/10001620/web/i/mkt/thank-you/v4/ch-step1.png" alt="">
+                    <img src="https://static3.avast.com/20001198/web/i/mkt/thank-you/v4/ch-step1.png" alt="">
                   </div>
                 </div>
               </div>
@@ -1462,7 +1485,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <h2>Confirm the installation</h2>
                       <p>Click "Yes" on the system dialog window to approve the start of your Avast installation.</p>
                     </div>
-                    <img src="https://static3.avast.com/10001620/web/i/mkt/thank-you/v4/ch-step2.png" alt="">
+                    <img src="https://static3.avast.com/20001198/web/i/mkt/thank-you/v4/ch-step2.png" alt="">
                   </div>
                   
                 </div>
@@ -1475,7 +1498,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <h2>Follow setup instructions</h2>
                       <p>Click the button in the installer window to begin installation.</p>
                     </div>
-                    <img src="https://static3.avast.com/10001620/web/i/mkt/thank-you/v4/express-install.png" alt="">
+                    <img src="https://static3.avast.com/20001198/web/i/mkt/thank-you/v4/express-install.png" alt="">
                   </div>
                   
                 </div>
@@ -1490,7 +1513,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </p>  
 
           <div class="techSupport">
-            <img src="https://static3.avast.com/10001620/web/i/mkt/thank-you/v4/icon-phone.svg" alt="">
+            <img src="https://static3.avast.com/20001198/web/i/mkt/thank-you/v4/icon-phone.svg" alt="">
             <p><b>Need help?</b> Please call <span>855-745-3255</span></p>
           </div>
 
@@ -1515,7 +1538,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       
 
-      <img class="arrow-top" src="https://static3.avast.com/10001620/web/i/mkt/thank-you/v4/dtp-ff-arrow-website-698.svg" alt="">
+      <img class="arrow-top" src="https://static3.avast.com/20001198/web/i/mkt/thank-you/v4/dtp-ff-arrow-website-698.svg" alt="">
     </div>
   </div>
 
@@ -1550,7 +1573,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Click the downloaded file at the <br/>top right corner of your screen.</p>
                   </div>
                 </div>
-                <img src="https://static3.avast.com/10001620/web/i/mkt/thank-you/v4/dtp-ff-step1-website-698.png" alt="">
+                <img src="https://static3.avast.com/20001198/web/i/mkt/thank-you/v4/dtp-ff-step1-website-698.png" alt="">
               </div>
             </div>
             <div class="span4">
@@ -1562,7 +1585,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Click "Yes" on the system dialog window to approve the start of your Avast installation.</p>
                   </div>
                 </div>
-                <img src="https://static3.avast.com/10001620/web/i/mkt/thank-you/v4/dtp-ff-step2-website-698.png" alt="">
+                <img src="https://static3.avast.com/20001198/web/i/mkt/thank-you/v4/dtp-ff-step2-website-698.png" alt="">
               </div>
             </div>
             <div class="span4">
@@ -1574,7 +1597,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Click the button in the installer <br/>window to begin installation.</p>
                   </div>
                 </div>
-                <img src="https://static3.avast.com/10001620/web/i/mkt/thank-you/v4/dtp-ff-step3-website-698.png" alt="">
+                <img src="https://static3.avast.com/20001198/web/i/mkt/thank-you/v4/dtp-ff-step3-website-698.png" alt="">
               </div>
             </div>
           </div>        
@@ -1587,7 +1610,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </p>  
 
         <div class="techSupport">
-          <img src="https://static3.avast.com/10001620/web/i/mkt/thank-you/v4/icon-phone.svg" alt="">
+          <img src="https://static3.avast.com/20001198/web/i/mkt/thank-you/v4/icon-phone.svg" alt="">
           <p><b>Need help?</b> Please call <span>855-745-3255</span></p>
         </div>
 
@@ -1666,20 +1689,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				}
 			};
 </script>
-    <script src="https://static3.avast.com/10001620/web/j/avast.js"></script>
-<script async src="//static.avast.com/client.js"></script>
+    <script src="https://static3.avast.com/20001198/web/j/avast.js"></script>
 
 
-<script src="https://static3.avast.com/10001620/web/j/lib/createjs/bundle.js"></script>
-<script src="https://static3.avast.com/10001620/web/j/dtp-overlay-firefox.js"></script>
-
-    
+<script src="https://static3.avast.com/20001198/web/j/lib/createjs/bundle.js"></script>
+<script src="https://static3.avast.com/20001198/web/j/dtp-overlay-firefox.js"></script>
 
     
-    <script src="https://static3.avast.com/10001620/web/j/privacy-policy.js"></script>
+
+    
+    <script src="https://static3.avast.com/20001198/web/j/privacy-policy.js"></script>
  
     <script src="https://f.hubspotusercontent20.net/hubfs/486579/LegalParse/EN/j/v2/main.js?new"></script>
     
         
   </body>
-<!-- cached: 2021-01-04 11:25:15, 186.99407577515, 183.22086334229, 1.5411376953125, 001.nyc1 --></html>
+<!-- cached: 2021-02-05 18:24:18, 250.35619735718, 247.70498275757, 1.521110534668, 001.fra1 --></html>
