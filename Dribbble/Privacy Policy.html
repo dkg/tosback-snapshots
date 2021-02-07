@@ -6,8 +6,8 @@
   </title>
   <meta name="description" content="Dribbble is where designers gain inspiration, feedback, community, and jobs and is your best resource to discover and connect with designers worldwide." />
   <meta charset="utf-8" />
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"7840d0c136","applicationID":"2909452","transactionName":"Jg1bREUOClsARUpHChEHGkBFCBBWBk4=","queueTime":1,"applicationTime":174,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true}};(window.NREUM||(NREUM={})).loader_config={xpid:"VQEAWVVACgoAXVVXBQ==",licenseKey:"7840d0c136",applicationID:"2909452"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(23),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(24),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(24),a=t(23);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(20),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url&&(n=t[0].url),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(23),c=t(24),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(25);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],19:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(22),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],20:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],21:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],22:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],23:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],24:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],25:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?s(t,c,o):o()}function n(n,r,i,o){if(!l.aborted||o){t&&t(n,r,i);for(var a=e(i),c=m(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([x,n,r,a]),a}}function p(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return d[t]=d[t]||i(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var g={},y={},x={on:p,addEventListener:p,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:a,aborted:!1};return x}function o(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(23),u={},d={},l=e.exports=i();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(g,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=t(18),c=t("handle"),s=t(23),f=t("ee"),u=t(21),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},y=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:a.getLastTimestamp(),now:a,origin:v,features:{},xhrWrappable:y,userAgent:u};t(15),t(19),l[p]?(l[p]("DOMContentLoaded",o,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",i),d[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var b=0},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var i=t("ee"),o=t(24),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,i){function nrWrapper(){var r,a,c,s;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,i],c])}u(e+"start",[r,a,i],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,i,o){i||(i="");var a,c,s,f="-"===i.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+i:i,o,c))}function u(n,r,i){if(!s||e){var o=s;s=!0;try{t.emit(n,r,i,e)}catch(a){l([a,n,r,i])}s=o}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var i in t)c.call(t,i)&&(e[i]=t[i]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=i),n.inPlace=f,n.flag=a,n}},{}]},{},["loader",2,12,4,3]);</script>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"7840d0c136","applicationID":"2909452","transactionName":"Jg1bREUOClsARUpHChEHGkBFCBBWBk4=","queueTime":1,"applicationTime":99,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true}};(window.NREUM||(NREUM={})).loader_config={xpid:"VQEAWVVACgoAXVVXBQ==",licenseKey:"7840d0c136",applicationID:"2909452"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(23),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(24),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(24),a=t(23);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(20),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(23),c=t(24),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(25);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],19:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(22),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],20:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],21:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],22:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],23:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],24:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],25:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,s,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),s=m(n),f=s.length,u=0;u<f;u++)s[u].apply(c,r);var l=d[y[n]];return l&&l.push([x,n,r,c]),c}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:c,aborted:!1};return x}function o(t){return f(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var s="nr@context",f=t("gos"),u=t(23),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(g,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=t(18),c=t("handle"),s=t(23),f=t("ee"),u=t(21),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1198.min.js"},y=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:a.getLastTimestamp(),now:a,origin:v,features:{},xhrWrappable:y,userAgent:u};t(15),t(19),l[p]?(l[p]("DOMContentLoaded",o,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",i),d[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var b=0},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,s],u],t)}c(n+"start",[o,a,s],u,f);try{return l=e.apply(a,o)}catch(h){throw c(n+"err",[o,a,h],u,f),h}finally{c(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,s,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)s=e[f],c=t[s],a(c)||(t[s]=n(c,u?s+r:r,i,s,o))}function c(n,r,o,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,o,e,a)}catch(s){i([s,n,r,o],t)}h=c}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function c(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(24),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);</script>
   <meta name="theme-color" content="#333333">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     <meta name="referrer" content="origin-when-cross-origin">
@@ -17,9 +17,9 @@
   <link rel="preload" href="https://cdn.dribbble.com/assets/neue-haas-grotesk/NeueHaasGrotTextRound-75Bold-Web-f2ff2f34217e3fdab82c30ef689f5be3fb86a8e4218a1906a9399d0354a95d45.woff2" as="font" crossorigin="anonymous">
 
   <!--[if gte IE 7]><!-->
-    <link rel="stylesheet" media="screen, projection" href="https://cdn.dribbble.com/assets/master-cab9379167c40061d2c66c4f2e5dcd52dea8522ad3c3a7cfc4af2b66a50fa1f7.css" />
-    <link rel="preload" href="https://cdn.dribbble.com/assets/master_async-47f3987e50460c9208f7a7d7432f0ea54d51d7256300c97e5a66e69937ccfc8c.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.dribbble.com/assets/master_async-47f3987e50460c9208f7a7d7432f0ea54d51d7256300c97e5a66e69937ccfc8c.css"></noscript>
+    <link rel="stylesheet" media="screen, projection" href="https://cdn.dribbble.com/assets/master-6809fcdb60fa0e19853aa5172c4b18bf12bd76f853cff47ae1fcdf272d9fcf6b.css" />
+    <link rel="preload" href="https://cdn.dribbble.com/assets/master_async-34984a8e34f304eb2dc43685eb3f7f6a47c5ec99a8f2177ea4fa3a4fc615b980.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.dribbble.com/assets/master_async-34984a8e34f304eb2dc43685eb3f7f6a47c5ec99a8f2177ea4fa3a4fc615b980.css"></noscript>
 
 
 
@@ -33,7 +33,7 @@
 
   
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="yrwMIlQpkQ5W5yP4iavIwfJvPasqOE95s/zT/EGTofTqciPa1ZlB5MqOE0qmK2qFjvIWEndx7mXiUKDgp5Ekdw==" />
+<meta name="csrf-token" content="JXfDlkJ0PMmd+j+zkgqEmDdroIzDL2uwq8LtQJueImdwVVE2ekyYZjSg+EhVYlOwKClPZjtnanL4A5nbTz3Rrw==" />
   
 
   <meta property="fb:app_id" content="811749452338490">
@@ -57,14 +57,350 @@
 <body id="page" class="logged-out not-pro not-player not-self not-team not-on-team  privacy-bg">
 
 
+<div class="js-site-nav site-nav">
+  <div class="site-nav-container">
+    <div class="site-nav-desktop-only align-center">
+  <div data-site-nav-category="Top Nav">
+    <a href="/" data-site-nav-element="Logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="76px" height="80px" viewBox="0 0 76 19" fill="none" class="site-nav-desktop-logo fill-current">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M75.8822 14.657C72.7063 20.0415 67.6766 18.4791 66.166 17.2558C65.5231 17.692 64.3958 18.6481 62.8926 18.5377C59.6913 18.3027 58.5449 13.7279 58.5449 13.7279C58.5679 13.7462 57.5913 14.0649 57.0635 14.0592C57.0567 15.4008 55.897 18.6056 52.7672 18.5646C49.2551 18.5188 48.5411 13.2864 48.5411 13.2864C48.5411 13.2864 48.1916 13.7717 46.8627 14.2551C46.9296 13.2244 46.8807 18.4077 42.6713 18.4839C39.3435 18.5442 38.4452 13.2057 38.4452 13.2057C38.4452 13.2057 37.8679 13.8054 36.7491 14.0134C36.8202 12.9659 36.7046 18.5015 32.4947 18.4839C29.6497 18.4721 28.6775 15.1954 28.7531 14.7406C28.8496 14.161 27.7916 18.5654 25.0281 18.4968C23.8877 18.4633 23.0375 17.6376 22.504 16.5368C21.7898 17.354 20.7529 18.4968 19.5897 18.4968C17.5017 18.4968 16.5812 16.7504 16.7371 11.7624C16.7504 11.1708 16.7077 10.9381 16.1196 10.8496C15.7666 10.7907 15.4051 10.6792 15.0226 10.6204C14.9 11.0295 13.8602 18.3637 10.2847 18.5029C9.08519 18.5496 8.4293 17.5105 7.89066 16.7393C7.06497 17.8316 5.97501 18.5377 4.42227 18.5377C1.79205 18.5377 0 16.4114 0 13.7885C0 11.1655 1.79205 9.03942 4.42227 9.03942C4.88732 9.03942 5.01787 9.10608 5.44272 9.23004C4.569 1.27504 6.63238 0.0317866 8.43739 0.0317866C10.1703 0.0317866 13.1308 4.05384 8.96512 14.2559C9.88998 17.2989 11.8838 17.1268 12.8419 10.8626C13.0369 9.58927 12.5155 7.87099 13.3265 7.63117C14.809 7.19289 14.9663 8.50787 15.6614 8.72697C16.3964 8.95853 16.8254 8.93592 17.531 9.08327C18.7367 9.31873 19.2072 9.96643 19.0603 11.409C18.8839 13.2343 18.5753 15.891 19.5162 16.2148C20.1947 16.45 21.4335 15.0429 21.6509 14.273C21.8682 13.5031 21.9136 13.2396 21.9329 12.6749C21.9623 11.468 21.9992 10.5833 22.205 9.67055C22.2931 9.31736 22.3935 9.08347 22.7931 9.06748C23.1219 9.0591 23.7232 8.96009 23.9879 9.16611C24.3407 9.43119 24.2966 9.70017 24.2561 10.4081C23.8458 20.5015 27.0038 15.4628 27.9454 11.4283C27.6101 6.86623 27.8403 0.115326 30.6991 0.00210112C32.1859 -0.0567822 32.8432 1.13431 32.9155 2.02335C33.12 4.53433 31.9745 8.69372 30.468 11.4909C29.607 17.1984 34.2325 18.3269 34.9722 13.7712C33.762 13.1958 32.4541 10.8668 33.5184 9.73181C34.1156 9.09483 36.6015 10.0099 36.6422 12.0057C37.8616 11.6796 38.0244 10.9911 38.0413 11.1052C37.7061 6.54312 38.017 0.115385 40.876 0.00215941C42.3626 -0.0567239 43.0198 1.13437 43.0921 2.02341C43.2966 4.53438 42.1511 8.69378 40.6448 11.491C39.7837 17.1984 44.4093 18.327 45.1488 13.7713C44.2528 13.5984 42.3614 11.1212 43.4527 9.73187C44.0359 8.98944 46.5127 10.5334 46.79 12.0718C47.9614 11.7403 48.1205 11.0737 48.1373 11.1859C47.802 6.62397 48.1129 0.196235 50.9719 0.0830097C52.4585 0.0241264 53.1157 1.21522 53.188 2.10426C53.3925 4.61523 52.247 8.77471 50.7405 11.5719C49.8796 17.2794 54.5051 18.4077 55.2448 13.852C54.0135 13.647 52.2636 11.0314 53.672 9.69333C54.2347 9.15869 56.3848 10.5465 56.8881 12.1298C57.5874 12.1029 58.0227 11.8617 58.116 11.8374C56.9996 6.4818 57.8307 0.0558781 60.9062 0.00223793C62.5685 -0.0267262 64.1936 0.900905 63.4803 5.99604C62.7994 10.8574 60.3519 12.8975 60.3576 12.9287C60.5 13.5111 61.7559 18.3851 64.9185 15.8134C64.7548 15.4427 64.5909 15.064 64.4993 14.6052C63.9751 11.9327 65.0047 8.91409 67.8032 8.42622C69.4066 8.14671 70.917 8.92734 71.1558 10.6872C71.5487 13.5669 68.9484 15.6524 67.9596 16.1048C67.5167 15.8532 71.9742 18.712 74.6196 12.9829C74.773 12.6558 74.9579 12.6835 75.1975 12.8521C75.3667 12.9712 76.3305 13.8842 75.8822 14.657ZM6.33552 13.0809C6.20092 12.6785 5.92469 11.7918 5.82701 11.4076C5.28905 10.9398 4.90507 10.8638 4.21455 10.8638C2.68 10.8638 1.77679 12.2826 1.77679 13.8125C1.77679 15.3423 2.76077 16.7613 4.29533 16.7613C5.6252 16.7613 6.63735 15.8571 6.94615 14.5771C6.73001 14.0781 6.5156 13.6195 6.33552 13.0809ZM8.39979 2.13753C7.32153 2.13753 6.95576 4.70973 7.02674 6.90406C7.08953 8.84411 7.63164 10.5521 7.91286 11.3174C7.98426 11.4133 7.971 11.3509 8.03474 11.4526C9.90694 7.35053 9.13041 2.13753 8.39979 2.13753ZM30.8531 2.21833C29.4595 2.0585 29.4685 7.86389 29.6415 9.16611C30.3653 8.00823 31.6226 2.53009 30.8531 2.21833ZM41.0297 2.21833C39.6361 2.0585 39.6451 7.86389 39.8182 9.16611C40.5419 8.00823 41.7993 2.53009 41.0297 2.21833ZM51.1257 2.2991C49.732 2.13927 49.741 7.94469 49.9141 9.247C50.6378 8.08902 51.8952 2.61084 51.1257 2.2991ZM61.06 1.87849C58.8887 2.31451 59.3943 9.55399 59.7241 10.8237C62.2817 7.31085 62.3344 1.74654 61.06 1.87849ZM69.1975 10.9254C69.0871 10.4638 68.5351 10.2171 68.1541 10.2779C67.0639 10.4268 66.0065 11.7846 66.4158 13.8518C66.5069 14.3122 66.7349 14.736 66.7312 14.7219C69.1711 13.085 69.3785 11.7951 69.1975 10.9254ZM23.2205 7.46958C22.9089 7.46964 22.6043 7.37729 22.3452 7.20422C22.0861 7.03114 21.8841 6.78512 21.7648 6.49725C21.6455 6.20939 21.6143 5.89261 21.6751 5.587C21.7358 5.28138 21.8859 5.00065 22.1062 4.7803C22.3265 4.55995 22.6072 4.40989 22.9128 4.34909C23.2184 4.28829 23.5352 4.31948 23.8231 4.43873C24.111 4.55797 24.357 4.75991 24.5301 5.019C24.7032 5.27809 24.7956 5.5827 24.7956 5.89429C24.7956 6.10115 24.7549 6.30599 24.6757 6.4971C24.5966 6.68822 24.4806 6.86187 24.3343 7.00815C24.188 7.15443 24.0144 7.27047 23.8233 7.34964C23.6322 7.42882 23.4274 7.46957 23.2205 7.46958Z" fill="#0D0C22"></path>
+</svg>
 
-<div id="header" role="banner" class="nav-wrapper">
+      <span class="accessibility-text">Back to home page</span>
+    </a>
+  </div>
+  <ul class="site-nav-desktop-nav">
+    <li class="site-nav-desktop-item site-nav-hover-item">
+      <span>Inspiration</span>
+      <div class="site-nav-hover-menu">
+        <ul class="site-nav-dropdown-list site-nav-dropdown-white-bg">
+          <div data-site-nav-category="Inspiration">
+            <li class="site-nav-dropdown-item">
+              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Explore Design Work" href="/shots/popular">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" fill="none" class="site-nav-dropdown-icon">
+<path d="M33.2412 14L30.624 14V19.5234C30.624 21.7793 28.7783 23.625 26.5224 23.625H6.99924L6.99902 33.2422C6.99902 34.209 7.79006 35 8.75687 35H33.2409C34.2078 35 34.9988 34.209 34.9988 33.2422L34.999 15.7579C34.999 14.7911 34.208 14 33.2412 14Z" fill="#787EFF"></path>
+<path d="M26.25 21H1.75C0.7875 21 0 20.2125 0 19.25V1.75C0 0.7875 0.7875 0 1.75 0H26.25C27.2125 0 28 0.7875 28 1.75V19.25C28 20.2125 27.2125 21 26.25 21Z" fill="#EA4C89"></path>
+<path d="M17.126 5.52984C15.8107 5.3769 14.9542 6.01925 13.9754 7.05925C12.9354 6.01925 12.1401 5.3769 10.8248 5.52984C9.02008 5.71337 7.61302 7.79337 7.91891 9.59808C8.40832 12.4734 10.9471 14.1863 14.006 15.7157C17.0648 14.1863 19.6036 12.4734 20.093 9.59808C20.3683 7.79337 18.9307 5.71337 17.126 5.52984Z" fill="white"></path>
+</svg>
 
-  <div id="header-inner" class="group nav-inner">
+                <div class="site-nav-dropdown-item-text">
+                  <div class="site-nav-dropdown-item-title">
+                    Explore Design Work
+                  </div>
+                  <p class="site-nav-dropdown-item-desc">Trending designs to inspire you</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
+<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
+</svg>
 
-    <div id="logo" class="nav-logo">
-      <a href="/">
-        <svg xmlns="http://www.w3.org/2000/svg" width="76px" height="80px" viewBox="0 0 76 19" fill="none" class="fill-current">
+</a>            </li>
+            <li class="site-nav-dropdown-item">
+              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="New &amp; Noteworthy" href="/shots/recent">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 31" fill="none" class="site-nav-dropdown-icon">
+<path d="M17.4319 30.2081L28.6772 18.9628H6.18652L17.4319 30.2081Z" fill="#787EFF"></path>
+<circle cx="26.6425" cy="8.3575" r="8.35737" fill="#EA4C89"></circle>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.44782 2.44782C5.71152 -0.815889 11.003 -0.815939 14.2668 2.44767L14.2506 2.46385L17.2353 5.44859L5.38801 17.2959L2.359 14.2669L2.40355 14.2223C-0.815871 10.9552 -0.801118 5.69675 2.44782 2.44782Z" fill="#FEBA57"></path>
+</svg>
+
+                <div class="site-nav-dropdown-item-text">
+                  <div class="site-nav-dropdown-item-title">
+                    New & Noteworthy
+                    <div class="new-flag margin-l-8">New</div>
+                  </div>
+                  <p class="site-nav-dropdown-item-desc">Up-and-coming designers</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
+<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
+</svg>
+
+</a>            </li>
+            <!--
+            <li class="site-nav-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" fill="none" class="site-nav-dropdown-icon">
+<circle cx="26.7113" cy="8.28947" r="8.28947" fill="#FEBA57"></circle>
+<circle cx="8.28947" cy="8.28947" r="8.28947" fill="#FEBA57"></circle>
+<path d="M8.28906 18.4211L16.5785 26.7106L8.28906 35L-0.00040852 26.7106L8.28906 18.4211Z" fill="#787EFF"></path>
+<path d="M26.7109 18.4211L35.0004 26.7106L26.7109 35L18.4215 26.7106L26.7109 18.4211Z" fill="#787EFF"></path>
+</svg>
+
+                 <div class="site-nav-dropdown-item-text">
+                  <p class="site-nav-dropdown-item-title">Collections <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
+<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
+</svg>
+</p>
+                  <p class="site-nav-dropdown-item-desc">Curated collections of inpsiration</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
+<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
+</svg>
+
+            </li>
+            -->
+            <li class="site-nav-dropdown-item">
+              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Playoffs" href="/shots?list=playoffs">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 33" fill="none" class="site-nav-dropdown-icon">
+<rect y="0.749756" width="18.3753" height="14.0002" rx="1.7" fill="#787EFF"></rect>
+<rect width="18.3753" height="14.0002" rx="1.7" transform="matrix(-1 0 0 1 34.999 18.2501)" fill="#787EFF"></rect>
+<circle cx="28.0001" cy="7.74986" r="7.00011" fill="#4BB7BF"></circle>
+<circle r="7.00011" transform="matrix(-1 0 0 1 6.99989 25.2502)" fill="#4BB7BF"></circle>
+</svg>
+
+                <div class="site-nav-dropdown-item-text">
+                  <div class="site-nav-dropdown-item-title">
+                    Playoffs
+                  </div>
+                  <p class="site-nav-dropdown-item-desc">Work designers are riffing on</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
+<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
+</svg>
+
+</a>            </li>
+            <li class="site-nav-dropdown-item">
+              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Blog" href="/stories">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" fill="none" class="site-nav-dropdown-icon">
+<g clip-path="url(#clip0)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M23 15.7499C27.3482 15.7488 30.8728 12.2235 30.8728 7.87496C30.8728 3.52574 27.3471 0 22.9979 0H22.9977V6.10352e-05H19.5V15.75H23V15.7499Z" fill="#FEBA57"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M32.623 25.375C32.623 30.6907 28.3138 34.9999 22.9982 35V35H19.5V15.75H22.9982V15.75C28.3138 15.7501 32.623 20.0593 32.623 25.375Z" fill="#787EFF"></path>
+<path d="M2 4C2 1.79087 3.79086 0 6 0L19.5 0V22.75H2V4Z" fill="#EA4C89"></path>
+<path d="M2 22.75L19.5 22.75V34.9999H6C3.79086 34.9999 2 33.2091 2 30.9999V22.75Z" fill="#FEBA57"></path>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="35" height="35" fill="white"></rect>
+</clipPath>
+</defs>
+</svg>
+
+                <div class="site-nav-dropdown-item-text">
+                  <div class="site-nav-dropdown-item-title">
+                    Blog
+                  </div>
+                  <p class="site-nav-dropdown-item-desc">Interviews, tutorials, and more</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
+<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
+</svg>
+
+</a>            </li>
+              <li class="site-nav-dropdown-item">
+                <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Weekly Warm-up" href="/shots/15050316-Design-an-Icon-Based-on-Work-Ethic">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" class="site-nav-dropdown-icon">
+<path d="M28.7614 16.2067L13.4609 39.9999H28.7614V16.2067Z" fill="#FFD469"></path>
+<path d="M28.7617 10.3259H39.5032V35.801C39.5032 38.12 37.6232 40 35.3041 40H28.7617V10.3259Z" fill="#FEBA57"></path>
+<path d="M11.2383 0.90271H35.3038C37.6228 0.90271 39.5028 2.78267 39.5028 5.10172V10.3259H11.2383V0.90271Z" fill="#FFD469"></path>
+<path d="M0.49707 5.10179C0.49707 2.78274 2.37703 0.902771 4.69608 0.902771H11.2385V16.8637H0.49707V5.10179Z" fill="#FEBA57"></path>
+<path d="M0.49707 16.8637H20.9029L11.2385 30.7116H0.49707V16.8637Z" fill="#FFD469"></path>
+<path d="M0.49707 30.7115H19.6363L13.7779 40H4.69608C2.37703 40 0.49707 38.1201 0.49707 35.801V30.7115Z" fill="#FEBA57"></path>
+</svg>
+
+                  <div class="site-nav-dropdown-item-text">
+                    <div class="site-nav-dropdown-item-title">
+                      Weekly Warm-up
+                    </div>
+                    <p class="site-nav-dropdown-item-desc">Prompt to flex your design skills</p>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
+<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
+</svg>
+
+</a>              </li>
+          </div>
+        </ul>
+        <ul class="site-nav-dropdown-list site-nav-dropdown-grey-bg" data-site-nav-category="Inspiration">
+          <p class="site-nav-dropdown-item site-nav-dropdown-category-padding site-nav-dropdown-item-title">Browse Categories</p>
+            <li>
+              <a class="site-nav-dropdown-category-padding" data-site-nav-element="Animation" href="/shots/popular/animation">Animation</a>
+            </li>
+            <li>
+              <a class="site-nav-dropdown-category-padding" data-site-nav-element="Branding" href="/shots/popular/branding">Branding</a>
+            </li>
+            <li>
+              <a class="site-nav-dropdown-category-padding" data-site-nav-element="Illustration" href="/shots/popular/illustration">Illustration</a>
+            </li>
+            <li>
+              <a class="site-nav-dropdown-category-padding" data-site-nav-element="Mobile" href="/shots/popular/mobile">Mobile</a>
+            </li>
+            <li>
+              <a class="site-nav-dropdown-category-padding" data-site-nav-element="Print" href="/shots/popular/print">Print</a>
+            </li>
+            <li>
+              <a class="site-nav-dropdown-category-padding" data-site-nav-element="Product Design" href="/shots/popular/product-design">Product Design</a>
+            </li>
+            <li>
+              <a class="site-nav-dropdown-category-padding" data-site-nav-element="Typography" href="/shots/popular/typography">Typography</a>
+            </li>
+            <li>
+              <a class="site-nav-dropdown-category-padding" data-site-nav-element="Web Design" href="/shots/popular/web-design">Web Design</a>
+            </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="site-nav-desktop-item site-nav-hover-item">
+      <span>Find Work</span>
+      <div class="site-nav-hover-menu">
+        <ul class="site-nav-dropdown-list">
+          <div data-site-nav-category="Find Work">
+            <li class="site-nav-dropdown-item">
+              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Job Board" href="/jobs">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" class="site-nav-dropdown-icon">
+<rect width="22" height="22" fill="#787EFF"></rect>
+<rect y="25" width="15" height="15" fill="#FEBA57"></rect>
+<rect x="25" width="15" height="22" fill="#4BB7BF"></rect>
+<rect x="18" y="25" width="22" height="15" fill="#787EFF"></rect>
+</svg>
+
+                <div class="site-nav-dropdown-item-text">
+                  <div class="site-nav-dropdown-item-title">
+                    Job Board
+                  </div>
+                  <p class="site-nav-dropdown-item-desc">Find your dream design job</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
+<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
+</svg>
+
+</a>            </li>
+            <li class="site-nav-dropdown-item">
+              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Freelance Projects" href="/freelance-jobs">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 39" fill="none" class="site-nav-dropdown-icon">
+<path d="M13.8477 2.66302C5.05402 2.66302 0.37305 1.04476 0.37305 1.04476L0.373047 37.4074C7.84082 38.7193 11.8854 38.0318 16.0115 37.3305C18.4927 36.9087 21.0034 36.482 24.3056 36.482C33.0994 36.482 37.7803 38.1002 37.7803 38.1002L37.7803 1.73758C30.3126 0.425674 26.268 1.11317 22.1419 1.81451C19.6607 2.23626 17.15 2.66302 13.8477 2.66302Z" fill="#82D1D1"></path>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="38" height="39">
+<path d="M13.8477 2.66302C5.05402 2.66302 0.37305 1.04476 0.37305 1.04476L0.373047 37.4074C7.84082 38.7193 11.8854 38.0318 16.0115 37.3305C18.4927 36.9087 21.0034 36.482 24.3056 36.482C33.0994 36.482 37.7803 38.1002 37.7803 38.1002L37.7803 1.73758C30.3126 0.425674 26.268 1.11317 22.1419 1.81451C19.6607 2.23626 17.15 2.66302 13.8477 2.66302Z" fill="#82D1D1"></path>
+</mask>
+<g mask="url(#mask0)">
+<rect x="-4.63672" y="-0.00408936" width="20.0793" height="41.4534" transform="rotate(-6.94165 -4.63672 -0.00408936)" fill="#4BB7BF"></rect>
+<rect x="2.29199" y="-3.448" width="12.6575" height="51.8273" transform="rotate(-21 2.29199 -3.448)" fill="#4BB7BF"></rect>
+</g>
+<path d="M19.0791 8.02771L19.0791 31.0681" stroke="white" stroke-width="2.2"></path>
+<path d="M13.5234 23.4673C14.2319 28.5948 24.6356 28.5882 24.6356 23.4673C24.6356 21.4819 23.5044 19.3663 19.002 19.3663C14.9148 19.3663 13.8485 17.2266 13.8485 15.5902C13.8485 10.7973 22.8323 10.4417 24.2432 15.1607" stroke="white" stroke-width="2.3"></path>
+</svg>
+
+                <div class="site-nav-dropdown-item-text">
+                  <div class="site-nav-dropdown-item-title">
+                    Freelance Projects
+                    <div class="pro-flag margin-l-8">Pro+</div>
+                  </div>
+                  <p class="site-nav-dropdown-item-desc">An exclusive list for contract work</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
+<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
+</svg>
+
+</a>            </li>
+          </div>
+        </ul>
+      </div>
+    </li>
+
+    <li class="site-nav-desktop-item" data-site-nav-category="Top Nav">
+      <a data-site-nav-element="Learn" href="/learn">
+        <span>Learn <span class="site-nav-medium-screens-only">Design</span></span>
+</a>    </li>
+
+
+    <li class="site-nav-desktop-item site-nav-hover-item" data-site-nav-category="Top Nav">
+      <a data-site-nav-element="Hire Designers" href="/hiring">Hire Designers</a>
+      <div class="site-nav-hover-menu">
+        <ul class="site-nav-dropdown-list">
+          <div data-site-nav-category="Hire Designers">
+            <li class="site-nav-dropdown-item">
+              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Designer Search" href="/designers">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" class="site-nav-dropdown-icon">
+<circle cx="5.33786" cy="34.6336" r="3.90818" fill="#FEBA57"></circle>
+<circle cx="5.3379" cy="19.6333" r="4.63282" fill="#FEBA57"></circle>
+<circle cx="5.33814" cy="4.63282" r="3.89185" fill="#FEBA57"></circle>
+<circle cx="20.3379" cy="34.6337" r="4.63282" fill="#FEBA57"></circle>
+<circle cx="20.3386" cy="19.6332" r="6.52222" fill="#4D44C6"></circle>
+<circle cx="20.3389" cy="4.63282" r="4.63282" fill="#FEBA57"></circle>
+<circle cx="35.3389" cy="34.6337" r="3.9082" fill="#FEBA57"></circle>
+<circle cx="35.3389" cy="19.6333" r="4.63282" fill="#FEBA57"></circle>
+<circle cx="35.3391" cy="4.6328" r="3.89183" fill="#FEBA57"></circle>
+</svg>
+
+                <div class="site-nav-dropdown-item-text">
+                  <div class="site-nav-dropdown-item-title">
+                    Designer Search
+                    <div class="new-flag margin-l-8">New</div>
+                  </div>
+                  <p class="site-nav-dropdown-item-desc">Find, contact, and hire designers</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
+<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
+</svg>
+
+</a>            </li>
+            <li class="site-nav-dropdown-item">
+              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="List my Job Opening" href="/jobs/new">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 40" fill="none" class="site-nav-dropdown-icon">
+<rect y="0.610352" width="21.45" height="21.45" fill="#EA4C89"></rect>
+<rect y="24.9854" width="14.625" height="14.625" fill="#4BB7BF"></rect>
+<rect x="24.375" y="0.610352" width="14.625" height="21.45" fill="#4BB7BF"></rect>
+<rect x="17.5498" y="24.9854" width="21.45" height="14.625" fill="#FEBA57"></rect>
+<rect x="5.84961" y="12.3103" width="1.95" height="9.75" transform="rotate(-90 5.84961 12.3103)" fill="white"></rect>
+<rect x="11.7002" y="16.2103" width="1.95" height="9.75" transform="rotate(180 11.7002 16.2103)" fill="white"></rect>
+</svg>
+
+                <div class="site-nav-dropdown-item-text">
+                  <div class="site-nav-dropdown-item-title">
+                    List my Job Opening
+                  </div>
+                  <p class="site-nav-dropdown-item-desc">The #1 job board for creatives</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
+<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
+</svg>
+
+</a>            </li>
+            <li class="site-nav-dropdown-item">
+              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Post a Freelance Project" href="/freelance-jobs">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" class="site-nav-dropdown-icon">
+<path d="M14.8477 2.66302C6.05402 2.66302 1.37305 1.04476 1.37305 1.04476L1.37305 37.4074C8.84082 38.7193 12.8854 38.0318 17.0115 37.3305C19.4927 36.9087 22.0034 36.482 25.3056 36.482C34.0994 36.482 38.7803 38.1002 38.7803 38.1002L38.7803 1.73758C31.3126 0.425674 27.268 1.11317 23.1419 1.81451C20.6607 2.23626 18.15 2.66302 14.8477 2.66302Z" fill="#787EFF"></path>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="1" y="0" width="38" height="39">
+<path d="M14.8477 2.66302C6.05402 2.66302 1.37305 1.04476 1.37305 1.04476L1.37305 37.4074C8.84082 38.7193 12.8854 38.0318 17.0115 37.3305C19.4927 36.9087 22.0034 36.482 25.3056 36.482C34.0994 36.482 38.7803 38.1002 38.7803 38.1002L38.7803 1.73758C31.3126 0.425674 27.268 1.11317 23.1419 1.81451C20.6607 2.23626 18.15 2.66302 14.8477 2.66302Z" fill="#4D44C6"></path>
+</mask>
+<g mask="url(#mask0)">
+<rect x="-3.63672" y="-0.00415039" width="20.0793" height="41.4534" transform="rotate(-6.94165 -3.63672 -0.00415039)" fill="#4D44C6"></rect>
+<rect x="3.29199" y="-3.448" width="12.6575" height="51.8273" transform="rotate(-21 3.29199 -3.448)" fill="#4D44C6"></rect>
+</g>
+<rect x="11" y="21.2902" width="3.43008" height="17.1504" transform="rotate(-90 11 21.2902)" fill="white"></rect>
+<rect x="21.291" y="28.1504" width="3.43008" height="17.1504" transform="rotate(180 21.291 28.1504)" fill="white"></rect>
+</svg>
+
+                <div class="site-nav-dropdown-item-text">
+                  <div class="site-nav-dropdown-item-title">
+                    Post a Freelance Project
+                  </div>
+                  <p class="site-nav-dropdown-item-desc">Board for freelance & contract work</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
+<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
+</svg>
+
+</a>            </li>
+          </div>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+    <div class="site-nav-mobile-only align-center site-nav-mobile-menu-toggle" aria-label="Toggle Navigation">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 16" fill="none" role="img" class="icon js-site-nav-mobile-menu-open site-nav-mobile-menu-open icon-18 fill-current">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 2C0 1.37868 0.50368 0.875 1.125 0.875H16.875C17.4963 0.875 18 1.37868 18 2C18 2.62132 17.4963 3.125 16.875 3.125H1.125C0.50368 3.125 0 2.62132 0 2ZM0 8C0 7.37868 0.50368 6.875 1.125 6.875H16.875C17.4963 6.875 18 7.37868 18 8C18 8.62132 17.4963 9.125 16.875 9.125H1.125C0.50368 9.125 0 8.62132 0 8ZM1.125 12.875C0.50368 12.875 0 13.3787 0 14C0 14.6213 0.50368 15.125 1.125 15.125H16.875C17.4963 15.125 18 14.6213 18 14C18 13.3787 17.4963 12.875 16.875 12.875H1.125Z"></path>
+</svg>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="currentColor" role="img" class="icon js-site-nav-mobile-menu-close site-nav-mobile-menu-close icon-24 fill-current">
+<path d="M7.22876 5.81455C6.83824 5.42403 6.20507 5.42403 5.81455 5.81455C5.42402 6.20507 5.42402 6.83824 5.81455 7.22876L9.58578 11L5.81455 14.7712C5.42402 15.1618 5.42402 15.7949 5.81455 16.1854C6.20507 16.576 6.83824 16.576 7.22876 16.1854L11 12.4142L14.7712 16.1854C15.1618 16.576 15.7949 16.576 16.1854 16.1854C16.576 15.7949 16.576 15.1618 16.1854 14.7712L12.4142 11L16.1854 7.22876C16.576 6.83824 16.576 6.20507 16.1854 5.81455C15.7949 5.42403 15.1618 5.42403 14.7712 5.81455L11 9.58579L7.22876 5.81455Z"></path>
+</svg>
+
+    </div>
+
+    <div class="site-nav-mobile-only site-nav-mobile-logo" data-site-nav-category="Top Nav">
+      <a href="/" data-site-nav-element="Logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="76px" height="60px" viewBox="0 0 76 19" fill="none" class="site-nav-logo fill-current">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M75.8822 14.657C72.7063 20.0415 67.6766 18.4791 66.166 17.2558C65.5231 17.692 64.3958 18.6481 62.8926 18.5377C59.6913 18.3027 58.5449 13.7279 58.5449 13.7279C58.5679 13.7462 57.5913 14.0649 57.0635 14.0592C57.0567 15.4008 55.897 18.6056 52.7672 18.5646C49.2551 18.5188 48.5411 13.2864 48.5411 13.2864C48.5411 13.2864 48.1916 13.7717 46.8627 14.2551C46.9296 13.2244 46.8807 18.4077 42.6713 18.4839C39.3435 18.5442 38.4452 13.2057 38.4452 13.2057C38.4452 13.2057 37.8679 13.8054 36.7491 14.0134C36.8202 12.9659 36.7046 18.5015 32.4947 18.4839C29.6497 18.4721 28.6775 15.1954 28.7531 14.7406C28.8496 14.161 27.7916 18.5654 25.0281 18.4968C23.8877 18.4633 23.0375 17.6376 22.504 16.5368C21.7898 17.354 20.7529 18.4968 19.5897 18.4968C17.5017 18.4968 16.5812 16.7504 16.7371 11.7624C16.7504 11.1708 16.7077 10.9381 16.1196 10.8496C15.7666 10.7907 15.4051 10.6792 15.0226 10.6204C14.9 11.0295 13.8602 18.3637 10.2847 18.5029C9.08519 18.5496 8.4293 17.5105 7.89066 16.7393C7.06497 17.8316 5.97501 18.5377 4.42227 18.5377C1.79205 18.5377 0 16.4114 0 13.7885C0 11.1655 1.79205 9.03942 4.42227 9.03942C4.88732 9.03942 5.01787 9.10608 5.44272 9.23004C4.569 1.27504 6.63238 0.0317866 8.43739 0.0317866C10.1703 0.0317866 13.1308 4.05384 8.96512 14.2559C9.88998 17.2989 11.8838 17.1268 12.8419 10.8626C13.0369 9.58927 12.5155 7.87099 13.3265 7.63117C14.809 7.19289 14.9663 8.50787 15.6614 8.72697C16.3964 8.95853 16.8254 8.93592 17.531 9.08327C18.7367 9.31873 19.2072 9.96643 19.0603 11.409C18.8839 13.2343 18.5753 15.891 19.5162 16.2148C20.1947 16.45 21.4335 15.0429 21.6509 14.273C21.8682 13.5031 21.9136 13.2396 21.9329 12.6749C21.9623 11.468 21.9992 10.5833 22.205 9.67055C22.2931 9.31736 22.3935 9.08347 22.7931 9.06748C23.1219 9.0591 23.7232 8.96009 23.9879 9.16611C24.3407 9.43119 24.2966 9.70017 24.2561 10.4081C23.8458 20.5015 27.0038 15.4628 27.9454 11.4283C27.6101 6.86623 27.8403 0.115326 30.6991 0.00210112C32.1859 -0.0567822 32.8432 1.13431 32.9155 2.02335C33.12 4.53433 31.9745 8.69372 30.468 11.4909C29.607 17.1984 34.2325 18.3269 34.9722 13.7712C33.762 13.1958 32.4541 10.8668 33.5184 9.73181C34.1156 9.09483 36.6015 10.0099 36.6422 12.0057C37.8616 11.6796 38.0244 10.9911 38.0413 11.1052C37.7061 6.54312 38.017 0.115385 40.876 0.00215941C42.3626 -0.0567239 43.0198 1.13437 43.0921 2.02341C43.2966 4.53438 42.1511 8.69378 40.6448 11.491C39.7837 17.1984 44.4093 18.327 45.1488 13.7713C44.2528 13.5984 42.3614 11.1212 43.4527 9.73187C44.0359 8.98944 46.5127 10.5334 46.79 12.0718C47.9614 11.7403 48.1205 11.0737 48.1373 11.1859C47.802 6.62397 48.1129 0.196235 50.9719 0.0830097C52.4585 0.0241264 53.1157 1.21522 53.188 2.10426C53.3925 4.61523 52.247 8.77471 50.7405 11.5719C49.8796 17.2794 54.5051 18.4077 55.2448 13.852C54.0135 13.647 52.2636 11.0314 53.672 9.69333C54.2347 9.15869 56.3848 10.5465 56.8881 12.1298C57.5874 12.1029 58.0227 11.8617 58.116 11.8374C56.9996 6.4818 57.8307 0.0558781 60.9062 0.00223793C62.5685 -0.0267262 64.1936 0.900905 63.4803 5.99604C62.7994 10.8574 60.3519 12.8975 60.3576 12.9287C60.5 13.5111 61.7559 18.3851 64.9185 15.8134C64.7548 15.4427 64.5909 15.064 64.4993 14.6052C63.9751 11.9327 65.0047 8.91409 67.8032 8.42622C69.4066 8.14671 70.917 8.92734 71.1558 10.6872C71.5487 13.5669 68.9484 15.6524 67.9596 16.1048C67.5167 15.8532 71.9742 18.712 74.6196 12.9829C74.773 12.6558 74.9579 12.6835 75.1975 12.8521C75.3667 12.9712 76.3305 13.8842 75.8822 14.657ZM6.33552 13.0809C6.20092 12.6785 5.92469 11.7918 5.82701 11.4076C5.28905 10.9398 4.90507 10.8638 4.21455 10.8638C2.68 10.8638 1.77679 12.2826 1.77679 13.8125C1.77679 15.3423 2.76077 16.7613 4.29533 16.7613C5.6252 16.7613 6.63735 15.8571 6.94615 14.5771C6.73001 14.0781 6.5156 13.6195 6.33552 13.0809ZM8.39979 2.13753C7.32153 2.13753 6.95576 4.70973 7.02674 6.90406C7.08953 8.84411 7.63164 10.5521 7.91286 11.3174C7.98426 11.4133 7.971 11.3509 8.03474 11.4526C9.90694 7.35053 9.13041 2.13753 8.39979 2.13753ZM30.8531 2.21833C29.4595 2.0585 29.4685 7.86389 29.6415 9.16611C30.3653 8.00823 31.6226 2.53009 30.8531 2.21833ZM41.0297 2.21833C39.6361 2.0585 39.6451 7.86389 39.8182 9.16611C40.5419 8.00823 41.7993 2.53009 41.0297 2.21833ZM51.1257 2.2991C49.732 2.13927 49.741 7.94469 49.9141 9.247C50.6378 8.08902 51.8952 2.61084 51.1257 2.2991ZM61.06 1.87849C58.8887 2.31451 59.3943 9.55399 59.7241 10.8237C62.2817 7.31085 62.3344 1.74654 61.06 1.87849ZM69.1975 10.9254C69.0871 10.4638 68.5351 10.2171 68.1541 10.2779C67.0639 10.4268 66.0065 11.7846 66.4158 13.8518C66.5069 14.3122 66.7349 14.736 66.7312 14.7219C69.1711 13.085 69.3785 11.7951 69.1975 10.9254ZM23.2205 7.46958C22.9089 7.46964 22.6043 7.37729 22.3452 7.20422C22.0861 7.03114 21.8841 6.78512 21.7648 6.49725C21.6455 6.20939 21.6143 5.89261 21.6751 5.587C21.7358 5.28138 21.8859 5.00065 22.1062 4.7803C22.3265 4.55995 22.6072 4.40989 22.9128 4.34909C23.2184 4.28829 23.5352 4.31948 23.8231 4.43873C24.111 4.55797 24.357 4.75991 24.5301 5.019C24.7032 5.27809 24.7956 5.5827 24.7956 5.89429C24.7956 6.10115 24.7549 6.30599 24.6757 6.4971C24.5966 6.68822 24.4806 6.86187 24.3343 7.00815C24.188 7.15443 24.0144 7.27047 23.8233 7.34964C23.6322 7.42882 23.4274 7.46957 23.2205 7.46958Z" fill="#0D0C22"></path>
 </svg>
 
@@ -72,370 +408,103 @@
       </a>
     </div>
 
-    <a href="#nav" id="toggle-nav" class="toggle-nav" aria-label="Toggle Navigation">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 16" fill="none" role="img" class="icon nav-icon fill-current">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0 2C0 1.37868 0.50368 0.875 1.125 0.875H16.875C17.4963 0.875 18 1.37868 18 2C18 2.62132 17.4963 3.125 16.875 3.125H1.125C0.50368 3.125 0 2.62132 0 2ZM0 8C0 7.37868 0.50368 6.875 1.125 6.875H16.875C17.4963 6.875 18 7.37868 18 8C18 8.62132 17.4963 9.125 16.875 9.125H1.125C0.50368 9.125 0 8.62132 0 8ZM1.125 12.875C0.50368 12.875 0 13.3787 0 14C0 14.6213 0.50368 15.125 1.125 15.125H16.875C17.4963 15.125 18 14.6213 18 14C18 13.3787 17.4963 12.875 16.875 12.875H1.125Z"></path>
+    <ul class="site-nav-actions" data-site-nav-category="Top Nav">
+
+  <li class="js-site-nav-search site-nav-actions-item site-nav-desktop-only">
+    <a class="" data-site-nav-element="Search" href="/search">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" role="img" class="icon icon-18 fill-current">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.6002 12.0498C9.49758 12.8568 8.13777 13.3333 6.66667 13.3333C2.98477 13.3333 0 10.3486 0 6.66667C0 2.98477 2.98477 0 6.66667 0C10.3486 0 13.3333 2.98477 13.3333 6.66667C13.3333 8.15637 12.8447 9.53194 12.019 10.6419C12.0265 10.6489 12.0338 10.656 12.0411 10.6633L15.2935 13.9157C15.6841 14.3063 15.6841 14.9394 15.2935 15.33C14.903 15.7205 14.2699 15.7205 13.8793 15.33L10.6269 12.0775C10.6178 12.0684 10.6089 12.0592 10.6002 12.0498ZM11.3333 6.66667C11.3333 9.244 9.244 11.3333 6.66667 11.3333C4.08934 11.3333 2 9.244 2 6.66667C2 4.08934 4.08934 2 6.66667 2C9.244 2 11.3333 4.08934 11.3333 6.66667Z"></path>
 </svg>
 
-      <span class="close">×</span>
-    </a>
+      <span class="accessibility-text">Search</span>
+</a>  </li>
 
-    <ul id="nav" class="main-nav" role="navigation">
-      <span class="links-container">
-        <li class="nav-dropdown-item tab-link js-explore-tab actions-item" data-top-level="explore">
-          <a class="has-sub" href="#">
-            Explore
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" role="img" class="icon caret">
-<path d="M1 1L5.07223 5.1517L9.23083 1" stroke="black"></path>
-</svg>
-
-</a>            <div class="nav-dropdown explore-tabs wide responsive">
-  <ul>
-    <li class="mega-nav-box">
-      <a href="/shots">
-        <div class="nav-quad-layout mega-nav-popular-shots">
-            <img
-              class="image-shadow lazyload"
-              data-src="https://cdn.dribbble.com/users/702789/screenshots/14866429/winter_camp_jump_dribbble.png?compress=1&amp;resize=140x105"
-              width="67px"
-              height="50px"
-            >
-            <img
-              class="image-shadow lazyload"
-              data-src="https://cdn.dribbble.com/users/1544818/screenshots/14862144/stocklabs.png?compress=1&amp;resize=140x105"
-              width="67px"
-              height="50px"
-            >
-            <img
-              class="image-shadow lazyload"
-              data-src="https://cdn.dribbble.com/users/3862493/screenshots/14863929/rest.png?compress=1&amp;resize=140x105"
-              width="67px"
-              height="50px"
-            >
-            <img
-              class="image-shadow lazyload"
-              data-src="https://cdn.dribbble.com/users/1615584/screenshots/14866258/fitness-app-01.jpg?compress=1&amp;resize=140x105"
-              width="67px"
-              height="50px"
-            >
-        </div>
-        <div class="mega-nav-copy">
-          <div class="title">Shots</div>
-          <span class="mega-description">Get inspired with designs shared by our talented community</span>
-        </div>
-</a>    </li>
-
-    <li class="mega-nav-box">
-      <a href="/featured-designers">
-        <img
-          class="image-shadow lazyload"
-          data-src="/assets/updated_navigation/top-designers-6d752b070b9a3d0fc0921540558c5da4d354a8625b03d89d912069a91b3667c0.png"
-          width="140px"
-          height="105px"
-        >
-        <div class="mega-nav-copy">
-          <div class="title">Top Designers</div>
-          <span class="mega-description">Check out the rankings and see which designers are trending</span>
-        </div>
-</a>    </li>
-
-    <li class="mega-nav-box">
-      <a href="/stories">
-        <div class="nav-tri-layout mega-nav-blog-posts">
-            <img
-              class="image-shadow lazyload"
-              data-src="https://cdn.dribbble.com/uploads/17734/original/191a64f2379229ab8fb73a1f46bf0d6f.png?1607964953&amp;compress=1&amp;resize=200x150"
-              width="98px"
-              height="73px"
-            >
-            <img
-              class="image-shadow lazyload"
-              data-src="https://cdn.dribbble.com/uploads/17602/original/1b7a9f6137f12ab10e8341e2a2654c1b.png?1607631588&amp;compress=1&amp;resize=200x150"
-              width="98px"
-              height="73px"
-            >
-            <img
-              class="image-shadow lazyload"
-              data-src="https://cdn.dribbble.com/uploads/17277/original/326c7605ad3bf200708d1aba094a67ea.jpg?1607040152&amp;compress=1&amp;resize=200x150"
-              width="98px"
-              height="73px"
-            >
-        </div>
-        <div class="mega-nav-copy">
-          <div class="title">Blog</div>
-          <span class="mega-description">Amazing interviews with design industry leaders, tutorials, and more</span>
-        </div>
-</a>    </li>
-
-      <li class="mega-nav-box mega-nav-weekly-playoff">
-        <a href="/shots/14799638-Design-a-2021-New-Year-s-Resolution">
-          <img
-            class="image-shadow lazyload"
-            data-src="https://cdn.dribbble.com/users/39/screenshots/14799638/wwu_54.png?compress=1&amp;resize=280x210"
-            width="140px"
-            height="105px"
-          >
-          <div class="mega-nav-copy">
-            <div class="title">Weekly Warm-Up</div>
-            <span class="mega-description">Join the fun and flex your design skills with our weekly prompt</span>
-          </div>
-</a>      </li>
-
-      <li class="mega-nav-box hide-on-transition-screens">
-        <a href="/learn/smith-workshops">
-          <img
-            class="image-shadow lazyload"
-            data-srcset="/assets/workshops/matt-smith/smith-nav-x1-54f741d5de23db15c2e50c85926fa77a7edae931cae540f92cdb1d4895044b0a.png 1x, /assets/workshops/matt-smith/smith-nav-x2-542b06cb3de2c8a71fe36eedb428467f041c2cf38063dc1d09abc0f123a4c5be.png 2x, /assets/workshops/matt-smith/smith-nav-x4-85124ea111703336dadba044a89bee54359885e24c3d831a80fcf3544572e5ed.png 4x"
-            width="140px"
-            height="105px"
-          >
-          <div class="mega-nav-copy">
-            <div class="title">Design Workshops</div>
-            <span class="mega-description">Design Beautiful, Accessible Interfaces with Matt D. Smith on January 28</span>
-          </div>
-</a>      </li>
-
-
-    <li class="mega-nav-box nav-extras">
-      <ul>
-        <li><a href="/teams">Teams</a></li>
-        <li><a href="/goods">Goods for Sale</a></li>
-        <li><a href="/shots?list=playoffs">Playoffs</a></li>
-        <li><a href="https://shop.dribbble.com/">Dribbble Shop</a></li>
-        <li><a text="About Dribbble" href="/about">About Dribbble</a></li>
-        <li class="last-vertical-nav-item"><a href="/advertise">Advertise</a></li>
-      </ul>
+    <li class="js-site-nav-sign-in site-nav-actions-item">
+      <a data-site-nav-element="Sign in" href="/session/new?return_to=%2Fprivacy">Sign in</a>
     </li>
-  </ul>
-  <div class="textured-background"></div>
-</div>
+    <li class="js-site-nav-sign-up site-nav-actions-item site-nav-desktop-only">
+      <a class="form-sub" data-site-nav-element="Sign Up" href="/signup/new">Sign up</a>
+    </li>
+</ul>
 
-        </li>
-
-        <li class="nav-dropdown-item tab-link js-designers-tab actions-item" data-top-level="designers">
-          <a class="has-sub" href="#">
-            Find Work
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" role="img" class="icon caret">
-<path d="M1 1L5.07223 5.1517L9.23083 1" stroke="black"></path>
-</svg>
-
-</a>          <div class="nav-dropdown for-designers-tabs">
-  <ul>
-    <li class="mega-nav-box">
-      <a href="/jobs">
-        <img
-          class="for-designers-img lazyload"
-          data-src="https://cdn.dribbble.com/assets/updated_navigation/job-board-6c99746fd8fd819f383d454ea40a72315148100b2f9164ed339d7c783697686f.png"
-          width="140px"
-          height="105px"
-        >
-        <div class="mega-nav-copy">
-          <div class="title">Job Board</div>
-          <span class="mega-description">Find your dream design job on Dribbble</span>
-        </div>
-</a>    </li>
-
-    <li class="mega-nav-box">
-      <a href="/freelance-jobs">
-        <img
-          class="for-designers-img lazyload"
-          data-src="https://cdn.dribbble.com/assets/updated_navigation/dribbble-projects-96d4c90f5f2c38496e10d02e33c952899854e071e597220fc703d46902c745a2.png"
-          width="140px"
-          height="105px"
-        >
-        <div class="mega-nav-copy">
-          <div class="title">
-            Freelance Projects <span class="badge badge-pro">Pro</span>
-          </div>
-          <span class="mega-description">Exclusive project board perfect for Freelancers and Agencies.</span>
-        </div>
-</a>    </li>
-
-      <li class="mega-nav-box">
-        <a href="/pro">
-          <img
-            class="for-designers-img lazyload"
-            data-src="https://cdn.dribbble.com/assets/updated_navigation/dribbble-pro-513e9c030cc8ea5fcf28d4166ccc6d0bda35d629b93fd4e72c78dcdb6b21833a.png"
-            width="140px"
-            height="105px"
-          >
-          <div class="mega-nav-copy">
-            <div class="title">Go Pro</div>
-            <span class="mega-description">Dribbble Pro gives you everything you need to build a career in design.</span>
-          </div>
-</a>      </li>
-  </ul>
-  <div class="textured-background"></div>
-</div>
-
-        </li>
-
-
-          <li id="t-hiring" class="tab-hiring tab-link nav-dropdown-item js-hiring-tab actions-item" data-top-level="hiring">
-            <a class="left-outlined" href="/hiring">
-              <span>
-                Hiring Designers?
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" role="img" class="icon caret">
-<path d="M1 1L5.07223 5.1517L9.23083 1" stroke="black"></path>
-</svg>
-
-              </span>
-</a>            <div class="nav-dropdown hiring-designers-tabs">
-  <ul>
-    <li class="mega-nav-box">
-      <a data-billing-interval="quarterly" href="/jobs/new">
-        <img
-          class="hiring-designers-img lazyload"
-          data-src="https://cdn.dribbble.com/assets/updated_navigation/job-opening-80996c44cac7b61715c6800d78f169b53c60c88b2a965de1b8149c6d16da0fda.png"
-          width="140px"
-          height="105px"
-        >
-        <div class="mega-nav-copy">
-          <div class="title">List my job opening</div>
-          <span class="mega-description">Publish your open role on the world's #1 job board for creatives</span>
-        </div>
-</a>    </li>
-
-    <li class="mega-nav-box">
-      <a class="js-hiring-link" href="/designers">
-        <img
-          class="hiring-designers-img lazyload"
-          data-src="https://cdn.dribbble.com/assets/updated_navigation/designer-search-5e71891c34c4db15f81d837f931f288bfc439647a8725f8e9e7b1da9ff2e8fd1.png"
-          width="140px"
-          height="105px"
-        >
-        <div class="mega-nav-copy">
-          <div class="title">
-            Designer Search
-          </div>
-          <span class="mega-description">Find and contact designers who are looking for their next opportunity</span>
-        </div>
-</a>    </li>
-
-    <li class="mega-nav-box">
-      <a class="js-hiring-link" href="/hiring?checkout=true&amp;purchase_type=hiring">
-        <img
-          class="hiring-designers-img lazyload"
-          data-src="https://cdn.dribbble.com/assets/updated_navigation/job-post-search-c5bcfdb6a9d783048074ee1f5e737fa20b039b1ba8a87a0748d26947e244122e.png"
-          width="140px"
-          height="105px"
-        >
-        <div class="mega-nav-copy">
-          <div class="title">Job post + search</div>
-          <span class="mega-description">Search our database for top talent and post your listing on our popular job board</span>
-        </div>
-</a>    </li>
-  </ul>
-  <div class="textured-background"></div>
-</div>
-
-          </li>
-      </span>
-
-      <span class="actions-container">
-
-        <li id="t-search" class="tab-search actions-item" role="search">
-            <a href="/search">
-             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" role="img" class="icon js-toggle-nav-search fill-current nav-search-icon logged-out">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M10.6002 12.0498C9.49758 12.8568 8.13777 13.3333 6.66667 13.3333C2.98477 13.3333 0 10.3486 0 6.66667C0 2.98477 2.98477 0 6.66667 0C10.3486 0 13.3333 2.98477 13.3333 6.66667C13.3333 8.15637 12.8447 9.53194 12.019 10.6419C12.0265 10.6489 12.0338 10.656 12.0411 10.6633L15.2935 13.9157C15.6841 14.3063 15.6841 14.9394 15.2935 15.33C14.903 15.7205 14.2699 15.7205 13.8793 15.33L10.6269 12.0775C10.6178 12.0684 10.6089 12.0592 10.6002 12.0498ZM11.3333 6.66667C11.3333 9.244 9.244 11.3333 6.66667 11.3333C4.08934 11.3333 2 9.244 2 6.66667C2 4.08934 4.08934 2 6.66667 2C9.244 2 11.3333 4.08934 11.3333 6.66667Z"></path>
-</svg>
-
-             <span class="accessibility-text">Search</span>
-</a>        </li>
-        <div class="mobile-icons">
-            <li id="t-signin" class="tab-signin actions-item" data-top-level="signin">
-              <a href="/session/new?return_to=%2Fprivacy">
-                <span>Sign in</span>
-</a>            </li>
-        </div>
-
-
-          <li id="t-signup" class="tab-signup actions-item" data-top-level="signup">
-              <a class="primary-btn" href="/signup/new">
-                <span class="form-sub">
-                  Sign up
-                </span>
-</a>          </li>
-
-      </span>
-    </ul>
-
-    <div id="mobile-nav" class="mobile-nav">
-
-      <form class="mobile-nav-search nav-search-wrapper" action="/search">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" role="img" class="icon fill-current nav-search-icon">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M10.6002 12.0498C9.49758 12.8568 8.13777 13.3333 6.66667 13.3333C2.98477 13.3333 0 10.3486 0 6.66667C0 2.98477 2.98477 0 6.66667 0C10.3486 0 13.3333 2.98477 13.3333 6.66667C13.3333 8.15637 12.8447 9.53194 12.019 10.6419C12.0265 10.6489 12.0338 10.656 12.0411 10.6633L15.2935 13.9157C15.6841 14.3063 15.6841 14.9394 15.2935 15.33C14.903 15.7205 14.2699 15.7205 13.8793 15.33L10.6269 12.0775C10.6178 12.0684 10.6089 12.0592 10.6002 12.0498ZM11.3333 6.66667C11.3333 9.244 9.244 11.3333 6.66667 11.3333C4.08934 11.3333 2 9.244 2 6.66667C2 4.08934 4.08934 2 6.66667 2C9.244 2 11.3333 4.08934 11.3333 6.66667Z"></path>
-</svg>
-
-        <input class="nav-search-text" type="search" name="q" placeholder="Search" autocomplete="off" value="" />
-        
-      </form>
-
-      <ul class="mobile-nav-main">
-        <li>
-          <a href="#" class="toggle-mobile-nav-dropdown" data-sub-nav="explore">
-            Explore
-            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" role="img" class="icon caret-down fill-current"><path d="m4.585 10.468 7.415 7.532 7.415-7.532c.779-.792.779-2.081 0-2.873s-2.049-.792-2.829 0l-4.586 4.659-4.587-4.659c-.378-.384-.88-.595-1.414-.595s-1.036.211-1.414.595c-.78.792-.78 2.082 0 2.873z"></path></svg>
-
-          </a>
-          <ul class="js-mobile-nav-explore mobile-dropdown-nav">
-            <li><a href="/shots">Shots</a></li>
-            <li><a href="/featured-designers">Top Designers</a></li>
-            <li><a href="/stories">Blog</a></li>
-              <li><a href="https://dribbble.com/shots/14799638">Weekly Warm-Up</a></li>
-              <li><a href="/learn/smith-workshops">Design Workshops</a></li>
-            <li>
-              <a href="#" class="toggle-mobile-nav-dropdown js-toggle-explore-sub-nav" data-sub-nav="sub-explore">
-                More
-                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" role="img" class="icon caret-down fill-current"><path d="m4.585 10.468 7.415 7.532 7.415-7.532c.779-.792.779-2.081 0-2.873s-2.049-.792-2.829 0l-4.586 4.659-4.587-4.659c-.378-.384-.88-.595-1.414-.595s-1.036.211-1.414.595c-.78.792-.78 2.082 0 2.873z"></path></svg>
-
-              </a>
-              <ul class="js-mobile-nav-sub-explore mobile-dropdown-nav">
-                <li><a href="/teams">Teams</a></li>
-                <li><a href="/goods">Goods for Sale</a></li>
-                <li><a href="/shots?list=playoffs">Playoffs</a></li>
-                <li><a href="https://shop.dribbble.com/">Dribbble Shop</a></li>
-                <li><a text="About Dribbble" href="/about">About Dribbble</a></li>
-                <li><a href="/advertise">Advertise</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <a href="#" class="toggle-mobile-nav-dropdown"  data-sub-nav="designers">
-            Find Work
-            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" role="img" class="icon caret-down fill-current"><path d="m4.585 10.468 7.415 7.532 7.415-7.532c.779-.792.779-2.081 0-2.873s-2.049-.792-2.829 0l-4.586 4.659-4.587-4.659c-.378-.384-.88-.595-1.414-.595s-1.036.211-1.414.595c-.78.792-.78 2.082 0 2.873z"></path></svg>
-
-          </a>
-          <ul class="js-mobile-nav-designers mobile-dropdown-nav">
-            <li><a href="/jobs">Job Board</a></li>
-            <li><a href="/freelance-jobs">Freelance Projects</a></li>
-              <li><a href="/pro">Go Pro</a></li>
-          </ul>
-        </li>
-
-          <li>
-            <a href="#" class="toggle-mobile-nav-dropdown"  data-sub-nav="hiring-designers">
-              Hiring Designers?
-              <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" role="img" class="icon caret-down fill-current"><path d="m4.585 10.468 7.415 7.532 7.415-7.532c.779-.792.779-2.081 0-2.873s-2.049-.792-2.829 0l-4.586 4.659-4.587-4.659c-.378-.384-.88-.595-1.414-.595s-1.036.211-1.414.595c-.78.792-.78 2.082 0 2.873z"></path></svg>
-
-            </a>
-            <ul class="js-mobile-nav-hiring-designers mobile-dropdown-nav">
-              <li><a href="/hiring">About Dribbble Hiring</a></li>
-              <li><a data-billing-interval="quarterly" href="/jobs/new">List my job opening</a></li>
-              <li>
-                <a href="/designers">
-                  Designer Search
-</a>              </li>
-              <li><a href="/hiring?checkout=true&amp;purchase_type=hiring">Job post + search</a></li>
-            </ul>
-          </li>
-
-      </ul>
-
-    </div>
   </div>
+
+  <div class="site-nav-mobile-menu js-site-nav-mobile-menu">
+  <nav>
+    <ul>
+      <li>
+        <form class="site-nav-mobile-menu-search" action="/search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" role="img" class="icon site-nav-mobile-search-icon fill-current icon-16">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.6002 12.0498C9.49758 12.8568 8.13777 13.3333 6.66667 13.3333C2.98477 13.3333 0 10.3486 0 6.66667C0 2.98477 2.98477 0 6.66667 0C10.3486 0 13.3333 2.98477 13.3333 6.66667C13.3333 8.15637 12.8447 9.53194 12.019 10.6419C12.0265 10.6489 12.0338 10.656 12.0411 10.6633L15.2935 13.9157C15.6841 14.3063 15.6841 14.9394 15.2935 15.33C14.903 15.7205 14.2699 15.7205 13.8793 15.33L10.6269 12.0775C10.6178 12.0684 10.6089 12.0592 10.6002 12.0498ZM11.3333 6.66667C11.3333 9.244 9.244 11.3333 6.66667 11.3333C4.08934 11.3333 2 9.244 2 6.66667C2 4.08934 4.08934 2 6.66667 2C9.244 2 11.3333 4.08934 11.3333 6.66667Z"></path>
+</svg>
+
+          <input class="site-nav-mobile-search-input" type="search" name="q" placeholder="Search" autocomplete="off" value="" />
+          
+        </form>
+      </li>
+
+      <li class="site-nav-mobile-dropdown">
+        <input type="checkbox" name="dropdown" id="inspiration">
+        <label for="inspiration" class="site-nav-mobile-list-item">
+          Inspiration
+        </label>
+        <ul class="site-nav-mobile-dropdown-list">
+          <div class="site-nav-mobile-dropdown-list-container" data-site-nav-category="Inspiration">
+            <li><a data-site-nav-element="Explore Design Work" href="/shots/popular">Explore Design Work</a></li>
+            <li>
+              <a class="flex align-center" data-site-nav-element="New &amp; Noteworthy" href="/shots/recent">
+                New & Noteworthy
+                <div class="new-flag margin-l-8">New</div>
+</a>            </li>
+            <li><a data-site-nav-element="Playoffs" href="/shots?list=playoffs">Playoffs</a></li>
+            <li><a data-site-nav-element="Blog" href="/stories">Blog</a></li>
+              <li><a data-site-nav-element="Weekly Warmup" href="/shots/15050316-Design-an-Icon-Based-on-Work-Ethic">Weekly Warmup</a></li>
+          </div>
+        </ul>
+      </li>
+       <li class="site-nav-mobile-dropdown">
+        <input type="checkbox" name="dropdown" id="find-work">
+        <label for="find-work" class="site-nav-mobile-list-item">
+          Find Work
+        </label>
+        <ul class="site-nav-mobile-dropdown-list">
+          <div class="site-nav-mobile-dropdown-list-container" data-site-nav-category="Find Work">
+            <li><a data-site-nav-element="Job Board" href="/jobs">Job Board</a></li>
+            <li>
+              <a class="flex align-center" data-site-nav-element="Freelance Projects" href="/freelance-jobs">
+                Freelance Projects
+                <span class="pro-flag margin-l-8">Pro+</span>
+</a>            </li>
+          </div>
+        </ul>
+      </li>
+      <li data-site-nav-category="Top Nav">
+        <a class="site-nav-mobile-list-item" data-site-nav-element="Learn Design" href="/learn">Learn Design</a>
+      </li>
+      <li class="site-nav-mobile-dropdown">
+        <input type="checkbox" name="dropdown" id="hire-designers">
+        <label for="hire-designers" class="site-nav-mobile-list-item">
+          Hire Designers
+        </label>
+        <ul class="site-nav-mobile-dropdown-list">
+          <div class="site-nav-mobile-dropdown-list-container" data-site-nav-category="Hire Designers">
+            <li><a data-site-nav-element="About Dribbble Hiring" href="/hiring">About Dribbble Hiring</a></li>
+            <li>
+              <a class="flex align-center" data-site-nav-element="Designer Search" href="/designers">
+                Designer Search
+                <div class="new-flag margin-l-8">New</div>
+</a>            </li>
+            <li><a data-billing-interval="quarterly" data-site-nav-element="List my job opening" href="/jobs/new">List my Job Opening</a></li>
+            <li><a data-site-nav-element="Post a Freelance Project" href="/freelance-jobs">Post a Freelance Project</a></li>
+          </div>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+
+</div>
+
 </div>
 
 
@@ -445,6 +514,13 @@
 
 
 
+
+<div class="notice-alert">
+  <h3><!-- message goes here --></h3>
+  <div class="close" aria-label="close">
+    <img width="16" height="16" alt="close" src="https://cdn.dribbble.com/assets/icon-shot-x-light-2x-3fa782b8178e9cf00f28bf7f9758a80bd0883a9c26e4b41fb16d19bbd14c05be.png" />
+  </div>
+</div>
 
 <div id="wrap">
   
@@ -482,12 +558,6 @@
 
   <div id="wrap-inner" >
     <div id="content" role="main">
-      <div class="notice-alert">
-        <h3><!-- message goes here --></h3>
-        <a href="#" class="close" aria-label="close">
-          <img width="25" height="25" alt="close" src="https://cdn.dribbble.com/assets/icon-shot-x-light-2x-3fa782b8178e9cf00f28bf7f9758a80bd0883a9c26e4b41fb16d19bbd14c05be.png" />
-        </a>
-      </div>
 
       
 
@@ -586,12 +656,12 @@
               <span class="accessibility-text">Back to home page</span>
             </a>
             <a href="http://twitter.com/dribbble">
-              <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="22iyt17y1z1w3ugtpwl9097rwz5nmga" role="img" viewBox="0 0 24 24" class="icon fill-current"><title id="22iyt17y1z1w3ugtpwl9097rwz5nmga">Twitter icon</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="4xli2izccocndlditp6vjf5g3ca18g7" role="img" viewBox="0 0 24 24" class="icon fill-current"><title id="4xli2izccocndlditp6vjf5g3ca18g7">Twitter icon</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"></path></svg>
 
               <span class="accessibility-text">Twitter</span>
             </a>
             <a href="http://facebook.com/dribbble">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="gn7fzllm19eacbj0qsorpm3mwz8nv3q" role="img" viewBox="0 0 24 24" class="icon fill-current"><title id="gn7fzllm19eacbj0qsorpm3mwz8nv3q">Facebook icon</title><path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="c9b5gmobupfz5mdkcm3v7iqjkirocds" role="img" viewBox="0 0 24 24" class="icon fill-current"><title id="c9b5gmobupfz5mdkcm3v7iqjkirocds">Facebook icon</title><path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0"></path></svg>
 
             <span class="accessibility-text">Facebook</span>
             </a>
@@ -601,7 +671,7 @@
             <span class="accessibility-text">Instagram</span>
             </a>
             <a href="http://www.pinterest.com/dribbble/">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="64ts5uyrjmmf8jq4k25zpjfdyyzlcex" role="img" viewBox="0 0 24 24" class="icon fill-current"><title id="64ts5uyrjmmf8jq4k25zpjfdyyzlcex">Pinterest icon</title><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="tcu95gmxpqlrcl1xd82san8boav717o" role="img" viewBox="0 0 24 24" class="icon fill-current"><title id="tcu95gmxpqlrcl1xd82san8boav717o">Pinterest icon</title><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"></path></svg>
 
             <span class="accessibility-text">Pinterest</span>
             </a>
@@ -616,7 +686,7 @@
                     <a class="link" href="/overtime">Overtime podcast</a>
                     <a class="link" href="/meetups">Dribbble meetups</a>
                     <a class="link" href="/shots?list=playoffs">Playoffs</a>
-                    <a class="link" href="/shots/14799638-Design-a-2021-New-Year-s-Resolution">Weekly Warm-Up</a>
+                    <a class="link" href="/shots/15050316-Design-an-Icon-Based-on-Work-Ethic">Weekly Warm-Up</a>
                     <a class="link" href="/guidelines">Code of conduct</a>
             </div>
             <div class="links-column">
@@ -646,7 +716,7 @@
                     <a class="link" href="/tags">Tags</a>
                     <a class="link" href="/places">Places</a>
                 <div class="link-heading">Design assets</div>
-                    <a target="_blank" class="link" href="https://creativemarket.com/?utm_source=dribbble&amp;utm_medium=referral&amp;utm_campaign=footer">Shop Creative Market</a>
+                    <a target="_blank" rel="noopener" class="link" href="https://creativemarket.com/?utm_source=dribbble&amp;utm_medium=referral&amp;utm_campaign=footer">Shop Creative Market</a>
             </div>
         </div>
         <div class="carbon-ad-container">
@@ -776,7 +846,7 @@
 <div class="remote-locations">
     <span>Toronto</span>
     <span>Ottawa, ON</span>
-    <span>Manila, Philippines</span>
+    <span>Philippines</span>
     <span>Cavite, Philippines</span>
     <span>Worcester, MA</span>
     <span>Victoria, BC</span>
@@ -804,7 +874,7 @@
 </div>
         <div class="total-shots-container">
           <div>
-            <span class="shots-count">14,868,069</span>
+            <span class="shots-count">15,079,501</span>
             shots dribbbled
           </div>
           <img
@@ -828,8 +898,8 @@
     
 
 
-    <div class="shot-overlay js-shot-overlay" tabindex="-1">
-      <div class="overlay-content js-overlay-content" data-stylesheet-path="https://cdn.dribbble.com/assets/shot/shot-modal-30f77ec29d21da3f203eba6bb7685d84d971b604f89d03c05ac529290254f3a1.css"></div>
+    <div class="shot-overlay js-shot-overlay lazyload-hidden-container" tabindex="-1" data-include="css:https://cdn.dribbble.com/assets/shot/shot-modal-ee1274ca5e91f0d0d98eccd5d37e5f557f47c0b2f1f8a45bc5d599bbe749c49f.css">
+      <div class="overlay-content js-overlay-content"></div>
         <div class="shot-nav-prev">
           <div class="shot-nav-button-container">
             <a href="#">
@@ -889,7 +959,7 @@
 
 
 
-<script src="https://cdn.dribbble.com/assets/global-aec2862c9c6125a289ee3dfa5a4b3cbf8431e585ef978027471214225f8ad26c.js"></script>
+<script src="https://cdn.dribbble.com/assets/global-0c8f35371b7239c99b7871b1819adb1797a1a71ebb7586af5ba67d05a73c1ba8.js"></script>
 
 <script>
   var config = Dribbble.JsConfig || {}
@@ -897,16 +967,16 @@
   // without overriding parent instantiations of JsConfig
   Dribbble.JsConfig = Object.assign(config, {
       user: {"isLoggedIn":false,"reCaptchaSiteKey":"6LdmBTIUAAAAAM4NIokaWu8p3BBuYEw3CxuDdyg_","canPurchasePro":true},
-      features: {"boostedShotsInLists":true,"braintreeHiring":false,"homespunAdUnits":false,"onboardAsProPlayer":false,"miniPricingTiers":true,"shotPageMedia":true,"updatedSearch":true,"hiringMonthlyBogo":false,"freelanceBoardReskin":false,"resumeCard":false,"upsellModals":false},
+      features: {"boostedShotsInLists":true,"braintreeHiring":false,"homespunAdUnits":false,"onboardAsProPlayer":false,"shotPageMedia":true,"updatedSearch":true,"hiringMonthlyBogo":false,"freelanceBoardReskin":true,"braintreePro":false,"jobBoardReskin":false},
       isRobot: null,
-      remoteIp: "162.211.64.106",
+      remoteIp: "176.9.76.173",
       permissions: {"userPermissions":[null,null]},
-      screenshot_boost: {"buttonText":[{"label":"Buy Now","value":"buy-now"},{"label":"Download","value":"download"},{"label":"Learn More","value":"learn-more"},{"label":"Shop Now","value":"shop-now"},{"label":"Apply Now","value":"apply-now"},{"label":"Try Now","value":"try-now"},{"label":"Get Offer","value":"get-offer"},{"label":"Contact Us","value":"contact-us"}],"tiers":{"lowTier":{"daysToServe":7,"range":{"lowerLimit":0,"upperLimit":10000}},"midTier":{"daysToServe":14,"range":{"lowerLimit":10001,"upperLimit":100000}},"highTier":{"daysToServe":28,"range":{"lowerLimit":100001,"upperLimit":null}}},"pricePerImpression":"0.006","purchase":{"stripePublicKey":"pk_live_9EfFSEE6iTCgHghKqBqnixxR","savedCreditCardInformation":null},"discount":null,"minimumImpressions":2000},
+      screenshot_boost: {"buttonText":[{"label":"Buy Now","value":"buy-now"},{"label":"Download","value":"download"},{"label":"Learn More","value":"learn-more"},{"label":"Shop Now","value":"shop-now"},{"label":"Apply Now","value":"apply-now"},{"label":"Try Now","value":"try-now"},{"label":"Get Offer","value":"get-offer"},{"label":"Contact Us","value":"contact-us"}],"tiers":{"lowTier":{"daysToServe":7,"range":{"lowerLimit":0,"upperLimit":10000}},"midTier":{"daysToServe":14,"range":{"lowerLimit":10001,"upperLimit":100000}},"highTier":{"daysToServe":28,"range":{"lowerLimit":100001,"upperLimit":null}}},"pricePerImpression":"0.006","purchase":{"stripePublicKey":"pk_live_9EfFSEE6iTCgHghKqBqnixxR","savedCreditCardInformation":null},"discount":null,"minimumImpressions":2000,"targetPlacements":{"following":"Following Feed","popular":"Popular Feed","search":"Search Feed","goods":"Goods Feed","recent":"New \u0026 Noteworthy Feed","shot_modal":"Shot Modal","similar_work":"Similar Work","tags":"Tag Feed"},"priorities":["premium","self_serve","sales","remnant"]},
   })
 </script>
 
-<script src="https://cdn.dribbble.com/assets/packs/js/application-5e0fc9d8af29683bfa61.js"></script>
-      <script src="https://cdn.dribbble.com/assets/packs/js/shot-page-804dd6f717c14f3352b4.js" defer="defer"></script>
+<script src="https://cdn.dribbble.com/assets/packs/js/application-084739f4e451f69a736a.js"></script>
+      <script src="https://cdn.dribbble.com/assets/packs/js/shot-page-b0133923e040b9874d98.js" defer="defer"></script>
   <script>
 setTimeout(function() {
   Dribbble.Ads.enable();
