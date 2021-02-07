@@ -35,6 +35,45 @@ a {
   a:hover {
     color: #e07d02; }
 
+div.message span a {
+  text-decoration: underline;
+}
+
+body.darkmode .darkModeToggleLabel {
+  color: #e07d02;
+}
+
+body #primary .entry-content ul#nextuplist {list-style-type: none;margin-left:0px;padding-left:0px;}
+body #primary .entry-content ul#nextuplist li a {text-decoration:none;color:#1d55a9;}
+
+.affiliate-disclosure {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  margin: 0 auto;
+  max-width: 510px;
+  text-align: center;
+}
+
+.morearticleslike{
+  color: #1d55a9;
+font-family: oswald, sans-serif;
+font-size: 27px;
+font-weight: bold;
+display:block;
+text-align: left;
+text-transform: uppercase;
+padding-top:40px;
+}
+
+.before-article-blue-tag {
+  font-size: 15px;
+  font-weight: bold;
+  background: #2772ab;
+  color: white;
+  padding: 2px 8px;
+}
+
 .entry-content a {
   color: #1d55a9;
   text-decoration: underline; }
@@ -58,7 +97,7 @@ a {
   padding: 10px;
   text-align: left; }
 
-.top-bar h4 {
+.top-bar h4, .top-bar h3 {
   color: #1d55a9;
   font-family: Oswald, sans-serif;
   text-transform: uppercase;
@@ -219,7 +258,7 @@ a {
         padding-right: 20px;
         width: 100%; }
         .full-screen-menu nav ul li.search {
-          background-image: url('data:image/svg+xml; utf8, <svg width="16" height="16" viewBox="0 0 1792 1792" fill="#CDCDCD" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" tabindex="-1" focusable="false" ><path fill="#CDCDCD" transform="scale(-1,1) translate(-1792,0)" d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"/></svg>');
+          background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNzkyIDE3OTIiIGZpbGw9IiNDRENEQ0QiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0iI0NEQ0RDRCIgdHJhbnNmb3JtPSJzY2FsZSgtMSwxKSB0cmFuc2xhdGUoLTE3OTIsMCkiIGQ9Ik0xMjE2IDgzMnEwLTE4NS0xMzEuNS0zMTYuNXQtMzE2LjUtMTMxLjUtMzE2LjUgMTMxLjUtMTMxLjUgMzE2LjUgMTMxLjUgMzE2LjUgMzE2LjUgMTMxLjUgMzE2LjUtMTMxLjUgMTMxLjUtMzE2LjV6bTUxMiA4MzJxMCA1Mi0zOCA5MHQtOTAgMzhxLTU0IDAtOTAtMzhsLTM0My0zNDJxLTE3OSAxMjQtMzk5IDEyNC0xNDMgMC0yNzMuNS01NS41dC0yMjUtMTUwLTE1MC0yMjUtNTUuNS0yNzMuNSA1NS41LTI3My41IDE1MC0yMjUgMjI1LTE1MCAyNzMuNS01NS41IDI3My41IDU1LjUgMjI1IDE1MCAxNTAgMjI1IDU1LjUgMjczLjVxMCAyMjAtMTI0IDM5OWwzNDMgMzQzcTM3IDM3IDM3IDkweiIvPjwvc3ZnPgo=');
           background-position: right 10% top 20px;
           background-repeat: no-repeat;
           cursor: pointer;
@@ -708,7 +747,7 @@ h2, strong {
   #purch_Y_L_0_1 {
     display: none; }
   .adslot.adslot970 {
-    display: none; } }
+    } }
 
 .social-wrapper {
   float: left;
@@ -884,19 +923,6 @@ ol.justthesteps, span.nutshell {
   margin-bottom: 10px;
   margin-right: 15px; }
 
-ol.justthesteps::before, span.nutshell::before {
-  content: "JUST THE STEPS";
-  float: right;
-  margin-top: -26px;
-  z-index: 1;
-  position: relative;
-  padding-left: 10px;
-  background-color: #FFF;
-  font-family: oswald, sans-serif;
-  font-size: 16px;
-  color: #666;
-  font-weight: normal; }
-
 span.nutshell {
   width: 300px;
   font-size: 13px;
@@ -904,10 +930,6 @@ span.nutshell {
   padding-top: 8px;
   color: #333;
   margin-left: 10px; }
-
-span.nutshell::before {
-  content: "IN A NUTSHELL";
-  margin-top: -20px; }
 
 ol.justthesteps li {
   font-size: 12px;
@@ -962,12 +984,6 @@ a.dllnk:hover {
 #div-thetop1 {
   background-color: #FAFAFA;
   border: 1px solid #f3f3f3; }
-
-#purch_Y_R_1_1::before, #purch_Y_L_0_1::before, #purch_Y_S_0_1::before, #purch_Y_R_0_1::before, #purch_Y_L_1_1::before, #div-thetop1::before {
-  content: "ADVERTISEMENT";
-  font-size: 10px;
-  color: #CCC;
-  display: block; }
 
 #purch_Y_R_1_1 {
   min-height: 250px;
@@ -1182,7 +1198,7 @@ iframe#htg-content-inline-block {
   width: 100%;
   margin-top: 20px; }
 
-span.sptag {
+span.sptag, strong.sptag {
   font-weight: bold;
   font-size: 12px;
   margin-top: 0px;
@@ -1404,7 +1420,7 @@ blockquote.admonishment_warning {
 body.darkmode .greybox_callout {
   background-color: #474747f5;
   color: white;
-  border: 1px solid #black;
+  border: 1px solid black;
 }
 
 @media print {
@@ -1480,7 +1496,8 @@ body.darkmode .moka-trending-bar-label {
 }
 body.darkmode .moka-trending-bar a {
   color: white;
-}	body {
+}
+	body {
   font-family: "Roboto", "Open Sans", sans-serif; }
   @media screen and (max-width: 768px) {
     body {
@@ -1589,10 +1606,10 @@ body.darkmode .moka-trending-bar a {
 <meta property="fb:page_id" content="65878196434"/>
 <meta name="ROBOTS" content="INDEX, FOLLOW"/>
 <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon"/>
-<link rel="icon" type="image/png" href="/public/images/x32x32.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.ladCzNKJij.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/public/images/x96x96.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.KEoh7tiKXh.png" sizes="96x96">
-<link rel="icon" type="image/png" href="/public/images/x192x192.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.YibPJ1vhGF.png" sizes="192x192">
-<link rel="apple-touch-icon" sizes="180x180" href="/xapple-touch-icon.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.d03ui5s13l.png">
+<link rel="icon" type="image/png" href="/public/images/32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/public/images/96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/public/images/192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="msapplication-TileImage" content="/public/images/144x144.png">
 <meta name="msapplication-TileColor" content="#000">
 <meta name="theme-color" content="">
@@ -1656,7 +1673,6 @@ body.darkmode .moka-trending-bar a {
    fbq('track', 'PageView');
   },3000);
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=335401813750447&ev=PageView&noscript=1"/></noscript>
 <!-- End Facebook Pixel Code -->
 </head>
 <body class="page-template-default page page-id-1031 group-blog">
@@ -1665,7 +1681,7 @@ body.darkmode .moka-trending-bar a {
 <div class="inner">
 <a href='https://www.howtogeek.com/' class='home' title="How-To Geek Home" aria-label="How-To Geek Home">
 <div class="site-branding">
-<img aria-hidden="true" tabindex="-1" focusable="false" role="presentation" src='data:image/png;base64,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' class='main-logo' alt='How-To Geek'/>
+<img aria-hidden="true" tabindex="-1" role="presentation" src='data:image/png;base64,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' class='main-logo' alt=''/>
 </div><!-- .site-branding -->
 </a>
 <button class="htg-hamburger hamburger hamburger--slider" type="button" aria-label="Expand Menu">
@@ -1673,22 +1689,22 @@ body.darkmode .moka-trending-bar a {
 <span class="hamburger-inner" role="presentation"></span>
 </span>
 </button>
-<svg class="search" aria-label="Search Icon" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" tabindex="-1" focusable="false"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z" fill="#fff"/></svg>
-<span class="email"><svg role="img" aria-label="E-Mail Newsletter Icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: #fff;" aria-hidden="true" tabindex="-1" focusable="false"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></span>
-<span class="rss"><a href="/feed/" title="RSS Feed" aria-label="RSS Feed"><svg role="img" aria-label="RSS Feed Icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: #F06530;" aria-hidden="true" tabindex="-1" focusable="false"><path d="M576 1344q0 80-56 136t-136 56-136-56-56-136 56-136 136-56 136 56 56 136zm512 123q2 28-17 48-18 21-47 21h-135q-25 0-43-16.5t-20-41.5q-22-229-184.5-391.5t-391.5-184.5q-25-2-41.5-20t-16.5-43v-135q0-29 21-47 17-17 43-17h5q160 13 306 80.5t259 181.5q114 113 181.5 259t80.5 306zm512 2q2 27-18 47-18 20-46 20h-143q-26 0-44.5-17.5t-19.5-42.5q-12-215-101-408.5t-231.5-336-336-231.5-408.5-102q-25-1-42.5-19.5t-17.5-43.5v-143q0-28 20-46 18-18 44-18h3q262 13 501.5 120t425.5 294q187 186 294 425.5t120 501.5z"/></svg></a></span>
+<svg class="search" aria-label="Search Icon" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" tabindex="-1"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z" fill="#fff"/></svg>
+<span class="email"><svg role="img" aria-label="E-Mail Newsletter Icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: #fff;" aria-hidden="true" tabindex="-1"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></span>
+<span class="rss"><a href="/feed/" title="RSS Feed" aria-label="RSS Feed"><svg role="img" aria-label="RSS Feed Icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: #F06530;" aria-hidden="true" tabindex="-1"><path d="M576 1344q0 80-56 136t-136 56-136-56-56-136 56-136 136-56 136 56 56 136zm512 123q2 28-17 48-18 21-47 21h-135q-25 0-43-16.5t-20-41.5q-22-229-184.5-391.5t-391.5-184.5q-25-2-41.5-20t-16.5-43v-135q0-29 21-47 17-17 43-17h5q160 13 306 80.5t259 181.5q114 113 181.5 259t80.5 306zm512 2q2 27-18 47-18 20-46 20h-143q-26 0-44.5-17.5t-19.5-42.5q-12-215-101-408.5t-231.5-336-336-231.5-408.5-102q-25-1-42.5-19.5t-17.5-43.5v-143q0-28 20-46 18-18 44-18h3q262 13 501.5 120t425.5 294q187 186 294 425.5t120 501.5z"/></svg></a></span>
 <span class="linkedin" style="margin-top: 13px;"><a title="LinkedIn" aria-label="LinkedIn" href="https://www.linkedin.com/company/howtogeek/">
-<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LinkedIn Icon" width="24" height="24" viewBox="0 0 24 24" style="fill: #FFF;" aria-hidden="true" tabindex="-1" focusable="false">
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LinkedIn Icon" width="24" height="24" viewBox="0 0 24 24" style="fill: #FFF;" aria-hidden="true" tabindex="-1">
 <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path></svg>
 </a></span>
 <span class="instagram">
 <a title="Instagram" aria-label="Instagram" href="https://www.instagram.com/howtogeeksite">
-<svg role="img" aria-label="Instagram Icon" style="margin-left: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333333 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" aria-hidden="true" tabindex="-1" focusable="false"><defs><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="128982" y1="329187" x2="204352" y2="4148.82"><stop offset="0" stop-color="#f58529"/><stop offset=".161" stop-color="#feda77"/><stop offset=".431" stop-color="#dd2a7b"/><stop offset=".741" stop-color="#8134af"/><stop offset="1" stop-color="#515bd4"/></linearGradient></defs><path d="M96206 1436h140927c52923 0 96200 42742 96200 94958v140546c0 52228-43278 94956-96198 94956l-140929-2C43283 331894 0 289166 0 236938V96392C0 44178 43283 1436 96206 1436zm69563 76009c51427 0 93159 41732 93159 93159 0 51433-41732 93159-93159 93159-51441 0-93167-41726-93167-93159 0-51427 41726-93159 93167-93159zm0 31467c34055 0 61694 27633 61694 61694s-27640 61700-61694 61700c-34067 0-61701-27639-61701-61700s27634-61694 61701-61694zm90128-44378c8354 0 15128 6774 15128 15120 0 8354-6774 15128-15128 15128-8348 0-15120-6774-15120-15128 0-8348 6774-15120 15120-15120zM107722 28430h117907c44273 0 80482 36029 80482 80059v118497c0 44028-36209 80051-80482 80051l-117907 2c-44273 0-80488-36023-80488-80051V108487c0-44028 36215-80057 80488-80057z" fill="url(#a)"/></svg>
+<svg role="img" aria-label="Instagram Icon" style="margin-left: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333333 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" aria-hidden="true" tabindex="-1"><defs><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="128982" y1="329187" x2="204352" y2="4148.82"><stop offset="0" stop-color="#f58529"/><stop offset=".161" stop-color="#feda77"/><stop offset=".431" stop-color="#dd2a7b"/><stop offset=".741" stop-color="#8134af"/><stop offset="1" stop-color="#515bd4"/></linearGradient></defs><path d="M96206 1436h140927c52923 0 96200 42742 96200 94958v140546c0 52228-43278 94956-96198 94956l-140929-2C43283 331894 0 289166 0 236938V96392C0 44178 43283 1436 96206 1436zm69563 76009c51427 0 93159 41732 93159 93159 0 51433-41732 93159-93159 93159-51441 0-93167-41726-93167-93159 0-51427 41726-93159 93167-93159zm0 31467c34055 0 61694 27633 61694 61694s-27640 61700-61694 61700c-34067 0-61701-27639-61701-61700s27634-61694 61701-61694zm90128-44378c8354 0 15128 6774 15128 15120 0 8354-6774 15128-15128 15128-8348 0-15120-6774-15120-15128 0-8348 6774-15120 15120-15120zM107722 28430h117907c44273 0 80482 36029 80482 80059v118497c0 44028-36209 80051-80482 80051l-117907 2c-44273 0-80488-36023-80488-80051V108487c0-44028 36215-80057 80488-80057z" fill="url(#a)"/></svg>
 </a>
 </span>
-<span class="twitter"><a title="Twitter" aria-label="Twitter" href="https://twitter.com/howtogeek/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: #2AA3EF;" aria-hidden="true" tabindex="-1" focusable="false"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></a></span>
-<span class="facebook"><a title="Facebook" aria-label="Facebook" href="https://facebook.com/howtogeek/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: #3B5998;" aria-hidden="true" tabindex="-1" focusable="false"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></a></span>
-<span class="twitter-mobile"><svg role="img" aria-label="Twitter Icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: #2AA3EF;" aria-hidden="true" tabindex="-1" focusable="false"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></span>
-<span class="facebook-mobile"><svg role="img" aria-label="Facebook Icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: #3B5998;" aria-hidden="true" tabindex="-1" focusable="false"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></span>
+<span class="twitter"><a title="Twitter" aria-label="Twitter" href="https://twitter.com/howtogeek/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: #2AA3EF;" aria-hidden="true" tabindex="-1"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></a></span>
+<span class="facebook"><a title="Facebook" aria-label="Facebook" href="https://facebook.com/howtogeek/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: #3B5998;" aria-hidden="true" tabindex="-1"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></a></span>
+<span class="twitter-mobile"><svg role="img" aria-label="Twitter Icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: #2AA3EF;" aria-hidden="true" tabindex="-1"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></span>
+<span class="facebook-mobile"><svg role="img" aria-label="Facebook Icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" style="fill: #3B5998;" aria-hidden="true" tabindex="-1"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></span>
 <div class="subscribe-button" tabindex="-1">Subscribe</div>
 <ul id="topmenu" role="menu">
 <li role="menuitem"><a href="/news/">News</a></li>
@@ -1707,23 +1723,23 @@ body.darkmode .moka-trending-bar a {
 <input type="submit" value="Go">
 </form>
 <nav id="site-navigation-1" class="main-navigation" role="navigation">
-<div class="menu-header-column-1-container"><ul id="menu-header-column-1" class="menu"><li role="menuitem" id="menu-item-363960" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363960"><a href="https://www.howtogeek.com/t/windows/">Windows</a></li>
+<div class="menu-header-column-1-container"><ul class="menu" role="menu"><li role="menuitem" id="menu-item-363960" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363960"><a href="https://www.howtogeek.com/t/windows/">Windows</a></li>
 <li role="menuitem" id="menu-item-363961" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363961"><a href="https://www.howtogeek.com/t/mac/">Mac</a></li>
 <li role="menuitem" id="menu-item-363962" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363962"><a href="https://www.howtogeek.com/t/ios/">iPhone</a></li>
 <li role="menuitem" id="menu-item-363963" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363963"><a href="https://www.howtogeek.com/t/android/">Android</a></li>
 </ul></div>
-<div class="menu-header-column-2-container"><ul id="menu-header-column-2" class="menu"><li role="menuitem" id="menu-item-363964" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363964"><a href="https://www.howtogeek.com/t/smarthome/">Smarthome</a></li>
+<div class="menu-header-column-2-container"><ul class="menu" role="menu"><li role="menuitem" id="menu-item-363964" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363964"><a href="https://www.howtogeek.com/t/smarthome/">Smarthome</a></li>
 <li role="menuitem" id="menu-item-363965" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363965"><a href="https://www.howtogeek.com/t/office/">Office</a></li>
 <li role="menuitem" id="menu-item-363966" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363966"><a href="https://www.howtogeek.com/t/privacyandsecurity/">Security</a></li>
 <li role="menuitem" id="menu-item-363967" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363967"><a href="https://www.howtogeek.com/t/linux/">Linux</a></li>
 </ul></div>
-<div class="menu-header-column-3-container"><ul id="menu-header-column-3" class="menu"><li role="menuitem" id="menu-item-363968" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363968"><a href="https://www.howtogeek.com/news/">News</a></li>
+<div class="menu-header-column-3-container"><ul class="menu" role="menu"><li role="menuitem" id="menu-item-363968" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363968"><a href="https://www.howtogeek.com/news/">News</a></li>
 <li role="menuitem" id="menu-item-363969" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363969"><a href="https://www.howtogeek.com/t/features/">Features</a></li>
 <li role="menuitem" id="menu-item-363970" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363970"><a href="https://www.reviewgeek.com">Review Geek</a></li>
 <li role="menuitem" id="menu-item-410821" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-410821"><a href="https://www.lifesavvy.com">LifeSavvy</a></li>
 <li role="menuitem" id="menu-item-697758" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-697758"><a href="https://www.howtogeek.com/newsletter">Newsletter</a></li>
 </ul></div>
-<div class="menu-header-column-4-container"><ul id="menu-header-column-4" class="menu"><li role="menuitem" id="menu-item-363971" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363971"><a href="https://www.howtogeek.com/about/">About Us</a></li>
+<div class="menu-header-column-4-container"><ul class="menu" role="menu"><li role="menuitem" id="menu-item-363971" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363971"><a href="https://www.howtogeek.com/about/">About Us</a></li>
 <li role="menuitem" id="menu-item-363972" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363972"><a href="https://www.howtogeek.com/contact/">Contact Us</a></li>
 <li role="menuitem" id="menu-item-445703" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-445703"><a href="https://www.facebook.com/groups/geektalkgroup/">Geek Talk</a></li>
 <li role="menuitem" id="menu-item-671446" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-671446"><a href="https://www.cloudsavvyit.com">CloudSavvy IT</a></li>
@@ -1740,28 +1756,28 @@ body.darkmode .moka-trending-bar a {
 <input type="submit" value="Go">
 </form>
 <strong class="popsearchheading" role="heading" aria-level="1">Popular Searches</strong>
-<div class="menu-popular-searches-container"><ul id="menu-popular-searches" class="menu"><li role="menuitem" id="menu-item-363957" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363957"><a href="https://www.howtogeek.com/search/?q=Windows+10">Windows 10</a></li>
-<li role="menuitem" id="menu-item-363958" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363958"><a href="https://www.howtogeek.com/search/?q=Speed+Up+PC">Speed Up PC</a></li>
-<li role="menuitem" id="menu-item-363959" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363959"><a href="https://www.howtogeek.com/search/?q=Chromecast">Chromecast</a></li>
+<div class="menu-popular-searches-container"><ul id="menu-popular-searches" class="menu" role="menu"><li role="menuitem" id="menu-item-363957" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363957"><a href="https://www.howtogeek.com/search/?q=Windows+10" aria-label="Search for Windows 10">Windows 10</a></li>
+<li role="menuitem" id="menu-item-363958" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363958"><a href="https://www.howtogeek.com/search/?q=Speed+Up+PC" aria-label="Search for Speed Up PC">Speed Up PC</a></li>
+<li role="menuitem" id="menu-item-363959" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363959"><a href="https://www.howtogeek.com/search/?q=Chromecast" aria-label="Search for Chromecast">Chromecast</a></li>
 </ul></div>
 <nav id="site-navigation-2" class="main-navigation" role="navigation">
-<div class="menu-header-column-1-container"><ul id="menu-header-column-5" class="menu"><li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363960"><a href="https://www.howtogeek.com/t/windows/">Windows</a></li>
+<div class="menu-header-column-1-container"><ul class="menu" role="menu"><li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363960"><a href="https://www.howtogeek.com/t/windows/">Windows</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363961"><a href="https://www.howtogeek.com/t/mac/">Mac</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363962"><a href="https://www.howtogeek.com/t/ios/">iPhone</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363963"><a href="https://www.howtogeek.com/t/android/">Android</a></li>
 </ul></div>
-<div class="menu-header-column-2-container"><ul id="menu-header-column-6" class="menu"><li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363964"><a href="https://www.howtogeek.com/t/smarthome/">Smarthome</a></li>
+<div class="menu-header-column-2-container"><ul class="menu" role="menu"><li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363964"><a href="https://www.howtogeek.com/t/smarthome/">Smarthome</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363965"><a href="https://www.howtogeek.com/t/office/">Office</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363966"><a href="https://www.howtogeek.com/t/privacyandsecurity/">Security</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363967"><a href="https://www.howtogeek.com/t/linux/">Linux</a></li>
 </ul></div>
-<div class="menu-header-column-3-container"><ul id="menu-header-column-7" class="menu"><li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363968"><a href="https://www.howtogeek.com/news/">News</a></li>
+<div class="menu-header-column-3-container"><ul class="menu" role="menu"><li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363968"><a href="https://www.howtogeek.com/news/">News</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363969"><a href="https://www.howtogeek.com/t/features/">Features</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363970"><a href="https://www.reviewgeek.com">Review Geek</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-410821"><a href="https://www.lifesavvy.com">LifeSavvy</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-697758"><a href="https://www.howtogeek.com/newsletter">Newsletter</a></li>
 </ul></div>
-<div class="menu-header-column-4-container"><ul id="menu-header-column-8" class="menu"><li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363971"><a href="https://www.howtogeek.com/about/">About Us</a></li>
+<div class="menu-header-column-4-container"><ul class="menu" role="menu"><li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363971"><a href="https://www.howtogeek.com/about/">About Us</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363972"><a href="https://www.howtogeek.com/contact/">Contact Us</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-445703"><a href="https://www.facebook.com/groups/geektalkgroup/">Geek Talk</a></li>
 <li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-671446"><a href="https://www.cloudsavvyit.com">CloudSavvy IT</a></li>
@@ -1769,19 +1785,20 @@ body.darkmode .moka-trending-bar a {
 </div>
 </div>
 </div>
-<div class="full-screen-menu subscribe-menu">
+<div class="full-screen-menu subscribe-menu" data-nosnippet="data-nosnippet">
 <div class="subscribe-wrap">
 <div class="htg-close">X</div>
 <div class="inner">
 <div class="left">
-<img loading="lazy" src="https://www.howtogeek.com/wp-content/themes/htg-responsive/img/xhtg-email-small.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.r9y_38MSzk.png" alt="" role="presentation">
+<img loading="lazy" src="https://www.howtogeek.com/wp-content/themes/htg-responsive/img/htg-email-small.png" alt="" role="presentation">
 <span class="emailsubheader" role="heading" aria-level="1">The Best Tech Newsletter Anywhere</span>
 <p>Join <span style="font-weight:bold;color: #000;">350,000 subscribers</span> and get a daily digest of news, geek trivia, and our feature articles.</p>
 </div>
 <div class="content right">
 <form action="/em/subscribe" method="post">
-<input aria-hidden="true" tabindex="-1" focusable="false" type="hidden" name="list" value="weekday">
-<input aria-hidden="true" tabindex="-1" focusable="false" type="hidden" name="tr" value="howtogeek-subscribemenu">
+<input aria-hidden="true" tabindex="-1" type="hidden" name="list" value="weekday">
+<input aria-hidden="true" tabindex="-1" type="hidden" name="tr" value="howtogeek-subscribemenu">
+<input aria-hidden="true" tabindex="-1" type="hidden" name="moka-pagerefer" value="">
 <input aria-label="Enter Your Email" aria-required="true" aria-invalid="false" onkeypress="validateAriaEmail(this)" type="text" name="email" class="ftemtxt" placeholder="Your email">
 <input aria-label="Go" type="submit" class="ftemsub" value="Go">
 </form>
@@ -1792,11 +1809,11 @@ body.darkmode .moka-trending-bar a {
 </div>
 </div>
 <div id="page" class="site">
-<div style="text-align:center;margin-right:auto;margin-left:auto;position:relative;width:100vw;left: 50%;right: 50%;margin-left: -50vw;margin-right: -50vw;" class="adslot adslot970 collapse">
+<div style="text-align:center;margin-right:auto;margin-left:auto;position:relative;width:100vw;left: 50%;right: 50%;margin-left: -50vw;margin-right: -50vw;" aria-hidden="true" class="adslot adslot970 collapse">
 </div>
 <header class="entry-header">
-</div><!-- .entry-meta -->
 </header><!-- .entry-header -->
+</div> <!-- page -->
 <div id="content" class="site-content">
 <script>
 	var tmntag = tmntag || {};
@@ -1816,7 +1833,7 @@ body.darkmode .moka-trending-bar a {
 <div id="primary" class="content-area">
 <main id="main" class="site-main" role="main">
 <article id="post-1031" class="post-1031 page type-page status-publish hentry">
-<header class="entry-header" aria-label="Privacy Policy" role="heading" aria-level="2">
+<header class="entry-header" aria-label="Privacy Policy">
 <h1 class="entry-title">Privacy Policy</h1>	</header><!-- .entry-header -->
 <div class="entry-content">
 <p>Our Privacy Policy is intended to help you clearly and easily understand:</p>
@@ -2022,18 +2039,14 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 .sidebar-popular-post:last-child {
   border-bottom: none; }
 
-.sidebar-popular-post.sppfirst::after {
-  content: "TRENDING";
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  padding: 8px 14px;
-  background: rgba(23, 34, 50, 0.8);
-  color: white;
-  font-size: 18px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: normal; }
+.sidebar-popular-post .sppfirst-accessible {
+    position: absolute;
+    padding: 8px 14px;
+    background: rgba(23, 34, 50, 0.8);
+    color: white;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal; }
 
 .sidebar-popular-post {
   position: relative;
@@ -2072,7 +2085,7 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 
 </style>
 <aside id="secondary" class="widget-area" role="complementary">
-<div id='purch_Y_R_1_1'>
+<div aria-hidden="true" id='purch_Y_R_1_1'>
 <script>
     if( window.outerWidth >= 768 || screen.width >= 768 ) {
         tmntag.cmd.push(function(){tmntag.adTag('purch_Y_R_1_1', false);});
@@ -2081,91 +2094,82 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 </div>	<div style='clear:both'></div>
 <div class="sidebar-glossary lazyloaddiv">
 <div class="top-bar">
-<h4>Best of How-To Geek</h4>
+<h3>Best of How-To Geek</h3>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="How to Choose the Best VPN Service for Your Needs" aria-label="How to Choose the Best VPN Service for Your Needs" href='https://www.howtogeek.com/221929/how-to-choose-the-best-vpn-service-for-your-needs/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/e3cef0cf757b8602f01201830603e4b6/wp-content/uploads/2015/07/ximg_559c4e62407fc.jpg.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.hsgcPQzZds.jpg" alt="" role="presentation"></span></a>
+<a title="How to Fax a Document From Your Smartphone" aria-label="How to Fax a Document From Your Smartphone" href='https://www.howtogeek.com/218505/how-to-fax-a-document-from-your-smartphone/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2015/05/fax-machine.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="How to Choose the Best VPN Service for Your Needs" aria-label="How to Choose the Best VPN Service for Your Needs" href='https://www.howtogeek.com/221929/how-to-choose-the-best-vpn-service-for-your-needs/' class='title' rel='bookmark'>How to Choose the Best VPN Service for Your Needs</a>
-</div>
-<div style="clear:both;"></div>
-</div>
-<div class="sfpost">
-<div class="sfp2" role="presentation">
-<a title="What Is RAM? Everything You Need to Know" aria-label="What Is RAM? Everything You Need to Know" href='https://www.howtogeek.com/697659/what-is-ram-everything-you-need-to-know/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/b942fceaa735a0e75442a22772e48c70/wp-content/uploads/2020/10/CorsairDDR4RAM.png.pagespeed.ce.ti9LPb6pCA.png" alt="" role="presentation"></span></a>
-</div>
-<div class="sfp3">
-<a title="What Is RAM? Everything You Need to Know" aria-label="What Is RAM? Everything You Need to Know" href='https://www.howtogeek.com/697659/what-is-ram-everything-you-need-to-know/' class='title' rel='bookmark'>What Is RAM? Everything You Need to Know</a>
+<a title="How to Fax a Document From Your Smartphone" aria-label="How to Fax a Document From Your Smartphone" href='https://www.howtogeek.com/218505/how-to-fax-a-document-from-your-smartphone/' class='title' rel='bookmark'>How to Fax a Document From Your Smartphone</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10" aria-label="10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10" href='https://www.howtogeek.com/228570/10-quick-ways-to-speed-up-a-slow-windows-pc/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/970c8f7c434ffa7fbe0ead6b3dd01b19/wp-content/uploads/2015/09/xslow-computer.jpg.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.KgrdrcHPhC.jpg" alt="" role="presentation"></span></a>
+<a title="Did You Know? Amazon Has a Huge Used Product Market" aria-label="Did You Know? Amazon Has a Huge Used Product Market" href='https://www.howtogeek.com/696910/did-you-know-amazon-has-a-huge-used-product-market/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2020/10/amazon-ebay.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10" aria-label="10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10" href='https://www.howtogeek.com/228570/10-quick-ways-to-speed-up-a-slow-windows-pc/' class='title' rel='bookmark'>10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10</a>
+<a title="Did You Know? Amazon Has a Huge Used Product Market" aria-label="Did You Know? Amazon Has a Huge Used Product Market" href='https://www.howtogeek.com/696910/did-you-know-amazon-has-a-huge-used-product-market/' class='title' rel='bookmark'>Did You Know? Amazon Has a Huge Used Product Market</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="How to Choose the Best (and Fastest) Alternative DNS Server" aria-label="How to Choose the Best (and Fastest) Alternative DNS Server" href='https://www.howtogeek.com/342330/how-to-choose-the-best-and-fastest-alternative-dns-server/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/8655d2a1c85fbcb4f4de913460a071aa/wp-content/uploads/2018/02/ximg_5a7e122dc06ce.jpg.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.JnuaqIMIUr.jpg" alt="" role="presentation"></span></a>
+<a title="How to Use All of Windows 10’s Backup and Recovery Tools" aria-label="How to Use All of Windows 10’s Backup and Recovery Tools" href='https://www.howtogeek.com/220986/how-to-use-all-of-windows-10%e2%80%99s-backup-and-recovery-tools/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2017/02/bar_top-650x300.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="How to Choose the Best (and Fastest) Alternative DNS Server" aria-label="How to Choose the Best (and Fastest) Alternative DNS Server" href='https://www.howtogeek.com/342330/how-to-choose-the-best-and-fastest-alternative-dns-server/' class='title' rel='bookmark'>How to Choose the Best (and Fastest) Alternative DNS Server</a>
+<a title="How to Use All of Windows 10’s Backup and Recovery Tools" aria-label="How to Use All of Windows 10’s Backup and Recovery Tools" href='https://www.howtogeek.com/220986/how-to-use-all-of-windows-10%e2%80%99s-backup-and-recovery-tools/' class='title' rel='bookmark'>How to Use All of Windows 10’s Backup and Recovery Tools</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="What is 4&#215;4 MIMO, and Does My Smartphone Need It?" aria-label="What is 4&#215;4 MIMO, and Does My Smartphone Need It?" href='https://www.howtogeek.com/394266/what-is-4x4-mimo-and-does-my-smartphone-need-it/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/ed53afd640a55d6d98ae2ab8b393fbf9/wp-content/uploads/2018/11/ximg_5be216ec9a3b8.jpg.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.b-NgTowmD7.jpg" alt="" role="presentation"></span></a>
+<a title="What Is Windows 10X, and How Is It Different?" aria-label="What Is Windows 10X, and How Is It Different?" href='https://www.howtogeek.com/442767/what-is-windows-10x-and-how-is-it-different/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2019/10/img_5d94c5d5a2a7a.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="What is 4&#215;4 MIMO, and Does My Smartphone Need It?" aria-label="What is 4&#215;4 MIMO, and Does My Smartphone Need It?" href='https://www.howtogeek.com/394266/what-is-4x4-mimo-and-does-my-smartphone-need-it/' class='title' rel='bookmark'>What is 4&#215;4 MIMO, and Does My Smartphone Need It?</a>
+<a title="What Is Windows 10X, and How Is It Different?" aria-label="What Is Windows 10X, and How Is It Different?" href='https://www.howtogeek.com/442767/what-is-windows-10x-and-how-is-it-different/' class='title' rel='bookmark'>What Is Windows 10X, and How Is It Different?</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="How to Send and Receive Faxes Online Without a Fax Machine or Phone Line" aria-label="How to Send and Receive Faxes Online Without a Fax Machine or Phone Line" href='https://www.howtogeek.com/168841/how-to-send-and-receive-faxes-online-without-a-fax-machine-or-phone-line/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/7806ce6b23367f98dca4a65c22b417c3/wp-content/uploads/2013/07/xfax-and-copier-machine.jpg.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.Webjw94d-r.jpg" alt="" role="presentation"></span></a>
+<a title="How to Set up Smarthome Devices When You Have Roommates" aria-label="How to Set up Smarthome Devices When You Have Roommates" href='https://www.howtogeek.com/361039/how-to-set-up-smarthome-devices-when-you-have-roommates/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2018/08/roommates-smarthome.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="How to Send and Receive Faxes Online Without a Fax Machine or Phone Line" aria-label="How to Send and Receive Faxes Online Without a Fax Machine or Phone Line" href='https://www.howtogeek.com/168841/how-to-send-and-receive-faxes-online-without-a-fax-machine-or-phone-line/' class='title' rel='bookmark'>How to Send and Receive Faxes Online Without a Fax Machine or Phone Line</a>
+<a title="How to Set up Smarthome Devices When You Have Roommates" aria-label="How to Set up Smarthome Devices When You Have Roommates" href='https://www.howtogeek.com/361039/how-to-set-up-smarthome-devices-when-you-have-roommates/' class='title' rel='bookmark'>How to Set up Smarthome Devices When You Have Roommates</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="10 Ways To Free Up Disk Space on Your Mac Hard Drive" aria-label="10 Ways To Free Up Disk Space on Your Mac Hard Drive" href='https://www.howtogeek.com/184091/5-ways-to-free-up-disk-space-on-a-mac/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/61aa631c9c344e81614070faeac4d708/wp-content/uploads/2016/11/xFullscreen_2_28_17__9_49_AM-650x300.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.6sDkS21ucd.png" alt="" role="presentation"></span></a>
+<a title="What&#8217;s the Best Way to Back Up My Computer?" aria-label="What&#8217;s the Best Way to Back Up My Computer?" href='https://www.howtogeek.com/242428/whats-the-best-way-to-back-up-my-computer/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2016/02/img_56bfe8d1f3492.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="10 Ways To Free Up Disk Space on Your Mac Hard Drive" aria-label="10 Ways To Free Up Disk Space on Your Mac Hard Drive" href='https://www.howtogeek.com/184091/5-ways-to-free-up-disk-space-on-a-mac/' class='title' rel='bookmark'>10 Ways To Free Up Disk Space on Your Mac Hard Drive</a>
+<a title="What&#8217;s the Best Way to Back Up My Computer?" aria-label="What&#8217;s the Best Way to Back Up My Computer?" href='https://www.howtogeek.com/242428/whats-the-best-way-to-back-up-my-computer/' class='title' rel='bookmark'>What&#8217;s the Best Way to Back Up My Computer?</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="Why Microsoft&#8217;s Office 365 is a Great Deal" aria-label="Why Microsoft&#8217;s Office 365 is a Great Deal" href='https://www.howtogeek.com/364457/why-microsofts-office-365-is-a-great-deal/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/thumbcache/340/200/b9d88de858942085c3a32af0936ba74a/wp-content/uploads/2018/08/img_5b887f9052b0e.png" alt="" role="presentation"></span></a>
+<a title="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" aria-label="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" href='https://www.howtogeek.com/259644/nest-vs.-ecobee3-vs.-honeywell-lyric-which-smart-thermostat-should-you-buy/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2016/06/smart-thermostats-copy-650x300.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="Why Microsoft&#8217;s Office 365 is a Great Deal" aria-label="Why Microsoft&#8217;s Office 365 is a Great Deal" href='https://www.howtogeek.com/364457/why-microsofts-office-365-is-a-great-deal/' class='title' rel='bookmark'>Why Microsoft&#8217;s Office 365 is a Great Deal</a>
+<a title="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" aria-label="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" href='https://www.howtogeek.com/259644/nest-vs.-ecobee3-vs.-honeywell-lyric-which-smart-thermostat-should-you-buy/' class='title' rel='bookmark'>Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
-<div class="sfp2">
-<a title="" aria-label="" href='' class='title' rel='bookmark'><span></span></a>
+<div class="sfp2" role="presentation">
+<a title="How Do Holograms Work on Stage?" aria-label="How Do Holograms Work on Stage?" href='https://www.howtogeek.com/434405/how-do-holograms-work-on-stage/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2019/07/1-7.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="" aria-label="" href='' class='title' rel='bookmark'></a>
+<a title="How Do Holograms Work on Stage?" aria-label="How Do Holograms Work on Stage?" href='https://www.howtogeek.com/434405/how-do-holograms-work-on-stage/' class='title' rel='bookmark'>How Do Holograms Work on Stage?</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 </div>
-<div id='purch_Y_S_0_1'>
+<div aria-hidden="true" id='purch_Y_S_0_1'>
 <script>
             if( window.outerWidth >= 768 || screen.width >= 768 ) {
               tmntag.cmd.push(function(){tmntag.adTag('purch_Y_S_0_1', false);});
@@ -2193,24 +2197,24 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 <div class="container">
 <div class="logo">
 <a title="How-To Geek" aria-label="How-To Geek" href="https://www.howtogeek.com">
-<img src="https://www.howtogeek.com/wp-content/uploads/2019/02/xhtglogo_white.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rp+rw+ri+cp+md.ic.wKj8re7waF.png" alt="How-To Geek" class="logo">
+<img src="https://www.howtogeek.com/wp-content/uploads/2019/02/htglogo_white.png" alt="How-To Geek" class="logo">
 </a>
 <div class="social">
 <a title="Facebook" aria-label="Facebook" href="https://facebook.com/howtogeek">
 <div class="facebook">
-<svg aria-hidden="true" tabindex="-1" focusable="false" role="presentation" id="icon-facebook" viewBox="0 0 43.8 34" width="100%" height="100%" aria-hidden="true" tabindex="-1" focusable="false"><g><path id="f_6_" fill="#FFFFFF" d="M22.4,30.1V18.9h3.7l0.6-4.4h-4.3v-2.8c0-1.3,0.3-2.1,2.2-2.1h2.3V5.8c-0.4-0.1-1.8-0.2-3.4-0.2c-3.3,0-5.6,2-5.6,5.7v3.2h-3.8v4.4h3.8v11.2L22.4,30.1L22.4,30.1z"></path></g></svg>
+<svg id="icon-facebook" viewBox="0 0 43.8 34" width="100%" height="100%" aria-hidden="true" tabindex="-1"><title>Facebook Icon</title><g><path id="f_6_" fill="#FFFFFF" d="M22.4,30.1V18.9h3.7l0.6-4.4h-4.3v-2.8c0-1.3,0.3-2.1,2.2-2.1h2.3V5.8c-0.4-0.1-1.8-0.2-3.4-0.2c-3.3,0-5.6,2-5.6,5.7v3.2h-3.8v4.4h3.8v11.2L22.4,30.1L22.4,30.1z"></path></g></svg>
 <p>Facebook</p>
 </div>
 </a>
 <a title="Instagram" class="rss-link" href="https://www.instagram.com/howtogeeksite">
 <div class="twitter" style="background-color:#c04d02">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: white;" viewBox="0 0 24 24" aria-hidden="true" tabindex="-1" focusable="false"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: white;" viewBox="0 0 24 24" aria-hidden="true" tabindex="-1"><title>Instagram Icon</title><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
 <p>Instagram</p>
 </div>
 </a>
 <a title="Twitter" href="https://www.twitter.com/howtogeek">
 <div class="twitter">
-<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.00006 244.18703" height="244.19" width="300" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" aria-hidden="true" tabindex="-1" focusable="false">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.00006 244.18703" height="244.19" width="300" aria-hidden="true" tabindex="-1"><title>Twitter Icon</title>
 <g style="" transform="translate(-539.18 -568.86)">
 <path d="m633.9 812.04c112.46 0 173.96-93.168 173.96-173.96 0-2.6463-0.0539-5.2806-0.1726-7.903 11.938-8.6302 22.314-19.4 30.498-31.66-10.955 4.8694-22.744 8.1474-35.111 9.6255 12.623-7.5693 22.314-19.543 26.886-33.817-11.813 7.0031-24.895 12.093-38.824 14.841-11.157-11.884-27.041-19.317-44.629-19.317-33.764 0-61.144 27.381-61.144 61.132 0 4.7978 0.5364 9.4646 1.5854 13.941-50.815-2.5569-95.874-26.886-126.03-63.88-5.2508 9.0354-8.2785 19.531-8.2785 30.73 0 21.212 10.794 39.938 27.208 50.893-10.031-0.30992-19.454-3.0635-27.69-7.6468-0.009 0.25652-0.009 0.50661-0.009 0.78077 0 29.61 21.075 54.332 49.051 59.934-5.1376 1.4006-10.543 2.1516-16.122 2.1516-3.9336 0-7.766-0.38716-11.491-1.1026 7.7838 24.293 30.355 41.971 57.115 42.465-20.926 16.402-47.287 26.171-75.937 26.171-4.929 0-9.7983-0.28036-14.584-0.84634 27.059 17.344 59.189 27.464 93.722 27.464" fill="#ffffff"/>
 </g>
@@ -2220,7 +2224,7 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 </a>
 <a title="LinkedIn" href="https://www.linkedin.com/company/howtogeek/">
 <div class="linkedin">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #FFF;" aria-hidden="true" tabindex="-1" focusable="false">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #FFF;" aria-hidden="true" tabindex="-1"><title>LinkedIn Icon</title>
 <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path></svg>
 <p>LinkedIn</p>
 </div>
@@ -2275,11 +2279,12 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 
 
 </style>
-<div class="footer-email">
+<div class="footer-email" data-nosnippet="data-nosnippet">
 <p id="footer-email-text">The Best Tech Newsletter Anywhere</p>
 <form action="https://www.howtogeek.com/em/subscribe" method="post">
-<input aria-hidden="true" tabindex="-1" focusable="false" type="hidden" name="list" value="weekday">
-<input aria-hidden="true" tabindex="-1" focusable="false" type="hidden" name="tr" value="howtogeek-footer">
+<input aria-hidden="true" tabindex="-1" type="hidden" name="list" value="weekday">
+<input aria-hidden="true" tabindex="-1" type="hidden" name="tr" value="howtogeek-footer">
+<input aria-hidden="true" tabindex="-1" type="hidden" name="moka-pagerefer" value="">
 <input aria-label="Enter Your Email" aria-required="true" aria-invalid="false" onkeypress="validateAriaEmail(this)" type="text" name="email" class="ftemtxt" placeholder="Enter Your Email">
 <input aria-label="Sign Up" type="submit" class="ftemsub" value="Sign Up">
 </form>
@@ -2287,102 +2292,46 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 </div>
 <div class="pages">
 <ul id="menu-footer" class="menu" role="menu">
-<div class="menu-footer-container"><li role="menuitem" id="menu-item-314681" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314681"><a href="https://www.howtogeek.com/about/">About Us</a></li>
+<li role="menuitem" id="menu-item-314681" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314681"><a href="https://www.howtogeek.com/about/">About Us</a></li>
 <li role="menuitem" id="menu-item-314683" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314683"><a href="https://www.howtogeek.com/contact/">Contact Us</a></li>
 <li role="menuitem" id="menu-item-314685" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-314685"><a href="https://www.howtogeek.com/345703/we-are-hiring/">Join Our Team</a></li>
 <li role="menuitem" id="menu-item-407624" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-407624"><a href="https://www.howtogeek.com/about/#contact">Advertising</a></li>
 <li role="menuitem" id="menu-item-314687" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1031 current_page_item menu-item-314687"><a href="https://www.howtogeek.com/privacy-policy/">Privacy Policy</a></li>
 <li role="menuitem" id="menu-item-329744" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-329744"><a href="https://www.howtogeek.com/terms-of-use/">Terms of Use</a></li>
-</div>
-<li role="menuitem" aria-label="Privacy Policy">
-<div id="show-do-not-sell-info-container"/>
+<li role="menuitem" id="menu-item-711322" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-711322"><a href="https://www.howtogeek.com/accessibility/">Accessibility</a></li>
+<li role="menuitem" aria-label="Do not sell my info">
+<div id="show-do-not-sell-info-container"></div>
 </li>
-<style>
-						.darkModeToggle {
-							-webkit-appearance: none;
-							-moz-appearance: none;
-							appearance: none;
-							width: 62px;
-							height: 32px;
-							display: inline-block;
-							position: relative;
-							border-radius: 50px;
-							overflow: hidden;
-							outline: none;
-							border: none;
-							cursor: pointer;
-							background-color: #707070;
-							transition: background-color ease 0.3s;
-						}
-
-						.darkModeToggle:before {
-							content: "on off";
-							display: block;
-							position: absolute;
-							z-index: 2;
-							width: 28px;
-							height: 28px;
-							background: #fff;
-							left: 2px;
-							top: 2px;
-							border-radius: 50%;
-							font: 10px/28px Helvetica;
-							text-transform: uppercase;
-							font-weight: bold;
-							text-indent: -22px;
-							word-spacing: 37px;
-							color: #fff;
-							text-shadow: -1px -1px rgba(0,0,0,0.15);
-							white-space: nowrap;
-							box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-							transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
-						}
-
-						.darkModeToggle {
-							color: white;
-						}
-						.darkModeToggle:checked {
-							background-color: #1c8554;
-						}
-
-						.darkModeToggle:checked:before {
-							left: 32px;
-						}
-
-						body.darkmode .darkModeToggleLabel {
-							color: #e07d02;
-						}
-					</style>
-<li role="menuitem" aria-label="Dark Mode Toggle">
-<label class="darkModeToggleLabel" for="darkModeToggle">Dark Mode:</label><br/><input class="darkModeToggle" id="darkModeToggle" aria-label="Toggle Dark Mode" type="checkbox" onclick="if (document.body.classList.contains('darkmode')) { document.body.classList.remove('darkmode'); document.cookie = 'enabledarkmode=no; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/'; } else { document.body.classList.add('darkmode'); document.cookie = 'enabledarkmode=yes; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/'; }"/>
+<li role="menuitem">
+<input class="darkModeToggle" id="darkModeToggle" aria-label="Toggle Dark Mode" type="checkbox" onclick="if (document.body.classList.contains('darkmode')) { document.body.classList.remove('darkmode'); document.cookie = 'enabledarkmode=no; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/'; } else { document.body.classList.add('darkmode'); document.cookie = 'enabledarkmode=yes; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/'; }"/> <label class="darkModeToggleLabel" for="darkModeToggle">Toggle Dark Mode</label>
 </li>
-<script>
-						if (document.getElementById('moka_no_dark_mode')) {
-							// Disable dark mode (and toggle!) on this page
-							[].forEach.call(document.getElementsByClassName('darkModeToggle'), a => a.remove());
-							[].forEach.call(document.getElementsByClassName('darkModeToggleLabel'), a => a.remove());
-						} else {
-							let useDarkMode = false;
-							if ( document.cookie.includes('enabledarkmode=yes') ) {
-								useDarkMode = true;
-							} else if ( document.cookie.includes('enabledarkmode=no') ) {
-								useDarkMode = false;
-							} else {
-								// Default to off
-								useDarkMode = false;
-							}
-
-							if (useDarkMode) {
-								document.body.classList.add('darkmode');
-								document.getElementById('darkModeToggle').checked = true;
-							}
-						}
-					</script>
 </ul>
 </div>
 </div>
 <a class="copyright" href="https://www.lifesavvymedia.com">© 2021 LifeSavvy Media. All Rights Reserved</a>
 </footer><!-- #colophon -->
+<script>
+		if (document.getElementById('moka_no_dark_mode')) {
+			// Disable dark mode (and toggle!) on this page
+			[].forEach.call(document.getElementsByClassName('darkModeToggle'), a => a.remove());
+			[].forEach.call(document.getElementsByClassName('darkModeToggleLabel'), a => a.remove());
+		} else {
+			let useDarkMode = false;
+			if ( document.cookie.includes('enabledarkmode=yes') ) {
+				useDarkMode = true;
+			} else if ( document.cookie.includes('enabledarkmode=no') ) {
+				useDarkMode = false;
+			} else {
+				// Default to off
+				useDarkMode = false;
+			}
+
+			if (useDarkMode) {
+				document.body.classList.add('darkmode');
+				document.getElementById('darkModeToggle').checked = true;
+			}
+		}
+	</script>
 <style>
 div.message,body #content {position:relative;z-index:100000 !important;}
 .site-footer {z-index:100000 !important;}
@@ -2505,7 +2454,6 @@ body.darkmode #primary .answers .answer,
 body.darkmode #primary .full-answer-text strong{
 	color:#000;
 }</style>
-</div><!-- #page -->
 <div id='out-of-page'>
 <script>tmntag.cmd.push(function(){tmntag.adTag('out-of-page', false);});</script>
 </div>
@@ -2540,7 +2488,7 @@ qacct:"p-dPPj_fTCprdm0"
 </script>
 <noscript>
 <div style="display:none;">
-<img src="//pixel.quantserve.com/pixel/p-dPPj_fTCprdm0.gif" border="0" height="1" width="1" alt="Quantcast"/>
+<img src="//pixel.quantserve.com/pixel/p-dPPj_fTCprdm0.gif" border="0" height="1" width="1" alt=""/>
 </div>
 </noscript>
 <!-- End Quantcast tag -->
@@ -2557,12 +2505,9 @@ window.addEventListener("click", function(e) {
 	if (trueAnchorElem && trueAnchorElem.href && trueAnchorElem.href.indexOf('amazon.com') != -1) {
 		e.preventDefault();
 
+		window.open(trueAnchorElem.href);
+
 		let xmlhttp = new XMLHttpRequest();
-	    xmlhttp.onreadystatechange = function() {
-	        if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-	        	self.location = trueAnchorElem.href;
-	        }
-	    };
 
 		var amzLink = trueAnchorElem.href.replace(/https?:\/\/(www.)?amazon.com\//, '');
 		var htg = -1;
@@ -2573,8 +2518,6 @@ window.addEventListener("click", function(e) {
 		var trackDest = 'https://2htg.com/a/howtogeek/1031/' + htg + '/' + amzLink;
 		xmlhttp.open("GET", trackDest, true);
 	    xmlhttp.send();
-
-		document.body.style.cursor = 'wait';
 	}
 });
 window.addEventListener("contextmenu", function(e) {
@@ -2625,5 +2568,18 @@ let handleHtgHash = function() {
     	if (mql.matches) loadAllLazy();
 	});
 </script>
+<script type="text/javascript">
+	(function() {
+		if (document.referrer) {
+			var x = document.getElementsByName('moka-pagerefer');
+			for (var i = 0; i < x.length; i++) {
+				x[i].value = document.referrer;
+			}
+		}
+	})();
+</script>
+<!-- Facebook Pixel Code --- MOVED FROM HEAD - img tags are not allowed in head tag, must be in body (accessibility) -->
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=335401813750447&ev=PageView&noscript=1"/></noscript>
+<!-- /Facebook Pixel Code -->
 </body>
 </html>
