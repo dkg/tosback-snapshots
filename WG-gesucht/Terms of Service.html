@@ -24,8 +24,8 @@
             <meta name="apple-itunes-app" content="app-id=1084293678">
         <meta name="google-play-app" content="app-id=com.wggesucht.android">
 
-                                    <link rel="image_src" href="https://www.wg-gesucht.de/img/preview/wg-gesucht-4.jpg"/>
-                <meta property="og:image" itemprop="image" content="https://www.wg-gesucht.de/img/preview/wg-gesucht-4.jpg"/>
+                                    <link rel="image_src" href="https://www.wg-gesucht.de/img/preview/wg-gesucht-7.jpg"/>
+                <meta property="og:image" itemprop="image" content="https://www.wg-gesucht.de/img/preview/wg-gesucht-7.jpg"/>
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content="AGB von WG-Gesucht.de"/>
                 <meta property="og:site_name" content="WG-Gesucht.de"/>
@@ -42,7 +42,7 @@
                             <link rel="stylesheet" type="text/css" href="/assets/css/featherlight/featherlight.min.tjb1553536894.css" media="screen"/>
                 <link rel="stylesheet" type="text/css" href="/assets/css/croppie.min.tjb1598913401.css" media="screen"/>
                             
-                <link rel="stylesheet" type="text/css" href="/assets/css/wgg-styles-compiled.min.tjb1607992354.css" media="screen"/>
+                <link rel="stylesheet" type="text/css" href="/assets/css/wgg-styles-compiled.min.tjb1612295003.css" media="screen"/>
                     
                 <link rel="stylesheet" type="text/css" href="/assets/css/master_printer-2-3-5.min.css" media="print"/>
 
@@ -165,10 +165,10 @@
     <script src="/js/lib/Cookies.lib.tjb1607380417.js"></script>
 
     
-    <script src="/js/lib/UserInterface.lib.tjb1605566930.js"></script>
+    <script src="/js/lib/UserInterface.lib.tjb1611601704.js"></script>
 
     
-    <script src="/js/lib/DataManipulation.lib.tjb1605566930.js"></script>
+    <script src="/js/lib/DataManipulation.lib.tjb1611010363.js"></script>
 
     
     <script src="/js/lib/Logger.class.tjb1595885478.js"></script>
@@ -185,7 +185,7 @@
     </script>
 
     
-    <script src="/js/lib/ApiCaller.class.tjb1596480019.js"></script>
+    <script src="/js/lib/ApiCaller.class.tjb1611601704.js"></script>
     <script>
         if (!window.api_caller) {
             window.api_caller = ApiCaller({
@@ -283,34 +283,16 @@
                 
 
 
-    <a class="btn btn-md wgg_tertiary" href="#" onclick="fireLoginOrRegisterModalRequest('sign_up', '/mein-profil.html');ga('send', 'event', 'service_navigation', 'register', '1st_level');">
+            <a class="btn btn-md wgg_gray_blue" href="/fuer-unternehmen.html">
+            Für Unternehmen
+        </a>
+    
+    <a class="btn btn-md wgg_tertiary" href="#" onclick="fireLoginOrRegisterModalRequest('sign_up', '/mein-profil.html');ga('send', 'event', 'service_navigation', 'register', '1st_level');" style="font-weight:400;">
         Registrieren
     </a>
-    <a class="btn btn-md wgg_tertiary" href="#" onclick="fireLoginOrRegisterModalRequest('sign_in');ga('send', 'event', 'service_navigation', 'login', '1st_level');">
+    <a class="btn btn-md wgg_tertiary" href="#" onclick="fireLoginOrRegisterModalRequest('sign_in');ga('send', 'event', 'service_navigation', 'login', '1st_level');" style="font-weight:400;">
         Login
     </a>
-
-    <div class="dropdown toggle-logout-menu noprint">
-        <a class="btn btn-sm wgg_blue noprint" href="#" rel="nofollow" onclick="ga('send', 'event', 'service_navigation', 'place-ad', '1st_level');" style="margin-left: 10px;">
-            Anzeige inserieren
-        </a>
-
-        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-            <li>
-                <a class="text-uppercase" href="https://www.wg-gesucht.de/angebot-aufgeben.html" rel="nofollow" onclick="ga('send', 'event', 'service_navigation', 'place-offer', '2nd_level');">
-                    Angebot
-                </a>
-            </li>
-
-            <li class="divider"></li>
-
-            <li>
-                <a class="text-uppercase" href="https://www.wg-gesucht.de/gesuch-aufgeben.html" rel="nofollow" onclick="ga('send', 'event', 'service_navigation', 'place-request', '2nd_level');">
-                    Gesuch
-                </a>
-            </li>
-        </ul>
-    </div>
 
             </div>
         </div>
@@ -555,7 +537,35 @@
                         </li>
                                     </ul>
             </li>
-        </ul>
+
+                            <li class="dropdown hidden-sm hidden-md hidden-lg">
+                    <a class="" href="/fuer-unternehmen.html" role="button">
+                        Für Unternehmen
+                    </a>
+                </li>
+            
+                            <li class="hidden-xs dropdown create_asset_navigation">
+                    <a href="#" rel="nofollow" style="font-weight: 400;">
+                        Anzeige inserieren
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li>
+                            <a class="text-uppercase" href="https://www.wg-gesucht.de/angebot-aufgeben.html" rel="nofollow" onclick="ga('send', 'event', 'service_navigation', 'place-offer', '2nd_level');">
+                                Angebot
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a class="text-uppercase" href="https://www.wg-gesucht.de/gesuch-aufgeben.html" rel="nofollow" onclick="ga('send', 'event', 'service_navigation', 'place-request', '2nd_level');">
+                                Gesuch
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                    </ul>
     </div>
 
 
@@ -1772,7 +1782,14 @@ Wenn Sie die erste Checkbox nicht markieren, können Sie WG-Gesucht.de laut DSGV
 
         
         <script src="/ajax/api/Smp/js/Register.min.tjb1591039612.js"></script>
-        <script src="/ajax/api/Smp/js/GdprPolicies.tjb1591039612.js"></script>
+        <script src="/js/User/GdprPolicies.class.tjb1611010363.js"></script>
+        <script>
+            window.gdpr_policies = GdprPolicies({
+                language: site_language,
+                domain_base: domain_base,
+                min_log_level: '5'
+            })
+        </script>
     
     
 <div class="modal fade noprint phone_numbers_modal" tabindex="-1" role="dialog">
@@ -1795,7 +1812,7 @@ Wenn Sie die erste Checkbox nicht markieren, können Sie WG-Gesucht.de laut DSGV
                     </div>
                 </div>
 
-                <div class="col-xs-8 col-xs-offset-2">
+                <div class="col-xs-8 col-xs-offset-2 col-sm-9 col-sm-offset-1">
                     <span class="contacted_user_name"></span>
                     <br><br>
 
@@ -1812,7 +1829,7 @@ Wenn Sie die erste Checkbox nicht markieren, können Sie WG-Gesucht.de laut DSGV
 </div>
 
 
-        <script src="/ajax/api/Smp/js/Session.min.tjb1591039612.js"></script>
+        <script src="/ajax/api/Smp/js/Session.min.tjb1611010363.js"></script>
 
     
     <script src="/js/jquery/jquery.featherlight.min.tjb1553536894.js"></script>
