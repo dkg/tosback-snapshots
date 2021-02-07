@@ -56,9 +56,11 @@
 			href="/docs/css/legal.min_5649ddf_0624.css"
 		/>
 
-		<!-- init data layer object  -->
+		
+<!-- init data layer object  -->
 		<script>
-			window.dataLayer = window.dataLayer || [];
+			var trsArset = true;
+window.dataLayer = window.dataLayer || [];
 			window.dataLayer.push({
 				country: 'us',
 			});
@@ -105,6 +107,9 @@
 		<!-- End Google Tag Manager -->
     </head>
     <style>
+		body.onlycontent #consent_blackbar {
+            display: none;
+        }
 		body.onlycontent .ada-embed-app{
 			display: none;
 		}
@@ -1856,7 +1861,7 @@
 						</div>
 						<div class="footer-copyright">
 							<div class="info">
-								Copyright &copy;2020 Zoom Video Communications, Inc. All rights
+								Copyright &copy;2021 Zoom Video Communications, Inc. All rights
 								reserved. <a href="/legal">Privacy & Legal Policies</a
 								><a href="/privacy#about-ads">About Ads</a
 								><a id="teconsent" style="display: none;"></a
@@ -1899,7 +1904,7 @@
 
 		<script
 			type="text/javascript"
-			src="/docs/js/all.min_dedc586_1120.js"
+			src="/docs/js/all.min_dedc586_20210114.js"
 		></script>
 		<script
 			type="text/javascript"
@@ -1986,7 +1991,7 @@
 					$('#ZoomWebBanner').remove();
 					$('.brand-right').css({ float: 'inherit', 'font-size': 14 });
 					$('#teconsent').remove();
-					$('#footer_container').hide();
+                    $('#footer_container').hide();
 				}
 				if ('1' == getFromParam('nohyperlink')) {
 					$('a.sr-only').remove();
