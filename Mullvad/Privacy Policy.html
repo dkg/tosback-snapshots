@@ -31,7 +31,7 @@
         <meta name="twitter:description" content="We do not keep activity logs of any kind. Learn more about what this means and why we choose to operate this way." />
         <meta name="twitter:image" content="http://mullvad.net/media/press/MullvadVPN_logo_Round_RGB_Color_positive.png" />
 
-        <link rel="stylesheet" type="text/css" href="/static/css/bulma.bcb7667272ff.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/bulma.d85e7ef8d137.css">
 
         <title>No-logging of user activity policy - Guides | Mullvad VPN</title>
 
@@ -46,7 +46,7 @@
 
         <script type="text/javascript" src="/en/jsi18n/"></script>
 
-        <script src="/static/js/app.800e2e00e4cc.js"></script>
+        <script src="/static/js/app.9b5a6a7d0c93.js"></script>
 
         
         
@@ -145,7 +145,7 @@
 
 </nav>
 
-<script>mullvad.updateNavbar()</script>
+<script>mullvad.navbarBurgerToggle()</script>
 
 </div>
 
@@ -168,7 +168,7 @@
         
 
         
-        <p>Last updated: 3 November 2020</p>
+        <p>Last updated: 20 January 2021</p>
         
 
         <br>
@@ -377,6 +377,20 @@ log-append /dev/null</code>
 <p><strong>Question: </strong>How can you limit the maximum number of simultaneous connections if you&#39;re not logging that information?<br />
 <strong>Answer: </strong>Each VPN server reports to a central service. When a customer connects to a VPN server, the server asks the central service to validate the account number, whether or not the account has any remaining time, if the account has reached its allowed number of connections, and so on. Everything is performed in temporary memory only; none of this information is permanently stored to disk.</p>
 
+<h2>Providing a reliable service</h2>
+
+<p>We want to ensure that everyone using our VPN experiences a reliable and stable service. Through the years we have implemented changes to ensure that even if our API fails we can still continue to provide a VPN that can be relied upon.</p>
+
+<div class="is-info notification">This was a way of resolving <a href="https://mullvad.net/blog/2021/1/20/no-pii-or-privacy-leaks-found-cure53s-infrastructure-audit/">MUL-03-002 WP2 from our Infrastructure Audit</a> in 2020.</div>
+
+<p>For our OpenVPN relays we have implemented Fail2ban to block non-authorized or malicious attempts at gaining account time.</p>
+
+<p>Fail2ban works by reading from a frequently wiped list of malicious unauthorized IP addresses in RAM (tmpfs). Regular paying customers and successful connections are not included in this, it is only to prevent any bruteforce attempts.</p>
+
+<p><strong>Question</strong>: Does that mean if I try to authenticate to an OpenVPN server I will have my IP address logged?</p>
+
+<p><strong>Answer</strong>: No. We do not log customers that have a valid account token. This blocking is limited to bad actors trying to gain free account time with non-existent, invalid account numbers.</p>
+
 <h2><a id="data-handling" name="data-handling"></a>Other data that we do handle</h2>
 
 <p>Our servers send two types of data to our monitoring system:</p>
@@ -472,24 +486,36 @@ log-append /dev/null</code>
         <div class="column">
             <h1 class="title is-4">Follow us</h1>
             <ul id="follow-list">
-                <li class="is-vcentered">
-                    <a href="https://www.facebook.com/MullvadNet/" target="_blank">
-                        <span class="icon is-medium"><i class="fab fa-2x fa-facebook-square"></i></span>
-                        <span>MullvadNet</span>
-                    </a>
-                <li>
                 <li>
                     <a href="https://www.twitter.com/mullvadnet" target="_blank">
                         <span class="icon is-medium"><i class="fab fa-2x fa-twitter-square"></i></span>
                         <span>@mullvadnet</span>
                     </a>
+                </li>
                 <li>
+                    <a href="https://mastodon.online/@mullvadnet" target="_blank">
+                        <span class="icon is-medium"><i class="fab fa-2x fa-mastodon"></i></span>
+                        <span>@mullvadnet</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/MullvadNet/" target="_blank">
+                        <span class="icon is-medium"><i class="fab fa-2x fa-facebook-square"></i></span>
+                        <span>MullvadNet</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UC28cx7J7W23nhuSXMyYJjRQ" target="_blank">
+                        <span class="icon is-medium"><i class="fab fa-2x fa-youtube-square"></i></span>
+                        <span>Mullvad VPN</span>
+                    </a>
+                </li>
                 <li>
                     <a href="https://github.com/mullvad" target="_blank">
                         <span class="icon is-medium"><i class="fab fa-2x fa-github-square"></i></span>
                         <span>mullvad</span>
                     </a>
-                <li>
+                </li>
                 <li>
                     <a href="mailto:support@mullvad.net">
                         <span class="icon is-medium"><i class="fas fa-2x fa-envelope"></i></span>
