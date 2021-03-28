@@ -37,229 +37,180 @@
 	
         <!-- Smart App Banner -->
         
-        <link rel="stylesheet" href="/assets/css/omni.css?20201111144325">
+        <link rel="stylesheet" href="/assets/css/omni.css?20210317085735">
 
         
 
         <link rel="apple-touch-icon" href="/assets/img/logo/BlueOmni.png">
 	    
+	        <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css?20210317085735">
+		
         <link rel="mask-icon" href="/assets/img/logo/omnilogo.svg" color="#1daeec">
-        <script src="/assets/js/vendor/vue.min.js?20201111144325"></script>
-        <link rel="stylesheet" href="https://use.typekit.net/ahh4bnt.css?20201111144325">
+        <script src="/assets/js/vendor/vue.min.js?20210317085735"></script>
+        <link rel="stylesheet" href="https://use.typekit.net/ahh4bnt.css?20210317085735">
 
 
         
         
 
     </head>
-    <body  class="legal">
+    <body  class="legal belief">
        
     
-		<div class="container">
+        <div class='belief-container'>
 	
 
-<header id="main-nav" class="main-nav" ref="mainMenu">
-    <div class="nav-content">
-        <div class="omni-bar">
-            <a class="homelink" href="/"><img src="/assets/img/logo/omni-bleu.svg" alt="Logo of The Omni Group" class="omnilogo"></a>
-            <span class='carticonmobile hidden'>
-                <a href="https://store.omnigroup.com/cart" class="cart">
-                    <svg version="1.1"
-                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-                         x="0px" y="0px" width="31.8px" height="30.9px" viewBox="0 0 31.8 30.9" style="enable-background:new 0 0 31.8 30.9;"
-                         xml:space="preserve">
-                        <path class="st0" style="fill:#3A9FF2; " d="M24,23V25H8.2c-1.3,0-2.5-1-2.8-2.3l-3.1-12c-0.1-0.3-0.5-0.7-0.8-0.7H0V8h1.5c1.2,0,2.5,1,2.8,2.3l3.1,12
-                           ZC7.5,22.7,7.9,23,8.2,23H24z"/>
-                        <circle style="fill: #3A9FF2;" cx="10.5" cy="28.1" r="2.7"/>
-                        <circle style="fill: #3A9FF2;" cx="20.1" cy="28.2" r="2.7"/>
-                        <circle style="fill: #3A9FF2;" cx="22.8" cy="9" r="9"/>
-                        <text id="cart-count-mobile" width="10" text-anchor="middle" transform="matrix(1 0 0 1 23 13)" style="fill: #F6F6F6; font-size:12px;">5</text>
-                        <path style="fill:#3A9FF2" d="M22.4,19.2c-5.1,0-9.3-3.9-9.7-8.9H7.4c-0.8,0-1.3,0.7-1.2,1.5L8.1,20c0.2,0.8,1,1.5,1.9,1.5h12.4
-        c0.8,0,1.7-0.7,1.8-1.5l0.2-1.1C23.8,19.1,23.1,19.2,22.4,19.2z"/>
-                    </svg>
-                </a>
-            </span>
-
-            <button @click="toggleMobile" id="expando" class="nav-hamburger-button">
-                <span>Menu Toggle</span>
-            </button>
+<div id="nav-container">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/img/2020/logo_white.png" class="logo-white" />
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdownMenuLink"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        Products
+                    </a>
+                    <div
+                        class="dropdown-menu"
+                        aria-labelledby="navbarDropdownMenuLink"
+                    >
+                        <a class="dropdown-item" href="/omnifocus">OmniFocus</a>
+                        <a class="dropdown-item" href="/omnigraffle"
+                            >OmniGraffle</a
+                        >
+                        <a class="dropdown-item" href="/omnioutliner"
+                            >OmniOutliner</a
+                        >
+                        <a class="dropdown-item" href="/omniplan">OmniPlan</a>
+                        <a class="dropdown-item" href="/more">Omni Labs</a>
+                        <a class="dropdown-item" href="/downloads">Downloads</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdownMenuLink"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        Company
+                    </a>
+                    <div
+                        class="dropdown-menu"
+                        aria-labelledby="navbarDropdownMenuLink"
+                    >
+                        <a class="dropdown-item" href="/blog">Blog</a>
+                        <a
+                            class="dropdown-item"
+                            href="https://theomnishow.omnigroup.com/"
+                            >The Omni Show</a
+                        >
+                        <a class="dropdown-item" href="/letters">Newsletter</a>
+                        <a class="dropdown-item" href="/privacy"
+                            >Your Privacy</a
+                        >
+                        <a class="dropdown-item" href="/about">About Us</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdownMenuLink"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        Help
+                    </a>
+                    <div
+                        class="dropdown-menu"
+                        aria-labelledby="navbarDropdownMenuLink"
+                    >
+                        <a
+                            class="dropdown-item"
+                            href="https://support.omnigroup.com/"
+                            >Support</a
+                        >
+                        <a
+                            class="dropdown-item"
+                            href="https://stenciltown.omnigroup.com/"
+                            >Stenciltown</a
+                        >
+                        <a class="dropdown-item" href="/video">Videos</a>
+                        <a
+                            class="dropdown-item"
+                            href="https://inside.omnifocus.com/"
+                            >Inside OmniFocus</a
+                        >
+                        <a
+                            class="dropdown-item"
+                            href="https://inside.omnigraffle.com/"
+                            >Inside OmniGraffle</a
+                        >
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://accounts.omnigroup.com/"
+                        >Sign In</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://store.omnigroup.com/"
+                        >Store</a
+                    >
+                </li>
+            </ul>
         </div>
-        <nav class="main">
-            <a class="homelink" href="/"><img src="/assets/img/logo/omni-bleu.svg" alt="Logo of The Omni Group" class="omnilogo"></a>
-            <ul class="nav-items">
-                <li @click="toggleActive" class="app-list list">
-                    Apps
-                    <ul class="sub-nav-items">
-                        <li class="sub-nav-item" v-for="app in apps">
-                            <a :href=" app.link " class="sub-nav-anchor">
-                                <img v-if="app.icon !== null" :src="'/assets/img/glyphs/app-icons/' + app.icon " class="product-icons"/>
-                                <div v-else></div>
-                                {{app.id}}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li @click="toggleActive" class="list help">
-                    Help
-                    <ul class="sub-nav-items">
-                        <li class="sub-nav-item" v-for="item in help">
-                            <a :href=" item.link " class="sub-nav-anchor">{{item.id}}</a>
-                        </li>
-                    </ul>
-                </li>
-                <li @click="toggleActive" class="list company">
-                    Company
-                    <ul class="sub-nav-items">
-                        <li class="sub-nav-item" v-for="item in company">
-                            <a :href=" item.link " class="sub-nav-anchor">{{item.id}}</a>
-                        </li>
-                    </ul>
-                </li>
-                <a href="https://accounts.omnigroup.com"><li class="list">Omni Accounts</li></a>
-                <a href="https://store.omnigroup.com"><li class="list">Store</li></a>
-            </ul>
-
-            <span class='carticon hidden'>
-                <a href="https://store.omnigroup.com/cart" title="Omni Shopping Cart" class="cart">
-                    <svg version="1.1"
-                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-                         x="0px" y="0px" width="31.8px" height="30.9px" viewBox="0 0 31.8 30.9" style="enable-background:new 0 0 31.8 30.9;"
-                         xml:space="preserve">
-                        <path class="st0" style="fill:#3A9FF2; " d="M24,23V25H8.2c-1.3,0-2.5-1-2.8-2.3l-3.1-12c-0.1-0.3-0.5-0.7-0.8-0.7H0V8h1.5c1.2,0,2.5,1,2.8,2.3l3.1,12
-                           ZC7.5,22.7,7.9,23,8.2,23H24z"/>
-                        <circle style="fill: #3A9FF2;" cx="10.5" cy="28.1" r="2.7"/>
-                        <circle style="fill: #3A9FF2;" cx="20.1" cy="28.2" r="2.7"/>
-                        <circle style="fill: #3A9FF2;" cx="22.8" cy="9" r="9"/>
-                        <text id="cart-count" width="10" text-anchor="middle" transform="matrix(1 0 0 1 23 13)" style="fill: #F6F6F6; font-size:12px;">5</text>
-                        <path style="fill:#3A9FF2" d="M22.4,19.2c-5.1,0-9.3-3.9-9.7-8.9H7.4c-0.8,0-1.3,0.7-1.2,1.5L8.1,20c0.2,0.8,1,1.5,1.9,1.5h12.4
-        c0.8,0,1.7-0.7,1.8-1.5l0.2-1.1C23.8,19.1,23.1,19.2,22.4,19.2z"/>
-                    </svg>
-                </a>
-            </span>
-        </nav>
-    </div>
-</header>
-<script>
-    var vm = new Vue({
-        el: '#main-nav',
-        data: {
-            navItems: [
-                'Apps',
-                'Help',
-                'Company'
-            ],
-            apps: [
-                {id: 'OmniFocus', parent: 'Apps', icon: 'omnifocus.svg', link: '/omnifocus'},
-                {id: 'OmniOutliner', parent: 'Apps', icon: 'omnioutliner.svg', link: '/omnioutliner'},
-                {id: 'OmniGraffle', parent: 'Apps', icon: 'omnigraffle.svg', link: '/omnigraffle'},
-                {id: 'OmniPlan', parent: 'Apps', icon: 'omniplan.svg', link: '/omniplan'},
-                {id: 'Omni Sync Server', parent: 'Apps', icon: null, link: '//sync.omnigroup.com'},
-                {id: 'More Apps', parent: 'Apps', icon: null, link: '/more'},
-                {id: 'Downloads', parent: 'Apps', icon: null, link: '/downloads'}
-            ],
-            help: [
-                {id: 'Support', parent: 'Help', icon: null, link: 'https://support.omnigroup.com/'},
-                {id: 'Stenciltown', parent: 'Help', icon: null, link: 'https://stenciltown.omnigroup.com/'},
-                {id: 'Videos', parent: 'Help', icon: null, link: '/video'},
-                {id: 'Inside OmniFocus', parent: 'Help', icon: null, link: 'https://inside.omnifocus.com/'},
-                {id: 'Inside OmniGraffle', parent: 'Help', icon: null, link: 'https://inside.omnigraffle.com/'},
-            ],
-            company: [
-                {id: 'Blog', parent: 'Company', icon: null, link: '/blog'},
-                {id: 'The Omni Show', parent: 'Company', icon: null, link: 'https://theomnishow.omnigroup.com/'},
-                {id: 'Newsletter', parent: 'Company', icon: null, link: '/letters'},
-                {id: 'About Us', parent: 'Company', icon: null, link: '/about'},
-            ],
-            windowWidth: 0
-        },
-        methods: {
-            getWindowWidth(e) {
-                this.windowWidth = document.documentElement.clientWidth;
-
-                if (this.windowWidth < 661) {this.removeActiveClasses();}
-            },
-            outsideClick(e) {
-                const menu = this.$refs.mainMenu;
-
-                if (e.target !== menu && !menu.contains(e.target)) {this.removeActiveClasses();}
-            },
-            removeActiveClasses() {
-                const active = document.getElementsByClassName('menu-active');
-
-                for (let i = 0; i < active.length; i++) {active[i].classList.remove('menu-active');}
-            },
-            toggleActive(e) {
-                let isActive = document.getElementsByClassName('menu-active');
-                let currentTargetActive;
-
-                for (let i = 0; i < isActive.length; i++) {
-                    if (isActive[i] === e.target) {
-                        currentTargetActive = isActive[i];
-                    }
-                    isActive[i].classList.remove('menu-active');
-                }
-
-                if (currentTargetActive) {return;}
-
-                if (window.innerWidth > 660) {e.target.classList.add('menu-active');}
-            },
-            toggleMobile(e) {
-                let navActive;
-                let mainNav = document.getElementsByClassName('main')[0];
-                for (let i = 0; i < e.target.classList.length; i++) {
-                    if (e.target.classList[i] === 'active') {
-                        navActive = true;
-                        e.target.classList.remove('active');
-                        mainNav.classList.remove('expanded');
-                    }
-                }
-
-                if (navActive) {return;} else {
-                    e.target.classList.add('active');
-                    mainNav.classList.add('expanded');
-                }
-            }
-        },
-        created() {
-            document.addEventListener('click', this.outsideClick);
-        },
-        mounted() {
-            this.$nextTick(function() {
-                window.addEventListener('resize', this.getWindowWidth);
-                this.getWindowWidth();
-            });
-        },
-        beforeDestroy() {
-            document.removeEventListener('click', this.outsideClick);
-            window.removeEventListener('resize', this.getWindowWidth);
-        }
-    });
-
-</script>
+    </nav>
+</div>
 
 
-<section class="content row">
+<section class="content">
 
 
 
-    		<aside class='col span_6'>
-			<h3>Our Policies</h3>
+    <aside>
+	<h3>Our Policies</h3>
 
-					
-	        <li><a href="https://www.omnigroup.com/legal/EULA">End User License Agreement</a></li>
-					
-	        <li><a href="https://www.omnigroup.com/legal/privacy">Privacy Policy</a></li>
-					
-	        <li><a href="https://www.omnigroup.com/legal/unsolicited-idea-submission-policy">Unsolicited Idea Submission Policy</a></li>
-		
-            <ul class="space_ul">
-    			<h3>Our Terms of Service</h3>
-                <li><a href="https://id.omnigroup.com/tos/">ID Terms of Service</a></li>
-                <li><a href="https://manage.sync.omnigroup.com/TOS">Sync Server Terms of Service</a></li>
-                <li><a href="https://discourse.omnigroup.com/tos">Forums Terms of Service</a></li>
-            </ul>
-		</aside>
-    <div class='articles col span_10'>
+			
+	<li><a href="https://www.omnigroup.com/legal/EULA">End User License Agreement</a></li>
+			
+	<li><a href="https://www.omnigroup.com/legal/privacy">Privacy Policy</a></li>
+			
+	<li><a href="https://www.omnigroup.com/legal/unsolicited-idea-submission-policy">Unsolicited Idea Submission Policy</a></li>
+
+	<ul class="space_ul">
+		<h3>Our Terms of Service</h3>
+		<li><a href="https://id.omnigroup.com/tos/">ID Terms of Service</a></li>
+		<li><a href="https://manage.sync.omnigroup.com/TOS">Sync Server Terms of Service</a></li>
+		<li><a href="https://discourse.omnigroup.com/tos">Forums Terms of Service</a></li>
+	</ul>
+</aside>
+    <div class='articles'>
 
     <article>
         <header><h2>Privacy Policy</h2></header>
@@ -386,67 +337,121 @@ info@omnigroup.com</p>
 
 </section><!--/content-->
 
-        <div class="sticky_footer"></div>
-        </div> <!-- end content -->
-        <footer class="footer-v2 ">
-            <div class="footer-links-main">
-                <a href="/slack/" class="footer-link-main slack">
-                    <div class="footer-link-main-icon">
-                        <img src="/assets/img/glyphs/footer-icons/slack.svg" alt="An image linking to a signup page for our Slack Workspace." />
-                    </div>
-                    <div class="footer-link-main-text">Slack</div>
+</div> <!-- end content -->
+<div class="footer-wrapper">
+    <div class="footer-v3" id="bf">
+        <div class="footer-row">
+            <div class="column">
+                <a href="/">
+                    <img
+                        src="/assets/img/2020/logo_white.png"
+                        class="footer-logo-white"
+                    />
                 </a>
-                <a href="https://discourse.omnigroup.com/" class="footer-link-main forums">
-                    <div class="footer-link-main-icon">
-                        <img src="/assets/img/glyphs/footer-icons/forums.svg" alt="An image linking to our Forums." />
-                    </div>
-                    <div class="footer-link-main-text">Forums</div>
-                </a>
-                <a href="https://twitter.com/OmniGroup" class="footer-link-main twitter">
-                    <div class="footer-link-main-icon">
-                        <img src="/assets/img/glyphs/footer-icons/twitter.svg" alt="An image of the twitter logo linking to the Omni Group Twitter page." />
-                    </div>
-                    <div class="footer-link-main-text">Twitter</div>
-                </a>
-                <a href="https://www.facebook.com/theomnigroup/" class="footer-link-main facebook">
-                    <div class="footer-link-main-icon">
-                        <img src="/assets/img/glyphs/footer-icons/fb-logo.svg" alt="An image of the Facebook logo linking to the Omni Group Facebook page." />
-                    </div>
-                    <div class="footer-link-main-text">Facebook</div>
-                </a>
-                <a href="https://www.instagram.com/omnigroup/" class="footer-link-main instagram">
-                    <div class="footer-link-main-icon">
-                        <img src="/assets/img/glyphs/footer-icons/ig-logo.svg" alt="An image of the Instagram logo linking to the Omni Group Instagram page." />
-                    </div>
-                    <div class="footer-link-main-text">Instagram</div>
-                </a>
-            </div>
-            <div class="spacer"></div>
-            <div class="footer-secondary-wrap">
-                <div class="footer-links-secondary">
-                    <div class="footer-omni-logo">
-                        <a href="/"><svg id="omnibw" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583.08 161.25"><title>The Omni Group Logo</title><path fill="#4a4a49" d="M106.33,30.84a80.33,80.33,0,1,0,80.33,80.33A80.33,80.33,0,0,0,106.33,30.84Zm222.23,0H224.33a18.58,18.58,0,0,0-18.53,21.09V171a18.58,18.58,0,0,0,18.53,21.09H328.56a18.7,18.7,0,0,0,18.7-18.7V49.15h0A18.69,18.69,0,0,0,328.56,30.84Zm168.59,0h-97.3a9.48,9.48,0,0,0-6.35,16.53L499.32,153.19a9.48,9.48,0,0,0,16.53-6.35V48h-0.08A18.69,18.69,0,0,0,497.15,30.84Zm93.24,0H560.73A18.7,18.7,0,0,0,542,49.54V173.4a18.7,18.7,0,0,0,18.7,18.7h29.66a18.7,18.7,0,0,0,18.7-18.7V49.54A18.7,18.7,0,0,0,590.39,30.84ZM496.1,175.56L390.28,69.74a9.48,9.48,0,0,0-16.53,6.35V175h0.08a18.69,18.69,0,0,0,18.62,17.12h97.3A9.48,9.48,0,0,0,496.1,175.56Z" transform="translate(-26 -30.84)"/></svg></a>
-                    </div>
-                    <div class="footer-text-links">
-                        <a href="/sitemap/" class="footer-text-link">Sitemap</a>
-                        <a href="mailto:info@omnigroup.com" class="footer-text-link">Contact</a>
-                        <a href="/press/" class="footer-text-link">Press</a>
-                        <a href="/legal/" class="footer-text-link">Legal</a>
-                    </div>
-                    <div class="copyright-text">
-                        <span>&copy; 1994&ndash;2021 The&nbsp;Omni&nbsp;Group; Apple, MacBook, the Apple logo, iPad, and iPhone are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.</span> 
-                    </div>
+                <div class="social-icons">
+                    <a href="https://twitter.com/OmniGroup" class="footer-social-link">
+                        <div class="footer-social-icon">
+                            <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 2.09667L16.0714 2.44812L17.3571 0.690876L15.1071 1.39377C12.2143 -2.12072 7.71429 1.74522 9 4.90827C3.85714 4.90827 1.28571 0.690876 1.28571 0.690876C1.28571 0.690876 -0.642857 3.85392 2.57143 6.31406L0.642857 5.61116C0.642857 7.71986 1.92857 9.12566 4.17857 9.82855H1.92857C3.21429 12.6401 5.46429 12.6401 5.46429 12.6401C5.46429 12.6401 3.53571 14.3974 0 14.3974C10.6071 20.0206 17.0357 9.4771 16.0714 3.85392L18 2.09667Z" fill="white"/>
+                                </svg>
+                                                    </div>
+                        <div class="footer-social-link-text">Twitter</div>
+                    </a>
+                    <a
+                        href="https://www.facebook.com/theomnigroup/"
+                        class="footer-social-link"
+                    >
+                        <div class="footer-social-icon">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 9.05575C18 4.05301 13.9686 0 9 0C4.02806 0 0 4.05301 0 9.05575C0 13.5746 3.29006 17.3214 7.59375 18V11.674H5.30831V9.05632H7.59375V7.06009C7.59375 4.79106 8.93531 3.53797 10.9918 3.53797C11.9768 3.53797 13.0078 3.71456 13.0078 3.71456V5.94284H11.871C10.755 5.94284 10.4062 6.64183 10.4062 7.3578V9.05575H12.9021L12.501 11.6734H10.4062V17.9994C14.7066 17.3208 18 13.574 18 9.05518V9.05575Z" fill="white"/>
+                                </svg>
+                                                    </div>
+                        <div class="footer-social-link-text">Facebook</div>
+                    </a>
+                    <a
+                        href="https://www.instagram.com/omnigroup/"
+                        class="footer-social-link"
+                    >
+                        <div class="footer-social-icon">
+                            <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.99758 4.13868C6.44215 4.13868 4.3798 6.08649 4.3798 8.5C4.3798 10.9135 6.44215 12.8613 8.99758 12.8613C11.553 12.8613 13.6154 10.9135 13.6154 8.5C13.6154 6.08649 11.553 4.13868 8.99758 4.13868ZM8.99758 11.3345C7.345 11.3345 5.99636 10.0608 5.99636 8.5C5.99636 6.9392 7.345 5.66546 8.99758 5.66546C10.6502 5.66546 11.9988 6.9392 11.9988 8.5C11.9988 10.0608 10.6502 11.3345 8.99758 11.3345ZM13.8045 2.94362C13.2078 2.94362 12.726 3.39868 12.726 3.96218C12.726 4.52569 13.2078 4.98075 13.8045 4.98075C14.4011 4.98075 14.8829 4.52782 14.8829 3.96218C14.8831 3.82838 14.8554 3.69585 14.8012 3.5722C14.7471 3.44854 14.6677 3.33619 14.5675 3.24158C14.4673 3.14696 14.3483 3.07194 14.2174 3.02081C14.0865 2.96968 13.9462 2.94345 13.8045 2.94362ZM17.999 8.5C17.999 7.32621 18.0103 6.16305 17.9405 4.99138C17.8707 3.63046 17.5419 2.42264 16.4883 1.42747C15.4323 0.430173 14.1557 0.121839 12.7148 0.0559198C11.472 -0.00999972 10.2404 0.000632496 8.99983 0.000632496C7.75702 0.000632496 6.52546 -0.00999972 5.28489 0.0559198C3.84395 0.121839 2.5651 0.432299 1.51141 1.42747C0.455469 2.42477 0.129004 3.63046 0.0592081 4.99138C-0.0105877 6.16517 0.000669689 7.32833 0.000669689 8.5C0.000669689 9.67167 -0.0105877 10.837 0.0592081 12.0086C0.129004 13.3695 0.45772 14.5774 1.51141 15.5725C2.56736 16.5698 3.84395 16.8782 5.28489 16.9441C6.52771 17.01 7.75927 16.9994 8.99983 16.9994C10.2426 16.9994 11.4742 17.01 12.7148 16.9441C14.1557 16.8782 15.4346 16.5677 16.4883 15.5725C17.5442 14.5752 17.8707 13.3695 17.9405 12.0086C18.0125 10.837 17.999 9.67379 17.999 8.5ZM16.0177 13.5141C15.8533 13.9011 15.6552 14.1903 15.3377 14.488C15.0203 14.7879 14.7163 14.975 14.3066 15.1302C13.1223 15.5747 10.3102 15.4747 8.99758 15.4747C7.68497 15.4747 4.87062 15.5747 3.68634 15.1324C3.27657 14.9771 2.97037 14.79 2.65516 14.4902C2.33771 14.1903 2.13958 13.9033 1.97522 13.5163C1.50691 12.3956 1.61273 9.73971 1.61273 8.5C1.61273 7.26029 1.50691 4.60224 1.97522 3.48374C2.13958 3.09672 2.33771 2.80753 2.65516 2.50983C2.97262 2.21213 3.27657 2.02287 3.68634 1.86764C4.87062 1.42535 7.68497 1.52529 8.99758 1.52529C10.3102 1.52529 13.1245 1.42535 14.3088 1.86764C14.7186 2.02287 15.0248 2.21 15.34 2.50983C15.6575 2.80966 15.8556 3.09672 16.0199 3.48374C16.4883 4.60224 16.3824 7.26029 16.3824 8.5C16.3824 9.73971 16.4883 12.3956 16.0177 13.5141Z" fill="white"/>
+                                </svg>
+                                                    </div>
+                        <div class="footer-social-link-text">Instagram</div>
+                    </a>
+                    <a href="/slack/" class="footer-social-link">
+                        <div class="footer-social-icon">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.60047 0C5.60594 0 4.80141 0.80625 4.80141 1.8C4.80141 2.27578 4.9914 2.73516 5.32682 3.07266C5.66458 3.41016 6.12197 3.6 6.60047 3.6H8.39953V1.8C8.39953 0.808594 7.595 0.00234375 6.60047 0ZM6.60047 4.8H1.79906C0.804535 4.8 0 5.60625 0 6.6C0 7.59375 0.80688 8.4 1.79906 8.4H6.59812C7.59265 8.4 8.39719 7.59375 8.39719 6.6C8.39953 5.60625 7.59265 4.8 6.60047 4.8ZM11.3995 8.4C12.3941 8.4 13.2009 7.59375 13.1986 6.6V1.8C13.1986 0.80625 12.3941 0 11.3995 0C10.405 0 9.60047 0.80625 9.60047 1.8V6.6C9.60047 7.59609 10.405 8.4 11.3995 8.4ZM18 6.6C18 5.60625 17.1931 4.8 16.2009 4.8C15.2088 4.8 14.4019 5.60625 14.4019 6.6V8.4H16.2009C17.1931 8.4 18 7.59375 18 6.6ZM16.1986 9.6H11.3995C10.405 9.6 9.60047 10.4063 9.60047 11.4C9.60047 11.8758 9.79046 12.3352 10.1259 12.6727C10.4636 13.0102 10.921 13.2 11.3995 13.2H16.1986C17.1931 13.2 17.9977 12.3938 17.9977 11.4C18 10.4063 17.1931 9.60234 16.1986 9.6ZM11.3995 14.4H9.60047V16.2C9.60047 17.1938 10.4073 18 11.3995 18C12.3941 18 13.2009 17.1938 13.1986 16.2C13.2009 15.2063 12.3941 14.4023 11.3995 14.4ZM6.60047 9.6C5.60594 9.6 4.80141 10.4063 4.80141 11.4V16.2C4.80141 17.1938 5.60829 18 6.60047 18C7.595 18 8.40188 17.1938 8.39953 16.2V11.4C8.39953 10.9242 8.20954 10.4648 7.87412 10.1273C7.53636 9.78984 7.07662 9.6 6.60047 9.6ZM0 11.4C0 11.8758 0.189992 12.3352 0.52541 12.6727C0.863174 13.0102 1.32056 13.2 1.79906 13.2C2.79359 13.2 3.60047 12.3938 3.59812 11.4V9.6H1.79906C0.80688 9.6 0 10.4063 0 11.4Z" fill="white"/>
+                                </svg>
+                                                    </div>
+                        <div class="footer-social-link-text">Slack</div>
+                    </a>
+                    <a
+                        href="https://discourse.omnigroup.com"
+                        class="footer-social-link"
+                    >
+                        <div class="footer-social-icon">
+                            <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.6797 15.9922C13.1172 15.9922 13.375 15.6719 13.375 15.1875V12.9141H14.25C16.0547 12.9141 17.2734 11.6797 17.2734 9.80469V3.03125C17.2734 1.14844 16.0547 0.0390625 14.25 0.0390625H3.75C1.86719 0.0390625 0.726562 1.15625 0.726562 3.03125V9.80469C0.726562 11.6719 1.86719 12.9141 3.75 12.9141H8.95312L11.7812 15.4922C12.1484 15.8359 12.3672 15.9922 12.6797 15.9922Z" fill="white"/>
+                                </svg>
+                                                    </div>
+                        <div class="footer-social-link-text">Forums</div>
+                    </a>
                 </div>
             </div>
-        </footer>
+            <div class="column">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="/omnifocus">OmniFocus</a></li>
+                    <li><a href="/omnigraffle">OmniGraffle</a></li>
+                    <li><a href="/omnioutliner">OmniOutliner</a></li>
+                    <li><a href="/omniplan">OmniPlan</a></li>
+                    <li>-</li>
+                    <li><a href="/more">Omni Labs</a></li>
+                    <li><a href="/download">Downloads</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://support.omnigroup.com">Support</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="https://theomnishow.omnigroup.com">The Omni Show</a></li>
+                    <li><a href="/letters">Newsletter</a></li>
+                    <li><a href="https://stenciltown.omnigroup.com">Stenciltown</a></li>
+                    <li><a href="/releasenotes">What’s new</a></li>
+                    <li><a href="/sitemap">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="/privacy">Your Privacy</a></li>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/press">Press</a></li>
+                    <li><a href="/legal">Legal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-notice">
+            <p>
+                © 1994–2021 The Omni Group; Apple, MacBook, the Apple logo, iPad,
+                and iPhone are trademarks of Apple Inc., registered in the U.S. and
+                other countries. App Store is a service mark of Apple Inc.
+            </p>
+        </div>
+    </div>
+</div>
+<script src="/assets/js/vendor/jquery.min.js?20210317085735"></script>
+<script src="/assets/js/vendor/bootstrap.min.js?20210317085735" crossorigin="anonymous"></script>
+<script src="/assets/js/omni.js?20210317085735"></script>
+<link rel="prefetch stylesheet" href="/assets/fonts/fonts.css?20210317085735">
 
-        <script src="/assets/js/vendor/jquery.min.js?20201111144325"></script>
-        <script src="/assets/js/omni.js?20201111144325"></script>
-        <link rel="prefetch stylesheet" href="/assets/fonts/fonts.css?20201111144325">
 
-        
 
-        
+
+
   <!-- Matomo -->
   <script type="text/javascript">
     var _paq = window._paq || [];
@@ -477,8 +482,6 @@ info@omnigroup.com</p>
   <!-- End Matomo Code -->
 
 
-
-        
-    </body>
+</body>
 </html>
 
