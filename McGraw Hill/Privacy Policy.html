@@ -44,7 +44,9 @@
  
 	
  
+<link rel="stylesheet" href="/etc.clientlibs/studysolutions/clientlibs/clientlib-mheducation.min.css" type="text/css">
 <link rel="stylesheet" href="/etc/designs/unitas/clientlibs.min.css" type="text/css">
+<script type="text/javascript" src="/etc.clientlibs/studysolutions/clientlibs/clientlib-mheducation.min.js"></script>
 <script type="text/javascript" src="/etc/designs/unitas/clientlibs.min.js"></script>
 
 <link rel="stylesheet" href="/etc/designs/unitas/components/content/globalheader.min.css" type="text/css">
@@ -329,26 +331,6 @@
 										
 									
 									<li class="tight offset-20 offset-xs-30">
-										<a href="https://connect.mheducation.com/connect/login/index.htm" target="_blank" aria-label="Connect (AP/Honors & Electives) link, opens in a new window">Connect (AP/Honors & Electives) 
-											
-												<span class="mhe-icons" aria-hidden="true">C</span>
-											
-										</a>
-									</li>
-								
-								
-								
-									
-									
-									
-									
-									
-									
-									
-									
-										
-									
-									<li class="tight offset-20 offset-xs-30">
 										<a href="https://connected.mcgraw-hill.com/connected/login.do" target="_blank" aria-label="ConnectED link, opens in a new window">ConnectED 
 											
 												<span class="mhe-icons" aria-hidden="true">C</span>
@@ -412,24 +394,6 @@
 										<a href="https://my.mheducation.com/login" target="_blank" aria-label="Redbird link, opens in a new window">Redbird 
 											
 												<span class="mhe-icons" aria-hidden="true">C</span>
-											
-										</a>
-									</li>
-								
-								
-								
-									
-									
-									
-									
-									
-									
-									
-										
-									
-									
-									<li class="tight offset-20 offset-xs-30">
-										<a href="https://www.mheducation.com/prek-12/contact" target="_self">Get Product, Platform, or Order Support 
 											
 										</a>
 									</li>
@@ -1165,25 +1129,27 @@ $(document).ready(function() {
     </div>
 
     <!-- Button element that will trigger the notice update -->
-    <button id="otnotice-bundle-button_onetrustpolicy-2110183358" class="otnotice-bundle-button">Update</button>
+    <button id="otnotice-bundle-button_onetrustpolicy-2110183358" class="otnotice-bundle-button">Select</button>
 
     <!-- Container in which the privacy notices will be rendered -->
-    <div id="otnotice-bundle-container_onetrustpolicy-2110183358" class="otnotice"></div>
+    <div class="ot-wrapper">
+        <div id="otnotice-bundle-container_onetrustpolicy-2110183358" class="otnotice"></div>
 
-    <script src="https://appds8093.blob.core.windows.net/privacy-notice-scripts/otnotice-bundle-1.0.min.js" type="text/javascript" charset="UTF-8" id="otprivacy-notice-script">
-        settings="eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyJ9";
-        bundleUrl="https://privacyportal-cdn.onetrust.com/eddbe31c-378b-4242-9c5c-0b992061c639/notice-bundles/771c12b9-de86-4f62-a3d5-4f5120ac0dd6.json";
-    </script>
+        <script src="https://appds8093.blob.core.windows.net/privacy-notice-scripts/otnotice-bundle-1.0.min.js" type="text/javascript" charset="UTF-8" id="otprivacy-notice-script">
+            settings="eyJjYWxsYmFja1VybCI6Imh0dHBzOi8vcHJpdmFjeXBvcnRhbC5vbmV0cnVzdC5jb20vcmVxdWVzdC92MS9wcml2YWN5Tm90aWNlcy9zdGF0cy92aWV3cyJ9";
+            bundleUrl="https://privacyportal-cdn.onetrust.com/eddbe31c-378b-4242-9c5c-0b992061c639/notice-bundles/771c12b9-de86-4f62-a3d5-4f5120ac0dd6.json";
+        </script>
 
-    <script type="text/javascript" charset="UTF-8">
-        OneTrust.NoticeManagerApi.Initialized.then(function() {
-            OneTrust.NoticeManagerApi.InitializeOptions(
-                "otnotice-bundle-container_onetrustpolicy-2110183358",
-                ["relationshipDropdown_onetrustpolicy-2110183358"],
-                "otnotice-bundle-button_onetrustpolicy-2110183358"
-            );
-        });
-    </script>
+        <script type="text/javascript" charset="UTF-8">
+            OneTrust.NoticeManagerApi.Initialized.then(function() {
+                OneTrust.NoticeManagerApi.InitializeOptions(
+                    "otnotice-bundle-container_onetrustpolicy-2110183358",
+                    ["relationshipDropdown_onetrustpolicy-2110183358"],
+                    "otnotice-bundle-button_onetrustpolicy-2110183358"
+                );
+            });
+        </script>
+    </div>
 
 
 
@@ -1243,7 +1209,7 @@ $(document).ready(function() {
 
 	
 		<div class="row">
-			<div class="col-sm-6 social-wrapper">
+			<div class="col-sm-5 col-md-6 social-wrapper">
 				<div class="social-text inline">Follow McGraw Hill:</div>
 				<ul class="list-unstyled social-icons">
 					
@@ -1325,8 +1291,8 @@ $(document).ready(function() {
 					
 				</ul>
 			</div>
-			<div class="col-sm-6 text-right tagline proximaNovaSemibold">
-				Because learning changes everything.<sup>&reg;</sup>
+			<div class="col-sm-7 col-md-6 text-right tagline proximaNovaSemibold">
+				McGraw Hill - Because learning changes everything.<sup>&reg;</sup>
 			</div>
 		</div>
 	
