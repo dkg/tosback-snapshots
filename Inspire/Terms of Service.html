@@ -99,7 +99,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <!-- End Visual Website Optimizer Asynchronous Code -->
 
 
-<link rel="stylesheet" media="all" href="/assets/application_melodic-ebbc110b9739c423ec3740e63caa35efb5ab314c1a377b1e2284f13fb9aa7e08.css" />
+<link rel="stylesheet" media="all" href="/assets/application_melodic-b934a87f8157a37631b9649d4ff2026bb770a440686c97e35e84947d6c8af56e.css" />
 <script type="application/ld+json">
  {
     "@context": "https://schema.org",
@@ -144,11 +144,12 @@ window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){va
 
 
 <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="KU5YAEM5QmfdHAZJFTSq/yD4dbL/h5kpRKPS4Vd3Dyzm2hyDoEQ0Gu8RuNextLC1IvySeTKMIRnamA0DPooiPg==" />
+<meta name="csrf-token" content="HmpAKpAiX25uEWRLFzvwRuBwYr5EjjMg/GFWNvGaO5v/7yp3uLc8IUSlE0q6IrX+R+NEQ7RYYYQkgTPpOQu52Q==" />
 <script>
   !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.13.1";
 
     analytics.load("iiboz9vceqJvmwauwempMkCMGsHsq8MY");
+
     analytics.page({
         module: "MarketingSite",
         location: "",
@@ -162,6 +163,14 @@ window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){va
     // Include GA autoLink for multidomain attribution
     analytics.ready(function () {
       if (window.ga === undefined) return;
+
+      ga(function (tracker) {
+        const clientId = tracker.get('clientId')
+        const clientIdElement = document.getElementById('google_analytics_client_id')
+        if (clientIdElement !== undefined) {
+          clientIdElement.value = clientId
+        }
+      })
 
       ga('require', 'linker');
       ga('linker:autoLink',
@@ -198,9 +207,9 @@ window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){va
 <link href="https://www.inspirecleanenergy.com/policies/terms-of-use" rel="canonical" />
     
   </head>
-  <body class="pt-4 pt-md-5">
+  <body class="">
       
-<div class="fixed-top">
+<div style="z-index: 1030;">
   
 
   <nav class="navbar navbar-light bg-white navbar-expand-md"
@@ -236,6 +245,7 @@ window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){va
 </a>    <div class="dropdown-menu" aria-labelledby="about-us-navigation-title">
         <a class="dropdown-item" href="/our-story/">Our story</a>
         <a class="dropdown-item" href="/working-at-inspire/">Working at Inspire</a>
+        <a class="dropdown-item" href="/careers/">We’re hiring!</a>
     </div>
 
 </li>
@@ -258,7 +268,6 @@ window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){va
 
   
 </div>
-
 
 
     
@@ -416,7 +425,7 @@ window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){va
           <li class="mb-1">Monday through Friday, 9 am – 6 pm ET</li>
         </ul>
         <div class="row no-gutters mb-4">
-  <div class="col-auto pr-3">
+          <div class="col-auto pr-3">
   <a target="_blank" rel="noopener" href="https://bcorporation.net/directory/inspire"><img alt="Inspire is a Certified B Corporation" height="80" src="https://images.ctfassets.net/0fol1oltsp9p/5dPZSyk5JK204IrDQ2jSL3/33e31b365956368e528cd9ecbb8231ba/bcorp-muted.svg?h=80" /></a>
 
 </div><div class="col-auto pr-3">
@@ -426,8 +435,7 @@ window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){va
   <a target="_blank" rel="noopener" href="https://www.greatplacetowork.com/certified-company/7004645"><img alt="Inspire is a Fortune Great Place To Work Certified company for 2019" height="80" src="https://images.ctfassets.net/0fol1oltsp9p/7FUukdNBb9xjbpefmRfcZY/27a647bbe9fe03ae11a8d2c637bfc103/fortune-great-place-to-work-white-muted.svg?h=80" /></a>
 
 </div>
-</div>
-      </div>
+</div>      </div>
     </div>
 
     <hr>
