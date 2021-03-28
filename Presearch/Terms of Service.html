@@ -5,7 +5,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="csrf-token" content="rmPaK3I9Th6cFBiSr86bPoHTIS5U7RZ24OP45WbR">
+<meta name="csrf-token" content="aTQOd3XYUR60MmM93Zgrtr6SBDKRAufxKAZslvBu">
 
 <title>Presearch</title>
 
@@ -15,7 +15,7 @@
 
 <meta property="og:title" content="Presearch">
 <meta property="og:description" content="Presearch is a decentralized search engine, powered by the community.">
-<meta property="og:image" content="https://www.presearch.org/images/presearch-social.jpg">
+<meta property="og:image" content="https://www.presearch.org/images/sharing/sharingimage.png">
 <meta property="og:url" content="http://www.presearch.org/terms">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:site_name" content="Presearch">
@@ -26,19 +26,52 @@
 <meta name="twitter:url" content="http://www.presearch.org/terms">
 <meta name="twitter:title" content="Presearch">
 <meta name="twitter:description" content="Presearch is a decentralized search engine, powered by the community.">
-<meta name="twitter:image" content="https://www.presearch.org/images/presearch-social.jpg">
+<meta name="twitter:image" content="https://www.presearch.org/images/sharing/sharingimage.png">
 
 <link rel="icon" type="image/x-icon" href="https://www.presearch.org/favicon.ico">
 <link rel="icon" type="image/png" href="https://www.presearch.org/favicon.png">
 
-  <link rel="stylesheet" href="/css/app.css?id=04a0730b8b18e4e4a379">
+<script>
+    if (document.cookie.includes("screenMode=dark")|| (!document.cookie.includes("screenMode") && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark', 'tw-dark');
+    } else {
+        document.documentElement.classList.remove('dark', 'tw-dark');
+    }
+</script>
+
+  <link rel="stylesheet" href="/css/tailwind.css?id=4ee1b2f15acb9cc101c4">
+  <link rel="stylesheet" href="/css/app.css?id=967faa3eb5d225fd3107">
+  <style>
+   body {
+    font-family: "Raleway", sans-serif !important;
+    font-size: 16px;
+   }
+  </style>
 </head>
 <body class="account-nosidebar misc.terms">
   <div id="wrapper" class="container-fluid">
 
     <div class="row">
       <header>
-        <nav class="navbar navbar-default" style="background-color:#2d8eff;">
+        <style>
+nav.navbar.navbar-default {
+    background-color:#0079da;
+}
+.dark nav.navbar.navbar-default {
+    background-color:#1e1e1e;
+}
+.dark .navbar .navbar-nav>li>a:hover {
+    color: #fff;
+    opacity: .6;
+}
+.dark .pod .pod-header {
+    background: #191919;   
+}
+.dark .pod .pod-body {
+    background: #2e2e2e;
+}
+</style>
+<nav class="navbar navbar-default">
     <div class="container-fluid no-gutter">
         <div class="navbar-header col-sm-1 col-md-3">
                             <button type="button" class="navbar-toggle white" data-toggle="collapse" data-target="#main-nav">
@@ -70,9 +103,10 @@
                 <li><a href="https://www.presearch.io" target="_blank">About</a></li>
                 <li><a href="https://marketplace.presearch.org" target="_blank">Buy Tokens</a></li>
                 <li><a href="https://keywords.presearch.org">Keyword Staking</a></li>
+                <li><a href="https://nodes.presearch.org">Nodes</a></li>
 
                 <!-- Authentication Links -->
-                                    <li><a href="https://www.presearch.org/login">Register or Login to Earn Tokens</a></li>
+                                    <li><a href="https://www.presearch.org/login">Register or Login</a></li>
                             </ul>
         </div>
     </div>
@@ -87,9 +121,11 @@
         <div class="container">
           <h3 class="blue"></h3>
           
-            <h1 class="text-center">Terms & Conditions</h1>
+          <div class="dark:tw-text-gray-300">
 
-<p><a href='https://translate.google.com/translate?hl=en&sl=en&tl=es&u=https%3A%2F%2Fwww.presearch.org%2Fterms&sandbox=1'><i class="fa fa-language fa-2x" aria-hidden="true"></i>  Translate</a></p>
+  <h1 class="text-center">Terms & Conditions</h1>
+
+<p><a class="dark:tw-text-blue-400" href='https://translate.google.com/translate?hl=en&sl=en&tl=es&u=https%3A%2F%2Fwww.presearch.org%2Fterms&sandbox=1'><i class="fa fa-language fa-2x" aria-hidden="true"></i>  Translate</a></p>
 
   <p>
   Presearch.org Global Limited ("Presearch") offers a search tool that enables you to easily search other existing search engines and be rewarded.
@@ -179,10 +215,10 @@
   In order to initiate a withdrawal of PRE Tokens to a blockchain address, all Members must first have more than 1,000 Eligible Tokens and supply an ERC20-compatible wallet address.
   </p>
   <p>
-  Withdrawals can currently only be done in batches of 1,000 tokens. This means that you will only be able to withdraw 1,000 tokens to start. This is done to protect the project from significant <a href="https://engine.presearch.org/search?q=ethereum+gas">Ethereum Gas</a> costs generated by processing many smaller transactions.   You will be able to withdraw up to 1,000 tokens every 90 days, unless otherwise approved.
+  Withdrawals can currently only be done in batches of 1,000 tokens. This means that you will only be able to withdraw 1,000 tokens to start. This is done to protect the project from significant <a class="dark:tw-text-blue-400" href="https://engine.presearch.org/search?q=ethereum+gas">Ethereum Gas</a> costs generated by processing many smaller transactions.   You will be able to withdraw up to 1,000 tokens every 90 days, unless otherwise approved.
   </p>
   <p>
-  Once a withdrawal request is initiated, it will need to be approved by a Presearch administrator. If a request has been issued or otherwise allowed due to a system error or malicious activity, Presearch reserves the right to block a request at the approval stage. Presearch endeavours to approve all legitimate requests within 3 business days. If your request is initially denied for any reason, you will be notified by a message on the site and will be directed to contact <a href="mailto:support@presearch.io">support@presearch.io</a>.
+  Once a withdrawal request is initiated, it will need to be approved by a Presearch administrator. If a request has been issued or otherwise allowed due to a system error or malicious activity, Presearch reserves the right to block a request at the approval stage. Presearch endeavours to approve all legitimate requests within 3 business days. If your request is initially denied for any reason, you will be notified by a message on the site and will be directed to contact <a class="dark:tw-text-blue-400" href="mailto:support@presearch.io">support@presearch.io</a>.
   </p>
   <p>
   You may be limited to a certain number of withdrawals in a certain period of time, or a certain number of tokens at a single time or in a period of time. This number may change based on your PRE Level or on the needs of the project.
@@ -219,7 +255,7 @@
   You understand that the technical processing and transmission of Presearch services, including your Content, may involve (a) transmissions over various networks; and (b) changes to conform and adapt to technical requirements of connecting networks, devices or services. You also understand and agree that your administrator may have access to your account and its content, and may suspend or terminate your account access and your ability to modify your account.
   </p>
   <p>
-  Additional details of the Presearch privacy policy, including GDPR compliance, can be found at <a href="https://www.presearch.org/privacy">https://www.presearch.org/privacy</a>.
+  Additional details of the Presearch privacy policy, including GDPR compliance, can be found at <a class="dark:tw-text-blue-400" href="https://www.presearch.org/privacy">https://www.presearch.org/privacy</a>.
   </p>
   <h3>Copyright and Trademarks</h3>
 
@@ -294,7 +330,7 @@
 
 
   <p>
-  You agree that Presearch may provide you with notices, including those regarding changes to the Terms, by email, Telegram or postings on Presearch services. The official communication channel for Presearch is via the <a href="mailto:support@presearch.io">support@presearch.io</a> email address.
+  You agree that Presearch may provide you with notices, including those regarding changes to the Terms, by email, Telegram or postings on Presearch services. The official communication channel for Presearch is via the <a class="dark:tw-text-blue-400" href="mailto:support@presearch.io">support@presearch.io</a> email address.
   </p>
   <h3>General Information</h3>
 
@@ -330,10 +366,10 @@
   Midland, Ontario, Canada
   </p>
   <p>
-  <a href="http://www.presearch.org">www.presearch.org</a>
+  <a class="dark:tw-text-blue-400" href="http://www.presearch.org">www.presearch.org</a>
   </p>
   <p>
-  <a href="mailto:info@presearch.org">info@presearch.org</a>
+  <a class="dark:tw-text-blue-400" href="mailto:info@presearch.org">info@presearch.org</a>
   </p>
   <h3>Changelog</h3>
 
@@ -429,14 +465,19 @@
   <p>
   Initial terms & conditions for beta release.
   </p>
-
+</div>
         </div>
       </div>
     </div>
 
     <div class="row">
       <footer>
-        <div class="socialicons">
+        <style>
+.tw-dark body.has-sidebar footer {
+  color:#D1D5DB;
+}
+</style>
+  <div class="socialicons">
     <a class="icon" href="https://medium.com/@presearch" target="_blank" title="Medium"><i class="fa fa-medium"></i></a>
     <a class="icon" href="https://twitter.com/presearchnews" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
     <a class="icon" href="https://www.facebook.com/presearch.io/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -447,7 +488,7 @@
     &copy; 2021 Presearch.org Global Limited
   </div>
 
-  <script type="text/javascript" src="/js/app.js?id=a146f3f59380734a6f58"></script>
+  <script type="text/javascript" src="/js/app.js?id=f1f1fca648010bb827e4"></script>
   
     
   
