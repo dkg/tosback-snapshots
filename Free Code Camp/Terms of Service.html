@@ -16,11 +16,22 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Roboto+Mono:400,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="/news/assets/built/screen.css?v=ed02139567" />
-    <link rel="stylesheet" type="text/css" href="/news/assets/css/algolia-search.css?v=ed02139567" />
+    <link rel="stylesheet" type="text/css" href="/news/assets/built/screen.css?v=8babff095a" />
+    <link rel="stylesheet" type="text/css" href="/news/assets/css/algolia-search.css?v=8babff095a" />
 
     <script src="https://cdn.freecodecamp.org/news-assets/algolia/algoliasearch-3-33-0/algoliasearch.min.js"></script>
     <script src="https://cdn.freecodecamp.org/news-assets/algolia/autocomplete-0-36-0/autocomplete.min.js"></script>
+
+    <script type="text/javascript" src="/news/assets/config/en/main.js?v=8babff095a"></script>
+    <script type="text/javascript" src="/news/assets/config/en/footer.js?v=8babff095a"></script>
+
+    <script type="text/javascript" src="/news/assets/config/es/main.js?v=8babff095a"></script>
+    <script type="text/javascript" src="/news/assets/config/es/footer.js?v=8babff095a"></script>
+
+    <script type="text/javascript" src="/news/assets/config/zh-cn/main.js?v=8babff095a"></script>
+    <script type="text/javascript" src="/news/assets/config/zh-cn/footer.js?v=8babff095a"></script>
+
+    <script type="text/javascript" src="/news/assets/config/setup-locale.js?v=8babff095a"></script>
 
 
     <script src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/dayjs.min.js"></script>
@@ -157,7 +168,7 @@
 
 <script>
   const client = algoliasearch('QMJYL5WYTI', '4318af87aa3ce128708f1153556c6108');
-  const index = client.initIndex("news");
+  const index = client.initIndex(main['algolia-index-name']);
   const screenWidth = window.screen.width;
   const screenHeight = window.screen.height;
   const hitsToRender = (screenWidth >= 767 && screenHeight >= 768) ? 8 : 5;
@@ -174,6 +185,8 @@
   // glass or enter when there is no query or hits
   searchForm.addEventListener('submit', e => {
     e.preventDefault();
+
+    submitSearch();
   });
 
   const search = autocomplete('#search-input', { 
@@ -266,20 +279,23 @@
     </div>
     <div class="site-nav-right">
         <div class="nav-group">
-            <a class="nav-forum" href=https://forum.freecodecamp.org/>Forum</a>
+            <a class="nav-forum" id="nav-forum" rel="noopener noreferrer" target="_blank">Forum</a>
 
-            <a class="toggle-button-nav" href="https://www.freecodecamp.org/donate/">
+            <a class="toggle-button-nav" id="nav-donate" rel="noopener noreferrer" target="_blank">
                 Donate
             </a>
         </div>
 
     </div>
 </nav>
-        <a class="donation-banner" id="donation-banner-link" href=https://www.freecodecamp.org/>
+
+
+        <a class="banner" id="banner" rel="noopener noreferrer" target="_blank">
     <p>
         Learn to code — <span>free 3,000-hour curriculum</span>
     </p>
 </a>
+
 
         <div id="error-message"></div>
 
@@ -334,9 +350,11 @@
                 
 <div class='learn-cta-row'>
     <p>
-        Learn to code for free. freeCodeCamp's open source curriculum has helped more than 40,000 people get jobs as developers. <a class='cta-button' href='https://www.freecodecamp.org/learn'>Get started</a>
+        Learn to code for free. freeCodeCamp&#x27;s open source curriculum has helped more than 40,000 people get jobs as developers. <a class="cta-button" id="learn-to-code-cta" rel="noopener noreferrer" target="_blank">Get started</a>
     </p>
-</div>                  <script>
+</div>
+
+                  <script>
     // Conditionally show comments section based on publication language setting
     const showCommentsList = ['zh-cn'];
 
@@ -425,51 +443,51 @@
                     Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff.
                 </p>
                 <p class="footer-donation">
-                    You can <a href='https://freecodecamp.org/donate' class='inline' rel='noopener noreferrer' target='_blank'>make a tax-deductible donation here</a>.
+                    You can <a id='footer-donation' class='inline' rel='noopener noreferrer' target='_blank'>make a tax-deductible donation here</a>.
                 </p>
             </div>
             <div class="trending-guides">
                 <div class="col-header">Trending Guides</div>
                 <div class="trending-guides-row">
                     <div class="footer-col footer-col-1">
-                        <a href=https://www.freecodecamp.org/news/what-is-docker-used-for-a-docker-container-tutorial-for-beginners/>What is Docker?</a>
-                        <a href=https://www.freecodecamp.org/news/what-is-tcp-ip-layers-and-protocols-explained/>TCP/IP Model</a>
-                        <a href=https://www.freecodecamp.org/news/rtf-file-what-is-the-rich-text-format/>RTF File</a>
-                        <a href=https://www.freecodecamp.org/news/css-transition-examples/>CSS Transition</a>
-                        <a href=https://www.freecodecamp.org/news/how-to-use-instagram-like-a-pro/>How to Use Instagram?</a>
-                        <a href=https://www.freecodecamp.org/news/mbr-vs-gpt-whats-the-difference-between-an-mbr-partition-and-a-gpt-partition-solved/>MBR VS GPT</a>
-                        <a href=https://www.freecodecamp.org/news/how-to-format-a-usb-drive-to-fat32-on-windows-10/>FAT32 Format</a>
-                        <a href=https://www.freecodecamp.org/news/http-error-503-service-unavailable-explained-what-the-503-error-code-means/>Error 503 Code</a>
-                        <a href=https://www.freecodecamp.org/news/how-to-find-and-edit-a-windows-hosts-file/>Windows Hosts File</a>
-                        <a href=https://www.freecodecamp.org/news/mobi-to-pdf-how-to-convert-to-and-from-a-mobi-file/>Mobi to PDF</a>
+                        <a id="article0" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article1" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article2" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article3" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article4" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article5" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article6" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article7" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article8" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article9" rel="noopener noreferrer" target="_blank"></a>
                     </div>
                     <div class="footer-col footer-col-2">
-                        <a href=https://www.freecodecamp.org/news/what-is-stem-the-meaning-of-an-acronym-youll-hear-a-lot-in-school/>What is STEM?</a>
-                        <a href=https://www.freecodecamp.org/news/javascript-void-keyword-explained/>JavaScript Void 0</a>
-                        <a href=https://www.freecodecamp.org/news/sql-delete-row-statement-examples/>SQL Delete Row</a>
-                        <a href=https://www.freecodecamp.org/news/javascript-string-replace-example-with-regex/>JavaScript Replace</a>
-                        <a href=https://www.freecodecamp.org/news/python-read-json-file-how-to-load-json-from-a-file-and-parse-dumps/>Python JSON Parser</a>
-                        <a href=https://www.freecodecamp.org/news/cmd-delete-folder-how-to-remove-files-and-folders-in-windows/>cmd Delete Folder</a>
-                        <a href=https://www.freecodecamp.org/news/what-is-nfc-near-field-communication-uses-chips-tags-and-readers-explained/>What is NFC?</a>
-                        <a href=https://www.freecodecamp.org/news/what-is-the-correct-content-type-for-json-request-header-mime-type-explained/>Content Type JSON</a>
-                        <a href=https://www.freecodecamp.org/news/heic-to-jpg-how-to-convert-images-on-a-mac/>Convert HEIC to JPG</a>
-                        <a href=https://www.freecodecamp.org/news/generate-random-numbers-java/>Math Random Java</a>
+                        <a id="article10" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article11" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article12" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article13" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article14" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article15" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article16" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article17" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article18" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article19" rel="noopener noreferrer" target="_blank"></a>
                     </div>
                     <div class="footer-col footer-col-3">
                         <div class="footer-left">
-                            <a href=https://www.freecodecamp.org/news/how-to-start-a-blog-with-wordpress/>WordPress for Beginners</a>
-                            <a href=https://www.freecodecamp.org/news/qualitative-vs-quantitative-definition-research-methods-and-data/>Qualitative VS Quantitative</a>
-                            <a href=https://www.freecodecamp.org/news/javascript-split-string-example/>JavaScript Split String</a>
-                            <a href=https://www.freecodecamp.org/news/how-to-type-letters-with-accents-on-mac/>Accented Letters on Mac</a>
-                            <a href=https://www.freecodecamp.org/news/how-to-find-a-windows-10-product-key/>Windows 10 Product Key</a>
+                            <a id="article20" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article21" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article22" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article23" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article24" rel="noopener noreferrer" target="_blank"></a>
                         </div>
 
                         <div class="footer-right">
-                            <a href=https://www.freecodecamp.org/news/google-docs-landscape-tutorial-how-to-make-a-google-doc-landscape-orientation/>Google Docs Landscape</a>
-                            <a href=https://www.freecodecamp.org/news/antimalware-service-executable-what-is-msmpeng-exe-and-why-is-it-running-in-windows-10/>Antimalware Executable</a>
-                            <a href=https://www.freecodecamp.org/news/windows-10-start-menu-not-working-solved/>Windows 10 Start Menu</a>
-                            <a href=https://www.freecodecamp.org/news/how-to-open-the-command-prompt-in-windows-10/>Windows 10 Command Line</a>
-                            <a href=https://www.freecodecamp.org/news/google-account-recovery-change-gmail-password/>Google Account Recovery</a>
+                            <a id="article25" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article26" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article27" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article28" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article29" rel="noopener noreferrer" target="_blank"></a>
                         </div>
                     </div>
                 </div>
@@ -479,21 +497,23 @@
             <div class="col-header">Our Nonprofit</div>
             <div class="footer-divider"></div>
             <div class="our-nonprofit">
-                <a href='https://www.freecodecamp.org/news/about/'>About</a>
-                <a href='https://www.linkedin.com/school/free-code-camp/people/' rel='noopener noreferrer' target='_blank'>Alumni Network</a>
-                <a href='https://github.com/freeCodeCamp/'>Open Source</a>
-                <a href='https://www.freecodecamp.org/shop/' rel='noopener noreferrer' target='_blank'>Shop</a>
-                <a href='https://www.freecodecamp.org/news/support/'>Support</a>
-                <a href='https://www.freecodecamp.org/news/sponsors/'>Sponsors</a>
-                <a href='https://www.freecodecamp.org/news/academic-honesty-policy/'>Academic Honesty</a>
-                <a href='https://www.freecodecamp.org/news/code-of-conduct/'>Code of Conduct</a>
-                <a href='https://www.freecodecamp.org/news/privacy-policy/'>Privacy Policy</a>
-                <a href='https://www.freecodecamp.org/news/terms-of-service/'>Terms of Service</a>
-                <a href='https://www.freecodecamp.org/news/copyright-policy/'>Copyright Policy</a>
+                <a id="about" rel="noopener noreferrer" target="_blank">About</a>
+                <a id="alumni" rel="noopener noreferrer" target="_blank">Alumni Network</a>
+                <a id="open-source" rel="noopener noreferrer" target="_blank">Open Source</a>
+                <a id="shop" rel="noopener noreferrer" target="_blank">Shop</a>
+                <a id="support" rel="noopener noreferrer" target="_blank">Support</a>
+                <a id="sponsors" rel="noopener noreferrer" target="_blank">Sponsors</a>
+                <a id="honesty" rel="noopener noreferrer" target="_blank">Academic Honesty</a>
+                <a id="coc" rel="noopener noreferrer" target="_blank">Code of Conduct</a>
+                <a id="privacy" rel="noopener noreferrer" target="_blank">Privacy Policy</a>
+                <a id="tos" rel="noopener noreferrer" target="_blank">Terms of Service</a>
+                <a id="copyright" rel="noopener noreferrer" target="_blank">Copyright Policy</a>
             </div>
         </div>
     </div>
 </footer>
+
+
     </div>
 
     <script>
@@ -510,7 +530,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
         </script>
-    <script type="text/javascript" src="/news/assets/built/jquery.fitvids.js?v=ed02139567"></script>
+    <script type="text/javascript" src="/news/assets/built/jquery.fitvids.js?v=8babff095a"></script>
 
     <script type="text/javascript" src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism.min.js"></script>
     <script type="text/javascript"
@@ -585,7 +605,8 @@
         const title = `freeCodeCamp's%20Terms%20of%20Service`.replace(/'/g, '%27');
         const twitter = ``;
         const url = window.location;
-        const thanks = `Thank%20you%20${twitter}%20for%20writing%20this%20helpful%20article%2e%0A%0A` + `${title}%0A%0A${url}`;
+        const thanks = `Thank%20you%20%20for%20writing%20this%20helpful%20article.` +
+            `%0A%0A${title}%0A%0A${url}`;
         const button = document.getElementById('tweet-btn');
         button.addEventListener('click', () => {
             if (twitter) {
@@ -596,9 +617,14 @@
                 window.open(`https://twitter.com/intent/tweet?text=${title}%0A%0A${url}`, `share-twitter`, `width=550, height=235`);
                 return false;
             }
-        })
-        console.log(twitter)
+        });
     }
+</script>
+
+<script>
+    const learnToCodeCtaAnchorEl = document.getElementById('learn-to-code-cta');
+
+    learnToCodeCtaAnchorEl.href = main['learn-to-code-cta-url'];
 </script>
 
 <script>
@@ -608,6 +634,44 @@
         $postContent.fitVids();
         // End fitVids
     });
+</script>
+
+<script>
+    const navForumAnchorEl = document.getElementById('nav-forum');
+    const navDonateAnchorEl = document.getElementById('nav-donate');
+
+    navForumAnchorEl.href = main['forum-url'];
+    navDonateAnchorEl.href = main['donate-url'];
+</script>
+
+<script>
+    const bannerAnchorEl = document.getElementById('banner');
+
+    bannerAnchorEl.href = main['banner-url'];
+</script>
+
+<script>
+    const { trending, ...otherUrls } = footer;
+    const footerDonationAnchorEl = document.getElementById('footer-donation');
+
+    Object.keys(trending).forEach(key => {
+        const anchorId = key.replace(/link|title/, '');
+        const trendingAnchorEl = document.getElementById(anchorId);
+
+        if (key.includes('link')) {
+            trendingAnchorEl.href = trending[key]
+        } else if (key.includes('title')) {
+            trendingAnchorEl.textContent = trending[key];
+        }
+    });
+
+    Object.keys(otherUrls).forEach(key => {
+        const footerAnchorEl = document.getElementById(key);
+
+        footerAnchorEl.href = otherUrls[key];
+    });
+
+    footerDonationAnchorEl.href = main['donate-url'];
 </script>
 
 
