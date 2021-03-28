@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/css/helpers.css">
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/countdown-banner.css">
-    <link rel="stylesheet" href="/css/pages/cotw.css">
+    <link rel="stylesheet" href="/css/pages/radio.css">
     <link rel="stylesheet" href="/css/pages/home.css">
     <link rel="stylesheet" href="/css/pages/mixcontest.css">
     <link rel="stylesheet" href="/css/pages/8-year-anniversary.css">
@@ -68,6 +68,7 @@
     <script type="text/javascript" src="/js/gold.js"></script>
     <script type="text/javascript" src="/js/forms.js"></script>
     <script type="text/javascript" src="/js/cotw.js"></script>
+    <script type="text/javascript" src="/js/mss.js"></script>
     <script type="text/javascript" src="/js/player.js"></script>
     <script type="text/javascript" src="/js/controls.js"></script>
     <script type="text/javascript" src="/js/notices.js"></script>
@@ -179,8 +180,8 @@ k([38,38,40,40,37,39,37,39,66,65], alert.bind(null, 'Hello there :)'))
                 <li><a onclick="closeNav()" href="/music" role="goto-music">Music</a></li>
                 <li><a onclick="closeNav()" href="/artists">Artists</a></li>
                 <li><a onclick="closeNav()" href="/events">Events</a></li>
-                <li><a onclick="closeNav()" href="/publishing">Publishing</a></li>
-                <li><a onclick="closeNav()" href="/cotw">Radio</a></li>
+                <li><a onclick="openSubnav('commercial')">Commercial <i class="fa fa-chevron-down navi"></i></a></li>
+                <li><a onclick="openSubnav('radio')">Radio <i class="fa fa-chevron-down navi"></i></a></li>
                 <li><a onclick="closeNav()" href="/gold">Gold</a></li>
                 <li><a href="http://shop.monstercat.com">Shop</a></li>
                 <li><a onclick="closeNav()" href="/blog">Blog</a></li>
@@ -219,10 +220,25 @@ k([38,38,40,40,37,39,37,39,66,65], alert.bind(null, 'Hello there :)'))
                 <li><a onclick="closeNav()" href="/artists">Artists</a></li>
                 <li><a onclick="closeNav()" href="/events">Events</a></li>
                 <li><a onclick="closeNav()" href="/publishing">Publishing</a></li>
-                <li><a onclick="closeNav()" href="/cotw">Radio</a></li>
+                <li><a onclick="closeNav()" href="/licensing">Licensing</a></li>
+                <li><a onclick="closeNav()" href="/cotw">Monstercat Call of the Wild</a></li>
+                <li><a onclick="closeNav()" href="/mss">Monstercat Silk Showcase</a></li>
                 <li><a onclick="closeNav()" href="/gold">Gold</a></li>
                 <li><a href="http://shop.monstercat.com">Shop</a></li>
                 <li><a onclick="closeNav()" href="/blog">Blog</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container mcat-mast submast" role="subnav">
+        <nav class="mcat-nav col-xs-hidden col-md-visible">
+            <ul role="radio">
+                <li><a onclick="closeNav()" href="/cotw">Monstercat Call of the Wild</a></li>
+                <li><a onclick="closeNav()" href="/mss">Monstercat Silk Showcase</a></li>
+            </ul>
+            <ul role="commercial">
+                <li><a onclick="closeNav()" href="/publishing">Publishing</a></li>
+                <li><a onclick="closeNav()" href="/licensing">Licensing</a></li>
             </ul>
         </nav>
     </div>
@@ -483,6 +499,17 @@ var EVENT_FALLBACK_IMG_URL = 'https://assets.monstercat.com/event-fallback.jpg'
         data-source="https://raw.githubusercontent.com/monstercat/docs/master/Twitch%20Policy.md"
         data-template="page-twitch-policy">
     {{>markdown-basic}}
+</script>
+
+<script type="text/html"
+        data-route="^contest-rules\/?$"
+        data-process="processMarkdownPage"
+        data-no-cors
+        data-source="https://raw.githubusercontent.com/monstercat/docs/master/site/ContestRules.md"
+        data-template="page-contest-rules">
+    <div class="contest-rules-container">
+        {{>markdown-basic}}
+    </div>
 </script>
 
 <script type="text/html"
@@ -913,6 +940,25 @@ var EVENT_FALLBACK_IMG_URL = 'https://assets.monstercat.com/event-fallback.jpg'
       {{>error}}
     {{/if}}
     {{#data}}
+    {{#unless hasFreeGold}}
+      {{#if hasGoldAccess}}
+        <div id="site-notices">
+          <div class="notice--gold">
+            <div class="container">
+              {{#if self.SubscriptionIsLegacy}}
+                <p>Your gold subscription is ending on {{self.SubscriptionEndDate}}. <br> Click <a href="/account/services">here</a> to manage your subscription.</p>
+              {{else}}
+                {{#unless self.SubscriptionRenews}}
+                  <p>Your gold subscription is ending on {{self.SubscriptionEndDate}}. <br> Click <a href="/account/services">here</a> to manage your subscription.</p>
+                {{else}}
+                  <p>Your gold subscription renews {{self.SubscriptionEndDate}}.</p>
+                {{/unless}}
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      {{/if}}
+    {{/unless}}
       <div class="top-banner top-banner--no-margin top-banner--account-gold">
         <div class="banner">
           <div class="banner" style="background-image:url('/img/gold.jpg');">
@@ -1715,6 +1761,267 @@ data-template="bestof2018-results-voted"
 <p class="mt-2">Thanks for submitting your Best of  picks. <br>Here's the leaderboard for the top 40!</p>
 </script>
 <script type="text/html"
+        data-route="^(?:cotw|COTW)\/?$"
+        data-process="processCOTWPage"
+        data-template="cotw-page"
+>
+    <div class="radio-show">
+        {{#episodes}}
+        {{#if loading}}
+        {{>loading-view-black}}
+        {{else}}
+        {{#data}}
+        {{#latest}}
+        <div class="top-banner">
+            <div class="banner">
+                <div class="banner" style="background-image:url(https://www.monstercat.com/podcast-iframe/img/cotw-bg.jpg)">
+                    <div class="banner-shade"></div>
+                    <div class="gradient"></div>
+                </div>
+            </div>
+            <div class="container flex">
+                <div class="col-xs-12 col-sm-12 col-md-3 featured-artwork">
+                    <div class="position-relative image-wrapper">
+                        <img src="/img/artwork.jpg" class="preload responsive" />
+                        <img class="shadow responsive album-cover" src="{{coverSmall}}">
+                        {{>play-podcast}}
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-9 cl-white featured-details featured-details--event">
+                    <span class="tag">Latest Episode</span>
+                    <a class="silent no-hover" href="/release/{{release.catalogId}}" title="{{title}}">
+                        <h1 class="title uppercase">
+                            {{title}}
+                        </h1>
+                    </a>
+                    <p class="date">
+                        Released {{releaseDate.month}} {{releaseDate.day}}, {{releaseDate.year}}
+                    </p>
+                    {{#streamable}}
+                    <ul class="podcast-links mt-2">
+                        {{#each podcastLinks}}
+                        <li>
+                            <a href="{{url}}" class="" target="_blank">
+                                <span class="icon-expander-text"></span>
+                                <i class="fa fa-fw fa-{{platform}}"></i>
+                            </a>
+                        </li>
+                        {{/each}}
+                        </li>
+                        {{/streamable}}
+                </div>
+            </div>
+        </div>
+        {{/latest}}
+    </div>
+    <div class="container">
+        <div class="latest-podcast panel">
+            <header class="flex top-cta">
+                <div class="col-xs-6">
+                    <h2>Past Episodes</h2>
+                </div>
+                <div class="col-xs-6 text right">
+                    <a href="/cotw/episodes" class="button button--black button--icon button--transparent">
+                        View all
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+                </div>
+            </header>
+            <ul class="art-list art-list--full-width">
+                {{#each list}}
+                <li>
+                    <div class="image-wrapper">
+                        <img src="/img/artwork.jpg" class="preload" />
+                        <img src="{{coverMedium}}"/>
+                        {{>play-podcast}}
+                    </div>
+                    <a class="silent" href="/release/{{release.catalogId}}" title="{{title}}">
+                        <label class="title three-line-ellipsis">{{title}}</label>
+                    </a>
+
+                    <ul class="podcast-links">
+                        {{#each ../links}}
+                        <li>
+                            <a href="{{url}}" target="_blank">
+                                <span class="icon-expander-text"></span>
+                                <i class="fa fa-fw fa-{{platform}}"></i>
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/data}}
+        {{/if}}
+        {{/episodes}}
+    </div>
+    {{#podcast}}
+    {{#if loading}}
+    {{>loading-view}}
+    {{else}}
+    {{#data.Podcast}}
+    <div class="radio-show-about">
+        <div class="top-banner">
+            <div class="banner">
+                <div class="banner" style="background-image:url(https://www.monstercat.com/podcast-iframe/img/cotw-bg.jpg)">
+                    <div class="banner-shade"></div>
+                    <div class="gradient"></div>
+                </div>
+            </div>
+            <div class="container flex">
+                <div class="col-xs-12 col-sm-12 col-md-4 cl-white text-center">
+                    <h2>{{Title}}</h2>
+                    <ul class="podcast-links mt-2">
+                        {{#each Links}}
+                        <li>
+                            <a href="{{url}}" target="_blank" title="{{label}}">
+                                <span class="icon-expander-text"></span>
+                                <i class="fa fa-fw fa-{{class}}"></i>
+                            </a>
+                            <div class="hover-title">{{label}}</div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-8 cl-white radio-show-description">
+                    {{{Description}}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/data.Podcast}}
+
+    {{#data}}
+    <div class="stations container panel mt-3">
+        <h2>Radio Stations</h2>
+        {{>podcast-station}}
+    </div>
+    {{/data}}
+    {{/if}}
+    {{/podcast}}
+
+</script>
+
+<script type="text/html"
+        data-partial
+        data-template="podcast-station"
+>
+    <ul class="podcast-station">
+        {{#each Stations}}
+        <li>
+            <div class="logo">
+                <a href="{{WebsiteURL}}" target="_BLANK"> <img src="{{ImageURL}}" alt="{{Title}}"/></a>
+            </div>
+            <div class="details">
+                {{#if loading}}
+                {{loading-placeholders "territory"}}
+                {{loading-placeholders "airtime"}}
+                {{else}}
+                <p>{{TerritoryName}} <br> {{LocalAirTimeDesc}}</p>
+                {{/if}}
+            </div>
+
+        </li>
+        {{/each}}
+    </ul>
+</script>
+
+<script type="text/html"
+        data-route="^(?:podcast|cotw|COTW)\/episodes"
+        data-process="processCOTWEpisodesPage"
+        data-template="cotw-episodes"
+>
+    <div class="radio-show-episodes container">
+        <header class="flex top-title">
+            <div class="col-xs-6">
+                <h1>Call of the Wild Episodes</h1>
+            </div>
+            <div class="col-xs-6 text right">
+                <a href="/cotw" class="button button--black button--icon button--transparent">
+                    <i class="fa fa-chevron-left"></i>
+                    Back to Radio Page
+                </a>
+            </div>
+        </header>
+        <div class="panel">
+            {{#episodes}}
+            {{#if loading}}
+            {{>loading-view}}
+            {{else}}
+            <ul class="art-list art-list--full-width">
+                {{#each data.episodes}}
+                <li>
+                    <div class="image-wrapper">
+                        <img src="/img/artwork.jpg" class="preload" />
+                        <img src="{{coverMedium}}"/>
+                        {{>play-podcast}}
+                    </div>
+                    <a class="silent" href="/release/{{release.catalogId}}" title="{{title}}">
+                        <label class="title three-line-ellipsis">{{title}}</label>
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+            {{#data.pagination}}
+            <div class="podcast-pagination">
+                {{>podcast-pagination-link url=first.url enabled=first.enabled label="First"}}
+                {{>podcast-pagination-link url=previous.url enabled=previous.enabled label="Previous"}}
+                <span>{{showingFrom}} - {{showingTo}} of {{total}}</span>
+                {{>podcast-pagination-link url=next.url enabled=next.enabled label="Next"}}
+                {{>podcast-pagination-link url=last.url enabled=last.enabled label="Last"}}
+            </div>
+            {{/data.pagination}}
+            {{/if}}
+            {{/episodes}}
+        </div>
+    </div>
+</script>
+
+<script type="text/html"
+        data-partial
+        data-template="podcast-pagination-link">
+
+
+    {{#unless enabled}}
+    <span class="muted">{{label}}</span>
+    {{else}}
+    <span><a href="{{url}}">{{label}}</a></span>
+    {{/unless}}
+</script>
+
+<script type="text/html"
+        data-partial
+        data-template="play-podcast">
+    {{#streamable}}
+    <button class="button--podcast"
+            onclick="playSong(event, this)"
+            role="play-song"
+            data-play-link="{{playUrl}}"
+            data-title="{{title}}"
+            data-artists-title="{{artistsTitle}}"
+            {{#if artists.length}}
+            data-artist="{{#each artists}}{{name}}, {{/each}}"
+            {{/if}}
+    data-index="{{index}}"
+    data-track-id="{{id}}"
+    {{#if activeTest}}
+    data-ab-test="{{activeTest}}"
+    data-kpi="play-track"
+    {{/if}}
+    {{#if licensable}}
+    data-licensable
+    {{/if}}
+    {{#if playlistId}}
+    data-playlist-id="{{playlistId}}"
+    {{/if}}
+    data-release-id="{{releaseId}}">
+    <i class="fa fa-play inactive"></i>
+    <i class="fa fa-pause active"></i>
+    </button>
+    {{/streamable}}
+</script><script type="text/html"
         data-route="^bestof2019$"
         data-title="Best of 2019"
         data-template="bestof-2019-page"
@@ -3954,327 +4261,349 @@ Credit
   </span>
 </script>
 <script type="text/html"
-        data-route="^(\?.*)?$"
-        data-process="processPage"
-        data-template="home-page"
-        >
-    <div role="home-featured">
-        <div
-            data-source="$endpoint2/releases?limit=15&type=Single&type=Album&type=EP"
-            data-process="processHomeFeatured">
+    data-route="^(\?.*)?$"
+    data-process="processPage"
+    data-template="home-page"
+    >
+
+  <div id="notice--shop" class="silk-launch">
+    <div class="banner-container container">
+      <a href="https://www.monstercat.com/silk?utm_source=websiter&utm_medium=banner&utm_campaign=MCS_Launch" target="_blank">
+        <div class="desktop">
+          <div class="banner-center">
+            <img src="https://assets.monstercat.com/b/silk-launch/silk-desktop.png" alt="The family just got bigger with Monstercat Silk">
+          </div>
         </div>
+      </a>
+      
+      <div class="mobile">
+        <a href="https://www.monstercat.com/silk?utm_source=websiter&utm_medium=banner&utm_campaign=MCS_Launch" target="_blank">
+          <img src="https://assets.monstercat.com/b/silk-launch/silk-launch-mobile.png" alt="The family just got bigger with Monstercat Silk">
+        </a>
+      </div>
     </div>
-    <div data-source="https://shop.monstercat.com/collections/website-featured/products.json"
-         data-no-cors="true"
-         data-process="processHomeMerch"
-        ></div>
-    <div data-source="$endpoint2/releases?types=Podcast&limit=8" data-process="processPodcasts"></div>
-    {{>spotify-and-social}}
+  </div>
+  <div role="home-featured">
+    <div
+      data-source="$endpoint2/releases?limit=15&type=Single&type=Album&type=EP"
+      data-process="processHomeFeatured">
+    </div>
+  </div>
+  <div data-source="https://shop.monstercat.com/collections/website-featured/products.json"
+     data-no-cors="true"
+     data-process="processHomeMerch"
+    ></div>
+  <div data-source="$endpoint2/releases?types=Podcast&limit=8" data-process="processPodcasts"></div>
+  {{>spotify-and-social}}
 </script>
 
 <script type="text/html"
-        data-template="home-featured"
-        data-partial>
-    {{#error}}
-    <p>{{message}}</p>
-    {{/error}}
-    {{#if loading}}
-        {{>loading-view-black}}
-    {{else}}
-        {{#data}}
-        <div class="top-banner">
-            {{#featured}}
-            <div class="banner banner--scaled">
-                <div class="banner" style='background-image:url("{{coverBig}}")'>
-                    <div class="banner-shade"></div>
-                    <div class="gradient"></div>
-                </div>
-            </div>
-            <div class="container flex">
-                <div class="col-xs-12 col-sm-12 col-md-4 featured-artwork">
-                    <a class="silent" href="/release/{{catalogId}}">
-                        <img class="shadow responsive" src="{{coverBigFallback}}"/>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-8 cl-white featured-details">
-                    {{#inEarlyAccess}}
-                    <span class="tag">Early Access</span>
-                    {{/inEarlyAccess}}
-                    {{^inEarlyAccess}}
-                    <span class="tag">Featured</span>
-                    {{/inEarlyAccess}}
-                    <a class="silent no-hover" href="/release/{{catalogId}}">
-                        <h1 class="title uppercase">{{title}}</h1>
-                    </a>
-                    <h3>By {{artists}}</h3>
-                    <p class="date">
-                        {{>album-release-dates}}
-                    </p>
-                    {{#if inEarlyAccess}}
-                        {{#if ../hasGoldAccess}}
-                            {{>home-play-button}}
-                            <a href="/release/{{catalogId}}" class="button button--cta button--icon button--home-view">
-                                View
-                                <i class="fa fa-chevron-right"></i>
-                            </a>
-                            <div class="early-access-message cl-white">
-                                {{goldThankYou}}
-                            </div>
-                        {{else}}
-                        <a href="/gold/buy" data-continue-url="/release/{{catalogId}}" data-continue-label="{{title}} by {{artists}}" class="button button--cta button--icon">
-                            Get Gold to Listen Early
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
-                        <p class="early-access-message cl-white">
-                            <a href="/gold">Monstercat Gold</a> members can stream releases 20hrs early.
-                        </p>
-                        {{/if}}
-                    {{else}}
-                        {{>home-play-button}}
-                        <a href="/release/{{catalogId}}" class="button button--cta button--icon button--home-view">
-                            View
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
-                    {{/if}}
-                </div>
-            </div>
-            {{/featured}}
-            <div class="container latest cl-white">
-                <header class="flex top-cta">
-                    <div class="col-xs-6">
-                        <h2 class="line-top">New Releases</h2>
-                    </div>
-                    <div class="col-xs-6 text right">
-                        <a href="/music" class="button button--icon button--transparent">
-                            View all
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </header>
-                <ul class="art-list art-list--full-width">
-                    {{#releases}}
-                        {{>release-list-item}}
-                    {{/releases}}
-                </ul>
-            </div>
+    data-template="home-featured"
+    data-partial>
+  {{#error}}
+  <p>{{message}}</p>
+  {{/error}}
+  {{#if loading}}
+    {{>loading-view-black}}
+  {{else}}
+    {{#data}}
+    <div class="top-banner">
+      {{#featured}}
+      <div class="banner banner--scaled">
+        <div class="banner" style='background-image:url("{{coverBig}}")'>
+          <div class="banner-shade"></div>
+          <div class="gradient"></div>
         </div>
-        <div class="hero cl-white">
-            <div class="banner" style="background-image:url(/img/banner.jpg)">
-                <div class="banner-shade"></div>
-                <div class="gradient gradient--inverted"></div>
-            </div>
-            <div class="container">
-                <h1 class="line-bottom">Empowering a creative and passionate community through innovation.</h1>
-            </div>
+      </div>
+      <div class="container flex">
+        <div class="col-xs-12 col-sm-12 col-md-4 featured-artwork">
+          <a class="silent" href="/release/{{catalogId}}">
+            <img class="shadow responsive" src="{{coverBigFallback}}"/>
+          </a>
         </div>
-        {{/data}}
-    {{/if}}
+        <div class="col-xs-12 col-sm-12 col-md-8 cl-white featured-details">
+          {{#inEarlyAccess}}
+          <span class="tag">Early Access</span>
+          {{/inEarlyAccess}}
+          {{^inEarlyAccess}}
+          <span class="tag">Featured</span>
+          {{/inEarlyAccess}}
+          <a class="silent no-hover" href="/release/{{catalogId}}">
+            <h1 class="title uppercase">{{title}}</h1>
+          </a>
+          <h3>By {{artists}}</h3>
+          <p class="date">
+            {{>album-release-dates}}
+          </p>
+          {{#if inEarlyAccess}}
+            {{#if ../hasGoldAccess}}
+              {{>home-play-button}}
+              <a href="/release/{{catalogId}}" class="button button--cta button--icon button--home-view">
+                View
+                <i class="fa fa-chevron-right"></i>
+              </a>
+              <div class="early-access-message cl-white">
+                {{goldThankYou}}
+              </div>
+            {{else}}
+            <a href="/gold/buy" data-continue-url="/release/{{catalogId}}" data-continue-label="{{title}} by {{artists}}" class="button button--cta button--icon">
+              Get Gold to Listen Early
+              <i class="fa fa-chevron-right"></i>
+            </a>
+            <p class="early-access-message cl-white">
+              <a href="/gold">Monstercat Gold</a> members can stream releases 20hrs early.
+            </p>
+            {{/if}}
+          {{else}}
+            {{>home-play-button}}
+            <a href="/release/{{catalogId}}" class="button button--cta button--icon button--home-view">
+              View
+              <i class="fa fa-chevron-right"></i>
+            </a>
+          {{/if}}
+        </div>
+      </div>
+      {{/featured}}
+      <div class="container latest cl-white">
+        <header class="flex top-cta">
+          <div class="col-xs-6">
+            <h2 class="line-top">New Releases</h2>
+          </div>
+          <div class="col-xs-6 text right">
+            <a href="/music" class="button button--icon button--transparent">
+              View all
+              <i class="fa fa-chevron-right"></i>
+            </a>
+          </div>
+        </header>
+        <ul class="art-list art-list--full-width">
+          {{#releases}}
+            {{>release-list-item}}
+          {{/releases}}
+        </ul>
+      </div>
+    </div>
+    <div class="hero cl-white">
+      <div class="banner" style="background-image:url(/img/banner.jpg)">
+        <div class="banner-shade"></div>
+        <div class="gradient gradient--inverted"></div>
+      </div>
+      <div class="container">
+        <h1 class="line-bottom">Empowering a creative and passionate community through innovation.</h1>
+      </div>
+    </div>
+    {{/data}}
+  {{/if}}
 </script>
 
 <script type="text/html"
-        data-template="home-page-tracks"
-        data-process="processHomeTracks"
-        >
+    data-template="home-page-tracks"
+    data-process="processHomeTracks"
+    >
 {{#data}}
-    {{#each results}}
-        {{>play-song}}
-    {{/each}}
+  {{#each results}}
+    {{>play-song}}
+  {{/each}}
 {{/data}}
 </script>
 
 <script type="text/html"
-        data-template="home-play-button"
-        data-partial
+    data-template="home-play-button"
+    data-partial
 >
 <input type="hidden" role="release-id" release-id="{{_id}}" />
 <div style="display: none;"
-    data-source="$endpoint2/catalog/browse?type=Single&type=EP&type=Album"
-    data-process="processHomeTracks"
-    >
+  data-source="$endpoint2/catalog/browse?type=Single&type=EP&type=Album"
+  data-process="processHomeTracks"
+  >
 </div>
 <a class="button button--cta button--icon button--icon button--home-play {{#inEarlyAccess}}early-access{{/inEarlyAccess}}"
-        onclick="playSongs(event)"
-        role="play-release"
-        data-release-id="{{_id}}">
-    <span class="play"><i class="fa fa-play"></i> <span>{{#inEarlyAccess}}Listen Early{{/inEarlyAccess}}{{^inEarlyAccess}}Play{{/inEarlyAccess}}</span></span>
-    <span class="pause"><i class="fa fa-pause"></i> <span>Pause</span></span>
+    onclick="playSongs(event)"
+    role="play-release"
+    data-release-id="{{_id}}">
+  <span class="play"><i class="fa fa-play"></i> <span>{{#inEarlyAccess}}Listen Early{{/inEarlyAccess}}{{^inEarlyAccess}}Play{{/inEarlyAccess}}</span></span>
+  <span class="pause"><i class="fa fa-pause"></i> <span>Pause</span></span>
 </a>
 </script>
 
 
 <script type="text/html"
-        data-partial
-        data-template='podcast-list'
-        >
-        <ul class="art-list art-list--full-width">
-               {{#each podcasts}}
-               <li>
-                   <a class="silent" href="/release/{{catalogId}}" title="{{title}}">
-                       <div class="image-wrapper">
-                           <img src="/img/artwork.jpg" class="preload" />
-                           <img src="{{coverMediumFallback}}"/>
-                       </div>
-                   </a>
-               </li>
-               {{/each}}
-           </ul>
+    data-partial
+    data-template='podcast-list'
+    >
+    <ul class="art-list art-list--full-width">
+         {{#each podcasts}}
+         <li>
+           <a class="silent" href="/release/{{catalogId}}" title="{{title}}">
+             <div class="image-wrapper">
+               <img src="/img/artwork.jpg" class="preload" />
+               <img src="{{coverMediumFallback}}"/>
+             </div>
+           </a>
+         </li>
+         {{/each}}
+       </ul>
 </script>
 
 <script type="text/html"
-        data-template="home-podcast"
-        data-process="processPodcasts"
-        >
-    {{#data}}
-    <section class="podcast">
-        <div class="container latest">
-            <header class="flex top-cta">
-                <div class="col-xs-6">
-                    <h2 class="line-top">Call of the Wild Radio Show</h2>
-                </div>
-                <div class="col-xs-6 text right">
-                    <a href="/cotw" class="button button--black button--icon button--transparent">
-                        View all
-                        <i class="fa fa-chevron-right"></i>
-                    </a>
-                </div>
-            </header>
-            {{>podcast-list}}
-        
+    data-template="home-podcast"
+    data-process="processPodcasts"
+    >
+  {{#data}}
+  <section class="podcast">
+    <div class="container latest">
+      <header class="flex top-cta">
+        <div class="col-xs-6">
+          <h2 class="line-top">Weekly Radio Shows</h2>
         </div>
-    </section>
-    {{/data}}
+        <div class="col-xs-6 text right">
+          <a href="/cotw" class="button button--black button--icon button--transparent">
+            View all COTW
+            <i class="fa fa-chevron-right"></i>
+          </a>
+          <a href="/mss" class="button button--black button--icon button--transparent">
+            View all MSS
+            <i class="fa fa-chevron-right"></i>
+          </a>
+        </div>
+      </header>
+      {{>podcast-list}}
+    
+    </div>
+  </section>
+  {{/data}}
 </script>
 
 <script type="text/html"
-        data-template="home-merch"
-        data-process="processHomeMerch"
-        data-partial
-        >
-    {{#if loading}}
-        {{>loading-view}}
+    data-template="home-merch"
+    data-process="processHomeMerch"
+    data-partial
+    >
+  {{#if loading}}
+    {{>loading-view}}
+  {{else}}
+    {{#if error}}
+      <p>{{message}}</p>
     {{else}}
-        {{#if error}}
-            <p>{{message}}</p>
-        {{else}}
-            <section class="v-padding merch">
-                <div class="container latest">
-                    <header class="flex top-cta">
-                        <div class="col-xs-6">
-                            <h2 class="line-top">Featured Apparel</h2>
-                        </div>
-                        <div class="col-xs-6 text right">
-                            <a href="https://shop.monstercat.com" class="button button--black button--icon button--transparent">
-                                View all
-                                <i class="fa fa-chevron-right"></i>
-                            </a>
-                        </div>
-                    </header>
-                    {{> merch-list}}
-                </div>
-            </section>
-        {{/if}}
+      <section class="v-padding merch">
+        <div class="container latest">
+          <header class="flex top-cta">
+            <div class="col-xs-6">
+              <h2 class="line-top">Featured Apparel</h2>
+            </div>
+            <div class="col-xs-6 text right">
+              <a href="https://shop.monstercat.com" class="button button--black button--icon button--transparent">
+                View all
+                <i class="fa fa-chevron-right"></i>
+              </a>
+            </div>
+          </header>
+          {{> merch-list}}
+        </div>
+      </section>
     {{/if}}
+  {{/if}}
 </script>
 
 <script type="text/html"
-        data-template="merch-list"
-        data-partial
-        >
+    data-template="merch-list"
+    data-partial
+    >
 <ul class="art-list art-list--full-width">
-    {{#products}}<li>
-        <a class="silent" href="https://shop.monstercat.com/products/{{handle}}{{utm}}" ab-test="{{activeTest}}" kpi="merch-product" target="_BLANK" title="{{title}}">
-            <div class="image-wrapper">
-                <img src="/img/artwork-merch.jpg" class="preload" />
-                <img src="{{ images.0.src }}"/>
-            </div>
-            <label class="title one-line-ellipsis">{{title}}</label>
-        </a>
-    </li>{{/products}}
+  {{#products}}<li>
+    <a class="silent" href="https://shop.monstercat.com/products/{{handle}}{{utm}}" ab-test="{{activeTest}}" kpi="merch-product" target="_BLANK" title="{{title}}">
+      <div class="image-wrapper">
+        <img src="/img/artwork-merch.jpg" class="preload" />
+        <img src="{{ images.0.src }}"/>
+      </div>
+      <label class="title one-line-ellipsis">{{title}}</label>
+    </a>
+  </li>{{/products}}
 </ul>
 </script>
 
 <script type="text/html"
-        data-template="blog-stories"
-        transform="transformBlog">
-    {{#loading}}
-    {{>loading-view}}
-    {{/loading}}
-    {{#error}}
-    <p>{{message}}</p>
-    {{/error}}
-    {{#data}}
-    <section class="v-padding blog">
-        <div class="container">
-            <header class="flex top-cta">
-                <div class="col-xs-6">
-                    <h2 class="line-top">New Posts</h2>
-                </div>
-                <div class="col-xs-6 text right">
-                    <a href="/news" class="button button--black button--icon button--transparent">
-                        View all
-                        <i class="fa fa-chevron-right"></i>
-                    </a>
-                </div>
-            </header>
+    data-template="blog-stories"
+    transform="transformBlog">
+  {{#loading}}
+  {{>loading-view}}
+  {{/loading}}
+  {{#error}}
+  <p>{{message}}</p>
+  {{/error}}
+  {{#data}}
+  <section class="v-padding blog">
+    <div class="container">
+      <header class="flex top-cta">
+        <div class="col-xs-6">
+          <h2 class="line-top">New Posts</h2>
         </div>
-        {{#results}}
-            {{>blog-article}}
-        {{/results}}
-    </section>
-    {{/data}}
+        <div class="col-xs-6 text right">
+          <a href="/news" class="button button--black button--icon button--transparent">
+            View all
+            <i class="fa fa-chevron-right"></i>
+          </a>
+        </div>
+      </header>
+    </div>
+    {{#results}}
+      {{>blog-article}}
+    {{/results}}
+  </section>
+  {{/data}}
 </script>
 
 <script type="text/html"
-        data-template="spotify-and-social"
-        data-partial
-        >
-    <div class="social">
-        <div class="text cl-white spotify-wrapper clearfix">
-            <div class="container">
-                <header class="flex top-cta">
-                    <div class="col-xs-6">
-                        <h2 class="line-top">Listen on Spotify</h2>
-                    </div>
-                    <div class="col-xs-6 text right">
-                        <a href="https://open.spotify.com/user/monstercatmedia" class="button button--black button--icon button--transparent" target="_blank">
-                            Our Profile
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </header>
-                <ul class="art-list art-list--full-width art-list--xl">
-                    <li>
-                        <a class="silent" href="https://open.spotify.com/user/monstercatmedia/playlist/42Jx4YFqtHWkQtgZAouE6B" target="_BLANK">
-                            <div class="image-wrapper">
-                                <img src="https://assets.monstercat.com/spotify-pop-dance.jpg?image_width=512" class="preload" />
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="silent" href="https://open.spotify.com/user/monstercatmedia/playlist/0yhoHnC8I50mRCJn5bGVBa" target="_BLANK">
-                            <div class="image-wrapper">
-                                <img src="https://assets.monstercat.com/spotify-gaming.jpg?image_width=512" class="preload"/>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="silent" href="https://open.spotify.com/user/monstercatmedia/playlist/5DCNkb3XkXyhTtc93qwRHL" target="_BLANK">
-                            <div class="image-wrapper">
-                                <img src="https://assets.monstercat.com/spotify-workout.jpg?image_width=512" class="preload"/>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="silent" href="https://open.spotify.com/user/monstercatmedia/playlist/4rIPUdx0APV1euj24QR3uN?si=tLFiG0nOTUq_DTAX5NESqw" target="_BLANK">
-                            <div class="image-wrapper">
-                                <img src="https://assets.monstercat.com/spotify-feel-good.jpg?image_width=512" class="preload"/>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    data-template="spotify-and-social"
+    data-partial
+    >
+  <div class="social">
+    <div class="text cl-white spotify-wrapper clearfix">
+      <div class="container">
+        <header class="flex top-cta">
+          <div class="col-xs-6">
+            <h2 class="line-top">Listen on Spotify</h2>
+          </div>
+          <div class="col-xs-6 text right">
+            <a href="https://open.spotify.com/user/monstercatmedia" class="button button--black button--icon button--transparent" target="_blank">
+              Our Profile
+              <i class="fa fa-chevron-right"></i>
+            </a>
+          </div>
+        </header>
+        <ul class="art-list art-list--full-width art-list--xl">
+          <li>
+            <a class="silent" href="https://open.spotify.com/user/monstercatmedia/playlist/42Jx4YFqtHWkQtgZAouE6B" target="_BLANK">
+              <div class="image-wrapper">
+                <img src="https://assets.monstercat.com/spotify-pop-dance.jpg?image_width=512" class="preload" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="silent" href="https://open.spotify.com/user/monstercatmedia/playlist/0yhoHnC8I50mRCJn5bGVBa" target="_BLANK">
+              <div class="image-wrapper">
+                <img src="https://assets.monstercat.com/spotify-gaming.jpg?image_width=512" class="preload"/>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="silent" href="https://open.spotify.com/user/monstercatmedia/playlist/5DCNkb3XkXyhTtc93qwRHL" target="_BLANK">
+              <div class="image-wrapper">
+                <img src="https://assets.monstercat.com/spotify-workout.jpg?image_width=512" class="preload"/>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="silent" href="https://open.spotify.com/user/monstercatmedia/playlist/4rIPUdx0APV1euj24QR3uN?si=tLFiG0nOTUq_DTAX5NESqw" target="_BLANK">
+              <div class="image-wrapper">
+                <img src="https://assets.monstercat.com/spotify-feel-good.jpg?image_width=512" class="preload"/>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 </script>
 <script type="text/html"
         data-route="^event\/(.*)"
@@ -5187,23 +5516,27 @@ data-template="9YearAnniversary"
         </div>
     </script>
     
-    
     <script type="text/html"
             data-template="shop-banner"
     >
         <div id="notice--shop">
             <div class="banner-container container">
-                <a href="{{url}}" target="_blank">
-                    <div class="desktop">
-                        <div class="banner-center">
-                            <img src="https://assets.monstercat.com/b/bd2020/text.png?image_width=1920" alt="{{label}}">
-                        </div>
+                <div class="desktop">
+                    <div class="banner-center">
+                        <a href="{{url}}" target="_blank">
+                            <img src="https://assets.monstercat.com/b/kaskade/desktop.png" alt="{{label}}">
+                        </a>
+                        <button
+                        onclick="hideShopBanner()"
+                        class="button button--cta button--transparent ml-3 p-0">
+                            <i class="fa fa-close"></i>
+                        </button>
                     </div>
-                </a>
+                </div>
                 
                 <div class="mobile">
                     <a href="{{url}}" target="_blank">
-                        <img src="https://assets.monstercat.com/b/bd2020/text-mobile.png?image_width=1080" alt="{{label}}">
+                        <img src="https://assets.monstercat.com/b/kaskade/mobile-banner.png" alt="{{label}}">
                     </a>
                 </div>
             </div>
@@ -5221,7 +5554,275 @@ data-template="9YearAnniversary"
             </div>
         </a>
     </script>
-    <script type="text/html"
+    
+<script type="text/html"
+    data-route="^(?:mss|MSS)\/?$"
+    data-process="processMSSPage"
+    data-template="mss-page"
+>
+<div class="radio-show">
+    {{#episodes}}
+    {{#if loading}}
+    {{>loading-view-black}}
+    {{else}}
+    {{#data}}
+    {{#latest}}
+    <div class="top-banner">
+      <div class="banner">
+        <div class="banner" style="background-image:url(https://assets.monstercat.com/podcast/mss/mss-background.png); background-position: center center;">
+          <div class="banner-shade"></div>
+          <div class="gradient"></div>
+        </div>
+      </div>
+      <div class="container flex">
+        <div class="col-xs-12 col-sm-12 col-md-3 featured-artwork">
+          <div class="position-relative image-wrapper">
+            <img src="/img/artwork.jpg" class="preload responsive" />
+            <img class="shadow responsive album-cover" src="{{coverSmall}}">
+            {{>play-podcast}}
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-9 cl-white featured-details featured-details--event">
+          <span class="tag">Latest Episode</span>
+          <a class="silent no-hover" href="/release/{{release.catalogId}}" title="{{title}}">
+            <h1 class="title uppercase">
+              {{title}}
+            </h1>
+          </a>
+          <p class="date">
+            Released {{releaseDate.month}} {{releaseDate.day}}, {{releaseDate.year}}
+          </p>
+          {{#streamable}}
+          <ul class="podcast-links mt-2">
+            {{#each podcastLinks}}
+            <li>
+              <a href="{{url}}" class="" target="_blank">
+                <span class="icon-expander-text"></span>
+                <i class="fa fa-fw fa-{{platform}}"></i>
+              </a>
+            </li>
+            {{/each}}
+            </li>
+            {{/streamable}}
+        </div>
+      </div>
+    </div>
+    {{/latest}}
+  </div>
+  <div class="container">
+    <div class="latest-podcast panel">
+      <header class="flex top-cta">
+        <div class="col-xs-6">
+          <h2>Past Episodes</h2>
+        </div>
+        <div class="col-xs-6 text right">
+          <a href="/mss/episodes" class="button button--black button--icon button--transparent">
+            View all
+            <i class="fa fa-chevron-right"></i>
+          </a>
+        </div>
+      </header>
+      {{^list}}
+        <p>No past episodes available.</p>
+      {{/list}}
+      <ul class="art-list art-list--full-width">
+        {{#each list}}
+        <li>
+          <div class="image-wrapper">
+            <img src="/img/artwork.jpg" class="preload" />
+            <img src="{{coverMedium}}"/>
+            {{>play-podcast}}
+          </div>
+          <a class="silent" href="/release/{{release.catalogId}}" title="{{title}}">
+            <label class="title three-line-ellipsis">{{title}}</label>
+          </a>
+
+          <ul class="podcast-links">
+            {{#each ../links}}
+            <li>
+              <a href="{{url}}" target="_blank">
+                <span class="icon-expander-text"></span>
+                <i class="fa fa-fw fa-{{platform}}"></i>
+              </a>
+            </li>
+            {{/each}}
+          </ul>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/data}}
+    {{/if}}
+    {{/episodes}}
+  </div>
+  {{#podcast}}
+  {{#if loading}}
+  {{>loading-view}}
+  {{else}}
+  {{#data.Podcast}}
+  <div class="radio-show-about">
+    <div class="top-banner">
+      <div class="banner">
+        <div class="banner" style="background-image:url(https://assets.monstercat.com/podcast/mss/mss-background.png); background-position: center bottom;">
+          <div class="banner-shade"></div>
+          <div class="gradient"></div>
+        </div>
+      </div>
+      <div class="container flex">
+        <div class="col-xs-12 col-sm-12 col-md-4 cl-white text-center">
+          <h2>{{Title}}</h2>
+          <ul class="podcast-links mt-2">
+            {{#each Links}}
+            <li>
+              <a href="{{url}}" target="_blank" title="{{label}}">
+                <span class="icon-expander-text"></span>
+                <i class="fa fa-fw fa-{{class}}"></i>
+              </a>
+              <div class="hover-title">{{label}}</div>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8 cl-white radio-show-description">
+          {{{Description}}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/data.Podcast}}
+
+  {{#data}}
+  <div class="stations container panel mt-3">
+    <h2>Radio Stations</h2>
+    {{>podcast-station}}
+  </div>
+  {{/data}}
+  {{/if}}
+  {{/podcast}}
+
+</script>
+
+<script type="text/html"
+    data-partial
+    data-template="podcast-station"
+>
+  <ul class="podcast-station">
+    {{#each Stations}}
+    <li>
+      <div class="logo">
+        <a href="{{WebsiteURL}}" target="_BLANK"> <img src="{{ImageURL}}" alt="{{Title}}"/></a>
+      </div>
+      <div class="details">
+        {{#if loading}}
+        {{loading-placeholders "territory"}}
+        {{loading-placeholders "airtime"}}
+        {{else}}
+        <p>{{TerritoryName}} <br> {{LocalAirTimeDesc}}</p>
+        {{/if}}
+      </div>
+
+    </li>
+    {{/each}}
+  </ul>
+</script>
+
+<script type="text/html"
+    data-route="^(?:mss|MSS)\/episodes"
+    data-process="processMSSEpisodesPage"
+    data-template="mss-episodes"
+>
+  <div class="radio-show-episodes container">
+    <header class="flex top-title">
+      <div class="col-xs-6">
+        <h1>Monstercat Silk Showcase Episodes</h1>
+      </div>
+      <div class="col-xs-6 text right">
+        <a href="/mss" class="button button--black button--icon button--transparent">
+          <i class="fa fa-chevron-left"></i>
+          Back to Monstercat Silk Showcase
+        </a>
+      </div>
+    </header>
+    <div class="panel">
+      {{#episodes}}
+      {{#if loading}}
+      {{>loading-view}}
+      {{else}}
+      {{^data.episodes}}
+        <p>No past episodes available.</p>
+      {{/data.episodes}}
+      <ul class="art-list art-list--full-width">
+        {{#each data.episodes}}
+        <li>
+          <div class="image-wrapper">
+            <img src="/img/artwork.jpg" class="preload" />
+            <img src="{{coverMedium}}"/>
+            {{>play-podcast}}
+          </div>
+          <a class="silent" href="/release/{{release.catalogId}}" title="{{title}}">
+            <label class="title three-line-ellipsis">{{title}}</label>
+          </a>
+        </li>
+        {{/each}}
+      </ul>
+      {{#data.pagination}}
+      <div class="podcast-pagination">
+        {{>podcast-pagination-link url=first.url enabled=first.enabled label="First"}}
+        {{>podcast-pagination-link url=previous.url enabled=previous.enabled label="Previous"}}
+        <span>{{showingFrom}} - {{showingTo}} of {{total}}</span>
+        {{>podcast-pagination-link url=next.url enabled=next.enabled label="Next"}}
+        {{>podcast-pagination-link url=last.url enabled=last.enabled label="Last"}}
+      </div>
+      {{/data.pagination}}
+      {{/if}}
+      {{/episodes}}
+    </div>
+  </div>
+</script>
+
+<script type="text/html"
+    data-partial
+    data-template="podcast-pagination-link">
+
+
+  {{#unless enabled}}
+  <span class="muted">{{label}}</span>
+  {{else}}
+  <span><a href="{{url}}">{{label}}</a></span>
+  {{/unless}}
+</script>
+
+<script type="text/html"
+    data-partial
+    data-template="play-podcast">
+  {{#streamable}}
+  <button class="button--podcast"
+      onclick="playSong(event, this)"
+      role="play-song"
+      data-play-link="{{playUrl}}"
+      data-title="{{title}}"
+      data-artists-title="{{artistsTitle}}"
+      {{#if artists.length}}
+      data-artist="{{#each artists}}{{name}}, {{/each}}"
+      {{/if}}
+  data-index="{{index}}"
+  data-track-id="{{id}}"
+  {{#if activeTest}}
+  data-ab-test="{{activeTest}}"
+  data-kpi="play-track"
+  {{/if}}
+  {{#if licensable}}
+  data-licensable
+  {{/if}}
+  {{#if playlistId}}
+  data-playlist-id="{{playlistId}}"
+  {{/if}}
+  data-release-id="{{releaseId}}">
+  <i class="fa fa-play inactive"></i>
+  <i class="fa fa-pause active"></i>
+  </button>
+  {{/streamable}}
+</script><script type="text/html"
         data-template="release-art-modal">
     <div class="modal modal--artwork">
         <div class="pointer-events">
@@ -5657,7 +6258,8 @@ data-template="9YearAnniversary"
   data-process="processGoldBuyPage"
   data-template="gold-buy-page"
 >
-
+{{#if steps.2.active}}
+{{/if}}
   <div class="container--buy-gold">
     <div class="top-banner">
       <div class="banner">
@@ -5799,10 +6401,10 @@ data-template="9YearAnniversary"
       <div class="container flex fade-in">
         <div class="cl-white">
           <img src="/img/gold-logo-250.png" width="180" alt="gold-logo" class="mb-4">
-          <h1 class="page-title">The Soundtrack to <br> Your Creative Content</h1>
+          <h1 class="page-title">MUSIC FOR CREATORS</h1>
           <div class="mt-4 mb-4">
             <div class="mt-2 mb-2 feature-info d-flex align-item-center">
-              <img class="mr-2" src="/img/gold-landing/music.png" alt="music icon"><p> Download and stream thousands of Monstercat songs from your favourite artists</p>
+              <img class="mr-2" src="/img/gold-landing/music.png" alt="music icon"><p> Download and stream thousands of Monstercat songs from your favourite artists </strong></p>
             </div>
             <div class="mt-2 mb-2 feature-info d-flex align-item-center">
               <img class="mr-2" src="/img/gold-landing/streamer.png" alt="streamer-icon"> <p> Add music to your Twitch and YouTube livestreams and videos, with no fear of DMCA claims or strikes</p>
@@ -5811,16 +6413,21 @@ data-template="9YearAnniversary"
               <img class="mr-2" src="/img/gold-landing/gift.png" alt="perks icon"> <p>Enjoy additional perks including early listening access, shop discounts, exclusive community features, and more</p>
             </div>
           </div>
-          <a href="/gold/buy" class="button button--mcatgold-dark mr-1">
-            Get Gold - $5/mo
+          <a href="/gold/buy" class="button button--mcatgold-dark mb-2 " style='max-width: 100%; width: 250px; text-align: center;'>
+            Get Gold
           </a>
+          <p class="subscription-price">
+            $7.49 <small>/ month</small> &nbsp; &nbsp; &nbsp; $75 <small>/ year</small>
+          </p>
           <!-- <button onclick="revealVideo('video','vimeo')" class="button button--white-outline">
             Watch Video
           </button> -->
           <div class="mt-2">
-            <a href="/sync" style="text-decoration: none;">
-              Need a Commercial License?
-            </a>
+            <p><small>
+              Monstercat Gold is for individual creators. If your business or team wants music, you need a 
+              <a href="/sync">Commercial License</a>.
+            </small>
+            </p>
           </div>
         </div>
       </div>
@@ -5843,8 +6450,7 @@ data-template="9YearAnniversary"
                 <div class="benefit">
                   <p class="header">Content Creator Safe Music</p>
                   <p class="text">
-                    Content creator safe options, even if you use multiple channels!<br />
-                    Don't fear DMCA strikes, you can monetize your content claim-free on Twitch and YouTube. Learn more from our blog <a href="/blog/2020-06-11/monstercat-gold-content-creator-licenses" target="_blank">here</a>.
+                      You are safe from DMCA strikes on Twitch or YouTube, and you can monetize multiple channels, claim free, while subscribed to Monstercat Gold. This <a href="/blog/2020-06-11/monstercat-gold-content-creator-licenses" target="_blank">blog post</a> explains more about DMCA strikes and why content creators love us.
                   </p>
                 </div>
                 <div class="benefit">
@@ -5856,7 +6462,7 @@ data-template="9YearAnniversary"
               </div>
             </div>
             <div class="col-md-6">
-              <img src="https://assets.monstercat.com/gold-assets/gold-player-preview.png?image_width=1024" alt="Monstercat Player" class="responsive" />
+              <img src="https://assets.monstercat.com/gold-assets/gold-player-preview-2.png?image_width=1024" alt="Monstercat Player" class="responsive" />
             </div>
           </div>
           <div class="flex mt-4">
@@ -5882,9 +6488,11 @@ data-template="9YearAnniversary"
               <img src="https://assets.monstercat.com/gold-assets/gold-promo.png?image_width=1024" alt="Gold Promo" class="responsive" />
             </div>
           </div>
-          <a href="/gold/buy" class="button button--mcatgold-dark mt-4">
-            Get Gold - $5/mo
-          </a>
+          <div class="text center mt-4">
+            <a href="/gold/buy" class="button button--mcatgold-dark" style='max-width: 100%; width: 250px; text-align: center;'>
+              Get Gold
+            </a>
+          </div>
         </section>
 
         <section id="artist-carousel" class="artists slide-down">
@@ -6045,7 +6653,7 @@ data-template="9YearAnniversary"
 
       <button class="accordion">Can I purchase a license for my music promotion channel?</button>
       <div class="accordionpanel">
-        <p>Music promotion channels of any sort are not eligible to purchase our license, but please <a href="/contact-us" target="_blank">contact us</a> to ask if you qualify for complimentary whitelisting!</p>
+        <p>Music promotion channels of any sort are not eligible to use Monstercat Gold. If you would like to promote Monstercat music on your channel please <a href="/contact-us" target="_blank">contact us</a> and request that we add your channel to our allowlist for promotional purposes.</p>
       </div>
 
       <button class="accordion">If I've just purchased a license, will copyright claims on my previous videos be automatically removed?</button>
@@ -6074,16 +6682,16 @@ data-template="9YearAnniversary"
         <p>Unfortunately, Monstercat Shop Gift Cards cannot be used towards the purchasing of a Gold subscription.</p>
       </div>
 
-      <button class="accordion">How long will it take for my Channel to be whitelisted?</button>
+      <button class="accordion">How long will it take for my Channel to be added to the allowlist?</button>
       <div class="accordionpanel">
         <p>Once you subscribe to Gold and enter your channel ID, you should be good to go almost immediately!</p>
       </div>
 
       <button class="accordion">What if a platform I use is not listed?</button>
       <div class="accordionpanel">
-        <p>Monstercat whitelist licenses for content creators are currently available for YouTube and Twitch.
-            If you would like a whitelist license for another platform, let us know below and we can contact you when they become available.</p>
-        <p class="pt-0">Submit your request <a href="/licensing/other-platforms" target="_blank">here</a>.</p>
+        <p>Monstercat Gold only supports content on YouTube and Twitch. If you would like to feature Monstercat music in a video on another platform or website, you will need a Commercial Sync License. Email <a href="mailto:licensing@monstercat.com">licensing@monstercat.com</a> and we can help you out, often within 48 hours. <br><br>
+          If you'd like Monstercat Gold to support content on other platforms, please submit your feedback <a href="/licensing/other-platforms" target="_blank">here</a>. We'll see what we can do :)
+        </p>
       </div>
     </div>
   </div>
@@ -6123,6 +6731,11 @@ data-template="9YearAnniversary"
         <p>In the “Gold” tab under “Manage Subscription” you can add new payment options under “My Payment Accounts” and link new payment options to your Gold subscription.</p>
       </div>
 
+      <button class="accordion">How do I change my plan? (From monthly to annual, or annual to monthly)</button>
+      <div class="accordionpanel">
+        <p>To change your plan go to <a href="https://monstercat.com/account/services">monstercat.com/account/services</a>. Within the Xsolla payment section click on "Manage Subscriptions", then under "Your Subscriptions" click on "Details" of your current subscription. Underneath the "Subscription Details" section there is an option to "Change Plan". If you do not see this option it is because you may have already changed your plan in the same day.</p>
+      </div>
+
       <button class="accordion">How do I cancel my license/subscription?</button>
       <div class="accordionpanel">
         <p>You can cancel your subscription by signing in to your Monstercat.com account, going to the "Gold" tab up at the top, then click on "MANAGE SUBSCRIPTION"</p>
@@ -6130,7 +6743,7 @@ data-template="9YearAnniversary"
 
       <button class="accordion">What happens to my old content if I unsubscribe?</button>
       <div class="accordionpanel">
-        <p>We're sorry to see you go! Any content you uploaded during your Gold subscription will continue to exist claim free. However, any new content uploaded after your subscription ends will not have the same permissions.</p>
+        <p>We’re sorry to see you go! Content published during the time of your subscription may continue to exist Claim Free (as defined in our  <a href="/terms-of-service">Terms of Service</a>) so long as you adhere to all Monstercat’s prescribed music crediting requirements. Content published after the final billing cycle of your subscription ends will cease to be on a Claim Free basis.</p>
       </div>
 
       <button class="accordion">How do I get my shop discount/reddit flair/join the Discord server?</button>
@@ -6141,6 +6754,27 @@ data-template="9YearAnniversary"
       <button class="accordion"> What should I do if I am unhappy with my Monstercat Gold service? </button>
       <div class="accordionpanel">
         <p>Please reach out to <a href="mailto:support@monstercat.com">support@monstercat.com</a> so we can find a solution that works for you!</p>
+      </div>
+      
+      <button class="accordion"> How do I learn about new Gold features or changes to Gold? </button>
+      <div class="accordionpanel">
+        {{#if loggedIn}}
+        <p>Update your email settings to receive <strong>Gold updates and features</strong>:</p>
+          <form onsubmit="submitSaveSubscriptions(event)">
+            <div data-process="processAccountEmailOptinsWithCheck" data-source>
+                <div class="loading" style="justify-content: flex-start; min-height: auto">
+                    <span class="loader"></span>
+                </div>
+            </div>
+            <button class="actionier mt-3 button button-sm button--mcatgold mb-3">
+                <span class="actionier-off">Save Subscriptions</span>
+                <span class="actionier-on">Saving...</span>
+            </button>
+          </form>
+         {{else}}
+         <p>
+            <a href="/signin?continueLabel=Your%20Account&continueUrl=%2Faccount" target="_blank">Sign in</a> and update your email settings to receive <strong>Gold updates and features</strong>.</p>
+        {{/if}}
       </div>
     </div>
   </div>
@@ -8347,7 +8981,7 @@ data-template="9YearAnniversary"
         data-partial
         data-template="search-artists-list"
         >
-    <ul class="art-list art-list--full-width">
+    <ul class="art-list art-list--full-width search-artists-list">
         {{#each results}}
         <li>
             <a class="silent" href="/artist/{{uri}}" title="{{name}}">
@@ -8641,268 +9275,6 @@ data-template="9YearAnniversary"
         <a href="/vinyl-updates.html" target="_blank" class="button button-bestof mt-4">Vinyl Launch Updates</a>
 </script>
 <script type="text/html"
-        data-route="^(?:podcast|cotw|COTW)\/?$"
-        data-process="processCOTWPage"
-        data-template="cotw-page"
->
-    <div class="cotw">
-        {{#episodes}}
-        {{#if loading}}
-        {{>loading-view-black}}
-        {{else}}
-        {{#data}}
-        {{#latest}}
-        <div class="top-banner">
-            <div class="banner">
-                <div class="banner" style="background-image:url(https://www.monstercat.com/podcast-iframe/img/cotw-bg.jpg)">
-                    <div class="banner-shade"></div>
-                    <div class="gradient"></div>
-                </div>
-            </div>
-            <div class="container flex">
-                <div class="col-xs-12 col-sm-12 col-md-3 featured-artwork">
-                    <div class="position-relative">
-                        <img class="shadow responsive" src="{{coverSmall}}">
-                        {{>play-podcast}}
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-9 cl-white featured-details featured-details--event">
-                    <span class="tag">Latest Episode</span>
-                    <a class="silent no-hover" href="/release/{{release.catalogId}}" title="{{title}}">
-                        <h1 class="title uppercase">
-                            {{title}}
-                        </h1>
-                    </a>
-                    <p class="date">
-                        Released {{releaseDate.month}} {{releaseDate.day}}, {{releaseDate.year}}
-                    </p>
-                    {{#streamable}}
-                    <ul class="podcast-links mt-2">
-                        {{#each podcastLinks}}
-                        <li>
-                            <a href="{{url}}" class="" target="_blank">
-                                <span class="icon-expander-text"></span>
-                                <i class="fa fa-fw fa-{{platform}}"></i>
-                            </a>
-                        </li>
-                        {{/each}}
-                        </li>
-                        {{/streamable}}
-                </div>
-            </div>
-        </div>
-        {{/latest}}
-    </div>
-    <div class="container">
-        <div class="latest-podcast panel">
-            <header class="flex top-cta">
-                <div class="col-xs-6">
-                    <h2>Past Episodes</h2>
-                </div>
-                <div class="col-xs-6 text right">
-                    <a href="/cotw/episodes" class="button button--black button--icon button--transparent">
-                        View all
-                        <i class="fa fa-chevron-right"></i>
-                    </a>
-                </div>
-            </header>
-            <ul class="art-list art-list--full-width">
-                {{#each list}}
-                <li>
-                    <div class="image-wrapper">
-                        <img src="/img/artwork.jpg" class="preload" />
-                        <img src="{{coverMedium}}"/>
-                        {{>play-podcast}}
-                    </div>
-                    <a class="silent" href="/release/{{release.catalogId}}" title="{{title}}">
-                        <label class="title three-line-ellipsis">{{title}}</label>
-                    </a>
-
-                    <ul class="podcast-links">
-                        {{#each ../links}}
-                        <li>
-                            <a href="{{url}}" target="_blank">
-                                <span class="icon-expander-text"></span>
-                                <i class="fa fa-fw fa-{{platform}}"></i>
-                            </a>
-                        </li>
-                        {{/each}}
-                    </ul>
-                </li>
-                {{/each}}
-            </ul>
-        </div>
-        {{/data}}
-        {{/if}}
-        {{/episodes}}
-    </div>
-    {{#podcast}}
-    {{#if loading}}
-    {{>loading-view}}
-    {{else}}
-    {{#data.Podcast}}
-    <div class="cotw-about">
-        <div class="top-banner">
-            <div class="banner">
-                <div class="banner" style="background-image:url(https://www.monstercat.com/podcast-iframe/img/cotw-bg.jpg)">
-                    <div class="banner-shade"></div>
-                    <div class="gradient"></div>
-                </div>
-            </div>
-            <div class="container flex">
-                <div class="col-xs-12 col-sm-12 col-md-4 cl-white text-center">
-                    <h2>{{Title}}</h2>
-                    <ul class="podcast-links mt-2">
-                        {{#each Links}}
-                        <li>
-                            <a href="{{url}}" target="_blank" title="{{label}}">
-                                <span class="icon-expander-text"></span>
-                                <i class="fa fa-fw fa-{{class}}"></i>
-                            </a>
-                            <div class="hover-title">{{label}}</div>
-                        </li>
-                        {{/each}}
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-8 cl-white cotw-description">
-                    {{{Description}}}
-                </div>
-            </div>
-        </div>
-    </div>
-    {{/data.Podcast}}
-
-    {{#data}}
-    <div class="stations container panel mt-3">
-        <h2>Radio Stations</h2>
-        {{>podcast-station}}
-    </div>
-    {{/data}}
-    {{/if}}
-    {{/podcast}}
-
-</script>
-
-<script type="text/html"
-        data-partial
-        data-template="podcast-station"
->
-    <ul class="podcast-station">
-        {{#each Stations}}
-        <li>
-            <div class="logo">
-                <a href="{{WebsiteURL}}" target="_BLANK"> <img src="{{ImageURL}}" alt="{{Title}}"/></a>
-            </div>
-            <div class="details">
-                {{#if loading}}
-                {{loading-placeholders "territory"}}
-                {{loading-placeholders "airtime"}}
-                {{else}}
-                <p>{{TerritoryName}} <br> {{LocalAirTimeDesc}}</p>
-                {{/if}}
-            </div>
-
-        </li>
-        {{/each}}
-    </ul>
-</script>
-
-<script type="text/html"
-        data-route="^(?:podcast|cotw|COTW)\/episodes"
-        data-process="processCOTWEpisodesPage"
-        data-template="cotw-episodes"
->
-    <div class="cotw-episodes container">
-
-
-        <header class="flex top-title">
-            <div class="col-xs-6">
-                <h1>Call of the Wild Episodes</h1>
-            </div>
-            <div class="col-xs-6 text right">
-                <a href="/cotw" class="button button--black button--icon button--transparent">
-                    <i class="fa fa-chevron-left"></i>
-                    Back to Radio Page
-                </a>
-            </div>
-        </header>
-        <div class="panel">
-            {{#episodes}}
-            {{#if loading}}
-            {{>loading-view}}
-            {{else}}
-            <ul class="art-list art-list--full-width">
-                {{#each data.episodes}}
-                <li>
-                    <div class="image-wrapper">
-                        <img src="/img/artwork.jpg" class="preload" />
-                        <img src="{{coverMedium}}"/>
-                        {{>play-podcast}}
-                    </div>
-                    <a class="silent" href="/release/{{release.catalogId}}" title="{{title}}">
-                        <label class="title three-line-ellipsis">{{title}}</label>
-                    </a>
-                </li>
-                {{/each}}
-            </ul>
-            {{#data.pagination}}
-            <div class="podcast-pagination">
-                {{>podcast-pagination-link url=first.url enabled=first.enabled label="First"}}
-                {{>podcast-pagination-link url=previous.url enabled=previous.enabled label="Previous"}}
-                <span>{{showingFrom}} - {{showingTo}} of {{total}}</span>
-                {{>podcast-pagination-link url=next.url enabled=next.enabled label="Next"}}
-                {{>podcast-pagination-link url=last.url enabled=last.enabled label="Last"}}
-            </div>
-            {{/data.pagination}}
-            {{/if}}
-            {{/episodes}}
-        </div>
-    </div>
-</script>
-
-<script type="text/html"
-        data-partial
-        data-template="podcast-pagination-link">
-
-
-    {{#unless enabled}}
-    <span class="muted">{{label}}</span>
-    {{else}}
-    <span><a href="{{url}}">{{label}}</a></span>
-    {{/unless}}
-</script>
-
-<script type="text/html"
-        data-partial
-        data-template="play-podcast">
-    {{#streamable}}
-    <button class="button--podcast"
-            onclick="playSong(event, this)"
-            role="play-song"
-            data-play-link="{{playUrl}}"
-            data-title="{{title}}"
-            data-artists-title="{{artistsTitle}}"
-            {{#if artists.length}}
-            data-artist="{{#each artists}}{{name}}, {{/each}}"
-            {{/if}}
-    data-index="{{index}}"
-    data-track-id="{{id}}"
-    {{#if activeTest}}
-    data-ab-test="{{activeTest}}"
-    data-kpi="play-track"
-    {{/if}}
-    {{#if licensable}}
-    data-licensable
-    {{/if}}
-    {{#if playlistId}}
-    data-playlist-id="{{playlistId}}"
-    {{/if}}
-    data-release-id="{{releaseId}}">
-    <i class="fa fa-play inactive"></i>
-    <i class="fa fa-pause active"></i>
-    </button>
-    {{/streamable}}
-</script><script type="text/html"
     data-partial
     data-template="mixcontest2018-track"
     >
