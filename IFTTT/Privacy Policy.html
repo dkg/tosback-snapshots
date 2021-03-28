@@ -36,9 +36,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="rEWEUERMeQXGIMfCWzxUGpUyB0vXgGFJ2FGuHMKEMVBvB06d+Gh7abLPuq8hIWXK5jni9ESCbgwrwg0o3vwdtw==" />
-<link rel="stylesheet" media="all" href="//web-assets.ifttt.com/assets/application-2ebe830aa651437b549947a353739bdd9f7e684ae160eed8a6941865f04cefce.css" data-turbolinks-track="reload" />
-<link rel="stylesheet" media="all" href="//web-assets.ifttt.com/assets/shared-7982ac2a27c42d1ee7354b81aafa2be249efed2ff1780ee7e53b3adfe03f3e45.css" data-turbolinks-track="reload" />
+<meta name="csrf-token" content="/fN7YQ8kFZPGLqEe/NBZGCco/sxnpZv8hi9LcgQpJFs45PiIxl15yjN8bMZjGe60JLtLUU7HjpvQDaGj9kMpYA==" />
+<link rel="stylesheet" media="all" href="//web-assets.ifttt.com/assets/application-fc9847bfb650385b64fa373de773180cf4ac3a9365ff5314a7689f3d78109f38.css" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="//web-assets.ifttt.com/assets/shared-9abfa23b7a6ccb7f004f5d991206b2afe368564311e944dd436764a69decd62f.css" data-turbolinks-track="reload" />
   <link rel="canonical" href="https://ifttt.com/terms">
 
 
@@ -100,15 +100,17 @@
 <script type="text/javascript">
   (function() {
     var extra = {
-      authenticityToken: 'NJDzqa+waHRGLlFpVQmL1z3QoMvg3i4ZpcS0btwISjv30jlkE5RqGDLBLAQvFLoHTttFdHPcIVxWVxdawHBm3A==',
+      authenticityToken: 'ZnfCJC6sV67SockkYhHKAaAC+QwruwLUeB1PCHivQeCjYEHN59U79yfzBPz92H2to5FMkQLZF7MuP6XZisVM2w==',
       env: 'production',
-      browserSessionId: 'ch0HjiHxgnUSUoex2tOX1g',
+      browserSessionId: '-d8DQRRJAKVsGVIATJfluA',
       userId: '',
       userTimezoneOffset: 0,
-      sentryDSNGrizzlyClient: 'https://c1fbe90be1dc431db7eb3c588070120d@sentry.io/1378269',
+      sentryDSNGrizzlyClient: 'https://9f79ec8b79a24eec8fb836b12ad09862@o5469.ingest.sentry.io/5610878',
       gMapsKey: 'AIzaSyDKZzIblOyHuDj6vK1m0Jan7PEi5tOIWfk',
       stripePublishableKey: 'pk_live_8hj2Ms3R74vPVWlGAEZ35Hmh',
-      defaultProfileIconUrl: '//web-assets.ifttt.com/assets/partners/icon-avatar-0f031b85249e9c1b376c8f8e7f12f0a19528861b5299c52958957f9060361abe.svg'
+      defaultProfileIconUrl: '//web-assets.ifttt.com/assets/partners/icon-avatar-0f031b85249e9c1b376c8f8e7f12f0a19528861b5299c52958957f9060361abe.svg',
+      publicGraphUrl: 'https://ifttt.com/api/v3/graph',
+      userJWT: ''
     }
     if (!window.App) {
       window.App = extra
@@ -132,7 +134,7 @@
     rudderanalytics.load("1aBYvoOK7PGc3RH4ROBLU5syqsf","https://ifttt-dataplane.rudderstack.com", {
       useAutoTracking: false
     })
-    rudderanalytics.identify('', {anonymousId: '32f29429ea75852a19616bd24f480977'});
+    rudderanalytics.identify('', {anonymousId: 'b5b299865faf062c5a480284df9a610b'});
   </script>
   <script async src="https://cdn.rudderlabs.com/rudder-analytics.min.js"></script>
 
@@ -146,9 +148,22 @@
   </script>
 
   
+  <!-- Loads Embed.ly required for Contentful -->
+<script>
+  (function(w, d){
+   var id='embedly-platform', n = 'script';
+   if (!d.getElementById(id)){
+     w.embedly = w.embedly || function() {(w.embedly.q = w.embedly.q || []).push(arguments);};
+     var e = d.createElement(n); e.id = id; e.async=1;
+     e.src = ('https:' === document.location.protocol ? 'https' : 'http') + '://cdn.embedly.com/widgets/platform.js';
+     var s = d.getElementsByTagName(n)[0];
+     s.parentNode.insertBefore(e, s);
+   }
+  })(window, document);
+</script>
 
-  <script src="//web-assets.ifttt.com/assets/application-7dd78eba41795b09663f0990c75d11a1749dbaecc21d8197ad290eafff7a1b5e.js" data-turbolinks-track="reload" defer="defer"></script>
-  <script src="//web-assets.ifttt.com/assets/shared-ccdb092ec74d77dd3d0909dc625a60e2777fc0631b6ec5cd70b38c1421d0a25f.js" data-turbolinks-track="reload" defer="defer"></script>
+  <script src="//web-assets.ifttt.com/assets/application-a780a1af0fca735c6415d64d94b06a42f07465bfdda610ba8c93734421032389.js" data-turbolinks-track="reload" defer="defer"></script>
+  <script src="//web-assets.ifttt.com/assets/shared-adf1dabb7ed66cfb44196712b0e611d5d6cc689e925383590e91c982adf3ee14.js" data-turbolinks-track="reload" defer="defer"></script>
 
   
   <meta name="robots" content="index,follow,noodp" />
@@ -163,7 +178,7 @@
     <section class="left-group">
       <a title="Home" class="logo" data-track-ifttt-next-event="click" data-track-data="{&quot;object_type&quot;:&quot;header_link&quot;,&quot;object_id&quot;:&quot;ifttt_logo_link&quot;,&quot;location_type&quot;:&quot;header&quot;}" href="https://ifttt.com/">
         <svg enable-background="new 0 0 332 100" viewbox="0 0 332 100" xmlns="http://www.w3.org/2000/svg"><path d="m0 6h28v88h-28zm160 0h-48v28h20v60h28v-60h20v-28zm76 0h-48v28h20v60h28v-60h20v-28zm76 0h-48v28h20v60h28v-60h20v-28zm-208 28v-28h-64v88h28v-24h24v-28h-24v-8z"></path></svg>
-</a>        <div data-react-class="App.Comps.PersistentNavigationButton" data-react-props="{&quot;button&quot;:{&quot;id&quot;:&quot;3E5xDWzQH2BzUEA8DvHYix&quot;,&quot;url&quot;:&quot;https://ift.tt/2Mndzvg&quot;,&quot;cta_title&quot;:&quot;Multi-action for a Snow Day&quot;,&quot;cta_subtitle&quot;:null,&quot;image_url&quot;:null,&quot;background_color&quot;:&quot;#2cbe60&quot;,&quot;text_color&quot;:&quot;#ffffff&quot;,&quot;targeted_content_reference&quot;:null},&quot;trackData&quot;:{&quot;object_type&quot;:&quot;targeted_content_component&quot;,&quot;location_type&quot;:&quot;header&quot;}}" class="hide-on-sm"></div>
+</a>        <div data-react-class="App.Comps.PersistentNavigationButton" data-react-props="{&quot;button&quot;:{&quot;id&quot;:&quot;3E5xDWzQH2BzUEA8DvHYix&quot;,&quot;url&quot;:&quot;https://ift.tt/3rZb4if&quot;,&quot;cta_title&quot;:&quot;New to IFTTT?&quot;,&quot;cta_subtitle&quot;:null,&quot;image_url&quot;:null,&quot;background_color&quot;:&quot;#ffcc00&quot;,&quot;text_color&quot;:&quot;#000000&quot;,&quot;targeted_content_reference&quot;:null},&quot;trackData&quot;:{&quot;object_type&quot;:&quot;targeted_content_component&quot;,&quot;location_type&quot;:&quot;header&quot;}}" class="header-peristent-nav-button"></div>
     </section>
 
       <section class="right-group signed-out">
@@ -171,11 +186,10 @@
           Explore
 </a>        <a class="nav-link" title="Plans" data-track-ifttt-next-event="click" data-track-data="{&quot;object_id&quot;:&quot;plans_button&quot;,&quot;object_type&quot;:&quot;header_link&quot;,&quot;location_type&quot;:&quot;logged_out_header&quot;}" href="https://ifttt.com/plans">
           Plans
-</a>        <div data-react-class="App.Comps.UnifiedHeaderDropdown" data-react-props="{&quot;menuTitle&quot;:&quot;Solutions&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Business&quot;,&quot;url&quot;:&quot;https://ifttt.com/business&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;business&quot;,&quot;object_type&quot;:&quot;solutions_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;}},{&quot;title&quot;:&quot;Fintech&quot;,&quot;url&quot;:&quot;https://platform.ifttt.com/solutions/fintech&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;fintech&quot;,&quot;object_type&quot;:&quot;solutions_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;}},{&quot;title&quot;:&quot;Smart Home&quot;,&quot;url&quot;:&quot;https://platform.ifttt.com/solutions/smart_home&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;smart_home&quot;,&quot;object_type&quot;:&quot;solutions_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;}},{&quot;title&quot;:&quot;Energy&quot;,&quot;url&quot;:&quot;https://platform.ifttt.com/solutions/energy&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;energy&quot;,&quot;object_type&quot;:&quot;solutions_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;}},{&quot;title&quot;:&quot;Subscriptions&quot;,&quot;url&quot;:&quot;https://platform.ifttt.com/solutions/subscription_services&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;subscription_services&quot;,&quot;object_type&quot;:&quot;solutions_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;}}],&quot;chevronConfig&quot;:{&quot;darkBg&quot;:false,&quot;headerOnColor&quot;:false}}" class="dropdown-container"></div>
-        <div data-react-class="App.Comps.UnifiedHeaderDropdown" data-react-props="{&quot;menuTitle&quot;:&quot;Learn&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Contact sales&quot;,&quot;url&quot;:&quot;https://platform.ifttt.com/contact_sales&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;contact_sales&quot;,&quot;object_type&quot;:&quot;learn_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;},&quot;class_name&quot;:&quot;btn btn-sm btn-outlined btn-on-color menu-btn contact-sales-btn&quot;},{&quot;title&quot;:&quot;Products&quot;,&quot;url&quot;:&quot;https://platform.ifttt.com/solutions/product_overview&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;products&quot;,&quot;object_type&quot;:&quot;learn_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;}},{&quot;title&quot;:&quot;Resources&quot;,&quot;url&quot;:&quot;https://platform.ifttt.com/blog&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;resources&quot;,&quot;object_type&quot;:&quot;learn_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;}},{&quot;title&quot;:&quot;Case studies&quot;,&quot;url&quot;:&quot;https://platform.ifttt.com/case_studies&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;case_studies&quot;,&quot;object_type&quot;:&quot;learn_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;}},{&quot;title&quot;:&quot;Developer docs&quot;,&quot;url&quot;:&quot;https://platform.ifttt.com/docs&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;docs&quot;,&quot;object_type&quot;:&quot;learn_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;}}],&quot;chevronConfig&quot;:{&quot;darkBg&quot;:false,&quot;headerOnColor&quot;:false}}" class="learn-menu dropdown-container"></div>
-          <a class="sign-in btn btn-sm" href="https://ifttt.com/login?wp_=1">Sign in</a>
-          <a class="sign-up btn-sm btn" data-track-ifttt-next-event="click" data-track-data="{&quot;object_id&quot;:&quot;sign_up_button&quot;,&quot;object_type&quot;:&quot;header_link&quot;,&quot;location_type&quot;:&quot;platform_logged_out_header&quot;}" href="https://ifttt.com/join">
-            <span>Sign up</span>
+</a>        <div data-react-class="App.Comps.UnifiedHeaderDropdown" data-react-props="{&quot;menuTitle&quot;:&quot;Developers&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Learn more&quot;,&quot;url&quot;:&quot;https://ifttt.com/developers&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;developer_dashboard&quot;,&quot;object_type&quot;:&quot;developer_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;},&quot;class_name&quot;:&quot;btn btn-sm btn-outlined menu-btn developer-dashboard-btn&quot;},{&quot;title&quot;:&quot;Documentation&quot;,&quot;url&quot;:&quot;https://platform.ifttt.com/docs&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;docs&quot;,&quot;object_type&quot;:&quot;developer_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;}},{&quot;title&quot;:&quot;Developer spotlight&quot;,&quot;url&quot;:&quot;https://platform.ifttt.com/blog&quot;,&quot;track_ifttt_next_event&quot;:&quot;click&quot;,&quot;track_data&quot;:{&quot;object_id&quot;:&quot;developer_spotlight&quot;,&quot;object_type&quot;:&quot;developer_dropdown_option&quot;,&quot;location_type&quot;:&quot;header&quot;}}],&quot;chevronConfig&quot;:{&quot;darkBg&quot;:false,&quot;headerOnColor&quot;:false}}" class="developer-menu dropdown-container"></div>
+        <a class="sign-in btn btn-sm" href="https://ifttt.com/login?wp_=1">Log in</a>
+        <a class="sign-up btn-sm btn" data-track-ifttt-next-event="click" data-track-data="{&quot;object_id&quot;:&quot;sign_up_button&quot;,&quot;object_type&quot;:&quot;header_link&quot;,&quot;location_type&quot;:&quot;platform_logged_out_header&quot;}" href="https://ifttt.com/join">
+          Get started
 </a>      </section>
     <section data-react-class="App.Comps.UnifiedMobileMenu" data-react-props="{&quot;iconColorOnHeaderColored&quot;:false}" class="mobile-icon"></section>
   </div>
@@ -882,8 +896,8 @@
   </ul>
 
     <div class="partner-banner">
-      <a class="platform-cta-banner" data-track-ifttt-next-event="click" data-track-data="{&quot;object_id&quot;:&quot;platform_link&quot;,&quot;object_type&quot;:&quot;bottom&quot;,&quot;location_type&quot;:&quot;footer&quot;}" href="/business">
-        <h4><svg enable-background="new 0 0 332 100" viewbox="0 0 332 100" xmlns="http://www.w3.org/2000/svg"><path d="m0 6h28v88h-28zm160 0h-48v28h20v60h28v-60h20v-28zm76 0h-48v28h20v60h28v-60h20v-28zm76 0h-48v28h20v60h28v-60h20v-28zm-208 28v-28h-64v88h28v-24h24v-28h-24v-8z"></path></svg> for business</h4>
+      <a class="platform-cta-banner" data-track-ifttt-next-event="click" data-track-data="{&quot;object_id&quot;:&quot;platform_link&quot;,&quot;object_type&quot;:&quot;bottom&quot;,&quot;location_type&quot;:&quot;footer&quot;}" href="/developers">
+        <h4><svg enable-background="new 0 0 332 100" viewbox="0 0 332 100" xmlns="http://www.w3.org/2000/svg"><path d="m0 6h28v88h-28zm160 0h-48v28h20v60h28v-60h20v-28zm76 0h-48v28h20v60h28v-60h20v-28zm76 0h-48v28h20v60h28v-60h20v-28zm-208 28v-28h-64v88h28v-24h24v-28h-24v-8z"></path></svg> for Developers</h4>
         <div class="cta-block">
           <div class="cta">
             <h2>Connect your product to the world's best brands</h2>
@@ -936,7 +950,7 @@
     window.App.pageViewData.path = '/terms';
     window.App.pageViewData.user_agent = window.navigator.userAgent;
     window.App.pageViewData.query_string = '';
-    window.App.pageViewData.anon_id = '32f29429ea75852a19616bd24f480977';
+    window.App.pageViewData.anon_id = 'b5b299865faf062c5a480284df9a610b';
 
     //array of controllers that have views that we don't want Segment to track
     window.App.denyList = ["passwords"]
