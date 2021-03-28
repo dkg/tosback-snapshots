@@ -24,23 +24,53 @@
 	<meta name="mobile-web-app-capable" content="yes" />
 	
 
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3ECBB4D7L"></script>
 	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+	
+		var analytic_params = {};
+		
+		
+analytic_params['user_type'] = 'Visitor';
+		analytic_params['template'] = '/object/editorialpage';
+		
+		if (analytic_params.member_type) {
+			gtag('set', 'user_properties', { 
+				member_type: analytic_params.member_type,
+			});
+			delete analytic_params.member_type;
+		}
+		var config = {
+			...analytic_params,
+			'cookie_domain': 'letterboxd.com', 
+			'optimize_id': 'GTM-TB8HSDN', 
+		};
+		gtag('config', 'G-D3ECBB4D7L', config);
+
+		
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		ga('create', 'UA-25658265-1', {
-	   		'cookieDomain': 'letterboxd.com',
-	   		'legacyCookieDomain': 'letterboxd.com'
+			'cookieDomain': 'letterboxd.com',
+			'legacyCookieDomain': 'letterboxd.com'
 		});
-
-
-
-		ga('set', 'dimension1', 'Visitor');
-
-
-		ga('set', 'dimension3', '/object/editorialpage');
+		if (analytic_params.user_id) {
+			ga('set', '&uid', analytic_params.userId);
+		}
+		if (analytic_params.user_type) {
+			ga('set', 'dimension1', analytic_params.user_type);
+		}
+		if (analytic_params.member_type) {
+			ga('set', 'dimension2', analytic_params.member_type);
+		}
+		if (analytic_params.template) {
+			ga('set', 'dimension3', analytic_params.template);
+		}
 		ga('require', 'GTM-TB8HSDN');
 		ga('send', 'pageview');
 	</script>
@@ -62,11 +92,11 @@
 	
 	
 	<!--[if lte IE 9 ]>
-		<link href="https://s.ltrbxd.com/static/css/ie9-1.min.970e2177.css" rel="stylesheet" media="screen, projection"/>
-		<link href="https://s.ltrbxd.com/static/css/ie9-2.min.f092b49f.css" rel="stylesheet" media="screen, projection"/>
+		<link href="https://s.ltrbxd.com/static/css/ie9-1.min.c6a3f855.css" rel="stylesheet" media="screen, projection"/>
+		<link href="https://s.ltrbxd.com/static/css/ie9-2.min.1722550e.css" rel="stylesheet" media="screen, projection"/>
 	<![endif]-->
 	<!--[if (gt IE 9)|!(IE)]><!-->
-		<link href="https://s.ltrbxd.com/static/css/main.min.59888205.css" rel="stylesheet" media="screen, projection"/>
+		<link href="https://s.ltrbxd.com/static/css/main.min.0c983e7f.css" rel="stylesheet" media="screen, projection"/>
 	<!--<![endif]-->
 	<!--[if lte IE 6]><script>location.replace("/errors/ie6");</script><![endif]-->
 	<!--[if IE 7]><script>location.replace("/errors/ie7");</script><![endif]-->
@@ -111,7 +141,7 @@
 		var disableAds = false;
 		
 		
-		supermodelCSRF = "041a668e3923f94b3e9d";
+		supermodelCSRF = "4903c3018f035a11f82d";
 
 		
 
@@ -137,7 +167,7 @@
 
 	</script>
 
-	<script src="https://s.ltrbxd.com/static/js/main.min.669d8578.js"></script>
+	<script src="https://s.ltrbxd.com/static/js/main.min.86f8b9c5.js"></script>
 	
 
 
