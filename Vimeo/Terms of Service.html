@@ -24,9 +24,9 @@
             <link rel="canonical" href="/terms">
         <link rel="apple-touch-icon-precomposed" href="https://i.vimeocdn.com/favicon/main-touch_180">
 
-<link rel="mask-icon" href="https://f.vimeocdn.com/svg/legacy_view_support/iris_icon_v_64.svg?4e72d2738f8e113c7f0242915ccc16fa06e95a14" color="#17272e">
+<link rel="mask-icon" href="https://f.vimeocdn.com/svg/legacy_view_support/iris_icon_v_64.svg?b8c40bbefd9ec7acafc3dca700b19570d1585a7f" color="#17272e">
 
-    <link rel="shortcut icon" href="https://f.vimeocdn.com/images_v6/favicon.ico?4e72d2738f8e113c7f0242915ccc16fa06e95a14" data-play="https://i.vimeocdn.com/favicon/play_32" data-pause="https://i.vimeocdn.com/favicon/pause_32">
+    <link rel="shortcut icon" href="https://f.vimeocdn.com/images_v6/favicon.ico?b8c40bbefd9ec7acafc3dca700b19570d1585a7f" data-play="https://i.vimeocdn.com/favicon/play_32" data-pause="https://i.vimeocdn.com/favicon/pause_32">
 
 <meta name="msapplication-TileImage" content="https://i.vimeocdn.com/favicon/main-touch_144">
 <meta name="msapplication-TileColor" content="#00adef">
@@ -49,22 +49,23 @@
           window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(25),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(26),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError",l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),c.xhrWrappable&&t(14),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){L++,C=g.hash,this[u]=y.now()}function o(){L--,g.hash!==C&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable){var x=t(10),b=t(11),E=t(8),O=t(6),R=t(13),P=t(7),T=t(14),N=t(9),M=t("ee"),S=M.get("tracer");t(16),y.features.spa=!0;var C,L=0;M.on(u,r),M.on(p,r),M.on(d,o),M.on(l,o),M.buffer([u,d,"xhr-done","xhr-resolved"]),O.buffer([u]),R.buffer(["setTimeout"+c,"clearTimeout"+s,u]),T.buffer([u,"new-xhr","send-xhr"+s]),P.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),S.buffer([u,"no-"+u]),N.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,"send-xhr"+s),a(M,"xhr-resolved"),a(M,"xhr-done"),a(P,m+s),a(P,m+"-done"),a(N,"new-jsonp"),a(N,"jsonp-end"),a(N,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,L>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),s=t(12),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",l="-start",h="-end",m="fn"+l,v="fn"+h,w="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(8),"addEventListener"in window&&t(6);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(v,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+l,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(26),a=t(25);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){c.emit("jsonp-error",[],p),c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var u=s(a),d="function"==typeof u.parent[u.key];if(d){var p={};f.inPlace(u.parent,[u.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),c.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(u);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t("ee").get("jsonp"),f=t("wrap-function")(c);if(e.exports=c,o()){var u=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,l=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?f.inPlace(Node.prototype,l,"dom-"):(f.inPlace(HTMLElement.prototype,l,"dom-"),f.inPlace(HTMLHeadElement.prototype,l,"dom-"),f.inPlace(HTMLBodyElement.prototype,l,"dom-")),c.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=a.context(),n=s(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t("wrap-function"),a=t("ee").get("promise"),s=i(a),c=t(25),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),s=f.resolve(i);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this),t[1]=s(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),s.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=s(t[0],"cb-",this),t[1]=s(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function i(t){y.push(t),h&&(b?b.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=NREUM.o,l=p.XHR,h=p.MO,m=p.PR,v=p.SI,w="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new l(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(l,x),x.prototype=l.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(t){if(!i(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,s=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var c=a.generateCatId(),f=a.generateCatId(),u=Date.now(),d=o(c,f,u,n,r,s);return{header:d,guid:c,traceId:f,timestamp:u}}function o(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function i(t){var e=!1,n=!1,r={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(r=NREUM.init.distributed_tracing,n=!!r.enabled),n)if(t.sameOrigin)e=!0;else if(r.allowed_origins instanceof Array)for(var o=0;o<r.allowed_origins.length;o++){var i=s(r.allowed_origins[o]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return n&&e}var a=t(23),s=t(17);e.exports={generateTracePayload:r,shouldGenerateTrace:i}},{}],16:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime]))}}function o(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=c(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(17),f=t(15).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(21),m=t(20),v=t(18),w=window.XMLHttpRequest;a.features.xhr=!0,t(14),t(7),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){i(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);n&&n.header&&(e.setRequestHeader("newrelic",n.header),this.dt=n)}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof w&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){var e,n=t[1]||{};"string"==typeof t[0]?e=t[0]:t[0]&&t[0].url&&(e=t[0].url),e&&(this.parsedOrigin=c(e),this.sameOrigin=this.parsedOrigin.sameOrigin);var r=f(this.parsedOrigin);if(r&&r.header){var o=r.header;if("string"==typeof t[0]){var i={};for(var a in n)i[a]=n[a];i.headers=new Headers(n.headers||{}),i.headers.set("newrelic",o),this.dt=r,t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&(t[0].headers.append("newrelic",o),this.dt=r)}})}},{}],17:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],18:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(20);e.exports=r},{}],19:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(25),s=t(26),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,e])}},{}],20:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],21:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],22:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?c("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&c("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();n.length>0&&c("lcp",[n[n.length-1]])}function i(t){if(t instanceof u&&!p){var e,n=Math.round(t.timeStamp);e=n>1e12?Date.now()-n:f.now()-n,p=!0,c("timing",["fi",n,{type:t.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,s,c=t("handle"),f=t("loader"),u=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),s=new PerformanceObserver(o);try{a.observe({entryTypes:["paint"]}),s.observe({entryTypes:["largest-contentful-paint"]})}catch(d){}}if("addEventListener"in document){var p=!1,l=["click","keydown","mousedown","pointerdown","touchstart"];l.forEach(function(t){document.addEventListener(t,i,!1)})}}},{}],23:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(e=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}e.exports={generateUuid:r,generateCatId:o}},{}],24:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],25:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],26:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],27:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),s=m(n),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[n]];return d&&d.push([x,n,r,a]),a}}function l(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var g={},y={},x={on:l,addEventListener:l,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var s="nr@context",c=t("gos"),f=t(25),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()+b.offset],null,"api");var n=l.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(25),u=t("ee"),d=t(24),p=window,l=p.document,h="addEventListener",m="attachEvent",v=p.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:v,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1169.min.js"},x=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:s,now:a,origin:g,features:{},xhrWrappable:x,userAgent:d};t(19),t(22),l[h]?(l[h]("DOMContentLoaded",i,!1),p[h]("load",r,!1)):(l[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(27)},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(26),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],s])}u(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],s),d}finally{u(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<e.length;c++)s=e[c],a=t[s],r(a)||(t[s]=n(a,f?s+o:o,i,s))}function u(n,r,o){if(!c||e){var i=c;c=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}c=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}]},{},["loader",2,16,5,3,4]);
           ;NREUM.loader_config={accountID:"39284",trustKey:"39284",agentID:"7447468",licenseKey:"689d5b4562",applicationID:"2011224"}
           ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"689d5b4562",applicationID:"2011224",sa:1}
+          ;if(window.newrelic){window.newrelic.setCustomAttribute('controller_view', 'Vimeo\Controller\LegalController_terms')};
         </script>
                                     
                                                     
                 
-                                                        <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/global/icon_fonts.min.css?4e72d2738f8e113c7f0242915ccc16fa06e95a14">
+                                                        <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/global/icon_fonts.min.css?b8c40bbefd9ec7acafc3dca700b19570d1585a7f">
 
-    <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/global_main_combined.min.css?5ac4b6f5">
-    <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/global_combined.min.css?2b77106f">
-    <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/topnav_cart_button_combined.min.css?a20a7566">
-    <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/pages/legal.min.css?a0785921">
+    <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/global_main_combined.min.css?454ec2d1">
+    <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/global_combined.min.css?f3b1a566">
+    <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/topnav_cart_button_combined.min.css?082c63c8">
+    <link rel="stylesheet" href="https://f.vimeocdn.com/styles/css_opt/pages/legal.min.css?9371b9b9">
 
 
 
         <script>
         
-        var playerAssetUrls = {"barebone_js":"https:\/\/f.vimeocdn.com\/p\/3.24.12\/js\/barebone.js","js":"https:\/\/f.vimeocdn.com\/p\/3.24.12\/js\/player.js","chromeless_css":"https:\/\/f.vimeocdn.com\/p\/3.24.12\/css\/chromeless.css","chromeless_js":"https:\/\/f.vimeocdn.com\/p\/3.24.12\/js\/chromeless.js","css":"https:\/\/f.vimeocdn.com\/p\/3.24.12\/css\/player.css","player_url":"player.vimeo.com"};
+        var playerAssetUrls = {"barebone_js":"https:\/\/f.vimeocdn.com\/p\/3.24.19\/js\/barebone.js","js":"https:\/\/f.vimeocdn.com\/p\/3.24.19\/js\/player.js","chromeless_css":"https:\/\/f.vimeocdn.com\/p\/3.24.19\/css\/chromeless.css","chromeless_js":"https:\/\/f.vimeocdn.com\/p\/3.24.19\/js\/chromeless.js","css":"https:\/\/f.vimeocdn.com\/p\/3.24.19\/css\/player.css","player_url":"player.vimeo.com"};
 
         var _extend = function(){for(var r=arguments[0],n=1,e=arguments.length;e>n;n++){var t=arguments[n];for(var a in t)t.hasOwnProperty(a)&&(r[a]=t[a])}return r};
 
@@ -140,7 +141,7 @@ window.addEventListener('load', handleGDPR);
                 
     <script>
         var ablincoln_config = ablincoln_config || {};
-        ablincoln_config.tests = {"JS.TopNav.Create":{"id":452,"name":"JS.TopNav.Create","buckets":1000,"input":"vuid","url":":all","experiments":[{"id":1235,"name":"* Logged out Join Modal","buckets":100,"state":3,"published_on":"2020-06-15 16:17:15","paused_on":"0000-00-00 00:00:00","stopped_on":"2020-10-15 06:53:25","parameters":[{"id":2150,"name":"top_nav_create","choice":"control","weight":1},{"id":2151,"name":"top_nav_create","choice":"join_without_design","weight":1},{"id":2152,"name":"top_nav_create","choice":"join_with_design","weight":1}],"segments":[]},{"id":1311,"name":"* * Logged out Join Modal","buckets":900,"state":3,"published_on":"2020-06-23 15:01:52","paused_on":"0000-00-00 00:00:00","stopped_on":"2020-10-15 06:53:35","parameters":[{"id":2275,"name":"top_nav_create","choice":"control","weight":1},{"id":2276,"name":"top_nav_create","choice":"join_without_design","weight":1},{"id":2277,"name":"top_nav_create","choice":"join_with_design","weight":1}],"segments":[]}]},"JS.Upsell.Review":{"id":444,"name":"JS.Upsell.Review","buckets":1000,"input":"vuid","url":"\/","experiments":[]},"TopNav.NewVideo.ScreenRecordForAll":{"id":541,"name":"TopNav.NewVideo.ScreenRecordForAll","buckets":1000,"input":"vuid","url":"\/","experiments":[{"id":1418,"name":"Show recorder link for all","buckets":100,"state":3,"published_on":"2020-10-05 14:30:40","paused_on":"0000-00-00 00:00:00","stopped_on":"2020-10-21 03:28:43","parameters":[{"id":2477,"name":"show_recorder_for_all","choice":"control","weight":1},{"id":2478,"name":"show_recorder_for_all","choice":"variant_screen","weight":1}],"segments":[]},{"id":1450,"name":"* Show recorder link for all","buckets":0,"state":3,"published_on":"2020-10-22 17:17:11","paused_on":"2020-10-22 17:17:27","stopped_on":"2020-10-22 17:17:40","parameters":[{"id":2540,"name":"show_recorder_for_all","choice":"control","weight":1},{"id":2541,"name":"show_recorder_for_all","choice":"variant_screen","weight":1},{"id":2542,"name":"show_recorder_for_all","choice":"variant_screen_animation","weight":1}],"segments":[]},{"id":1453,"name":"* * Show recorder link for all","buckets":50,"state":3,"published_on":"2020-10-22 17:36:41","paused_on":"2020-10-26 15:07:28","stopped_on":"2020-10-26 15:07:56","parameters":[{"id":2547,"name":"show_recorder_for_all","choice":"control","weight":1},{"id":2548,"name":"show_recorder_for_all","choice":"variant_screen","weight":1},{"id":2549,"name":"show_recorder_for_all","choice":"variant_screen_animation","weight":1}],"segments":[]},{"id":1460,"name":"* * * Show recorder link for all","buckets":100,"state":3,"published_on":"2020-10-26 15:08:54","paused_on":"0000-00-00 00:00:00","stopped_on":"2020-10-27 10:02:54","parameters":[{"id":2562,"name":"show_recorder_for_all","choice":"control","weight":1},{"id":2563,"name":"show_recorder_for_all","choice":"variant_screen","weight":1},{"id":2564,"name":"show_recorder_for_all","choice":"variant_screen_animation","weight":1}],"segments":[]},{"id":1462,"name":"* * * * Show recorder link for all","buckets":1000,"state":1,"published_on":"2020-10-27 10:04:10","paused_on":"0000-00-00 00:00:00","stopped_on":"0000-00-00 00:00:00","parameters":[{"id":2567,"name":"show_recorder_for_all","choice":"control","weight":5},{"id":2568,"name":"show_recorder_for_all","choice":"variant_screen","weight":90},{"id":2569,"name":"show_recorder_for_all","choice":"variant_screen_animation","weight":5}],"segments":[]}]},"JS.TopNav.Live":{"id":567,"name":"JS.TopNav.Live","buckets":1000,"input":"vuid","url":"\/*","experiments":[{"id":1496,"name":"TEST: 10% Add 'Live' to New Video dropdown","buckets":100,"state":3,"published_on":"2020-11-30 16:44:09","paused_on":"0000-00-00 00:00:00","stopped_on":"2021-01-05 17:50:49","parameters":[{"id":2626,"name":"show_live_button","choice":"control","weight":1},{"id":2627,"name":"show_live_button","choice":"variant","weight":1}],"segments":[]},{"id":1505,"name":"NO TEST: 90% Live in top nav and video manager","buckets":900,"state":3,"published_on":"2020-11-30 16:44:13","paused_on":"0000-00-00 00:00:00","stopped_on":"2020-12-08 11:44:12","parameters":[{"id":2643,"name":"show_live_button","choice":"control","weight":1},{"id":2644,"name":"show_live_button","choice":"variant","weight":1}],"segments":[]},{"id":1519,"name":"Fixed: NO TEST: 90% Live in top nav and video manager","buckets":900,"state":3,"published_on":"2020-12-08 11:44:25","paused_on":"0000-00-00 00:00:00","stopped_on":"2021-01-05 17:50:59","parameters":[{"id":2664,"name":"show_live_button","choice":"variant","weight":1}],"segments":[]},{"id":1557,"name":"Post gwp live nav testing","buckets":100,"state":3,"published_on":"2021-01-22 15:28:03","paused_on":"0000-00-00 00:00:00","stopped_on":"2021-01-22 15:48:00","parameters":[{"id":2722,"name":"liveHref","choice":"control","weight":1},{"id":2723,"name":"liveHref","choice":"\/features\/livestreaming","weight":1},{"id":2724,"name":"liveHref","choice":"\/upgrade?context=livePlansOrContinue","weight":1},{"id":2725,"name":"liveHref","choice":"\/live\/event\/create?owner_id=self","weight":1}],"segments":[]},{"id":1572,"name":"Relaunch - Post gwp live nav testing","buckets":100,"state":1,"published_on":"2021-01-22 15:49:36","paused_on":"0000-00-00 00:00:00","stopped_on":"0000-00-00 00:00:00","parameters":[{"id":2755,"name":"liveHref","choice":"control","weight":1},{"id":2756,"name":"liveHref","choice":"\/features\/livestreaming","weight":1},{"id":2757,"name":"liveHref","choice":"\/upgrade?context=livePlansOrContinue","weight":1},{"id":2758,"name":"liveHref","choice":"\/live\/event\/create?owner_id=self","weight":1}],"segments":[]}]}};
+        ablincoln_config.tests = {"JS.AppleJoin":{"id":603,"name":"JS.AppleJoin","buckets":1000,"input":"vuid","url":"multiple urls","experiments":[{"id":1595,"name":"Join with Apple","buckets":100,"state":3,"published_on":"2021-03-04 12:37:19","paused_on":"0000-00-00 00:00:00","stopped_on":"2021-03-24 17:07:55","parameters":[{"id":2793,"name":"has_apple_join","choice":"control","weight":1},{"id":2794,"name":"has_apple_join","choice":"variant","weight":1}],"segments":[]}]},"JS.TopNav.Create":{"id":452,"name":"JS.TopNav.Create","buckets":1000,"input":"vuid","url":":all","experiments":[{"id":1235,"name":"* Logged out Join Modal","buckets":100,"state":3,"published_on":"2020-06-15 16:17:15","paused_on":"0000-00-00 00:00:00","stopped_on":"2020-10-15 06:53:25","parameters":[{"id":2150,"name":"top_nav_create","choice":"control","weight":1},{"id":2151,"name":"top_nav_create","choice":"join_without_design","weight":1},{"id":2152,"name":"top_nav_create","choice":"join_with_design","weight":1}],"segments":[]},{"id":1311,"name":"* * Logged out Join Modal","buckets":900,"state":3,"published_on":"2020-06-23 15:01:52","paused_on":"0000-00-00 00:00:00","stopped_on":"2020-10-15 06:53:35","parameters":[{"id":2275,"name":"top_nav_create","choice":"control","weight":1},{"id":2276,"name":"top_nav_create","choice":"join_without_design","weight":1},{"id":2277,"name":"top_nav_create","choice":"join_with_design","weight":1}],"segments":[]}]},"JS.Topnav.JoinPath":{"id":626,"name":"JS.Topnav.JoinPath","buckets":1000,"input":"vuid","url":"\/","experiments":[]},"JS.TopNav.Live":{"id":567,"name":"JS.TopNav.Live","buckets":1000,"input":"vuid","url":"\/*","experiments":[{"id":1496,"name":"TEST: 10% Add 'Live' to New Video dropdown","buckets":100,"state":3,"published_on":"2020-11-30 16:44:09","paused_on":"0000-00-00 00:00:00","stopped_on":"2021-01-05 17:50:49","parameters":[{"id":2626,"name":"show_live_button","choice":"control","weight":1},{"id":2627,"name":"show_live_button","choice":"variant","weight":1}],"segments":[]},{"id":1505,"name":"NO TEST: 90% Live in top nav and video manager","buckets":900,"state":3,"published_on":"2020-11-30 16:44:13","paused_on":"0000-00-00 00:00:00","stopped_on":"2020-12-08 11:44:12","parameters":[{"id":2643,"name":"show_live_button","choice":"control","weight":1},{"id":2644,"name":"show_live_button","choice":"variant","weight":1}],"segments":[]},{"id":1519,"name":"Fixed: NO TEST: 90% Live in top nav and video manager","buckets":900,"state":3,"published_on":"2020-12-08 11:44:25","paused_on":"0000-00-00 00:00:00","stopped_on":"2021-01-05 17:50:59","parameters":[{"id":2664,"name":"show_live_button","choice":"variant","weight":1}],"segments":[]},{"id":1557,"name":"Post gwp live nav testing","buckets":100,"state":3,"published_on":"2021-01-22 15:28:03","paused_on":"0000-00-00 00:00:00","stopped_on":"2021-01-22 15:48:00","parameters":[{"id":2722,"name":"liveHref","choice":"control","weight":1},{"id":2723,"name":"liveHref","choice":"\/features\/livestreaming","weight":1},{"id":2724,"name":"liveHref","choice":"\/upgrade?context=livePlansOrContinue","weight":1},{"id":2725,"name":"liveHref","choice":"\/live\/event\/create?owner_id=self","weight":1}],"segments":[]},{"id":1572,"name":"Relaunch - Post gwp live nav testing","buckets":100,"state":3,"published_on":"2021-01-22 15:49:36","paused_on":"0000-00-00 00:00:00","stopped_on":"2021-03-24 16:54:46","parameters":[{"id":2755,"name":"liveHref","choice":"control","weight":1},{"id":2756,"name":"liveHref","choice":"\/features\/livestreaming","weight":1},{"id":2757,"name":"liveHref","choice":"\/upgrade?context=livePlansOrContinue","weight":1},{"id":2758,"name":"liveHref","choice":"\/live\/event\/create?owner_id=self","weight":1}],"segments":[]},{"id":1603,"name":"+90% - Relaunch - Post gwp live nav testing","buckets":900,"state":3,"published_on":"2021-02-18 16:03:58","paused_on":"0000-00-00 00:00:00","stopped_on":"2021-03-24 16:54:40","parameters":[{"id":2804,"name":"liveHref","choice":"control","weight":1},{"id":2805,"name":"liveHref","choice":"\/features\/livestreaming","weight":1},{"id":2806,"name":"liveHref","choice":"\/upgrade?context=livePlansOrContinue","weight":1},{"id":2807,"name":"liveHref","choice":"\/live\/event\/create?owner_id=self","weight":1}],"segments":[]},{"id":1682,"name":"Roll out variant - Relaunch - Post gwp live nav testing","buckets":1000,"state":1,"published_on":"2021-03-24 16:55:52","paused_on":"0000-00-00 00:00:00","stopped_on":"0000-00-00 00:00:00","parameters":[{"id":2938,"name":"liveHref","choice":"\/features\/livestreaming","weight":1}],"segments":[]}]},"JS.Upsell.Review":{"id":444,"name":"JS.Upsell.Review","buckets":1000,"input":"vuid","url":"\/","experiments":[]},"TopNav.NewVideo.ScreenRecordForAll":{"id":541,"name":"TopNav.NewVideo.ScreenRecordForAll","buckets":1000,"input":"vuid","url":"\/","experiments":[{"id":1418,"name":"Show recorder link for all","buckets":100,"state":3,"published_on":"2020-10-05 14:30:40","paused_on":"0000-00-00 00:00:00","stopped_on":"2020-10-21 03:28:43","parameters":[{"id":2477,"name":"show_recorder_for_all","choice":"control","weight":1},{"id":2478,"name":"show_recorder_for_all","choice":"variant_screen","weight":1}],"segments":[]},{"id":1450,"name":"* Show recorder link for all","buckets":0,"state":3,"published_on":"2020-10-22 17:17:11","paused_on":"2020-10-22 17:17:27","stopped_on":"2020-10-22 17:17:40","parameters":[{"id":2540,"name":"show_recorder_for_all","choice":"control","weight":1},{"id":2541,"name":"show_recorder_for_all","choice":"variant_screen","weight":1},{"id":2542,"name":"show_recorder_for_all","choice":"variant_screen_animation","weight":1}],"segments":[]},{"id":1453,"name":"* * Show recorder link for all","buckets":50,"state":3,"published_on":"2020-10-22 17:36:41","paused_on":"2020-10-26 15:07:28","stopped_on":"2020-10-26 15:07:56","parameters":[{"id":2547,"name":"show_recorder_for_all","choice":"control","weight":1},{"id":2548,"name":"show_recorder_for_all","choice":"variant_screen","weight":1},{"id":2549,"name":"show_recorder_for_all","choice":"variant_screen_animation","weight":1}],"segments":[]},{"id":1460,"name":"* * * Show recorder link for all","buckets":100,"state":3,"published_on":"2020-10-26 15:08:54","paused_on":"0000-00-00 00:00:00","stopped_on":"2020-10-27 10:02:54","parameters":[{"id":2562,"name":"show_recorder_for_all","choice":"control","weight":1},{"id":2563,"name":"show_recorder_for_all","choice":"variant_screen","weight":1},{"id":2564,"name":"show_recorder_for_all","choice":"variant_screen_animation","weight":1}],"segments":[]},{"id":1462,"name":"* * * * Show recorder link for all","buckets":1000,"state":1,"published_on":"2020-10-27 10:04:10","paused_on":"0000-00-00 00:00:00","stopped_on":"0000-00-00 00:00:00","parameters":[{"id":2567,"name":"show_recorder_for_all","choice":"control","weight":5},{"id":2568,"name":"show_recorder_for_all","choice":"variant_screen","weight":90},{"id":2569,"name":"show_recorder_for_all","choice":"variant_screen_animation","weight":5}],"segments":[]}]}};
     </script>
 <script>
 (function() {
@@ -271,7 +272,7 @@ window.addEventListener('load', handleGDPR);
         animation: record_animation 1.5s .25s infinite;
     }
 
-    .recorder_new_label {
+    .new_label {
         text-transform: uppercase;
         background-color: #1140C6;
         color: #fff;
@@ -284,6 +285,7 @@ window.addEventListener('load', handleGDPR);
         padding: 0 2px;
         text-align: center;
     }
+
 </style>
 
 <script>
@@ -302,165 +304,204 @@ window.addEventListener('load', handleGDPR);
         
                             <nav class="topnav_desktop_menu" role="navigation" aria-label="Main menu">
                 <ul class="topnav_menu_desktop_main" role="menubar">
-
-                                        
-                                                
-                        <li class="topnav_desktop_menu_items topnav_desktop_menu_items_left" data-menu-id="product">
-                            <a onclick="event.preventDefault();event.target.blur();" class="topnav_menu_no_link topnav_has_dropdown topnav_icon_chevron_a" href="#" title="Product" rel="toggle" role="button" aria-owns="topnav_product">
-                                Product                            </a>
-
-                                                                                                                            <div class="topnav_desktop_menu_items_dropdown--wrapper" role="menu" aria-hidden="true" id="topnav_product">
-                                        <div class="topnav_desktop_solutions--features">
-                                            <div class="topnav_desktop_menu_items_dropdown--labels">FEATURES</div>
-                                            <ul class="topnav_desktop_menu_items_list">
-                                                                                                                                                                                                                <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:video_player" data-gtm-click="top_nav_product_video_player" href="//vimeo.com/features/video-player" title="Video player">Video Player</a>
+                                                                                            <li class="topnav_desktop_menu_items topnav_desktop_menu_items_left" data-menu-id="why_vimeo" onMouseenter="trackFeatureDropdownImpression(, false)">
+                            <a onclick="event.preventDefault();event.target.blur();" class="topnav_menu_no_link topnav_has_dropdown topnav_icon_chevron_a" href="#" title="Why Vimeo?" rel="toggle" role="button" aria-owns="topnav_why_vimeo">
+                                Why Vimeo?                            </a>
+                                                                                    <ul class="topnav_desktop_menu_items_dropdown row_flex" role="menu" aria-hidden="true" id="topnav_why_vimeo">   
+                                    <div class="row_elements">    
+                                                                                
+                                            <li class="topnav_desktop_menu_items_dropdown_item--multilevel" role="menuitem" tabindex="-1">
+                                                <h2   title="Overview">Overview</h2>
+                                                <ul role="menu"  aria-hidden="true" >
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:solutions|keyword:marketing" href="//vimeo.com/solutions/marketing" title="Market your business">Market your business</a>
                                                         </li>
-                                                                                                                                                                                                                                                                    <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                            <a data-fatal-attraction="container:top_nav|component:solutions|keyword:create|target:/create|type:click" href="//vimeo.com/create" title="Create">Create</a>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:solutions|keyword:communications" href="//vimeo.com/solutions/communications" title="Communicate internally">Communicate internally</a>
                                                         </li>
-                                                                                                                                                                                                                                                                    <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:live_streaming" data-gtm-click="top_nav_product_live_streaming" href="//vimeo.com/features/livestreaming" title="Live Streaming">Live Streaming</a>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:why_vimeo|keyword:collaborate_on_video" href="//vimeo.com/features/video-collaboration" title="Collaborate on video">Collaborate on video</a>
                                                         </li>
-                                                                                                                                                                                                                                                                    <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:screen_recorder" data-gtm-click="top_nav_product_screen_recorder" href="//vimeo.com/features/screen-recorder" title="Screen recorder">Screen Recorder</a>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:why_vimeo|keyword:monetize_your_video" href="//vimeo.com/ott/home?mkc=entprsb" title="Monetize your videos">Monetize your videos</a>
                                                         </li>
-                                                                                                                                                                                                                                                                    <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:privacy" data-gtm-click="top_nav_product_privacy" href="//vimeo.com/features/video-privacy" title="Privacy">Privacy</a>
+                                                                                                    </ul>
+                                            </li>
+                                                                                                                        
+                                            <li class="topnav_desktop_menu_items_dropdown_item--multilevel" role="menuitem" tabindex="-1">
+                                                <h2   title="User type">User type</h2>
+                                                <ul role="menu"  aria-hidden="true" >
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:enterprise" href="//vimeo.com/enterprise" title="Enterprise">Enterprise</a>
                                                         </li>
-                                                                                                                                                                                                                                                                    <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:collaboration" data-gtm-click="top_nav_product_collaboration" href="//vimeo.com/features/video-collaboration" title="Collaboration">Collaboration</a>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:solutions|keyword:small_business" href="//vimeo.com/solutions/small-business-solutions" title="Small business">Small business</a>
                                                         </li>
-                                                                                                                                                                                                                                                                    <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:distribution" data-gtm-click="top_nav_product_distribution" href="//vimeo.com/features/video-marketing" title="Distribution and marketing">Distribution & Marketing</a>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:solutions|keyword:creative_professionals" href="//vimeo.com/solutions/creative-professionals-solutions" title="Creative professionals">Creative professionals</a>
                                                         </li>
-                                                                                                                                                                                                                                                                    <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:monetization" data-gtm-click="top_nav_product_monetization" href="//vimeo.com/features/video-monetization" title="Monetization">Monetization</a>
+                                                                                                    </ul>
+                                            </li>
+                                                                                                                        
+                                            <li class="topnav_desktop_menu_items_dropdown_item--multilevel" role="menuitem" tabindex="-1">
+                                                <h2   title="Industry">Industry</h2>
+                                                <ul role="menu"  aria-hidden="true" >
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:solutions|keyword:fitness" href="//vimeo.com/solutions/fitness-solutions" title="Fitness">Fitness</a>
                                                         </li>
-                                                                                                                                                                                                                                                                    <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:analytics" data-gtm-click="top_nav_product_analytics" href="//vimeo.com/features/video-analytics" title="Analytics">Analytics</a>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:solutions|keyword:faith" href="//vimeo.com/solutions/faith-solutions" title="Faith">Faith</a>
                                                         </li>
-                                                                                                                                                                                                                                                                    <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:hosting" data-gtm-click="top_nav_product_hosting" href="//vimeo.com/features/online-video-hosting" title="Hosting and management">Hosting & Management</a>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:solutions|keyword:education" href="//vimeo.com/solutions/education-solutions" title="Education">Education</a>
                                                         </li>
-                                                                                                                                                                                                                                                                    <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                            <a data-fatal-attraction="container:top_nav|component:solutions|keyword:stock|target:/stock|type:click" href="//vimeo.com/stock" title="Stock">Stock</a>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:why_vimeo|keyword:ecommerce" href="//vimeo.com/create/ecommerce" title="Ecommerce">Ecommerce</a>
                                                         </li>
-                                                                                                                                                                                                                                                                    <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                            <a data-fatal-attraction="container:top_nav|component:solutions|keyword:for_hire|target:/for-hire|type:click" href="//vimeo.com/for-hire" title="For Hire">For Hire</a>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:why_vimeo|keyword:real_estate" href="//vimeo.com/create/real-estate" title="Real estate">Real estate</a>
                                                         </li>
-                                                                                                                                                    <a href="/upgrade" class="topnav_desktop_menu_items_dropdown--compare_plans" data-fatal-attraction="container:top_nav|component:product|keyword:compare_plans|target:/upgrade|type:click">Compare Plans</a>
-
-                                            </ul>
-                                        </div>
-                                        <div class="topnav_desktop_solutions--services">
-                                            <div class="topnav_desktop_menu_items_dropdown--labels">HIGHLIGHTS</div>
-                                            <div class="topnav_desktop_solutions--services_container">
-                                                                                                    <div class="services_wrapper">
-                                                        <a data-fatal-attraction="container:top_nav|component:solutions|keyword:create|target:/create|type:click" class="topnav_desktop_solutions--services_block" href="//vimeo.com/create">
-                                                            <h3>
-                                                                Create                                                                                                                            </h3>
-                                                            <p>Make social videos in an instant: use custom templates to tell the right story for your business.</p>
-                                                        </a>
-                                                    </div>
-                                                                                                    <div class="services_wrapper">
-                                                        <a data-fatal-attraction="container:top_nav|component:product|keyword:screen_recorder" data-gtm-click="top_nav_product_screen_recorder" class="topnav_desktop_solutions--services_block" href="//vimeo.com/features/screen-recorder">
-                                                            <h3>
-                                                                Screen Recorder                                                                                                                            </h3>
-                                                            <p>Record and instantly share video messages from your browser.</p>
-                                                        </a>
-                                                    </div>
-                                                                                                    <div class="services_wrapper">
-                                                        <a data-fatal-attraction="container:top_nav|component:product|keyword:live_streaming" data-gtm-click="top_nav_product_live_streaming" class="topnav_desktop_solutions--services_block" href="//vimeo.com/features/livestreaming">
-                                                            <h3>
-                                                                Live Streaming                                                                                                                            </h3>
-                                                            <p>Broadcast your events with reliable, high-quality live streaming.</p>
-                                                        </a>
-                                                    </div>
-                                                                                                    <div class="services_wrapper">
-                                                        <a data-fatal-attraction="container:top_nav|component:solutions|keyword:enterprise|target:/enterprise|type:click" class="topnav_desktop_solutions--services_block" href="//vimeo.com/enterprise">
-                                                            <h3>
-                                                                Enterprise                                                                                                                            </h3>
-                                                            <p>Get your team aligned with all the tools you need on one secure, reliable video platform.</p>
-                                                        </a>
-                                                    </div>
-                                                                                            </div>
-                                        </div>
+                                                                                                    </ul>
+                                            </li>
+                                                                             
                                     </div>
-                                
-                                                    </li>
-                    
-                                                
-                        <li class="topnav_desktop_menu_items topnav_desktop_menu_items_left" data-menu-id="solutions">
-                            <a class="topnav_has_dropdown topnav_icon_chevron_a" data-fatal-attraction="container:top_nav|component:solutions|keyword:solutions" href="#" title="Solutions" rel="toggle" role="button" aria-owns="topnav_solutions">
-                                Solutions                            </a>
-
-                                                                                                                            <ul class="topnav_desktop_menu_items_dropdown" role="menu" aria-hidden="true" id="topnav_solutions">
-                                                                                    
-                                                                                            <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                    <a data-fatal-attraction="container:top_nav|component:solutions|keyword:creative_professionals" href="//vimeo.com/solutions/creative-professionals-solutions" title="All you need to make great video.">Creative Professionals</a>
-                                                </li>
-                                                                                                                                
-                                                                                            <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                    <a data-fatal-attraction="container:top_nav|component:solutions|keyword:small_business" href="//vimeo.com/solutions/small-business-solutions" title="Capture your customers’ attention with video.">Small Business</a>
-                                                </li>
-                                                                                                                                
-                                                                                            <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                    <a data-fatal-attraction="container:top_nav|component:solutions|keyword:enterprise" href="//vimeo.com/enterprise" title="Enterprise">Enterprise</a>
-                                                </li>
-                                                                                                                                
-                                                                                            <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                    <a data-fatal-attraction="container:top_nav|component:solutions|keyword:communications" href="//vimeo.com/solutions/communications" title="">Communications</a>
-                                                </li>
-                                                                                                                                
-                                                                                            <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                    <a data-fatal-attraction="container:top_nav|component:solutions|keyword:marketing" href="//vimeo.com/solutions/marketing" title="">Marketing</a>
-                                                </li>
-                                                                                                                                
-                                                                                            <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                    <a data-fatal-attraction="container:top_nav|component:solutions|keyword:education" href="//vimeo.com/solutions/education-solutions" title="Share knowledge with video.">Education</a>
-                                                </li>
-                                                                                                                                
-                                                                                            <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                    <a data-fatal-attraction="container:top_nav|component:solutions|keyword:fitness" href="//vimeo.com/solutions/fitness-solutions" title="Get your fitness studio online.">Fitness</a>
-                                                </li>
-                                                                                                                                
-                                                                                            <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                    <a data-fatal-attraction="container:top_nav|component:solutions|keyword:faith" href="//vimeo.com/solutions/faith-solutions" title="Keep your community connected.">Faith</a>
-                                                </li>
-                                                                                                                        </ul>
-                                
-                                                    </li>
-                    
-                                                
-                        <li class="topnav_desktop_menu_items topnav_desktop_menu_items_left" data-menu-id="inspiration">
-                            <a onclick="event.preventDefault();event.target.blur();" class="topnav_menu_no_link topnav_has_dropdown topnav_icon_chevron_a" href="#" title="Watch" rel="toggle" role="button" aria-owns="topnav_inspiration">
+                                            
+                                                                        
+                                </ul>                                                            
+                                                        
+                        </li>  
+                                                                                            <li class="topnav_desktop_menu_items topnav_desktop_menu_items_left" data-menu-id="features" onMouseenter="trackFeatureDropdownImpression(, true)">
+                            <a onclick="event.preventDefault();event.target.blur();" class="topnav_menu_no_link topnav_has_dropdown topnav_icon_chevron_a" href="#" title="Features" rel="toggle" role="button" aria-owns="topnav_features">
+                                Features                            </a>
+                                                                                    <ul class="topnav_desktop_menu_items_dropdown row_flex" role="menu" aria-hidden="true" id="topnav_features">   
+                                    <div class="row_elements">    
+                                                                                
+                                            <li class="topnav_desktop_menu_items_dropdown_item--multilevel" role="menuitem" tabindex="-1">
+                                                <h2   title="Create">Create</h2>
+                                                <ul role="menu"  aria-hidden="true" >
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:live_streaming" href="//vimeo.com/features/livestreaming" title="Live stream">Live stream</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:screen_recorder" href="//vimeo.com/features/screen-recorder" title="Screen record">Screen record</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:create" href="//vimeo.com/create" title="Create from templates">Create from templates</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:for_hire" href="//vimeo.com/for-hire" title="Hire a video pro">Hire a video pro</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:stock" href="//vimeo.com/stock" title="License stock footage">License stock footage</a>
+                                                        </li>
+                                                                                                    </ul>
+                                            </li>
+                                                                                                                        
+                                            <li class="topnav_desktop_menu_items_dropdown_item--multilevel" role="menuitem" tabindex="-1">
+                                                <h2   title="Manage">Manage</h2>
+                                                <ul role="menu"  aria-hidden="true" >
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:video_player" href="//vimeo.com/features/video-player" title="Ad-free player">Ad-free player</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:hosting" href="//vimeo.com/features/online-video-hosting" title="Hosting">Hosting</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:privacy" href="//vimeo.com/features/video-privacy" title="Privacy">Privacy</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:collaboration" href="//vimeo.com/features/video-collaboration" title="Collaboration">Collaboration</a>
+                                                        </li>
+                                                                                                    </ul>
+                                            </li>
+                                                                                                                        
+                                            <li class="topnav_desktop_menu_items_dropdown_item--multilevel" role="menuitem" tabindex="-1">
+                                                <h2   title="Grow">Grow</h2>
+                                                <ul role="menu"  aria-hidden="true" >
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:features_grow|keyword:customize_player" href="//vimeo.com/features/video-player" title="Customize player">Customize player</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:distribution" href="//vimeo.com/features/video-marketing" title="Publish everywhere">Publish everywhere</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:analytics" href="//vimeo.com/features/video-analytics" title="Analyze">Analyze</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:product|keyword:monetization" href="//vimeo.com/ott/home?mkc=entprsb" title="Monetize">Monetize</a>
+                                                        </li>
+                                                                                                    </ul>
+                                            </li>
+                                                                             
+                                    </div>
+                                            
+                                                                            <div class="highlights_banner">
+                                            <h2 class="banner_heading">What's new</h2>
+                                            <h1 class="banner_main_text">
+                                                <span class="chrome hide">
+                                                    Vimeo Record: video messaging for teams                                                </span>
+                                                <span class="not_chrome hide">
+                                                    Vimeo Create: quick and easy video-maker                                                </span>
+                                            </h1>
+                                            <button class="banner_button banner_button_text" onclick="handleBannerButtonClick()">Get started for free</button>
+                                        </div>
+                                                                        
+                                </ul>                                                            
+                                                        
+                        </li>  
+                                                                                            <li class="topnav_desktop_menu_items topnav_desktop_menu_items_left" data-menu-id="resources" onMouseenter="trackFeatureDropdownImpression(, false)">
+                            <a onclick="event.preventDefault();event.target.blur();" class="topnav_menu_no_link topnav_has_dropdown topnav_icon_chevron_a" href="#" title="Resources" rel="toggle" role="button" aria-owns="topnav_resources">
+                                Resources                            </a>
+                                                                                    <ul class="topnav_desktop_menu_items_dropdown row_flex" role="menu" aria-hidden="true" id="topnav_resources">   
+                                    <div class="row_elements">    
+                                                                                
+                                            <li class="topnav_desktop_menu_items_dropdown_item--multilevel" role="menuitem" tabindex="-1">
+                                                <h2   title="Learn">Learn</h2>
+                                                <ul role="menu"  aria-hidden="true" >
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:inspiration|keyword:blog" data-gtm-click="top_nav_inspiration_blog" href="//vimeo.com/blog" title="Vimeo blog">Vimeo blog</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:inspiration|keyword:video_school" data-gtm-click="top_nav_inspiration_video_school" href="//vimeo.com/blog/category/video-school" title="Video School">Video School</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:resources_learn|keyword:customer_stories" href="//vimeo.com/blog/category/case-study" title="Customer stories">Customer stories</a>
+                                                        </li>
+                                                                                                    </ul>
+                                            </li>
+                                                                                                                        
+                                            <li class="topnav_desktop_menu_items_dropdown_item--multilevel" role="menuitem" tabindex="-1">
+                                                <h2   title="Connect">Connect</h2>
+                                                <ul role="menu"  aria-hidden="true" >
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:resources_connect|keyword:developer_tools" href="https://developer.vimeo.com/" title="Developer tools">Developer tools</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:resources_connect|keyword:partner_program" href="//vimeo.com/partners" title="Partner program">Partner program</a>
+                                                        </li>
+                                                                                                            <li role="menuitem" tabindex="-1">
+                                                            <a data-fatal-attraction="container:top_nav|component:resources_connect|keyword:help_center" href="https://vimeo.zendesk.com/hc/en-us" title="Help center">Help center</a>
+                                                        </li>
+                                                                                                    </ul>
+                                            </li>
+                                                                             
+                                    </div>
+                                            
+                                                                        
+                                </ul>                                                            
+                                                        
+                        </li>  
+                                                                                            <li class="topnav_desktop_menu_items topnav_desktop_menu_items_left" data-menu-id="watch" onMouseenter="trackFeatureDropdownImpression(, false)">
+                            <a data-fatal-attraction="container:top_nav|component:watch" data-gtm-click="top_nav_watch_click" href="//vimeo.com/watch" title="Watch" rel="toggle" role="button" aria-owns="topnav_watch">
                                 Watch                            </a>
-
-                                                                                                                            <ul class="topnav_desktop_menu_items_dropdown" role="menu" aria-hidden="true" id="topnav_inspiration">
                                                                                     
-                                                                                            <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                    <a data-fatal-attraction="container:top_nav|component:watch|keyword:watch" data-gtm-click="top_nav_watch_click" href="//vimeo.com/watch" title="Explore">Explore</a>
-                                                </li>
-                                                                                                                                
-                                                                                            <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                    <a data-fatal-attraction="container:top_nav|component:watch|keyword:staff_picks" data-gtm-click="top_nav_watch_staff_picks_click" href="//vimeo.com/channels/staffpicks" title="The best videos on Vimeo, curated daily by our team">Staff Picks</a>
-                                                </li>
-                                                                                                                                
-                                                                                            <li class="topnav_desktop_menu_items_dropdown_item" role="menuitem" tabindex="-1">
-                                                    <a data-fatal-attraction="container:top_nav|component:manage_videos|keyword:video_school" data-gtm-click="top_nav_create_video_school_click" href="//vimeo.com/videoschool" title="Learn how to make better videos">Video School</a>
-                                                </li>
-                                                                                                                        </ul>
-                                
-                                                    </li>
-                    
-                                                
-                        <li class="topnav_desktop_menu_items topnav_desktop_menu_items_left" data-menu-id="pricing">
-                            <a data-fatal-attraction="container:top_nav|component:pricing" data-gtm-click="top_nav_pricing_click" href="//vimeo.com/upgrade" title="Pricing" rel="toggle" role="button" aria-owns="topnav_pricing">
+                        </li>  
+                                                                                            <li class="topnav_desktop_menu_items topnav_desktop_menu_items_left" data-menu-id="pricing" onMouseenter="trackFeatureDropdownImpression(, false)">
+                            <a upgrade href="//vimeo.com/upgrade" title="Pricing" rel="toggle" role="button" aria-owns="topnav_pricing">
                                 Pricing                            </a>
-
-                                                                                </li>
-                    
+                                                                                    
+                        </li>  
+                                        
                 </ul>
             </nav><!-- /.topnav_desktop_menu -->
         
@@ -470,11 +511,11 @@ window.addEventListener('load', handleGDPR);
                                 
                                                         <ul class="topnav_menu_desktop_main" role="menu">
                                                             <li class="topnav_desktop_menu_items topnav_desktop_menu_items_right" data-menu-id="login">
-                                    <a class="js-topnav_menu_auth" onclick="event.preventDefault();vimeo.Modal.create({size:'xsmall',content:'/log_in?modal=new'}).then(completeUserLogin)" data-ga-event-click="top_nav|login" data-fatal-attraction="container:top_nav|component:login" data-gtm-click="top_nav_login_click" href="//vimeo.com/log_in" title="Log in to your account" rel="toggle" role="button" aria-owns="topnav_login">
+                                    <a class="js-topnav_menu_auth" onclick="event.preventDefault();vimeo.Modal.create({size:'xsmall',content:'/log_in?modal=new'}).then(completeUserLogin)" data-ga-event-click="top_nav|login" data-fatal-attraction="container:top_nav|component:login" data-gtm-click="top_nav_login_click" href="//vimeo.com/log_in" title="Log in" rel="toggle" role="button" aria-owns="topnav_login">
                                         Log in                                    </a>
                                 </li>
                                                             <li class="topnav_desktop_menu_items topnav_desktop_menu_items_right" data-menu-id="join">
-                                    <a class="topnav_menu_join js-topnav_menu_auth" onclick="event.preventDefault();vimeo.Modal.create({size:'xsmall',content:'/join?modal=new'}).then(completeUserLogin)" data-ga-event-click="top_nav|join" data-fatal-attraction="container:top_nav|component:join" data-gtm-click="top_nav_join_click" href="//vimeo.com/join" title="Become a Vimeo member" rel="toggle" role="button" aria-owns="topnav_join">
+                                    <a class="topnav_menu_join js-topnav_menu_auth" onclick="event.preventDefault();vimeo.Modal.create({size:'xsmall',content:'/join?modal=new'}).then(completeUserLogin)" data-ga-event-click="top_nav|join" data-fatal-attraction="container:top_nav|component:join" data-gtm-click="top_nav_join_click" href="//vimeo.com/join" title="Join" rel="toggle" role="button" aria-owns="topnav_join">
                                         Join                                    </a>
                                 </li>
                                                     </ul>
@@ -498,7 +539,7 @@ window.addEventListener('load', handleGDPR);
                             </span>
                         </button>
                         
-                                                    <ul id="new_video_dropdown_variant" class="topnav_desktop_menu_items_dropdown topnav_desktop_video_popover_dropdown_variant" role="menu" aria-hidden="true" style="padding: unset;">
+                                                    <ul id="new_video_dropdown_variant" class="topnav_desktop_menu_items_dropdown column_elements topnav_desktop_video_popover_dropdown_variant" role="menu" aria-hidden="true" style="padding: unset;">
                                                                     
                                     <li class="topnav_desktop_menu_items_dropdown_item_variant " role="menuitem" tabindex="-1">
                                         <a onclick="(function(event) { if (window.handleUploadButtonClick) { handleUploadButtonClick(event); }})(event)" data-fatal-attraction="container:top_nav|component:new_video|keyword:{'action':'upload'}|target:/upload|type:click" id="topnav_desktop_upload_button" href="//vimeo.com/upload" >
@@ -527,7 +568,7 @@ window.addEventListener('load', handleGDPR);
                                     </li>
                                                                     
                                     <li class="topnav_desktop_menu_items_dropdown_item_variant live_variant hide" role="menuitem" tabindex="-1">
-                                        <a onclick="(function(event) { if (window.handleLiveButtonClick) { handleLiveButtonClick(event); }})(event)"data-fatal-attraction="container:top_nav|component:new_video|keyword:{'action':'live'}|target:|type:click" id="topnav_desktop_create_live_button" href="javascript:void(0)" >
+                                        <a onclick="(function(event) { if (window.handleLiveButtonClick) { handleLiveButtonClick(event); }})(event)"data-fatal-attraction="container:top_nav|component:new_video|keyword:{'action':'live'}|target:|type:click" id="topnav_desktop_create_demo_live_button" href="javascript:void(0)" >
                                             <div class="align_topnav_dropdown_icons">
                                                 <span class="topnav_dropdown_icons"><svg viewBox="0 0 20 14" width="24px" height="24px">
                     <path 
@@ -557,57 +598,82 @@ window.addEventListener('load', handleGDPR);
                 window.location.reload();
             }
         }
+
         function handleUploadButtonClick(event) {
             // Opens the auth modal for logged out users
             if (
-               window.vimeo
-               && window.vimeo.config
-               && window.vimeo.Modal
-               && !window.vimeo.cur_user
+                window.vimeo
+                && window.vimeo.config
+                && window.vimeo.Modal
+                && !window.vimeo.cur_user
             ){
                 event.preventDefault();
+
+                // AB Test - JS.Topnav.JoinPath
+                // https://vimeo.com/modworld/ablincoln/626
+                var nextUrl = window.ABLincoln ? window.ABLincoln.getTest('JS.Topnav.JoinPath').get('next_url', 'control') : 'control';
+
                 isMobile ? window.location.href="/upload" : vimeo.Modal.create({
                     size: 'xsmall',
-                    content: '/join?modal=new&redirect=/upload',
+                    content: `/join?modal=new&redirect=${nextUrl === 'control' ? '/upload' : encodeURIComponent(nextUrl)}`,
                 });
-             }
-         }
+            }
+        }
 
-         function handleLiveButtonClick(event) {
+        function handleLiveButtonClick(event) {
             // Opens the auth modal for logged out users
             if (
-               window.vimeo
-               && window.vimeo.config
-               && window.vimeo.Modal
-               && !window.vimeo.cur_user
+                window.vimeo
+                && window.vimeo.config
+                && window.vimeo.Modal
+                && !window.vimeo.cur_user
             ){
                 if (isMobile) {
                     return;
-                } 
+                }
                 event.preventDefault();
-                // Temporary for AB Test https://vimeo.com/modworld/ablincoln/567. 
+                // Temporary for AB Test https://vimeo.com/modworld/ablincoln/567.
                 const liveHref = window.ABLincoln && window.ABLincoln.getTest('JS.TopNav.Live').get('liveHref', 'control');
                 vimeo.Modal.create({
                     size: 'xsmall',
                     content: `/join?modal=new&redirect=${encodeURIComponent(liveHref)}`
                 });
-             }
-         }
+            }
+        }
     </script>
 
 <script>
-    var serviceElements = document.querySelectorAll('.services_wrapper');
-    var hiddenServiceElements = document.querySelectorAll('.services_wrapper.hide');
-    var count = serviceElements.length - hiddenServiceElements.length;
-    if (count > 2) {
-        var serviceContainer = document.querySelector('.topnav_desktop_solutions--services_container');
-        if (serviceContainer) {
-            serviceContainer.style.width = '450px';
-        }
-    }
-</script>
+    var isBrowserChrome = (function(window) {
+        return window.navigator.userAgent.includes('Chrome') && window.navigator.vendor.includes('Google Inc');
+    })(window);
 
-<script>
+    var isBrowserIE = (function(window) {
+        return /(MSIE|Trident|Edge)/.test(window.navigator.userAgent);
+    })(window);
+
+    // IE fix for Dropdown menu
+    (function() {
+        const dropDownSelector = '.topnav_desktop_menu_items_dropdown';
+        const dropDownEle = document.querySelector(dropDownSelector);
+        if(isBrowserIE) {
+            dropDownEle.classList.add('column_flex');
+        }
+    })();
+
+    (function(window) {
+        const bannerSelector = '.highlights_banner';
+        const bannerTextSelector = '.highlights_banner .banner_main_text ' + (isBrowserChrome ? '.chrome' : '.not_chrome');
+        const bannerEle = document.querySelector(bannerSelector);
+        const bannerTextEle = document.querySelector(bannerTextSelector);
+        if (bannerEle && isBrowserIE) {
+            bannerEle.classList.add('hide');
+            return;
+        }
+        if (bannerTextEle) {
+            bannerTextEle.classList.remove('hide');
+        }
+    })(window);
+
     function handleNewVideoClick() {
         if (window.vimeo && window.vimeo.cur_user) {
             if (window.location.pathname !== '/upload') {
@@ -619,16 +685,72 @@ window.addEventListener('load', handleGDPR);
         }
     }
 
+    function handleBannerButtonClick () {
+        if (isBrowserChrome) {
+            if (window) {
+                window.location.href = 'https://chrome.google.com/webstore/detail/vimeo-record-screen-webca/ejfmffkmeigkphomnpabpdabfddeadcb';
+                if (window.__fa) {
+                    window.__fa.push(['trackEvent', {
+                        container: 'top_nav', 
+                        type: 'click', 
+                        component: 'features_highlight', 
+                        keyword: 'vimeo_record:_video_messaging_for_teams'
+                    }]);
+                }
+            }
+        }
+        else {
+            if (window.__fa) {
+                window.__fa.push(['trackEvent', {
+                    container: 'top_nav', 
+                    type: 'click', 
+                    component: 'features_highlight',
+                    keyword: 'vimeo_create'
+                }]);
+            }
+            window.vimeo.Modal.create({
+                size: 'xsmall',
+                content: `/join?modal=new&redirect=${encodeURIComponent("/welcome-survey?type=segment&vimeoHref=create_templates")}`
+            }).then(completeUserLogin);
+        }
+    }
+
     function handleCreateVideoClick(e, isRecordScreen) {
         isRecordScreen = isRecordScreen ?? false;
         if (window.vimeo && !window.vimeo.cur_user) {
             if (!isRecordScreen) {
                 e.preventDefault();
-
+                
                 window.vimeo.Modal.create({
                     size: 'xsmall',
                     content: `/join?modal=new&redirect=${encodeURIComponent("/welcome-survey?type=segment&vimeoHref=create_templates")}`
                 }).then(completeUserLogin);
+            }
+        }
+    }
+
+    function handleWebinarClick(e) {
+        if (window.vimeo && !window.vimeo.cur_user) {
+           // TODO
+        }
+    }
+
+    function trackFeatureDropdownImpression(hasBanner) {
+        if (window && window.__fa && hasBanner) {
+            if(isBrowserChrome) {
+                window.__fa.push(['trackEvent', {
+                    type: 'impression',
+                    container: 'top_nav',
+                    component: 'features_menu',
+                    keyword: 'record_highlight',
+                }]);
+            } else {
+                window.__fa.push(['trackEvent', {
+                    type: 'impression',
+                    container: 'top_nav',
+                    component: 'features_menu',
+                    keyword: 'create_highlight',
+                }]);
             }
         }
     }
@@ -651,36 +773,46 @@ window.addEventListener('load', handleGDPR);
             }
         }
     }
-</script>
 
-<script>
-    /**
-     * This is part of an AB Experiment
-     * Experiment link: https://vimeo.com/modworld/ablincoln/528
-     * Experiment param: show_my_drafts
-     */
-    (function () {
-        if (window.ABLincoln && window.ABLincoln.getTest('JS.Topnav.MyDrafts').get('show_my_drafts', 'control') === 'variant') {
-            document.querySelector('.js-topnav-manage-drafts').classList.remove('hide');
-        }
-    })();
+    function trackCreateLiveImpressionForSubscribedUsers(isShown) {
+        if (window.__fa) {
+            window.__fa.push(['trackEvent', {
+                type: 'impression',
+                container: 'top_nav',
+                component: 'create_live_event',
+                keyword: isShown ? 'variant_create_event' : 'control'
+            }]);
+          }
+    }
 </script>
 
     <script>
         // AB test: Add live button to top nav 'New Video' dropdown with modworld href support
         // https://vimeo.com/modworld/ablincoln/567
-        (function(){
-            var liveButton = document.querySelector('.live_variant');
-            //Only non-live users are bucketed as only non-live users see the liveButton
-            if (liveButton){
+        // For users with live sub: https://vimeo.com/modworld/ablincoln/595
+        (function() {
+            var newVideoItemsList = document.getElementById('new_video_dropdown_variant');
+            var goLiveOption = document.querySelector('.live_variant');
+            var liveDemoButton = document.getElementById('topnav_desktop_create_demo_live_button');
+            var liveSubCreationButton = document.getElementById('topnav_desktop_create_sub_live_button');
+
+            if (liveDemoButton) {
                 var liveHref = window.ABLincoln ? window.ABLincoln.getTest('JS.TopNav.Live').get('liveHref', 'control') : 'control';
+
                 if (liveHref !== 'control') {
-                    liveButton.classList.remove('hide');
-                    liveButton = document.getElementById('topnav_desktop_create_live_button');
-                    if (liveButton) {
-                        liveButton.setAttribute('href', liveHref);
-                    }
+                    goLiveOption.classList.remove('hide');
+                    liveDemoButton.setAttribute('href', liveHref);
                 }
+            } else if (liveSubCreationButton && 0) {
+              // For this partial ab test track FA impressions.
+              newVideoItemsList.addEventListener('mouseenter', function () {
+                trackCreateLiveImpressionForSubscribedUsers(0);
+              });
+
+              if (0) {
+                goLiveOption.classList.remove('hide');
+                liveSubCreationButton.setAttribute('href', '/live/event/create?owner_id=self');
+              }
             }
         })();
     </script>
@@ -773,7 +905,7 @@ window.addEventListener('load', handleGDPR);
                             </svg>
                         </button>
 
-                                                <a href="/" class="lohp_logo">
+                                                <a class="lohp_logo">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 441 124.682" width="86px"
                                 height="27px">
                                 <g>
@@ -816,17 +948,17 @@ window.addEventListener('load', handleGDPR);
 
                 <ul id="menu_list" class="menu_list_logged_out">
                                                                         <li>
-                                <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:join" data-gtm-click="top_nav_join_click" id="js-join-link" href="//vimeo.com/join">
+                                <a class='main_item' data-breeze-ignore data-fatal-attraction="container:top_nav|component:join" data-gtm-click="top_nav_join_click" id="js-join-link" href="//vimeo.com/join">
                                     Join                                </a>
                             </li>
                                                     <li>
-                                <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:login" data-gtm-click="top_nav_login_click" id="js-login-link" href="//vimeo.com/log_in">
+                                <a class='main_item' data-breeze-ignore data-fatal-attraction="container:top_nav|component:login" data-gtm-click="top_nav_login_click" id="js-login-link" href="//vimeo.com/log_in">
                                     Login                                </a>
                             </li>
                                                                                                                 <li>
                                                     <div class="dropdown_list">
     <button class="dropdown_toggle_button js-topnav_mobile_menu_toggle">
-        <span class="button_label">Product</span>
+        <span class="main_item">Why Vimeo?</span>
         <span class="dropdown_arrow js-top_nav_toggle_arrow">
             <svg width="12" height="8">
                 <path d="M11.45.914L5.914 6.45 4.473 5.008l-2.03-2.03L.378.914" stroke="#1A2E3A" stroke-width="1.2"
@@ -835,83 +967,62 @@ window.addEventListener('load', handleGDPR);
         </span>
     </button>
     <div aria-hidden="true" class="toggle_list js-top_nav_toggle_list">
-                                    <div class="submenu_header">FEATURES</div>
+                                    <div class="submenu_header">Overview</div>
                         <ul>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:video_player|target:/features/video-player" href="//vimeo.com/features/video-player">
-                                Video Player                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:solutions|keyword:marketing" href="//vimeo.com/solutions/marketing">
+                            Market your business                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:create|target:/create" href="//vimeo.com/create">
-                                Create                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:solutions|keyword:communications" href="//vimeo.com/solutions/communications">
+                            Communicate internally                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:live_streaming|target:/features/livestreaming" href="//vimeo.com/features/livestreaming">
-                                Live Streaming                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:why_vimeo|keyword:collaborate_on_video" href="//vimeo.com/features/video-collaboration">
+                            Collaborate on video                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:screen_recorder|target:/features/screen-recorder" href="//vimeo.com/features/screen-recorder">
-                                Screen Recorder                            </a>
-                                            </li>
-                                    <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:privacy|target:/features/video-privacy" href="//vimeo.com/features/video-privacy">
-                                Privacy                            </a>
-                                            </li>
-                                    <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:collaboration|target:/features/video-collaboration" href="//vimeo.com/features/video-collaboration">
-                                Collaboration                            </a>
-                                            </li>
-                                    <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:distribution|target:/features/video-marketing" href="//vimeo.com/features/video-marketing">
-                                Distribution & Marketing                            </a>
-                                            </li>
-                                    <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:monetization|target:/features/video-monetization" href="//vimeo.com/features/video-monetization">
-                                Monetization                            </a>
-                                            </li>
-                                    <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:analytics|target:/features/video-analytics" href="//vimeo.com/features/video-analytics">
-                                Analytics                            </a>
-                                            </li>
-                                    <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:hosting|target:/features/online-video-hosting" href="//vimeo.com/features/online-video-hosting">
-                                Hosting & Management                            </a>
-                                            </li>
-                                    <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:stock|target:/stock" href="//vimeo.com/stock">
-                                Stock                            </a>
-                                            </li>
-                                    <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:for_hire|target:/for-hire" href="//vimeo.com/for-hire">
-                                For Hire                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:why_vimeo|keyword:monetize_your_video" href="//vimeo.com/ott/home?mkc=entprsb">
+                            Monetize your videos                        </a>
+                    </li>
                             </ul>
-                                    <div class="submenu_header">HIGHLIGHTS</div>
+                                    <div class="submenu_header">User type</div>
                         <ul>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:create|target:/create" href="//vimeo.com/create" class="with_description">
-                                <h3>Create</h3>
-                                <p>Make social videos in an instant: use custom templates to tell the right story for your business.</p>
-                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:enterprise" href="//vimeo.com/enterprise">
+                            Enterprise                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:live_streaming|target:/features/livestreaming" href="//vimeo.com/features/livestreaming" class="with_description">
-                                <h3>Live Streaming</h3>
-                                <p>Broadcast your events with reliable, high-quality live streaming.</p>
-                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:solutions|keyword:small_business" href="//vimeo.com/solutions/small-business-solutions">
+                            Small business                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:screen_recorder|target:/features/screen-recorder" href="//vimeo.com/features/screen-recorder" class="with_description">
-                                <h3>Screen Recorder</h3>
-                                <p>Record and instantly share video messages from your browser.</p>
-                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:solutions|keyword:creative_professionals" href="//vimeo.com/solutions/creative-professionals-solutions">
+                            Creative professionals                        </a>
+                    </li>
+                            </ul>
+                                    <div class="submenu_header">Industry</div>
+                        <ul>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:product|keyword:enterprise" href="//vimeo.com/enterprise" class="with_description">
-                                <h3>Enterprise</h3>
-                                <p>Get your team aligned with all the tools you need on one secure, reliable video platform.</p>
-                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:solutions|keyword:fitness" href="//vimeo.com/solutions/fitness-solutions">
+                            Fitness                        </a>
+                    </li>
+                                    <li>
+                        <a data-fatal-attraction="container:top_nav|component:solutions|keyword:faith" href="//vimeo.com/solutions/faith-solutions">
+                            Faith                        </a>
+                    </li>
+                                    <li>
+                        <a data-fatal-attraction="container:top_nav|component:solutions|keyword:education" href="//vimeo.com/solutions/education-solutions">
+                            Education                        </a>
+                    </li>
+                                    <li>
+                        <a data-fatal-attraction="container:top_nav|component:why_vimeo|keyword:ecommerce" href="//vimeo.com/create/ecommerce">
+                            Ecommerce                        </a>
+                    </li>
+                                    <li>
+                        <a data-fatal-attraction="container:top_nav|component:why_vimeo|keyword:real_estate" href="//vimeo.com/create/real-estate">
+                            Real estate                        </a>
+                    </li>
                             </ul>
             </div>
 </div>
@@ -919,7 +1030,7 @@ window.addEventListener('load', handleGDPR);
                                                                     <li>
                                                     <div class="dropdown_list">
     <button class="dropdown_toggle_button js-topnav_mobile_menu_toggle">
-        <span class="button_label">Solutions</span>
+        <span class="main_item">Features</span>
         <span class="dropdown_arrow js-top_nav_toggle_arrow">
             <svg width="12" height="8">
                 <path d="M11.45.914L5.914 6.45 4.473 5.008l-2.03-2.03L.378.914" stroke="#1A2E3A" stroke-width="1.2"
@@ -928,39 +1039,66 @@ window.addEventListener('load', handleGDPR);
         </span>
     </button>
     <div aria-hidden="true" class="toggle_list js-top_nav_toggle_list">
-                                <ul>
+                                    <div class="submenu_header">Create</div>
+                        <ul>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:solutions|keyword:creative_professionals|target:/solutions/creative-professionals-solutions" href="//vimeo.com/solutions/creative-professionals-solutions">
-                                Creative Professionals                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:live_streaming" href="//vimeo.com/features/livestreaming">
+                            Live stream                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:solutions|keyword:small_business|target:/solutions/small-business-solutions" href="//vimeo.com/solutions/small-business-solutions">
-                                Small Business                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:screen_recorder" href="//vimeo.com/features/screen-recorder">
+                            Screen record                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:solutions|keyword:enterprise|target:/enterprise" href="//vimeo.com/enterprise">
-                                Enterprise                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:create" href="//vimeo.com/create">
+                            Create from templates                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:solutions|keyword:communications|target:/communications" href="//vimeo.com/solutions/communications">
-                                Communications                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:for_hire" href="//vimeo.com/for-hire">
+                            Hire a video pro                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:solutions|keyword:marketing|target:/marketing" href="//vimeo.com/solutions/marketing">
-                                Marketing                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:stock" href="//vimeo.com/stock">
+                            License stock footage                        </a>
+                    </li>
+                            </ul>
+                                    <div class="submenu_header">Manage</div>
+                        <ul>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:solutions|keyword:education|target:/solutions/education-solutions" href="//vimeo.com/solutions/education-solutions">
-                                Education                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:video_player" href="//vimeo.com/features/video-player">
+                            Ad-free player                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:solutions|keyword:fitness|target:/solutions/fitness-solutions" href="//vimeo.com/solutions/fitness-solutions">
-                                Fitness                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:hosting" href="//vimeo.com/features/online-video-hosting">
+                            Hosting                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:solutions|keyword:faith|target:/solutions/faith-solutions" href="//vimeo.com/solutions/faith-solutions">
-                                Faith                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:privacy" href="//vimeo.com/features/video-privacy">
+                            Privacy                        </a>
+                    </li>
+                                    <li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:collaboration" href="//vimeo.com/features/video-collaboration">
+                            Collaboration                        </a>
+                    </li>
+                            </ul>
+                                    <div class="submenu_header">Grow</div>
+                        <ul>
+                                    <li>
+                        <a data-fatal-attraction="container:top_nav|component:features_grow|keyword:customize_player" href="//vimeo.com/features/video-player">
+                            Customize player                        </a>
+                    </li>
+                                    <li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:distribution" href="//vimeo.com/features/video-marketing">
+                            Publish everywhere                        </a>
+                    </li>
+                                    <li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:analytics" href="//vimeo.com/features/video-analytics">
+                            Analyze                        </a>
+                    </li>
+                                    <li>
+                        <a data-fatal-attraction="container:top_nav|component:product|keyword:monetization" href="//vimeo.com/ott/home?mkc=entprsb">
+                            Monetize                        </a>
+                    </li>
                             </ul>
             </div>
 </div>
@@ -968,7 +1106,7 @@ window.addEventListener('load', handleGDPR);
                                                                     <li>
                                                     <div class="dropdown_list">
     <button class="dropdown_toggle_button js-topnav_mobile_menu_toggle">
-        <span class="button_label">Inspiration</span>
+        <span class="main_item">Resources</span>
         <span class="dropdown_arrow js-top_nav_toggle_arrow">
             <svg width="12" height="8">
                 <path d="M11.45.914L5.914 6.45 4.473 5.008l-2.03-2.03L.378.914" stroke="#1A2E3A" stroke-width="1.2"
@@ -977,40 +1115,55 @@ window.addEventListener('load', handleGDPR);
         </span>
     </button>
     <div aria-hidden="true" class="toggle_list js-top_nav_toggle_list">
-                                <ul>
+                                    <div class="submenu_header">Learn</div>
+                        <ul>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:inspiration|keyword:watch|target:/watch" data-gtm-click="top_nav_inspiration_watch" href="//vimeo.com/watch">
-                                Watch                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:inspiration|keyword:blog" data-gtm-click="top_nav_inspiration_blog" href="//vimeo.com/blog">
+                            Vimeo blog                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:inspiration|keyword:staff_picks|target:/channels/staffpicks" data-gtm-click="top_nav_inspiration_staff_picks" href="//vimeo.com/channels/staffpicks">
-                                Staff Picks                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:inspiration|keyword:video_school" data-gtm-click="top_nav_inspiration_video_school" href="//vimeo.com/blog/category/video-school">
+                            Video School                        </a>
+                    </li>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:inspiration|keyword:video_school|target:/blog/category/video-school" data-gtm-click="top_nav_inspiration_video_school" href="//vimeo.com/blog/category/video-school">
-                                Video School                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:resources_learn|keyword:customer_stories" href="//vimeo.com/blog/category/case-study">
+                            Customer stories                        </a>
+                    </li>
+                            </ul>
+                                    <div class="submenu_header">Connect</div>
+                        <ul>
                                     <li>
-                                                    <a data-breeze-ignore data-fatal-attraction="container:top_nav|component:inspiration|keyword:blog|target:/blog/" data-gtm-click="top_nav_inspiration_blog" href="//vimeo.com/blog">
-                                Vimeo Blog                            </a>
-                                            </li>
+                        <a data-fatal-attraction="container:top_nav|component:resources_connect|keyword:developer_tools" href="https://developer.vimeo.com/">
+                            Developer tools                        </a>
+                    </li>
+                                    <li>
+                        <a data-fatal-attraction="container:top_nav|component:resources_connect|keyword:partner_program" href="//vimeo.com/partners">
+                            Partner program                        </a>
+                    </li>
+                                    <li>
+                        <a data-fatal-attraction="container:top_nav|component:resources_connect|keyword:help_center" href="https://vimeo.zendesk.com/hc/en-us">
+                            Help center                        </a>
+                    </li>
                             </ul>
             </div>
 </div>
                                                 </li>
                                                                     <li>
-                                                    <a data-action="menu.close" data-fatal-attraction="container:top_nav|component:pricing" data-gtm-click="top_nav_pricing_click" id="js-upgrade-link" class="" href="//vimeo.com/upgrade">
+                                                    <a class='main_item' data-fatal-attraction="container:top_nav|component:watch" data-gtm-click="top_nav_watch_click" href="//vimeo.com/watch">
+                                                                Watch                            </a>
+                                                </li>
+                                                                    <li>
+                                                    <a class='main_item' upgrade href="//vimeo.com/upgrade">
                                                                 Pricing                            </a>
                                                 </li>
-                                                                    <li>
-                                                    <a data-action="menu.close" data-fatal-attraction="container:top_nav|component:search" data-gtm-click="mobile_nav_search_click" id="js-search-link" class="" href="//vimeo.com/search">
-                                                                    <svg width="15" height="16">
-                                    <g fill="#1A2E3A" fill-rule="evenodd">
-                                        <path d="M10.892 10l4.014 4.459-.891.803L10 10.802z" />
-                                        <path d="M6.5 11.817A5.327 5.327 0 0011.817 6.5 5.327 5.327 0 006.5 1.183 5.327 5.327 0 001.183 6.5 5.327 5.327 0 006.5 11.817zM6.5 13A6.51 6.51 0 010 6.5 6.51 6.51 0 016.5 0 6.51 6.51 0 0113 6.5 6.51 6.51 0 016.5 13z" fill-rule="nonzero" />
-                                    </g>
-                                </svg>                                                                Search                            </a>
-                                                </li>
+                                                                <li>
+                            <a class="main_item" href="//vimeo.com/search">
+                                <svg class="search_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                    <title>Search</title>
+                                    <path d="M26.74,25.32l-4.53-4.53a1,1,0,0,0-.21-.14A9,9,0,1,0,20.65,22a1,1,0,0,0,.14.21l4.53,4.53a1,1,0,0,0,1.41-1.41ZM15,22a7,7,0,1,1,7-7A7,7,0,0,1,15,22Z"/>
+                                </svg>
+                                Search                            </a>
+                        </li>
                                     </ul>
             </div>
             <div class="bottom_buttons_container">
@@ -1087,7 +1240,7 @@ window.addEventListener('load', handleGDPR);
                             FAQ                        </a>
                                                         </li>
                             <li>
-                                            <a data-action="menu.close" class=" " href="//vimeo.comhelp.vimeo.com/hc">
+                                            <a data-action="menu.close" class=" " href="//vimeo.com/help">
                             Help                        </a>
                                                         </li>
                     </ul>
@@ -1205,6 +1358,24 @@ window.addEventListener('load', handleGDPR);
             mobile_header_close.addEventListener('click', function(e) {
                 e.stopPropagation();
                 e.preventDefault();
+                var toggle_list = mobile_menu_main.querySelectorAll('.js-top_nav_toggle_list');
+                if(toggle_list.length) {
+                    toggle_list.forEach(function(el){
+                        if(el.classList.contains('expand')) {
+                            el.setAttribute('aria-hidden', true);
+                            el.classList.remove('expand');
+                        }
+                    })
+                }
+
+                var arrow_list = mobile_menu_main.querySelectorAll('.js-top_nav_toggle_arrow');
+                if(arrow_list.length) {
+                    arrow_list.forEach(function(el){
+                        if(el.classList.contains('rotate')) {
+                            el.classList.remove('rotate');
+                        }
+                    })
+                }
                 mobile_menu_main.style.display = 'none';
             });
 
@@ -1228,7 +1399,7 @@ window.addEventListener('load', handleGDPR);
             //Dropdown
             var mobile_dropdown_toggle = document.querySelectorAll('.js-topnav_mobile_menu_toggle');
             mobile_dropdown_toggle.forEach(function(btn) {
-                btn.addEventListener('click', function(e) {
+                btn.onclick = function(e) {
                     e.stopPropagation();
                     e.preventDefault();
                     var button = e.target;
@@ -1247,16 +1418,14 @@ window.addEventListener('load', handleGDPR);
                             if(toggle_list.classList.contains('expand')) {
                                 toggle_list.setAttribute('aria-hidden', true);
                                 toggle_list.classList.remove('expand');
-                                button.classList.remove('fade');
                             } else {
                                 toggle_list.setAttribute('aria-hidden', false);
                                 toggle_list.classList.add('expand');
-                                button.classList.add('fade');
                             }
                         }
                         
                     }
-                });
+                };
             });
         }, false);
     };
@@ -1565,21 +1734,21 @@ function renameOneTrustHeaderTags() {
                                     <li class="footer_v2__link-item">
                         <a
                             class="iris_link iris_link--gray-0 iris_link--footer"
-                            href="/help"
+                            href="/help/"
                             data-gtm-click=&quot;footer_link_help_center_click&quot; data-fatal-attraction=&quot;container:footer|component:resources|keyword:help_center&quot;                        >
                             Help Center                        </a>
                     </li>
                                     <li class="footer_v2__link-item">
                         <a
                             class="iris_link iris_link--gray-0 iris_link--footer"
-                            href="/blog"
+                            href="https://vimeo.com/blog/"
                             data-gtm-click=&quot;footer_link_vimeo_blog_click&quot; data-fatal-attraction=&quot;container:footer|component:resources|keyword:vimeo_blog&quot;                        >
                             Blog                        </a>
                     </li>
                                     <li class="footer_v2__link-item">
                         <a
                             class="iris_link iris_link--gray-0 iris_link--footer"
-                            href="/blog/category/video-school"
+                            href="https://vimeo.com/blog/category/video-school/"
                             data-gtm-click=&quot;footer_link_video_school_click&quot; data-fatal-attraction=&quot;container:footer|component:resources|keyword:video_school&quot;                        >
                             Video School                        </a>
                     </li>
@@ -1733,7 +1902,7 @@ function renameOneTrustHeaderTags() {
                                     <li class="footer_v2__link-item">
                         <a
                             class="iris_link iris_link--gray-0 iris_link--footer"
-                            href="https://vimeo.com/ott"
+                            href="https://vimeo.com/ott/home/"
                             data-fatal-attraction=""
                         >
                         Vimeo OTT                        </a>
@@ -1786,11 +1955,6 @@ function renameOneTrustHeaderTags() {
                 <a class="iris_link iris_link--opaque" href="/privacy/california-privacy" title="CA Privacy">
                     CA Privacy                </a>
             </li>
-                            <li class="footer_v2__legal-list-item">
-                    <a class="iris_link iris_link--opaque" href="/leo/guidelines/impressum" title="Impressum">
-                        Impressum
-                    </a>
-                </li>
                         <li class="footer_v2__legal-list-item">
                 <a class="iris_link iris_link--opaque" href="/dmca" title="Copyright Information">
                     Copyright                </a>
@@ -1845,11 +2009,11 @@ function renameOneTrustHeaderTags() {
         IMAGE_DIR = 'https://f.vimeocdn.com/images_v6/',
         FONT_DIR = 'https://f.vimeocdn.com/fonts/',
         SVG_DIR = 'https://f.vimeocdn.com/svg/',
-                BUILD_HASH = 'b3491';
+                BUILD_HASH = 'f2365';
 
     
         var vimeo = _extend((window.vimeo || {}), {"app_version":"v6","domain":"vimeo.com","url":"vimeo.com","cur_user":false,"origin_user_id":null,"origin_user":false,"is_mobile":false});
-    vimeo.config = _extend((vimeo.config || {}), {"sticky_topnav":{"excluded_pages":["Vimeo\\Controller\\AboutController:main","Vimeo\\Controller\\AboutController:professionals","Vimeo\\Controller\\AboutController:everyone","Vimeo\\Controller\\HomeController:upgrade","Vimeo\\Controller\\StoreController:main","Vimeo\\Controller\\User\\Settings2Controller:main","Vimeo\\Controller\\User\\Settings2Controller:team_members","Vimeo\\Controller\\User\\Settings2Controller:password","Vimeo\\Controller\\ProfileController:main","Vimeo\\Controller\\ClipStatsController:main","Vimeo\\Controller\\Clip\\Settings\\EmbedController:embed","Vimeo\\Controller\\VideoManagerController","Vimeo\\Controller\\VideoReviewController","Vimeo\\Controller\\MessagesController","Vimeo\\Controller\\StatsController","Vimeo\\Controller\\UploadController","Vimeo\\Controller\\OnDemand\\SettingsController","Vimeo\\Controller\\Clip\\SettingsController"],"sticky_included_pages":["Vimeo\\Controller\\Stock\\StockHomePageController","Vimeo\\Controller\\Stock\\StockFootageController","Vimeo\\Controller\\Stock\\StockSearchController","Vimeo\\Controller\\Stock\\StockCollectionsController","Vimeo\\Controller\\AlbumController"],"topnav_wrap_selector":"#topnav_outer_wrap","content_wrap_selector":".wrap_content"},"locale":"en","omnisearch_disabled":null,"omnisearch_jwt":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTI3NDM3ODAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyBwcml2YXRlIGRlbGV0ZSIsInRlYW1fdXNlcl9pZCI6bnVsbH0.DHaL_WI_hOeWqICFxpu8tgjZ_SyboXCOMf_yixA2dIM","omnisearch_user":null,"api_url":"api.vimeo.com","show_omnisearch_tip":false});
+    vimeo.config = _extend((vimeo.config || {}), {"sticky_topnav":{"excluded_pages":["Vimeo\\Controller\\AboutController:main","Vimeo\\Controller\\AboutController:professionals","Vimeo\\Controller\\AboutController:everyone","Vimeo\\Controller\\HomeController:upgrade","Vimeo\\Controller\\StoreController:main","Vimeo\\Controller\\User\\Settings2Controller:main","Vimeo\\Controller\\User\\Settings2Controller:team_members","Vimeo\\Controller\\User\\Settings2Controller:password","Vimeo\\Controller\\ProfileController:main","Vimeo\\Controller\\ClipStatsController:main","Vimeo\\Controller\\Clip\\Settings\\EmbedController:embed","Vimeo\\Controller\\VideoManagerController","Vimeo\\Controller\\VideoReviewController","Vimeo\\Controller\\MessagesController","Vimeo\\Controller\\StatsController","Vimeo\\Controller\\UploadController","Vimeo\\Controller\\OnDemand\\SettingsController","Vimeo\\Controller\\Clip\\SettingsController"],"sticky_included_pages":["Vimeo\\Controller\\Stock\\StockHomePageController","Vimeo\\Controller\\Stock\\StockFootageController","Vimeo\\Controller\\Stock\\StockSearchController","Vimeo\\Controller\\Stock\\StockCollectionsController","Vimeo\\Controller\\AlbumController"],"topnav_wrap_selector":"#topnav_outer_wrap","content_wrap_selector":".wrap_content"},"locale":"en","omnisearch_disabled":null,"omnisearch_jwt":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTY5NTU1NDAsInVzZXJfaWQiOm51bGwsImFwcF9pZCI6NTg0NzksInNjb3BlcyI6InB1YmxpYyBwcml2YXRlIGRlbGV0ZSIsInRlYW1fdXNlcl9pZCI6bnVsbH0.2AC6A2vigBqUzf4mqoqNtfRa1K01HuxSU3R2gQSIMWw","omnisearch_user":null,"api_url":"api.vimeo.com","show_omnisearch_tip":false});
 
         var __i18nLocale = 'en';
     var localeConfig = {
@@ -1905,11 +2069,11 @@ function renameOneTrustHeaderTags() {
 
     <script src="https://f.vimeocdn.com/js_opt/react_prod_combined.min.js?031775a4"></script>
     <script src="https://f.vimeocdn.com/js_opt/global_lib_combined.min.js?7e53477c"></script>
-    <script src="https://f.vimeocdn.com/js_opt/global_combined.min.js?0cc580eb"></script>
+    <script src="https://f.vimeocdn.com/js_opt/global_combined.min.js?8e50acb0"></script>
     <script src="https://f.vimeocdn.com/js_opt/sticky_topnav_combined.min.js?5ffd6d4e"></script>
     <script src="https://f.vimeocdn.com/js_opt/topnav_cart_button_combined.min.js?75573bfc"></script>
 
-    <script async src="https://f.vimeocdn.com/js_opt/_bundles/create_facebook_header.bundle.min.js?30fcf146"></script>
+    <script async src="https://f.vimeocdn.com/js_opt/_bundles/create_facebook_header.bundle.min.js?cabcf97c"></script>
     <script>
         function onVimeoDomReady(e) {
             
