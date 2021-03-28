@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">  <meta property="og:image" content="https://img.fark.net/images/2013/site/farkLogo2Big.gif">  <link rel="image_src" type="image/gif" href="https://img.fark.net/images/2013/site/farkLogo2Big.gif">      <meta name="viewport" content="minimum-scale=0.35, width=device-width"> <link rel="shortcut icon" href="https://www.fark.com/favicon.ico">
 <link rel="apple-touch-icon" href="https://img.fark.net/images/2008/site/fark-webclip.png"> 
 
-  <meta name="referrer" content="always">      <link rel="stylesheet" href="https://www.fark.com/css/farkstyle_desktop.min_1612688407.css" media="screen">           <script src="https://www.fark.com/js/farktools_desktop.min_1612688407.js"></script>   <script>fark.page.isAllHouseAds = true;</script>   <script>
+  <meta name="referrer" content="always">      <link rel="stylesheet" href="https://www.fark.com/css/farkstyle_desktop.min_1616918407.css" media="screen">           <script src="https://www.fark.com/js/farktools_desktop.min_1616918407.js"></script>   <script>fark.page.isAllHouseAds = true;</script>   <script>
     // fark.page.headerbidTargeting = "";
     fark.page.rcPageName = "default_fark";
     fark.page.isMobile = false;
@@ -23,7 +23,165 @@
     fark.ajax.ajaxSpinnerRaw = '<\img alt="..." src="https://img.fark.net/images/2011/site/ajax-loader.gif" width="16" height="16">';
 </script>
 
-   <!-- CONFIANT CODE -->
+  <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async=true>
+(function() {
+  var host = 'fark.com';
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://quantcast.mgr.consensu.org'
+    .concat('/choice/', '90W110YesRJyT', '/', host, '/choice.js')
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            if (event && event.source && event.source.postMessage) {
+              event.source.postMessage(returnMsg, '*');
+            }
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->  <!-- CONFIANT CODE -->
 
 <script>
 window.confiant = window.confiant || {};
@@ -78,8 +236,7 @@ window.confiant.callback = function(blockingType, blockingId, isBlocked, wrapper
                             fark.globals.billboardBotAdSlot.getSlotElementId(), 
                             fark.globals.billboardStickyAdSlot.getSlotElementId(), 
                             fark.globals.leaderboardBotAdSlot.getSlotElementId(),
-                            fark.globals.intellidisplayAdSlot.getSlotElementId(),
-                            fark.globals.aboveCommentBoxAdSlot.getSlotElementId() 
+                            fark.globals.intellidisplayAdSlot.getSlotElementId()
                       ],  bidsBackHandler: function() {
                         pbjs.setTargetingForGPTAsync( targArray );
                         fark.page.headerbidTargeting = pbjs.getAdserverTargeting();
@@ -90,7 +247,11 @@ window.confiant.callback = function(blockingType, blockingId, isBlocked, wrapper
         }
     }
 };
-</script>  <script async="" src="https://confiant-integrations.global.ssl.fastly.net/cEfft1aujoR3mcJAi8Jzh_8If_c/gpt_and_prebid/config.js"></script>  <!-- END CONFIANT CODE --> <script src="https://s.adaptiveads.com/v2/11a657c19e4342fa890c2e070e184026/wwwfarkcom/ad-lite.min.js" async></script>  <!-- Google Analytics -->
+</script>  <script async="" src="https://confiant-integrations.global.ssl.fastly.net/cEfft1aujoR3mcJAi8Jzh_8If_c/gpt_and_prebid/config.js"></script>  <!-- END CONFIANT CODE --> <!-- CARBON STUB -->
+    <script>
+    !function(e,a){e.cca=e.cca||{tapPrebidQue:[],tapGAMQue:[]};var n=e.cca;e.pbjs=e.pbjs||{que:[]};var t=e.pbjs;t.que.push(function(){t.onEvent("bidWon",function(e){n.tapReady||n.tapPrebidQue.push(JSON.stringify(e))})}),e.googletag=e.googletag||{cmd:[]};var u=e.googletag;u.cmd.push(function(){u.pubads().addEventListener("slotRenderEnded",function(e){n.tapReady||n.tapGAMQue.push(e)})})}(window);  
+    </script>
+    <!-- END CARBON STUB -->  <!-- Google Analytics -->
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -109,33 +270,31 @@ ga('set', 'dimension2', pixelRatio);
 
 ga('send', 'pageview');
 
-// Enable Analytics for Prebid
-if (typeof pbjs !== "undefined") {
-  pbjs.que.push(function() {
-      pbjs.enableAnalytics({
-          provider: 'ga',
-          options: {
-              global: 'ga', // <string> name of GA global. Default is 'ga'
-              enableDistribution: true,
-          }
-      });
-  });
-};
-
-
 
 </script>
 <!-- End Google Analytics -->          <style> .headlineRow:hover, .headlineRow:hover:nth-child(odd) { background-color: #eeeeff; } </style> <script src="https://www.youtube.com/iframe_api"></script>
 
-    <script>
-window.supertagapi = window.supertagapi || {}; 
-window.supertagapi.que=window.supertagapi.que || []; 
-window.supertagapi.que.push( function()
-{
-    var intellistring = `    
+    <!-- CARBON RULES -->
+
+<script>
+window.cca = window.cca || {}; 
+window.cca.adiq = window.cca.adiq || {};
+window.cca.adiq.que = window.cca.adiq.que || [];
+window.cca.adiq.que.push(function(){
+    //syntactic sugar
+    var Check = window.cca.adiq.Check;
+    var addAttribute = window.cca.adiq.addAttribute;
+    var activateRule= window.cca.adiq.activateRule;
+    var pageload = window.cca.adiq.makeRule;
+    var revenueevent = window.cca.adiq.makeRevenueRule;
+    var timesinceload = window.cca.adiq.makeTimedRule;
+
+    var adiqfunc1 = function(){
         if(document.querySelector('intelli-1')){
+            console.log('intelli-1 already exists - do nothing');
             // ad already exists; do nothing 
         } else {
+            console.log('loading intelli-1 ad');
             googletag.cmd.push(function(){
                 // set up intellidisplay slot
                 var node = document.querySelector('.rightColContent #intelli-1');
@@ -217,11 +376,6 @@ window.supertagapi.que.push( function()
                                  "unit": "540976197",
                             }
                         }, {
-                            "bidder": 'smartrtb',
-                            "params": {
-                                "zoneId": 'zrTzIwiw9E0DDLUmSQOY'
-                            }
-                        }, {
                             "bidder": "33across",
                             "params": {
                                 "siteId": 'bQ5HVyt2er6OoWaKkGJozW', 
@@ -260,9 +414,9 @@ window.supertagapi.que.push( function()
             showIntellidisplayReportAdLink(); 
         }
 
-    `
+    }//end function 1
 
-    var intellistring2 = `
+    var adiqfunc2 = function(){
         function hideIntellidisplayAndShowFns() {
             var node = document.querySelector('#intelli-1');
             var parent = node.parentElement;
@@ -281,34 +435,30 @@ window.supertagapi.que.push( function()
         } else {
             hideIntellidisplayAndShowFns();
         }
-    `
+    }//end function 2
 
-    makeRule("display-ad",intellistring,100,1).addAttribute(new Check('=','PageViews',1)).activateRule();
-    makeRevenueRule("intelli-1",intellistring,100,false).addAttribute(new Check('>','AvgPageRevenue',2.95)).addAttribute(new Check('>','NumberRevenueEvents',4)).activateRule();    
-    makeRule("display-ad",intellistring2,100,1).addAttribute(new Check('>','PageViews',1)).activateRule();
+    console.log('intelli-1 setting up rules');
+    //Rule 1 - First Page
+    cca.adiq.addEventListener("rule1", adiqfunc1);
+    var rule1 = pageload("rule1", 100,false);
+    addAttribute(rule1, new Check("getPageViews","=",1));
+    activateRule(rule1);
+
+    //Rule 2 - Later Page High Revenue
+    cca.adiq.addEventListener("rule2", adiqfunc1);
+    var rule2 = revenueevent("rule2", 100,false);
+    addAttribute(rule2, new Check("getPageViews",">",1));     
+    addAttribute(rule2, new Check("getNumberRevenueEvents",">",4));
+    addAttribute(rule2, new Check("getAvgPageRevenue",">",2.95));
+    activateRule(rule2);
+
+    //Rule 3 - Hide The Unit 
+    cca.adiq.addEventListener("rule3", adiqfunc2);
+    var rule3 = pageload("rule3", 100,false);
+    addAttribute(rule3, new Check("getPageViews",">",1));     
+    activateRule(rule3);
 });
-</script>  <!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
- fbq('dataProcessingOptions', ['LDU'], 0, 0);
-fbq('init', '382341359441320');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=382341359441320&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
-
-<!-- And more Facebook Tracking -->  <!-- End more Facebook Tracking -->
-
-</head>  <body >        <a href="#newsContainer" class="skipToContent" tabindex="1">Skip to content</a><!-- BEGIN left 2021-02-07 18:51:07--> <div class="fullwidthheaderbackground"></div>
+</script>  <!-- END CARBON RULES -->  </head>  <body >        <a href="#newsContainer" class="skipToContent" tabindex="1">Skip to content</a><!-- BEGIN left 2021-03-28 12:43:59--> <div class="fullwidthheaderbackground"></div>
 
   <div class="fullwidthheaderbackground">&nbsp;</div>
 <div id="container">
@@ -318,7 +468,7 @@ src="https://www.facebook.com/tr?id=382341359441320&ev=PageView&noscript=1"
     
 <div id="header">  <div class="tryBareFark">
         <a href="https://www.fark.com/barefarksignup" target="_blank">Try Ads-Free Fark</a>
-    </div>   <a id='logo' class='retina header_logo' href='https://www.fark.com'><img src='https://img.fark.net/images/2013/site/farkLogoBig.png' srcset='https://img.fark.net/images/2013/site/farkLogoBig.png 1x, https://img.fark.net/images/2013/site/farkLogoBig-2x.png 2x' alt='Fark'></a>   <div class="ad_container top">  <div id="topAd728x90"><script src="https://www.fark.com/aptminus/size1"></script></div>  <div class="reportAdBlock"  id="topAd728x90-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('topAd728x90'); return false;">Report</a></div>    </div> <div id="headerBottom">  <div id="tagLine">It's Not News, It's Fark </div>  </div>
+    </div>   <a id='logo' class='retina header_logo' href='https://www.fark.com'><img src='https://img.fark.net/images/2013/site/farkLogoBig.png' srcset='https://img.fark.net/images/2013/site/farkLogoBig.png 1x, https://img.fark.net/images/2013/site/farkLogoBig-2x.png 2x' alt='Fark'></a>   <div class="ad_container top">  <div id="topAd728x90"><script src="https://www.fark.com/aptminus/size1"></script></div>  <div class="reportAdBlock"  id="topAd728x90-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('topAd728x90'); return false;">Report</a></div>   </div> <div id="headerBottom">  <div id="tagLine">It's Not News, It's Fark </div>  </div>
 </div>  </td>
 </tr>
 <tr>
@@ -365,12 +515,10 @@ style sheets. Try clearing your browser cache and refreshing the page.</small></
         <li><a href="https://www.fark.com/food/"> Food</a></li>
         <li><a href="https://www.fark.com/politics/"> Politics</a></li>        </ul> <div id="newsContainer"><!-- TOP end -->
 <!-- Temporary announcements go here -->
-<!-- $Id: motd 33945 2021-01-05 17:59:03Z mmangler $ -->
+<!-- $Id: motd 34353 2021-02-26 05:39:53Z mandrews $ -->
 
 <div class="mainerr" style="text-align:center; text-align:center;">
-</a>
 </div>
-
 <div class="main">
 <blockquote> <div class="mw-parser-output">
 <div id="toc" role="navigation" aria-labelledby="mw-toc-heading">
@@ -572,16 +720,16 @@ Smallest light: <img src="https://img.fark.net/images/2014/site/farklogo_smalles
         <td id="rightCol">
             <div class="rightColContent">  <div style="padding: 10px;margin-top: 40px;">
 
-                 <div class="ad_container">  <div id="intelli-1"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock" style="display:none;" id="intelli-1-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('intelli-1'); return false;">Report</a></div>    </div> </div>  <div class="sidebar_callout_container tfark_callout">
-                    <p style="font-size:13px;">Want more stories with less ads? Try</p>
+                 <div class="ad_container">  <div id="intelli-1"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock" style="display:none;" id="intelli-1-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('intelli-1'); return false;">Report</a></div>   </div> </div>  <div class="sidebar_callout_container tfark_callout">
+                    <p style="font-size:13px;">If you like these links, you'll love</p>
                     <!--<img src="https://img.fark.net/images/2017/site/totalfark_logo_2017.png" srcset="https://img.fark.net/images/2017/site/totalfark_logo_2017.png 1x, https://img.fark.net/images/2017/site/totalfark_logo_2017-2x.png 2x" class="retina" alt="TotalFark">-->
                     <img src="https://img.fark.net/images/2017/site/totalfark_logo_2017.png" srcset="https://img.fark.net/images/2017/site/totalfark_logo_2017.png 1x, https://img.fark.net/images/2017/site/totalfark_logo_2017-2x.png 2x" class="retina" alt="TotalFark">
-                    <p class="tf-callout-text">It's what the cool kids are doing.<br>It also helps us pay the bills.</p>
+                    <p class="tf-callout-text">More Farking, less working</p>
 
                     <a href="https://www.fark.com/farq/about/#What_is_TotalFark.3F">learn more</a> | <a href="/totalfarksignup">sign up</a>
                 </div>   <br>
 
-               <div class="top_right_container"> <div class="ad_container rightTop">  <div id="rightAd300x250"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock"  id="rightAd300x250-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('rightAd300x250'); return false;">Report</a></div>    </div> </div>   <div id="supportfark">
+               <div class="top_right_container"> <div class="ad_container rightTop">  <div id="rightAd300x250"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock"  id="rightAd300x250-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('rightAd300x250'); return false;">Report</a></div>   </div> </div>   <div id="supportfark">
             <hr>
             <a href="https://www.fark.com/supportfark">Support Fark</a>
             <hr>
@@ -591,7 +739,7 @@ Smallest light: <img src="https://img.fark.net/images/2014/site/farklogo_smalles
             <p>Sign up for the Fark NotNewsletter!</p>
               <form name="newsletter_signup" action="https://www.fark.com/newslettersignup" method="post" class="ajaxsubmit">
                 <input type="text" name="nnl_e" placeholder="you@you.com">
-                <input type="hidden" name="submitbutton" value="Sign Me Up!"> <input type="hidden" name="e0$FaNk_lHM9kAI9dip$uLmP7nXzJRtRWFJdbcbZ" value="FaNk_UtmRzCCVZXyy9CFS_-ml5Vb6CuwwRbZWlE3ycawXN1H5nWqSlLj2SehyRaf8gAM73yk3xxVic8QM7uDe9n5OHTBRDk1O1P6V">
+                <input type="hidden" name="submitbutton" value="Sign Me Up!"> <input type="hidden" name="e0$FaMk_dk4z7qGKpVgY3jebTQdS0IaVFLiuysfL" value="FaOk_As1xR3fepgjrGVFzS1ZXXyKtojYG8l4BuClDhSkstFFrdQjEDHRo3e7JDAjdCtIOwlHnxsaRqpS4frFnv28iy_B8u9ZgjOrZ">
  <input type="submit" class="gradientbutton" value="Go&raquo;">
             </form>
             <a href="https://www.fark.com/farq/services/#What_is_the_Fark_NotNewsletter.3F" style="display: inline-block; margin-top: 5px; ">learn more</a>
@@ -619,7 +767,7 @@ Smallest light: <img src="https://img.fark.net/images/2014/site/farklogo_smalles
 
         <hr>
 
-          <div class="ad_container right">  <div id="rightAd300x250Middle"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock"  id="rightAd300x250Middle-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('rightAd300x250Middle'); return false;">Report</a></div>    </div>  <div id="facebook"><div class="fb-like" data-href="https://www.facebook.com/fark" data-send="false" data-layout="button_count" data-width="78" data-show-faces="false"></div>&nbsp;&nbsp;<a target="_blank" href="https://www.facebook.com/fark">Like Fark!</a></div>
+          <div class="ad_container right">  <div id="rightAd300x250Middle"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock"  id="rightAd300x250Middle-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('rightAd300x250Middle'); return false;">Report</a></div>   </div>  <div id="facebook"><div class="fb-like" data-href="https://www.facebook.com/fark" data-send="false" data-layout="button_count" data-width="78" data-show-faces="false"></div>&nbsp;&nbsp;<a target="_blank" href="https://www.facebook.com/fark">Like Fark!</a></div>
  <div id="twitter">
             <a href="https://twitter.com/Fark" class="twitter-follow-button" data-show-count="false">&nbsp;Follow @Fark</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -658,7 +806,7 @@ Smallest light: <img src="https://img.fark.net/images/2014/site/farklogo_smalles
 
 
         <br>
-           <div class="ad_container right">  <div id="rightAd300x250Lower"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock"  id="rightAd300x250Lower-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('rightAd300x250Lower'); return false;">Report</a></div>    </div>         <div id="rightBottomWidget">
+           <div class="ad_container right">  <div id="rightAd300x250Lower"><script src="https://www.fark.com/aptminus/size3"></script></div>  <div class="reportAdBlock"  id="rightAd300x250Lower-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('rightAd300x250Lower'); return false;">Report</a></div>   </div>         <div id="rightBottomWidget">
             <div id="rightBottomWidgetLinks"> <div id="widgetTopHeadlinescontainer">
     <div id="widgetTopHeadlinesheader">
         <div id="widgetTopHeadlinesfark_logo">Fark.com</div>
@@ -844,34 +992,34 @@ var loadNewer = new Vue({
         <table id="alsoOnFarkTable">
             <tbody>      <tr>
                         <td class="alsoOnFarkLabel"><a href="https://www.fark.com/">Main</a></td>
-                         <td><a target="_blank" href="https://www.fark.com/goto/11160881" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Main');">I hope he got to go to Disneyland first</a> ( <a rel='nofollow' class='outbound_link id11160881 '  data-farkdomain='cnn.com' target='_blank' href='https://www.fark.com/goto/11160881'>cnn.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11160881/I-hope-he-got-to-go-to-Disneyland-first" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Main');">(6 comments)</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11282681" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Main');">It&#39;s nice to know in this day and age, there are still cranks out there writing batshiat crazy letters to the editor</a> ( <a rel='nofollow' class='outbound_link id11282681 '  data-farkdomain='twitter.com' target='_blank' href='https://www.fark.com/goto/11282681'>twitter.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11282681/Its-nice-to-know-in-this-day-age-there-are-still-cranks-out-there-writing-batshiat-crazy-letters-to-editor" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Main');">(49 comments)</a></td>
                     </tr>      <tr>
                         <td class="alsoOnFarkLabel"><a href="https://www.fark.com/discussion/">Discussion</a></td>
-                         <td><a target="_blank" href="https://www.fark.com/goto/11159909" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Discussion');">Can Patrick Mahomes make it two Lombardi Trophies in a row? Or will Tom Brady get the ultimate home-field championship moment the league has dreamed of for years? Mask up and maintain distance, it&#39;s Super Bowl LV. (6:30 PM ET game time)</a> ( <a rel='nofollow' class='outbound_link id11159909 '  data-farkdomain='nfl.com' target='_blank' href='https://www.fark.com/goto/11159909'>nfl.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11159909/Can-Patrick-Mahomes-make-it-two-Lombardi-Trophies-in-a-row-Or-will-Tom-Brady-get-ultimate-home-field-championship-moment-league-has-dreamed-of-for-years-Mask-up-maintain-distance-its-Super-Bowl-LV-630-PM-ET-game-time" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Discussion');">(577 comments)</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11282231" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Discussion');">This edition of Sunday hockey starts with Rangers-Capitals at Noon ET on NBC, followed throughout the day on NBCSN by a colorful battle of Blue Jackets-Red Wings, Devils-Bruins, and Predators-Blackhawks. Let&#39;s do this</a> ( <a rel='nofollow' class='outbound_link id11282231 '  data-farkdomain='nhl.com' target='_blank' href='https://www.fark.com/goto/11282231'>nhl.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11282231/This-edition-of-Sunday-hockey-starts-with-Rangers-Capitals-at-Noon-ET-on-NBC-followed-throughout-day-on-NBCSN-by-a-colorful-battle-of-Blue-Jackets-Red-Wings-Devils-Bruins-Predators-Blackhawks-Lets-do-this" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Discussion');">(2 comments)</a></td>
                     </tr>      <tr>
                         <td class="alsoOnFarkLabel"><a href="https://www.fark.com/sports/">Sports</a></td>
-                         <td><a target="_blank" href="https://www.fark.com/goto/11159909" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Sports');">Can Patrick Mahomes make it two Lombardi Trophies in a row? Or will Tom Brady get the ultimate home-field championship moment the league has dreamed of for years? Mask up and maintain distance, it&#39;s Super Bowl LV. (6:30 PM ET game time)</a> ( <a rel='nofollow' class='outbound_link id11159909 '  data-farkdomain='nfl.com' target='_blank' href='https://www.fark.com/goto/11159909'>nfl.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11159909/Can-Patrick-Mahomes-make-it-two-Lombardi-Trophies-in-a-row-Or-will-Tom-Brady-get-ultimate-home-field-championship-moment-league-has-dreamed-of-for-years-Mask-up-maintain-distance-its-Super-Bowl-LV-630-PM-ET-game-time" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Sports');">(577 comments)</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11282231" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Sports');">This edition of Sunday hockey starts with Rangers-Capitals at Noon ET on NBC, followed throughout the day on NBCSN by a colorful battle of Blue Jackets-Red Wings, Devils-Bruins, and Predators-Blackhawks. Let&#39;s do this</a> ( <a rel='nofollow' class='outbound_link id11282231 '  data-farkdomain='nhl.com' target='_blank' href='https://www.fark.com/goto/11282231'>nhl.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11282231/This-edition-of-Sunday-hockey-starts-with-Rangers-Capitals-at-Noon-ET-on-NBC-followed-throughout-day-on-NBCSN-by-a-colorful-battle-of-Blue-Jackets-Red-Wings-Devils-Bruins-Predators-Blackhawks-Lets-do-this" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Sports');">(2 comments)</a></td>
                     </tr>      <tr>
                         <td class="alsoOnFarkLabel"><a href="https://www.fark.com/business/">Business</a></td>
-                         <td><a target="_blank" href="https://www.fark.com/goto/11159885" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Business');">&quot;Food Evolution&quot; recalls party dips and salads after learning they hadn&#39;t been properly inspected for any &quot;food evolution&quot;</a> ( <a rel='nofollow' class='outbound_link id11159885 '  data-farkdomain='wgntv.com' target='_blank' href='https://www.fark.com/goto/11159885'>wgntv.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11159885/Food-Evolution-recalls-party-dips-salads-after-learning-they-hadnt-been-properly-inspected-for-any-food-evolution" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Business');">(4 comments)</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11282405" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Business');">If you were wondering what kind of exploitative monsters would actually brag to their employees about hindering the Fight For $15 minimum wage and blocking unionizing efforts, look no further</a> ( <a rel='nofollow' class='outbound_link id11282405 '  data-farkdomain='dailyposter.com' target='_blank' href='https://www.fark.com/goto/11282405'>dailyposter.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11282405/If-you-were-wondering-what-kind-of-exploitative-monsters-would-actually-brag-to-their-employees-about-hindering-Fight-For-$15-minimum-wage-blocking-unionizing-efforts-look-no-further" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Business');">(33 comments)</a></td>
                     </tr>      <tr>
                         <td class="alsoOnFarkLabel"><a href="https://www.fark.com/stem/">STEM</a></td>
-                         <td><a target="_blank" href="https://www.fark.com/goto/11160218" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'STEM');">Don&#39;t shoot your TV just yet, it&#39;s not your fault it doesn&#39;t work right</a> ( <a rel='nofollow' class='outbound_link id11160218 '  data-farkdomain='thebulwark.com' target='_blank' href='https://www.fark.com/goto/11160218'>thebulwark.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11160218/Dont-shoot-your-TV-just-yet-its-not-your-fault-it-doesnt-work-right" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'STEM');">(44 comments)</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11282684" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'STEM');">What are starlings trying to tell us?</a> ( <a rel='nofollow' class='outbound_link id11282684 '  data-farkdomain='nationalgeographic.com' target='_blank' href='https://www.fark.com/goto/11282684'>nationalgeographic.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11282684/What-are-starlings-trying-to-tell-us" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'STEM');">(14 comments)</a></td>
                     </tr>      <tr>
                         <td class="alsoOnFarkLabel"><a href="https://www.fark.com/entertainment/">Entertainment</a></td>
-                         <td><a target="_blank" href="https://www.fark.com/goto/11160833" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Entertainment');">On this day in 1964, the Beatles arrived in New York, and America was never the same again</a> ( <a rel='nofollow' class='outbound_link id11160833 '  data-farkdomain='history.com' target='_blank' href='https://www.fark.com/goto/11160833'>history.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11160833/On-this-day-in-1964-Beatles-arrived-in-New-York-America-was-never-same-again" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Entertainment');">(6 comments)</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11282459" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Entertainment');">This week in the Sunday Morning Music Club we&#39;re gonna tear the roof of the mother with some get down, get nasty, slap that bass like a bad biscuit old school funk</a> ( <a rel='nofollow' class='outbound_link id11282459 '  data-farkdomain='ultimate-guitar.com' target='_blank' href='https://www.fark.com/goto/11282459'>ultimate-guitar.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11282459/This-week-in-Sunday-Morning-Music-Club-were-gonna-tear-roof-of-mother-with-some-get-down-get-nasty-slap-that-bass-like-a-bad-biscuit-old-school-funk" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Entertainment');">(120 comments)</a></td>
                     </tr>      <tr>
                         <td class="alsoOnFarkLabel"><a href="https://www.fark.com/fandom/">Fandom</a></td>
-                         <td><a target="_blank" href="https://www.fark.com/goto/11160335" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Fandom');">Prince Harry mocked for riding in an open-top bus (possible nsfw content on page)</a> ( <a rel='nofollow' class='outbound_link id11160335 '  data-farkdomain='express.co.uk' target='_blank' href='https://www.fark.com/goto/11160335'>express.co.uk</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11160335/Prince-Harry-mocked-for-riding-in-an-open-top-bus-possible-nsfw-content-on-page" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Fandom');">(11 comments)</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11282387" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Fandom');">New Marvel concept art may have leaked. Loki wanted for questioning</a> ( <a rel='nofollow' class='outbound_link id11282387 '  data-farkdomain='deseret.com' target='_blank' href='https://www.fark.com/goto/11282387'>deseret.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11282387/New-Marvel-concept-art-may-have-leaked-Loki-wanted-for-questioning" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Fandom');">(4 comments)</a></td>
                     </tr>      <tr>
                         <td class="alsoOnFarkLabel"><a href="https://www.fark.com/dawww/">D'awww</a></td>
-                         <td><a target="_blank" href="https://www.fark.com/goto/11160785" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'D\'awww');">The NFL is boring but don&#39;t worry, puppies (and kittens) are here to save the day. Come for the butt sniffing, stay for the ball licking. Various related shows are on all day but Puppy Bowl XVII starts at 2 PM ET on Animal Planet</a> ( <a rel='nofollow' class='outbound_link id11160785 '  data-farkdomain='animalplanet.com' target='_blank' href='https://www.fark.com/goto/11160785'>animalplanet.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11160785/The-NFL-is-boring-but-dont-worry-puppies-kittens-are-here-to-save-day-Come-for-butt-sniffing-stay-for-ball-licking-Various-related-shows-are-on-all-day-but-Puppy-Bowl-XVII-starts-at-2-PM-ET-on-Animal-Planet" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'D\'awww');">(7 comments)</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11282579" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'D\'awww');">No otter left behind</a> ( <a rel='nofollow' class='outbound_link id11282579 '  data-farkdomain='twitter.com' target='_blank' href='https://www.fark.com/goto/11282579'>twitter.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11282579/No-otter-left-behind" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'D\'awww');">(5 comments)</a></td>
                     </tr>      <tr>
                         <td class="alsoOnFarkLabel"><a href="https://www.fark.com/food/">Food</a></td>
-                         <td><a target="_blank" href="https://www.fark.com/goto/11160770" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Food');">Schoolboy designs simple tool to stop you slashing your hand when opening an avocado</a> ( <a rel='nofollow' class='outbound_link id11160770 '  data-farkdomain='dezeen.com' target='_blank' href='https://www.fark.com/goto/11160770'>dezeen.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11160770/Schoolboy-designs-simple-tool-to-stop-you-slashing-your-hand-when-opening-an-avocado" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Food');">(8 comments)</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11282528" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Food');">We&#39;re not saying you should put MSG on everything, but we&#39;re not not saying that</a> ( <a rel='nofollow' class='outbound_link id11282528 '  data-farkdomain='skillet.lifehacker.com' target='_blank' href='https://www.fark.com/goto/11282528'>skillet.lifehacker.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11282528/Were-not-saying-you-should-put-MSG-on-everything-but-were-not-not-saying-that" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Food');">(29 comments)</a></td>
                     </tr>      <tr>
                         <td class="alsoOnFarkLabel"><a href="https://www.fark.com/politics/">Politics</a></td>
-                         <td><a target="_blank" href="https://www.fark.com/goto/11160827" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Politics');">Suggest some entries for the Donald Trump Museum and Library</a> ( <a rel='nofollow' class='outbound_link id11160827 '  data-farkdomain='dailykos.com' target='_blank' href='https://www.fark.com/goto/11160827'>dailykos.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11160827/Suggest-some-entries-for-Donald-Trump-Museum-Library" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Politics');">(44 comments)</a></td>
+                         <td><a target="_blank" href="https://www.fark.com/goto/11282662" rel="nofollow" onClick="ga('send', 'event', 'Also on Fark Links', 'Outbound Click', 'Politics');">Diamond and Silk question Biden&#39;s cognitive abilities. thatsthejoke.jpg</a> ( <a rel='nofollow' class='outbound_link id11282662 '  data-farkdomain='mediaite.com' target='_blank' href='https://www.fark.com/goto/11282662'>mediaite.com</a> ) &raquo;&nbsp;<a href="https://www.fark.com/comments/11282662/Diamond-Silk-question-Bidens-cognitive-abilities-thatsthejokejpg" target="_top" onClick="ga('send', 'event', 'Also on Fark Links', 'Internal Click', 'Politics');">(15 comments)</a></td>
                     </tr>  </tbody>
         </table>   <ul id="footerFarkLinks">
         <li>Fark :: <a href="https://www.fark.com/">Main</a> | <a href="https://www.fark.com/discussion/">Discussion</a> | <a href="https://www.fark.com/sports/">Sports</a> | <a href="https://www.fark.com/business/">Business</a> | <a href="https://www.fark.com/stem/">STEM</a> | <a href="https://www.fark.com/entertainment/">Entertainment</a> | <a href="https://www.fark.com/fandom/">Fandom</a> | <a href="https://www.fark.com/dawww/">D'awww</a> | <a href="https://www.fark.com/food/">Food</a> | <a href="https://www.fark.com/politics/">Politics</a></li>
@@ -882,8 +1030,8 @@ var loadNewer = new Vue({
     </ul>
     <p class="submitLinkcontainer"><a href="https://www.fark.com/submit/" class="submitLink">Submit a Link &raquo;</a></p>
     <p id="copyrightInfo">
-        Copyright &copy; 1999 - 2021 Fark, Inc | Last updated: Feb 07 2021 18:51:07<br>
-        <a href="https://www.fark.com/feedback">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.fark.com/feedback/error">Report a bug/error msg</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.fark.com/farq/legal">Terms of service/legal/privacy policy</a><br>
+        Copyright &copy; 1999 - 2021 Fark, Inc | Last updated: Mar 28 2021 12:43:59<br>
+        <a href="https://www.fark.com/feedback">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.fark.com/feedback/error">Report a bug/error msg</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.fark.com/farq/legal">Terms of service/legal/privacy policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void(0)" onclick="__uspapi('displayUspUi');">Do Not Sell My Personal Information</a><br>
 <img src="https://www.fark.com/ll" width="4" height="1" alt="">  </p>
 
 </div>  </td>
@@ -908,7 +1056,7 @@ var loadNewer = new Vue({
 </script>
   <noscript>
 <img src="https://img.fark.net/imagesnoc/trans.gif?usertype=Lurker" width="16" height="1" alt="">
-</noscript>   <script src="/js/plugins/footer-ad.js"></script>      <div class="ad_container bottom">  <div id="bottomAd728x90"><script src="https://www.fark.com/aptminus/size1"></script></div>  <div class="reportAdBlock"  id="bottomAd728x90-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('bottomAd728x90'); return false;">Report</a></div>    </div> <br><br>
+</noscript>   <script src="/js/plugins/footer-ad.js"></script>      <div class="ad_container bottom">  <div id="bottomAd728x90"><script src="https://www.fark.com/aptminus/size1"></script></div>  <div class="reportAdBlock"  id="bottomAd728x90-reportLink"><a href="https://www.fark.com/feedback/" onclick="reportAd('bottomAd728x90'); return false;">Report</a></div>   </div> <br><br>
 
   <div id="modal">
         <a href="#" onclick="Custombox.modal.close()" class="modal_close">X</a>
@@ -941,6 +1089,14 @@ var loadNewer = new Vue({
     </script>
 
 
+<!-- CARBON TAG -->
+<script>
+!function(a,l,b,c,k,s,t,g,A){a.CustomerConnectAnalytics=k,a[k]=a[k]||function(){
+  (a[k].q=a[k].q||[]).push(arguments)},g=l.createElement(b),A=l.getElementsByTagName(b)[0],
+  g.type="text/javascript",g.async=!0,g.src=c+"?id="+s+"&parentId="+t,A.parentNode.insertBefore(g,A)
+}(window,document,"script","//carbon-cdn.ccgateway.net/script","cca",window.location.hostname,"53fe1d4767");
+</script>  
+<!-- END CARBON TAG -->
 
 </body>
 </html>
