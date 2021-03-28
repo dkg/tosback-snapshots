@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>
-      Privacy Policy | Dribbble
-  </title>
+  <title>Privacy Policy | Dribbble</title>
   <meta name="description" content="Dribbble is where designers gain inspiration, feedback, community, and jobs and is your best resource to discover and connect with designers worldwide." />
   <meta charset="utf-8" />
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"7840d0c136","applicationID":"2909452","transactionName":"Jg1bREUOClsARUpHChEHGkBFCBBWBk4=","queueTime":1,"applicationTime":59,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true}};(window.NREUM||(NREUM={})).loader_config={xpid:"VQEAWVVACgoAXVVXBQ==",licenseKey:"7840d0c136",applicationID:"2909452"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(23),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(24),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(24),a=t(23);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(20),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(23),c=t(24),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(25);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],19:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(22),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],20:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],21:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],22:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],23:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],24:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],25:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,s,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),s=m(n),f=s.length,u=0;u<f;u++)s[u].apply(c,r);var l=d[y[n]];return l&&l.push([x,n,r,c]),c}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:c,aborted:!1};return x}function o(t){return f(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var s="nr@context",f=t("gos"),u=t(23),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(g,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=t(18),c=t("handle"),s=t(23),f=t("ee"),u=t(21),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1198.min.js"},y=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:a.getLastTimestamp(),now:a,origin:v,features:{},xhrWrappable:y,userAgent:u};t(15),t(19),l[p]?(l[p]("DOMContentLoaded",o,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",i),d[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var b=0},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,s],u],t)}c(n+"start",[o,a,s],u,f);try{return l=e.apply(a,o)}catch(h){throw c(n+"err",[o,a,h],u,f),h}finally{c(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,s,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)s=e[f],c=t[s],a(c)||(t[s]=n(c,u?s+r:r,i,s,o))}function c(n,r,o,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,o,e,a)}catch(s){i([s,n,r,o],t)}h=c}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function c(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(24),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);</script>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"7840d0c136","applicationID":"2909452","transactionName":"Jg1bREUOClsARUpHChEHGkBFCBBWBk4=","queueTime":1,"applicationTime":49,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true}};(window.NREUM||(NREUM={})).loader_config={xpid:"VQEAWVVACgoAXVVXBQ==",licenseKey:"7840d0c136",applicationID:"2909452"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(24),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(25),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(25),a=t(24);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(21),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(24),c=t(25),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(26);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],19:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],20:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(23),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],21:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],22:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],23:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],24:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],25:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],26:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,s,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),s=m(n),f=s.length,u=0;u<f;u++)s[u].apply(c,r);var l=d[y[n]];return l&&l.push([x,n,r,c]),c}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:c,aborted:!1};return x}function o(t){return f(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var s="nr@context",f=t("gos"),u=t(24),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(y,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=t(18),c=t("handle"),s=t(24),f=t("ee"),u=t(22),d=t(19),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;if(d(l.location)){NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:a.getLastTimestamp(),now:a,origin:g,features:{},xhrWrappable:x,userAgent:u};t(15),t(20),p[h]?(p[h]("DOMContentLoaded",o,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",i),l[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,s],u],t)}c(n+"start",[o,a,s],u,f);try{return l=e.apply(a,o)}catch(h){throw c(n+"err",[o,a,h],u,f),h}finally{c(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,s,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)s=e[f],c=t[s],a(c)||(t[s]=n(c,u?s+r:r,i,s,o))}function c(n,r,o,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,o,e,a)}catch(s){i([s,n,r,o],t)}h=c}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function c(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(25),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);</script>
   <meta name="theme-color" content="#333333">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     <meta name="referrer" content="origin-when-cross-origin">
@@ -17,13 +15,12 @@
   <link rel="preload" href="https://cdn.dribbble.com/assets/neue-haas-grotesk/NeueHaasGrotTextRound-75Bold-Web-f2ff2f34217e3fdab82c30ef689f5be3fb86a8e4218a1906a9399d0354a95d45.woff2" as="font" crossorigin="anonymous">
 
   <!--[if gte IE 7]><!-->
-    <link rel="stylesheet" media="screen, projection" href="https://cdn.dribbble.com/assets/master-6809fcdb60fa0e19853aa5172c4b18bf12bd76f853cff47ae1fcdf272d9fcf6b.css" />
-    <link rel="preload" href="https://cdn.dribbble.com/assets/master_async-34984a8e34f304eb2dc43685eb3f7f6a47c5ec99a8f2177ea4fa3a4fc615b980.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.dribbble.com/assets/master_async-34984a8e34f304eb2dc43685eb3f7f6a47c5ec99a8f2177ea4fa3a4fc615b980.css"></noscript>
+        <link rel="stylesheet" href="https://cdn.dribbble.com/assets/mini-master-async-bc4ab176a50edb0db85973b442b40b4615952dd08183275b8a1d99f955580f1e.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdn.dribbble.com/assets/mini-master-async-bc4ab176a50edb0db85973b442b40b4615952dd08183275b8a1d99f955580f1e.css"></noscript>
 
 
 
-  <link rel="stylesheet" media="screen" href="https://cdn.dribbble.com/stylesheets/site.css" />
+  <link rel="stylesheet" media="screen" href="https://cdn.dribbble.com/assets/privacy-landing-08ae70560e4536c9494d9f0d229a37f9200d28772b1c3dcbde33721f86c80cf4.css" />
 
   <!-- <![endif]-->
   <link href="https://cdn.dribbble.com/assets/dribbble-vector-ball-f320a6ba48a4ccf416ef6e396e204c899874565b694593834b6c23f978394498.svg" rel="mask-icon" color="#ea4c89" />
@@ -33,7 +30,7 @@
 
   
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="APuh9rxjP+jQRn03h/0hInAmu+4pm0vFx2DXtfesp6mlBM2XqXTTyTs0FZORRWlXVvzyny7RxJeZdVh+vhfEuQ==" />
+<meta name="csrf-token" content="3eDct4OrQqLsSt6zyL2EGzVUm5+iJA3F79CWjZJRjPAnBBCXOTpHPEqa2fGNB/SUOsbixPgLhbCBbjWGaIx7Og==" />
   
 
   <meta property="fb:app_id" content="811749452338490">
@@ -70,13 +67,13 @@
     </a>
   </div>
   <ul class="site-nav-desktop-nav">
-    <li class="site-nav-desktop-item site-nav-hover-item">
-      <span>Inspiration</span>
+    <li class="site-nav-desktop-item site-nav-hover-item" data-site-nav-category="Top Nav">
+      <a data-site-nav-element="Inspiration" href="/shots">Inspiration</a>
       <div class="site-nav-hover-menu">
         <ul class="site-nav-dropdown-list site-nav-dropdown-white-bg">
           <div data-site-nav-category="Inspiration">
             <li class="site-nav-dropdown-item">
-              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Explore Design Work" href="/shots/popular">
+              <a class="site-nav-dropdown-item-padding site-nav-dropdown-item-hover flex" data-site-nav-element="Explore Design Work" href="/shots/popular">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" fill="none" class="site-nav-dropdown-icon">
 <path d="M33.2412 14L30.624 14V19.5234C30.624 21.7793 28.7783 23.625 26.5224 23.625H6.99924L6.99902 33.2422C6.99902 34.209 7.79006 35 8.75687 35H33.2409C34.2078 35 34.9988 34.209 34.9988 33.2422L34.999 15.7579C34.999 14.7911 34.208 14 33.2412 14Z" fill="#787EFF"></path>
 <path d="M26.25 21H1.75C0.7875 21 0 20.2125 0 19.25V1.75C0 0.7875 0.7875 0 1.75 0H26.25C27.2125 0 28 0.7875 28 1.75V19.25C28 20.2125 27.2125 21 26.25 21Z" fill="#EA4C89"></path>
@@ -95,7 +92,7 @@
 
 </a>            </li>
             <li class="site-nav-dropdown-item">
-              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="New &amp; Noteworthy" href="/shots/recent">
+              <a class="site-nav-dropdown-item-padding site-nav-dropdown-item-hover flex" data-site-nav-element="New &amp; Noteworthy" href="/shots/recent">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 31" fill="none" class="site-nav-dropdown-icon">
 <path d="M17.4319 30.2081L28.6772 18.9628H6.18652L17.4319 30.2081Z" fill="#787EFF"></path>
 <circle cx="26.6425" cy="8.3575" r="8.35737" fill="#EA4C89"></circle>
@@ -114,30 +111,8 @@
 </svg>
 
 </a>            </li>
-            <!--
             <li class="site-nav-dropdown-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" fill="none" class="site-nav-dropdown-icon">
-<circle cx="26.7113" cy="8.28947" r="8.28947" fill="#FEBA57"></circle>
-<circle cx="8.28947" cy="8.28947" r="8.28947" fill="#FEBA57"></circle>
-<path d="M8.28906 18.4211L16.5785 26.7106L8.28906 35L-0.00040852 26.7106L8.28906 18.4211Z" fill="#787EFF"></path>
-<path d="M26.7109 18.4211L35.0004 26.7106L26.7109 35L18.4215 26.7106L26.7109 18.4211Z" fill="#787EFF"></path>
-</svg>
-
-                 <div class="site-nav-dropdown-item-text">
-                  <p class="site-nav-dropdown-item-title">Collections <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
-<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
-</svg>
-</p>
-                  <p class="site-nav-dropdown-item-desc">Curated collections of inpsiration</p>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="site-nav-dropdown-arrow icon-12 fill-current">
-<path d="M11.7803 6.53033C12.0732 6.23744 12.0732 5.76257 11.7803 5.46967L7.18414 0.873479C6.89124 0.580585 6.41637 0.580585 6.12348 0.873478C5.83058 1.16637 5.83058 1.64125 6.12348 1.93414L9.43934 5.25H0.75C0.335787 5.25 0 5.58579 0 6C0 6.41422 0.335787 6.75 0.75 6.75H9.43934L6.12348 10.0659C5.83058 10.3588 5.83058 10.8336 6.12348 11.1265C6.41637 11.4194 6.89124 11.4194 7.18414 11.1265L11.7803 6.53033Z"></path>
-</svg>
-
-            </li>
-            -->
-            <li class="site-nav-dropdown-item">
-              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Playoffs" href="/shots?list=playoffs">
+              <a class="site-nav-dropdown-item-padding site-nav-dropdown-item-hover flex" data-site-nav-element="Playoffs" href="/shots?list=playoffs">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 33" fill="none" class="site-nav-dropdown-icon">
 <rect y="0.749756" width="18.3753" height="14.0002" rx="1.7" fill="#787EFF"></rect>
 <rect width="18.3753" height="14.0002" rx="1.7" transform="matrix(-1 0 0 1 34.999 18.2501)" fill="#787EFF"></rect>
@@ -157,7 +132,7 @@
 
 </a>            </li>
             <li class="site-nav-dropdown-item">
-              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Blog" href="/stories">
+              <a class="site-nav-dropdown-item-padding site-nav-dropdown-item-hover flex" data-site-nav-element="Blog" href="/stories">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" fill="none" class="site-nav-dropdown-icon">
 <g clip-path="url(#clip0)">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M23 15.7499C27.3482 15.7488 30.8728 12.2235 30.8728 7.87496C30.8728 3.52574 27.3471 0 22.9979 0H22.9977V6.10352e-05H19.5V15.75H23V15.7499Z" fill="#FEBA57"></path>
@@ -184,7 +159,7 @@
 
 </a>            </li>
               <li class="site-nav-dropdown-item">
-                <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Weekly Warm-up" href="/shots/15050316-Design-an-Icon-Based-on-Work-Ethic">
+                <a class="site-nav-dropdown-item-padding site-nav-dropdown-item-hover flex" data-site-nav-element="Weekly Warm-up" href="/shots/15340249--Design-a-postcard-inspired-by-your-favorite-city">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" class="site-nav-dropdown-icon">
 <path d="M28.7614 16.2067L13.4609 39.9999H28.7614V16.2067Z" fill="#FFD469"></path>
 <path d="M28.7617 10.3259H39.5032V35.801C39.5032 38.12 37.6232 40 35.3041 40H28.7617V10.3259Z" fill="#FEBA57"></path>
@@ -237,13 +212,13 @@
       </div>
     </li>
 
-    <li class="site-nav-desktop-item site-nav-hover-item">
-      <span>Find Work</span>
+    <li class="site-nav-desktop-item site-nav-hover-item" data-site-nav-category="Top Nav">
+      <a data-site-nav-element="Find Work" href="/jobs">Find Work</a>
       <div class="site-nav-hover-menu">
         <ul class="site-nav-dropdown-list">
           <div data-site-nav-category="Find Work">
             <li class="site-nav-dropdown-item">
-              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Job Board" href="/jobs">
+              <a class="site-nav-dropdown-item-padding site-nav-dropdown-item-hover flex" data-site-nav-element="Job Board" href="/jobs">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" class="site-nav-dropdown-icon">
 <rect width="22" height="22" fill="#787EFF"></rect>
 <rect y="25" width="15" height="15" fill="#FEBA57"></rect>
@@ -263,7 +238,7 @@
 
 </a>            </li>
             <li class="site-nav-dropdown-item">
-              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Freelance Projects" href="/freelance-jobs">
+              <a class="site-nav-dropdown-item-padding site-nav-dropdown-item-hover flex" data-site-nav-element="Freelance Projects" href="/freelance-jobs">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 39" fill="none" class="site-nav-dropdown-icon">
 <path d="M13.8477 2.66302C5.05402 2.66302 0.37305 1.04476 0.37305 1.04476L0.373047 37.4074C7.84082 38.7193 11.8854 38.0318 16.0115 37.3305C18.4927 36.9087 21.0034 36.482 24.3056 36.482C33.0994 36.482 37.7803 38.1002 37.7803 38.1002L37.7803 1.73758C30.3126 0.425674 26.268 1.11317 22.1419 1.81451C19.6607 2.23626 17.15 2.66302 13.8477 2.66302Z" fill="#82D1D1"></path>
 <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="38" height="39">
@@ -299,6 +274,9 @@
         <span>Learn <span class="site-nav-medium-screens-only">Design</span></span>
 </a>    </li>
 
+      <li class="site-nav-desktop-item" data-site-nav-category="Top Nav">
+        <a data-site-nav-element="Go Pro" href="/pro">Go Pro</a>
+      </li>
 
     <li class="site-nav-desktop-item site-nav-hover-item" data-site-nav-category="Top Nav">
       <a data-site-nav-element="Hire Designers" href="/hiring">Hire Designers</a>
@@ -306,7 +284,7 @@
         <ul class="site-nav-dropdown-list">
           <div data-site-nav-category="Hire Designers">
             <li class="site-nav-dropdown-item">
-              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Designer Search" href="/designers">
+              <a class="site-nav-dropdown-item-padding site-nav-dropdown-item-hover flex" data-site-nav-element="Designer Search" href="/designers">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" class="site-nav-dropdown-icon">
 <circle cx="5.33786" cy="34.6336" r="3.90818" fill="#FEBA57"></circle>
 <circle cx="5.3379" cy="19.6333" r="4.63282" fill="#FEBA57"></circle>
@@ -332,7 +310,7 @@
 
 </a>            </li>
             <li class="site-nav-dropdown-item">
-              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="List my Job Opening" href="/jobs/new">
+              <a class="site-nav-dropdown-item-padding site-nav-dropdown-item-hover flex" data-site-nav-element="List my Job Opening" href="/jobs/new">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 40" fill="none" class="site-nav-dropdown-icon">
 <rect y="0.610352" width="21.45" height="21.45" fill="#EA4C89"></rect>
 <rect y="24.9854" width="14.625" height="14.625" fill="#4BB7BF"></rect>
@@ -354,7 +332,7 @@
 
 </a>            </li>
             <li class="site-nav-dropdown-item">
-              <a class="site-nav-dropdown-item-padding flex" data-site-nav-element="Post a Freelance Project" href="/freelance-jobs">
+              <a class="site-nav-dropdown-item-padding site-nav-dropdown-item-hover flex" data-site-nav-element="Post a Freelance Project" href="/freelance-jobs">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" class="site-nav-dropdown-icon">
 <path d="M14.8477 2.66302C6.05402 2.66302 1.37305 1.04476 1.37305 1.04476L1.37305 37.4074C8.84082 38.7193 12.8854 38.0318 17.0115 37.3305C19.4927 36.9087 22.0034 36.482 25.3056 36.482C34.0994 36.482 38.7803 38.1002 38.7803 38.1002L38.7803 1.73758C31.3126 0.425674 27.268 1.11317 23.1419 1.81451C20.6607 2.23626 18.15 2.66302 14.8477 2.66302Z" fill="#787EFF"></path>
 <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="1" y="0" width="38" height="39">
@@ -458,7 +436,7 @@
 </a>            </li>
             <li><a data-site-nav-element="Playoffs" href="/shots?list=playoffs">Playoffs</a></li>
             <li><a data-site-nav-element="Blog" href="/stories">Blog</a></li>
-              <li><a data-site-nav-element="Weekly Warmup" href="/shots/15050316-Design-an-Icon-Based-on-Work-Ethic">Weekly Warmup</a></li>
+              <li><a data-site-nav-element="Weekly Warmup" href="/shots/15340249--Design-a-postcard-inspired-by-your-favorite-city">Weekly Warmup</a></li>
           </div>
         </ul>
       </li>
@@ -481,6 +459,9 @@
       <li data-site-nav-category="Top Nav">
         <a class="site-nav-mobile-list-item" data-site-nav-element="Learn Design" href="/learn">Learn Design</a>
       </li>
+        <li data-site-nav-category="Top Nav">
+          <a class="site-nav-mobile-list-item" data-site-nav-element="Go Pro" href="/pro">Go Pro</a>
+        </li>
       <li class="site-nav-mobile-dropdown">
         <input type="checkbox" name="dropdown" id="hire-designers">
         <label for="hire-designers" class="site-nav-mobile-list-item">
@@ -518,7 +499,13 @@
 <div class="notice-alert">
   <h3><!-- message goes here --></h3>
   <div class="close" aria-label="close">
-    <img width="16" height="16" alt="close" src="https://cdn.dribbble.com/assets/icon-shot-x-light-2x-3fa782b8178e9cf00f28bf7f9758a80bd0883a9c26e4b41fb16d19bbd14c05be.png" />
+    <img
+      class="lazyload"
+      data-src="https://cdn.dribbble.com/assets/icon-shot-x-light-f3676a5f3f6b7d0902be702c858a78e3de991957bbb7cec07daef7150e284fd8.png"
+      width="16"
+      height="16"
+      alt="close"
+    >
   </div>
 </div>
 
@@ -563,65 +550,238 @@
 
 
 
+
 <div class="constrained-content-alt">
   <div id="wrap">
     <div class="constrained-content mt40 copy">
-      <h2 class="section">Updated October 4, 2019</h2>
+      <h2 class="section">Updated March 26, 2021</h2>
         <h3>Overview</h3>
         <p>Dribbble Holdings Ltd. (“<strong>Dribbble</strong>”, “<strong>we</strong>”, “<strong>us</strong>” or “<strong>our</strong>”) is committed to protecting the privacy of personal information (i.e. any information relating to an identified or identifiable natural person) who visit the https://dribbble.com website and Dribbble mobile software application (collectively, the “<strong>Site</strong>”) and use the services available thereon (the “<strong>Services</strong>”). Amendments to this Privacy Policy will be posted to the Site and/or Services and will be effective when posted. Your continued use of the Site and/or Services following the posting of any amendment to this Privacy Policy shall constitute your acceptance of such amendment.</p>
-        <h3>Consent and Information Collection and Use</h3>
+
+        <h3>Your Consent</h3>
         <p>When you register as a user of our Site and Services, we ask for personal information that will be used to activate your account, provide the Services to you, communicate with you about the status of your account, and for other purposes set out in this Privacy Policy. Your name, company name, address, telephone number, email address, credit card information and certain other information about you may be required by us to provide the Services or be disclosed by you during your use of the Services. You will also be asked to create a user name and private password, which will become part of your account information.</p>
         <p>By providing personal information to us and by retaining us to provide you with the Services, you voluntarily consent to the collection, use and disclosure of such personal information as specified in this Privacy Policy. The legal bases for our processing of personal information are primarily that the processing is necessary for providing the Services and that the processing is carried out in our legitimate interests, which are further explained below. Without limiting the foregoing, we may on occasion ask you to consent when we collect, use, or disclose your personal information in specific circumstances.</p>
-        <p>We take steps designed to ensure that only those employees who need access to your personal information to fulfil their employment duties will have access to it. We may use and disclose your personal or account information for the following purposes:</p>
+
+        <h3>Information We Collect</h3>
+        <p>Our Site collects information that identifies, relates to, describes, references, is capable of being associated with, or could reasonably be linked to, directly or indirectly, with a particular consumer or device (“personal information”). The information may be provided through the following sources:</p>
         <ul>
+          <li>directly by you;</li>
+          <li>by your internet service provider;</li>
+          <li>ad networks;</li>
+          <li>analytics providers; and</li>
+          <li>operating systems and platforms</li>
+        </ul>
+        <p>In particular, our Site has collected the following categories of personal information from its consumers within in the last 12 months: </p>
+        <table class="responsive-table margin-b-32">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Examples</th>
+              <th>Collected</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Category:">A. Identifiers</td>
+              <td data-label="Examples:">A real name, alias, postal address, unique personal identifier, online identifier, Internet Protocol address, email address, account name, Social Security number, driver’s license number, passport number, or other similar identifiers.</td>
+              <td data-label="Collected:">Yes</td>
+            </tr>
+            <tr>
+              <td data-label="Category:">B. Personal information categories listed in the California Customer Records statute (Cal. Civ. Code § 1798.80(e))</td>
+              <td data-label="Examples:">A name, signature, Social Security Number, physical characteristics or description, address, telephone number, passport number, driver’s license or state identification card number, insurance policy number, education, employment, employment history, bank account number, credit card number, debit card number, or any other financial information, medical information, or health insurance information. Some personal information in this category may overlap with other categories.</td>
+              <td data-label="Collected:">Yes</td>
+            </tr>
+            <tr>
+              <td data-label="Category:">C. Protected classification under California or federal law</td>
+              <td data-label="Examples:">Age (40 years or older), race, color, ancestry, national origin, citizenship, religion or creed, marital status, medical condition, physical or mental disability, sex (including gender, gender identity, gender expression, pregnancy or childbirth and related medical conditions), sexual orientation, veteran or military status, genetic information (including familial genetic information).</td>
+              <td data-label="Collected:">No</td>
+            </tr>
+            <tr>
+              <td data-label="Category:">D. Commercial information</td>
+              <td data-label="Examples:">Records of personal property, products or services purchased, obtained, or considered, or other purchasing or consuming histories or tendencies.</td>
+              <td data-label="Collected:">Yes</td>
+            </tr>
+            <tr>
+              <td data-label="Category:">E. Biometric information</td>
+              <td data-label="Examples:">Genetic, physiological, behavioral, and biological characteristics, or activity patterns used to extract a template or other identifier or identifying information, such as fingerprints, faceprints, and voiceprints, iris or retina scans, keystroke, gait or other physical patterns, and sleep, health, or exercise data.</td>
+              <td data-label="Collected:">No</td>
+            </tr>
+            <tr>
+              <td data-label="Category:">F. Internet or other similar network activity</td>
+              <td data-label="Examples:">Browsing history, search history, information on a consumer’s interaction with a website, application, or advertisement.</td>
+              <td data-label="Collected:">Yes</td>
+            </tr>
+            <tr>
+              <td data-label="Category:">G. Geolocation data</td>
+              <td data-label="Examples:">Physical location or movements.</td>
+              <td data-label="Collected:">Yes</td>
+            </tr>
+            <tr>
+              <td data-label="Category:">H. Sensory data</td>
+              <td data-label="Examples:">Audio, electronic, visual, thermal, olfactory, or other similar information.</td>
+              <td data-label="Collected:">No</td>
+            </tr>
+            <tr>
+              <td data-label="Category:">I. Professional or employment-related information</td>
+              <td data-label="Examples:">Current or past job history or performance evaluations.</td>
+              <td data-label="Collected:">Yes</td>
+            </tr>
+            <tr>
+              <td data-label="Category:">J. Non-public education information (per the Family Educational Rights and Privacy Act (20 U.S.C. Section 1232g, 24 C.F.R. Part 99)</td>
+              <td data-label="Examples:">Education records directly related to a student maintained by an educational institution or party acting on its behalf, such as grades, transcripts, class lists, student schedules, student identification codes, student financial information, or student disciplinary records.</td>
+              <td data-label="Collected:">No</td>
+            </tr>
+            <tr>
+              <td data-label="Category:">K. Inferences drawn from other personal information</td>
+              <td data-label="Examples:">Profile reflecting a person’s preferences, characteristics, psychological trends, predispositions, behavior, attitudes, intelligence, abilities, and aptitudes.</td>
+              <td data-label="Collected:">No</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The term “personal information” does not include:</p>
+        <ul>
+          <li>Publicly available information from government records; or</li>
+          <li>Deidentified or aggregate consumer information.</li>
+        </ul>
+
+        <h3>Use of Personal Information</h3>
+        <p>We take steps designed to ensure that only those employees who need access to your personal information to fulfill their employment duties will have access to it. We may use or disclose your personal information for the following purposes:</p>
+        <ul>
+          <li>To fulfill or meet the reason you provided the information;</li>
           <li>To provide the Site and Services to you and to other users of the Site and Services;</li>
           <li>To improve the quality of the Site and Services through polls, surveys and other similar feedback gathering activities conducted by Dribbble and/or third parties;</li>
           <li>To create, manage and control your account information, and to verify access rights to the Site and Services;</li>
           <li>To bill your account;</li>
-          <li>To communicate with you (subject to your opt-out rights set forth in this Privacy Policy), including without limitation for the purpose of providing you with information about the Services, or informing you of changes or additions to the Services or of the availability of any other services or features we provide;</li>
+          <li>To communicate with you (subject to your opt-out rights set forth in this Privacy Policy), including providing you with information about the Services, and informing you of changes or additions to the Services or of the availability of any other services or features we provide;</li>
           <li>To assess service levels, monitor traffic patterns and gauge popularity of different features and service options of the Site and/or Services;</li>
           <li>To enforce this Privacy Policy or our Terms of Service;</li>
           <li>To protect against fraud or error, and to respond to claims of any violation of our rights or those of any third parties;</li>
           <li>To respond to your requests for customer service;</li>
-          <li>To protect the rights, property or personal safety of you, us, our users and the public; and</li>
+          <li>To protect the rights, property or personal safety of you, us, our users and the public; </li>
+          <li>To evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution or other sale or transfer of some or all of Dribbble’s assets, in which personal information held by Dribbble is among the assets transferred;</li>
+          <li>As described to you when collecting your personal information; and</li>
           <li>As required to comply with applicable laws or as authorized by applicable laws.</li>
         </ul>
-        <p>For the purposes of billing your account (if you have a paid account) and in order to process payments, Dribbble utilizes third party payment gateways, such as Stripe and Paypal, who will utilize your credit card and other payment information in accordance with their respective privacy policies. Dribbble shall not be liable to you or any other person for any damages that might result from unauthorized use, publication, disclosure or any other misuse of such payment information, including credit card information.</p>
-        <p>Dribbble may share your personal information with its registered API application providers, including Chrome tab extensions Panda and Muz.li which deliver relevant design stories and inspiration. We invite you to review their applicable data protection policies.</p>
-        <p>When we disclose your personal information to third parties, we take reasonable measures to ensure that the rules set forth in this Privacy Policy are complied with and these third parties provide sufficient guarantees to implement appropriate technical and organisational measures.</p>
+        <p>Dribbble will not collect additional categories of personal information or use the personal information we collected for materially different, unrelated, or incompatible purposes without providing you notice.</p>
+
+        <h3>Aggregated Data</h3>
+        <p>We may also use your personal information to generate Aggregated Data for internal use and for sharing with others on a selective basis. “Aggregated Data” means records which have been stripped of information potentially identifying users, and which have been manipulated or combined to provide generalized, anonymous information. Your identity and personal information will be kept anonymous in Aggregated Data.</p>
+
+        <h3>Sharing your Personal Information</h3>
+        <p>Dribbble may disclose your personal information to a third party for a business purpose. When we disclose personal information for a business purpose, we enter into a contract that describes the purpose and requires the recipient to both keep that personal information confidential and not use it for any purpose except performing the contract. We also take reasonable measures to ensure that these third parties provide sufficient guarantees to implement appropriate technical and organizational measures.</p>
+        <p>We share your personal information with the following categories of third parties:</p>
+        <ul>
+          <li>Service providers such as Stripe and Paypal who will utilize your credit card and other payment information in accordance with their respective privacy policies.</li>
+          <li>Dribbble’s registered API application providers, including Chrome tab extensions Panda and Muz.li which deliver relevant design stories and inspiration. We invite you to review their applicable data protection policies.</li>
+        </ul>
+
+        <h3>Disclosures of Personal Information for a Business Purpose</h3>
+        <ul class="plain-list">
+          <li>In the preceding 12 months, we have disclosed the following categories of personal information for a business purpose:</li>
+          <li>Category A: Identifiers</li>
+          <li>Category B. Personal information categories</li>
+          <li>Category G: Geolocation data</li>
+          <li>Category I: Professional or employment-related information</li>
+        </ul>
+
+        <h3>Sale of Personal Information</h3>
+        <ul class="plain-list">
+          <li>In the preceding 12 months, we have sold the following categories of personal information for a business purpose:</li>
+          <li>Category A: Identifiers</li>
+          <li>Category B. Personal information categories</li>
+          <li>Category G: Geolocation data</li>
+          <li>Category I: Professional or employment-related information</li>
+        </ul>
+
+        <h3>General Data Protection Act</h3>
         <p>Your personal information may be stored and processed in any country where we have facilities or in which we engage third party service providers. By using the Services, you consent to the transfer of information to countries outside your country of residence, which may have different data protection rules than in your country. While such information is outside of Canada, it is subject to the laws of the country in which it is held, and may be subject to disclosure to the governments, courts or law enforcement or regulatory agencies of such other country, pursuant to the laws of such country. However, our practices regarding your personal information will at all times continue to be governed by this Privacy Policy and, if applicable, we will comply with the General Data Protection Regulation (“GDPR”) requirements providing adequate protection for the transfer of personal information from the EU/EEA to third country.</p>
         <p>We may occasionally communicate with you regarding our products, services, news and events. You have the option to not receive this information. We provide an opt-out function within all email communications of this nature, or will cease to communicate with you for this purpose if you contact us and tell us not to communicate this information to you. The only kind of these communications that you may not “opt-out” of are those required to communicate announcements related to the Services, including information specific to your Account, planned Services suspensions and outages. We will attempt to minimize this type of communication to you.</p>
         <h3>Age of Consent</h3>
-        <p>We do not knowingly provide the Services to, and will not knowingly collect the personal information from anyone under the age of consent. If you live in a country in the EU/EEA, you must be at least 16 years old to use our Services or such greater age required in your country to register for or use our Services. If you live in any other country except those in the EU/EEA, you must be at least 13 years old to use our Services or such greater age required in your country to register for or use our Services. In addition to being of the minimum required age to use our Services under applicable law, if you are not old enough to have authority to agree to our Privacy Policy in your country, your parent or guardian must agree to our Privacy Policy on your behalf. If you have any concerns about your child’s personal information, please contact us at privacy@dribbble.com.</p>
+        <p>We do not knowingly provide the Services to, and will not knowingly collect the personal information from anyone under the age of consent. If you live in a country in the EU/EEA, you must be at least 16 years old to use our Services or such greater age required in your country to register for or use our Services. If you live in any other country except those in the EU/EEA, you must be at least 13 years old to use our Services or such greater age required in your country to register for or use our Services. In addition to being of the minimum required age to use our Services under applicable law, if you are not old enough to have authority to agree to our Privacy Policy in your country, your parent or guardian must agree to our Privacy Policy on your behalf. If you have any concerns about your child’s personal information, please contact us at <a href="mailto:help@dribbble.com">help@dribbble.com</a>.</p>
         <p>Neither the Site nor the Services are intended for children under 13 years of age, and no one under age 13 may provide any personal information to, on or through the Site or Services. We do not knowingly collect personal information from children under 13. If you are under 13, do not use or provide any information to, on or through the Site or Services, make any purchases through the Site or Services, use any of the interactive or public comment features, or provide any information about yourself to us, including your name, address, telephone number, email address, or any screen name or user name you may use. If we learn we have collected or received personal information from a child under 13 without verification of parental consent, we will delete that information. If you believe we might have any information from or about a child under 13, please contact us at the email address provided in the paragraph above.</p>
+
         <h3>Rights to Your Information</h3>
         <p>You have the right to access and edit your information at any time through the web interface provided as part of the Services. On written request and subject to proof of identity, you may access the personal information that we hold, used or communicated and ask that any necessary corrections be made, where applicable, as authorized or required by law. However, to make sure that the personal information we maintain about you is accurate and up to date, please inform us immediately of any change in your personal information by mail or e-mail.</p>
-        <p>Under the GDPR, you may be entitled to additional rights, including: (i) the right to withdraw consent to processing where consent is the basis of processing; (ii) the right to access your personal information and certain other supplementary information, under certain conditions; (iii) the right to object to unlawful data processing, under certain conditions; (iv) the right to erasure of personal information about you, under certain conditions; (v) the right to demand that we restrict processing of your personal information, under certain conditions, if you believe we have exceeded the legitimate basis for processing, processing is no longer necessary, are processing, or believe your personal information is inaccurate; (vi) the right to data portability of personal information concerning you that you provided us in a structured, commonly used, and machine-readable format, under certain conditions; (vii) the right object to decisions being taken by automated means which produce legal effects concerning you or similarly significantly affect you, under certain conditions; (viii) the right to lodge a complaint with data protection authorities. If you want to learn more about your rights under the GDPR, you can visit the European Commission’s <a href="http://ec.europa.eu/justice/data-protection/index_en.htm" target="_blank">page on Data Protection</a>.</p>
+        <p>Under the GDPR, you may be entitled to additional rights, including: (i) the right to withdraw consent to processing where consent is the basis of processing; (ii) the right to access your personal information and certain other supplementary information, under certain conditions; (iii) the right to object to unlawful data processing, under certain conditions; (iv) the right to erasure of personal information about you, under certain conditions; (v) the right to demand that we restrict processing of your personal information, under certain conditions, if you believe we have exceeded the legitimate basis for processing, processing is no longer necessary, are processing, or believe your personal information is inaccurate; (vi) the right to data portability of personal information concerning you that you provided us in a structured, commonly used, and machine-readable format, under certain conditions; (vii) the right object to decisions being taken by automated means which produce legal effects concerning you or similarly significantly affect you, under certain conditions; (viii) the right to lodge a complaint with data protection authorities. If you want to learn more about your rights under the GDPR, you can visit the European Commission’s page on <a href="https://ec.europa.eu/justice/data-protection/index_en.htm" rel="noopener noreferrer">Data Protection</a>.</p>
+
         <h3>Your California Privacy Rights</h3>
-        <p>California Civil Code Section §1798.83 permits users of the Site and/or Services who are California residents to request certain information regarding our disclosure of personal information to third parties for their direct marketing purposes. To make such a request, please send an email to [email] with “Request for California Privacy Information” in the subject line and in the body of your message. We will provide the requested information to you in your email address in response.</p>
-        <h3>Aggregated Data</h3>
-        <p>We may also use your personal information to generate Aggregated Data for internal use and for sharing with others on a selective basis. “<strong>Aggregated Data</strong>” means records which have been stripped of information potentially identifying users, and which have been manipulated or combined to provide generalized, anonymous information. Your identity and personal information will be kept anonymous in Aggregated Data.</p>
+        <p>The CCPA provides California residents with specific rights regarding their personal information. This section describes your CCPA rights and explains how to exercise those rights.</p>
+        <p><u>Access to Specific Information and Data Portability Rights</u></p>
+        <p>You have the right to request that we disclose certain information to you about our collection and use of your personal information over the past 12 months. Once we receive and confirm your verifiable consumer request, we will disclose to you:</p>
+        <ul>
+          <li>The categories of personal information we collected about you.</li>
+          <li>The categories of sources for the personal information we collected about you.</li>
+          <li>Our business or commercial purpose for collecting or selling that personal information.</li>
+          <li>The categories of third parties with whom we share that personal information.</li>
+          <li>The specific pieces of personal information we collected about you (also called a data portability request).</li>
+        </ul>
+
+        <p><u>Deletion Request Rights</u></p>
+        <p>You have the right to request that we delete any of your personal information that we collected from you and retained, subject to certain exceptions. Once we receive and confirm your verifiable consumer request we will delete (and direct our service providers to delete) your personal information from our records unless an exception applies. We may deny your deletion request if retaining the information is necessary for us or our service providers to:</p>
+        <ul>
+          <li>Complete the transaction for which we collected the personal information, provide a good or service that you requested, or take actions reasonably anticipated within the context of our ongoing business relationship with you, or otherwise perform the Services.</li>
+          <li>Detect security incidents, protect against malicious, deceptive, fraudulent or illegal activity, or prosecute those responsible for such activities.</li>
+          <li>Debug products to identify and repair errors that impair existing intended functionality.</li>
+          <li>Exercise free speech, ensure the right of another consumer to exercise their free speech rights, or exercise another right provided for by law.</li>
+          <li>Comply with the California Electronic Communications Privacy Act (Cal. Penal Code § 1546 et. seq.)</li>
+          <li>Enable solely internal uses that are reasonably aligned with consumer expectations based on your relationship with us.</li>
+          <li>Comply with a legal obligation.</li>
+          <li>Make other internal and lawful uses of that information that are compatible with the context in which you provide it.</li>
+        </ul>
+
+        <p><u>Exercising Access, Data Portability, and Deletion Rights</u></p>
+        <p>To exercise the access, data portability, and deletion rights, please submit a verifiable consumer request to us by emailing us at <a href="mailto:help@dribbble.com">help@dribbble.com</a>. Only you, or a person registered with the California Secretary of State that you authorize to act on your behalf, may make a verifiable consumer request related to your personal information. You may also make a verifiable consumer request on behalf of your minor child. You may only make a verifiable consumer request for access or data portability twice within a 12 month period. The verifiable consumer request must: </p>
+        <ul>
+          <li>Provide sufficient information that allows us to reasonably verify you are the person we collected personal information on.</li>
+          <li>Describe your request with sufficient detail that allows us to properly understand, evaluate and respond to it.</li>
+        </ul>
+        <p>We cannot respond to your request or provide you with personal information if we cannot verify your identity or authority to make the request and confirm the personal information relates to you. Making a verifiable request does not require you to create an account with us.</p>
+        <p><u>Response Timing and Format</u></p>
+        <p>We endeavor to respond to verifiable consumer requests within 45 days of receipt. If you have an account with us, we will deliver our written response to that account. If you do not have an account with us, we will deliver our written response to you by mail or electronically, at your option. Any disclosures we provide will only cover the 12-month period preceding the verifiable consumer request’s receipt. If applicable, we will also provide reasons we cannot comply with your request. For data portability requests, we will select a format to provide your personal information that is readily useable and should allow you to transmit the information. We do not charge a fee to process or respond to a verifiable consumer request unless it is excessive, repetitive, or unfounded. If we determine a fee is warranted, we will provide you with an estimate before completing your request.</p>
+
+        <p><u>Personal Information Sales Opt-Out and Opt-In Rights</u></p>
+        <p>If you are 16 years of age or older, you have the right to direct us not to sell your personal information (the “right to opt-out”). We do not sell the personal information of consumers we actually know are less than 16 years of age, unless we receive affirmative authorization (the “right to opt-in”) from either the consumer who is between 13 and 16 years or age, or the parent or guardian of a consumer less than 13 years of age. Consumers may opt-out of future sales at any time. To exercise the right to opt-out, you should not use the Services, as we are not technically able to ensure that your personal data will not be “sold” (as we currently understand that term to be defined under the CCPA).</p>
+
+        <p><u>Non-Discrimination</u></p>
+        <p>We will not discriminate against you for exercising any of your CCPA rights. Unless permitted by the CCPA, we will not:</p>
+        <ul>
+          <li>Deny you goods or services.</li>
+          <li>Charge you different prices or rates for goods or services, including through granting discounts or other benefits, or imposing penalties.</li>
+          <li>Provide you with a different level or quality of goods or services.</li>
+          <li>Suggest that you may receive a different price or rate for goods or services or a different level of quality of goods or services.</li>
+        </ul>
+
+        <p><u>Information</u></p>
+        <p>California Civil Code Section §1798.83 permits users of the Site and/or Services who are California residents to request certain information regarding our disclosure of personal information to third parties for their direct marketing purposes. To make such a request, please send an email to <a href="mailto:help@dribbble.com">help@dribbble.com</a> with “Request for California Privacy Information” in the subject line and in the body of your message. We will provide the requested information to you in your email address in response.</p>
+
         <h3>Links</h3>
         <p>The Site and/or Services may contain links to other sites and we are not responsible for the privacy practices or the content of such sites. We encourage you to read the privacy policy of linked sites. Their privacy policies and practices differ from our policies and practices.</p>
+
         <h3>Cookies and Log Files</h3>
         <p>We use cookies and log files to track user information. Cookies are small amounts of data that are transferred to your web browser by a web server and are stored on your computer’s hard drive. We use cookies to track which page variant a visitor has seen, to track if a visitor has clicked on a page variant, to monitor traffic patterns and to gauge popularity of service options. We will use this information to deliver relevant content and services to you.</p>
+
         <h3>Third Parties’ & Interest-Based Ads</h3>
         <p>We do not control third parties’ collection or use of your information to serve interest-based advertising. However, these third parties may provide you with ways to choose not to have your information collected or used in this way. You can opt out of receiving targeted ads from members of the Network Advertising Initiative (“NAI”) on the NAI’s website.</p>
+
         <h3>Change of Ownership or Business Transition</h3>
         <p>In the event of a change of ownership or other business transition, such as a merger, acquisition or sale of our assets, your information may be transferred in accordance with applicable privacy laws.</p>
+
         <h3>Security and Retention</h3>
         <p>We will strive to prevent unauthorized access to your personal information, however, no data transmission over the Internet, by wireless device or over the air is guaranteed to be 100% secure. We have implemented and maintain reasonable security procedures and practices (based on the nature of the information we collect) to protect that information from unauthorized disclosure. We will continue to enhance security procedures as new technologies and procedures become available.</p>
         <p>We strongly recommend that you do not disclose your password to anyone.</p>
+
         <p>Please remember that you control what personal information you provide while using the Site and Services. Ultimately, you are responsible for maintaining the secrecy of your identification, passwords and/or any personal information in your possession for the use of the Site and/or Services. Always be careful and responsible regarding your personal information. We are not responsible for, and cannot control, the use by others of any information which you provide to them and you should use caution in selecting the personal information you provide to others through the Site or Services. Similarly, we cannot assume any responsibility for the content of any personal information or other information which you receive from other users through the Site or Services, and you release us from any and all liability in connection with the contents of any personal information or other information which you may receive using the Site or Services. We cannot guarantee, or assume any responsibility for verifying, the accuracy of the personal information or other information provided by any third party. You release us from any and all liability in connection with the use of such personal information or other information of others.</p>
-        <p>We will maintain your personal information for as long as they are needed, or as required by applicable laws, regulations, or government orders.</p>
+        </p>We will maintain your personal information for as long as they are needed, or as required by applicable laws, regulations, or government orders.</p>
+
         <h3>Changes to this Policy</h3>
-        <p>We may update this Privacy Policy from time to time. If we do so, we will send an email to users subscribed to the <a href="/account/notifications">Company News list</a>. We will also add a site banner alerting users who may not be subscribed. If the change materially effects the treatment of your personal data, and we have your email but you are not subscribed to the Company News list, we will send you an email. (You are responsible for ensuring that we have an up-to-date email for this purpose.)</p>
+        <p>We may update this Privacy Policy from time to time. If we do so, we will send an email to users subscribed to the <a href="/account/notifications">Dribbble Communication list</a>. We will also add a site banner alerting users who may not be subscribed. If the change materially effects the treatment of your personal data, and we have your email but you are not subscribed to the Company News list, we will send you an email. (You are responsible for ensuring that we have an up-to-date email for this purpose.)</p>
+
         <h3>Contact Us</h3>
-        <p>If you have any questions or comments about this Privacy Policy or your personal information, to make an access or correction request, to exercise any applicable rights, to make a complaint, or to obtain information about our policies and practices with respect to any service providers outside Canada, our Privacy Officer (or Data Protection Officer) can be reached by mail or email using the following contact information: by email at privacy@dribbble.com or by mail at 524 Yates St., Victoria, BC, V8W 1K8, Canada.</p>
-    </div>
+        <p>If you have any questions or comments about this Privacy Policy or your personal information, to make an access or correction request, to exercise any applicable rights, to make a complaint, or to obtain information about our policies and practices with respect to any service providers outside Canada, our Privacy Officer (or Data Protection Officer) can be reached by mail or email using the following contact information: by email at <a href="mailto:help@dribbble.com">help@dribbble.com</a> or by mail at 524 Yates St., Victoria, BC, V8W 1K8, Canada.</p>
+      </div>
   </div>
 </div>
-
 
 
 
@@ -656,12 +816,12 @@
               <span class="accessibility-text">Back to home page</span>
             </a>
             <a href="http://twitter.com/dribbble">
-              <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="ci51qzdcv4f7ib5vh6rpg5ui9owa7ga" role="img" viewBox="0 0 24 24" class="icon fill-current"><title id="ci51qzdcv4f7ib5vh6rpg5ui9owa7ga">Twitter icon</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="nosol4p1ywp2z6lxchl8v35fsmvxocb" role="img" viewBox="0 0 24 24" class="icon fill-current"><title id="nosol4p1ywp2z6lxchl8v35fsmvxocb">Twitter icon</title><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"></path></svg>
 
               <span class="accessibility-text">Twitter</span>
             </a>
             <a href="http://facebook.com/dribbble">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="5amex915ua14h7w5s75noxu8cqsqub4" role="img" viewBox="0 0 24 24" class="icon fill-current"><title id="5amex915ua14h7w5s75noxu8cqsqub4">Facebook icon</title><path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="5uq7pr23vurqcrys0vxbi4zwjhyudgt" role="img" viewBox="0 0 24 24" class="icon fill-current"><title id="5uq7pr23vurqcrys0vxbi4zwjhyudgt">Facebook icon</title><path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0"></path></svg>
 
             <span class="accessibility-text">Facebook</span>
             </a>
@@ -670,8 +830,8 @@
 
             <span class="accessibility-text">Instagram</span>
             </a>
-            <a href="http://www.pinterest.com/dribbble/">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="j5x4azye33jt4l6r1e9zbsr093d6ozf" role="img" viewBox="0 0 24 24" class="icon fill-current"><title id="j5x4azye33jt4l6r1e9zbsr093d6ozf">Pinterest icon</title><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"></path></svg>
+            <a href="http://www.pinterest.com/Pinner13145726/">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="tuizagu8pcj301nx0q1addd3h72o8ci" role="img" viewBox="0 0 24 24" class="icon fill-current"><title id="tuizagu8pcj301nx0q1addd3h72o8ci">Pinterest icon</title><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"></path></svg>
 
             <span class="accessibility-text">Pinterest</span>
             </a>
@@ -686,7 +846,7 @@
                     <a class="link" href="/overtime">Overtime podcast</a>
                     <a class="link" href="/meetups">Dribbble meetups</a>
                     <a class="link" href="/shots?list=playoffs">Playoffs</a>
-                    <a class="link" href="/shots/15050316-Design-an-Icon-Based-on-Work-Ethic">Weekly Warm-Up</a>
+                    <a class="link" href="/shots/15340249--Design-a-postcard-inspired-by-your-favorite-city">Weekly Warm-Up</a>
                     <a class="link" href="/guidelines">Code of conduct</a>
             </div>
             <div class="links-column">
@@ -719,162 +879,12 @@
                     <a target="_blank" rel="noopener" class="link" href="https://creativemarket.com/?utm_source=dribbble&amp;utm_medium=referral&amp;utm_campaign=footer">Shop Creative Market</a>
             </div>
         </div>
-        <div class="carbon-ad-container">
-            <div class="ad carbon target notloaded js-ad-carbon-site-footer">
-</div>
-
-        </div>
       </div>
     <div class="footer-lower-content">
       <div>&copy; 2021 Dribbble. All rights reserved.</div>
-        <div class="remote-locations-container">Made with &hearts; remotely from <style>
-  .remote-locations span {
-    animation: remoteFadeInOut 78s linear infinite 0s;
-  }
-
-    .remote-locations span:nth-child(2) {
-      webkit-animation-delay: 3s;
-      animation-delay: 3s;
-    }
-    .remote-locations span:nth-child(3) {
-      webkit-animation-delay: 6s;
-      animation-delay: 6s;
-    }
-    .remote-locations span:nth-child(4) {
-      webkit-animation-delay: 9s;
-      animation-delay: 9s;
-    }
-    .remote-locations span:nth-child(5) {
-      webkit-animation-delay: 12s;
-      animation-delay: 12s;
-    }
-    .remote-locations span:nth-child(6) {
-      webkit-animation-delay: 15s;
-      animation-delay: 15s;
-    }
-    .remote-locations span:nth-child(7) {
-      webkit-animation-delay: 18s;
-      animation-delay: 18s;
-    }
-    .remote-locations span:nth-child(8) {
-      webkit-animation-delay: 21s;
-      animation-delay: 21s;
-    }
-    .remote-locations span:nth-child(9) {
-      webkit-animation-delay: 24s;
-      animation-delay: 24s;
-    }
-    .remote-locations span:nth-child(10) {
-      webkit-animation-delay: 27s;
-      animation-delay: 27s;
-    }
-    .remote-locations span:nth-child(11) {
-      webkit-animation-delay: 30s;
-      animation-delay: 30s;
-    }
-    .remote-locations span:nth-child(12) {
-      webkit-animation-delay: 33s;
-      animation-delay: 33s;
-    }
-    .remote-locations span:nth-child(13) {
-      webkit-animation-delay: 36s;
-      animation-delay: 36s;
-    }
-    .remote-locations span:nth-child(14) {
-      webkit-animation-delay: 39s;
-      animation-delay: 39s;
-    }
-    .remote-locations span:nth-child(15) {
-      webkit-animation-delay: 42s;
-      animation-delay: 42s;
-    }
-    .remote-locations span:nth-child(16) {
-      webkit-animation-delay: 45s;
-      animation-delay: 45s;
-    }
-    .remote-locations span:nth-child(17) {
-      webkit-animation-delay: 48s;
-      animation-delay: 48s;
-    }
-    .remote-locations span:nth-child(18) {
-      webkit-animation-delay: 51s;
-      animation-delay: 51s;
-    }
-    .remote-locations span:nth-child(19) {
-      webkit-animation-delay: 54s;
-      animation-delay: 54s;
-    }
-    .remote-locations span:nth-child(20) {
-      webkit-animation-delay: 57s;
-      animation-delay: 57s;
-    }
-    .remote-locations span:nth-child(21) {
-      webkit-animation-delay: 60s;
-      animation-delay: 60s;
-    }
-    .remote-locations span:nth-child(22) {
-      webkit-animation-delay: 63s;
-      animation-delay: 63s;
-    }
-    .remote-locations span:nth-child(23) {
-      webkit-animation-delay: 66s;
-      animation-delay: 66s;
-    }
-    .remote-locations span:nth-child(24) {
-      webkit-animation-delay: 69s;
-      animation-delay: 69s;
-    }
-    .remote-locations span:nth-child(25) {
-      webkit-animation-delay: 72s;
-      animation-delay: 72s;
-    }
-    .remote-locations span:nth-child(26) {
-      webkit-animation-delay: 75s;
-      animation-delay: 75s;
-    }
-
-  @keyframes remoteFadeInOut {
-    0% { opacity: 0; }
-    1% { opacity: 1; }
-    2% { opacity: 1; }
-    3% { opacity: 1; }
-    4% { opacity: 1; }
-    5% { opacity: 0; }
-  }
-</style>
-
-<div class="remote-locations">
-    <span>Toronto</span>
-    <span>Ottawa, ON</span>
-    <span>Philippines</span>
-    <span>Cavite, Philippines</span>
-    <span>Worcester, MA</span>
-    <span>Victoria, BC</span>
-    <span>Orlando, FL</span>
-    <span>Roseville, MN</span>
-    <span>Minneapolis, MN</span>
-    <span>Los Angeles, CA </span>
-    <span>Ottawa, Ontario</span>
-    <span>Montreal</span>
-    <span>Grass Valley, California</span>
-    <span>Canada</span>
-    <span>Austin, TX</span>
-    <span>San Diego, CA</span>
-    <span>Montreal, Quebec</span>
-    <span>North Vancouver, BC</span>
-    <span>Denver</span>
-    <span>Alamo, CA</span>
-    <span>Montreal, Canada</span>
-    <span>Vancouver, BC</span>
-    <span>Toronto, ON</span>
-    <span>Sidney, BC</span>
-    <span>Denver, CO</span>
-    <span>Everywhere</span>
-</div>
-</div>
         <div class="total-shots-container">
           <div>
-            <span class="shots-count">15,081,192</span>
+            <span class="shots-count">15,376,212</span>
             shots dribbbled
           </div>
           <img
@@ -897,8 +907,7 @@
 
     
 
-
-    <div class="shot-overlay js-shot-overlay lazyload-hidden-container" tabindex="-1" data-include="css:https://cdn.dribbble.com/assets/shot/shot-modal-ee1274ca5e91f0d0d98eccd5d37e5f557f47c0b2f1f8a45bc5d599bbe749c49f.css">
+    <div class="shot-overlay js-shot-overlay lazyload-hidden-container" tabindex="-1" data-include="css:https://cdn.dribbble.com/assets/shot/shot-modal-4c6fa4006a0510ccc4f9a7100a4edc929731e11fa7ee08f79582624858ab9b7e.css">
       <div class="overlay-content js-overlay-content"></div>
         <div class="shot-nav-prev">
           <div class="shot-nav-button-container">
@@ -932,13 +941,17 @@
 
     <div id="shot-modals-app"></div>
 
-  <div class="attachment-overlay fill-screen lazyload-hidden lazyload" style="display:none;" tabindex="-1" data-include="css:https://cdn.dribbble.com/assets/attachment-overlay-8df67303b0feff0d107d66ce42358eb4017af155fc78fe38edc7a3c6c17e915e.css">
+  <div class="attachment-overlay fill-screen lazyload-hidden lazyload" style="display:none;" tabindex="-1" data-include="css:https://cdn.dribbble.com/assets/attachment-overlay-2d5853055f7911afa418351aaa779b3accc601967caa4723d2eecabafaea0a60.css">
   </div>
 
 <div id="signup-overlay" class="overlay ">
   <div class="lightbox">
     <a href="#" class="close" aria-label="close">
-          <img width="25" height="25" alt="close" src="https://cdn.dribbble.com/assets/icon-overlay-x-2x-9ac1679d2a2349181642fcd197d0a761f87aa10793406ab8a6285df8e1ff1e8c.png" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none" role="img" class="icon icon-24 lazyload">
+<rect x="3" y="5" width="18" height="16" fill="white"></rect>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5051 0.135254C14.9528 0.135152 17.3455 0.860879 19.3807 2.22066C21.416 3.58044 23.0022 5.51321 23.939 7.77453C24.8757 10.0359 25.1209 12.5242 24.6434 14.9248C24.166 17.3255 22.9873 19.5306 21.2566 21.2614C19.5259 22.9922 17.3207 24.1709 14.9201 24.6485C12.5195 25.126 10.0311 24.881 7.76979 23.9443C5.50843 23.0076 3.57561 21.4214 2.21576 19.3862C0.855913 17.3511 0.130107 14.9583 0.130127 12.5107C0.130141 9.22858 1.43392 6.08092 3.75467 3.76009C6.07542 1.43926 9.22304 0.135377 12.5051 0.135254V0.135254ZM7.13525 16.4156C6.9463 16.6101 6.84148 16.8711 6.84346 17.1423C6.84544 17.4135 6.95406 17.6729 7.14583 17.8647C7.3376 18.0564 7.59711 18.1649 7.86827 18.1668C8.13943 18.1687 8.40044 18.0638 8.59488 17.8748L12.4997 13.9699L16.4103 17.8805C16.6047 18.0698 16.8659 18.1749 17.1372 18.1731C17.4085 18.1712 17.6682 18.0626 17.8601 17.8707C18.0519 17.6788 18.1605 17.4191 18.1623 17.1478C18.164 16.8765 18.0589 16.6153 17.8695 16.421L13.9592 12.5106L17.8847 8.58516C18.072 8.39039 18.1754 8.12994 18.1727 7.85976C18.1701 7.58958 18.0616 7.33122 17.8705 7.14017C17.6795 6.94911 17.4211 6.8406 17.1509 6.83794C16.8808 6.83529 16.6203 6.93869 16.4255 7.12594L12.4997 11.051L8.57998 7.13125C8.38644 6.93769 8.12393 6.82894 7.8502 6.82892C7.57647 6.82891 7.31394 6.93763 7.12038 7.13118C6.92681 7.32472 6.81806 7.58724 6.81804 7.86097C6.81803 8.13469 6.92675 8.39722 7.1203 8.59078L11.0402 12.5106L7.13525 16.4156Z" fill="#979797"></path>
+</svg>
+
     </a>
     <div class="display">
         <div class="processing">Loading…</div>
@@ -959,7 +972,28 @@
 
 
 
-<script src="https://cdn.dribbble.com/assets/global-0c8f35371b7239c99b7871b1819adb1797a1a71ebb7586af5ba67d05a73c1ba8.js"></script>
+
+<script>
+  // ensure namespace is available
+  Dribbble = window.Dribbble || {};
+  Dribbble.JsConfig = window.Dribbble.JsConfig || {};
+  Dribbble.isHistorySupported = () => (window.history && 'pushState' in window.history);
+
+  // add global constants
+  DEVICE_WIDTH_BREAKPOINT = '800px';
+  HIDPI_BREAKPOINT = '(-webkit-min-device-pixel-ratio: 1.5),(min--moz-device-pixel-ratio: 1.5),(-o-min-device-pixel-ratio: 3/2),(min-device-pixel-ratio: 1.5),(min-resolution: 1.5dppx)';
+
+  User = {
+    loggedIn: function() {
+      return !!document.querySelector('body.logged-in')
+    },
+    loggedOut: function() {
+      return !this.loggedIn()
+    },
+  };
+</script>
+
+<script src="https://cdn.dribbble.com/assets/global-51a05ac311cb81d48319babfb930f4a3a966729cab5dd834a3c5aa01f7e63d4e.js"></script>
 
 <script>
   var config = Dribbble.JsConfig || {}
@@ -967,28 +1001,15 @@
   // without overriding parent instantiations of JsConfig
   Dribbble.JsConfig = Object.assign(config, {
       user: {"isLoggedIn":false,"reCaptchaSiteKey":"6LdmBTIUAAAAAM4NIokaWu8p3BBuYEw3CxuDdyg_","canPurchasePro":true},
-      features: {"boostedShotsInLists":true,"braintreeHiring":false,"homespunAdUnits":false,"onboardAsProPlayer":false,"shotPageMedia":true,"updatedSearch":true,"hiringMonthlyBogo":false,"freelanceBoardReskin":true,"braintreePro":false,"jobBoardReskin":false},
+      features: {"braintreeHiring":false,"homespunAdUnits":false,"designerOnboarding":false,"shotPageMedia":true,"updatedSearch":true,"hiringMonthlyBogo":false,"freelanceBoardReskin":true,"braintreePro":false,"jobBoardReskin":true},
       isRobot: null,
-      remoteIp: "176.9.76.173",
-      permissions: {"userPermissions":[null,null]},
+      remoteIp: "202.61.251.191",
+      permissions: {"userPermissions":[null,null,null]},
       screenshot_boost: {"buttonText":[{"label":"Buy Now","value":"buy-now"},{"label":"Download","value":"download"},{"label":"Learn More","value":"learn-more"},{"label":"Shop Now","value":"shop-now"},{"label":"Apply Now","value":"apply-now"},{"label":"Try Now","value":"try-now"},{"label":"Get Offer","value":"get-offer"},{"label":"Contact Us","value":"contact-us"}],"tiers":{"lowTier":{"daysToServe":7,"range":{"lowerLimit":0,"upperLimit":10000}},"midTier":{"daysToServe":14,"range":{"lowerLimit":10001,"upperLimit":100000}},"highTier":{"daysToServe":28,"range":{"lowerLimit":100001,"upperLimit":null}}},"pricePerImpression":"0.006","purchase":{"stripePublicKey":"pk_live_9EfFSEE6iTCgHghKqBqnixxR","savedCreditCardInformation":null},"discount":null,"minimumImpressions":2000,"targetPlacements":{"following":"Following Feed","popular":"Popular Feed","search":"Search Feed","goods":"Goods Feed","recent":"New \u0026 Noteworthy Feed","shot_modal":"Shot Modal","similar_work":"Similar Work","tags":"Tag Feed"},"priorities":["premium","self_serve","sales","remnant"]},
   })
 </script>
 
-<script src="https://cdn.dribbble.com/assets/packs/js/application-084739f4e451f69a736a.js"></script>
-      <script src="https://cdn.dribbble.com/assets/packs/js/shot-page-b0133923e040b9874d98.js" defer="defer"></script>
-  <script>
-setTimeout(function() {
-  Dribbble.Ads.enable();
-  Dribbble.Ads.load({
-    context: "footer",
-    placement: "site-footer",
-    requestId: Math.floor(Math.random() * Date.now()),
-    adElement: document.querySelector('.js-ad-carbon-site-footer')
-  });
-}, 1);
-</script>
-
+<script src="https://cdn.dribbble.com/assets/packs/js/application-a7ffb5e01401c4586403.js"></script>
     <script>
     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
     ga("create", "UA-24041469-1", "auto", {
