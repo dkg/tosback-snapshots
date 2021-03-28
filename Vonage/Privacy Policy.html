@@ -4,6 +4,18 @@
 <head>
 <meta charset="UTF-8" />
 <title>Privacy Policy | Vonage</title>
+<link rel="preload" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/fonts/Spezia_SemiMono/SpeziaWeb-SemiMonoRegular.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/fonts/Spezia_SemiMono/SpeziaWeb-SemiMonoRegular.woff" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/fonts/Spezia_SemiMono/SpeziaWeb-SemiMonoSemiBold.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/fonts/Spezia_SemiMono/SpeziaWeb-SemiMonoSemiBold.woff" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/fonts/Spezia_WideMedium/SpeziaWeb-WideMedium.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/fonts/Spezia_WideMedium/SpeziaWeb-WideMedium.woff" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/fonts/Spezia_WideMedium/SpeziaWeb-WideMediumItalic.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/fonts/Spezia_WideMedium/SpeziaWeb-WideMediumItalic.woff" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/fonts/Spezia_Regular/SpeziaWeb-Regular.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/fonts/Spezia_Regular/SpeziaWeb-Regular.woff" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/fonts/Spezia_Regular/SpeziaWeb-RegularItalic.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/fonts/Spezia_Regular/SpeziaWeb-RegularItalic.woff" as="font" type="font/woff2" crossorigin />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="pageTitle" content="Privacy Policy" />
 <meta name="description" content="Your privacy is important. Review the Vonage Privacy Policy to understand what information we collect, why we collect it, and what we do with it." />
@@ -88,7 +100,8 @@ var WindowEvent,VisibilityType;(function(n){n.Load="load";n.BeforeUnload="before
                   productInfo: {
                     productID: ""
                   }
-                }
+                },
+                testCartFlag: "no"
               },
               eventData: {
                 fIndustry: "",
@@ -102,9 +115,16 @@ var WindowEvent,VisibilityType;(function(n){n.Load="load";n.BeforeUnload="before
         (function(){
             var width = ( window.innerWidth != "undefined" ) ? window.innerWidth : document.documentElement.clientWidth;
             digitalData.user.profile.profileInfo.responsiveSiteVersion = ( width < 720 ) ? "mobile" : ( width < 992 ) ? "tablet" : "desktop";
-            var isSalesRep = "no", lsObject = JSON.parse(localStorage.getItem('vng.cart')), urlParams = new URLSearchParams(window.location.search);
+            var isSalesRep = "no", isTestCart = "no", masterAgent = "", subAgent = "", lsObject = JSON.parse(localStorage.getItem('vng.cart')), lsIds = JSON.parse(localStorage.getItem('vng.ids')), urlParams = new URLSearchParams(window.location.search);
             if (lsObject !== null && lsObject.salesRepId !== null) { isSalesRep = "yes"; } else { if (urlParams.has('salesRepId')) { isSalesRep = "yes"; }}
+            if (lsObject !== null && lsObject.isTestCart !== null) { isTestCart = "yes"; } else { if (urlParams.has('isTestCart')) { isTestCart = "yes"; }}
+            if (lsIds !== null && lsIds.masterAgentID !== null) { masterAgent = lsIds.masterAgentID; } else { if (urlParams.has('masteragentid')) { masterAgent = urlParams.get('masteragentid'); }}
+            if (lsIds !== null && lsIds.subAgentID !== null) { subAgent =lsIds.subAgentID ; } else { if (urlParams.has('isTestCart')) { subAgent = urlParams.get('subagentid'); }}
+            
             digitalData.user.profile.profileInfo.salesrepFlag = isSalesRep;
+            digitalData.user.profile.profileInfo.masterAgentID = masterAgent;
+            digitalData.user.profile.profileInfo.subAgentID = subAgent;
+            digitalData.transaction.testCartFlag = isTestCart;
         })();
 
     </script>
@@ -126,9 +146,7 @@ var WindowEvent,VisibilityType;(function(n){n.Load="load";n.BeforeUnload="before
         }
     }
 </script>
-<link rel="stylesheet" href="/etc.clientlibs/vonage/clientlibs/clientlib-site.min.c9a25cf4f73273fc709295a8a52b691f.css" type="text/css">
-<link rel="shortcut icon" type="image/x-icon" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/favicon.ico" />
-<link rel="icon" type="image/x-icon" href="/etc.clientlibs/vonage/clientlibs/clientlib-base/resources/favicon.ico" />
+<link rel="stylesheet" href="/etc.clientlibs/vonage/clientlibs/clientlib-site.min.31217570a12b72e35c69a2b0c862fef4.css" type="text/css">
 <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
 <body class="generic-page page basicpage">
 <div class="root responsivegrid">
@@ -455,7 +473,6 @@ See what industry experts are saying about us.
 <option selected value="https://www.vonage.com/legal/privacy-policy/?bypassgeoloc=true">
 Global (English)
 </option>
-
 <option value="https://www.vonage.com.ph/">
 Philippines (English)
 </option>
@@ -626,7 +643,6 @@ Argentina (Español)
 <a class="Vlt-footer-alternative__link true" href="/partners/" target="_self">Partners</a>
 </li>
 <li class="Vlt-footer-alternative__item">
-
 <a class="Vlt-footer-alternative__link true" href="/system-status/" target="_self">System status</a>
 </li>
 <li class="Vlt-footer-alternative__item">
@@ -636,7 +652,7 @@ Argentina (Español)
 <a class="Vlt-footer-alternative__link true" href="/support/" target="_blank" aria-describedby="new-window">Support</a>
 </li>
 <li class="Vlt-footer-alternative__item">
-<a class="Vlt-footer-alternative__link true" href="https://rewards.vonagebusiness.com/index.html" target="_blank" aria-describedby="new-window">Referrals</a>
+<a class="Vlt-footer-alternative__link true" href="https://share.vonage.com/global_footer" target="_blank" aria-describedby="new-window">Referrals</a>
 </li>
 <li class="Vlt-footer-alternative__item">
 <a class="Vlt-footer-alternative__link true" href="/language-selector/" target="_self">Global contact</a>
@@ -724,6 +740,6 @@ Legal/Policy
 </div>
 </div>
 </div>
-<script type="text/javascript" src="/etc.clientlibs/vonage/clientlibs/clientlib-site.min.efc25ac796b9d7a7a2e7a54b5da51e90.js"></script>
-<script type="text/javascript">(function(){window['__CF$cv$params']={r:'61e11cdaa8700c65',m:'d5729588f54f87dad756c9d0fc619bdd02675bc8-1612742870-1800-AVfCl/KFPT6dNV8aRchX4MhiCO5iPt5hppV0zyzdrYNF25m4r+uxJR9nL576aR78OEk/PuLzifB8gYGuO6InP5nzXHjU8XlZllYXYqlpB7SlAFJHo6DpErzDl9TCEScA3oCxvEZ2I5ofZhc+x7mbvoo=',s:[0x9e017daa80,0x5593ba3b6f],}})();</script></body>
+<script type="text/javascript" src="/etc.clientlibs/vonage/clientlibs/clientlib-site.min.424e3a78128b30d45cbead74a3d74104.js"></script>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6372c70e495a8745',m:'463e4ce9eea19549b2b848ac405c49d52cea5cd1-1616954631-1800-Ab0F2NjYYS2+pdX6ewr85GbZ5TySli6UwXC6aiCTwuLzwKRJW6hhpVOJFQoZBv9wWP2gIUW/P9MbuEon5woswlTHMRi/mIZyemlWnBcx4xPnCucjtSBViaocG1Ul1B1cXffE++TGp8LhwOLYYdqwu4M=',s:[0xefb6dc30b7,0x1cf3f7c7c5],}})();</script></body>
 </html>
