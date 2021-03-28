@@ -48,7 +48,7 @@
 		<link
 			type="text/css"
 			rel="stylesheet"
-			href="/docs/css/all.min_d320247_20201123.css"
+			href="/docs/css/all.min_d320247_20210304.css"
 		/>
 		<link
 			type="text/css"
@@ -1904,7 +1904,7 @@ window.dataLayer = window.dataLayer || [];
 
 		<script
 			type="text/javascript"
-			src="/docs/js/all.min_dedc586_20210114.js"
+			src="/docs/js/all.min_20210318.js"
 		></script>
 		<script
 			type="text/javascript"
@@ -2014,7 +2014,7 @@ window.dataLayer = window.dataLayer || [];
 		<script>
 			window.adaSettings = {
 				adaReadyCallback: function (props) {
-					if (props.isRolledOut === false) {
+					if (props.isRolledOut === false || location.host.indexOf('zoomgov.com') > -1) {
 						document.getElementById('ada-embed').style.display = 'none';
 						window.zESettings = {
 							webWidget: {
