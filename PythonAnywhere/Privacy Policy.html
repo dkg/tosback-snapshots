@@ -13,16 +13,16 @@
         <!-- Le styles -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" />
 
-        <link rel="stylesheet" href="/static/CACHE/css/output.652c88b237cc.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/static/CACHE/css/output.93590726e867.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/static/CACHE/css/output.c184c0fc7128.css" type="text/css" /><link rel="stylesheet" href="/static/CACHE/css/output.28d7c6a2e9b2.css" type="text/css" media="screen" />
 
         <!-- Le javascript -->
         <script type="text/javascript">
             var Anywhere = {};
             Anywhere.urls = {};
-            Anywhere.csrfToken = "UcLJ2eLLRrnc8skOFxJxMkedxtCew1e7jfcWNTiBOyfZpXdSuCeQHFwlhOnbgmQY";
+            Anywhere.csrfToken = "SX1XRWiWcEzK4hxWAmKPRYpr0GOzbgq0GTg5rVGgUX7R8MmhDco3GvchsZEb0SNE";
         </script>
-        <script type="text/javascript" src="/static/CACHE/js/output.0076aee77b73.js"></script>
+        <script type="text/javascript" src="/static/CACHE/js/output.c4053cb59f99.js"></script>
         
 
         
@@ -398,13 +398,22 @@ g)  <b>Cookie-warning cookie:</b> This cookie takes note of whether you
     <textarea id="id_feedback_dialog_text" rows="6"></textarea>
     <input id="id_feedback_dialog_email_address" type="text" placeholder="Email address (optional - only necessary if you would like us to contact you)"/>
     
-    <div id="id_feedback_dialog_error" class="pa_hidden">
+    <div id="id_feedback_dialog_error" style="display: none">
         Sorry, there was an error connecting to the server. <br/>Please try again in a few moments...
+    </div>
+    <div id="id_feedback_dialog_rate_limit_error" style="display: none">
+        Sorry, we have had to rate-limit your feedback sending.<br/>Please try again in a few moments...
+    </div>
+    <div id="id_feedback_dialog_success" style="display: none">
+        Thanks for the feedback! Our tireless devs will get back to you soon.
     </div>
     <div class="dialog_buttons">
         <img id="id_feedback_dialog_spinner" src="/static/anywhere/images/spinner-small.gif" />
         <button class="btn btn-primary" id="id_feedback_dialog_ok_button">OK</button>
         <button class="btn btn-default" id="id_feedback_dialog_cancel_button">Cancel</button>
+    </div>
+    <div id="id_feedback_dialog_only_close_button" style="display: none">
+        <button class="btn btn-primary" id="id_feedback_dialog_close_button">Close</button>
     </div>
 </div>
 
