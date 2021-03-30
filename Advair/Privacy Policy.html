@@ -1,77 +1,472 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-    <title>GSK - Service not currently available or no longer active</title>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
 
-    <meta name="title" content="GSK - Resource not available or no longer active" />
-	<meta name="description" content="GSK - Resource not available or no longer active" />
-    <meta name="author" content="GlaxoSmithKline; Internet Hosting Services" />
-    <meta name="date" content="2008-11-01" />
-    <meta name="reviewdate" content="2010-11-01" />
-    <meta name="subject" content="GSK, GlaxoSmithKline" />
-    <meta name="keywords" content="GSK, GlaxoSmithKline" />
-    <meta name="language" content="en" />
 
-    <link rel="STYLESHEET" href="maintstyle.css" type="text/css" />
 
-    <script type="text/javascript">
-		function doPopup( url )
-		{
-		window.open(url, 'Extranet', 'scrollbars,resizable=yes,width=517,height=500,left=25,top=25');
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-language" content="en" />
+<title>HCP Sales Opt Out Form</title>
+<!-- CSS Start -->
+
+<link type="text/css" rel="stylesheet" media="all" href="/css/bootstrap.css" />
+<link type="text/css" rel="stylesheet" media="all" href="/css/bootstrap_overriden_styles.css" />
+<link type="text/css" rel="stylesheet" media="all" href="/css/responsive_style.css" />
+<link type="text/css" rel="stylesheet" media="all" href="/js/prettyCheckable/prettyCheckable.css" />
+
+
+<link type="text/css" rel="stylesheet" media="all" href="/css/correspondence.css" />
+<!-- CSS End -->
+
+
+<!-- Javascript start -->
+
+<script type="text/javascript" src="/js/jquery.10.0.3.js"></script>
+<script type="text/javascript" src="/js/jquery/jquery.rsv.js"></script>
+<script type="text/javascript" src="/js/prettyCheckable/prettyCheckable.min.js"></script>
+
+
+<!-- Javascript end -->
+
+<!--[if lt IE 9]>
+  <script src="/js/html5shiv.js"></script>
+  <script src="/js/respond.min.js"></script>
+<![endif]-->
+
+<script type="text/JavaScript" language="JavaScript">
+    function DWlarge(dwURL) {
+        popupWin = window.open(dwURL, 'DWlarge', 'scrollbars,resizable=yes,width=650,height=500,left=25,top=25');
+        window.top.name = 'opener';
+    }
+    function DW(dwURL) {
+        popupWin = window.open(dwURL, 'DW', 'scrollbars,resizable=yes,width=517,height=400,left=25,top=25');
+        window.top.name = 'opener';
+    }
+    function DWPrivacy(dwURL) {
+        popupWin = window.open(dwURL, 'DW', 'scrollbars,resizable=yes,width=517,height=400,left=25,top=25');
+        window.top.name = 'opener';
+    }
+</script>
+
+
+<!--[if lte IE 6]>
+<link type="text/css" rel="stylesheet" media="all" href="/css/ie6.css" />
+<![endif]-->
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" media="all" href="/css/ie7.css" />
+<![endif]-->        
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    
+    <script language="Javascript" type="text/javascript" >
+	if (top != self) {
+	    top.location = self.location;
+	}
+    </script>
+    <script>
+	$(document).ready(function () {
+	    if ($(".hcpsales-form").is(":visible")) {
+		document.getElementsByTagName("body")[0].dispatchEvent(new CustomEvent("formLoad", {detail: {"dynamic_formName": "contactus|dtc|hcp|hcp sales opt out", "dynamic_formType": "opt out| non-dynamic"}}));
+		console.log("hcpsales-form Form Trigger on Form Load");
+	    }
+	    if ($(".error").length > 0) {
+		$("#reset").prop("disabled", "disabled");
+	    } else {
+		$("#reset").removeAttr("disabled");
+	    }
+	    $("form #reset").click(function () {
+		$('.checkedimg').removeClass('checkedimg');
+		$(".alert-error").remove();
+		$(".alert-block-error").removeClass("alert-block-error");
+		$(".red-border").removeClass("red-border");
+		$(".ind-chk-div").find("input[type='checkbox']").prop("checked", false);
+	    });
+
+	    $(".checkbox-group input[type='checkbox']").addClass('hiddencheckbox')
+
+	    $('#prettyradio1').click(function () {
+
+
+		if ($(this).parent("div").find("input[type='checkbox']").prop('checked')) {
+
+		    if (!$('#prettyradio2').parent("div").find("input[type='checkbox']").prop('checked')) {
+
+			$(this).parent("div").find("input[type='checkbox']").prop('checked', false);
+			$(this).parent("div").find("input[type='checkbox']").prop('checked', false);
+
+			$(this).removeClass('checkedimg');
+		    }
+
 		}
+		else {
+		    $(this).parent("div").find("input[type='checkbox']").prop('checked', true);
+		    $(this).parent("div").find("input[type='checkbox']").prop('checked', true);
+
+		    $(this).addClass('checkedimg');
+		}
+
+	    });
+	    $('#prettyradio2').click(function () {
+		$(this).toggleClass('checkedimg');
+
+
+		if ($(this).parent("div").find("input[type='checkbox']").prop('checked')) {
+		    $(this).parent("div").find("input[type='checkbox']").prop('checked', false);
+		    $(this).parent("div").find("input[type='checkbox']").prop('checked', false);
+
+		    $('#prettyradio1').parent("div").find("input[type='checkbox']").prop('checked', false);
+
+		    $('#prettyradio1').removeClass('checkedimg');
+		}
+		else {
+		    $(this).parent("div").find("input[type='checkbox']").prop('checked', true);
+		    $(this).parent("div").find("input[type='checkbox']").prop('checked', true);
+
+		    $('#prettyradio1').parent("div").find("input[type='checkbox']").prop('checked', true);
+		    $('#prettyradio1').parent("div").find("input[type='checkbox']").prop('checked', true);
+
+		    $('#prettyradio1').addClass('checkedimg');
+		}
+
+	    });
+
+
+	});
     </script>
 
-</head>
-<body>
-    <div id="headerLine">
-        <span class="bnrHelp">
-            
-        </span>
-    </div>
-	
-<!--BANNER START-->
-   	<table class="bgBanner" border="0" cellpadding="0" cellspacing="0" width="100%">
-   		<tr valign="top">
-   			<td valign="middle" align="right" class="bnrDate" nowrap>
-			   <font class=bnrHelp>&nbsp;<A title="GSK Terms of Use" href="http://www.gsk.com/en-gb/terms-of-use/" target="_blank"> <!-- Use & Access --><b>Terms of Use</b></A>&nbsp;|</font>
-   			   <font class=bnrHelp>&nbsp;<A title="GSK Privacy Statement" href="http://www.gsk.com/en-gb/privacy-statement/" target="_blank"> <!-- Use & Access --><b>Privacy Statement</b></A>&nbsp;|</font>
-   			   <font class=bnrHelp>&nbsp;<A title="Send us your feedback" href="http://www.gsk.com/en-gb/contact-us/"><b>Contact Us</b></A></font>
-			</td>
-   		</tr>
-   	</table>
+    <script language="javascript"  type="text/javascript">
 
-    <div id="headerImgCont">
-        <div id="headerImgBar">
-        </div>
+	$(document).ready(function () {
+	    $("#frm").RSV({
+		onCompleteHandler: myOnComplete,
+		customErrorHandler: myCustomErrorDisplayFunction,
+		rules: getRules()
+	    });
+	});
+
+	function myOnComplete() {
+	    console.log($("#submit").hasClass("submitted"));
+	    if ($("#submit").hasClass("submitted")) {
+		console.log("Submitted");
+		return false;
+	    } else {
+		console.log("Submitting");
+
+		$("#submit").css({"background": "#878280"});
+		$("#submit").prop("value", "Submitting...");
+		$("#submit").prop("disabled", "disabled");
+		$("#submit").addClass("submitted");
+		return true;
+	    }
+	}
+
+	function myCustomErrorDisplayFunction(f, errorInfo)
+	{
+	    $(".alert-error").remove();
+	    $(".alert-block-error").removeClass("alert-block-error");
+	    $(".red-border").removeClass("red-border");
+	    var rules = getRules();
+	    var fieldName;
+
+	    // disabled all errors by default
+	    for (var i = 0; i < rules.length; i++)
+	    {
+		var parts = rules[i].split(",");
+		fieldName = parts[1];
+		$("#" + fieldName).removeClass("error");
+	    }
+
+	    for (var i = 0; i < errorInfo.length; i++) {
+
+
+		fieldName = "";
+		if (errorInfo[i][0].type == undefined) {
+		    if (errorInfo[i][0] == "")
+			continue;
+		    fieldName = errorInfo[i][0][0].name;
+		}
+		else {
+		    fieldName = errorInfo[i][0].name;
+		}
+
+		var dottedField = fieldName.replace(/\./g, "_");
+		fieldName = dottedField;
+
+		if (fieldName == "unsubscribeEmail") {
+		    $("#unsubscribeEmail1").parent().before("<div class=\"alert-error display-block marginB15\">" + errorInfo[i][1] + "</div>");
+		}
+		else {
+		    $("input[id='" + fieldName + "']").parent().after("<div class=\"alert-error \">" + errorInfo[i][1] + "</div>");
+		    $("input[id='" + fieldName + "']").parent().parent().find("label").addClass("alert-block-error");
+		    $("input[id='" + fieldName + "']").parent().find("input").addClass("red-border");
+		}
+
+
+		$(window).scrollTop(300);
+	    }
+	    if (errorInfo.length == 0) {
 		
-        <div id="headerImgRight">
-            <!--<img src="images/bannerImageRight.gif" alt="Right part of banner image" height="67"
-                width="369" />--></div>
-        <div id="headerImgRight2"> 
+		console.log($("#submit").hasClass("submitted"));
+		if ($("#submit").hasClass("submitted")) {
+		    console.log("Submitted");
+		    return false;
+		} else {
+		    console.log("Submitting");
+		    document.getElementsByTagName("body")[0].dispatchEvent(new CustomEvent("formSuccess",{detail:{"dynamic_formName":"contactus|dtc|hcp|hcp sales opt out","dynamic_formType":"opt out| non-dynamic"}}));
+		    console.log("hcpsales-form Form Success Trigger");
+		    $("#submit").css({"background": "#878280"});
+		    $("#submit").prop("value", "Submitting...");
+		    $("#submit").prop("disabled", "disabled");
+		    $("#submit").addClass("submitted");
+		    return true;
+		}
+	    }else{
+		document.getElementsByTagName("body")[0].dispatchEvent(new CustomEvent("formError", {detail: {"dynamic_formName": "contactus|dtc|hcp|hcp sales opt out", "dynamic_formType": "opt out| non-dynamic"}}));
+		console.log("hcpsales-form Form Error Trigger");
+	    }
+	    return (errorInfo.length == 0) ? true : false;
+	}
+
+	function getRules() {
+	    var rules = [];
+	    rules.push("required,emailAddress,Enter email address");
+	    rules.push("valid_email,emailAddress,Please enter a valid email address.");
+	    rules.push("required,confirmEmailAddress,Re-enter email address");
+	    rules.push("same_as,confirmEmailAddress,emailAddress,Email does not match confirm email.");
+	    rules.push("function,validateCheckBoxes");
+	    return rules;
+	}
+
+	function validateCheckBoxes() {
+	    if ((!document.frm.unsubscribeAll.checked) && (!document.frm.unsubscribeEmail.checked))
+	    {
+		var field = document.getElementById("unsubscribeEmail1");
+		messageError = "You must select at least one check box to unsubscribe";
+		return [[field, messageError + "."]];
+	    }
+	    return true;
+	}
+	//
+	//        function checkUncheckAll(theElement) {
+	//
+	//            var theForm = theElement.form, z = 0;
+	//
+	//            for(z=0; z<theForm.length;z++){
+	//                if(theForm[z].type == 'checkbox' && theForm[z].name != 'unsubscribeAll'){
+	//                    if(theElement.checked){
+	//                        theForm[z].checked = theElement.checked;
+	//                        //theForm[z].disabled = true;
+	//                    }else{
+	//                        theForm[z].checked = theElement.checked;
+	//                        //theForm[z].disabled = false;
+	//                    }
+	//                }
+	//            }
+	//        }
+	//
+	//        function checksecond(theElement) {
+	//
+	//            if(document.frm.unsubscribeAll.checked==true)
+	//            {
+	//                document.frm.unsubscribeEmail.checked=true;
+	//            }
+	//        }
+    </script>
+    <!--    <noscript>
+        Javascript is disabled!!! Redirecting...
+        <META HTTP-EQUIV="Refresh" CONTENT="0;URL=http://<%=request.getServerName()%>/enableJS.html">
+        </noscript>-->
+
+
+<script>
+$(document).ready(function(){
+$(".unsubtop").click(function(e){
+ var coord=0;
+ e.preventDefault();
+ coord = $("#unsubtop").offset().top;
+$("html, body").animate({
+            scrollTop: coord
+        }, 300);
+});
+});
+</script>             
+    </head>
+    <body>
+         <!--Start MSPT - 443 -->
+	<script type="text/javascript">
+	    var utag_data = {
 		
-         <a href="http://gsk.com"> <img src="images/GSK-logo-updated.png" alt="Left part of banner image with company logo" border="0"/></a></div>
-        <div id="headerImgLeft">
-            <!--<img src="images/banner-photo_02.jpg" alt="Picture image of people"
-                height="67" width="242" />--></div>
-    </div>
-    <div id="subHeaderBar">
-    </div>
-    <div id="contentContainer">
-        <div id="content">
-            <h1>Sorry, Site is No Longer Active</h1>
-            <p>If you are looking for information about GlaxoSmithKline 
-            or its products please go to <a href="http://gsk.com">gsk.com</a>.</p>
+	    }
+	</script>
+        <!-- Loading script asynchronously -->
+<script type="text/javascript">
+    (function(a,b,c,d){
+    a='//tags.tiqcdn.com/utag/gsk/profile-rx-us/prod/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+</script>
+<!--END MSPT - 443 -->
+        <div id="wrapper" class="container">
+            <div class="header-navigation" id="unsubtop">
+<!-- header -->
+<div id="header">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12">
+            <div id="site-name" class="img-responsive col-sm-6 col-lg-4">
+                <a href="/index.html" class="header-link">Contact GSK</a>
+            </div>
+
+            <div id="tools" class="col-lg-7 visible-lg visible-md visible-sm">
+                <div id="header-nav">
+                   <div class="right col-lg-4"><p class="header-right-txt"><span class="header-txt2 home-header1"><strong>GSK Response Center</strong></span><br/><span class="header-txt1 home-header2"><u>Hours of Operation</u></span></br><span class="header-txt3">M-T, Th-F 8:30 am - 5:30 pm ET<br/>W 8:30 am - 4:00 pm ET<br/>Closed holidays</span></p></div>                
+                </div>
+            </div>
         </div>
     </div>
-    <div id="footerBar">
-        
+
+    <div class="row">
+        <div class="oranger-border-div col-lg-12"></div>
     </div>
-    <div id="footer">
-    &copy; Copyright 2020, GlaxoSmithKline Group of Companies All Rights Reserved.
+</div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="content-container"  class="adjustable-font clear-block">
+                        
+    <div class="interor-panel-div">
+        <div class="content-panel">
+            <div class="content-left">
+                <h1>GSK Unsubscribe Requests</h1>
+                <p class="sub-head">GlaxoSmithKline respects the privacy of visitors to its Web sites. Please see our <a href="https://privacy.gsk.com/en-us/" target="_blank">privacy notice</a> for more information.</p>
+                <p class="italics"><strong><span class="mandatory-txt1">Please fill out the form below.</span><br/></strong><span class="form-required">*</span> <span class="mandatory-txt2">indicates a required field.</span></p>
+            </div>
+            <div class="content-right visible-lg visible-md visible-sm">
+                <h4>Additional Resources</h4>
+                <img src="/images/right-arrow.png"/> <a href="http://us.gsk.com/" target="_blank">GSK in the United States</a>
+            </div>
+        </div>
+        <div id="formholder" class="clear-block callback-form sales-optout-div">
+            <form action="/hcpsalesoptout.html" method="post" name="frm" id="frm"  autocomplete="off" class="consumer-form-panel optout-form hcpsales-form" data-usp-name="contactus|dtc|hcp|hcp sales opt out" data-usp-type="opt out| non-dynamic">
+                <br/><h2 class="marginB15 marginT5"><a name="top" id="top"></a><span >Opt Out Form - Complete the information below to be removed from the professional email communication list of GlaxoSmithKline&rsquo;s US Pharma Division.</span></h2>
+                <img src="/images/iconProfile.png">
+                <div class="header-border">
+                    <h1>Contact Information</h1>
+                    <div class="brown-border"></div>
+                </div>
+                <div class="form-item-horizontal cb">
+                    <div class="questionText"><label for="emailAddress">Enter email address: <span class="form-required">*</span></label></div>
+                    <div class="input-top-border">
+    <input type="text" id="emailAddress" name="emailAddress"
+           value="" class="form-text textfield" size="30" maxlength="80" autocomplete = "off"    />
+
+                    </div>
+                </div>
+                <div class="form-item-horizontal cb">
+                    <div class="questionText"><label for="confirmEmailAddress">Re-enter email address: <span class="form-required">*</span></label></div>
+                    <div class="input-top-border">
+    <input type="text" id="confirmEmailAddress" name="confirmEmailAddress"
+           value="" class="form-text textfield" size="30" maxlength="80" autocomplete = "off"    />
+
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <div class="ind-chk-div">
+    <input type="checkbox" id="unsubscribeEmail1" name="unsubscribeEmail" value="true"     />
+
+    <input type="hidden" name="_unsubscribeEmail" value="on"/>
+
+                        <span id="prettyradio1" name="contactMethod0"  class='checkimg'></span>
+                        <label for="unsubscribeEmail1">Remove me from all GSK sales representative email communications</label>
+                    </div>
+                    <div class="ind-chk-div">
+    <input type="checkbox" id="unsubscribeAll1" name="unsubscribeAll" value="true"     />
+
+    <input type="hidden" name="_unsubscribeAll" value="on"/>
+
+
+                        <span id="prettyradio2" name="contactMethod0"  class='checkimg'></span>
+                        <label for="unsubscribeAll1"> Remove me from all professional email communications from GlaxoSmithKline&rsquo;s US Pharma Division</label>
+                    </div>
+                </div>
+                <div class="optout-route-div clear-block">
+                    <p>
+                        <span class="optout-footnote">Please allow 10 days for processing.
+                            <br>Note: You may receive materials that were already scheduled for mailing to you prior to your request to opt out.
+                        </span>
+                    </p>
+                </div>
+
+                <div class="optout-btn-panel">
+                    <input type="reset" name="RESET" value="Reset" class="button" id="reset"/>
+                    <INPUT type="submit" name="submit" value="Submit" id="submit" class="button">
+                    <INPUT type="hidden" name="_finish" value="Submit"/>
+                </div>
+                <h2 class="align-center">Thank you for your interest in GSK. </h2>
+
+            </form>
+        </div>
     </div>
-</body>
+
+                        <div class="hours-of-oper-div visible-xs">
+                            <p class="header-right-txt"><span class="header-txt2 home-header1"><strong>GSK Response Center</strong></span><br><span class="header-txt1 home-header2"><u>Hours of Operation</u></span><br><span class="header-txt3">M-T, Th-F 8:30 am - 5:30 pm ET<br>W 8:30 am - 4:00 pm ET<br>Closed holidays</span></p>
+                        </div>
+                        <div class="hours-of-oper-div visible-xs">
+                            <p class="header-txt1">Additional Resources</p>
+                            <a href="http://us.gsk.com/">GSK in the United States</a>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+
+<div class="med-watch-container visible-lg visible-md visible-sm row" >
+    <div class="col-lg-12">
+        <div id="gsk-logo-div" class="img-responsive">
+            <a href="http://us.gsk.com" target="_blank"><img border="0" src="https://assets.gskstatic.com/pharma/us/global/images/gsk-logo.png" alt="GSK Corporation" title="GSK Corporation"></a>    
+        </div>
+        <div id="footer-links-div">
+	    	    <ul class="links-ul">
+                <li><a href="http://us.gsk.com/en-us/legal-notices" target="_blank"><u>Legal Notices</u></a></li>
+                <li><a href="https://privacy.gsk.com/en-us/" class="privacy-link" target="_blank"><u>Privacy Notice</u></a></li>
+		<li><a href="http://us.gsk.com/en-us/about-our-ads/" target="_blank"><u>Interest-based Ads</u></a></li>
+                <li><a href="/optout"><u>Unsubscribe Consumer</u></a></li>
+                <li><a href="/globalsalesoptout.html"><u>Unsubscribe HCP</u></a></li>
+                <li class="li-last"><a href="/req-callback.html"><u>Request a Callback</u></a></li>
+            </ul>
+            <p>This Web site is funded and developed by GSK.<br/>
+                This site is intended for US residents only.<br/>
+                &copy;2020 GSK group of companies. All rights reserved.<br/>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="visible-xs row footer-div">
+    <div class="col-lg-12">
+        <div id="footer-links-div" class="">
+	    <ul class="links-ul">
+                <li><a href="http://us.gsk.com/en-us/legal-notices" target="_blank"><u>Legal Notices</u></a></li>
+                <li><a href="https://privacy.gsk.com/en-us/" class="privacy-link" target="_blank"><u>Privacy Notice</u></a></li>
+		<li><a href="http://us.gsk.com/en-us/about-our-ads/" target="_blank"><u>Interest-based Ads</u></a></li>
+                <li><a href="/optout"><u>Unsubscribe Consumer</u></a></li>
+                <li><a href="/globalsalesoptout.html"><u>Unsubscribe HCP</u></a></li>
+                <li class="li-last"><a href="/req-callback.html"><u>Request a Callback</u></a></li>
+            </ul>
+            <p>This Web site is funded and developed by GSK.<br/>
+                This site is intended for US residents only.<br/>
+                &copy;2020 GSK group of companies.<br/>
+                All rights reserved.<br/>
+            </p>
+        </div>
+        <div class="img-responsive">
+            <a href="http://us.gsk.com" target="_blank"><img border="0" src="https://assets.gskstatic.com/pharma/us/global/images/gsk-logo.png" alt="GSK Corporation" title="GSK Corporation"></a>    
+        </div>
+
+    </div>
+</div>        </div>        
+
+    </body>
 </html>
