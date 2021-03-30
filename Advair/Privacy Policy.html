@@ -1,472 +1,1390 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-    <head>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-language" content="en" />
-<title>HCP Sales Opt Out Form</title>
-<!-- CSS Start -->
-
-<link type="text/css" rel="stylesheet" media="all" href="/css/bootstrap.css" />
-<link type="text/css" rel="stylesheet" media="all" href="/css/bootstrap_overriden_styles.css" />
-<link type="text/css" rel="stylesheet" media="all" href="/css/responsive_style.css" />
-<link type="text/css" rel="stylesheet" media="all" href="/js/prettyCheckable/prettyCheckable.css" />
 
 
-<link type="text/css" rel="stylesheet" media="all" href="/css/correspondence.css" />
-<!-- CSS End -->
 
 
-<!-- Javascript start -->
-
-<script type="text/javascript" src="/js/jquery.10.0.3.js"></script>
-<script type="text/javascript" src="/js/jquery/jquery.rsv.js"></script>
-<script type="text/javascript" src="/js/prettyCheckable/prettyCheckable.min.js"></script>
 
 
-<!-- Javascript end -->
-
-<!--[if lt IE 9]>
-  <script src="/js/html5shiv.js"></script>
-  <script src="/js/respond.min.js"></script>
-<![endif]-->
-
-<script type="text/JavaScript" language="JavaScript">
-    function DWlarge(dwURL) {
-        popupWin = window.open(dwURL, 'DWlarge', 'scrollbars,resizable=yes,width=650,height=500,left=25,top=25');
-        window.top.name = 'opener';
-    }
-    function DW(dwURL) {
-        popupWin = window.open(dwURL, 'DW', 'scrollbars,resizable=yes,width=517,height=400,left=25,top=25');
-        window.top.name = 'opener';
-    }
-    function DWPrivacy(dwURL) {
-        popupWin = window.open(dwURL, 'DW', 'scrollbars,resizable=yes,width=517,height=400,left=25,top=25');
-        window.top.name = 'opener';
-    }
-</script>
 
 
-<!--[if lte IE 6]>
-<link type="text/css" rel="stylesheet" media="all" href="/css/ie6.css" />
-<![endif]-->
 
-<!--[if lte IE 7]>
-<link type="text/css" rel="stylesheet" media="all" href="/css/ie7.css" />
-<![endif]-->        
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>      <html lang="en-GB"  class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en-GB" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en-GB" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-GB" class="no-js"> <!--<![endif]-->
+
+
+
+	
+
+
+
+
+<head>
     
-    <script language="Javascript" type="text/javascript" >
-	if (top != self) {
-	    top.location = self.location;
-	}
-    </script>
-    <script>
-	$(document).ready(function () {
-	    if ($(".hcpsales-form").is(":visible")) {
-		document.getElementsByTagName("body")[0].dispatchEvent(new CustomEvent("formLoad", {detail: {"dynamic_formName": "contactus|dtc|hcp|hcp sales opt out", "dynamic_formType": "opt out| non-dynamic"}}));
-		console.log("hcpsales-form Form Trigger on Form Load");
-	    }
-	    if ($(".error").length > 0) {
-		$("#reset").prop("disabled", "disabled");
-	    } else {
-		$("#reset").removeAttr("disabled");
-	    }
-	    $("form #reset").click(function () {
-		$('.checkedimg').removeClass('checkedimg');
-		$(".alert-error").remove();
-		$(".alert-block-error").removeClass("alert-block-error");
-		$(".red-border").removeClass("red-border");
-		$(".ind-chk-div").find("input[type='checkbox']").prop("checked", false);
-	    });
-
-	    $(".checkbox-group input[type='checkbox']").addClass('hiddencheckbox')
-
-	    $('#prettyradio1').click(function () {
 
 
-		if ($(this).parent("div").find("input[type='checkbox']").prop('checked')) {
-
-		    if (!$('#prettyradio2').parent("div").find("input[type='checkbox']").prop('checked')) {
-
-			$(this).parent("div").find("input[type='checkbox']").prop('checked', false);
-			$(this).parent("div").find("input[type='checkbox']").prop('checked', false);
-
-			$(this).removeClass('checkedimg');
-		    }
-
-		}
-		else {
-		    $(this).parent("div").find("input[type='checkbox']").prop('checked', true);
-		    $(this).parent("div").find("input[type='checkbox']").prop('checked', true);
-
-		    $(this).addClass('checkedimg');
-		}
-
-	    });
-	    $('#prettyradio2').click(function () {
-		$(this).toggleClass('checkedimg');
 
 
-		if ($(this).parent("div").find("input[type='checkbox']").prop('checked')) {
-		    $(this).parent("div").find("input[type='checkbox']").prop('checked', false);
-		    $(this).parent("div").find("input[type='checkbox']").prop('checked', false);
-
-		    $('#prettyradio1').parent("div").find("input[type='checkbox']").prop('checked', false);
-
-		    $('#prettyradio1').removeClass('checkedimg');
-		}
-		else {
-		    $(this).parent("div").find("input[type='checkbox']").prop('checked', true);
-		    $(this).parent("div").find("input[type='checkbox']").prop('checked', true);
-
-		    $('#prettyradio1').parent("div").find("input[type='checkbox']").prop('checked', true);
-		    $('#prettyradio1').parent("div").find("input[type='checkbox']").prop('checked', true);
-
-		    $('#prettyradio1').addClass('checkedimg');
-		}
-
-	    });
 
 
-	});
-    </script>
-
-    <script language="javascript"  type="text/javascript">
-
-	$(document).ready(function () {
-	    $("#frm").RSV({
-		onCompleteHandler: myOnComplete,
-		customErrorHandler: myCustomErrorDisplayFunction,
-		rules: getRules()
-	    });
-	});
-
-	function myOnComplete() {
-	    console.log($("#submit").hasClass("submitted"));
-	    if ($("#submit").hasClass("submitted")) {
-		console.log("Submitted");
-		return false;
-	    } else {
-		console.log("Submitting");
-
-		$("#submit").css({"background": "#878280"});
-		$("#submit").prop("value", "Submitting...");
-		$("#submit").prop("disabled", "disabled");
-		$("#submit").addClass("submitted");
-		return true;
-	    }
-	}
-
-	function myCustomErrorDisplayFunction(f, errorInfo)
-	{
-	    $(".alert-error").remove();
-	    $(".alert-block-error").removeClass("alert-block-error");
-	    $(".red-border").removeClass("red-border");
-	    var rules = getRules();
-	    var fieldName;
-
-	    // disabled all errors by default
-	    for (var i = 0; i < rules.length; i++)
-	    {
-		var parts = rules[i].split(",");
-		fieldName = parts[1];
-		$("#" + fieldName).removeClass("error");
-	    }
-
-	    for (var i = 0; i < errorInfo.length; i++) {
 
 
-		fieldName = "";
-		if (errorInfo[i][0].type == undefined) {
-		    if (errorInfo[i][0] == "")
-			continue;
-		    fieldName = errorInfo[i][0][0].name;
-		}
-		else {
-		    fieldName = errorInfo[i][0].name;
-		}
-
-		var dottedField = fieldName.replace(/\./g, "_");
-		fieldName = dottedField;
-
-		if (fieldName == "unsubscribeEmail") {
-		    $("#unsubscribeEmail1").parent().before("<div class=\"alert-error display-block marginB15\">" + errorInfo[i][1] + "</div>");
-		}
-		else {
-		    $("input[id='" + fieldName + "']").parent().after("<div class=\"alert-error \">" + errorInfo[i][1] + "</div>");
-		    $("input[id='" + fieldName + "']").parent().parent().find("label").addClass("alert-block-error");
-		    $("input[id='" + fieldName + "']").parent().find("input").addClass("red-border");
-		}
 
 
-		$(window).scrollTop(300);
-	    }
-	    if (errorInfo.length == 0) {
+
+
+
+
+
+
+
+
+
+
+<meta charset="utf-8"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <meta property="og:type" content="website" />
+
+    <meta property="og:url" content="https://privacy.gsk.com/en-us/privacy-notice/" />
+
+    <meta property="og:title" content="GSK US Privacy Notice" />
+
+
+    <meta name="twitter:card" content="summary" />
+
+    <meta name="twitter:title" content="GSK US Privacy Notice" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="canonical" href="https://privacy.gsk.com/en-us/privacy-notice/"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>GSK US Privacy Notice</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://a-cf65.gskstatic.com/etc/designs/zg/privacy-centre/desktop/css.asset.css/core/design.default.bootstrap.v0-0-1.css"/>
+
+
+	<!--[if lte IE 6]>
 		
-		console.log($("#submit").hasClass("submitted"));
-		if ($("#submit").hasClass("submitted")) {
-		    console.log("Submitted");
-		    return false;
-		} else {
-		    console.log("Submitting");
-		    document.getElementsByTagName("body")[0].dispatchEvent(new CustomEvent("formSuccess",{detail:{"dynamic_formName":"contactus|dtc|hcp|hcp sales opt out","dynamic_formType":"opt out| non-dynamic"}}));
-		    console.log("hcpsales-form Form Success Trigger");
-		    $("#submit").css({"background": "#878280"});
-		    $("#submit").prop("value", "Submitting...");
-		    $("#submit").prop("disabled", "disabled");
-		    $("#submit").addClass("submitted");
-		    return true;
-		}
-	    }else{
-		document.getElementsByTagName("body")[0].dispatchEvent(new CustomEvent("formError", {detail: {"dynamic_formName": "contactus|dtc|hcp|hcp sales opt out", "dynamic_formType": "opt out| non-dynamic"}}));
-		console.log("hcpsales-form Form Error Trigger");
-	    }
-	    return (errorInfo.length == 0) ? true : false;
-	}
-
-	function getRules() {
-	    var rules = [];
-	    rules.push("required,emailAddress,Enter email address");
-	    rules.push("valid_email,emailAddress,Please enter a valid email address.");
-	    rules.push("required,confirmEmailAddress,Re-enter email address");
-	    rules.push("same_as,confirmEmailAddress,emailAddress,Email does not match confirm email.");
-	    rules.push("function,validateCheckBoxes");
-	    return rules;
-	}
-
-	function validateCheckBoxes() {
-	    if ((!document.frm.unsubscribeAll.checked) && (!document.frm.unsubscribeEmail.checked))
-	    {
-		var field = document.getElementById("unsubscribeEmail1");
-		messageError = "You must select at least one check box to unsubscribe";
-		return [[field, messageError + "."]];
-	    }
-	    return true;
-	}
-	//
-	//        function checkUncheckAll(theElement) {
-	//
-	//            var theForm = theElement.form, z = 0;
-	//
-	//            for(z=0; z<theForm.length;z++){
-	//                if(theForm[z].type == 'checkbox' && theForm[z].name != 'unsubscribeAll'){
-	//                    if(theElement.checked){
-	//                        theForm[z].checked = theElement.checked;
-	//                        //theForm[z].disabled = true;
-	//                    }else{
-	//                        theForm[z].checked = theElement.checked;
-	//                        //theForm[z].disabled = false;
-	//                    }
-	//                }
-	//            }
-	//        }
-	//
-	//        function checksecond(theElement) {
-	//
-	//            if(document.frm.unsubscribeAll.checked==true)
-	//            {
-	//                document.frm.unsubscribeEmail.checked=true;
-	//            }
-	//        }
-    </script>
-    <!--    <noscript>
-        Javascript is disabled!!! Redirecting...
-        <META HTTP-EQUIV="Refresh" CONTENT="0;URL=http://<%=request.getServerName()%>/enableJS.html">
-        </noscript>-->
-
-
-<script>
-$(document).ready(function(){
-$(".unsubtop").click(function(e){
- var coord=0;
- e.preventDefault();
- coord = $("#unsubtop").offset().top;
-$("html, body").animate({
-            scrollTop: coord
-        }, 300);
-});
-});
-</script>             
-    </head>
-    <body>
-         <!--Start MSPT - 443 -->
-	<script type="text/javascript">
-	    var utag_data = {
+	<![endif]-->
+	
+	<!--[if IE 7]>
 		
-	    }
-	</script>
-        <!-- Loading script asynchronously -->
-<script type="text/javascript">
-    (function(a,b,c,d){
-    a='//tags.tiqcdn.com/utag/gsk/profile-rx-us/prod/utag.js';
-    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
-    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
-    })();
-</script>
-<!--END MSPT - 443 -->
-        <div id="wrapper" class="container">
-            <div class="header-navigation" id="unsubtop">
-<!-- header -->
-<div id="header">
-    <div class="row">
-        <div class="col-lg-12 col-sm-12">
-            <div id="site-name" class="img-responsive col-sm-6 col-lg-4">
-                <a href="/index.html" class="header-link">Contact GSK</a>
-            </div>
+	<![endif]-->
+	
+	<!--[if IE 8]>
+		
+	<![endif]-->
 
-            <div id="tools" class="col-lg-7 visible-lg visible-md visible-sm">
-                <div id="header-nav">
-                   <div class="right col-lg-4"><p class="header-right-txt"><span class="header-txt2 home-header1"><strong>GSK Response Center</strong></span><br/><span class="header-txt1 home-header2"><u>Hours of Operation</u></span></br><span class="header-txt3">M-T, Th-F 8:30 am - 5:30 pm ET<br/>W 8:30 am - 4:00 pm ET<br/>Closed holidays</span></p></div>                
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="oranger-border-div col-lg-12"></div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		<link rel="shortcut icon" href="/content/dam/common-framework/digital-delivery/privacyhub/master/gsk_logo.png" type="image/vnd.microsoft.icon"/>
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://a-cf65.gskstatic.com/etc/designs/zg/privacy-centre/desktop/js.fileAsset.js/zg/privacy-centre/desktop/js/head/head.v0-0-1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+</head>
+
+
+	
+
+
+
+
+
+
+
+<body class="page-en-us page-privacy-notice  layout-privacycenter2 template-privacycenter2 grid-bootstrap" data-theme-path="/etc/designs/zg/privacy-centre/desktop" data-path-id="180450f2fb0f643df9457dbdd1a99642">
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        var utag_data = {};
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="exit-notification" class="exit-notification exit-notification-restrictive is-hidden" aria-hidden="true">
+		<div class="exit-notification-inner">
+			<span class="exit-notification-decoration"></span>
+			<div class="exit-notification-text">
+				<div class="text richText component content-block"> 
+ <div class="component-content"> 
+  <div class="richText-content"> 
+   <p><span class="body-title">YOU ARE LEAVING THE SITE</span></p> 
+   <p><span class="lg:padding-bottom-30"><span class="sm:padding-bottom-30">You are about to leave a GSK website. By clicking this link, you will be taken to a website that is independent from GSK. The site you are linking to is not controlled or endorsed by GSK and GSK is not responsible for the content provided on that site.</span></span></p> 
+  </div> 
+ </div> 
 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div id="content-container"  class="adjustable-font clear-block">
-                        
-    <div class="interor-panel-div">
-        <div class="content-panel">
-            <div class="content-left">
-                <h1>GSK Unsubscribe Requests</h1>
-                <p class="sub-head">GlaxoSmithKline respects the privacy of visitors to its Web sites. Please see our <a href="https://privacy.gsk.com/en-us/" target="_blank">privacy notice</a> for more information.</p>
-                <p class="italics"><strong><span class="mandatory-txt1">Please fill out the form below.</span><br/></strong><span class="form-required">*</span> <span class="mandatory-txt2">indicates a required field.</span></p>
-            </div>
-            <div class="content-right visible-lg visible-md visible-sm">
-                <h4>Additional Resources</h4>
-                <img src="/images/right-arrow.png"/> <a href="http://us.gsk.com/" target="_blank">GSK in the United States</a>
-            </div>
-        </div>
-        <div id="formholder" class="clear-block callback-form sales-optout-div">
-            <form action="/hcpsalesoptout.html" method="post" name="frm" id="frm"  autocomplete="off" class="consumer-form-panel optout-form hcpsales-form" data-usp-name="contactus|dtc|hcp|hcp sales opt out" data-usp-type="opt out| non-dynamic">
-                <br/><h2 class="marginB15 marginT5"><a name="top" id="top"></a><span >Opt Out Form - Complete the information below to be removed from the professional email communication list of GlaxoSmithKline&rsquo;s US Pharma Division.</span></h2>
-                <img src="/images/iconProfile.png">
-                <div class="header-border">
-                    <h1>Contact Information</h1>
-                    <div class="brown-border"></div>
-                </div>
-                <div class="form-item-horizontal cb">
-                    <div class="questionText"><label for="emailAddress">Enter email address: <span class="form-required">*</span></label></div>
-                    <div class="input-top-border">
-    <input type="text" id="emailAddress" name="emailAddress"
-           value="" class="form-text textfield" size="30" maxlength="80" autocomplete = "off"    />
-
-                    </div>
-                </div>
-                <div class="form-item-horizontal cb">
-                    <div class="questionText"><label for="confirmEmailAddress">Re-enter email address: <span class="form-required">*</span></label></div>
-                    <div class="input-top-border">
-    <input type="text" id="confirmEmailAddress" name="confirmEmailAddress"
-           value="" class="form-text textfield" size="30" maxlength="80" autocomplete = "off"    />
-
-                    </div>
-                </div>
-
-                <div class="checkbox-group">
-                    <div class="ind-chk-div">
-    <input type="checkbox" id="unsubscribeEmail1" name="unsubscribeEmail" value="true"     />
-
-    <input type="hidden" name="_unsubscribeEmail" value="on"/>
-
-                        <span id="prettyradio1" name="contactMethod0"  class='checkimg'></span>
-                        <label for="unsubscribeEmail1">Remove me from all GSK sales representative email communications</label>
-                    </div>
-                    <div class="ind-chk-div">
-    <input type="checkbox" id="unsubscribeAll1" name="unsubscribeAll" value="true"     />
-
-    <input type="hidden" name="_unsubscribeAll" value="on"/>
+			</div>
+			<div class="exit-notification-buttons">
+				<button class="exit-notification-accept">Accept</button>
+				<button class="exit-notification-deny">Cancel</button>
+			</div>
+		</div>
+	</div>
 
 
-                        <span id="prettyradio2" name="contactMethod0"  class='checkimg'></span>
-                        <label for="unsubscribeAll1"> Remove me from all professional email communications from GlaxoSmithKline&rsquo;s US Pharma Division</label>
-                    </div>
-                </div>
-                <div class="optout-route-div clear-block">
-                    <p>
-                        <span class="optout-footnote">Please allow 10 days for processing.
-                            <br>Note: You may receive materials that were already scheduled for mailing to you prior to your request to opt out.
-                        </span>
-                    </p>
-                </div>
 
-                <div class="optout-btn-panel">
-                    <input type="reset" name="RESET" value="Reset" class="button" id="reset"/>
-                    <INPUT type="submit" name="submit" value="Submit" id="submit" class="button">
-                    <INPUT type="hidden" name="_finish" value="Submit"/>
-                </div>
-                <h2 class="align-center">Thank you for your interest in GSK. </h2>
 
-            </form>
-        </div>
-    </div>
 
-                        <div class="hours-of-oper-div visible-xs">
-                            <p class="header-right-txt"><span class="header-txt2 home-header1"><strong>GSK Response Center</strong></span><br><span class="header-txt1 home-header2"><u>Hours of Operation</u></span><br><span class="header-txt3">M-T, Th-F 8:30 am - 5:30 pm ET<br>W 8:30 am - 4:00 pm ET<br>Closed holidays</span></p>
-                        </div>
-                        <div class="hours-of-oper-div visible-xs">
-                            <p class="header-txt1">Additional Resources</p>
-                            <a href="http://us.gsk.com/">GSK in the United States</a>
-                        </div>
-                    </div>                    
-                </div>
-            </div>
 
-<div class="med-watch-container visible-lg visible-md visible-sm row" >
-    <div class="col-lg-12">
-        <div id="gsk-logo-div" class="img-responsive">
-            <a href="http://us.gsk.com" target="_blank"><img border="0" src="https://assets.gskstatic.com/pharma/us/global/images/gsk-logo.png" alt="GSK Corporation" title="GSK Corporation"></a>    
-        </div>
-        <div id="footer-links-div">
-	    	    <ul class="links-ul">
-                <li><a href="http://us.gsk.com/en-us/legal-notices" target="_blank"><u>Legal Notices</u></a></li>
-                <li><a href="https://privacy.gsk.com/en-us/" class="privacy-link" target="_blank"><u>Privacy Notice</u></a></li>
-		<li><a href="http://us.gsk.com/en-us/about-our-ads/" target="_blank"><u>Interest-based Ads</u></a></li>
-                <li><a href="/optout"><u>Unsubscribe Consumer</u></a></li>
-                <li><a href="/globalsalesoptout.html"><u>Unsubscribe HCP</u></a></li>
-                <li class="li-last"><a href="/req-callback.html"><u>Request a Callback</u></a></li>
-            </ul>
-            <p>This Web site is funded and developed by GSK.<br/>
-                This site is intended for US residents only.<br/>
-                &copy;2020 GSK group of companies. All rights reserved.<br/>
-            </p>
-        </div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div id="header" class="col-xs-12"><div class="row"><div class="layout-outer"><div class="layout-inner"><div class="col-xs-12 default-style">
+
+
+
+
+
+    
+        
+            
+            
+                
+                
+                
+                
+
+
+
+
+
+<div class="box component section default-style header-fix fixed-component"> 
+  
+ <div class="component-content" id="1504744378"> 
+  <div class="paragraphSystem content"> 
+   <a id="097211612" style="visibility:hidden" aria-hidden="true"></a> 
+   <div class="snippetReference component section default-style first odd last col-xs-8 reference-pc-master-header"> 
+    <div class="inner"> 
+     <div class="component-content"> 
+      <a id="1674629503" style="visibility:hidden" aria-hidden="true"></a> 
+      <div class="richText component section skiptocontent hidden-xs hidden-sm first odd col-md-12"> 
+       <div class="component-content"> 
+        <div class="richText-content"> 
+         <p><a href="#content" class="skiplink">Skip to main content</a></p> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="image component section default-style even col-xs-12"> 
+       <div class="component-content left"> 
+        <div class="analytics-image-tracking"></div> 
+        <a href="https://www.gsk.com/en-gb/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"> <img src="/content/dam/common-framework/digital-delivery/privacyhub/master/gsk_logo.png" alt="GSK Logo" title="GSK Logo" width="50" />
+ </a> 
+       </div> 
+      </div> 
+      <div class="richText component section js-select-text u-hidden odd last col-xs-12"> 
+       <div class="component-content"> 
+        <div class="richText-content"> 
+         <p>Change your location</p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+ </div> 
 </div>
-<div class="visible-xs row footer-div">
-    <div class="col-lg-12">
-        <div id="footer-links-div" class="">
-	    <ul class="links-ul">
-                <li><a href="http://us.gsk.com/en-us/legal-notices" target="_blank"><u>Legal Notices</u></a></li>
-                <li><a href="https://privacy.gsk.com/en-us/" class="privacy-link" target="_blank"><u>Privacy Notice</u></a></li>
-		<li><a href="http://us.gsk.com/en-us/about-our-ads/" target="_blank"><u>Interest-based Ads</u></a></li>
-                <li><a href="/optout"><u>Unsubscribe Consumer</u></a></li>
-                <li><a href="/globalsalesoptout.html"><u>Unsubscribe HCP</u></a></li>
-                <li class="li-last"><a href="/req-callback.html"><u>Request a Callback</u></a></li>
-            </ul>
-            <p>This Web site is funded and developed by GSK.<br/>
-                This site is intended for US residents only.<br/>
-                &copy;2020 GSK group of companies.<br/>
-                All rights reserved.<br/>
-            </p>
-        </div>
-        <div class="img-responsive">
-            <a href="http://us.gsk.com" target="_blank"><img border="0" src="https://assets.gskstatic.com/pharma/us/global/images/gsk-logo.png" alt="GSK Corporation" title="GSK Corporation"></a>    
-        </div>
 
-    </div>
-</div>        </div>        
+            
+        
+    
+    
 
-    </body>
+</div></div></div></div></div><div id="content" class="col-xs-12"><div class="row"><div class="layout-outer"><div class="layout-inner"><div class="col-xs-12 default-style">
+
+
+
+
+
+    
+    
+        
+        
+
+
+
+
+
+
+
+
+
+
+        
+            <div class="content-paragraph paragraphSystem">
+
+
+
+
+
+
+
+
+
+</div>
+
+        
+    
+
+</div><div class="col-xs-12 content-block cta hero-block js-object-fit u-z-index-2 object-fit">
+
+
+
+
+
+    
+        
+            
+                
+                
+                
+
+
+
+
+
+<div class="richText component section orange col-xs-12 heroBlock fixed-component"> 
+ <div class="component-content"> 
+  <img src="/content/dam/common-framework/digital-delivery/privacyhub/Hero-image.jpg" class="richText-image pull-left" alt="Privacy centre" title="Privacy centre" />
+ 
+  <div class="richText-content"> 
+   <h1><span class="subsection-title">GSK Privacy Center</span></h1> 
+   <p>Welcome. We take our responsibility for data privacy seriously. Learn more about our practices and your rights.<br> </p> 
+  </div> 
+ </div> 
+</div>
+
+            
+            
+        
+    
+    
+
+</div><div class="col-xs-12 content-block">
+
+
+
+
+
+    
+        
+            
+                
+                
+                
+
+
+
+
+
+<div class="box component section custselect-locselector customSelectwithGlobalHeader fixed-component"> 
+  
+ <div class="component-content" id="1666469341"> 
+  <div class="paragraphSystem content"> 
+   <a id="01361472953" style="visibility:hidden" aria-hidden="true"></a> 
+   <div class="box component section select-boxcomp first odd col-xs-12 col-md-9 col-md-offset-2 col-lg-8"> 
+     
+    <div class="component-content" id="01670486855"> 
+     <div class="paragraphSystem content"> 
+      <a id="2051869987" style="visibility:hidden" aria-hidden="true"></a> 
+      <div class="snippetReference component section is-active-li-2 js-custom-select-snippet first odd last col-xs-12 reference-pc-custom-select-en-us"> 
+       <div class="inner"> 
+        <div class="component-content"> 
+         <a id="1498784523" style="visibility:hidden" aria-hidden="true"></a> 
+         <div class="richTextEnhanced richText section richTextHyperlinkedImage content-block js-custom-select custom-select first odd last component col-xs-12"> 
+          <div class="component-content"> 
+           <div class="richText-content"> 
+            <h2><span class="body-title">Privacy Principles</span><span class="icon-angle-right"></span></h2> 
+            <ul> 
+             <li><a href="/en-us/privacy-notice/privacy-principles/">Privacy Principles</a></li> 
+             <li><a href="/en-us/privacy-notice/">Privacy Notices</a></li> 
+             <li><a href="https://www.gsk.com/en-gb/about-us/policies-codes-and-standards/binding-corporate-rules/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Binding Corporate Rules</a></li> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="box component section location-selector even last col-xs-12 col-sm-1 col-md-1 col-lg-2"> 
+     
+    <div class="component-content" id="1458520113"> 
+     <div class="paragraphSystem content"> 
+      <a id="01076432741" style="visibility:hidden" aria-hidden="true"></a> 
+      <div class="snippetReference component section country-selector js-country-selector dynamic-column first odd last col-xs-12 reference-pc-country-selector"> 
+       <div class="inner"> 
+        <div class="component-content"> 
+         <a id="1982685202" style="visibility:hidden" aria-hidden="true"></a> 
+         <div class="richTextEnhanced richText section richTextHyperlinkedImage country-selector-content no-flag first odd last component col-xs-12"> 
+          <div class="component-content"> 
+           <div class="richText-content"> 
+            <p><a href="#" class="globe-icon js-country-selector-text"><span class="location-text"><span class="js-location-text">&nbsp;</span></span><span class="icon-world"></span><span class="icon-angle-right"></span></a></p> 
+            <ul> 
+             <li><a href="#" class="js-primary-country"><span class="icon-angle-right"></span>Africa</a> 
+              <ul> 
+               <li><a href="#" class="countries-back js-countries-back">Back</a></li> 
+               <li><a href="/fr-dz/privacy-notice/" data-brandid=" ">Algeria (FR)</a></li> 
+               <li><a href="/en-ke/privacy-notice/" data-brandid=" ">Kenya (EN)</a></li> 
+               <li><a href="#" class="flag-ma js-language-list">Morocco (FR/EN)</a> 
+                <ul> 
+                 <li><a href="/fr-ma/privacy-notice/" data-brandid=" ">FR</a></li> 
+                 <li><a href="/en-ma/privacy-notice/" data-brandid=" ">EN</a></li> 
+                </ul> </li> 
+               <li><a href="/en-ng/privacy-notice/" data-brandid=" ">Nigeria (EN)</a></li> 
+               <li><a href="/en-za/privacy-notice/" data-brandid=" ">South Africa (EN)</a></li> 
+               <li><a href="/fr-tn/privacy-notice/" data-brandid=" ">Tunisia (FR)</a></li> 
+              </ul> </li> 
+             <li><a href="#" class="js-primary-country"><span class="icon-angle-right"></span>Asia &amp; the Middle East</a> 
+              <ul> 
+               <li><a href="#" class="countries-back js-countries-back">Back</a></li> 
+               <li><a href="/en-bd/privacy-notice/" data-brandid=" ">Bangladesh (EN)</a></li> 
+               <li><a href="/en-kh/privacy-notice/" data-brandid=" ">Cambodia (EN)</a></li> 
+               <li><a href="#" class="flag-cn js-language-list">China (Mainland) (ZH/EN)</a> 
+                <ul> 
+                 <li><a href="/zh-cn/privacy-notice/" data-brandid=" ">ZH</a></li> 
+                 <li><a href="/en-cn/privacy-notice/" data-brandid=" ">EN</a></li> 
+                </ul> </li> 
+               <li><a href="/en-eg/privacy-notice/" data-brandid=" ">Egypt (EN)</a></li> 
+               <li><a href="#" class="flag-hk js-language-list">Hong Kong and Macau (ZH/EN)</a> 
+                <ul> 
+                 <li><a href="/zh-hk/privacy-notice/" data-brandid=" ">ZH</a></li> 
+                 <li><a href="/en-hk/privacy-notice/" data-brandid=" ">EN</a></li> 
+                </ul> </li> 
+               <li><a href="/en-in/privacy-notice/" data-brandid=" ">India (EN)</a></li> 
+               <li><a href="/id-id/privacy-notice/" data-brandid=" ">Indonesia (ID)</a></li> 
+               <li><a href="/en-il/privacy-notice/" data-brandid=" ">Israel (EN)</a></li> 
+               <li><a href="/ja-jp/privacy-notice/" data-brandid=" ">Japan (JP)</a></li> 
+               <li><a href="/en-jo/privacy-notice/" data-brandid=" ">Jordan (EN)</a></li> 
+               <li><a href="/ru-kz/privacy-notice/" data-brandid=" ">Kazakhstan (RU)</a></li> 
+               <li><a href="/ko-kr/privacy-notice/" data-brandid=" ">Korea (KO)</a></li> 
+               <li><a href="/en-my/privacy-notice/" data-brandid=" ">Malaysia (EN)</a></li> 
+               <li><a href="/en-mm/privacy-notice/" data-brandid=" ">Myanmar (EN)</a></li> 
+               <li><a href="/en-pk/privacy-notice/" data-brandid=" ">Pakistan (EN)</a></li> 
+               <li><a href="/en-ph/privacy-notice/" data-brandid=" ">Philippines (EN)</a></li> 
+               <li><a href="/en-sa/privacy-notice/" data-brandid=" ">Saudi Arabia (EN)</a></li> 
+               <li><a href="/en-sg/privacy-notice/" data-brandid=" ">Singapore (EN)</a></li> 
+               <li><a href="/en-lk/privacy-notice/" data-brandid=" ">Sri Lanka (EN)</a></li> 
+               <li><a href="#" class="flag-tw js-language-list">Taiwan (ZH/EN)</a> 
+                <ul> 
+                 <li><a href="/zh-tw/privacy-notice/" data-brandid=" ">ZH</a></li> 
+                 <li><a href="/en-tw/privacy-notice/" data-brandid=" ">EN</a></li> 
+                </ul> </li> 
+               <li><a href="/th-th/privacy-notice/" data-brandid=" ">Thailand (TH)</a></li> 
+               <li><a href="/tr-tr/privacy-notice/" data-brandid=" ">Turkey (TR)</a></li> 
+               <li><a href="/en-ae/privacy-notice/" data-brandid=" ">United Arab Emirates (EN)</a></li> 
+               <li><a href="/vi-vn/privacy-notice/" data-brandid=" ">Vietnam (VI)</a></li> 
+              </ul> </li> 
+             <li><a href="#" class="js-primary-country"><span class="icon-angle-right"></span>Australasia</a> 
+              <ul> 
+               <li><a href="#" class="countries-back js-countries-back">Back</a></li> 
+               <li><a href="/en-au/privacy-notice/" data-brandid=" ">Australia (EN)</a></li> 
+               <li><a href="/en-nz/privacy-notice/" data-brandid=" ">New Zealand (EN)</a></li> 
+              </ul> </li> 
+             <li><a href="#" class="js-primary-country"><span class="icon-angle-right"></span>Europe</a> 
+              <ul> 
+               <li><a href="#" class="countries-back js-countries-back">Back</a></li> 
+               <li><a href="/en-al/privacy-notice/" data-brandid=" ">Albania (EN)</a></li> 
+               <li><a href="/de-at/privacy-notice/" data-brandid=" ">Austria (DE)</a></li> 
+               <li><a href="/ru-by/privacy-notice/" data-brandid=" ">Belarus (RU)</a></li> 
+               <li><a href="#" class="flag-be js-language-list">Belgium (FR/NL/EN)</a> 
+                <ul> 
+                 <li><a href="/fr-be/privacy-notice/" data-brandid=" ">FR</a></li> 
+                 <li><a href="/nl-be/privacy-notice/" data-brandid=" ">NL</a></li> 
+                 <li><a href="/en-be/privacy-notice/" data-brandid=" ">EN</a></li> 
+                </ul> </li> 
+               <li><a href="/en-ba/privacy-notice/" data-brandid=" ">Bosnia and Herzegovina (EN)</a></li> 
+               <li><a href="/bg-bg/privacy-notice/" data-brandid=" ">Bulgaria (BG)</a></li> 
+               <li><a href="/hr-hr/privacy-notice/" data-brandid=" ">Croatia (HR)</a></li> 
+               <li><a href="/en-cy/privacy-notice/" data-brandid=" ">Cyprus (EN)</a></li> 
+               <li><a href="/cs-cz/privacy-notice/" data-brandid=" ">Czech Republic (CS)</a></li> 
+               <li><a href="/da-dk/privacy-notice/" data-brandid=" ">Denmark (DA)</a></li> 
+               <li><a href="/et-ee/privacy-notice/" data-brandid=" ">Estonia (ET)</a></li> 
+               <li><a href="/fi-fi/privacy-notice/" data-brandid=" ">Finland (FI)</a></li> 
+               <li><a href="/fr-fr/privacy-notice/" data-brandid=" ">France (FR)</a></li> 
+               <li><a href="/de-de/privacy-notice/" data-brandid=" ">Germany (DE)</a></li> 
+               <li><a href="/el-gr/privacy-notice/" data-brandid=" ">Greece (EL)</a></li> 
+               <li><a href="/hu-hu/privacy-notice/" data-brandid=" ">Hungary (HU)</a></li> 
+               <li><a href="/en-ie/privacy-notice/" data-brandid=" ">Ireland (EN)</a></li> 
+               <li><a href="#" class="flag-lu js-language-list">Italy (IT/EN)</a> 
+                <ul> 
+                 <li><a href="/it-it/privacy-notice/" data-brandid=" ">IT</a></li> 
+                 <li><a href="/en-it/privacy-notice/" data-brandid=" ">EN</a></li> 
+                </ul> </li> 
+               <li><a href="/lv-lv/privacy-notice/" data-brandid=" ">Latvia (LV)</a></li> 
+               <li><a href="/lt-lt/privacy-notice/" data-brandid=" ">Lithuania (LT)</a></li> 
+               <li><a href="#" class="flag-lu js-language-list">Luxembourg (FR/EN)</a> 
+                <ul> 
+                 <li><a href="/fr-be/privacy-notice/" data-brandid=" ">FR</a></li> 
+                 <li><a href="/en-lu/privacy-notice/" data-brandid=" ">EN</a></li> 
+                </ul> </li> 
+               <li><a href="/en-mk/privacy-notice/" data-brandid=" ">Macedonia (EN)</a></li> 
+               <li><a href="/en-mt/privacy-notice/" data-brandid=" ">Malta (EN)</a></li> 
+               <li><a href="/nl-nl/privacy-notice/" data-brandid=" ">Netherlands (NL)</a></li> 
+               <li><a href="/nb-no/privacy-notice/" data-brandid=" ">Norway (NB)</a></li> 
+               <li><a href="#" class="flag-pl js-language-list">Poland (PL/EN)</a> 
+                <ul> 
+                 <li><a href="/pl-pl/privacy-notice/" data-brandid=" ">PL</a></li> 
+                 <li><a href="/en-pl/privacy-notice/" data-brandid=" ">EN</a></li> 
+                </ul> </li> 
+               <li><a href="/pt-pt/privacy-notice/" data-brandid=" ">Portugal (PT)</a></li> 
+               <li><a href="/ro-ro/privacy-notice/" data-brandid=" ">Romania (RO)</a></li> 
+               <li><a href="/ru-ru/privacy-notice/" data-brandid=" ">Russia (RU)</a></li> 
+               <li><a href="/sr-rs/privacy-notice/" data-brandid=" ">Serbia (SR)</a></li> 
+               <li><a href="/sk-sk/privacy-notice/" data-brandid=" ">Slovakia (SK)</a></li> 
+               <li><a href="/sl-si/privacy-notice/" data-brandid=" ">Slovenia (SL)</a></li> 
+               <li><a href="/es-es/privacy-notice/" data-brandid=" ">Spain (ES)</a></li> 
+               <li><a href="/sv-se/privacy-notice/" data-brandid=" ">Sweden (SV)</a></li> 
+               <li><a href="#" class="flag-ch js-language-list">Switzerland (DE/FR)</a> 
+                <ul> 
+                 <li><a href="/de-ch/privacy-notice/" data-brandid=" ">DE</a></li> 
+                 <li><a href="/fr-ch/privacy-notice/" data-brandid=" ">FR</a></li> 
+                </ul> </li> 
+               <li><a href="/uk-ua/privacy-notice/" data-brandid=" ">Ukraine (UK)</a></li> 
+               <li><a href="/en-gb/privacy-notice/" data-brandid=" ">United Kingdom (EN)</a></li> 
+              </ul> </li> 
+             <li><a href="#" class="js-primary-country"><span class="icon-angle-right"></span>North America</a> 
+              <ul> 
+               <li><a href="#" class="countries-back js-countries-back">Back</a></li> 
+               <li><a href="#" class="flag-ca js-language-list">Canada (EN/FR)</a> 
+                <ul> 
+                 <li><a href="/en-ca/privacy-notice/" data-brandid=" ">EN</a></li> 
+                 <li><a href="/fr-ca/privacy-notice/" data-brandid=" ">FR</a></li> 
+                </ul> </li> 
+               <li><a href="/es-mx/privacy-notice/" data-brandid=" ">Mexico (ES)</a></li> 
+               <li><a href="#" class="flag-ca js-language-list" data-brandid=" ">United States (EN/ES)</a> 
+                <ul> 
+                 <li><a href="/en-us/privacy-notice/" data-brandid=" ">EN</a></li> 
+                 <li><a href="/es-us/privacy-notice/" data-brandid=" ">ES</a></li> 
+                </ul> </li> 
+              </ul> </li> 
+             <li><a href="#" class="js-primary-country"><span class="icon-angle-right"></span>South &amp; Central America</a> 
+              <ul> 
+               <li><a href="#" class="countries-back js-countries-back">Back</a></li> 
+               <li><a href="/es-ar/privacy-notice/" data-brandid=" ">Argentina (ES)</a></li> 
+               <li><a href="/pt-br/privacy-notice/" data-brandid=" ">Brazil (PT)</a></li> 
+               <li><a href="/es-cl/privacy-notice/" data-brandid=" ">Chile (ES)</a></li> 
+               <li><a href="/es-co/privacy-notice/" data-brandid=" ">Colombia (ES)</a></li> 
+               <li><a href="/es-cr/privacy-notice/" data-brandid=" ">Costa Rica (ES)</a></li> 
+               <li><a href="/es-do/privacy-notice/" data-brandid=" ">Dominican Republic (ES)</a></li> 
+               <li><a href="/es-ec/privacy-notice/" data-brandid=" ">Ecuador (ES)</a></li> 
+               <li><a href="/es-sv/privacy-notice/" data-brandid=" ">El Salvador (ES)</a></li> 
+               <li><a href="/es-gt/privacy-notice/" data-brandid=" ">Guatemala (ES)</a></li> 
+               <li><a href="/es-hn/privacy-notice/" data-brandid=" ">Honduras (ES)</a></li> 
+               <li><a href="/en-jm/privacy-notice/" data-brandid=" ">Jamaica (EN)</a></li> 
+               <li><a href="/es-ni/privacy-notice/" data-brandid=" ">Nicaragua (ES)</a></li> 
+               <li><a href="/es-pa/privacy-notice/" data-brandid=" ">Panama (ES)</a></li> 
+               <li><a href="/es-pe/privacy-notice/" data-brandid=" ">Peru (ES)</a></li> 
+               <li><a href="/en-tt/privacy-notice/" data-brandid=" ">Trinidad &amp; Tobago (EN)</a></li> 
+               <li><a href="/es-uy/privacy-notice/" data-brandid=" ">Uruguay (ES)</a></li> 
+               <li><a href="/es-ve/privacy-notice/" data-brandid=" ">Venezuela (ES)</a></li> 
+              </ul> </li> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+ </div> 
+</div>
+
+            
+            
+        
+    
+    
+
+</div><div id="containerBox" class="col-xs-12 col-md-12 custom-container"><div class="row"><div class="col-xs-12 default-style">
+
+
+
+
+
+    
+        
+            
+            
+                
+                
+                
+                
+
+
+
+
+
+<div class="richText component section anchor-container col-xs-12 anchorContainer fixed-component"> 
+ <div class="component-content"> 
+  <div class="richText-content"> 
+   <p><a id="privacy-notice"></a><span class="u-hidden">a</span></p> 
+  </div> 
+ </div> 
+</div>
+
+            
+        
+    
+    
+
+</div><div class="col-xs-12 content-block u-mt-md-3 u-text-center u-px-sm-3">
+
+
+
+
+
+    
+        
+            
+                
+                
+                
+
+
+
+
+
+<div class="richText component section default-style col-xs-12 selectTiles fixed-component"> 
+ <div class="component-content"> 
+  <div class="richText-content"> 
+   <p><span class="subsection-title">Below you can find our US Privacy Notice. Please change your location above if necessary and select the privacy notice most relevant to you.</span></p> 
+  </div> 
+ </div> 
+</div>
+
+            
+            
+        
+    
+    
+
+</div><div class="col-xs-12 column content-block-group custom-links js-custom-links u-mt-md-3 u-pt-sm-4 u-px-sm-3">
+
+
+
+
+
+    
+        
+            
+                
+                
+                
+
+
+
+
+
+<div class="box component section default-style customTab fixed-component"> 
+  
+ <div class="component-content" id="995471498"> 
+  <div class="paragraphSystem content"> 
+  </div> 
+ </div> 
+</div>
+
+            
+            
+        
+    
+    
+
+</div><div class="col-xs-12 content-block u-mt-md-3 u-text-center u-mb-3">
+
+
+
+
+
+    
+        
+            
+                
+                
+                
+
+
+
+
+
+<div class="richTextEnhanced richText section richTextHyperlinkedImage u-text-left component col-xs-12 introText fixed-component"> 
+ <div class="component-content"> 
+  <div class="richText-content"> 
+   <h1 style="text-align: center;"><span class="page-title"><a id="lastUpdated"></a>GSK US Privacy Notice</span></h1> 
+   <p>&nbsp;</p> 
+   <p style="text-align: center;"><span class="u-font-italic">Last Updated: May 1, 2020</span></p> 
+   <p>This Privacy Notice sets out how GSK uses and protects any information that you give to us. We respect your privacy and are committed to protecting your personal information. This Privacy Notice explains how we collect, transfer, process, use and disclose your data and sets out our security practices.<br> <br> GlaxoSmithKline is responsible for the personal information you share with us. When we say “GSK”, “we”, “us” or “our”, this is who we are referring to.<br> <br> If anything in this Privacy Notice conflicts with local law in your jurisdiction, local law prevails.<br> <br> We may change this Privacy Notice from time to time. We encourage you to review this Privacy Notice periodically.<br> <br> We do not sell personal information and have not done so in the preceding 12 months.<br> <br> California Residents. For questions specific to California residents, please follow the link below ”<a href="#rights">Choice and Access to personal information (including California residents)</a>”<br> </p> 
+   <p><b>In this privacy notice, we explain:</b></p> 
+   <ul> 
+    <li><a href="#whatInfo">What personal information do we collect about you?</a></li> 
+    <li><a href="#howInfo">How do we collect your personal information?</a></li> 
+    <li><a href="#use">How do we use your personal information?</a></li> 
+    <li><a href="#longInfo">How long do we keep your personal information?</a></li> 
+    <li><a href="#whom">With whom do we share your personal information?</a></li> 
+    <li><a href="#instances">In what instances do we transfer your personal information outside of your home country?</a></li> 
+    <li><a href="#additional">How we process information for individuals in the European Economic Area (EEA);</a></li> 
+    <li><a href="#protect">How do we protect your personal information?</a></li> 
+    <li><a href="#rights">Choice and Access to personal information (including California residents)?</a></li> 
+    <li><a href="#responsibility">Our responsibility regarding websites that we do not own or control</a></li> 
+    <li><a href="#children">Information about children</a></li> 
+    <li><a href="#notice">How we update this privacy notice?</a></li> 
+    <li><a href="#contact">How to contact us</a></li> 
+   </ul> 
+  </div> 
+ </div> 
+</div>
+
+            
+            
+        
+    
+    
+
+</div><div class="col-xs-12 col-md-12 js-single-tab-box js-tab-to-accordion u-px-sm-0">
+
+
+
+
+
+    
+        
+            
+                
+                
+                
+
+
+
+
+
+<div class="box component section default-style jsSingleTabBox fixed-component"> 
+  
+ <div class="component-content" id="0693573151"> 
+  <div class="paragraphSystem content"> 
+   <a id="01830557109" style="visibility:hidden" aria-hidden="true"></a> 
+   <div class="richText component section u-border-bottom first odd col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <h2><span class="section-title" id="whatInfo">What personal information do we collect about you?</span></h2> 
+      <p>The personal information that we collect, and process/or disclose may include, both currently and in the preceding 12 months:<br> </p> 
+      <table> 
+       <tbody> 
+        <tr class="even"> 
+         <td width="600"><h4>Categories of PI Collected</h4> </td> 
+         <td width="600"><h4>Applicable Categories of Individuals</h4> </td> 
+        </tr> 
+        <tr style="background-color: #EEECE4;"> 
+         <td width="600" valign="top"><p><b>Name, Contact information and Unique Identifiers</b>:&nbsp; Identifiers, such as a real name, alias, postal address, telephone number, unique personal identifier, online identifier, device ID,&nbsp; internet protocol (IP) address, email address, account name, social security number, driver’s license number, passport number, or other similar identifiers as well as demographic information such as date of birth, place of birth, country of residence, income, family size etc.&nbsp; An individual’s written or digital signature.</p> </td> 
+         <td width="600" valign="top"><p>Employees</p> <p>Candidates for employment</p> <p>Contractors</p> <p>Health Care Providers</p> <p>Clinical Trial Investigators, Site Staff and Participants</p> <p>Patients</p> <p>Customers</p> <p>Website Visitors</p> <p>Caregiver</p> <p>Authorized Representative</p> </td> 
+        </tr> 
+        <tr class="even"> 
+         <td width="600" valign="top"><p><b>Financial Information:</b> Bank account number, credit or debit card number, credit reports, background checks or other financial information.</p> </td> 
+         <td width="600" valign="top"><p>Employees</p> <p>Candidates for employment</p> <p>Contractors</p> <p>Health Care Providers</p> <p>Clinical Trial Investigators</p> </td> 
+        </tr> 
+        <tr style="background-color: #EEECE4;"> 
+         <td width="600" valign="top"><p><b>Medical Information:</b>&nbsp; Any information in possession of or derived from yourself, a healthcare provider, healthcare insurer, healthcare service plan, pharmaceutical company, or contractor regarding an individual’s medical history, mental or physical condition, or treatment.&nbsp; This includes an individual’s insurance policy number or subscriber identification number, any unique identifier used by a health insurer to identify the individual, or any information in the individual’s application and claims history (including prescription information).</p> </td> 
+         <td width="600" valign="top"><p>Employees</p> <p>Candidates for employment</p> <p>Contractors</p> <p>Clinical Trial Participants</p> <p>Patients</p> <p>Customers</p> <p>Caregiver</p> <p>Authorized Representative</p> </td> 
+        </tr> 
+        <tr class="even"> 
+         <td width="600" valign="top"><p><b>Protected Characteristics:</b> Characteristics of legally protected classifications such as race, gender, age, nationality, physical or mental disability, and religion.</p> </td> 
+         <td width="600" valign="top"><p>Employees</p> <p>Candidates for employment</p> <p>Clinical Trial Participants</p> <p>Patients</p> </td> 
+        </tr> 
+        <tr style="background-color: #EEECE4;"> 
+         <td width="600" valign="top"><p><b>Purchase History and Tendencies: </b>Information regarding products or services purchased, obtained, or considered.</p> <p><b>&nbsp;</b></p> </td> 
+         <td width="600" valign="top"><p>Health Care Providers</p> <p>Patients</p> <p>Customers</p> <p>Website Visitors</p> <p>Caregiver</p> <p>Authorized Representative</p> </td> 
+        </tr> 
+        <tr class="even"> 
+         <td width="600" valign="top"><p><b>Biometric Information:</b> Physiological, biological, or behavioral characteristics that can establish an individual’s identity, including DNA, face, iris or retina imagery, fingerprint, voice recordings and sleep, health, or exercise data that contain identifying information.</p> </td> 
+         <td width="600" valign="top"><p>Employees</p> <p>Candidates for employment</p> <p>Contractors</p> <p>Clinical Trial Participants</p> <p>Patients</p> <p>Customers</p> <p>Website Visitors</p> <p>Caregiver</p> <p>Authorized Representative</p> </td> 
+        </tr> 
+        <tr style="background-color: #EEECE4;"> 
+         <td width="600" valign="top"><p><b>Network Activity:</b>&nbsp; Internet or other electronic network activity information, such as browsing history, search history, and information regarding an individual’s interaction with an internet website, application, or advertisement. Includes analytics evaluation, cookies.</p> </td> 
+         <td width="600" valign="top"><p>Employees</p> <p>Candidates for employment</p> <p>Contractors</p> <p>Health Care Providers</p> <p>Clinical Trial Investigators and Site Staff</p> <p>Patients</p> <p>Customers</p> <p>Website Visitors</p> <p>Caregiver</p> <p>Authorized Representative</p> </td> 
+        </tr> 
+        <tr class="even"> 
+         <td width="600" valign="top"><p><b>Geolocation Data:</b> Precise geographic location information about a particular individual or device.</p> </td> 
+         <td width="600" valign="top"><p>Employees</p> <p>Candidates for employment</p> <p>Contractors</p> <p>Health Care Providers</p> <p>Patients</p> <p>Customers</p> <p>Website Visitors</p> <p>Caregiver</p> <p>Authorized Representative</p> </td> 
+        </tr> 
+        <tr style="background-color: #EEECE4;"> 
+         <td width="600" valign="top"><p><b>Electronic and Sensory Data: </b>Audio, electronic, visual, or similar information (e.g., a recording of a customer service call or profile photograph).</p> </td> 
+         <td width="600" valign="top"><p>Employees</p> <p>Candidates for employment</p> <p>Contractors</p> <p>Health Care Providers</p> <p>Clinical Trial Investigators, Site Staff and Participants</p> <p>Patients</p> <p>Customers</p> <p>Website Visitors</p> <p>Caregiver</p> <p>Authorized Representative</p> </td> 
+        </tr> 
+        <tr class="even"> 
+         <td width="600" valign="top"><p><b>Education and Professional Information</b>: An individual’s academic information and records, licenses, professional or employment-related information and professional interactions with GSK</p> </td> 
+         <td width="600" valign="top"><p>Employees</p> <p>Candidates for employment</p> <p>Contractors</p> <p>Health Care Providers</p> <p>Clinical Trial Investigators and Site Staff</p> <p>Website Visitors</p> </td> 
+        </tr> 
+        <tr style="background-color: #EEECE4;"> 
+         <td width="600" valign="top"><p><b>Inferences: </b>Inferences drawn from any of the information listed above to create a profile about an individual reflecting the individual’s preferences, characteristics, psychological trends, preferences, predispositions, behavior, attitudes, intelligence, abilities, and aptitudes.<b></b></p> </td> 
+         <td width="600" valign="top"><p>Employees</p> <p>Candidates for employment</p> <p>Contractors</p> <p>Health Care Providers</p> <p>Clinical Trial Investigators, Site Staff and Participants</p> <p>Patients</p> <p>Customers</p> <p>Website Visitors</p> <p>Caregiver</p> <p>Authorized Representative</p> <p>Households</p> </td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section u-border-bottom even col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <h2><span class="section-title" id="howInfo">How do we collect your personal information?</span></h2> 
+      <p>We and our service providers collect personal information in a variety of ways, including from:</p> 
+      <ul> 
+       <li>directly from you or an authorised representative;</li> 
+       <li>government entities;</li> 
+       <li>public records;</li> 
+       <li>research partners;</li> 
+       <li>data resellers;</li> 
+       <li>marketing vendors; and</li> 
+       <li>business service providers.</li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section u-border-bottom odd col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <h2><span class="section-title" id="use">How do we use your personal information?</span></h2> 
+      <p>We use your personal information for the purposes we have described below in this Privacy Notice, or for purposes which are reasonably compatible with the ones described. We will not, use it for other purposes without your permission, unless we have a legal right or obligation to do so.<br> <br> <b>To manage our relationship with you.</b></p> 
+      <p>We will use your personal information:</p> 
+      <ul> 
+       <li>To respond to your requests;</li> 
+       <li>To improve our level of service;</li> 
+       <li>To provide our products and services to you;</li> 
+       <li>To promote our products and services;</li> 
+       <li>To manage your account, if necessary;</li> 
+       <li>To provide you with information when you request it, or when we believe it may be of interest to you;</li> 
+       <li>To invite you to provide your views on our products and services, participate in research or attend events;</li> 
+       <li>To report any product adverse events that you notify us about;</li> 
+       <li>To consider your application for employment;</li> 
+       <li>To perform analytics and understand your preferences;</li> 
+       <li>To provide access where required to our sites and facilities.</li> 
+       <li>To gain insights and feedback on our products and services in order to correct or improve them, by analysing information from external sources such as Google, Facebook and Twitter (and others);</li> 
+       <li>For our own administrative and quality assurance purposes; and</li> 
+       <li>For other purposes that may be detailed on a website or mobile application which will be described at the time the information is collected.</li> 
+      </ul> 
+      <p><b>To manage and improve our processes and our business operations.</b></p> 
+      <p>We will use your personal information to:</p> 
+      <ul> 
+       <li>Manage our network and information systems security;</li> 
+       <li>Manage our workforce effectively; and</li> 
+       <li>Prepare and perform management reporting and analysis, including analytics and metrics.</li> 
+      </ul> 
+      <p><b>To achieve other purposes.</b></p> 
+      <p>We will use your personal information:</p> 
+      <ul> 
+       <li>To follow applicable laws and regulations;</li> 
+       <li>To respond to lawful requests from competent public authorities;</li> 
+       <li>To tell you about changes to our terms, conditions and policies;</li> 
+       <li>To exercise or defend GSK against potential, threatened or actual litigation;</li> 
+       <li>To protect GSK’s or your vital interests, or those of another person;</li> 
+       <li>To respond to and handle your queries or requests; and</li> 
+       <li>When we sell, assign or transfer all or part of our business.</li> 
+      </ul> 
+      <p><b>Website and mobile application usage information<br> </b><br> We also collect information about your computer browser type and operating system, websites you visited before and after visiting our websites, standard server log information, Internet Protocol (IP) addresses, location data, mobile phone service provider, and mobile phone operating system.<br> <br> We use this information to understand how our visitors use our websites and mobile applications so that we can improve them, the services we offer, and our advertising. We may also share this information with other companies within the GSK group and with other third parties. Some of our websites use Google Analytics, a web analytics service provided by Google, Inc. (“Google”). Google Analytics uses cookies to analyze use patterns and may collect information about your use of the website, including your IP address. More information on Google Analytics can be found here: <a rel="noopener noreferrer" href="https://www.google.com/policies/privacy/partners" target="_blank" class="external external" rel="noopener noreferrer">www.google.com/policies/privacy/partners/</a>. If you would like to opt-out of having your data used by Google Analytics, please use the Google Analytics opt-out available here: <a rel="noopener noreferrer" href="https://tools.google.com/dlpage/gaoptout/" target="_blank" class="external external" rel="noopener noreferrer">https://tools.google.com/dlpage/gaoptout/</a><br> <br> <b>Use of IP addresses<br> </b><br> An IP address is a set of numbers that is automatically assigned to your computer whenever you log on to your Internet service provider or through your organization’s local area network (LAN) or wide area network (WAN). Web servers automatically identify your computer by the IP address assigned to it during your session online.<br> <br> GSK, or third-party companies acting on our behalf, may collect IP addresses for the purposes of systems administration and to audit the use of our websites. We also may use IP addresses to identify users of our websites when we feel it is necessary to enforce compliance with the websites’ terms of use or to protect our service, websites or other users.<br> <br> <b>Cookies and Similar Technologies<br> </b><br> Our websites and mobile applications may use technology called "cookies" and similar technologies. A cookie is a small text file that is placed on your hard disk by a server. Cookies and similar technologies allow our websites and mobile applications to respond to you and provide a more personalized experience.<br> <br> The website or mobile application can tailor its operations to your needs, likes and dislikes by gathering and remembering information about your preferences. For instance, our server may set a cookie that keeps you from having to enter a password more than once during a visit to a website.<br> <br> You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies or receive a warning before a cookie is stored if you prefer. Please refer to your Internet browser’s instructions or help screen to learn more about these functions and to specify your cookie preferences, and note that your browser controls might not control other types of technologies. You may also wish to refer to <a rel="noopener noreferrer" href="http://www.allaboutcookies.org/manage-cookies/index.html" target="_blank" class="external external" rel="noopener noreferrer">http://www.allaboutcookies.org/manage-cookies/index.html</a>.<br> <br> If you choose to decline cookies, you may not be able to fully experience the interactive features of our websites or any other websites that you visit.<br> <br> <b>Do-Not-Track Signals and Similar Mechanisms<br> </b><br> Some web browsers transmit "do-not-track" signals to websites. Because of differences in how web browsers incorporate and activate this feature, it is not always clear whether users intend for these signals to be transmitted, or whether they even are aware of them. We currently do not take action in response to these signals.<br>  <br> <b>Third-party advertising, links, and content<br> </b><br> Our websites and mobile applications may from time to time provide links to or embed third party websites or content. Our advertising partners may collect information about your use of our websites and apps through cookies, web beacons, and similar technologies to display advertisements that are tailored to your interests on other websites and services. Some of these advertising partners may participate in an industry organization that offers users an opportunity to opt out of ad targeting. To learn more, including about how to opt out from interest-based advertising, please visit <a rel="noopener noreferrer" href="http://us.gsk.com/en-us/about-our-ads/" target="_blank" rel="noopener noreferrer">About Our Ads</a>. You may download the AppChoices app at <a rel="noopener noreferrer" href="http://www.aboutads.info/appchoices" target="_blank" class="external external" rel="noopener noreferrer">www.aboutads.info/appchoices</a> to opt out in mobile apps. Due to the differences between using apps and websites on mobile devices, you also should check the settings for your apps and device to opt out.<br> <br> We are not responsible for the privacy practices of these advertising partners, we do not exchange information with them for money or anything of value and this Privacy Policy does not apply to those websites. You agree that we are not responsible for the availability of such websites and do not review or endorse and shall not be liable, directly or indirectly, for:</p> 
+      <ul> 
+       <li>How these websites treat your personal information;</li> 
+       <li>The content of such websites; and</li> 
+       <li>The use that others make of these websites.</li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section u-border-bottom even col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <h2><span class="section-title" id="longInfo">How long do we keep your personal information?</span></h2> 
+      <p>We will always keep your personal information for the period required by law and where we need to do so in connection with legal action or an investigation involving GSK. Otherwise, we keep your personal information:<br> <br> We keep your personal information for as long as needed or permitted for the purpose(s) for which it was obtained and consistent with applicable law.</p> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section u-border-bottom odd col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <h2><span class="section-title" id="whom">With whom do we share your personal information?</span></h2> 
+      <p>We share your personal information on a need to know basis, to the extent necessary to follow laws and regulations, and to manage the activities related to our relationship with you.<br> <br> We share your personal information with teams in our GSK companies and affiliates who need to see it to do their jobs. Please see <a rel="noopener noreferrer" href="https://www.gsk.com/en-gb/contact-us/worldwide/" target="_blank" rel="noopener noreferrer">link</a> for a list of our affiliates and their locations.<br> <br> In some cases, our relationship with you is supported by specialized service providers working on our behalf. These service providers are contractually-required to protect your personal information and not to use it for their own purposes.<br> <br> These specialized service providers include:</p> 
+      <ul> 
+       <li>advertising networks;</li> 
+       <li>internet service providers;</li> 
+       <li>data analytics providers;</li> 
+       <li>operating systems and platforms;</li> 
+       <li>social networks;</li> 
+       <li>joint marketing partners; and</li> 
+       <li>research partners.</li> 
+      </ul> 
+      <p>We will also share your personal information with local or foreign regulators, or government and law enforcement authorities as necessary or appropriate, in particular when we have a legal obligation to do so. These may be in or outside your country of residence. We may also disclose your personal information for other legal reasons, such as to enforce our terms and conditions; and protect our rights, privacy, safety or property, and/or that of our affiliates, you or others.</p> 
+      <p>We may share your personal information in connection with a sale or business transaction, such as a reorganization,<br> merger, sale, joint venture, assignment, transfer or other disposition of all or any portion of our business, assets, or stock (including in connection with any bankruptcy or similar proceedings).</p> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section u-border-bottom even col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <h2><span class="section-title" id="instances">In what instances do we transfer your personal information outside of your home country?</span></h2> 
+      <p>This website and Privacy Notice are intended only for individuals within the United States. However, GSK works all over the world. Therefore, we may need to transfer and use your personal information outside of the United States. We implement appropriate measures to protect your personal information when we transfer your personal information outside of your home country such as data transfer agreements that incorporate standard data protection clauses. The data privacy laws in the countries we transfer it to may not be the same as the laws in the United States. Law enforcement agencies, regulatory agencies, security authorities or courts in the countries we transfer your personal information to may have the right to see your personal information.<br> </p> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section u-border-bottom odd col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <h2><span class="section-title" id="additional">Additional information if you travel to the European Economic Area (EEA)</span></h2> 
+      <p>The European Commission recognizes that some countries outside the EEA have similar data protection standards. The full list of these countries is available <a rel="noopener noreferrer" href="https://ec.europa.eu/info/law/law-topic/data-protection/data-transfers-outside-eu/adequacy-protection-personal-data-non-eu-countries_en" target="_blank" rel="noopener noreferrer" class="external">here</a>.<br> <br> If we transfer your personal information to a country not on this list, we do so based on our <a rel="noopener noreferrer" href="https://www.gsk.com/en-gb/about-us/policies-codes-and-standards/binding-corporate-rules/" target="_blank" rel="noopener noreferrer">Binding Corporate Rules</a> (BCRs) and <a rel="noopener noreferrer" href="https://ec.europa.eu/info/strategy/justice-and-fundamental-rights/data-protection/data-transfers-outside-eu/model-contracts-transfer-personal-data-third-countries_en" target="_blank" rel="noopener noreferrer" class="external">standard contract clauses</a> adopted by the European Commission. These enable us to make international transfers of personal information within our group of companies and meet the data protection laws of the European Union and the General Data Protection Regulation (GDPR).<br> </p> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section u-border-bottom even col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <h2><span class="section-title" id="protect">How do we protect your personal information?</span></h2> 
+      <p>GSK will take appropriate legal, organizational, and technical measures to protect your personal information consistent with applicable privacy and data security laws.<br> <br> Unfortunately, the transmission of information via the Internet or a mobile phone network connection is not completely secure. Although we will do our best to protect your personal information, we cannot guarantee the security of the personal information you transmit to our websites or mobile applications: any transmission is at your own risk. While we cannot guarantee that loss, misuse or alteration to data will not occur, once we have received your information, we will employ appropriate technical security measures to help prevent such unfortunate occurrences.<br> </p> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section u-border-bottom odd col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <h2><span class="section-title" id="rights">What are your rights regarding your personal information?</span></h2> 
+      <p>If personal information you have provided us in the past is no longer correct, we have a process for working with you to update that information.<br> <br> Also, some California residents have the right, or their authorized agent may request, at no charge, up to twice every 12 months that we:</p> 
+      <ul> 
+       <li>That we provide copies of your personal information directly to you. There are some exceptions, which means you may not always receive all the information we process;</li> 
+       <li>Correct information that is is inaccurate or incomplete; and</li> 
+       <li>Delete your personal information, subject to some exceptions.</li> 
+      </ul> 
+      <p>You can find out how to get in touch with us to ask us to do any of the above, or to express a privacy concern, by looking at the ”<a href="#contact">Contact Information and Privacy point of contact</a>” section. An authorized agent can also contact us regarding these rights. To designate an authorized agent to exercise your rights and choices on your behalf, please complete the webform below. You have a right not to receive discriminatory treatment from us for exercising applicable rights.<br> <br> We will verify and respond to your request consistent with applicable law, taking into account the type and sensitivity of the personal information subject to the request. For your protection, and to protect the privacy of others, we may need to verify your identity before completing what you have asked us to do. We may need to request additional personal information from you, such as home address, email address and government issued ID, in order to protect against fraudulent or spoofed requests. If you want to make a request as an authorized agent on behalf of a California resident, you may use the submission methods noted in the ”<a href="#contact">Contact Information and Privacy point of contact</a>” section. As part of our verification process, we may request that you provide us with proof that you have been authorized by the California resident on whose behalf you are making the request, which may include signed permission provided by such California resident.<br> In some circumstances if you ask for your personal information to be deleted, we may need to confirm which personal information you wish to be deleted if such deletion might impact your enrollment in any elligible patient assistance programs,</p> 
+      <p>If you object to us using your personal information or withdraw permission for us to use your personal information, after initially giving it to us, we will respect your choice in line with applicable law. However, by objecting or withdrawing your permission, we may not be able to complete the activities described in the ‘<a href="#use">How do we use your personal information</a>’.<br> <br> In the calendar year prior to the effective date of this Privacy Policy, we received 0 requests from eligible consumers for access or information about our information practices.<br> </p> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section u-border-bottom even col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <h2><span class="section-title" id="responsibility">Our responsibility regarding websites that we do not own or control</span></h2> 
+      <p>From time to time, we may provide links to websites or mobile applications that are not allowed or controlled by us. Our Privacy Notice does not cover them. Please read the privacy notices on those websites and mobile applications if you would like to find out how they collect, use and share your personal information.</p> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section u-border-bottom odd col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <h2><span class="section-title" id="children">Information about children</span></h2> 
+      <p>Our services are not directed to children and we do not knowingly collect any personal information from minors under 16 years of age.</p> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section u-border-bottom even col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <h2><span class="section-title" id="notice">How we update this Privacy Notice?</span></h2> 
+      <p>From time to time, we will update this Privacy Notice. Any changes become effective when we post the revised Privacy Notice. This Privacy Notice was last updated as of the ”<a href="#lastUpdated">Last Updated</a>” date shown above. If changes are significant, we will provide a more prominent notice to let you know what the changes are.</p> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section default-style odd col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <h2><span class="section-title" id="contact">Contact Information and Privacy point of contact</span></h2> 
+      <p>If you have any questions about this Privacy Notice, need more information or would like to raise a privacy concern, please contact us at <a href="mailto:US.CPA@gsk.com" class="external">US.CPA@gsk.com</a>. If you want to correct the personal information we may have about you, or if you are a California resident and want to exercise applicable rights regarding your personal information, please contact us at:<br> <br> <b>Online:</b><br> Use our online webform available at: <a rel="noopener noreferrer" href="https://contactus.gsk.com/callback/irr.html" target="_blank" rel="noopener noreferrer">https://contactus.gsk.com/callback/irr.html</a></p> 
+      <p><b>Telephone:</b><br> GSK Pharmaceutical and Vaccine products: 1.888.825.5249<br> <br> GSK Consumer Healthcare Products: 1.800.245.1040</p> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="richText component section default-style even last col-xs-12"> 
+    <div class="component-content"> 
+     <div class="richText-content"> 
+      <p>&nbsp;</p> 
+      <p style="text-align: center;"><a href="https://privacy.gsk.com/content/dam/common-framework/digital-delivery/images/GSK%20US%20Privacy%20Notice.pdf" class="btn" target="_blank" rel="noopener noreferrer">Download the US Privacy Notice as a PDF file</a></p> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+ </div> 
+</div>
+
+            
+            
+        
+    
+    
+
+</div><div class="col-xs-12 column content-block-group custom-links custom-links-mobile js-custom-links-mobile u-pt-3 u-pt-sm-0">
+
+
+
+
+
+    
+        
+            
+                
+                
+                
+
+
+
+
+
+<div class="box component section default-style jsCustomTabMobile fixed-component"> 
+  
+ <div class="component-content" id="01415406653"> 
+  <div class="paragraphSystem content"> 
+  </div> 
+ </div> 
+</div>
+
+            
+            
+        
+    
+    
+
+</div></div></div></div></div></div></div><div id="footer" class="col-xs-12"><div class="row"><div class="layout-outer"><div class="layout-inner"><div class="col-xs-12 default-style">
+
+
+
+
+
+    
+        
+            
+            
+                
+                
+                
+                
+
+
+
+
+
+<div class="box component section default-style footer-fix fixed-component"> 
+  
+ <div class="component-content" id="947793864"> 
+  <div class="paragraphSystem content"> 
+   <a id="01956357838" style="visibility:hidden" aria-hidden="true"></a> 
+   <div class="snippetReference component section default-style first odd last col-xs-12 col-md-12 reference-pc-master-footer"> 
+    <div class="inner"> 
+     <div class="component-content"> 
+      <a id="1748418147" style="visibility:hidden" aria-hidden="true"></a> 
+      <div class="richText component section u-text-center js-scroll-top content-block first odd last col-xs-12"> 
+       <div class="component-content"> 
+        <div class="richText-content"> 
+         <p><a href="#" class="top-btn">Top</a></p> 
+         <p>©2017-2020 GlaxoSmithKline plc. <span class="u-xs-block">All rights reserved.</span> Registered in England and Wales No. 3888792 Registered Office: 980 Great West Road, Brentford, Middlesex, TW8 9GS, United Kingdom.</p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+ </div> 
+</div>
+
+            
+        
+    
+    
+
+</div><div class="col-xs-12 default-style">
+
+
+
+
+
+    
+        
+            
+                
+                
+                
+
+
+
+
+
+<div class="richText component section default-style zincText fixed-component"> 
+</div>
+
+            
+            
+        
+    
+    
+
+</div></div></div></div></div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://a-cf65.gskstatic.com/etc/designs/zg/privacy-centre/desktop/js.asset.js/core/design.default.bootstrap.v0-0-1.js"></script>
+
+
+
+
+
+
+
+</body>
+
+
+
 </html>
+
