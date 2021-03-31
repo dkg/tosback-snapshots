@@ -19,7 +19,7 @@ log("Added dummyfile: "+items[filename]);}
 function log(msg){var href=window.location.href;var reg=new RegExp('[?&]ezq=([^&#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
 function processAll(){count++;if(count>200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
 function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
-init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad,markLoaded:markLoaded,};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.queue.addFile('/detroitchicago/boise.js', '/detroitchicago/boise.js?gcb=194-0&cb=1', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/memphis.js', '/detroitchicago/memphis.js?gcb=194-0&cb=5', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/minneapolis.js', '/detroitchicago/minneapolis.js?gcb=194-0&cb=3', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/rochester.js', '/detroitchicago/rochester.js?gcb=194-0&cb=7', false, ['/detroitchicago/memphis.js','/detroitchicago/minneapolis.js'], true, false, true, false);__ez.vep=(function(){var pixels=[],pxURL="/detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&&__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad,markLoaded:markLoaded,};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.vep=(function(){var pixels=[],pxURL="/detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&&__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
 function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender"){return;}
 if(__ez.dot.isDefined(pixels)&&pixels.length>0){while(pixels.length>0){var j=5;if(j>pixels.length){j=pixels.length;}
 var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&v="+btoa(JSON.stringify(pushPixels));__ez.dot.Fire(pixelURL);}}
@@ -40,8 +40,7 @@ function getEzimData(adSlot){if(typeof _ezim_d=="undefined"){return false}
 var adUnitName=__ez.dot.getAdUnitPath(adSlot).split('/').pop();if(typeof _ezim_d==='object'&&_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
 for(var ezimKey in _ezim_d){if(ezimKey.split('/').pop()===adUnitName){return _ezim_d[ezimKey];}}
 return false;}
-return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();__ez.queue.addFile('/detroitchicago/raleigh.js', '/detroitchicago/raleigh.js?gcb=194-0&cb=5', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/tampa.js', '/detroitchicago/tampa.js?gcb=194-0&cb=3', false, [], true, false, true, false);</script>
-<script data-ezscrex="false" data-cfasync="false">(function(){if("function"===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();</script><script data-ezscrex="false" data-cfasync="false">__ez.queue.addFile('/detroitchicago/tulsa.js', '/detroitchicago/tulsa.js?gcb=194-0&cb=5', false, [], true, false, true, false);</script>
+return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();</script>
 <meta content="The best bike registry: Simple, secure and free." property="og:description" />
 <meta content="The best bike registry: Simple, secure and free." property="twitter:description" />
 <meta content="Terms" property="og:title" />
@@ -62,7 +61,7 @@ return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixe
 <link rel="shortcut icon" href="/fav.ico" />
 <link rel="apple-touch-icon-precomposed apple-touch-icon" href="/apple_touch_icon.png" />
 <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="dDFd6peCpsHvUIuZykGVp2T+Oo4iDNLtHsvX4nx3x2MggXlF/EH0tuX5q3W8dgH3ofLOLaLNl1RoSHyibOAESQ==" />
+<meta name="csrf-token" content="q9adejeedLse0n0r5fNnKz3rtBs75j7QUWLWjVmqFE5nnIM3RHayyNYEwAUozmEOzReApdERVzXwP0465efnKw==" />
 <link rel="stylesheet" media="all" href="/assets/revised-5fadb542560fe03ad3718d098281cce7da000e78dca5ff77107ca808b52b0125.css" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,700" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -95,7 +94,7 @@ var ezoicSearchable = 1;
 </script>
 
 
-<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"","country":"AT","days_since_last_visit":-1,"domain_id":245769,"engaged_time_visit":0,"ezcache_level":1,"ezcache_skip_code":11,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"f0351853-cc5e-4757-6f70-25dbc820d05f","position_selection_id":0,"postal_code":"","pv_event_count":0,"response_size_orig":20272,"response_time_orig":351,"serverid":"18.193.65.136:14194","state":"","t_epoch":1617156038,"template_id":120,"time_on_site_visit":0,"url":"https://bikeindex.org/terms","user_id":0,"weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":1438,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"","country":"AT","days_since_last_visit":-1,"domain_id":245769,"engaged_time_visit":0,"ezcache_level":1,"ezcache_skip_code":11,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"790e1e9f-24a1-4705-560b-bd668d16bace","position_selection_id":0,"postal_code":"","pv_event_count":0,"response_size_orig":20272,"response_time_orig":973,"serverid":"18.184.96.69:16886","state":"","t_epoch":1617163236,"template_id":120,"time_on_site_visit":0,"url":"https://bikeindex.org/terms","user_id":0,"weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":1438,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
 <script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
 function create_ezolpl(pvID, rv) {
     var d = new Date();
@@ -123,8 +122,9 @@ function attach_ezolpl(pvID, rv) {
     }
 }
 
-__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["f0351853-cc5e-4757-6f70-25dbc820d05f", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
-</script></head>
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["790e1e9f-24a1-4705-560b-bd668d16bace", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script>
+<script type="text/javascript">var _audins_dom="bikeindex_org",_audins_did=245769;__ez.queue.addFile('/detroitchicago/cmb.js', '/detroitchicago/cmb.js?gcb=194-0&cb=01-100-104-705-10e-507-508-50b-30d-30f-215-323-&cmbcb=5&01&00&04&05&0e&07&08&0b&0d&0f&15&23', true, [], true, false, true, false);</script></head>
 <body class="" id="info_terms">
 <nav class="primary-header-nav">
 <div class="container">
@@ -471,9 +471,5 @@ src="https://www.facebook.com/tr?id=199066297131941&ev=PageView&noscript=1"/></n
   I18n.locale = "en"
 </script>
 <script type='text/javascript' style='display:none;' async>
-__ez.queue.addFile('edmonton.php', '/detroitchicago/edmonton.webp?a=a&cb=0&shcb=34', true, ['/detroitchicago/minneapolis.js'], true, false, false, false);
-__ez.queue.addFile('jellyfish.php', '/porpoiseant/jellyfish.webp?a=a&cb=0&shcb=34', false, [], true, false, false, false);
 </script>
-<script>var _audins_dom="bikeindex_org",_audins_did=245769;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "//go.ezoic.net/detroitchicago/audins.js?cb=194-0");</script><noscript><div style="display:none;"><img src="//pixel.quantserve.com/pixel/p-31iz6hfFutd16.gif?labels=Domain.bikeindex_org,DomainId.245769" border="0" height="1" width="1" alt="Quantcast"/></div></noscript>
-<script type="text/javascript" data-cfasync="false"></script>
-<script>__ez.queue.addFile('/tardisrocinante/vitals.js', '/tardisrocinante/vitals.js?gcb=0&cb=3', false, ['/detroitchicago/minneapolis.js'], true, false, true, false);</script></body></html>
+<script type="text/javascript" data-cfasync="false"></script></body></html>
