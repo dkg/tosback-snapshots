@@ -324,6 +324,22 @@ of colors is increased.
 </div>
 <div class="col-md-3">
 <div class="module text-left"><script>
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        const script = document.createElement('script');
+        script.src = '//js.hsforms.net/forms/shell.js';
+        script.defer = true;
+        script.id = 'hubspot-script';
+        script.onload = function(){
+            hbspt.forms.create({
+                portalId: "5276609",
+                formId: "cfbba14a-3f2c-4f9e-8bfa-71d8ebbca28e"
+            });
+        }
+        document.body.appendChild(script);
+    }, 2000);
+});
+/* Old HubSpot script load
     window.addEventListener('load', function() {
       setTimeout(function() {
         var s=document.createElement('script');
@@ -341,6 +357,7 @@ of colors is increased.
     },500);
       }, 2000);
     });
+*/
   </script></div>
 <div class="module text-left">
 <div><img alt="credit-cards" src="/repositories/images/mpc-accepted-cc.jpg" srcset="https://images.myperfectcolor.com/repositories/images/mpc-accepted-cc@2.jpg 2x" title="Accepted Credit Cards on MyPerfectColor.com" /></div>
