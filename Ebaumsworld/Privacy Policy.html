@@ -23,7 +23,7 @@
     <meta property="fb:page_id" content="286683382423" />
     <meta property="fb:app_id" content="140281519342427" />
     <meta name="description" content="Funny videos, fail videos, funny pictures, funny galleries, funny links, flash games, jokes, caption contests, photoshop contests" >
-<meta charset="UTF-8">    <link href="/css/main_5ddec319.css" media="screen" rel="stylesheet" type="text/css" >    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"c1a6d52f38",applicationID:"30491045"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>    <link href="/css/main_5ddec319.css" media="screen" rel="stylesheet" type="text/css" >    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/ebw_5ddec319.js"></script>
 <script type="text/javascript" src="/js/plugins_5ddec319.js"></script>    <script type="text/javascript">
         jQuery.noConflict();
@@ -3164,6 +3164,35 @@ if (jQuery('body.mobile').length > 0) {
             <div id="topVideos">
                 <div id="topVideoList">
                                                         <ul data-vr-zone="Top 5">
+	<li class="watchedNow top5Item" id="topThumb-86501297" data-vr-contentbox="">
+		<article class="watchedCard">
+			<a class="watchedCardLink" href="/pictures/16-bosses-who-are-hard-to-get-along-with/86501297/">
+				<img class="watchedCardThumb" src="https://cdn.ebaumsworld.com/thumbs/2020/12/21/052503/86501297/boss-fixed.jpg"
+                     alt="tough boss's - boss filled the water cooler with grape kool-aid - construction boss who wears his 50k ring to work"
+                     title="tough boss's - boss filled the water cooler with grape kool-aid - construction boss who wears his 50k ring to work" />
+			</a>
+			<div class="mediaTypeIcon">
+			<div class="mediaTypeIconContent">
+			    				<span class="gallery"></span>
+								</div>
+    			<div class="labelTail"></div>
+    		</div>
+			<div class="watchedDetails">
+				<header>
+				<h2>
+					<a href="/pictures/16-bosses-who-are-hard-to-get-along-with/86501297/">
+					    16 Bosses Who Are Hard to Get Along With					</a>
+				</h2>
+				</header>
+				<footer>
+					<div class="watchedViewDetails">
+                		<div class="watchedViewsCount">54,933</div>
+                		<div class="watchedViewsLabel">Views</div>
+					</div>
+				</footer>
+			</div>
+		</article>
+	</li>
 	<li class="watchedNow top5Item" id="topThumb-86738873" data-vr-contentbox="">
 		<article class="watchedCard">
 			<a class="watchedCardLink" href="/pictures/30-clever-observations-about-the-real-world/86738873/">
@@ -3186,7 +3215,7 @@ if (jQuery('body.mobile').length > 0) {
 				</header>
 				<footer>
 					<div class="watchedViewDetails">
-                		<div class="watchedViewsCount">112,903</div>
+                		<div class="watchedViewsCount">50,379</div>
                 		<div class="watchedViewsLabel">Views</div>
 					</div>
 				</footer>
@@ -3215,19 +3244,19 @@ if (jQuery('body.mobile').length > 0) {
 				</header>
 				<footer>
 					<div class="watchedViewDetails">
-                		<div class="watchedViewsCount">34,726</div>
+                		<div class="watchedViewsCount">24,149</div>
                 		<div class="watchedViewsLabel">Views</div>
 					</div>
 				</footer>
 			</div>
 		</article>
 	</li>
-	<li class="watchedNow top5Item" id="topThumb-86501297" data-vr-contentbox="">
+	<li class="watchedNow top5Item" id="topThumb-86462264" data-vr-contentbox="">
 		<article class="watchedCard">
-			<a class="watchedCardLink" href="/pictures/16-bosses-who-are-hard-to-get-along-with/86501297/">
-				<img class="watchedCardThumb" src="https://cdn.ebaumsworld.com/thumbs/2020/12/21/052503/86501297/boss-fixed.jpg"
-                     alt="tough boss's - boss filled the water cooler with grape kool-aid - construction boss who wears his 50k ring to work"
-                     title="tough boss's - boss filled the water cooler with grape kool-aid - construction boss who wears his 50k ring to work" />
+			<a class="watchedCardLink" href="/pictures/30-pics-that-are-amazing-and-fascinating/86462264/">
+				<img class="watchedCardThumb" src="https://cdn.ebaumsworld.com/thumbs/2020/11/23/062854/86462264/fascinating-things.jpg"
+                     alt="fascinating photos - picture of a huge hong kong apartment building and old worn down steps on the great wall of china"
+                     title="fascinating photos - picture of a huge hong kong apartment building and old worn down steps on the great wall of china" />
 			</a>
 			<div class="mediaTypeIcon">
 			<div class="mediaTypeIconContent">
@@ -3238,42 +3267,13 @@ if (jQuery('body.mobile').length > 0) {
 			<div class="watchedDetails">
 				<header>
 				<h2>
-					<a href="/pictures/16-bosses-who-are-hard-to-get-along-with/86501297/">
-					    16 Bosses Who Are Hard to Get Along With					</a>
+					<a href="/pictures/30-pics-that-are-amazing-and-fascinating/86462264/">
+					    30 Fascinating Photos of Our Fascinating World					</a>
 				</h2>
 				</header>
 				<footer>
 					<div class="watchedViewDetails">
-                		<div class="watchedViewsCount">33,004</div>
-                		<div class="watchedViewsLabel">Views</div>
-					</div>
-				</footer>
-			</div>
-		</article>
-	</li>
-	<li class="watchedNow top5Item" id="topThumb-86738840" data-vr-contentbox="">
-		<article class="watchedCard">
-			<a class="watchedCardLink" href="/pictures/30-funny-dank-memes-to-stub-your-little-toe-on/86738840/">
-				<img class="watchedCardThumb" src="https://cdn.ebaumsworld.com/thumbs/2021/03/28/104155/86738840/meme_1_FIX.jpg"
-                     alt="kermit the frog looking out the window but he's fat. march 2020 march 2021"
-                     title="kermit the frog looking out the window but he's fat. march 2020 march 2021" />
-			</a>
-			<div class="mediaTypeIcon">
-			<div class="mediaTypeIconContent">
-			    				<span class="gallery"></span>
-								</div>
-    			<div class="labelTail"></div>
-    		</div>
-			<div class="watchedDetails">
-				<header>
-				<h2>
-					<a href="/pictures/30-funny-dank-memes-to-stub-your-little-toe-on/86738840/">
-					    30 Funny Dank Memes to Stub Your Little Toe On					</a>
-				</h2>
-				</header>
-				<footer>
-					<div class="watchedViewDetails">
-                		<div class="watchedViewsCount">27,169</div>
+                		<div class="watchedViewsCount">23,530</div>
                 		<div class="watchedViewsLabel">Views</div>
 					</div>
 				</footer>
@@ -3302,7 +3302,7 @@ if (jQuery('body.mobile').length > 0) {
 				</header>
 				<footer>
 					<div class="watchedViewDetails">
-                		<div class="watchedViewsCount">26,942</div>
+                		<div class="watchedViewsCount">16,722</div>
                 		<div class="watchedViewsLabel">Views</div>
 					</div>
 				</footer>
@@ -3326,19 +3326,38 @@ jQuery('.topMedia').click(function() {
                         		<li class="mediaWidget fullWidthWidget" data-vr-zone="Contest">
         <h3 class="homepageH3">Contest</h3>
 		<div class="fullWidthContents" id="ebwContest" data-vr-contentbox="">
-            <div id="overlay-contest86731708">
+            <div id="overlay-contest86738620">
              	<div class="fullWidthThumb">
-                    <a href="/contests/photoshop-contest-140-high-jumpers-stretching-hijinx/86731708/" id="contestLink">
+                    <a href="/images/honestly-i-dont-even-know/86738620/" id="contestLink">
                     	<img src="https://cdn.ebaumsworld.com/img/blank.gif"
-                    		 data-src="https://cdn.ebaumsworld.com/thumbs/2021/03/25/023936/86731708/walk5.jpg"
+                    		 data-src="https://cdn.ebaumsworld.com/thumbs/picture/2417629/86738620.jpg"
                      		 alt=""/>
                     </a>
-                                    </div>
+                                 		<div class="widgetThumbOverlay">
+             			<a href="/images/honestly-i-dont-even-know/86738620/">
+             				<span class="icon"></span>
+             				<span class="label">Winner</span>
+             			</a>
+         			</div>
+             		                </div>
 				<ul class="fullWidthDetails contestWidgetStats" onclick="jQuery('#contestLink').trigger('click');">
      	           <li class="fullWidthTitle">
-                       <a href="/contests/photoshop-contest-140-high-jumpers-stretching-hijinx/86731708/">
-                 		   Photoshop Contest #140: High Jumper's Stretching Hijinks</a>
+                       <a href="/images/honestly-i-dont-even-know/86738620/">
+                 		   Honestly, I don't even know...</a>
                     </li>
+                    					<li class="listUserInfo">
+        				<a class="username" href="/user/profile/bunklemann/">
+        					<img class="featureAvatar"
+                    		 	 src="https://cdn.ebaumsworld.com/thumbs/mediaavatar/86738620-1616910009.jpg" />
+                		</a>
+                    	<div class="featureDetails">
+                    		<a class="featureUsername" href="/user/profile/bunklemann/">
+                    		    Congrats! bunklemann                    		</a>
+                    		<div class="homepageFeaturedTime">
+                    			<span class="uploadLabel">Uploaded 03/28/2021</span>
+                    		</div>
+                    	</div>
+					</li>
                                         <li class="fullWidthActionBtn currentContest">
 						<a href="/contests/photoshop-contest-140-high-jumpers-stretching-hijinx/86731708/submissions/newest/">
 							<span class="statIcon"></span>
@@ -3348,7 +3367,7 @@ jQuery('.topMedia').click(function() {
                	    <li class="fullWidthViews">
                	    	<a href="/contests/photoshop-contest-140-high-jumpers-stretching-hijinx/86731708/">
                	    		<span class="viewIcon"></span>
-               	        	<span class="viewCount">2.8k</span>
+               	        	<span class="viewCount">3k</span>
                	        	<span class="viewLabel">Views</span>
                	        </a>
            	        </li>
@@ -3500,6 +3519,6 @@ BT.getPermissionToReinsert(function (isPermitted) {
           if (mediumrectArticle) { mediumrectArticle.style.display = "none" }
         }
     })
-</script></body>
+</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"c1a6d52f38","applicationID":"30491045","transactionName":"YF1TZUpQWBZXUUQKDFkXcFJMWFkLGUJRBAYYUV9VXUkZDFhWVRs=","queueTime":0,"applicationTime":130,"atts":"TBpQEwJKSxg=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
 
 </html>
