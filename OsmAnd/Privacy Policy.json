@@ -202,7 +202,6 @@ function contactus() {
                     <li><a data-gatag="home" href="/">Home</a></li>
                     <li><a data-gatag="features" href="/features">Features</a></li>
                     <li><a data-gatag="blog" href="/blog">Blog</a></li>
-                    <li><a data-gatag="osm_live" href="/osm_live">OsmAnd Live</a></li>
                     <li><a data-gatag="build" href="/build_it">Build It</a></li>
                     <li><a data-gatag="giveaway" href="/giveaway">Giveaway</a></li>
                     <li><a data-gatag="help" href="/help-online">Help</a></li>
