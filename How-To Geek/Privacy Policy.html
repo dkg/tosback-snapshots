@@ -1784,7 +1784,183 @@ body.darkmode .moka-trending-bar a {
   },3000);
 </script>
 <!-- End Facebook Pixel Code -->
-</head>
+<style>
+	@-webkit-keyframes moka-slide-in {
+		100% { 
+			top: 50%; left: 50%; 
+			-ms-transform: translateX(-50%) translateY(-50%); -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);
+		}
+	}
+	@keyframes moka-slide-in {
+		100% { 
+			top: 50%; left: 50%; 
+			-ms-transform: translateX(-50%) translateY(-50%); -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);
+		}
+	}
+
+	@-webkit-keyframes moka-fade-in {
+		100% { 
+			opacity: 1;
+		}
+	}
+	@keyframes moka-fade-in {
+		100% { 
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes moka-fade-in-partial {
+		100% { 
+			opacity: 0.7;
+		}
+	}
+	@keyframes moka-fade-in-partial {
+		100% { 
+			opacity: 0.7;
+		}
+	}
+
+	#v2campaignpopup {
+		background-color: white;
+	}
+	.darkmode #v2campaignpopup {
+		background-color: black;
+	}
+	#v2campaignpopup_backdrop {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0; 
+		-webkit-animation: moka-fade-in-partial 1s forwards; 
+		-webkit-animation-delay: 0s; 
+		animation: moka-fade-in-partial 1s forwards; 
+		animation-delay: 0s;
+		background-color: white;
+		z-index: 100005;
+	}
+	.darkmode #v2campaignpopup_backdrop {
+		background-color: black;
+	}
+
+	/* Push whole block down a smidge for close button, on mobile */
+	@media screen and (max-width: 768px) {
+		#v2campaignpopup {
+			margin-top: 20px;
+			overflow: auto;
+			border: 1px solid black;
+		}
+		.darkmode #v2campaignpopup {
+			border: 1px solid white;
+		}
+	}
+</style>
+<script type="text/javascript">
+	// Check for newsletter flag or already-signed-up flag first:
+	if (!document.cookie.includes('htgreader') && !document.cookie.includes('htg_newsletter_subform_hide')) {
+		var req = new XMLHttpRequest();
+		req.addEventListener("loadend", function() {
+			var v2adslist = JSON.parse(req.response);
+			// This will be an array of ads - generally one in-page and one popup, but could be one or the other etc.
+			if (v2adslist) {
+				v2adslist.forEach(function(v2data) {
+					if (v2data.adtype == 'popup') {
+						if (+v2data.popup_delay != v2data.popup_delay) {
+							v2data.popup_delay = 60;
+						}
+						setTimeout(function() {
+							var newDiv = document.createElement('div');
+							var positionStyle = '';
+							var backdrop = ''; // Note - nobackdrop for corner styles
+
+							if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+								v2data.popup_style = 'full-width';
+							}
+
+							if (v2data.popup_style == 'centered') {
+								positionStyle = 'top: 50%; left: 50%; -ms-transform: translateX(-50%) translateY(-50%); -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);';
+								backdrop = '<div id="v2campaignpopup_backdrop"></div>';
+							} else if (v2data.popup_style == 'fadein') {
+								positionStyle = 'top: 50%; left: 50%; opacity: 0; -ms-transform: translateX(-50%) translateY(-50%); -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%); -webkit-animation: moka-fade-in 1s forwards; -webkit-animation-delay: 0s; animation: moka-fade-in 1s forwards; animation-delay: 0s;';
+								backdrop = '<div></div>';
+
+							} else if (v2data.popup_style == 'slideinside') {
+								positionStyle = 'top: 50%; left: -100%; -webkit-animation: moka-slide-in 1s forwards; -webkit-animation-delay: 0s; animation: moka-slide-in 1s forwards; animation-delay: 0s;';
+								backdrop = '<div></div>';
+
+							} else if (v2data.popup_style == 'slideintop') {
+								positionStyle = 'top: -100%; left: 50%; -webkit-animation: moka-slide-in 1s forwards; -webkit-animation-delay: 0s; animation: moka-slide-in 1s forwards; animation-delay: 0s;';
+								backdrop = '<div></div>';
+
+							} else if (v2data.popup_style == 'popuplr') {
+								positionStyle = 'bottom: 5px; right: 5px;';
+							} else if (v2data.popup_style == 'popupur') {
+								positionStyle = 'top: 60px; right: 5px;';
+							} else if (v2data.popup_style == 'popupll') {
+								positionStyle = 'bottom: 5px; left: 5px;';
+							} else if (v2data.popup_style == 'popupul') {
+								positionStyle = 'top: 60px; left: 5px;';
+							} else if (v2data.popup_style == 'full-width') {
+								positionStyle = 'top: 50%; left: 0; width: 100%; -ms-transform: translateY(-50%); -webkit-transform: translateY(-50%); transform: translateY(-50%); box-shadow: none !important;';
+							}
+
+							window.closev2popup = function() {
+								try { document.getElementById('v2campaignpopup').remove(); } catch {}
+								try { document.getElementById('v2campaignpopup_backdrop').remove();  } catch {}
+								try { document.cookie = 'htg_newsletter_subform_hide=1; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/'; } catch {}
+							}
+
+							var closeButton = '<label id="moka-v2campaign-closebtn" style="font-family: Raleway,sans-serif; cursor: pointer; text-align: center; position: absolute; top: 0; right: 0; min-height: 20px; width: 30px; background: #666666; color: white;" onclick="closev2popup()">X</label>';
+
+							newDiv.innerHTML = backdrop + '<div id="v2campaignpopup" style="position: fixed; z-index: 100007; ' + positionStyle + ' box-shadow: 4px 4px 16px #aaa;">' + closeButton + v2data.content + '</div>';
+							
+							// Last ditch check to see if we shouldn't do this (e.g., HTG native popup already went)
+							if (!document.cookie.includes('htg_newsletter_subform_hide')) {
+								document.body.append(newDiv); 
+
+								// Now that we appended the content, set any hidden refer tag
+								(function() {
+									if (document.referrer) {
+										var x = document.getElementsByName('moka-pagerefer');
+										for (var i = 0; i < x.length; i++) {
+											x[i].value = document.referrer;
+										}
+									}
+								})();
+							}
+						}, v2data.popup_delay * 1000);
+					} else if (v2data.adtype == 'midpage') {
+						// Only do this on actual articles:
+						var articleArea = document.getElementsByClassName('entry-content');
+						if (articleArea && articleArea.length > 0) {
+							articleArea = articleArea[0];
+							var paragraphs = articleArea.children;
+							if (paragraphs.length < v2data.inpage_paragno) {
+								v2data.inpage_paragno = paragraphs.length - 1;
+							}
+
+							var newDiv = document.createElement('div');
+							newDiv.innerHTML = '<div>' + v2data.content + '</div>';						
+
+							var insertDestCandidate = false;
+							for (var actualParag = v2data.inpage_paragno; actualParag < paragraphs.length && !insertDestCandidate; actualParag++) {
+								var candidate = paragraphs.item(actualParag);
+								if (candidate && candidate.nodeName == 'P') {
+									insertDestCandidate = candidate;
+								}
+							}
+							
+							if (insertDestCandidate) insertDestCandidate.insertBefore(newDiv, null); // Null = end
+						}
+					}
+				});
+			}
+		});
+		req.open("GET", "/emv2/inpage?p=1031");
+		req.send();
+	}
+</script></head>
 <body class="page-template-default page page-id-1031 group-blog">
 <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 <header id="masthead" class="site-header nav-down" role="banner">
@@ -2208,10 +2384,37 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="How to Choose the Best VPN Service for Your Needs" aria-label="How to Choose the Best VPN Service for Your Needs" href='https://www.howtogeek.com/221929/how-to-choose-the-best-vpn-service-for-your-needs/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2015/07/img_559c4e62407fc.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="What Is CES, and Why Should I Care?" aria-label="What Is CES, and Why Should I Care?" href='https://www.howtogeek.com/400655/what-is-ces-and-why-should-i-care/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2018/01/DSC_0193.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="How to Choose the Best VPN Service for Your Needs" aria-label="How to Choose the Best VPN Service for Your Needs" href='https://www.howtogeek.com/221929/how-to-choose-the-best-vpn-service-for-your-needs/' class='title' rel='bookmark'>How to Choose the Best VPN Service for Your Needs</a>
+<a title="What Is CES, and Why Should I Care?" aria-label="What Is CES, and Why Should I Care?" href='https://www.howtogeek.com/400655/what-is-ces-and-why-should-i-care/' class='title' rel='bookmark'>What Is CES, and Why Should I Care?</a>
+</div>
+<div style="clear:both;"></div>
+</div>
+<div class="sfpost">
+<div class="sfp2" role="presentation">
+<a title="What’s the Best Antivirus for Windows 10? (Is Windows Defender Good Enough?)" aria-label="What’s the Best Antivirus for Windows 10? (Is Windows Defender Good Enough?)" href='https://www.howtogeek.com/225385/what%e2%80%99s-the-best-antivirus-for-windows-10-is-windows-defender-good-enough/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2017/07/img_55c4e4370fe93.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+</div>
+<div class="sfp3">
+<a title="What’s the Best Antivirus for Windows 10? (Is Windows Defender Good Enough?)" aria-label="What’s the Best Antivirus for Windows 10? (Is Windows Defender Good Enough?)" href='https://www.howtogeek.com/225385/what%e2%80%99s-the-best-antivirus-for-windows-10-is-windows-defender-good-enough/' class='title' rel='bookmark'>What’s the Best Antivirus for Windows 10? (Is Windows Defender Good Enough?)</a>
+</div>
+<div style="clear:both;"></div>
+</div>
+<div class="sfpost">
+<div class="sfp2" role="presentation">
+<a title="How Do Bone Conduction Headphones Work?" aria-label="How Do Bone Conduction Headphones Work?" href='https://www.howtogeek.com/426337/how-do-bone-conduction-headphones-work/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2019/06/hero-6.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+</div>
+<div class="sfp3">
+<a title="How Do Bone Conduction Headphones Work?" aria-label="How Do Bone Conduction Headphones Work?" href='https://www.howtogeek.com/426337/how-do-bone-conduction-headphones-work/' class='title' rel='bookmark'>How Do Bone Conduction Headphones Work?</a>
+</div>
+<div style="clear:both;"></div>
+</div>
+<div class="sfpost">
+<div class="sfp2" role="presentation">
+<a title="Can Law Enforcement Really Recover Files You’ve Deleted?" aria-label="Can Law Enforcement Really Recover Files You’ve Deleted?" href='https://www.howtogeek.com/675784/can-law-enforcement-really-recover-files-you%e2%80%99ve-deleted/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2020/06/0-disintegrating-hard-drive.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+</div>
+<div class="sfp3">
+<a title="Can Law Enforcement Really Recover Files You’ve Deleted?" aria-label="Can Law Enforcement Really Recover Files You’ve Deleted?" href='https://www.howtogeek.com/675784/can-law-enforcement-really-recover-files-you%e2%80%99ve-deleted/' class='title' rel='bookmark'>Can Law Enforcement Really Recover Files You’ve Deleted?</a>
 </div>
 <div style="clear:both;"></div>
 </div>
@@ -2226,55 +2429,28 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="How to Limit Any Application&#8217;s Bandwidth on Windows" aria-label="How to Limit Any Application&#8217;s Bandwidth on Windows" href='https://www.howtogeek.com/347711/how-to-limit-any-applications-bandwidth-on-windows/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2018/03/img_5abeb08caa8b8.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="What Is Inbox Zero, and How Can You Achieve It?" aria-label="What Is Inbox Zero, and How Can You Achieve It?" href='https://www.howtogeek.com/413507/what-is-inbox-zero-and-how-can-you-achieve-it/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2019/05/img_5cd1eff5b8dfc.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="How to Limit Any Application&#8217;s Bandwidth on Windows" aria-label="How to Limit Any Application&#8217;s Bandwidth on Windows" href='https://www.howtogeek.com/347711/how-to-limit-any-applications-bandwidth-on-windows/' class='title' rel='bookmark'>How to Limit Any Application&#8217;s Bandwidth on Windows</a>
+<a title="What Is Inbox Zero, and How Can You Achieve It?" aria-label="What Is Inbox Zero, and How Can You Achieve It?" href='https://www.howtogeek.com/413507/what-is-inbox-zero-and-how-can-you-achieve-it/' class='title' rel='bookmark'>What Is Inbox Zero, and How Can You Achieve It?</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="Windows 7 Dies Today: Here&#8217;s What You Need to Know" aria-label="Windows 7 Dies Today: Here&#8217;s What You Need to Know" href='https://www.howtogeek.com/469843/windows-7-dies-today-heres-what-you-need-to-know/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2020/01/windows-7-retail-boxes.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="How to Send and Receive Faxes Online Without a Fax Machine or Phone Line" aria-label="How to Send and Receive Faxes Online Without a Fax Machine or Phone Line" href='https://www.howtogeek.com/168841/how-to-send-and-receive-faxes-online-without-a-fax-machine-or-phone-line/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2013/07/fax-and-copier-machine.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="Windows 7 Dies Today: Here&#8217;s What You Need to Know" aria-label="Windows 7 Dies Today: Here&#8217;s What You Need to Know" href='https://www.howtogeek.com/469843/windows-7-dies-today-heres-what-you-need-to-know/' class='title' rel='bookmark'>Windows 7 Dies Today: Here&#8217;s What You Need to Know</a>
+<a title="How to Send and Receive Faxes Online Without a Fax Machine or Phone Line" aria-label="How to Send and Receive Faxes Online Without a Fax Machine or Phone Line" href='https://www.howtogeek.com/168841/how-to-send-and-receive-faxes-online-without-a-fax-machine-or-phone-line/' class='title' rel='bookmark'>How to Send and Receive Faxes Online Without a Fax Machine or Phone Line</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="These &#8220;Gamer&#8221; PC Products Are Great for Office Work" aria-label="These &#8220;Gamer&#8221; PC Products Are Great for Office Work" href='https://www.howtogeek.com/661327/these-gamer-pc-products-are-great-for-office-work/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2020/04/gaming-mouse-keyboard-and-headphones.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="What&#8217;s the Best Way to Back Up My Computer?" aria-label="What&#8217;s the Best Way to Back Up My Computer?" href='https://www.howtogeek.com/242428/whats-the-best-way-to-back-up-my-computer/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2016/02/img_56bfe8d1f3492.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="These &#8220;Gamer&#8221; PC Products Are Great for Office Work" aria-label="These &#8220;Gamer&#8221; PC Products Are Great for Office Work" href='https://www.howtogeek.com/661327/these-gamer-pc-products-are-great-for-office-work/' class='title' rel='bookmark'>These &#8220;Gamer&#8221; PC Products Are Great for Office Work</a>
-</div>
-<div style="clear:both;"></div>
-</div>
-<div class="sfpost">
-<div class="sfp2" role="presentation">
-<a title="10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10" aria-label="10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10" href='https://www.howtogeek.com/228570/10-quick-ways-to-speed-up-a-slow-windows-pc/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2015/09/slow-computer.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
-</div>
-<div class="sfp3">
-<a title="10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10" aria-label="10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10" href='https://www.howtogeek.com/228570/10-quick-ways-to-speed-up-a-slow-windows-pc/' class='title' rel='bookmark'>10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10</a>
-</div>
-<div style="clear:both;"></div>
-</div>
-<div class="sfpost">
-<div class="sfp2" role="presentation">
-<a title="How to Overclock Your AMD CPU with Ryzen Master" aria-label="How to Overclock Your AMD CPU with Ryzen Master" href='https://www.howtogeek.com/715726/how-to-overclock-your-amd-cpu-with-ryzen-master/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2021/02/amd-ryzen-cpu.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
-</div>
-<div class="sfp3">
-<a title="How to Overclock Your AMD CPU with Ryzen Master" aria-label="How to Overclock Your AMD CPU with Ryzen Master" href='https://www.howtogeek.com/715726/how-to-overclock-your-amd-cpu-with-ryzen-master/' class='title' rel='bookmark'>How to Overclock Your AMD CPU with Ryzen Master</a>
-</div>
-<div style="clear:both;"></div>
-</div>
-<div class="sfpost">
-<div class="sfp2" role="presentation">
-<a title="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" aria-label="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" href='https://www.howtogeek.com/259644/nest-vs.-ecobee3-vs.-honeywell-lyric-which-smart-thermostat-should-you-buy/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2016/06/smart-thermostats-copy-650x300.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
-</div>
-<div class="sfp3">
-<a title="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" aria-label="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" href='https://www.howtogeek.com/259644/nest-vs.-ecobee3-vs.-honeywell-lyric-which-smart-thermostat-should-you-buy/' class='title' rel='bookmark'>Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?</a>
+<a title="What&#8217;s the Best Way to Back Up My Computer?" aria-label="What&#8217;s the Best Way to Back Up My Computer?" href='https://www.howtogeek.com/242428/whats-the-best-way-to-back-up-my-computer/' class='title' rel='bookmark'>What&#8217;s the Best Way to Back Up My Computer?</a>
 </div>
 <div style="clear:both;"></div>
 </div>
