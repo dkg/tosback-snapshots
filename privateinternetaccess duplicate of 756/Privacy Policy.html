@@ -63,7 +63,7 @@
   </script>
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="6Q5ZuT8SVEBXO9/Be+yEWl2sMvJlbJn1XXUWRPxdZoQlNhHmLsm28E0067ZkmgzWTdcrFPAJrEZ3hgDkf3lz+g==" />
+<meta name="csrf-token" content="vpnw1fGXCdHwzPdtqFq0Ffyf6tJ3GCRWKQs7/gIEtsWdlYCxeRECVvWPfVsRLy/JtuI2nLy2omEQ7TpCStLTEg==" />
     
     
   </head>
@@ -758,6 +758,263 @@
 
 
     <script src="https://www.privateinternetaccess.com/packs/layouts/application-cef70f620a33859b86eb.js"></script>
+      <div class="vpn-survey-container">
+  <div class="col-4 vpn-survey-box">
+    <div id="vpn-survey-thank-you">
+      <div class="progress-container">
+        <div class="progress-2" style="width: 100%;"></div>
+      </div>
+      <div id="vpn-survey-thank-you-content">
+        <h3 class="thanks-header">Thank You For Your Answers!</h3>
+        <p class="thanks-body">Your time is much appreciated</p>
+        <hr class="thanks-hr"/>
+        <br/>
+        <div class="vpn-survey-footer stack">
+          <button class="btn btn-primary" type="button">
+            <a href="/pages/buy-vpn">
+              <span>Get PIA VPN</span>
+              <img src="https://www.privateinternetaccess.com/assets/survey/arrow-left-b0ca85d89344463cf61d3b4fb43e9a707fe425eec43e08c4da141b6c4d7d3fec.svg" />
+</a>          </button>
+          <button class="btn btn-secondary vpn-survey-close" type="button">
+            <a href="">Close</a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="vpn-survey-enabled">
+      <div class="progress-container">
+        <div class="progress"></div>
+      </div>
+      <button>
+        <a class="btn-close vpn-survey-close" href=""></a>
+      </button>
+      <form id="vpn-survey-form" action="/pages/vpn-survey" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Ly+5chqlHk5NprmE73LTisn44m/dy1vBR5ooDzWueEoMI8kWkiMVyUjlM7JWB0hWg4U+IRZl3fZ+fCmzfXgdnQ==" />
+  <div class="form-group row required vpn-survey-step">
+    <label class="col-form-label vpn-survey-heading" for="vpn_survey_used_a_vpn_before">
+      Have you ever used a VPN before?
+    </label>
+    <input class="radio-select" id="vpn_survey_used_a_vpn_before" name="vpn_survey[used_a_vpn_before]" type="radio" value="true" />
+    <label class="col-form-label" for="vpn_survey_used_a_vpn_before">Yes</label>
+    <input class="radio-select" id="vpn_survey_used_a_vpn_before_false" name="vpn_survey[used_a_vpn_before]" type="radio" value="false" />
+    <label class="col-form-label" for="vpn_survey_used_a_vpn_before_false">No</label>
+    <div class="vpn-survey-footer space">
+      <img class="survey-robot" src="https://www.privateinternetaccess.com/assets/survey/pia-robot-survey-1e3d98fb88edc5eb29a3fb96e7febd6c42782adbe2580bf0d571eed31df94282.svg" width="100"/>
+    </div>
+  </div>
+  <div class="form-group row vpn-survey-step" data-case="no">
+    <label class="col-form-label vpn-survey-heading" for="vpn_survey_look_into_vpns_today">
+      What made you look into VPNs today?
+    </label>
+    <textarea class="textarea-select" class="form-control" id="vpn_survey_look_into_vpns_today" name="vpn_survey[look_into_vpns_today]" placeholder="Please describe in a couple of sentences" rows="6"></textarea>
+    <div class="vpn-survey-footer">
+      <button class="btn-next" type="button" disabled='disabled'>
+        Next
+        <div class="next-arrow">
+          <img class="vs-arrow-left" src="https://www.privateinternetaccess.com/assets/survey/arrow-left-b0ca85d89344463cf61d3b4fb43e9a707fe425eec43e08c4da141b6c4d7d3fec.svg" width="10"/>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div class="form-group row vpn-survey-step" data-case="yes">
+    <label class="col-form-label vpn-survey-heading" for="vpn_survey_main_reason">
+      What is your main reason for using a VPN?
+    </label>
+    <textarea class="textarea-select" class="form-control" id="vpn_survey_main_reason" name="vpn_survey[main_reason]" placeholder="Please describe in a couple of sentences" rows="10"></textarea>
+    <div class="vpn-survey-footer">
+      <button class="btn-next" type="button" disabled='disabled'>
+        Next
+        <div class="next-arrow">
+          <img class="vs-arrow-left" src="https://www.privateinternetaccess.com/assets/survey/arrow-left-b0ca85d89344463cf61d3b4fb43e9a707fe425eec43e08c4da141b6c4d7d3fec.svg" width="10"/>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div class="form-group row vpn-survey-step" data-case="yes">
+    <label class="col-form-label vpn-survey-heading" for="vpn_survey_familiar">
+      How familiar are you with VPNs?
+    </label>
+    <div class="vnp-survey-option">
+      <input class="radio-select-2" id="vpn_survey_beginner" name="vpn_survey[familiar]" type="radio" value="0" />
+      <label class="col-form-label" for="vpn_survey_beginner">
+        <img class="sel-icon" height="24" src="https://www.privateinternetaccess.com/assets/survey/shield-1b-c3204ee7ed68379bb51fdbf4b0ca6ab458a69429250efe1c7a7bbb8cbecf80c7.svg" width="24"/>
+        Beginner
+      </label>
+    </div>
+    <div class="vnp-survey-option">
+      <input class="radio-select-2" id="vpn_survey_intermediate" name="vpn_survey[familiar]" type="radio" value="1" />
+      <label class="col-form-label" for="vpn_survey_intermediate">
+        <img class="sel-icon" height="24" src="https://www.privateinternetaccess.com/assets/survey/shield-2b-46fde9e37fea8111b4ea1fa2971b82f8c786fbadfa530bd684bd5090692147c8.svg" width="24"/>
+        Intermediate
+      </label>
+    </div>
+    <div class="vnp-survey-option">
+      <input class="radio-select-2" id="vpn_survey_expert" name="vpn_survey[familiar]" type="radio" value="2" />
+      <label class="col-form-label" for="vpn_survey_expert">
+        <img class="sel-icon" height="24" src="https://www.privateinternetaccess.com/assets/survey/shield-3b-0e362f4963289334f11c82413649ceffa50c0f739ce8c33d2717803e468c26d8.svg" width="24"/>
+        Expert
+      </label>
+    </div>
+    <div data-show="vpn_survey[familiar]" class="vpn-survey-familiar-description">
+      <label class="col-form-label" for="vpn_survey_familiar_description">Please describe your answer</label>
+      <textarea class="form-control" id="vpn_survey_familiar_description" name="vpn_survey[familiar_description]" placeholder="Please describe in a couple of sentences" rows="6"></textarea>
+    </div>
+    <div class="vpn-survey-footer">
+      <button class="btn-next" data-show="vpn_survey[familiar]" type="button" disabled='disabled'>
+        Next
+        <div class="next-arrow">
+          <img class="vs-arrow-left" src="https://www.privateinternetaccess.com/assets/survey/arrow-left-b0ca85d89344463cf61d3b4fb43e9a707fe425eec43e08c4da141b6c4d7d3fec.svg" width="10"/>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div class="form-group row vpn-survey-step">
+    <label class="col-form-label vpn-survey-heading" for="vpn_survey_key_information">
+      What key information on PIA VPN are you looking for before deciding to purchase?
+    </label>
+    <textarea class="textarea-submit" class="form-control" id="vpn_survey_key_information" name="vpn_survey[key_information]" placeholder="Please describe in a couple of sentences" rows="6"></textarea>
+    <div class="vpn-survey-footer">
+      <div class="input-group-btn">
+        <button class="save-btn" disabled='disabled'>
+          Submit
+          <div class="next-arrow">
+            <img class="vs-arrow-left" src="https://www.privateinternetaccess.com/assets/survey/arrow-left-b0ca85d89344463cf61d3b4fb43e9a707fe425eec43e08c4da141b6c4d7d3fec.svg" width="10"/>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+    </div>
+  </div>
+</div>
+
+<script>
+  let $currentIndex = 0
+
+  function submitVpnSurvey(evt, e) {
+    evt.preventDefault()
+
+    var form = document.getElementById("vpn-survey-form")
+    var url = form.getAttribute('action')
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: new FormData(form),
+      processData: false,
+      contentType: false,
+      success: function(data)
+      {
+        document.getElementById('vpn-survey-thank-you').style.display = 'block'
+        document.getElementById('vpn-survey-enabled').style.display = 'none'
+      },
+      error: function(error)
+      {
+        document.getElementById('vpn-survey-thank-you').style.display = 'block'
+        document.getElementById('vpn-survey-enabled').style.display = 'none'
+      }
+    })
+
+    app.piaPush(e)
+  }
+
+  function getSteps() {
+    const usedBefore = document.querySelector("#vpn-survey-form")["vpn_survey[used_a_vpn_before]"].value === "true"
+    return Array.from(document.querySelectorAll(".vpn-survey-step")).filter((step) => {
+      const stepCase = step.dataset["case"]
+      if (stepCase === undefined) {
+        return true
+      } else if (usedBefore && stepCase === "yes") {
+        return true
+      } else if (!usedBefore && stepCase === "no") {
+        return true
+      }
+
+      return false
+    })
+  }
+
+  function render() {
+    const steps = getSteps()
+    const totalSteps = steps.length
+    let progress = (($currentIndex+.25) * 100) / totalSteps
+    console.log(progress)
+    document.querySelector(".progress").style.width = progress + "%"
+
+    steps.forEach((step) => {
+      step.classList.remove("current")
+    })
+
+    steps[$currentIndex].classList.add("current")
+  }
+
+  function next() {
+    const steps = getSteps()
+    $currentIndex = Math.min($currentIndex + 1, steps.length - 1)
+    render()
+  }
+
+  function close(evt, e) {
+    app.Cookies.set('vpn_survey_finished', 1, {expires: 30})
+    app.Cookies.set('vpn_survey_enabled', 0, {expires: 30})
+    app.piaPush(e)
+    document.querySelector(".vpn-survey-box").classList.remove("visible")
+    evt.preventDefault()
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+
+    document.querySelectorAll(".radio-select-2").forEach((item) => item.addEventListener("change", (e) => {
+      e.target.parentElement.parentElement.querySelector('.vpn-survey-familiar-description').style.opacity = 1
+      document.querySelectorAll(".radio-select-2").forEach((option, index) => {
+        if(e.target.value != index) {
+          option.parentElement.style.display = 'none'
+        }
+      })
+    }))
+
+    document.querySelector('#vpn_survey_familiar_description').addEventListener('keyup', e => {
+      if(e.target.value.length > 0) {
+        e.target.parentElement.parentElement.querySelector('.btn-next').disabled = false
+      }
+    })
+
+    document.querySelectorAll(".textarea-select").forEach((item) => item.addEventListener("keyup", (e) => {
+      e.target.parentElement.querySelector('.btn-next').disabled = e.target.value.length <= 0;
+    }))
+
+    document.querySelectorAll(".textarea-submit").forEach((item) => item.addEventListener("keyup", (e) => {
+      e.target.parentElement.querySelector('.save-btn').disabled = e.target.value.length <= 0;
+    }))
+
+    // go to the next step
+    document.querySelector("#vpn-survey-form").querySelectorAll(".btn-next").forEach((nextButton) =>
+      nextButton.addEventListener("click", (e) => {
+        e.preventDefault()
+        next()
+      })
+    )
+
+    document.querySelectorAll(".radio-select").forEach((item) => item.addEventListener("change", (e) => {
+      e.preventDefault()
+        next()
+      })
+    )
+
+    document.querySelectorAll(".vpn-survey-close").forEach((item) => item.addEventListener("click", (e) => {
+      close(e, 'U2FsdGVkX1-rXqcfHHxNFX64TLTor8-EdWEMiJ8lKMymc7z6myNLExSKO8ALzYrT,qGooxuUgeEOyTQDT28y5apyQIXc')
+    }))
+
+    document.getElementById('vpn-survey-form').addEventListener('submit', function(evt) { submitVpnSurvey(evt, 'U2FsdGVkX18V4HSrDogVvxcYyJOKVp6paLLnyxwg4CuWnbwxZiTCjtjaSslojuhU,VNdMGd3GZ18SaYem-Cqkkv9lKOM')})
+
+    setTimeout(() => {
+      render()
+      document.querySelector(".vpn-survey-box").classList.toggle("visible")
+      app.piaPush('U2FsdGVkX185_EIW7T6utkoGy_r5i0gZahlJ4Sb_qk_KsMFp3fMBblRZEq2MHptx,kUdtLk7T4UEa0G2xwEr9H1bfjDg')
+    }, 10000)
+  })
+</script>
+
         <script type="text/javascript">
       window.DESKPRO_MESSENGER_ASSET_URL = "https://www.privateinternetaccess.com/helpdesk/assets/48207/pub/build/messenger/";
       window.DESKPRO_MESSENGER_OPTIONS = {
