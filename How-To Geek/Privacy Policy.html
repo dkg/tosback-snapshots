@@ -29,6 +29,24 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
   .htg-img-bigpic > a  > img {
    width: 100% !important; 
   } 
+
+  .single-post .adslot970 #purch_Y_L_1_1 {
+    z-index: 100001; 
+    position: fixed; 
+    bottom: 0px; 
+    display: block; 
+    width: 100%; 
+    left: 0px; 
+    height: 55px; /* 105px; */
+    text-align: center; 
+    background-color: white !important; /* rgba(255, 255, 255, 0.8);*/
+    box-shadow: rgba(0, 0, 0, 0.2) 0px -1px 1px 0px; 
+    padding-top: 5px;
+  }
+
+  body.darkmode.single-post .adslot970 #purch_Y_L_1_1 {
+    background-color: black !important;
+  }
 }
 
 a {
@@ -938,12 +956,6 @@ a.discourse svg {
     .how-to-geek-follow .social-follows .social-icons div {
       justify-content: space-between; }
 
-.adslot970:not(.collapse) {
-   }
-
-.adslot970 #purch_Y_L_1_1 {
-   }
-
 ol.justthesteps, span.nutshell {
   display: block;
   width: 200px;
@@ -1015,7 +1027,9 @@ a.dllnk:hover {
 
 #div-thetop1 {
   background-color: #FAFAFA;
-  border: 1px solid #f3f3f3; }
+  border: 1px solid #f3f3f3; 
+  min-height: 167px;
+}
 
 #purch_Y_R_1_1 {
   width: 300px;
@@ -1607,7 +1621,12 @@ body.darkmode .moka-trending-bar a {
     float: none;
   }
 }
-	body {
+
+/* Purch/Future CLS fix - their full-screen ad alters the margins on the page and causes massive CLS */
+.ct_wallpaper #page.hentry {
+  margin: 0 0 1.5em !important;
+  max-width: none !important;
+}	body {
   font-family: "Roboto", "Open Sans", sans-serif; }
   @media screen and (max-width: 768px) {
     body {
@@ -2384,46 +2403,55 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="How to Create, Edit, and View Microsoft Word Documents for Free" aria-label="How to Create, Edit, and View Microsoft Word Documents for Free" href='https://www.howtogeek.com/351601/how-to-create-edit-and-view-microsoft-word-documents-for-free/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2018/05/wf_top.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="Why Video Doorbells Are the Best Smarthome Gadget" aria-label="Why Video Doorbells Are the Best Smarthome Gadget" href='https://www.howtogeek.com/424795/video-doorbells-are-the-best-smarthome-investment-heres-why/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2019/06/Nest-Doorbell.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="How to Create, Edit, and View Microsoft Word Documents for Free" aria-label="How to Create, Edit, and View Microsoft Word Documents for Free" href='https://www.howtogeek.com/351601/how-to-create-edit-and-view-microsoft-word-documents-for-free/' class='title' rel='bookmark'>How to Create, Edit, and View Microsoft Word Documents for Free</a>
+<a title="Why Video Doorbells Are the Best Smarthome Gadget" aria-label="Why Video Doorbells Are the Best Smarthome Gadget" href='https://www.howtogeek.com/424795/video-doorbells-are-the-best-smarthome-investment-heres-why/' class='title' rel='bookmark'>Why Video Doorbells Are the Best Smarthome Gadget</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" aria-label="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" href='https://www.howtogeek.com/259644/nest-vs.-ecobee3-vs.-honeywell-lyric-which-smart-thermostat-should-you-buy/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2016/06/smart-thermostats-copy-650x300.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="How to Fax a Document From Your Smartphone" aria-label="How to Fax a Document From Your Smartphone" href='https://www.howtogeek.com/218505/how-to-fax-a-document-from-your-smartphone/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2015/05/fax-machine.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" aria-label="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" href='https://www.howtogeek.com/259644/nest-vs.-ecobee3-vs.-honeywell-lyric-which-smart-thermostat-should-you-buy/' class='title' rel='bookmark'>Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?</a>
+<a title="How to Fax a Document From Your Smartphone" aria-label="How to Fax a Document From Your Smartphone" href='https://www.howtogeek.com/218505/how-to-fax-a-document-from-your-smartphone/' class='title' rel='bookmark'>How to Fax a Document From Your Smartphone</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="Six Tips to Help Save Yourself from Poor Computer Posture" aria-label="Six Tips to Help Save Yourself from Poor Computer Posture" href='https://www.howtogeek.com/349796/six-tips-to-help-save-yourself-from-poor-computer-posture/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2018/04/shutterstock_441776695.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="Why &#8216;Animal Crossing: New Horizons&#8217; Became a Cultural Phenomenon" aria-label="Why &#8216;Animal Crossing: New Horizons&#8217; Became a Cultural Phenomenon" href='https://www.howtogeek.com/671064/why-animal-crossing-new-horizons-became-a-cultural-phenomenon/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2020/04/ac_nh_hero_1.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="Six Tips to Help Save Yourself from Poor Computer Posture" aria-label="Six Tips to Help Save Yourself from Poor Computer Posture" href='https://www.howtogeek.com/349796/six-tips-to-help-save-yourself-from-poor-computer-posture/' class='title' rel='bookmark'>Six Tips to Help Save Yourself from Poor Computer Posture</a>
+<a title="Why &#8216;Animal Crossing: New Horizons&#8217; Became a Cultural Phenomenon" aria-label="Why &#8216;Animal Crossing: New Horizons&#8217; Became a Cultural Phenomenon" href='https://www.howtogeek.com/671064/why-animal-crossing-new-horizons-became-a-cultural-phenomenon/' class='title' rel='bookmark'>Why &#8216;Animal Crossing: New Horizons&#8217; Became a Cultural Phenomenon</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="Common Smarthome Myths That Just Aren’t True" aria-label="Common Smarthome Myths That Just Aren’t True" href='https://www.howtogeek.com/399151/common-smarthome-myths-that-just-aren%e2%80%99t-true/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2019/01/shutterstock_1149993809.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="Your Smarthome Setup Might Break, and There&#8217;s Nothing You Can Do About It" aria-label="Your Smarthome Setup Might Break, and There&#8217;s Nothing You Can Do About It" href='https://www.howtogeek.com/400112/your-smarthome-setup-might-break-and-theres-nothing-you-can-do-about-it/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2019/02/smarthome-hubs.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="Common Smarthome Myths That Just Aren’t True" aria-label="Common Smarthome Myths That Just Aren’t True" href='https://www.howtogeek.com/399151/common-smarthome-myths-that-just-aren%e2%80%99t-true/' class='title' rel='bookmark'>Common Smarthome Myths That Just Aren’t True</a>
+<a title="Your Smarthome Setup Might Break, and There&#8217;s Nothing You Can Do About It" aria-label="Your Smarthome Setup Might Break, and There&#8217;s Nothing You Can Do About It" href='https://www.howtogeek.com/400112/your-smarthome-setup-might-break-and-theres-nothing-you-can-do-about-it/' class='title' rel='bookmark'>Your Smarthome Setup Might Break, and There&#8217;s Nothing You Can Do About It</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="How to Protect Your BitLocker-Encrypted Files From Attackers" aria-label="How to Protect Your BitLocker-Encrypted Files From Attackers" href='https://www.howtogeek.com/407820/how-to-protect-your-bitlocker-encrypted-files-from-attackers/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2019/03/img_5c8c36c13f4dd.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="Why Does USB Have to Be So Complicated?" aria-label="Why Does USB Have to Be So Complicated?" href='https://www.howtogeek.com/439344/why-does-usb-have-to-be-so-complicated/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2019/09/img_5d6ee0422a80e.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="How to Protect Your BitLocker-Encrypted Files From Attackers" aria-label="How to Protect Your BitLocker-Encrypted Files From Attackers" href='https://www.howtogeek.com/407820/how-to-protect-your-bitlocker-encrypted-files-from-attackers/' class='title' rel='bookmark'>How to Protect Your BitLocker-Encrypted Files From Attackers</a>
+<a title="Why Does USB Have to Be So Complicated?" aria-label="Why Does USB Have to Be So Complicated?" href='https://www.howtogeek.com/439344/why-does-usb-have-to-be-so-complicated/' class='title' rel='bookmark'>Why Does USB Have to Be So Complicated?</a>
+</div>
+<div style="clear:both;"></div>
+</div>
+<div class="sfpost">
+<div class="sfp2" role="presentation">
+<a title="How Does Facial Recognition Work?" aria-label="How Does Facial Recognition Work?" href='https://www.howtogeek.com/427897/how-does-facial-recognition-work/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2019/07/1-650x300.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+</div>
+<div class="sfp3">
+<a title="How Does Facial Recognition Work?" aria-label="How Does Facial Recognition Work?" href='https://www.howtogeek.com/427897/how-does-facial-recognition-work/' class='title' rel='bookmark'>How Does Facial Recognition Work?</a>
 </div>
 <div style="clear:both;"></div>
 </div>
@@ -2442,15 +2470,6 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 </div>
 <div class="sfp3">
 <a title="What’s the Best Antivirus for Windows 10? (Is Windows Defender Good Enough?)" aria-label="What’s the Best Antivirus for Windows 10? (Is Windows Defender Good Enough?)" href='https://www.howtogeek.com/225385/what%e2%80%99s-the-best-antivirus-for-windows-10-is-windows-defender-good-enough/' class='title' rel='bookmark'>What’s the Best Antivirus for Windows 10? (Is Windows Defender Good Enough?)</a>
-</div>
-<div style="clear:both;"></div>
-</div>
-<div class="sfpost">
-<div class="sfp2" role="presentation">
-<a title="How To Make Your Computer&#8217;s Microphone Sound Better" aria-label="How To Make Your Computer&#8217;s Microphone Sound Better" href='https://www.howtogeek.com/367316/how-to-make-your-microphone-sound-better/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2018/09/shutterstock_625688930.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
-</div>
-<div class="sfp3">
-<a title="How To Make Your Computer&#8217;s Microphone Sound Better" aria-label="How To Make Your Computer&#8217;s Microphone Sound Better" href='https://www.howtogeek.com/367316/how-to-make-your-microphone-sound-better/' class='title' rel='bookmark'>How To Make Your Computer&#8217;s Microphone Sound Better</a>
 </div>
 <div style="clear:both;"></div>
 </div>
