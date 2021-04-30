@@ -11,8 +11,8 @@
 <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
 <link href="/manifest.webmanifest" rel="manifest">
 <title>Terms of Service - PCPartPicker</title>
-<link rel="stylesheet" type="text/css" href="//cdna.pcpartpicker.com/static/forever/hash/site-7cc897b8c56d56d00dac2d589fa76759.css" />
-<script type="text/javascript" src="//cdna.pcpartpicker.com/static/forever/hash/site-f68729d13ae7ef60667ce49cd481250b.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdna.pcpartpicker.com/static/forever/hash/site-8a2921cd7f545fcacfa6ea1861ed2946.css" />
+<script type="text/javascript" src="//cdna.pcpartpicker.com/static/forever/hash/site-5dcfd98f44f9d14659626b594af98777.js"></script>
 <script type="text/javascript">
     var global_country_sign = '$';
     $(document).ready(function(){
@@ -22,13 +22,11 @@
         );
         init_country_selector('us');
         init_live_search();
-        init_common_buttons('2021-charitywater');
-        r_init_dialogs();
+        init_common('2021-charitywater');
         make_drop_nav('.nav-parts', '.browse-parts-tray');
         make_drop_nav('.search-parts', '.search-tray', function() {
             $('#search_q').focus();
         });
-        
     });
 
     
@@ -94,7 +92,6 @@
 			C0.4,3.5,0.2,4.5,0.2,4.5S0,5.9,0,7.3v1.3c0,1.5,0.2,2.7,0.2,2.7s0.2,1.2,0.6,1.8c0.6,0.7,1.4,0.7,1.8,0.8C3.8,14,8,14,8,14
 			s3.4,0,5.6-0.2c0.4,0,1-0.1,1.6-0.7c0.4-0.5,0.6-1.8,0.6-1.8S16,10.1,16,8.7V7.3C16,5.9,15.8,4.5,15.8,4.5z M6,10.6V5.4L11,8
 			L6,10.6z" /> </g> </g> </symbol></svg>
-
 <section class="banner banner--cw">
 <div class="cw-icon">
 <svg width="21" height="29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.023 14.174h-4.72c-.49 0-.815.326-.815.815v1.955c0 .489.326.814.814.814h4.721c.489 0 .814-.325.814-.814v-1.955c-.163-.489-.488-.815-.814-.815zm7.651-10.427c-.162-.163-1.14-1.955-1.14-1.955s.326-.163.49-.326c.162 0 .325-.163 0-.651-.164-.49-.49-.326-.49-.326l-.65.326C18.558 0 17.744 0 17.419 0h-1.14c-.163 0-.325 0-.488.163-.163.163-.326.163-.652.163H7.163c-.489-.326-1.14 0-1.14.163l-.976.977c-.326.326-.489.49-.814.49.162-.164 0-.327 0-.327v-.163l.162-.488h.163L4.395.652s-.162 0-.325.163v.163c0 .325-.326.325-.326.325S3.256.49 3.256.326c0-.163-.163-.489-1.628.326C0 1.466.326 1.792.326 1.792l.488.978-.163.163.326.814s-.163 0-.489.326c-.162 0-.488.326-.488.815v21.668C0 28.186.488 29 2.28 29h16.604c1.14 0 2.116-.489 2.116-2.444V5.213c0-1.14-.326-1.14-.326-1.466zM8.628 1.955h5.535c.488 0 .814.326.814.815.162.488-.326.977-.814.977H8.628c-.326 0-.814-.489-.814-.977 0-.326.488-.815.814-.815zm7 17.107s1.79 3.258 2.279 3.91c.488.977-.163 1.466-.163 1.466s-.977.489-1.465-.326c-.325-.651-1.628-2.932-2.116-3.747-.651-.977-.814-1.14-1.628-1.14H8.628c-.814 0-.977.326-1.628 1.14-.488.652-1.79 2.933-2.116 3.747-.489.815-1.465.326-1.465.326s-.652-.489-.163-1.466c.325-.815 2.279-3.91 2.279-3.91s.488-.652.488-1.304V16.13v-1.955c0-.651-.488-1.303-.488-1.303s-1.79-3.259-2.28-4.073c-.488-.978.164-1.304.164-1.304s.976-.488 1.465.326c.325.652 1.628 2.933 2.116 3.747.651.978.814 1.14 1.628 1.14h4.07c.814 0 .976-.325 1.628-1.14.325-.814 1.627-2.932 1.953-3.747.488-.814 1.465-.326 1.465-.326s.651.49.163 1.467c-.326.814-2.28 3.91-2.28 3.91s-.325.652-.325 1.303v3.585c0 .651.326 1.303.326 1.303z" fill="#191B2B" /></svg>
@@ -102,7 +99,7 @@
 <div class="banner__content">
 <h1>Help 25,000 People Get Clean Water</h1>
 <p>We’re matching every dollar raised through charity: water’s Water x Stream campaign—up to $500,000, while funds remain!</p>
-<a href="https://www.charitywater.org/streamers" class="button button--small pp_click_banner" target="_blank">Sign Up</a>
+<a href="https://tiltify.com/charitywater/waterstream" class="button button--small pp_click_banner" target="_blank">Donate</a>
 </div>
 <a href="#" class="banner__dismiss pp_dismiss_banner"><svg class="icon shape-delete"><use xlink:href="#shape-delete" /></svg></a>
 </section>
@@ -160,6 +157,7 @@
 <option value="tr">Turkey</option>
 <option value="ae">United Arab Emirates</option>
 <option value="uk">United Kingdom</option>
+
 <option value="us" selected="selected">United States</option>
 </select>
 <span class="flag-icon flag-us"></span>
@@ -182,14 +180,22 @@
 <li class="nav__categories--guides"><a href="/guide/"><svg class="nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 24"><g data-name="Layer 2"><path d="M12 0H0v24h18V6zm4 22H2v-2h3v-1H2v-2h5v-1H2v-2h3v-1H2v-2h5v-1H2V8h3V7H2V5h5V4H2V2h9v5h5z" data-name="Layer 1" /></g></svg>Build Guides</a></li>
 <li class="nav__categories--builds"><a href="/builds/"><svg class="nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 24"><g data-name="Layer 2"><g data-name="Layer 1"><path d="M19.08 1l-12-1H7a.62.62 0 0 0-.19 0h-.14l-.09.1-.13.07-.13.09L.45 4.17A1 1 0 0 0 0 5v17a1 1 0 0 0 .84 1l6 1H19a1 1 0 0 0 1-1V2a1 1 0 0 0-.92-1zM6 21.82l-4-.67V5.54l4-2.67zM18 22H8V2.09l10 .83z" /><circle cx="13" cy="18" r="1" /><path d="M17 4.6L9 4v2l8 .6v-2zM17 7.6L9 7v2l8 .6v-2z" /></g></g></svg>Completed Builds</a></li>
 <li class="nav__categories--browseProducts js-trigger--browseProducts"><a href="#"><svg class="nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="Layer 1"><path d="M8 8h8v8H8z" /><path d="M24 9V7h-2V4a2 2 0 0 0-2-2h-3V0h-2v2h-2V0h-2v2H9V0H7v2H4a2 2 0 0 0-2 2v3H0v2h2v2H0v2h2v2H0v2h2v3a2 2 0 0 0 2 2h3v2h2v-2h2v2h2v-2h2v2h2v-2h3a2 2 0 0 0 2-2v-3h2v-2h-2v-2h2v-2h-2V9zm-4 11H4V4h16z" /></g></g></svg>Browse Products<span class="down-caret"><svg class="icon shape-dropdown-arrow"><use xlink:href="#shape-dropdown-arrow" /></svg></span></a></li>
-<li class="nav__subLinks"><div class="nav__subLinks--group1"><a href="/products/pricedrop/" class="nav__categories--drops">Price Drops</a><a href="/forums/" class="nav__categories--forums">Forums</a></div><div class="nav__subLinks--group2"><a href="/trends/" class="nav__categories--trends">Price Trends</a><a href="/blog/" class="nav__categories--blog">Blog</a></div></li>
+<li class="nav__subLinks">
+<div class="nav__subLinks--group1">
+<a href="/forums/" class="nav__categories--forums">Forums</a>
+</div>
+<div class="nav__subLinks--group2">
+<a href="/products/pricedrop/" class="nav__categories--drops">Price Drops</a>
+<a href="/trends/" class="nav__categories--trends">Price Trends</a>
+</div>
+</li>
 <li>
 <div class="browseProducts browseProducts--hide">
 <div class="browseProducts__wrapper xs-col-11 xs-mx-auto">
 <div class="browseProducts__block--group1">
 <ul class="browseProducts__block--popular list-unstyled">
-<li><a href="/products/cpu/"><img src="//cdna.pcpartpicker.com/static/forever/img/nav-cpu.png" alt="CPU">CPU</a></li>
- <li><a href="/products/cpu-cooler/"><img src="//cdna.pcpartpicker.com/static/forever/img/nav-cpucooler.png" alt="CPU Cooler">CPU Cooler</a></li>
+ <li><a href="/products/cpu/"><img src="//cdna.pcpartpicker.com/static/forever/img/nav-cpu.png" alt="CPU">CPU</a></li>
+<li><a href="/products/cpu-cooler/"><img src="//cdna.pcpartpicker.com/static/forever/img/nav-cpucooler.png" alt="CPU Cooler">CPU Cooler</a></li>
 <li><a href="/products/motherboard/"><img src="//cdna.pcpartpicker.com/static/forever/img/nav-motherboard.png" alt="Motherboard">Motherboard</a></li>
 <li><a href="/products/memory/"><img src="//cdna.pcpartpicker.com/static/forever/img/nav-memory.png" alt="Memory">Memory</a></li>
 <li><a href="/products/internal-hard-drive/"><img src="//cdna.pcpartpicker.com/static/forever/img/nav-ssd.png" alt="Storage">Storage</a></li>
@@ -225,9 +231,9 @@
 <ul class="browseProducts__block--externalStorage list-unstyled">
 <li><h2>External Storage</h2></li>
 <li><a href="/products/external-hard-drive/">External Hard Drives</a></li>
-</ul>
+ </ul>
 <ul class="browseProducts__block--peripherals list-unstyled">
- <li><h2>Peripherals</h2></li>
+<li><h2>Peripherals</h2></li>
 <li><a href="/products/headphones/">Headphones</a></li>
 <li><a href="/products/keyboard/">Keyboards</a></li>
 <li><a href="/products/mouse/">Mice</a></li>
@@ -247,10 +253,6 @@
 <li><a href="/products/software/#W=7">Office &amp; Productivity</a></li>
 <li><a href="/products/os/">Operating Systems</a></li>
 <li><a href="/products/software/#W=6">Photography</a></li>
-</ul>
-<ul class="browseProducts__block--software list-unstyled">
-<li><h2>Other</h2></li>
-<li><a href="/products/laptop/">Laptops</a></li>
 </ul>
 </div>
 </div>
@@ -274,7 +276,7 @@
 <li class="nav-icon nav-icon--search"><a class="js-trigger-offCanvas--search" href="#"><svg class="icon shape-search"><use xlink:href="#shape-search" /></svg></a></li>
 
 <li class="nav-icon nav-icon--account"><a href="#" class="js-trigger--accountMobile"><svg class="icon shape-user"><use xlink:href="#shape-user" /></svg></a></li>
-<li class="nav-icon nav-icon--resources"><a href="#" class="js-trigger--resourcesMobile"><svg class="icon shape-menu"><use xlink:href="#shape-menu" /></svg></a></li>
+ <li class="nav-icon nav-icon--resources"><a href="#" class="js-trigger--resourcesMobile"><svg class="icon shape-menu"><use xlink:href="#shape-menu" /></svg></a></li>
 </ul>
 </div>
 </div>
@@ -374,7 +376,7 @@
 <li><a href="/products/software/#W=7">Office &amp; Productivity</a></li>
 <li><a href="/products/os/">Operating Systems</a></li>
 <li><a href="/products/software/#W=6">Photography</a></li>
-</ul>
+ </ul>
 <ul class="browseProducts__block--software list-unstyled">
 <li><h2>Other</h2></li>
 <li><a href="/products/laptop/">Laptops</a></li>
@@ -407,8 +409,8 @@
 <option value="dk">Denmark</option>
 <option value="fi">Finland</option>
 <option value="fr">France</option>
-
 <option value="de">Germany</option>
+
 <option value="hk">Hong Kong</option>
 <option value="hu">Hungary</option>
 <option value="in">India</option>
@@ -426,7 +428,8 @@
 <option value="pt">Portugal</option>
 <option value="qa">Qatar</option>
 <option value="ro">Romania</option>
- <option value="sa">Saudi Arabia</option>
+<option value="sa">Saudi Arabia</option>
+
 <option value="sg">Singapore</option>
 <option value="sk">Slovakia</option>
 <option value="kr">South Korea</option>
@@ -469,7 +472,6 @@
 <li class="nav__categories--drops js-trigger-offCanvas--navigate"><a href="/products/pricedrop/">Price Drops</a></li>
 <li class="nav__categories--forums js-trigger-offCanvas--navigate"><a href="/forums/">Forums</a></li>
 <li class="nav__categories--trends js-trigger-offCanvas--navigate"><a href="/trends/">Price Trends</a></li>
-<li class="nav__categories--blog js-trigger-offCanvas--navigate"><a href="/blog/">Blog</a></li>
 </ul>
 </div>
 </div>
@@ -605,7 +607,6 @@
 <div class="col xs-col-12 sm-col-3">
 <h2>Information</h2>
 <ul class="footer__secondary-nav">
-<li><a href="/blog/">Blog</a></li>
 <li><a href="/downloads/">Downloads</a></li>
 <li><a href="/forums/">Forums</a></li>
 <li><a href="/products/pricedrop/">Price Drops</a></li>
