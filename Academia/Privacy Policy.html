@@ -140,7 +140,7 @@
 
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="dzL1DFyJooOX+TA+lTkvRjGrYNZltrcZUBKFyANbsGggwDSM/EjETKZPfqWq3afxL8RScSGJqCe6hcOTrcHSug==" />
+<meta name="csrf-token" content="hlmkFMqp6Ie6qRd6zHCw4C3BPm4btPzcTlkh5533Y12A+gbEH01qQYuVv5XyGSACCJELrOpStrK0qSOJd3f0wQ==" />
 
     
   <meta name="description" content="Academia.edu is a place to share and follow research." />
@@ -149,7 +149,7 @@
 <script>
   var $controller_name = 'static';
   var $rails_env = 'production';
-  var $app_rev = 'af71a9b4170bb96b87a755e68902d2e12ed0ad24';
+  var $app_rev = '60c90da3ca9508ad9c4d6334b36324f8fac72b89';
   var $domain = 'academia.edu';
   var $app_host = "academia.edu";
   var $asset_host = "academia-assets.com";
@@ -163,8 +163,8 @@
 
 
     window.Aedu = { hit_data: null };
-    window.Aedu.SiteStats = {"premium_universities_count":16957,"monthly_visitors":"31 million","monthly_visitor_count":31300000,"monthly_visitor_count_in_millions":31,"user_count":154014857,"paper_count":22432889,"paper_count_in_millions":22,"page_count":576727711,"page_count_in_millions":576,"pdf_count":21265074,"pdf_count_in_millions":21};
-    window.Aedu.serverRenderTime = new Date(1617688804000);
+    window.Aedu.SiteStats = {"premium_universities_count":16915,"monthly_visitors":"31 million","monthly_visitor_count":31300000,"monthly_visitor_count_in_millions":31,"user_count":155761576,"paper_count":22432889,"paper_count_in_millions":22,"page_count":576727711,"page_count_in_millions":576,"pdf_count":21265074,"pdf_count_in_millions":21};
+    window.Aedu.serverRenderTime = new Date(1619786697000);
     window.Aedu.isUsingCssV1 = false;
 
     window.Aedu.serviceAvailability = {
@@ -188,7 +188,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
       <link rel="stylesheet" media="all" href="//a.academia-assets.com/assets/libraries-f6da9185479373b0a797959f16e3f33ba9d94f863cde79d2a3a13b88284d6e4f.css" />
-      <link rel="stylesheet" media="all" href="//a.academia-assets.com/assets/academia-93dec9dfcf1e1e2148bf22ffc0a7231993d2db3a72b2804241c763b5c85adf48.css" />
+      <link rel="stylesheet" media="all" href="//a.academia-assets.com/assets/academia-ec3c77c16f8f57b036d1d429396771edae646ff76526ee7139ac983f8c814aa5.css" />
 
     
     <link rel="stylesheet" media="all" href="//a.academia-assets.com/assets/design_system-7441da1a8e7346ff78ec656d4ab85e2b65eeaca75578eeccba55055075a78b09.css" />
@@ -196,15 +196,15 @@
 
     <script src="//a.academia-assets.com/assets/webpack_bundles/runtime-bundle-85e165765ce1adf0cec7ea78829eef6dcd87b26bc4da5c258ced5b5e731c7a2b.js"></script>
 
-     <script src="//a.academia-assets.com/assets/webpack_bundles/webpack_libraries_and_infrequently_changed.wjs-bundle-e9a8c237afb04b940926389ca17e8fd5800f25679c48ffa470594340cfa895a9.js"></script>
+     <script src="//a.academia-assets.com/assets/webpack_bundles/webpack_libraries_and_infrequently_changed.wjs-bundle-be252d7cb1c4a225db4f6f9c6e38cf80dc8e0b78ee2f9e771a7b390b95236acb.js"></script>
 
-    <script src="//a.academia-assets.com/assets/webpack_bundles/core_webpack.wjs-bundle-45f5cee7ecf69be871354f4f1862935989dc0dbdfed9690f27988f1ef74e7a42.js"></script>
+    <script src="//a.academia-assets.com/assets/webpack_bundles/core_webpack.wjs-bundle-97a7667f03abaccfb7453297bdaf0592989e4c03b0593dd7a1f4fc861dde6611.js"></script>
 
   <!--[if lt IE 10]>
     <script src="//a.academia-assets.com/assets/ie9_polyfills-ccb518f0850bf8f4a890a1be8d6c94fae535ed9d8e753c88bd1b054d85c96929.js"></script>
   <![endif]-->
 
-  <script src="//a.academia-assets.com/assets/webpack_bundles/sentry.wjs-bundle-92880ca14cec8106cbb9bf2ba4e131146343dc0d275244772cf0c94b6a76f0c9.js"></script>
+  <script src="//a.academia-assets.com/assets/webpack_bundles/sentry.wjs-bundle-2d9fd81674ee1919fa4d18b72ea46dbd776e7ef797494952c4ddd56868ed9bcf.js"></script>
 
     <script>
       jade.split = window.Aedu.Split;
@@ -520,17 +520,10 @@ var googletag = googletag || {cmd:[]};</script><script src="https://fdyn.pubwise
       defineSlot('Universities', 'RightRail1', 21, [[300, 600], [300, 250], [160, 600]])
     }
 
-    googletag.pubads().setTargeting('ProfileInterests',      [])
-                      .setTargeting('ProfileFields',         [])
-                      .setTargeting('SwpInterests',          [])
-                      .setTargeting('SwpFields',             [])
-                      .setTargeting('SwpClassification',     "")
-                      .setTargeting('VisitorInterests',      [])
-                      .setTargeting('VisitorFields',         [])
-                      .setTargeting('VisitorUniversity',     "")
-                      .setTargeting('VisitorPosition',       "")
-                      .setTargeting('WorkId',                "")
-                      .setTargeting('Url',                   window.location.pathname)
+    targeting_data = [["University","null"],["Role/Profession","null"],["FieldOfStudy","null"]];
+
+    targeting_data.forEach(data => { googletag.pubads().setTargeting(data[0], data[1]) });
+    googletag.pubads().setTargeting('Url', window.location.pathname);
 
     googletag.pubads().collapseEmptyDivs();
     googletag.pubads().setCentering(true);
@@ -1081,8 +1074,8 @@ new Aedu.Auth.OauthButton.Login.Facebook({
   el: '#login-facebook-oauth-button',
   rememberMeCheckboxId: 'remember_me',
   track: null
-});</script></div></div></div><div class="modal-body"><div class="row"><div class="col-xs-10 col-xs-offset-1"><div class="hr-heading login-hr-heading"><span class="hr-heading-text">or</span></div></div></div></div><div class="modal-body"><div class="row"><div class="col-xs-10 col-xs-offset-1"><form class="js-login-form" action="https://www.academia.edu/sessions" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="saFMFzNywcfmPJMtaSknx97R6lussGjysR82ip2mfafmU42Xk7OnCNeK3bZWza9wwL7Y/OiPd8xbiHDRMzwfdQ==" /><div class="form-group"><label class="control-label" for="login-modal-email-input">Email:</label><input class="form-control" id="login-modal-email-input" name="login" type="email" /></div><div class="form-group"><label class="control-label" for="login-modal-password-input">Password:</label><input class="form-control" id="login-modal-password-input" name="password" type="password" /></div><input type="hidden" name="post_login_redirect_url" id="post_login_redirect_url" value="https://www.academia.edu/privacy" /><div class="checkbox"><label><input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" /><small>Remember me on this computer</small></label></div><br><input type="submit" name="commit" value="Log In" class="btn btn-primary btn-block btn-lg js-login-submit" data-disable-with="Log In" /></br></form><script>Aedu.recaptchaManagedForm(document.querySelector('.js-login-form'),
-  document.querySelector('.js-login-submit'));</script><small><br />or&nbsp;<a data-target="#login-modal-reset-password-container" data-toggle="collapse" href="javascript:void(0)">reset password</a></small><div class="collapse" id="login-modal-reset-password-container"><br /><div class="well margin-0x"><form action="https://www.academia.edu/reset_password" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="U3ozlfxvDipAFqe/4G09tRINko6CT3xdJUH104NeQEgEiPIVXK5o5XGg6STfibUCDGKgKcZwY2PP1rOILcQimg==" /><p>Enter the email address you signed up with and we'll email you a reset link.</p><div class="form-group"><input class="form-control" name="email" type="email" /></div><script src="https://recaptcha.net/recaptcha/api.js" async defer></script>
+});</script></div></div></div><div class="modal-body"><div class="row"><div class="col-xs-10 col-xs-offset-1"><div class="hr-heading login-hr-heading"><span class="hr-heading-text">or</span></div></div></div></div><div class="modal-body"><div class="row"><div class="col-xs-10 col-xs-offset-1"><form class="js-login-form" action="https://www.academia.edu/sessions" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="TETrpf2wy2FjUZtioRMBsK2LwYmPMLIAKmpSLAuseotK50l1KFRJp1JtM42fepFSiNv0S37W+G7QmlBC4SztFw==" /><div class="form-group"><label class="control-label" for="login-modal-email-input">Email:</label><input class="form-control" id="login-modal-email-input" name="login" type="email" /></div><div class="form-group"><label class="control-label" for="login-modal-password-input">Password:</label><input class="form-control" id="login-modal-password-input" name="password" type="password" /></div><input type="hidden" name="post_login_redirect_url" id="post_login_redirect_url" value="https://www.academia.edu/privacy" /><div class="checkbox"><label><input type="checkbox" name="remember_me" id="remember_me" value="1" checked="checked" /><small>Remember me on this computer</small></label></div><br><input type="submit" name="commit" value="Log In" class="btn btn-primary btn-block btn-lg js-login-submit" data-disable-with="Log In" /></br></form><script>Aedu.recaptchaManagedForm(document.querySelector('.js-login-form'),
+  document.querySelector('.js-login-submit'));</script><small><br />or&nbsp;<a data-target="#login-modal-reset-password-container" data-toggle="collapse" href="javascript:void(0)">reset password</a></small><div class="collapse" id="login-modal-reset-password-container"><br /><div class="well margin-0x"><form action="https://www.academia.edu/reset_password" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="6EcBiomUe03UxWnx8vTPxwzH89QUCaj6ZK4Q6iUfEpfu5KNaXHD5i+X5wR7MnV8lKZfGFuXv4pSeXhKEz5+FCw==" /><p>Enter the email address you signed up with and we'll email you a reset link.</p><div class="form-group"><input class="form-control" name="email" type="email" /></div><script src="https://recaptcha.net/recaptcha/api.js" async defer></script>
         <script>
           var invisibleRecaptchaSubmit = function () {
             var closestForm = function (ele) {
