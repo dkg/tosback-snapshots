@@ -523,8 +523,8 @@ function onCaptchaSuccess(isValid) {
       } else {
         var source = getQueryString_1.default('url');
 
-        var _ref = new URL(source),
-            hostname = _ref.hostname;
+        var _URL = new URL(source),
+            hostname = _URL.hostname;
 
         window.location.replace(SOURCE_DOMAIN_PATTERN.test(hostname) ? source : DEFAULT_ADDRESS);
       }
@@ -603,7 +603,7 @@ function setMailto(link) {
 }
 
 exports.default = setMailto;
-},{}],"5mkj":[function(require,module,exports) {
+},{}],"mkjQ":[function(require,module,exports) {
 "use strict";
 
 var __importDefault = this && this.__importDefault || function (mod) {
@@ -662,5 +662,5 @@ window._pxHostUrl = 'https://collector.fiverr.com';
 window._pxFirstPartyEnabled = true;
 window._pxVid = vid;
 window._pxUuid = uuid;
-},{"./lib/index":"5mkj"}]},{},["KqmS"], null)</script><script src="https://captcha.px-cdn.net/PXK3bezZfO/captcha.js?a=c&amp;m=0&amp;cors=1" crossorigin="anonymous"></script><img src="https://relay.fiverr.com/v2/pixel/count/static_pages.block_page.beacon" style="visibility:hidden">
+},{"./lib/index":"mkjQ"}]},{},["KqmS"], null)</script><script src="https://captcha.px-cdn.net/PXK3bezZfO/captcha.js?a=c&amp;m=0&amp;cors=1" crossorigin="anonymous"></script><img src="https://relay.fiverr.com/v2/pixel/count/static_pages.block_page.beacon" style="visibility:hidden">
 </article></section></main></body></html>
