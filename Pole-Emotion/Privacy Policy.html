@@ -1,552 +1,619 @@
 <!DOCTYPE html>
-<html lang="fr-FR" class="no-js">
+<!--
+                                                                                
+                                                              ▓▓▓  ▓            
+                                                  ▓             ▓▓ ▓▓▓▒         
+                                               ▓       ▓       ▓▓  ▓▓▓▒         
+                                               ▓▓▓▓▓▓▓       ▓▓▓  ▓▓▓▓▒         
+                                        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓▓▒         
+                                     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓ ▓▓▓          
+                                     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓▓  ▓▓▓▒         
+                                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓▓▓▓   ▓▓▓▒         
+                                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▒         
+                                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▒         
+                                     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓▓▒         
+                                        ▓▓▓▓▓▓▓▓▓▓▓▓               ▓▓▓▓▓        
+                                         ▓▓▓▓▓▓▓▓▓▓                ▓▓▓▒ ▓ ▓     
+                                          ▓▓▓▓ ▓▓                  ▓▓▓▓▓▓       
+                                          ▓▓▓▓     ▓▓▓▓▓▓          ▓▓▓▓▓        
+                                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ▓▓▓▒ ▓▓      
+                                       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ▓▓▓▒  ▓▓     
+                                   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓▓▓▒  ▓▓▓▓   
+                                 ▓▓▓▓▓▓▓▓▓▓    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒   ▓▓▓▓  
+                                ▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓    ▓▓▓▓▓▓▓▓▓▓ ▓▓▓▓▓ 
+                               ▓▓▓▓▓▓              ▓▓▓▓▓▓▓▓       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+                             ▓▓▓▓▓▓                ▓▓▓▓▓▓▓▓▓       ▓▓▓░▓▓▓▓▓▓▓▓▓
+                       ▓▓▓▓▓▓▓▓▓                  ▓▓▓▓▓▓▓▓▓▓       ▓▓▓▒         
+                    ▓▓▓▓▓▓▓▓▓▓                 ▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▒         
+                 ▓▓▓▓▓▓▓▓▓                   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▒         
+               ▓▓▓▓▓▓                      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▒         
+   ▓▓▓▓▓▓▓▓▓▓▓▓                           ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▒         
+ ▓       ▓▓                               ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ▓▓▓▒         
+       ▓                                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒         
+                                           ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒         
+                                            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓       
+                                            ▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓     
+                                             ▓▓▓▓▓▓▓▓▓         ▓▓▓▓▓▓▓▓▓▓▓▓▓▓   
+                                              ▓▓▓▓▓▓▓▓             ▓▓▓▓▓▓▓▓▓▓▓  
+                                              ▓▓▓▓▓▓▓▓             ▓▓▓▒▓▓▓▓▓▓▓  
+                                               ▓▓▓▓▓▓▓             ▓▓▓▓▓▓▓▓▓    
+                                                ▓▓▓▓▓▓             ▓▓▓▓▓▓▓▓     
+                                                 ▓▓▓▓▓            ▓▓▓▓▓▓▓▓      
+                                                  ▓▓▓            ▓▓▓▓▓▓▓▓       
+                                                 ▓▓▓▓            ▓▓▓▓▓▓▓        
+                                               ▓▓▓▓▓▓            ▓▓▓▓▓▓         
+                                               ▓▓▓▓▓▓            ▓▓▓▓▓▒         
+                                              ▓▓▓▓▓▓▓            ▓▓▓▓▓▒         
+                                               ▓▓▓▓▓▓            ▓▓▓▓▓▒         
+                                               ▓▓▓▓▓▓           ▓▓▓▓▓▓▒         
+                                                ▓▓▓▓▓           ▓▓▓▓▓▓▒         
+                                                ▓▓▓▓▓           ▓▓ ▓▓▓▒         
+                                                 ▓▓▓▓▓         ▓▓▓ ▓▓▓▒         
+                                                  ▓▓▓▓      ▓▓▓▓▓  ▓▓▓▒         
+                                                   ▓▓▓     ▓ ▓▓▓▓  ▓▓▓▒         
+                                                   ▓▓▓      ▓▓▓▓   ▓▓▓▒         
+                                                    ▓▓     ▓▓▓▓    ▓▓▓▒         
+                                                     ▓▓    ▓▓▓     ▓▓▓▒         
+                                                   ▓▓▓▓      ▓     ▓▓▓▒         
+                                                   ▓▓▓▓            ▓▓▓▒         
+                                                    ▓▓▓            ▓▓▓▒         
+                                                    ▓▓▓            ▓▓▓▒         
+                                                    ▓▓▓▓           ▓▓▓▒        
+
+ ███████████           ████                      ██████████                           █████     ███                                  █████     
+░░███░░░░░███         ░░███                     ░░███░░░░░█                          ░░███     ░░░                                  ░░███      
+ ░███    ░███  ██████  ░███   ██████             ░███  █ ░  █████████████    ██████  ███████   ████   ██████  ████████       ██████  ░███████  
+ ░██████████  ███░░███ ░███  ███░░███ ██████████ ░██████   ░░███░░███░░███  ███░░███░░░███░   ░░███  ███░░███░░███░░███     ███░░███ ░███░░███ 
+ ░███░░░░░░  ░███ ░███ ░███ ░███████ ░░░░░░░░░░  ░███░░█    ░███ ░███ ░███ ░███ ░███  ░███     ░███ ░███ ░███ ░███ ░███    ░███ ░░░  ░███ ░███ 
+ ░███        ░███ ░███ ░███ ░███░░░              ░███ ░   █ ░███ ░███ ░███ ░███ ░███  ░███ ███ ░███ ░███ ░███ ░███ ░███    ░███  ███ ░███ ░███ 
+ █████       ░░██████  █████░░██████             ██████████ █████░███ █████░░██████   ░░█████  █████░░██████  ████ █████ ██░░██████  ████ █████
+░░░░░         ░░░░░░  ░░░░░  ░░░░░░             ░░░░░░░░░░ ░░░░░ ░░░ ░░░░░  ░░░░░░     ░░░░░  ░░░░░  ░░░░░░  ░░░░ ░░░░░ ░░  ░░░░░░  ░░░░ ░░░░░ 
+-->
+<html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<link rel="pingback" href="https://www.pole-emotion.ch/xmlrpc.php">
-	<meta property="fb:app_id" content="1092414104132120" />
-  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="msapplication-TileColor" content="#000000">
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-  <meta name="theme-color" content="#000000">
-  <meta name="google-site-verification" content="vyOhuyp3H08IgEu1SW5Q4NbdJ8YXRZ3IL9Z1Hd1mNxY" />
-	<!--[if lt IE 9]>
-	<script src="https://www.pole-emotion.ch/wp-content/themes/PE/js/html5.js"></script>
-	<![endif]-->
-	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bienvenue - École Pole-Emotion</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="ggr8wV0uCnMTG0UfIgPHYeJ76s9zGq47vah00vcJ">
+    <!-- Metas -->
+    <link rel="canonical" href="https://app.pole-emotion.ch/" />
+    <meta name="description" content="Bienvenue dans une école de danse pas comme les autres! Pour toutes les femmes ! venez comme vous êtes ! et Oui, chez nous Chaque Femme à sa place">
+    <!-- Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bienvenue sur notre site - École Pole-Emotion" />
+    <meta property="og:description" content="Bienvenue dans une école de danse pas comme les autres! Pour toutes les femmes ! venez comme vous êtes ! et Oui, chez nous Chaque Femme à sa place" />
+    <meta property="og:image" content="/img/og.jpg" />
+    <meta property="og:url" content="https://app.pole-emotion.ch/" />
+    <meta property="og:site_name" content="Pole-Emotion.ch" />
+    <!-- Twitter -->
+    <meta property="twitter:title" content="Bienvenue sur notre site - École Pole-Emotion" />
+    <meta property="twitter:description" content="Bienvenue dans une école de danse pas comme les autres! Pour toutes les femmes ! venez comme vous êtes ! et Oui, chez nous Chaque Femme à sa place" />
+    <meta property="twitter:image" content="/img/og.jpg" />
+    <meta name="twitter:site" content="@Pole_Emotion">
+    <meta name="twitter:creator" content="@Pole_Emotion">
 
-	<!-- This site is optimized with the Yoast SEO plugin v15.8 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>Politique de confidentialité - École Pole-Emotion</title>
-	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-	<link rel="canonical" href="https://www.pole-emotion.ch/politique-de-confidentialite/" />
-	<meta property="og:locale" content="fr_FR" />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Politique de confidentialité - École Pole-Emotion" />
-	<meta property="og:description" content="1. INTRODUCTION La protection des données est une question de confiance, et votre confiance est très importante pour nous. Nous [&hellip;]" />
-	<meta property="og:url" content="https://www.pole-emotion.ch/politique-de-confidentialite/" />
-	<meta property="og:site_name" content="École Pole-Emotion" />
-	<meta property="article:publisher" content="https://www.facebook.com/Pole.Emotion/" />
-	<meta property="article:modified_time" content="2019-03-25T09:59:56+00:00" />
-	<meta property="og:image" content="https://www.pole-emotion.ch/wp-content/uploads/2015/05/pe_big-e1526291933412.jpg" />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@Pole_Emotion" />
-	<meta name="twitter:label1" content="Durée de lecture est.">
-	<meta name="twitter:data1" content="9 minutes">
-	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.pole-emotion.ch/#organization","name":"\u00c9cole Pole-Emotion S\u00e0rl","url":"https://www.pole-emotion.ch/","sameAs":["https://www.facebook.com/Pole.Emotion/","https://www.instagram.com/pole_emotion/","https://www.youtube.com/channel/UCvbWvQyTN52o5cIRDaHJ0LA","https://twitter.com/Pole_Emotion"],"logo":{"@type":"ImageObject","@id":"https://www.pole-emotion.ch/#logo","inLanguage":"fr-FR","url":"https://www.pole-emotion.ch/wp-content/uploads/2018/10/Logo_noir_300.png","width":300,"height":129,"caption":"\u00c9cole Pole-Emotion S\u00e0rl"},"image":{"@id":"https://www.pole-emotion.ch/#logo"}},{"@type":"WebSite","@id":"https://www.pole-emotion.ch/#website","url":"https://www.pole-emotion.ch/","name":"\u00c9cole Pole-Emotion","description":"\u00c9cole de danse","publisher":{"@id":"https://www.pole-emotion.ch/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://www.pole-emotion.ch/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"fr-FR"},{"@type":"WebPage","@id":"https://www.pole-emotion.ch/politique-de-confidentialite/#webpage","url":"https://www.pole-emotion.ch/politique-de-confidentialite/","name":"Politique de confidentialit\u00e9 - \u00c9cole Pole-Emotion","isPartOf":{"@id":"https://www.pole-emotion.ch/#website"},"datePublished":"2018-05-23T06:22:02+00:00","dateModified":"2019-03-25T09:59:56+00:00","breadcrumb":{"@id":"https://www.pole-emotion.ch/politique-de-confidentialite/#breadcrumb"},"inLanguage":"fr-FR","potentialAction":[{"@type":"ReadAction","target":["https://www.pole-emotion.ch/politique-de-confidentialite/"]}]},{"@type":"BreadcrumbList","@id":"https://www.pole-emotion.ch/politique-de-confidentialite/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://www.pole-emotion.ch/","url":"https://www.pole-emotion.ch/","name":"Accueil"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://www.pole-emotion.ch/politique-de-confidentialite/","url":"https://www.pole-emotion.ch/politique-de-confidentialite/","name":"Politique de confidentialit\u00e9"}}]}]}</script>
-	<!-- / Yoast SEO plugin. -->
+    <link rel="sitemap" href="/storage/sitemap.xml" type="application/xml" />
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#000000">
+    <!-- Scripts -->
 
+    
 
-<link rel='dns-prefetch' href='//www.google.com' />
-<link rel='dns-prefetch' href='//s.w.org' />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.pole-emotion.ch\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.6.2"}};
-			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
+    <script src="/js/app.js?id=fbc293c3383466f096e2"></script>
+    <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
+    <script src="https://app.pole-emotion.ch/js/fuse-3.4.5.min.js" defer></script>
+    <script src="https://app.pole-emotion.ch/js/lazyload.min.js" defer></script>
+    <script src="https://app.pole-emotion.ch/js/custom-file-input.min.js" defer></script>
+    <script src="https://app.pole-emotion.ch/js/jquery.mCustomScrollbar.concat.min.js" defer></script>
+      
+    <script src="https://app.pole-emotion.ch/js/datatables.min.js" defer></script>
+    <script src="https://app.pole-emotion.ch/js/moment-with-locales.min.js"></script>
+    <script src="https://app.pole-emotion.ch/js/tempus-dominus.min.js?v=5.1.3.1" defer></script>
+    <script src="https://app.pole-emotion.ch/vendor/laravel-filemanager/js/lfm.js" defer></script>
+    <script src="/js/caller.js?id=ab208fd35d35a6bc4da8" defer></script>
+    <script src="https://app.pole-emotion.ch/js/bootstrap-select.js?v=1.13.14" defer></script>
+    <script src="https://app.pole-emotion.ch/js/i18n/defaults-fr_FR.js" defer></script>
+    <script src="/js/cookie.js?id=86470f20ee1423c67007" defer></script>
+
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>-->
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400&display=swap" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="https://app.pole-emotion.ch/css/tempusdominus-4.min.css" rel="stylesheet"/>
+    <link href="https://app.pole-emotion.ch/css/all.min.css?v=5.15.1" rel="stylesheet">
+    <link href="https://app.pole-emotion.ch/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="https://app.pole-emotion.ch/css/datatables.min.css" rel="stylesheet">
+    <link href="/css/app.css?id=d886b45c2213f04f24cc" rel="stylesheet" async>
+    <link href="https://app.pole-emotion.ch/css/cours-affix.css?v=1.0.6" rel="stylesheet">
+    <link href="https://app.pole-emotion.ch/css/bootstrap-select.min.css?v=1.13.14" rel="stylesheet">
+    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">-->
+
+    <script>
+      const beamsClient = new PusherPushNotifications.Client({
+        instanceId: '26dd365c-fb4d-43f3-ac1b-053fa8f12863',
+      });
+
+      beamsClient.start()
+        .then(() => beamsClient.addDeviceInterest('PEGeneral'))
+        .catch(console.error);
+    </script>
+    <script>
+    if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js', {
+              scope: '.'
+          }).then(function (registration) {}, function (err) {});
+      }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "legalName": "École Pole-Emotion Sàrl",
+      "slogan": "Votre école depuis 2005",
+      "email": "info@pole-emotion.ch",
+      "telephone": "+41244362369",
+      "url": "http://app.pole-emotion.ch",
+      "logo": "https://app.pole-emotion.ch/img/logo_Blanc_votre_ecole_depuis_2005_ROND-AVEC-TRANSPARENCE_V3_800x302.png"
+    }
+    </script>
+
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = '712f201e46cafc31a26cc6c14b810d9f5e5ce3a1';
+    window.smartsupp||(function(d) {
+      var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+      s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+      c.type='text/javascript';c.charset='utf-8';c.async=true;
+      c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+    })(document);
+        </script>
+    <!-- Matomo -->
+    <script type="text/javascript">
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://stats.pole-emotion.ch/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '2']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+<style type="text/css">
+.uk-padding {
+    padding: 30px;
 }
 </style>
-	<link rel='stylesheet' id='wp-block-library-css'  href='https://www.pole-emotion.ch/wp-includes/css/dist/block-library/style.min.css?ver=5.6.2' type='text/css' media='all' />
-<link rel='stylesheet' id='wc-block-vendors-style-css'  href='https://www.pole-emotion.ch/wp-content/plugins/woo-gutenberg-products-block/build/vendors-style.css?ver=4.4.2' type='text/css' media='all' />
-<link rel='stylesheet' id='wc-block-style-css'  href='https://www.pole-emotion.ch/wp-content/plugins/woo-gutenberg-products-block/build/style.css?ver=4.4.2' type='text/css' media='all' />
-<link rel='stylesheet' id='contact-form-7-css'  href='https://www.pole-emotion.ch/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.3.2' type='text/css' media='all' />
-<link rel='stylesheet' id='pf-frontend-style-css'  href='https://www.pole-emotion.ch/wp-content/plugins/postfinance-payment-gateway-woocommerce//assets/css/style.css?ver=2.8.1' type='text/css' media='all' />
-<link rel='stylesheet' id='woocommerce-layout-css'  href='https://www.pole-emotion.ch/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=4.9.0' type='text/css' media='all' />
-<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='https://www.pole-emotion.ch/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=4.9.0' type='text/css' media='only screen and (max-width: 768px)' />
-<link rel='stylesheet' id='woocommerce-general-css'  href='https://www.pole-emotion.ch/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=4.9.0' type='text/css' media='all' />
-<style id='woocommerce-inline-inline-css' type='text/css'>
-.woocommerce form .form-row .required { visibility: visible; }
-</style>
-<link rel='stylesheet' id='kbe_theme_style-css'  href='https://www.pole-emotion.ch/wp-content/plugins/wp-knowledgebase/template-legacy/kbe_style.css?ver=1.3.4' type='text/css' media='all' />
-<link rel='stylesheet' id='wc-memberships-frontend-css'  href='https://www.pole-emotion.ch/wp-content/plugins/woocommerce-memberships/assets/css/frontend/wc-memberships-frontend.min.css?ver=1.21.2' type='text/css' media='all' />
-<link rel='stylesheet' id='uikit-css'  href='https://www.pole-emotion.ch/wp-content/themes/PE/css/uikit.min.css?ver=3.2.1' type='text/css' media='all' />
-<link rel='stylesheet' id='font-awesome-css'  href='https://www.pole-emotion.ch/wp-content/themes/PE/css/all.min.css?ver=5.8.10.2' type='text/css' media='all' />
-<link rel='stylesheet' id='pe-WP-css'  href='https://www.pole-emotion.ch/wp-content/themes/PE/style.css?ver=1.0.31' type='text/css' media='all' />
-<link rel='stylesheet' id='pe-main-css'  href='https://www.pole-emotion.ch/wp-content/themes/PE/css/pe.main.css?ver=1.0.0400' type='text/css' media='all' />
-<link rel='stylesheet' id='tablepress-default-css'  href='https://www.pole-emotion.ch/wp-content/tablepress-combined.min.css?ver=8' type='text/css' media='all' />
-<link rel='stylesheet' id='video-conferencing-with-zoom-api-css'  href='https://www.pole-emotion.ch/wp-content/plugins/video-conferencing-with-zoom-api/assets/public/css/style.min.css?ver=3.6.11' type='text/css' media='all' />
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/postfinance-payment-gateway-woocommerce//assets/js/frontend.js?ver=2.8.1' id='mamepf-frontend-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/conditional-shipping-for-woocommerce/includes/frontend/../../frontend/js/woo-conditional-shipping.js?ver=2.1.1.free' id='woo-conditional-shipping-js-js'></script>
-<script type='text/javascript' id='woo-ml-public-script-js-extra'>
+</head>
+<body class="dark freedom">
+<noscript>
+    <div style="position: fixed; top: 0px; left: 0px; z-index: 3000; 
+                height: 100%; width: 100%; background-color: #FFFFFF">
+        <p style="margin-left: 10px"> Pour accéder à toutes les fonctionnalités de ce site, vous devez activer JavaScript.
+ Voici les <a href="https://www.enable-javascript.com/fr/">
+ instructions pour activer JavaScript dans votre navigateur Web</a>.</p>
+    </div>
+</noscript>
+<div id="app">
+<app>
+<script type='text/javascript'>
 /* <![CDATA[ */
-var woo_ml_public_post = {"ajax_url":"https:\/\/www.pole-emotion.ch\/wp-admin\/admin-ajax.php"};
+var Errors = {
+'419' : 'la page doit être rechargée.',
+'500' : '<i>Erreur serveur</i><br><br>Si cette erreur persiste, veuillez nous contacter en fournissant le message d\'erreur ci-dessus ainsi qu\'en précisant les actions qui ont conduit à cette erreur.'
+};
+var TitleIcon = {
+    'danger'    : '<div class="face2"><div class="eye"></div><div class="eye right"></div><div class="mouth sad"></div></div><div class="shadow move"></div>',
+    'info'      : '<i class="fal fa-info-circle"></i>',
+    'success'   : '<div class="face"><div class="eye"></div><div class="eye right"></div><div class="mouth happy"></div></div><div class="shadow scale"></div>',
+    'warning'   : '<i class="fal fa-exclamation-circle"></i>',
+    'wait'      : '<i class="fad fa-spinner-third fa-spin"></i>'
+};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/woo-mailerlite/public/js/public.min.js?ver=1.4.10' id='woo-ml-public-script-js'></script>
-<link rel="https://api.w.org/" href="https://www.pole-emotion.ch/wp-json/" /><link rel="alternate" type="application/json" href="https://www.pole-emotion.ch/wp-json/wp/v2/pages/9674" /><link rel='shortlink' href='https://www.pole-emotion.ch/?p=9674' />
-<link rel="alternate" type="application/json+oembed" href="https://www.pole-emotion.ch/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.pole-emotion.ch%2Fpolitique-de-confidentialite%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://www.pole-emotion.ch/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.pole-emotion.ch%2Fpolitique-de-confidentialite%2F&#038;format=xml" />
-        <!-- MailerLite Universal -->
-        <script>
-        (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
-        var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
-        f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
-        var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
-        _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
-
-        var ml_account = ml('accounts', '1474084', 'y0s0d0q6p7', 'load');
-        ml('ecommerce', 'visitor', 'woocommerce');  
-        </script>
-        <!-- End MailerLite Universal -->
-    	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-	<script type="text/javascript">var algolia = {"debug":false,"application_id":"MV6X78K5ZR","search_api_key":"dc27eb34fe493d9f6c3b9117f79c5fc7","powered_by_enabled":false,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"wp_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script>
-</head>
-<noscript>
-  <div class="uk-flex uk-flex-middle uk-flex-center uk-height-large uk-alert uk-alert-danger uk-text-center">
-    <div>
-      <h1 class="uk-heading-primary">Javascript est désactivé!</h3>
-        <div class="uk-placeholder">
-          <p>Javascript ne semble pas être pris en charge par votre navigateur ou il est désactivé.</p>
-          <p>Certaines parties du site risquent de mal fonctionner ou d'être inaccessibles.</p>
-          <p>Découvrir <a href="https://www.enable-javascript.com/fr/" target="_blank" rel="nofollow">comment activer Javascript sur votre naviguateur</a></p>
-        </div>
-    </div>
-  </div>
-</noscript>
-<body class="privacy-policy page-template page-template-page_small page-template-page_small-php page page-id-9674 theme-PE woocommerce-no-js">
-<div class="NoPrint hfirst" data-src="https://www.pole-emotion.ch/wp-content/themes/PE/img/head.png" uk-img>
-    <a class="uk-logo logo-first" href="https://www.pole-emotion.ch"><img src="https://www.pole-emotion.ch/wp-content/themes/PE/img/logo_Blanc_votre_ecole_depuis_2005_ROND-AVEC-TRANSPARENCE_V3_800x302.png" uk-img/></a>
-</div>
-
-<!-- Menu mobile -->
-<div class="NoPrint uk-offcanvas-content">
-	<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-	<nav class="uk-navbar uk-navbar-container uk-box-shadow-medium uk-hidden@m" id="menu" uk-navbar>
-	    <div class="uk-navbar-right">
-	        <a class="uk-navbar-toggle" href="#" uk-toggle="target: #menu-mobile">
-	            <span class="uk-margin-small-right">Menu</span><span uk-navbar-toggle-icon></span> 
-	        </a>
-	    </div>
-	    <!--<div class="uk-navbar-center">
-	      <a href="https://www.pole-emotion.ch">
-
-	      </a>
-	    </div>-->
-	</nav>
-	</div>
-
-    <div id="menu-mobile" uk-offcanvas="mode: push; overlay: true">
-        <div class="NoPrint uk-offcanvas-bar">
-            <button class="uk-offcanvas-close" type="button" uk-close></button>
-            <ul class="uk-nav-default uk-text-large uk-margin-auto-vertical" uk-nav>
-              <li class="uk-margin-bottom"><img src="https://www.pole-emotion.ch/wp-content/themes/PE/img/logo_Blanc_ROND-AVEC-TRANSPARENCE-ROSE_V1.png" class="uk-responsive-width" uk-img/></li>
-              <li class="uk-nav-divider uk-margin-bottom"></li>
-              <li><a href="https://www.pole-emotion.ch">Accueil</i></a></li>
-              <li class="uk-parent">
-                <a href="#">Les cours</a>
-                <ul class="uk-nav-sub">
-                                        <li><a href="https://www.pole-emotion.ch/categories-de-cours/cours-en-ligne/">Cours en ligne</a></li>
-                                          <li><a href="https://www.pole-emotion.ch/categories-de-cours/cours-evenements/">Cours événements</a></li>
-                                          <li><a href="https://www.pole-emotion.ch/categories-de-cours/cours-sur-demande/">Cours sur demande</a></li>
-                                          <li><a href="https://www.pole-emotion.ch/categories-de-cours/la-pole/">La pole</a></li>
-                                          <li><a href="https://www.pole-emotion.ch/categories-de-cours/les-danses/">Les danses</a></li>
-                                          <li><a href="https://www.pole-emotion.ch/categories-de-cours/samuser/">S'amuser</a></li>
-                                          <li><a href="https://www.pole-emotion.ch/categories-de-cours/sassouplir/">S'assouplir</a></li>
-                                          <li><a href="https://www.pole-emotion.ch/categories-de-cours/se-depenser/">Se dépenser</a></li>
-                                          <li><a href="https://www.pole-emotion.ch/categories-de-cours/se-renforcer/">Se renforcer</a></li>
-                                    </ul>
-              </li>
-              <li><a href="https://www.pole-emotion.ch/tarifs">Tarifs</a></li>
-              <li class="uk-parent">
-                <a href="https://www.pole-emotion.ch/planning">Plannings</a>
-                                                <ul class="uk-nav-sub">
-                                  <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/crissier-1/">Crissier 1</a></li>
-                                  <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/crissier-2/">Crissier 2</a></li>
-                                  <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/en-direct-cours-zoom/">En direct &#8211; cours ZOOM &#8211; Mars</a></li>
-                                  <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/gland/">Gland</a></li>
-                                  <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/lausanne/">Lausanne</a></li>
-                                  <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/monthey/">Monthey</a></li>
-                                  <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/yverdon-pole/">Yverdon Pole</a></li>
-                                  <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/studio-48/">Yverdon Studio 48</a></li>
-                                </ul>
-                 
-                                
-              </li>
-              <li><a href="https://www.pole-emotion.ch/category/news">News</a></li>
-              <li><a href="https://www.pole-emotion.ch/evjf">EVJF</a></li>
-              <li class="uk-parent">
-                <a href="#">Shop </a>
-                <ul class="uk-nav-sub" >
-                    <li><a href="https://www.pole-emotion.ch/boutique">Accueil du shop</a></li>
-                    <li><a href="https://www.pole-emotion.ch/mon-compte/" title="Mon espace membre">Mon espace membre</a></li>
-                                    <li class="uk-nav-divider"></li>
-                    <li><li><a href="https://www.pole-emotion.ch/mon-compte/">Connexion</a></li></li>
-                </ul>
-              </li>
-              <li><a href="https://www.pole-emotion.ch/comment-minscrire-a-un-cours/"><i class="fal fa-question-circle uk-margin-xsmall-right"></i> Comment m'inscrire</a></li>
-              <li>
-                <div class="uk-navbar-item">
-                  <a href="https://my.pole-emotion.ch/" target="_blank" class="uk-button uk-button-default uk-button-small uk-width">Espace planning</a>
+    <main id="content">
+                <div class="header container-fluid NoPrint">
+            <a class="logo-first" href="https://app.pole-emotion.ch">
+              <picture>
+                <source srcset="https://app.pole-emotion.ch/storage/webp/logo_Blanc_votre_ecole_depuis_2005_ROND-AVEC-TRANSPARENCE_V3_800x302.png.webp" type="image/webp">
+                <source srcset="https://app.pole-emotion.ch/img/logo_Blanc_votre_ecole_depuis_2005_ROND-AVEC-TRANSPARENCE_V3_800x302.png" type="image/png">
+                <img class="img-fluid" src="https://app.pole-emotion.ch/img/logo_Blanc_votre_ecole_depuis_2005_ROND-AVEC-TRANSPARENCE_V3_800x302.png" alt="logo blanc de l'école Pole-Emotion">
+              </picture>
+            </a>
+            <div class="switchBox">
+                <div class="switch">
+                  <div class="toggle-button">
+                    <div class="toggle"></div>
+                    <div class="moon-mask"></div>
+                    <div class="circles-wrapper">
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="uk-navbar-item">
-                  <!--<a href="https://www.pole-emotion.ch/essai-gratuit" class="uk-button uk-button-default uk-button-small btn-members uk-width">Cours offert <i class="fal fa-gift"></i></a>-->
-                  <a href="https://www.pole-emotion.ch/produit/cours-en-ligne-novembre-2020/" class="uk-button uk-button-default uk-button-small btn-members uk-width">Cours en ligne <i class="fal fa-video"></i></a>
-                </div>
-              </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!-- Menu PC -->
-<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky ">
-	<nav class="NoPrint uk-navbar-container uk-box-shadow-medium uk-visible@m" uk-navbar="mode: click;">
-			<div class="uk-navbar-left uk-margin-small-left">
-	        <ul class="uk-navbar-nav">
-              <li><a href="https://www.pole-emotion.ch"><i class="far fa-home"></i></a></li>
-	            <li>
-	                <a href="#">Les cours</a>
-	                <div uk-dropdown="mode:click" class="uk-padding-small">
-	                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                    <li><a href="https://www.pole-emotion.ch/categories-de-cours/cours-en-ligne/">Cours en ligne</a></li>
-                                                      <li><a href="https://www.pole-emotion.ch/categories-de-cours/cours-evenements/">Cours événements</a></li>
-                                                      <li><a href="https://www.pole-emotion.ch/categories-de-cours/cours-sur-demande/">Cours sur demande</a></li>
-                                                      <li><a href="https://www.pole-emotion.ch/categories-de-cours/la-pole/">La pole</a></li>
-                                                      <li><a href="https://www.pole-emotion.ch/categories-de-cours/les-danses/">Les danses</a></li>
-                                                      <li><a href="https://www.pole-emotion.ch/categories-de-cours/samuser/">S'amuser</a></li>
-                                                      <li><a href="https://www.pole-emotion.ch/categories-de-cours/sassouplir/">S'assouplir</a></li>
-                                                      <li><a href="https://www.pole-emotion.ch/categories-de-cours/se-depenser/">Se dépenser</a></li>
-                                                      <li><a href="https://www.pole-emotion.ch/categories-de-cours/se-renforcer/">Se renforcer</a></li>
-                          	                    </ul>
-	                </div>
-	            </li>
-              <li><a href="https://www.pole-emotion.ch/tarifs">Tarifs</a></li>
-              <li>
-                <a href="https://www.pole-emotion.ch/planning">Plannings</a>
-                                                <div uk-dropdown="mode:click" class="uk-padding-small">
-                  <ul class="uk-nav uk-navbar-dropdown-nav">
-                                      <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/crissier-1/">Crissier 1</a></li>
-                                      <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/crissier-2/">Crissier 2</a></li>
-                                      <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/en-direct-cours-zoom/">En direct &#8211; cours ZOOM &#8211; Mars</a></li>
-                                      <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/gland/">Gland</a></li>
-                                      <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/lausanne/">Lausanne</a></li>
-                                      <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/monthey/">Monthey</a></li>
-                                      <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/yverdon-pole/">Yverdon Pole</a></li>
-                                      <li><a href="https://www.pole-emotion.ch/nos-salles-de-cours/studio-48/">Yverdon Studio 48</a></li>
-                                    </ul>
-                </div>
-                 
-                                
-              </li>
-              <li><a href="https://www.pole-emotion.ch/category/news">News</a></li>
-              <li><a href="https://www.pole-emotion.ch/evjf">EVJF</a></li>
-	        </ul>
-
-	    </div>
-	    <div class="uk-navbar-center">
-	    	<ul class="uk-navbar-nav">
-          <li>
-            <div class="uk-navbar-item">
-              <!--<a href="https://www.pole-emotion.ch/essai-gratuit" class="uk-button uk-button-default uk-button-small">Cours offert <i class="fas fa-gift"></i></a>-->
-              <a href="https://www.pole-emotion.ch/produit/cours-en-ligne-novembre-2020/" class="uk-button uk-button-default uk-button-small" id="onlineCoursesButton">Cours en ligne <i class="fas fa-video"></i></a>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
-          <li><a href="https://www.pole-emotion.ch/comment-minscrire-a-un-cours/"><i class="far fa-question-circle uk-margin-small-right"></i> Comment m'inscrire</a></li>
-          <li>
-            <div class="uk-navbar-item">
-              <a href="https://my.pole-emotion.ch" class="uk-button uk-button-default uk-button-small btn-members">Espace planning</a>
-            </div>
-          </li>
-	    		<li>
-              <a href="#">Shop </a>
-              <div uk-dropdown="pos: bottom-right; mode:click" class="uk-padding-small">
-                  <ul class="uk-nav uk-navbar-dropdown-nav" >
-                      <li><a href="https://www.pole-emotion.ch/boutique">Accueil du shop</a></li>
-                      <li><a href="https://www.pole-emotion.ch/mon-compte/" title="Mon espace membre">Mon espace membre</a></li>
-						        						        <li class="uk-nav-divider"></li>
-						        	<li><li><a href="https://www.pole-emotion.ch/mon-compte/">Connexion</a></li></li>
-                  </ul>
               </div>
-          </li>
-	    	</ul>
-	    </div>
-	</nav>
-</div>
-  <main>
+              <script type="text/javascript">
+                jQuery(function($) {
+                  const animate = gsap.timeline({ paused: true });
+                  let toggle = true;
 
-  	<!--<div class="TrickContainer NoPrint uk-hidden@m">
-      <div class="uk-container">
-        <div class="TrickIcon">
-          <i class="fad fa-gift"></i>
-        </div>
-        <div class="TrickContent">
-          <p><b><u>Cours d'essai gratuit!</u></b> plus d'information <a href="https://www.pole-emotion.ch/essai-gratuit">sur cette page</a>.</p>
-        </div>
-      </div>
-    </div>-->
+                  animate
+                      .to(".toggle-button", 0.2, { scale: 0.7 }, 0)
+                      .set(".toggle", { backgroundColor: "rgb(214, 21, 131)" })
+                      .set(".circle", { display: "none" })
+                      .to(".moon-mask", 0.2, { translateY: 17, translateX: -10 }, 0.2)
+                      .to(".toggle-button", 0.2, { translateY: 19 }, 0.2)
+                      .to(".toggle-button", 0.2, { scale: 0.9 })
 
-    <div class="TrickContainer NoPrint uk-hidden@m">
-      <div class="uk-container">
-        <div class="TrickIcon">
-          <i class="fad fa-gift"></i>
-        </div>
-        <div class="TrickContent">
-          <p><b><u>Nouveau!</u></b> <a href="https://www.pole-emotion.ch/categories-de-cours/cours-en-ligne/">cours en ligne</a>.</p>
-        </div>
-      </div>
-    </div>
-  
-    <!--<div class="TrickContainer NoPrint">
-      <div class="uk-container">
-        <div class="TrickIcon">
-          <i class="fas fa-map-marker-check"></i>
-        </div>
-        <div class="TrickContent">
-          <p><b><u>Astuce:</u></b> N'hésites pas à consulter <a href="https://www.pole-emotion.ch/information/">notre base de connaissances</a> si tu as besoin d'informations.</p>
-        </div>
-      </div>
-    </div>-->
-<div class="uk-section">
-  <div class="uk-container uk-container-small page fadeIn animated" data-wow-duration="1s">
-    <article class="uk-article">
+                  document.getElementsByClassName("switch")[0].addEventListener("click", () => {
 
-          		<h1 class="uk-article-title uk-text-center title">Politique de confidentialité</h1>
-		<div class="uk-width-large uk-margin-auto uk-divider-icon uk-scrollspy-inview uk-animation-slide-top-medium"></div>
-		<div class="uk-grid-match uk-child-width-1@m uk-grid">
-			  <div class="uk-first-column content">
-			    <h3>1. INTRODUCTION</h3>
-<p>La protection des données est une question de confiance, et votre confiance est très importante pour nous. Nous respectons votre vie privée et votre personnalité. De ce fait, la protection de vos données personnelles est une préoccupation essentielle pour nous. Nous communiquons la présente déclaration de confidentialité pour vous aider à comprendre ce que nous pouvons faire avec des données personnelles que nous obtenons par vos soins.</p>
-<p>En nous fournissant vos données personnelles, vous signifiez votre acceptation de notre déclaration de confidentialité et convenez que nous pouvons collecter, utiliser et divulguer vos données personnelles tel que décrit dans la présente déclaration de confidentialité. Si vous n’avalisez pas cette déclaration, veuillez ne pas nous communiquer vos coordonnées.</p>
-<p>Nous pouvons avoir besoin de mettre périodiquement à jour la présente déclaration de confidentialité. Nous vous recommandons de vérifier cette page régulièrement pour vous assurer d’avoir lu la version la plus récente.</p>
-<p>Date de dernière révision : 24.05.2018</p>
-<h3>2. DÉFINITION DES DONNÉES PERSONNELLES</h3>
-<p>Les données personnelles sont toutes les informations qui se rapportent à une personne identifiée ou identifiable.</p>
-<h3>3. COLLECTE DES DONNÉES PERSONNELLES</h3>
-<p>La communication à notre égard de données personnelles est votre choix. Nous ne collecterons que des données personnelles que vous choisissez de transmettre. Dans certains cas, nous pouvons vous donner le choix de sélectionner si vous aimeriez recevoir des informations de notre part ou de tiers de confiance (en choisissant par exemple de vous inscrire ou non à notre newsletter).</p>
-<p>Vous pouvez nous communiquer des données personnelles si vous nous contactez par exemple par le biais du formulaire de contact.</p>
-<p>En nous communiquant des données personnelles, vous comprenez totalement et consentez clairement à la collecte et au traitement desdites données personnelles. De tels traitements réalisés par nos soins seront conformes à la présente déclaration de confidentialité.</p>
-<h3>4. UTILISATION DE DONNÉES PERSONNELLES</h3>
-<p>Nous accordons une grande importance à la protection des données. C’est pourquoi nous observons strictement les prescriptions légales de la loi fédérale sur la protection des données lors de la collecte, du traitement et de l’utilisation de vos données personnelles.</p>
-<p>Nous collectons, enregistrons et traitons vos données uniquement pour l’exécution complète de vos commandes (y compris d’éventuelles prestations ultérieures de garantie), pour notre service clientèle, l’administration technique et à des fins internes de marketing.</p>
-<h3>5. DIVULGATION DE DONNÉES PERSONNELLES</h3>
-<p>Nous ne transmettons pas vos données personnelles à des tiers.</p>
-<h3>6. SÉCURITÉ</h3>
-<p>Chez nous, vos données personnelles sont transmises en toute sécurité grâce à un codage. À cette occasion, nous utilisons le système de codage SSL (Secure Socket Layer). Personne ne peut garantir une protection absolue. Cependant, nous protégeons notre site web et nos autres systèmes par des mesures techniques et organisationnelles contre la perte, la destruction, l’accès, la modification et la diffusion de vos données par des personnes non autorisées.</p>
-<h3>7. UTILISATION DE COOKIES</h3>
-<p>Afin notamment de rendre l’utilisation du site plus agréable, des cookies ou d’autres témoins sont utilisés et susceptibles d’enregistrer automatiquement des informations personnelles.</p>
-<p>Nous rappelons aux utilisateurs que les données relatives à leur recherche et leur navigation peuvent faire l’objet de traitements à des fins de ciblage publicitaire par nos propres soins et dans le respect notamment du droit de la protection des données personnelles. Ces données sont alors utilisées notamment pour des finalités liées à la publicité, les mesures statistiques, la publicité géolocalisée ou encore l’analyse des comportements des internautes dans le but de personnaliser la publicité qui leur est adressée.</p>
-<p>Vous pouvez gérer votre consentement pour les cookies tiers <a href="#PE_Privacy">grâce à cet outil</a>.</p>
-<h3>8. INFORMATION DU PUBLIC SUR LES MOYENS DE CONTRÔLER SES TRACES</h3>
-<p>Nous informons les internautes que les versions récentes des principaux navigateurs permettent non seulement de s’opposer à l’enregistrement de cookies (Nous respectons les directives DoNotTrack des navigateurs) mais également d’effectuer des sessions de navigation à l’issue desquelles tous les cookies installés lors de cette session sont automatiquement effacés indépendamment de leur durée de vie prévue, offrant ainsi une meilleure protection des traces.</p>
-<p>Vous pouvez obtenir des informations sur la façon de gérer les cookies à l’adresse www.aboutcookies.org.</p>
-<h3>9. UTILISATION DES BOUTONS FACEBOOK « J’AIME »</h3>
-<p>Notre site Internet utilise des plugins sociaux (« plugins ») du réseau social facebook.com exploité par la société Facebook Inc., 1601 S. California Ave, Palo Alto, CA 94304, USA (« Facebook »). Les plugins sont en outre marqués par un logo Facebook ou par la mention « Facebook Social Plugin ».</p>
-<p>Si vous ouvrez une page de notre site web contenant un tel plugin, votre navigateur Internet établit alors une liaison directe avec les serveurs de Facebook. Le contenu du plugin est directement transmis par Facebook à votre navigateur Internet et intégré à la page web par celui-ci.</p>
-<p>Grâce à l’intégration des plugins, Facebook est informé que vous avez ouvert la page concernée de notre site web. Si vous êtes connecté sur Facebook, Facebook peut attribuer votre visite sur notre site à votre compte Facebook. Si vous interagissez avec les plugins, par ex. en cliquant sur le bouton « J’aime » ou en entrant un commentaire, l’information correspondante est directement envoyée par votre navigateur Internet à Facebook et enregistrée à cet endroit.</p>
-<p>Pour connaître l’objectif et l’étendue de la collecte, du traitement et de l’utilisation de données par Facebook ainsi que vos droits dans ce domaine et vos possibilités de paramétrage pour protéger votre vie privée, veuillez consulter les remarques de Facebook concernant la protection des données.</p>
-<p>Si vous ne souhaitez pas que Facebook collecte des données vous concernant pendant que vous consultez notre site web, vous devez vous déconnecter de Facebook avant de venir sur notre site web.</p>
-<p>Même lorsque vous n’êtes pas connecté à Facebook, des données sont envoyées à Facebook par les sites web contenant des éléments Facebook actifs. Chaque fois que le site web est visité, Facebook installe un cookie valable deux ans et contenant un repère. Étant donné que votre navigateur Internet envoie ce cookie sans vous demander lors de chaque liaison avec un serveur Facebook, Facebook peut en principe établir un profil indiquant les pages web consultées par l’utilisateur correspondant au repère. Il est donc tout à fait possible, ultérieurement, de mettre ce repère en relation avec une personne concrète – par ex. si vous vous connectez ultérieurement sur Facebook.</p>
-<p>Si vous ne souhaitez pas que Facebook collecte des données vous concernant par le biais de ces cookies, vous pouvez activer la fonction « Bloquer les cookies de tierces parties » dans les paramètres de votre navigateur Internet. Dans ce cas, le navigateur Internet n’envoie pas de cookies au serveur lorsque des contenus de tierces parties sont intégrés sur le site. Avec cette configuration, il est cependant possible que certaines autres fonctions interactives – outre le bouton « J’aime » – ne fonctionnent plus correctement.</p>
-<h3>10. PIXEL CONNECT DE FACEBOOK</h3>
-<p>Dans le cadre de notre offre en ligne, nous utilisons des « pixels de Facebook » du réseau social Facebook exploité par la société Facebook Inc., 1 Hacker Way, Menlo Park, CA 94025, Etats-Unis, ou &#8211; si vous êtes domicilié sur le territoire de l’Union européenne &#8211; par la société Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irlande (« Facebook »). Les pixels de Facebook permettent à Facebook de cibler les visiteurs de notre offre pour un affichage d’annonces sur Facebook.</p>
-<p>Nous utilisons les pixels de Facebook de manière à ce que les annonces sur Facebook insérées par notre intermédiaire ne s’affichent que sur les écrans des utilisateurs de Facebook qui ont manifesté un intérêt pour notre offre en ligne. En utilisant les pixels de Facebook, nous souhaitons donc garantir que nos annonces sur Facebook correspondent à l’intérêt potentiel des utilisateurs et n’importunent pas les destinataires. Par ailleurs, les pixels de Facebook nous permettent d’évaluer l’efficacité de nos annonces sur Facebook à des fins de statistiques et d’étude du marché dans la mesure où nous voyons si, après avoir cliqué sur une annonce sur Facebook, l’utilisateur a été dirigé vers notre site (« conversion » ou « interaction avec les visiteurs »).</p>
-<p>Au moment de l’établissement de la connexion avec l’un de nos sites, le pixel de Facebook est directement mis en place par Facebook et peut placer un cookie, c’est-à-dire un petit fichier sur votre ordinateur. Si vous vous connectez ensuite à Facebook ou si vous visitez Facebook en étant connecté, la consultation de notre offre s’affichera sur votre profil. Les données collectées sur vous étant anonymes pour nous, nous ne pouvons pas identifier l’utilisateur par déduction. Toutefois, les données sont enregistrées et traitées par Facebook, ce qui permet un rattachement au profil de l’utilisateur, c’est-à-dire qu’à partir des données traitées, des profils d’utilisation peuvent être établis. Le traitement des données par Facebook est effectué dans le cadre de la politique de confidentialité de Facebook. Vous trouverez donc plus d’informations sur le fonctionnement des pixels de retargeting et, d’une façon générale, sur l’affichage d’annonces sur Facebook en consultant la politique de confidentialité de Facebook sur <a href="https://www.facebook.com/policy" target="_blank" rel="noopener noreferrer">https://www.facebook.com/policy</a>.</p>
-<p>Vous pouvez vous opposer à la collecte de vos données par le pixel de Facebook et à l’utilisation de celles-ci pour l’affichage d’annonces sur Facebook. A cet effet, vous devez consulter le site <a href="https://www.facebook.com/settings" target="_blank" rel="noopener noreferrer">https://www.facebook.com/settings</a> mis en place par Facebook et suivre les instructions données pour le paramétrage concernant les annonces basées sur l’utilisation. Le paramétrage est repris par l’ensemble de votre matériel informatique, tels qu’ordinateurs et appareils mobiles, quelle que soit la plateforme que vous utilisez. Vous pouvez également communiquer votre opposition en vous rendant sur le site <a href="http://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer">http://www.youronlinechoices.eu/</a> de l’European Interactive Digital Advertising Alliance.</p>
-<h3>11. DROIT D’ACCÈS ET DE RECTIFICATION</h3>
-<p>Conformément à la loi fédérale sur la protection des données, vous disposez d’un droit d’information, d’opposition, d’accès et de rectification des données vous concernant.</p>
-<p>En conséquence, vous avez le droit d’exiger que soient rectifiées, complétées, clarifiées, mises à jour ou effacées, les informations vous concernant qui seraient inexactes, incomplètes, équivoques ou périmées.</p>
-<p>Ce droit pourra s’exercer à l’adresse suivante : info@pole-emotion.ch ou via le site.</p>
-<h3>12. BASES LÉGALES</h3>
-<p>La présente déclaration de confidentialité repose exclusivement sur la loi fédérale sur la protection des données (LPD).</p>
-<h3>13. CONTACT / SERVICE CLIENTS</h3>
-<p>Adresse postale : Pole-Emotion Sàrl, CP 12, CH-1424 Champagne</p>
-			  </div>
+                          $('body').toggleClass('dark');
+                          if(Cookies.get('bodyLight') && Cookies.get('bodyLight') == 'dark')
+                          {
+                            animate.reverse();
+                            Cookies.set('bodyLight', 'light', { expires: 7, domain: ".pole-emotion.ch", secure:true});
+                          }
+                          else if(Cookies.get('bodyLight') && Cookies.get('bodyLight') == 'light')
+                          {
+                            animate.restart();
+                            Cookies.set('bodyLight', 'dark', { expires: 7, domain: ".pole-emotion.ch", secure:true});
+                          }
+                          else
+                          {
+                            animate.restart();
+                            Cookies.set('bodyLight', 'dark', { expires: 7, domain: ".pole-emotion.ch", secure:true});
+                          }
+                  });
+                  if(!Cookies.get('bodyLight') || Cookies.get('bodyLight') == 'dark')
+                  {
+                    animate.restart();
+                    Cookies.set('bodyLight', 'dark', { expires: 7, domain: ".pole-emotion.ch", secure:true});
+                  }
+
+                  if(Cookies.get('bodyLight') == 'light')
+                  {
+                    $('body').removeClass('dark');
+                  }else if(Cookies.get('bodyLight') == 'dark')
+                  {
+                    $('body').addClass('dark');
+                  }
+                });
+              </script>
+        </div>
+            <nav class="navbar PENav sticky-top navbar-expand-lg mb-0 NoPrint">
+    <div class="d-flex w-100 flex-wrap">
+        <button class="d-inline-block d-lg-none menuCollapse order-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars align-middle"></i>
+        </button>
+
+        
+        <ul class="nav navbar-nav ml-auto order-3 d-inline-block">
+                        <li class="nav-item text-center">
+                                    <a class="nav-link text-light" href="https://app.pole-emotion.ch/login"><i class="fas fa-user-circle"></i> Connexion</a>
+                            </li>
+                    </ul>
+
+        <div class="collapse navbar-collapse mt-0 order-lg-1 order-md-3 order-sm-3 order-3" id="navbarSupportedContent">
+            <ul class="nav navbar-nav">
+                <li class="nav-item text-center">
+                    <a class="nav-link" href="https://app.pole-emotion.ch"><i class="fad fa-home-heart"></i></a>
+                </li>
+                <li class="nav-item text-center">
+                    <a href="https://app.pole-emotion.ch/categories-de-cours/" class="nav-link">Les cours</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a href="https://app.pole-emotion.ch/tarifs/" class="nav-link">Tarifs</a>
+                </li>
+                
+                
+                            <li class="nav-item text-center dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="planning_drop" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Plannings
+    </a>
+    <div class="dropdown-menu text-center" aria-labelledby="planning_drop">        
+		    <a class="dropdown-item" href="https://app.pole-emotion.ch/nos-salles-de-cours/cours-en-ligne">Cours en ligne</a>
+		    <a class="dropdown-item" href="https://app.pole-emotion.ch/nos-salles-de-cours/crissier-1">Crissier 1</a>
+		    <a class="dropdown-item" href="https://app.pole-emotion.ch/nos-salles-de-cours/crissier-2">Crissier 2</a>
+		    <a class="dropdown-item" href="https://app.pole-emotion.ch/nos-salles-de-cours/gland">Gland</a>
+		    <a class="dropdown-item" href="https://app.pole-emotion.ch/nos-salles-de-cours/lausanne">Lausanne</a>
+		    <a class="dropdown-item" href="https://app.pole-emotion.ch/nos-salles-de-cours/monthey">Monthey</a>
+		    <a class="dropdown-item" href="https://app.pole-emotion.ch/nos-salles-de-cours/yverdon-pole">Yverdon Pole</a>
+		    <a class="dropdown-item" href="https://app.pole-emotion.ch/nos-salles-de-cours/yverdon-studio48">Yverdon Studio48</a>
 		</div>
-              </article>
-  </div>
-</div>     	
-
-<div class="uk-section-small uk-padding-remove-top NoPrint">
-  <div class="uk-container">
-    <h3 class="uk-text-center">Les + que nous proposons en ce moment</h3>
-    <div class="uk-text-center uk-text-lead uk-margin-medium uk-margin-remove-top StandardFont">Cours Bonus, Cours Spéciaux, Stages & Shooting</div>
-
-      <div class=" uk-child-width-1-2@m uk-child-width@s uk-child-width uk-flex-center" uk-grid uk-height-match="target: > div > div > .uk-card; row: false">
-    	      
-      <div>
-        <div class="PlusContainer">
-          <div class="PlusTitleBar">
-            <div class="PlusHeart"></div>
-            <div class="PlusTitleContainer">
-              <div class="PlusTitle">
-                <h5>Cours en ligne 2021</h5>
-              </div>
-            </div>
-
-                      
-          </div>
-          <div class="PlusImage uk-card uk-card-default uk-background-cover" data-src="https://www.pole-emotion.ch/wp-content/uploads/2020/11/continue_ce_que_tu_aimes_01_V1-1024x1024.png" uk-img></div>
-          <div class="PlusDesc">
-
-                                        <div class="PlusSalleContainer">
-                            <div class="PlusSalle">En direct - cours ZOOM - Mars</div>
-                            </div>
+</li>            <li class="nav-item text-center">
+                    <a class="nav-link" href="https://app.pole-emotion.ch/news">News</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link" href="https://app.pole-emotion.ch/categories-de-cours/les-cours-speciaux/stages"><i class="fad fa-stars"></i> Stages</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link" href="https://app.pole-emotion.ch/evjf">EVJF</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link" href="https://app.pole-emotion.ch/boutique">SHOP</a>
+                </li>
+            </ul>
             
-                        <div class="PlusButtonContainer">
-              <a class="uk-button uk-button-default uk-margin-remove-top uk-width PlusButton" href="https://www.pole-emotion.ch/produit/cours-en-ligne-novembre-2020/">Plus d'info</a>
-            </div>
-          </div>
         </div>
-      </div>
-    
-    
-
-      <div>
-        <div class="PlusContainer">
-          <div class="PlusTitleBar">
-                        <div class="PlusCal">
-              <div class="day">30</div>
-              <div class="month">Juin</div>
-              <div class="year">2021</div>
-            </div>
-            <div class="PlusTitleContainer">
-              <div class="PlusTitle">
-                <h5>Stage sur le planche pelvien avec Edith Crissier</h5>
-              </div>
-            </div>
-
-                      </div>
-          <div class="PlusImage uk-card uk-card-default uk-background-cover" data-src="https://www.pole-emotion.ch/wp-content/uploads/2020/03/Relaxation-1534x1024.jpg" uk-img></div>
-          <div class="PlusDesc">
-
-                                        <div class="PlusSalleContainer">
-                            <div class="PlusSalle">Crissier 2</div>
-                            </div>
-            
-            Apprendre a connaitre son corps pour mieux le préserver.            <div class="PlusButtonContainer">
-              <a class="uk-button uk-button-default uk-margin-remove-top uk-width PlusButton" href="https://www.pole-emotion.ch/produit/stage-sur-le-planche-pelvien-avec-edith-crissier/">Plus d'info</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    	        </div>
-  </div>
-</div>
-
-
-
-    
-<div class="uk-section-small uk-padding-remove-vertical NoPrint">
-    <div class="uk-position-relative uk-visible-toggle featuredSlidshow" uk-slideshow="min-height: 460;animation: scale; autoplay:true; pause-on-hover: true">
-
-    <ul class="uk-slideshow-items uk-flex">
-                    <li class="uk-section uk-section-small uk-padding-remove-vertical uk-flex">
-        <!--<div class="sldshw-layer"></div>-->
-        <img data-src="https://www.pole-emotion.ch/wp-content/themes/PE/img/woman_sport_background_4.png" alt="" uk-cover uk-img>
-        <div class="uk-flex uk-container uk-container-small uk-padding featuredContainer">
-          <div class="uk-width uk-flex">
-            <div class="uk-width uk-margin-remove uk-grid uk-grid-small uk-flex uk-flex-middle uk-transition-fade" uk-grid>
-              <div class="uk-flex uk-flex-middle uk-flex-right@m uk-flex-center uk-flex-last@m uk-flex-last@s uk-width-1-2@m uk-width-1-3@s uk-width uk-padding-remove">
-                <div class="featuredPerspectiveBloc">
-                  <img data-src="https://www.pole-emotion.ch/wp-content/uploads/2018/09/1d668c72-b0df-49c3-8620-b93737e003bb-380x380.jpg" class="featuredPerspective" uk-img>
+        
+    </div>
+</nav>            <div class="wrapper tr ns">
+	</div>            <div class="wrap">
+                
+            <!-- Sidebar  -->
+            <div class="wrapper">
+    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item sldshw active">
+                <!--<div class="sldshw-layer"></div>--> 
+                <picture>
+                    <source srcset="https://app.pole-emotion.ch/storage/webp/welcome_to_new_site_V2.png.webp" type="image/webp">
+                    
+                    <source srcset="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/welcome_to_new_site_V2.png" type="image/png">
+                    <img src="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/welcome_to_new_site_V2.png" class="d-block w-auto" alt="Bienvenue sur notre site - Pole-Emotion">
+                </picture>
+                <div class="carousel-caption sldshw-text">
+                    <h5>Bienvenue!</h5>
+                    <div class="divider-icon"></div>
+                    <p>Sur notre site mis à jour!</p>
                 </div>
-              </div>
-              <div class="uk-flex uk-flex-middle uk-flex-center uk-width-1-2@m uk-width-2-3@s uk-width uk-margin-remove uk-padding-remove">
-                <div class="uk-overlay uk-overlay-default featuredOverlay uk-box-shadow-large">
-                                      <div class="uk-flex uk-flex-middle">
-                        <div class="uk-width uk-text-center uk-padding-small">
-                            <div><p>La magnésie Dry hands se présente sous la forme d&rsquo;un liquide inodore qui peut être appliqué sur n&rsquo;importe quelle partie du corps (mains, pieds, cuisses, arrière des jambes…)&#8230;</p>
+            </div>
+        	<div class="carousel-item sldshw">
+                <div class="sldshw-layer"></div>
+                <picture>
+                	<source srcset="https://app.pole-emotion.ch/storage/webp/banner_info.png.webp" type="image/webp">
+					
+                	<source srcset="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/banner_info.png" type="image/png">
+                	<img src="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/banner_info.png" class="d-block w-auto" alt="Informations COVID - Pole-Emotion">
+                </picture>
+                <div class="carousel-caption sldshw-text">
+                    <h5>Informations COVID</h5>
+                    <div class="divider-icon"></div>
+                    <p><a href="/mesures-exceptionnelle-covid-19">cliquez-ici</a> pour plus d'info</p>
+                </div>
+            </div>
+            <div class="carousel-item sldshw">
+                <div class="sldshw-layer"></div>
+                <picture>
+                	<source srcset="https://app.pole-emotion.ch/storage/webp/XVM1e20d242-c68b-11e5-a093-5cc2826e4cfa-e1515680642602.jpg.webp" type="image/webp">
+                	<source srcset="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/XVM1e20d242-c68b-11e5-a093-5cc2826e4cfa-e1515680642602.jpg" type="image/jpeg">
+                	<img src="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/XVM1e20d242-c68b-11e5-a093-5cc2826e4cfa-e1515680642602.jpg" class="d-block w-auto" alt="Aussi pour toi! - Pole-Emotion">
+                </picture>
+                <div class="carousel-caption sldshw-text">
+                    <h5>Aussi pour toi !</h5>
+                    <div class="divider-icon"></div>
+                    <p>La Pole Dance c’est pour toutes les Femmes !</p>
+                </div>
+            </div>
+            <div class="carousel-item sldshw">
+                <div class="sldshw-layer"></div>
+                <picture>
+                	<source srcset="https://app.pole-emotion.ch/storage/webp/Fotolia_108975478_M-1-1-e1495551319144.jpg.webp" type="image/webp">
+                	<source srcset="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/Fotolia_108975478_M-1-1-e1495551319144.jpg" type="image/jpeg">
+                	<img src="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/Fotolia_108975478_M-1-1-e1495551319144.jpg" class="d-block w-auto" alt="Unique en Suisse Romande - Pole-Emotion">
+                </picture>
+                <div class="carousel-caption sldshw-text">
+                    <h5>Unique en Suisse Romande</h5>
+                    <div class="divider-icon"></div>
+                    <p>Chez nous, vous avez le choix!<br>
+                    Aucune contrainte que du plaisir dès CHF 79.-/mois</p>
+                </div>
+            </div>
+            <div class="carousel-item sldshw">
+                <div class="sldshw-layer"></div>
+                <picture>
+                	<source srcset="https://app.pole-emotion.ch/storage/webp/studio48_entete_facebook-sans-logo.png.webp" type="image/webp">
+                	<source srcset="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/studio48_entete_facebook-sans-logo.png" type="image/jpeg">
+                	<img src="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/studio48_entete_facebook-sans-logo.png" class="d-block w-auto" alt="En collaboration avec Studio48 - Pole-Emotion">
+                </picture>
+                <div class="carousel-caption sldshw-text">
+                    <h5>En collaboration avec Studio48</h5>
+                    <div class="divider-icon"></div>
+                    <p>Certains cours sont ouverts aux hommes.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 </div>
+<div class="wrapper">
+
+    <div class="jumbotron jumbotron-fluid mb-0">
+        <div class="container-fluid text-center">
+            <h2>Nos salles</h2>
+                    <span class="home-salle">
+                <a class="" href="https://app.pole-emotion.ch/nos-salles-de-cours/cours-en-ligne">Cours en ligne</a>
+            </span>
+                    <span class="home-salle">
+                <a class="" href="https://app.pole-emotion.ch/nos-salles-de-cours/crissier-1">Crissier 1</a>
+            </span>
+                    <span class="home-salle">
+                <a class="" href="https://app.pole-emotion.ch/nos-salles-de-cours/crissier-2">Crissier 2</a>
+            </span>
+                    <span class="home-salle">
+                <a class="" href="https://app.pole-emotion.ch/nos-salles-de-cours/gland">Gland</a>
+            </span>
+                    <span class="home-salle">
+                <a class="" href="https://app.pole-emotion.ch/nos-salles-de-cours/lausanne">Lausanne</a>
+            </span>
+                    <span class="home-salle">
+                <a class="" href="https://app.pole-emotion.ch/nos-salles-de-cours/monthey">Monthey</a>
+            </span>
+                    <span class="home-salle">
+                <a class="" href="https://app.pole-emotion.ch/nos-salles-de-cours/yverdon-pole">Yverdon Pole</a>
+            </span>
+                    <span class="home-salle">
+                <a class="" href="https://app.pole-emotion.ch/nos-salles-de-cours/yverdon-studio48">Yverdon Studio48</a>
+            </span>
+                </div>
+    </div>
+</div>
+
+<div class="wrapper tarifs pb-2 pt-4">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-6 mt-2 mb-4">
+                <div class="TarifsBox">
+                    <div class="uk-padding TarifsHead">
+                        <div class="TarifsIcon uk-margin-medium-bottom">
+                            <i class="fal fa-dove"></i>
+                        </div>
+                        <div class="TarifsTitle">
+                            ABO - Freedom
                         </div>
                     </div>
-                    <a class="uk-button uk-button-default featuredButton uk-width-1-1" href="https://www.pole-emotion.ch/produit/magnesie/" onclick="_paq.push(['trackEvent', 'Produits en avant', 'Magnésie']);">Choisir une option</a>
-                    <div class="featuredTitle"><h5>Magnésie</h5></div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
 
-                <li class="uk-section uk-section-small uk-padding-remove-vertical uk-flex">
-        <!--<div class="sldshw-layer"></div>-->
-        <img data-src="https://www.pole-emotion.ch/wp-content/themes/PE/img/woman_sport_background_4.png" alt="" uk-cover uk-img>
-        <div class="uk-flex uk-container uk-container-small uk-padding featuredContainer">
-          <div class="uk-width uk-flex">
-            <div class="uk-width uk-margin-remove uk-grid uk-grid-small uk-flex uk-flex-middle uk-transition-fade" uk-grid>
-              <div class="uk-flex uk-flex-middle uk-flex-right@m uk-flex-center uk-flex-last@m uk-flex-last@s uk-width-1-2@m uk-width-1-3@s uk-width uk-padding-remove">
-                <div class="featuredPerspectiveBloc">
-                  <img data-src="https://www.pole-emotion.ch/wp-content/uploads/2018/09/pe_thumb_store_cours_unique-380x380.png" class="featuredPerspective" uk-img>
+                  <div class="TarifsContent">
+                    <div class="TarifsSubTitle mt-1 mb-1">
+                      Dès 74.- CHF
+                    </div>
+                    <ul class="uk-padding-remove TarifsLines">
+                      <li class="mt-1">Formules à 13, 26 ou 52 cours</li>
+                      <li class="mt-1">Accès à toutes nos salles</li>
+                    </ul>
+                    <a href="https://app.pole-emotion.ch/freedom" class="btn btn-well">En savoir plus</a>
+                  </div>
                 </div>
-              </div>
-              <div class="uk-flex uk-flex-middle uk-flex-center uk-width-1-2@m uk-width-2-3@s uk-width uk-margin-remove uk-padding-remove">
-                <div class="uk-overlay uk-overlay-default featuredOverlay uk-box-shadow-large">
-                                      <div class="uk-flex uk-flex-middle">
-                        <div class="uk-width uk-text-center uk-padding-small">
-                            <div><p>Donne accès à un cours de votre choix.</p>
-</div>
+            </div>
+
+            <div class="col-md-6 mt-2 mb-4">
+                <div class="TarifsBox Bigger">
+                    <div class="TarifsRibbon">
+                        <div>
+                            le meilleur!
                         </div>
                     </div>
-                    <a class="uk-button uk-button-default featuredButton uk-width-1-1" href="https://www.pole-emotion.ch/produit/cours-unique/" onclick="_paq.push(['trackEvent', 'Produits en avant', 'Cours unique']);">En savoir plus!</a>
-                    <div class="featuredTitle"><h5>Cours unique</h5></div>
-                  </div>
-              </div>
+                    <div class="uk-padding TarifsHead">
+                        <div class="TarifsIcon uk-margin-medium-bottom">
+                            <i class="fal fa-infinity"></i>
+                        </div>
+                        <div class="TarifsTitle">
+                            ABO - Illimité
+                        </div>
+                    </div>
+                    <div class="TarifsContent">
+                        <div class="TarifsSubTitle mt-1 mb-1">
+                            Dès 104.- CHF
+                        </div>
+                        <ul class="uk-padding-remove TarifsLines">
+                            <li class="mt-1">Nombre illimité de cours</li>
+                            <li class="mt-1">Accès à toutes nos salles</li>
+                        </ul>
+                        <a href="https://app.pole-emotion.ch/illimite" class="btn btn-well">En savoir plus</a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </li>
+    </div>
 
-        </ul>
-
-    <a class="uk-light uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-    <a class="uk-light uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-
-  </div>
 </div>
-  <footer class="NoPrint">
-  <section id="mainFooter" class="uk-section-small">
-    <div class="uk-container">
-      <div class="uk-grid uk-child-width-1-4@m uk-child-width-1-2@s uk-child-width-1-1" uk-grid>
-        <div class="col-xs-12 col-sm-6 col-md-3 uk-text-center ">
+
+        </div>
+    
+        
+    <script>
+    jQuery(document).ready(function($){
+
+              
+        $('.popable').popover();
+        
+        
+        $(document).on("click", '.openModal', function(e){
+            e.preventDefault();
+            $(this).openModal()
+        });
+
+        $(document).on("click", '.postModalButton', function(e){
+            e.preventDefault();
+            $(this).sendModal()
+        });
+
+        lazyload();
+
+    });
+    </script>
+    <div class="modal" id="CallbackModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    	<div class="modal-content">
+
+			<div class="modal-header justify-content-center">
+		        <div class="modal-title mt-3 text-center">
+		            <div class="faceContent">
+		            </div>
+		            <h3>
+		            </h3>
+		        </div>
+		    </div> 
+			<div class="modal-body text-center callbackMessage">
+			</div>
+			<div class="modal-footer justify-content-center">
+			</div>
+
+	   	</div>
+    </div>
+</div>
+    
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+<footer class="NoPrint">
+  <section id="mainFooter">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3 ">
           <h4>Pole-Emotion</h4>
-          <ul class="pe_foot uk-padding-remove-left">
-            <li><a href="https://www.pole-emotion.ch/administration/">Administration</a></li>
-            <li><a href="https://www.pole-emotion.ch/support/"><i class="far fa-life-ring"></i> Support / Contact</a></li>
-            <!--<li><a href="https://www.pole-emotion.ch/formations/">Formations</a></li>-->
-            <li><a href="https://www.pole-emotion.ch/notre-histoire/">Notre histoire</a></li>
-            <li><a href="https://www.pole-emotion.ch/les-niveaux/">Les niveaux</a></li>
-            <li><a href="https://www.pole-emotion.ch/team/">Team</a></li>
-            <li><a href="https://www.pole-emotion.ch/emplois/"><i class="fas fa-exclamation-triangle green"></i> Emplois</a></li>
-            <li><a href="https://www.pole-emotion.ch/pinkspirit/">PinkSpirit</a></li>
-            <li><a href="https://www.pole-emotion.ch/offres-et-promotions-partenaires/">Offres & Promotions partenaires</a></li>
-            <li><a href="https://www.pole-emotion.ch/information/"><i class="fas fa-question"></i> Pages d'information</a></li>
-            <li><a href="https://www.pole-emotion.ch/espace-profs/"><i class="far fa-lock eplock"></i> Espace profs</a></li>
+          <ul class="pe_foot px-0">
+            <li><a href="/administration">Administration</a></li>
+            <li><a href="/support"><i class="far fa-life-ring"></i> Support / Contact</a></li>
+            <li><a href="/mesures-exceptionnelle-covid-19">Informations COVID</a></li>
+            <li><a href="/notre-histoire">Notre histoire</a></li>
+            <li><a href="/les-niveaux">Les niveaux</a></li>
           </ul>
+         
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-3 uk-text-center ">
+        <div class="col-xs-12 col-sm-6 col-md-3 ">
           <h4>Suivez-nous</h4>
-          <ul class="pe_foot uk-padding-remove-left">
+          <ul class="pe_foot px-0">
             <li class="f-social-links">
               <a href="https://www.facebook.com/Pole.Emotion/" title="Facebook" target="blank"><span class="fab fa-facebook-f"></span></a>
               <a href="https://www.twitter.com/Pole_Emotion" title="Twitter" target="blank"><span class="fab fa-twitter"></span></a>
@@ -554,257 +621,73 @@ var woo_ml_public_post = {"ajax_url":"https:\/\/www.pole-emotion.ch\/wp-admin\/a
               <a href="https://www.instagram.com/pole_emotion/" title="Instagram" target="blank"><span class="fab fa-instagram"></span></a>
             </li>
             
-            <li><img style="max-width:100px" data-src="https://www.pole-emotion.ch/wp-content/themes/PE/img/logo-swiss-pole-sports-federation-white-600px.png" uk-img></li>
-            <li class="uk-text-meta uk-text-small">Membre de la Fédération Suisse de Pole Dance / Pole Fitness / Pole Gymnastic</li>
+            <li class="small"><small><a href="https://www.swisspolesportsfederation.com/membres-partenaires/" rel="nofollow">Membre de la Fédération Suisse de Pole Dance / Pole Fitness / Pole Gymnastic</a></small></li>
           </ul>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-3 uk-text-center ">
+        <div class="col-xs-12 col-sm-6 col-md-3 ">
           <h4>Contact</h4>
-          <ul class="contact uk-padding-remove-left">
+          <ul class="contact px-0">
             <li class="contact-sect"><a href="tel:0244362369"><i class="fal fa-phone-volume"></i> 024 436 23 69</a></li>
-            <li class="contact-sect"><a href="tel:+41763238972"><i class="fal fa-mobile-alt"></i> +41 76 323 89 72</a></li>
+            <li class="contact-sect"><a href="tel:+41795354789">
+              <i class="fa-stack">
+                <i class="fal fa-ban fa-stack-1x fa-lg" style="color: rgb(125 0 156);left: -5px;"></i>
+                <i class="fab fa-whatsapp fa-stack-1x fa-xs"></i>
+              </i> +41 79 535 47 89</a></li>
             <li class="contact-sect mail"><a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#x69;&#x6e;&#x66;&#111;&#64;&#x70;&#111;&#x6c;&#101;&#45;&#x65;&#x6d;&#x6f;&#x74;&#x69;&#111;&#x6e;&#x2e;&#99;&#x68;"><i class="fal fa-envelope"></i> info@pole-emotion.ch</a></li>
-            <li class="addr"><small><b>N° de clearing</b>: 80401</small><br>
-            <small><b>IBAN</b>: CH64 8040 1000 0306 6024 4</small><br>
-            <small style="padding-top:18px">École Pole-Emotion Sàrl</small><br>
-            <small>Case Postale 17</small><br>
-            <small>1424 Champagne</small></li>
           </ul>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-3 uk-text-center ">
-          <h4>Chercher sur le site</h4>
-          
-<div itemscope itemtype="http://schema.org/WebSite" style="border:0px">
-  <link itemprop="url" href="https://www.pole-emotion.ch/"/>
+        <div class="col-xs-12 col-sm-6 col-md-3 ">
 
-    <form role="search" method="get" id="searchform" action="https://www.pole-emotion.ch/" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" class="uk-flex uk-flex-center"> 
-
-        <meta itemprop="target" content="https://www.pole-emotion.ch/?s={s}"/>
-        <!--<input type="hidden" name="post_type" value="post, page, cours, salles, partenaires, pink-spirit-63-club, team" />-->
-        
-          <div class="uk-inline">
-            <span class="uk-form-icon" uk-icon="icon: search"></span>
-            <input name="s" class="uk-input" id="s" type="text" itemprop="query-input" data-swplive="true"/>
-          </div>
-          <div class="uk-inline">
-            <input type="submit" name="Submit" class="uk-button uk-button-default" value="Chercher" />
-          </div>
-
-    </form>
-
-</div>          <!--<li class="search-sect"><a href="https://www.pole-emotion.ch/notre-agenda/"><i class="fal fa-calendar-alt"></i> Notre Agenda</a></li>-->
           <div class="uk-margin-top">
             <h4>Moyens de paiement</h4>
-            <div class="p-logo"><img src="https://www.pole-emotion.ch/wp-content/themes/PE/img/p/twint.png"></div>
-            <div class="p-logo"><img src="https://www.pole-emotion.ch/wp-content/themes/PE/img/p/postfinance.png"></div>
-            <div class="p-logo"><img src="https://www.pole-emotion.ch/wp-content/themes/PE/img/p/mastercard.png"></div>
-            <div class="p-logo"><img src="https://www.pole-emotion.ch/wp-content/themes/PE/img/p/visa.png"></div>
-            <div class="p-logo"><img src="https://www.pole-emotion.ch/wp-content/themes/PE/img/p/paypal.png"></div>
-            <div class="p-logo"><img src="https://www.pole-emotion.ch/wp-content/themes/PE/img/p/virement.png"></div>
+            <ul class="contact px-0 mb-2">
+            	<li class="addr"><small><b>N° de clearing</b>: 80808</small><br>
+            	<small><b>IBAN</b>: CH36 8080 8003 3736 0154 7</small><br>
+            	<small style="padding-top:18px">École Pole-Emotion Sàrl</small><br>
+            	<small>Case Postale 17</small><br>
+            	<small>1424 Champagne</small></li>
+            </ul>
+            <div class="p-logo"><img src="https://app.pole-emotion.ch/storage/webp/mastercard.png.webp" alt="logo paiement par mastercard"></div>
+            <div class="p-logo"><img src="https://app.pole-emotion.ch/storage/webp/visa.png.webp" alt="logo paiement par visa"></div>
+            <div class="p-logo"><img src="https://app.pole-emotion.ch/storage/webp/virement.png.webp" alt="logo paiement par virement bancaire"></div>
+            <div class="p-logo"><img src="https://app.pole-emotion.ch/storage/webp/twint.png.webp" alt="logo paiement par TWINT"></div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-	</footer>
-</main>
-<section class="uk-section-large NoPrint NeedHelp">
-  <div class="NeedHelpLayer"></div>
-  <div class="uk-container uk-text-center NeedHelpTxt">
-    <h3 class="NeedHelpTitle">Besoin d'aide?</h3>
-    <div class="uk-width-medium uk-margin-auto uk-divider-icon"></div>
-    <p>Consultes nos <a onclick="_paq.push(['trackEvent', 'Footer Help', 'need help link']);" href="https://www.pole-emotion.ch/information/" title="nos pages d'information">pages d'informations</a>!</p>
-  </div>
-</section>
-<section class="uk-section-xsmall newsletter NoPrint">
-  <div class="uk-container">
-    <div class="ml-form-embed"
-      data-account="1474084:y0s0d0q6p7"
-      data-form="1291504:i9n5o7">
+  
+<div class="NoPrint footer-copyright">
+  <div class="container-fluid">
+    <div class="small">
+      <div class="text-small text-center pt-1 mb-1">© École Pole-Emotion Sàrl - 2005 - 2021 - Tout droits réservés</div>
+      <div class="text-center mb-1"><a href="/conditions-generales-de-l-ecole-pole-emotion">Conditions générales</a> - <a href="https://app.pole-emotion.ch/politique-de-confidentialite/">Politique de confidentialité</a></div>
+      <div class="text-small text-center mt-3 pb-3" style="margin-left: -46px;">Designed by <span class="h5">ᛚᛟᛇᚲ</span> <div class="signature"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 919.88 799.84"><defs><style>.cls-1{fill:url(#Dégradé_sans_nom_73);}.cls-2{fill:#686868;}</style><radialGradient id="Dégradé_sans_nom_73" cx="463.3" cy="395.91" r="406.54" gradientTransform="translate(796.08 -70.26) rotate(89.51) scale(1 0.85)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#999"/><stop offset="1" stop-opacity="0"/></radialGradient></defs><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><path class="cls-1" d="M513.88,129.84l41-48L496.6,3c-62.29-10.18-128.67,5.8-178.08,48-31.1,26.53-58.39,59.13-80.71,96.36-77.83,26.36-141,64.26-181.5,109.29l23.57,11.26-6,24,6.78,21.53c30.31-26.43,68.92-49.76,113.86-68.91a492.51,492.51,0,0,0-22,146.6c0,113.45,37.61,216.27,98.58,291.35l82.79-84.57L325.81,579a114.59,114.59,0,0,1-49.58-31c-28.4-30.39-29.8-66.63-3.13-80.94,21.32-11.43,54.1-5.39,80.9,13L635.88,224.84Z"/><path class="cls-2" d="M682.06,147.29c-22.31-37.23-49.6-69.83-80.7-96.36a209.26,209.26,0,0,0-56.65-34.41l26.17,63.32-45,52c1,.07,121,91.92,122,92L360.12,484.54a112.28,112.28,0,0,1,12.7,11.62c28.4,30.39,29.8,66.63,3.13,80.94a51.07,51.07,0,0,1-20.44,5.61l7.37,15.13-87.52,89.74c45.44,54,103.24,93,167.83,110.08a65.53,65.53,0,0,0,33.43,0c154.84-40.92,270.74-207.43,270.74-406.62a492.5,492.5,0,0,0-22-146.6C821.09,285.26,895.12,352,914.27,420.31A148.93,148.93,0,0,0,919.88,380C919.88,284.74,820.65,194.22,682.06,147.29ZM644.53,548c-28.4,30.39-73,43.43-99.72,29.12s-25.27-50.55,3.12-80.94S621,452.73,647.65,467,672.92,517.59,644.53,548Z"/><path class="cls-2" d="M72.88,274.84,49.31,263.58C17.73,298.73,0,338.22,0,380a148.92,148.92,0,0,0,5.6,40.35c10.17-36.24,33.81-70.07,68.06-99.94l-6.78-21.53Z"/></g></g></svg></div></div>
     </div>
   </div>
-</section>
-<div class="NoPrint footer-copyright uk-section-xsmall">
-  <div class="uk-container">
-    <div class="uk-child-width-1-3@m uk-child-width-1-1@s uk-grid-small uk-flex-middle" uk-grid>
-      <div class="uk-text-small uk-text-center uk-text-left@m">© École Pole-Emotion Sàrl - All rights reserved</div>
-      <div class="uk-text-center"><a href="https://www.pole-emotion.ch/conditions-generales-de-l-ecole-pole-emotion/">Conditions générales</a> - <a href="https://www.pole-emotion.ch/politique-de-confidentialite/">Politique de confidentialité</a></div>
-      <div class="uk-text-small uk-text-center uk-text-right@m">Designed by <img src="https://www.pole-emotion.ch/wp-content/themes/PE/img/mini_avatar.png" style="width:35px;margin-top:-4px;margin-left:2px"></div>
-    </div>
-    
-  </div>
-  <!--<div class="uk-flex totop"><a href="#" class="uk-flex uk-flex-center uk-flex-middle" uk-totop uk-scroll></a></div>-->
 </div>
-		<script type="text/javascript">
-		(function () {
-			var c = document.body.className;
-			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
-			document.body.className = c;
-		})()
-	</script>
-	<script type='text/javascript' id='contact-form-7-js-extra'>
-/* <![CDATA[ */
-var wpcf7 = {"apiSettings":{"root":"https:\/\/www.pole-emotion.ch\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.3.2' id='contact-form-7-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70' id='jquery-blockui-js'></script>
-<script type='text/javascript' id='wc-add-to-cart-js-extra'>
-/* <![CDATA[ */
-var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"Voir le panier","cart_url":"https:\/\/www.pole-emotion.ch\/panier\/","is_cart":"","cart_redirect_after_add":"no"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=4.9.0' id='wc-add-to-cart-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4' id='js-cookie-js'></script>
-<script type='text/javascript' id='woocommerce-js-extra'>
-/* <![CDATA[ */
-var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=4.9.0' id='woocommerce-js'></script>
-<script type='text/javascript' id='wc-cart-fragments-js-extra'>
-/* <![CDATA[ */
-var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_31a3881a9b34edcd063b979eb627fdd2","fragment_name":"wc_fragments_31a3881a9b34edcd063b979eb627fdd2","request_timeout":"5000"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=4.9.0' id='wc-cart-fragments-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/wp-knowledgebase//assets/js/jquery.livesearch.js?ver=1.3.4' id='kbe_live_search-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/wp-tarteaucitron-js-self-hosted/js/tarteaucitron/tarteaucitron.js?ver=1.0' id='tarteaucitronjshead-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/wp-tarteaucitron-js-self-hosted/js/main.js?ver=1.0' id='tarteaucitronjsheadmain-js'></script>
-<script type='text/javascript' id='tarteaucitronjsheadmain-js-after'>
-var tarteaucitronForceLanguage = 'fr';
-var tarteaucitronForceExpire = '365';
-var tarteaucitronCustomText = {
-};;
-tarteaucitron.init({
-	"hashtag" : "#PE_Privacy",
-	"highPrivacy" : true,
-	"AcceptAllCta" : true,
-	"orientation" : "bottom",
-	"adblocker" : false,
-	"showAlertSmall" : false,
-	"cookieslist" : true,
-	"removeCredit" : true,
-	"handleBrowserDNTRequest" : true,
-	"cookieDomain" : "pole-emotion.ch",
-	"cookieName" : "PE_Privacy",
-	"useExternalCss" : false,
-	"External CSS Url" : "",
-	"tarteaucitronForceLanguage" : "fr",
-	"tarteaucitronForceExpire" : "365",});
-</script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/wp-tarteaucitron-js-self-hosted/js/main.js?ver=1.0' id='tarteaucitronjsfootmain-js'></script>
-<script type='text/javascript' id='tarteaucitronjsfootmain-js-after'>
-tarteaucitron.user.matomoId = '1';tarteaucitron.user.matomoHost = "//stats.pole-emotion.ch/";
-tarteaucitron.user.facebookpixelId = '257652381599612'; tarteaucitron.user.facebookpixelMore = function () { /* add here your optionnal facebook pixel function */ };
 
-//Start Services ads 
-// End Services ads 
-
-
-//Start Services analytic 
-(tarteaucitron.job = tarteaucitron.job || []).push('matomo');
-// End Services analytic 
-
-
-//Start Services api 
-// End Services api 
-
-
-//Start Services comment 
-// End Services comment 
-
-
-//Start Services social 
-(tarteaucitron.job = tarteaucitron.job || []).push('facebookpixel');
-// End Services social 
-
-
-//Start Services support 
-// End Services support 
-
-
-//Start Services video 
-// End Services video 
-</script>
-<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LfR2o8UAAAAAPuFSqv4fmGNoHvwZXJkVHuvnFjr&#038;ver=3.0' id='google-recaptcha-js'></script>
-<script type='text/javascript' id='wpcf7-recaptcha-js-extra'>
-/* <![CDATA[ */
-var wpcf7_recaptcha = {"sitekey":"6LfR2o8UAAAAAPuFSqv4fmGNoHvwZXJkVHuvnFjr","actions":{"homepage":"homepage","contactform":"contactform"}};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/contact-form-7/modules/recaptcha/script.js?ver=5.3.2' id='wpcf7-recaptcha-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/themes/PE/js/waypoint.min.js?ver=1.6.2' id='waypoint-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/themes/PE/js/counter.js?ver=1.0.1' id='counter-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/themes/PE/js/js.cookie.js?ver=1.0.1' id='cookie-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/themes/PE/js/uikit.min.js?ver=1.0.0' id='uikit-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/themes/PE/js/uikit-icons.min.js?ver=1.0.0' id='uikit-icons-js'></script>
-<script type='text/javascript' id='icwp-wpsf-shield-antibot-js-extra'>
-/* <![CDATA[ */
-var shield_vars_antibotjs = {"ajax":{"not_bot":"action=icwp-wpsf&exec=not_bot&exec_nonce=fe5a44513d&mod_slug=icwp-wpsf-ips"},"hrefs":{"ajax":"https:\/\/www.pole-emotion.ch\/wp-admin\/admin-ajax.php"}};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/wp-simple-firewall/resources/js/shield/antibot.js?ver=11.0.3&#038;mtime=1616959479' id='icwp-wpsf-shield-antibot-js'></script>
-<script type='text/javascript' id='icwp-wpsf-shield-comments-js-extra'>
-/* <![CDATA[ */
-var shield_comments = {"ajax":{"comment_token":{"action":"icwp-wpsf","exec":"comment_token202.61.251.191","exec_nonce":"c567306e9f","mod_slug":"icwp-wpsf-comments_filter","ajaxurl":"https:\/\/www.pole-emotion.ch\/wp-admin\/admin-ajax.php","ts":1617638599,"post_id":9674}},"vars":{"cbname":"cb_nombre19645796","botts":1617638599,"token":"not created","uniq":"BuLCuH6fjXy2QCkMmAZm6gF","cooldown":10,"expires":1800},"strings":{"label":"Je ne suis pas un spammeur","alert":"Veuillez cocher la case pour confirmer que vous n\u2019\u00eates pas un spammeur.","comment_reload":"Veuillez recharger cette page pour poster un commentaire.","js_comment_wait":"Veuillez patienter %s secondes avant de poster votre commentaire."},"flags":{"gasp":true,"recap":true}};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-content/plugins/wp-simple-firewall/resources/js/shield/comments.js?ver=11.0.3&#038;mtime=1616959479' id='icwp-wpsf-shield-comments-js'></script>
-<script type='text/javascript' src='https://www.pole-emotion.ch/wp-includes/js/wp-embed.min.js?ver=5.6.2' id='wp-embed-js'></script>
+	</section>
+</footer>
+<div class="ohLayer"></div>
+</app>
+</div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
 <script>
-var bootstrap_between_768_992  = '<link href="https://www.pole-emotion.ch/wp-content/plugins/supportcandy/asset/css/responsive/bootstrap-between-768-992.css?version=2.1.9" rel="stylesheet">';
-var bootstrap_between_992_1200 = '<link href="https://www.pole-emotion.ch/wp-content/plugins/supportcandy/asset/css/responsive/bootstrap-between-992-1200.css?version=2.1.9" rel="stylesheet">';
-var bootstrap_max_width_767    = '<link href="https://www.pole-emotion.ch/wp-content/plugins/supportcandy/asset/css/responsive/bootstrap-max-width-767.css?version=2.1.9" rel="stylesheet">';
-var bootstrap_min_width_768    = '<link href="https://www.pole-emotion.ch/wp-content/plugins/supportcandy/asset/css/responsive/bootstrap-min-width-768.css?version=2.1.9" rel="stylesheet">';
-var bootstrap_min_width_992    = '<link href="https://www.pole-emotion.ch/wp-content/plugins/supportcandy/asset/css/responsive/bootstrap-min-width-992.css?version=2.1.9" rel="stylesheet">';
-var bootstrap_min_width_1200   = '<link href="https://www.pole-emotion.ch/wp-content/plugins/supportcandy/asset/css/responsive/bootstrap-min-width-1200.css?version=2.1.9" rel="stylesheet">';
-
-jQuery(document).ready(function(){
-  wpsc_apply_responsive_bootstrap();
-});
-
-function wpsc_apply_responsive_bootstrap(){
-  
-  if (jQuery('.bootstrap-iso').length > 0) {
-    
-    var wpsc_width = jQuery('.bootstrap-iso').width();
-    
-    /* @media screen and (max-width: 767px) */
-    if( wpsc_width < 768 ){
-      jQuery('html').append(bootstrap_max_width_767);
-    }
-    
-    /* @media (min-width: 768px) */
-    if( wpsc_width >= 768 ){
-      jQuery('html').append(bootstrap_min_width_768);
-    }
-    
-    /* @media (min-width: 768px) and (max-width: 991px) */
-    if( wpsc_width >= 768 && wpsc_width < 992 ){
-      jQuery('html').append(bootstrap_between_768_992);
-    }
-    
-    /* @media (min-width: 992px) */
-    if( wpsc_width >= 992 ){
-      jQuery('html').append(bootstrap_min_width_992);
-    }
-    
-    /* @media (min-width: 992px) and (max-width: 1199px) */
-    if( wpsc_width >= 992 && wpsc_width < 1200 ){
-      jQuery('html').append(bootstrap_between_992_1200);
-    }
-    
-    /* @media (min-width: 1200px) */
-    if( wpsc_width >= 1200 ){
-      jQuery('html').append(bootstrap_min_width_1200);
-    }
-    
-  }
-}
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC77VxpIDjjFRtfovwwew75fdW4Ql1QFxE",
+    authDomain: "app-pole-emotion-v1.firebaseapp.com",
+    projectId: "app-pole-emotion-v1",
+    storageBucket: "app-pole-emotion-v1.appspot.com",
+    messagingSenderId: "935814600816",
+    appId: "1:935814600816:web:5ee3d0a03c843a7c0b7cb5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 </script>
 </body>
 </html>
