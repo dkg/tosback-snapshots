@@ -15,7 +15,7 @@
       <meta name="description" content="Rate Your Music is an online community of people who love music.  Catalog, rate, tag, and review your music.  List and review the concerts you've attended, and track upcoming shows.   When you rate your music, the site's music/social recommender can recommend similar music and users with similar music taste. " />
       <meta name="keywords" content="rate your music, rate music, rate albums, music catalog, music catalogue, social software, album reviews, music lists, community, music recommendations, concert listings, record labels, venues, shows" />
          <meta name="robots" content="max-image-preview:large" />
-      <script> window.rym_dist_version = 'b7727ccf-456b-4b36-90d9-f21808cd744f';</script> 
+      <script> window.rym_dist_version = '51db7557-c24e-450e-bc12-aa334fe10e81';</script> 
       <script>
          ryminit = window.ryminit || [];
 
@@ -37,7 +37,143 @@
 @font-face{font-family:"ProximaNova";src:url(https://e.snmc.io/3.0/font/Proxima-Nova/Regular.woff2?d) format("woff2"),url(https://e.snmc.io/3.0/font/Proxima-Nova/Regular.woff?d) format("woff");font-weight:normal;font-style:normal;font-display:swap}@font-face{font-family:"ProximaNova";src:url(https://e.snmc.io/3.0/font/Proxima-Nova/Bold.woff2?d) format("woff2"),url(https://e.snmc.io/3.0/font/Proxima-Nova/Bold.woff?d) format("woff");font-weight:700;font-display:swap;font-style:normal}@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:400;font-display:swap;src:url(https://e.snmc.io/3.0/font/fa-2021-03-02/fa-regular-400.woff2?b) format("woff2"),url(https://e.snmc.io/3.0/font/fa-2021-03-02/fa-regular-400.woff?b) format("woff")}@font-face{font-family:"Font Awesome 5 Brands";font-style:normal;font-weight:400;font-display:swap;src:url(https://e.snmc.io/3.0/font/fa-2021-03-02/fa-brands-400.woff2?b) format("woff2"),url(https://e.snmc.io/3.0/font/fa-2021-03-02/fa-brands-400.woff?b) format("woff")}@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:swap;src:url(https://e.snmc.io/3.0/font/fa-2021-03-02/fa-solid-900.woff2?b) format("woff2"),url(https://e.snmc.io/3.0/font/fa-2021-03-02/fa-solid-900.woff?b) format("woff")}
 </style><script id="base_script">window.rym_dist = '//e.snmc.io';
 var n=(e,t,s)=>new Promise((d,r)=>{var l=o=>{try{a(s.next(o))}catch(i){r(i)}},c=o=>{try{a(s.throw(o))}catch(i){r(i)}},a=o=>o.done?d(o.value):Promise.resolve(o.value).then(l,c);a((s=s.apply(e,t)).next())});window.RYMtemplate=window.RYMtemplate||{};function ensureTemplateLoaded(e){return n(this,null,function*(){if(console.log("ensureTemplateLoaded: "+e),RYMtemplate[e])return;let t=[];return yield import((window.rym_dist||"//e.snmc.io")+"/dist/template/"+e+".js?v="+window.rym_dist_version).then(d=>{console.log("dependencies: "+d.compiledTemplate.dependencies),t=d.compiledTemplate.dependencies.map(r=>ensureTemplateLoaded(r)),window.RYMtemplate[e]=d.compiledTemplate.template}),console.log("promise array has "+t.length),Promise.all(t)})}function renderTemplate(e,t){return function(){return n(this,null,function*(){return window.RYMtemplate=window.RYMtemplate||{},RYMtemplate[e]||(console.log("calling ensureTemplateLoaded: "+e),yield ensureTemplateLoaded(e),console.log("calling render: "+e)),RYMtemplate[e].render(t,RYMtemplate)})}()}function applyLazyLoadBehavior(e,t){e.classList.remove("lazyload"),e.classList.add("lazyload-complete"),e.dataset.srcset&&(e.srcset=e.dataset.srcset,delete e.dataset.srcset),window.devicePixelRatio>1&&e.dataset.bkg2x?(e.style.backgroundImage=`url('${e.dataset.bkg2x}')`,delete e.dataset.bkg2x,delete e.dataset.bkg):e.dataset.bkg&&(e.style.backgroundImage=`url('${e.dataset.bkg}')`,delete e.dataset.bkg),e.dataset.src&&(e.src=e.dataset.src,delete e.dataset.src),e.dataset.suggestions&&(console.log("loading suggestions"),RYMsuggestions.load($(e))),!t&&e.dataset.adcode&&adVisibilityChanged(e.dataset.adcode)}window.refreshLazyLoadList=function(){const e=document.querySelectorAll(".lazyload");for(let s=0;s<e.length;s++)typeof window.lazyloadObserver!="undefined"?window.lazyloadObserver.observe(e[s]):applyLazyLoadBehavior(e[s],!0);const t=document.querySelectorAll(".lazyload-ad");for(let s=0;s<t.length;s++)typeof window.lazyloadObserverAds!="undefined"?window.lazyloadObserverAds.observe(t[s]):applyLazyLoadBehavior(t[s],!0)},rymQ(function(){typeof IntersectionObserver!="undefined"&&(window.lazyloadObserver=new IntersectionObserver(e=>{for(let t=0;t<e.length;t++)if(e[t].isIntersecting){const s=e[t].target;lazyloadObserver.unobserve(s),applyLazyLoadBehavior(s,!1)}},{rootMargin:"300px 50px 300px 50px"}),window.lazyloadObserverAds=new IntersectionObserver(e=>{for(let t=0;t<e.length;t++)if(e[t].isIntersecting){const s=e[t].target;lazyloadObserverAds.unobserve(s),applyLazyLoadBehavior(s,!1)}},{rootMargin:"10px 0px 10px 0px"}))}),rymQ(function(){refreshLazyLoadList()});
-</script><link id="css-bundle" rel="stylesheet" href="//e.snmc.io/dist/css/bundle.css?v=b7727ccf-456b-4b36-90d9-f21808cd744f" type="text/css" /><script>
+</script><link id="css-bundle" rel="stylesheet" href="//e.snmc.io/dist/css/bundle.css?v=51db7557-c24e-450e-bc12-aa334fe10e81" type="text/css" />
+
+               <style>
+
+                  .ui_fundraiser_letter_date {
+                     text-align:right;
+                     margin-bottom:1em;
+                  }
+
+                  .ui_fundraiser_letter {
+                     background:linear-gradient(to bottom, var(--mono-f), var(--mono-f8));
+                     box-shadow:1px 1px 5px rgba(0,0,0,0.2);
+                     padding:2em 4em;
+                     font-size:1.1em;
+                  }
+
+                  .ui_fundraiser_letter_button_subtext {
+                     font-size:0.8em;
+                     font-weight:normal;
+                  }
+
+                  .ui_fundraiser_letter_button {
+                     height:3.5em;
+                     width:45%;
+                     line-height:1.2;
+                     margin-right:2%;
+                     margin-bottom:1em;
+                     float:left;
+                     display:flex;
+                     flex-direction:column;
+                     align-items:center;
+                     justify-content:center;
+                  }
+
+                  .ui_fundraiser_letter_button_subscribe, .ui_fundraiser_letter_button_subscribe:hover {
+                     background: var(--gen-blue-dark);
+                     color: var(--mono-abs-f);
+                  }
+
+
+                  .ui_fundraiser_letter_button_donate {
+
+                  }
+
+                  .ui_fundraiser_bar_outline {
+                     border:1px solid var(--mono-d8);
+                     height:1em;
+                     width:100%;
+                     border-radius:1em;
+                     overflow:hidden;
+                     background:var(--mono-f8);
+                     position:relative;
+                  }
+
+                  .ui_fundraiser_bar_frame {
+                     padding-right:6%;
+                     margin-bottom:2em;
+                  }
+
+                  .ui_fundraiser_bar_inner {
+                     position:absolute;
+                     top:0;
+                     left:0;
+                     height:1em;
+                     background:crimson;
+
+                     width:50%
+                  }
+
+                  .ui_fundraiser_bar_legend {
+                     width:100%;
+                     height:3em;
+                     margin-top:0.2em;
+                     font-size:0.8em;
+                     color:var(--mono-5);
+                     position:relative;
+                  }
+
+                  .ui_fundraiser_bar_legend_item {
+                     position:absolute;
+                     top:0;
+                     z-index:1;
+                  }
+
+                  .ui_fundraiser_bar_legend_start {
+                     left:0;
+                  }
+
+                  .ui_fundraiser_bar_legend_fundraiser_goal {
+                      right:37.32%;
+                      text-align:right;
+                  }
+
+                  .ui_fundraiser_bar_legend_longterm_goal {
+                     right:0;
+                     text-align:right;
+                  }
+
+                  .ui_fundraiser_bar_goal_divider {
+                     position:absolute;
+                     top:0;
+                      right:37.32%;
+                      height:1em;
+                      width:1px;
+                      background:var(--mono-8)         
+                  }
+
+                  .ui_fundraiser_letter_contents {
+                     padding-right:3em;
+                  }
+
+                  .ui_fundraiser_letter_contents p {
+                     line-height:1.5;
+                  }
+
+                  .ui_fundraiser_current {
+                     xfloat:right;
+                     font-size:0.8em;
+                     line-height:1.2;
+                     color:var(--mono-6);
+                  }
+
+                  @media only screen and (max-width:48em) {
+
+
+                     .ui_fundraiser_letter {
+                        padding:2em 1.5em;
+                     }
+
+                     .ui_fundraiser_letter_contents {
+                        padding-right:0;
+                     }
+
+                  }
+
+               
+             .ui_fundraiser_bar_inner  { width: 5.7%; background: crimson; } </style><script>
           var ts = new Date().valueOf();
 
           var cx='71b8b024dab50badd1c763974fe3b1b2';
@@ -53,8 +189,16 @@ var n=(e,t,s)=>new Promise((d,r)=>{var l=o=>{try{a(s.next(o))}catch(i){r(i)}},c=
             </script>
           <script>
 
-         window.addEventListener('DOMContentLoaded', (event) => {
+         window.addEventListener('load', (event) => {
+               
+
+
              window.dom_loaded = true;
+
+             var gam = document.createElement( 'script' );
+             gam.setAttribute( 'src', 'https://securepubads.g.doubleclick.net/tag/js/gpt.js' );
+             document.body.appendChild( gam );
+            
              console.log('DOM loaded');
              if ( typeof (_adjustFillerColumns) !== 'undefined' ) {
                 _adjustFillerColumns() 
@@ -133,6 +277,32 @@ var n=(e,t,s)=>new Promise((d,r)=>{var l=o=>{try{a(s.next(o))}catch(i){r(i)}},c=
 
 
 
+         <a class="header_item" title="Support RYM by becoming a subscriber"  href="/subscribe/" style="line-height:1.9">
+            <span  data-nosnippet class="subscribe_label_fundraiser" style="font-size:0.8em;font-weight:bold;">fundraiser</span>
+            <div class="ui_fundraiser_bar_frame" style="font-size: 0.4em;
+                                                       position: absolute;
+                                                       bottom: 0.9em;
+                                                       left: 0;
+                                                       right: 0;
+                                                       padding: 0 1.2em;
+                                                       margin:0">
+               <div class="ui_fundraiser_bar">
+                  <div class="ui_fundraiser_bar_outline">
+
+                     <div class="ui_fundraiser_bar_goal_divider">
+
+                     </div>
+
+                     <div class="ui_fundraiser_bar_inner">
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </a>
+
+
+
       
 
       <div class="divider"></div>
@@ -185,7 +355,70 @@ var n=(e,t,s)=>new Promise((d,r)=>{var l=o=>{try{a(s.next(o))}catch(i){r(i)}},c=
          <div id="content_cover"></div>
          <div id="total_cover"></div>
          <div id="content_total_cover"></div>          
-       <div id="breadcrumb"><ul> <li class="currentlong">rateyourmusic.com Terms of Service</li></ul></div>
+      
+         <style>
+            #subscription_update_banner {
+               background:transparent;
+               border-bottom:1px solid var(--mono-d);
+               border-top:1px solid var(--mono-d);
+               max-width:50em;
+               margin:0 auto;
+               margin-bottom:2em;
+               padding:1em 7em 3.5em 3em;
+               position:relative;
+            }
+
+            .subscription_update_title {
+               font-size:1.5em;
+               margin-bottom:0.5em;
+            }
+
+            @media only screen and (max-width:50em) {
+               #subscription_update_banner {
+                  padding-top:1em;
+                  font-size:0.9em;
+               }
+            }
+         </style>
+      
+                 <div data-nosnippet id="subscription_update_banner" class="page_chart_description_container">
+
+                    <div  onClick="rym.request.post('DismissSubscriptionUpdateBanner', {}, null, 'script');"  style="position:absolute;z-index:2;top:0;right:0;padding:1em;color:var(--mono-5);font-size:1.1em;cursor:pointer" class="page_fundraiser_close"><i class="fa fa-times-circle"></i> Close</div>
+
+                    <div class="page_chart_description_textandbtns"> 
+                        <div class="subscription_update_title"> We're launching a subscription drive to help fund our operations in 2021.  </div>
+                        <div class="page_chart_description_btns"> 
+                          <a id="" class="btn flat_btn page_chart_description_btn" href="/subscribe/">Subscribe or donate</a> 
+                        </div> 
+
+                        
+
+                        <div class="ui_fundraiser_bar_frame" style="font-size: 0.7em;
+                                                                   position: absolute;
+                                                                   bottom: 0.9em;
+                                                                   left: 3em;
+                                                                   right: 3em;
+                                                                   padding: 0 1.2em;
+                                                                   margin:0">
+                          <div class="ui_fundraiser_label" style="font-size:1.3em;color:var(--mono-6);font-weight:bold;">Progress</div>
+                           <div class="ui_fundraiser_bar">
+                              <div class="ui_fundraiser_bar_outline">
+
+                                 <div class="ui_fundraiser_bar_goal_divider">
+
+                                 </div>
+
+                                 <div class="ui_fundraiser_bar_inner">
+
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                    </div> 
+                </div>
+
+            <div class="clear"></div> <div id="breadcrumb"><ul> <li class="currentlong">rateyourmusic.com Terms of Service</li></ul></div>
 
 <p><blockquote>
 Please read the following agreement carefully.
@@ -458,7 +691,7 @@ Certain pages on the site include content from YouTube. Usage of this content is
 
 </footer></body></html><script></script>
 
-      <script src="https://e.snmc.io/2.5/js/jquery.min.2.js"></script><script src="//e.snmc.io/dist/js/bundle.js?v=b7727ccf-456b-4b36-90d9-f21808cd744f"></script><link id="css-base-flags" rel="stylesheet" href="//e.snmc.io/dist/css/base/flags.css?v=b7727ccf-456b-4b36-90d9-f21808cd744f" type="text/css" />
+      <script src="https://e.snmc.io/2.5/js/jquery.min.2.js"></script><script src="//e.snmc.io/dist/js/bundle.js?v=51db7557-c24e-450e-bc12-aa334fe10e81"></script><link id="css-base-flags" rel="stylesheet" href="//e.snmc.io/dist/css/base/flags.css?v=51db7557-c24e-450e-bc12-aa334fe10e81" type="text/css" />
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
