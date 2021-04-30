@@ -2,10 +2,10 @@
 <html ng-app="Pillowfort" ng-strict-di data-touch-device="false" data-device-type="node-fetch/1.0 (+https://github.com/bitinn/node-fetch)">
 <head>
 	<title>Terms of Service</title>
-	<link rel="stylesheet" media="all" href="/assets/application-0b8c65231d04922d89d0b161099c75ce55f866f20726ef8d82037650cc1cd907.css" />
-	<script src="/assets/application-a414af0a1d38dce5dd4d00d1fe3021c8bc62e2ccffc81f34045acf45e1bb103d.js"></script>
+	<link rel="stylesheet" media="all" href="/assets/application-36d642f9f612faa73e7ae9cdee534bf0bb46fa9216e5e76905e64f651c1134de.css" />
+	<script src="/assets/application-b53c85c56ad66d1836a3f5dc2126ca8a4d73966c740fd8adb6af1c33ecc87c74.js"></script>
 	<meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="ZiE8GTKD+DXV9QGNyRslp06eEakkzRIX0rovSNu0abth0gsCmYDx0Q+r9RO3mOkvG64pmqIRlXqhfFUgP1POCw==" />
+<meta name="csrf-token" content="1JSrLUR1GKZgcfxPAqzu+Sjvj0nmsb7LMr/5kA+8lIWhHeOBFC61fa3mHbRPYb4rv4E+j/UkkAUOxovpL8tEEg==" />
 	<meta name="HandheldFriendly" content="true" />
 	<meta name="MobileOptimized" content="420" />
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
@@ -29,17 +29,46 @@
 
 
 <body style="background-color: ">
-	<!-- render partial: 'shared/navbar' --> <!-- REMEMBER TO UNCOMMENT LATER -->
+
+	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!--  collapsed button -->
+      <!--button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span-->
+      </button>
+      <!-- logo -->
+      <a class="navbar-brand" id="brand-large" href="/home">Pillowfort</a>
+      <span id="brand-small">
+        <a class="navbar-brand" href="/home">P</a>
+        <a href="" id="sidebar-expand-down"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+        <a href="" id="sidebar-close" style="display:none;"><i class="glyphicon glyphicon-triangle-top"></i></a>
+      </span>
+    </div>
+
+    <div class="navbar-title hidden-sm hidden-xs">
+      
+    </div>
+
+      <div class="nav navbar-right">
+          <div class="inline-block nav-login">
+            <a href="/users/sign_in">Login</a>
+          </div>
+      </div>
+  </div>
+</nav>
+
+<div style="margin-bottom: 54px;" id="navbar-bumper"></div>
 
 
 
 
-<!-- DOWNTIME MESSAGE-->
-<div class="alert alert-warning" style="justify-content:center;display:flex; bottom:0; z-index:500; font-size: 1.3em; padding:15px 35px;">
-	<span>Pillowfort is currently in a "read-only" mode while we attend to some structural issues with the site.
-		You can read more about the situation&nbsp;
-	<a href="/">here</a>.</span>
-</div>
+
+
+
 
 <style>
   .scroll-height{
