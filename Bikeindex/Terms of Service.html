@@ -1,58 +1,19 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" />
-<script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log("... func = "+name);self.isInitialized=true;self.isComplete=true;log("... func.apply: "+name);var funcs=self.funcName.split('.');var func=null;if(funcs.length>3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
-if(typeof func!=='undefined'&&func!==null){func.apply(null,this.parameters);}
-if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log("----- F'D: "+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log("... file = "+name);var scr=document.createElement('script');scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log("----- ERR'D: "+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log("----- F'D: "+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName('head')[0].appendChild(scr);}},fileLoaded:function(name,isComplete){this.name=name;this.path="";this.async=false;this.defer=false;this.isBlock=false;this.blockedBy=[];this.isInitialized=true;this.isError=false;this.isComplete=isComplete;this.proceedIfError=false;this.isTimeDelay=false;this.process=function(){};}};function init(){window.addEventListener("load",function(){setTimeout(function(){timeDelayFired=true;log('TDELAY -----');processAll();},5000);},false);}
-function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
-items[name]=item;checkIfBlocked(item);}
-function setallowLoad(settobool){allowLoad=settobool}
-function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+"_"+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
-items[name]=item;checkIfBlocked(item);}
-function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+' ... '+' FILE! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
-function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+' ... '+' FUNCTION! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
-function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
-function isBlocked(item){if(item.isTimeDelay===true&&timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
-if(item.blockedBy instanceof Array){for(var i=0;i<item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&&items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
-return false;}
-function markLoaded(filename){if(!filename||0===filename.length){return;}
-if(filename in items){var item=items[filename];if(item.isComplete===true){log(item.name+' '+filename+': error loaded duplicate')}else{item.isComplete=true;item.isInitialized=true;}}else{items[filename]=new obj.fileLoaded(filename,true);}
-log("Added dummyfile: "+items[filename]);}
-function log(msg){var href=window.location.href;var reg=new RegExp('[?&]ezq=([^&#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
-function processAll(){count++;if(count>200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
-function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
-init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad,markLoaded:markLoaded,};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.vep=(function(){var pixels=[],pxURL="/detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&&__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
-function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender"){return;}
-if(__ez.dot.isDefined(pixels)&&pixels.length>0){while(pixels.length>0){var j=5;if(j>pixels.length){j=pixels.length;}
-var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&v="+btoa(JSON.stringify(pushPixels));__ez.dot.Fire(pixelURL);}}
-pixels=[];}
-return{Add:AddPixel,Fire:Fire};})();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>__ez.pel=(function(){var pixels=[],pxURL="/porpoiseant/army.gif";function AddAndFirePixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0);Fire();}
-function AddAndFireOrigPixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0,true);Fire();}
-function GetCurrentPixels(){return pixels;}
-function AddPixel(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id,isOrig){if(!__ez.dot.isDefined(adSlot)||__ez.dot.isAnyDefined(adSlot.getSlotElementId,adSlot.ElementId)==false){return;}
-var ad_position_id=parseInt(__ez.dot.getTargeting(adSlot,'ap'));var impId=__ez.dot.getSlotIID(adSlot),adUnit=__ez.dot.getAdUnit(adSlot,isOrig);var compId=parseInt(__ez.dot.getTargeting(adSlot,"compid"));var lineItemId=0;var creativeId=0;var ezimData=getEzimData(adSlot);if(typeof ezimData=='object'){if(ezimData.creative_id!==undefined){creativeId=ezimData.creative_id;}
-if(ezimData.line_item_id!==undefined){lineItemId=ezimData.line_item_id;}}
-if(__ez.dot.isDefined(impId,adUnit)&&__ez.dot.isValid(pixelData)){pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:"",bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:compId,line_item_id:lineItemId,creative_id:creativeId,data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig,});}}
-function AddPixelById(impFullId,pixelData,isOrig){var vals=impFullId.split('/');if(__ez.dot.isDefined(impFullId)&&vals.length===3&&__ez.dot.isValid(pixelData)){var adUnit=vals[0],impId=vals[2];pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig});}}
-function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender")return;if(__ez.dot.isDefined(pixels)&&pixels.length>0){var allPixels=[pixels.filter(function(pixel){return pixel.is_orig}),pixels.filter(function(pixel){return!pixel.is_orig})];allPixels.forEach(function(pixels){while(pixels.length>0){var isOrig=pixels[0].is_orig||false;var j=5;if(j>pixels.length){j=pixels.length;}
-var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(isOrig===true?1:0)+"&sts="+btoa(JSON.stringify(pushPixels));if(typeof window.isAmp!=='undefined'&&isAmp&&typeof window._ezaq!=='undefined'&&_ezaq.hasOwnProperty("domain_id")){pixelURL+="&visit_uuid="+_ezaq['visit_uuid'];}
-__ez.dot.Fire(pixelURL);}})}
-pixels=[];}
-function getEzimData(adSlot){if(typeof _ezim_d=="undefined"){return false}
-var adUnitName=__ez.dot.getAdUnitPath(adSlot).split('/').pop();if(typeof _ezim_d==='object'&&_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
-for(var ezimKey in _ezim_d){if(ezimKey.split('/').pop()===adUnitName){return _ezim_d[ezimKey];}}
-return false;}
-return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();</script>
-<meta content="The best bike registry: Simple, secure and free." property="og:description" />
-<meta content="The best bike registry: Simple, secure and free." property="twitter:description" />
-<meta content="Terms" property="og:title" />
-<meta content="Terms" property="twitter:title" />
-<meta content="https://bikeindex.org/terms" property="og:url" />
-<meta content="/bike_index.png" property="og:image" />
-<meta content="/bike_index.png" property="twitter:image" />
-<meta content="Bike Index" property="og:site_name" />
-<meta content="223376277803071" property="fb:app_id" />
-<meta content="summary" property="twitter:card" />
-<meta content="@bikeindex" property="twitter:creator" />
-<meta content="@bikeindex" property="twitter:site" />
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta content="The best bike registry: Simple, secure and free." property="og:description"></meta>
+<meta content="The best bike registry: Simple, secure and free." property="twitter:description"></meta>
+<meta content="Terms" property="og:title"></meta>
+<meta content="Terms" property="twitter:title"></meta>
+<meta content="https://bikeindex.org/terms" property="og:url"></meta>
+<meta content="/bike_index.png" property="og:image"></meta>
+<meta content="/bike_index.png" property="twitter:image"></meta>
+<meta content="Bike Index" property="og:site_name"></meta>
+<meta content="223376277803071" property="fb:app_id"></meta>
+<meta content="summary" property="twitter:card"></meta>
+<meta content="@bikeindex" property="twitter:creator"></meta>
+<meta content="@bikeindex" property="twitter:site"></meta>
+<meta charset="utf-8" />
 <meta http-equiv="Content-Language" content="en" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width" />
@@ -61,12 +22,12 @@ return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixe
 <link rel="shortcut icon" href="/fav.ico" />
 <link rel="apple-touch-icon-precomposed apple-touch-icon" href="/apple_touch_icon.png" />
 <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="stT7SWNDAKjDti6A9jlGNbFg7Ttfls3We2tpDK5fqmiQa8fXSzRhEUbbmVmbxhWw8b0c9Y7fUCkfmLiVIwRpCw==" />
-<link rel="stylesheet" media="all" href="/assets/revised-5fadb542560fe03ad3718d098281cce7da000e78dca5ff77107ca808b52b0125.css" />
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,700" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+<meta name="csrf-token" content="2HRz90ESbTNcxbCTvNGI0xsGlfBxg516tqrI0SiwciCiBPLWBHD1PCZ8Mqw7W6bLiLWn5Xc4WO0F5sRclvoBzw" />
+<link rel="stylesheet" media="all" href="/assets/revised-c1cc798ec156f46df3dc89fba7bc975b4d5d28b1d17a317557698b471085e989.css" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <script src="https://kit.fontawesome.com/82eb17360c.js"></script>
-<script src="/assets/application_revised-f73171ff6da0aaa982f08718552067a670a136629975fda8d337ab9baef8b1e6.js"></script>
+<script src="/assets/application_revised-0eab3a75beeaa0370a1256d7bac2e31954e50c0938bf92a062eea15a76a37553.js"></script>
 <script>
   window.BikeIndex.translator = (keyspace) => {
     return (key, args={}) => I18n.t(`javascript.${keyspace}.${key}`, args);
@@ -76,99 +37,51 @@ return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixe
   ga('send', 'pageview');
 </script>
 <!--[if IE]>$('body').prepend("<div id='old-browser-warning'><h4>Your browser is out of date!</h4><p>As a result, Bike Index will not function correctly. <a href=\"http://whatbrowser.com\">Learn more here</a>.</p></div>")<![endif]-->
-<link rel='canonical' href='https://bikeindex.org/terms' />
-<script type="text/javascript">var ezouid = "1";</script><base href="https://bikeindex.org/terms"><script type='text/javascript'>
-var ezoTemplate = 'old_site_noads';
-if(typeof ezouid == 'undefined')
-{
-    var ezouid = 'none';
-}
-var ezoFormfactor = '1';
-var ezo_elements_to_check = Array();
-</script>
-<script data-ezscrex="false" type='text/javascript'>
-var soc_app_id = '0';
-var did = 245769;
-var ezdomain = 'bikeindex.org';
-var ezoicSearchable = 1;
-</script>
-
-
-<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"","country":"AT","days_since_last_visit":-1,"domain_id":245769,"engaged_time_visit":0,"ezcache_level":1,"ezcache_skip_code":11,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"f430d5a1-158f-46a6-70ae-228647b3d29b","position_selection_id":0,"postal_code":"","pv_event_count":0,"response_size_orig":20272,"response_time_orig":301,"serverid":"3.121.86.153:15259","state":"","t_epoch":1617638440,"template_id":120,"time_on_site_visit":0,"url":"https://bikeindex.org/terms","user_id":0,"weather_precipitation":0,"weather_summary":"","weather_temperature":0,"word_count":1438,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
-<script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
-function create_ezolpl(pvID, rv) {
-    var d = new Date();
-    d.setTime(d.getTime() + (365*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
-    __ez.ck.setByCat("ezux_lpl_245769=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
-}
-function attach_ezolpl(pvID, rv) {
-    if (document.readyState === "complete") {
-        create_ezolpl(pvID, rv);
-    }
-    if(window.attachEvent) {
-        window.attachEvent("onload", create_ezolpl, pvID, rv);
-    } else {
-        if(window.onload) {
-            var curronload = window.onload;
-            var newonload = function(evt) {
-                curronload(evt);
-                create_ezolpl(pvID, rv);
-            };
-            window.onload = newonload;
-        } else {
-            window.onload = create_ezolpl.bind(null, pvID, rv);
-        }
-    }
-}
-
-__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["f430d5a1-158f-46a6-70ae-228647b3d29b", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
-</script>
-<script type="text/javascript">var _audins_dom="bikeindex_org",_audins_did=245769;__ez.queue.addFile('/detroitchicago/cmb.js', '/detroitchicago/cmb.js?gcb=194-0&cb=01-100-103-804-10d-506-507-50a-30c-30e-213-321-&cmbcb=6&01&00&03&04&0d&06&07&0a&0c&0e&13&21', true, [], true, false, true, false);</script></head>
-<body class="" id="info_terms">
-<nav class="primary-header-nav">
-<div class="container">
-<a class="primary-logo" href="https://bikeindex.org/">
+</head>
+<body class='' id='info_terms'>
+<nav class='primary-header-nav'>
+<div class='container'>
+<a class='primary-logo' href='https://bikeindex.org/'>
 <img class="primary-nav" alt="Bike Index home" src="/assets/revised/logo-b5b90b10f3084a33e26097ffff6528ca15766eaeb008c5a6d0e242605ccad3b8.svg" />
 </a>
 <a class="nonprofit-subtitle" href="/news/bike-index--now-a-nonprofit">the non-profit bike registry
-</a><div class="center-navbar-signup-link-container">
+</a><div class='center-navbar-signup-link-container'>
 <a class="center-navbar-signup-link signup-link upcase" href="https://bikeindex.org/users/new">Sign up</a>
 </div>
-<a aria-hidden="true" id="menu-opened-backdrop"></a>
-<div aria-hidden="true" class="hamburgler">
-<a id="primary_nav_hamburgler"></a>
+<a aria-hidden='true' id='menu-opened-backdrop'></a>
+<div aria-hidden='true' class='hamburgler'>
+<a id='primary_nav_hamburgler'></a>
 </div>
-<ul class="primary-main-menu">
-<li class="primary-nav-item d-lg-none">
+<ul class='primary-main-menu'>
+<li class='primary-nav-item d-lg-none'>
 <a class="nav-link defaultBikeSearchLink " id="search_bikes_header_link" href="/bikes?stolenness=all">Search bikes</a>
 </li>
-<li aria-hidden="true" class="divider-nav-item d-lg-none"></li>
-<li class="primary-nav-item">
+<li aria-hidden='true' class='divider-nav-item d-lg-none'></li>
+<li class='primary-nav-item'>
 <a class="nav-link signup-link" href="https://bikeindex.org/users/new">Sign up</a>
 </li>
-<li class="primary-nav-item">
+<li class='primary-nav-item'>
 <a class="nav-link" href="https://bikeindex.org/session/new">log in</a>
 </li>
-<li class="primary-nav-item">
+<li class='primary-nav-item'>
 <a class="nav-link" href="/help">Help</a>
 </li>
-<li class="primary-nav-item">
+<li class='primary-nav-item'>
 <a class="nav-link" href="/info/how-to-get-your-stolen-bike-back">Stolen bike?</a>
 </li>
-<li class="primary-nav-item">
+<li class='primary-nav-item'>
 <a class="nav-link" href="/why-donate">Donate</a>
 </li>
-<li class="primary-nav-item">
+<li class='primary-nav-item'>
 <a class="nav-link" href="/news">Blog</a>
 </li>
-<li class="primary-nav-item d-none d-lg-block">
+<li class='primary-nav-item d-none d-lg-block'>
 <a class="nav-link defaultBikeSearchLink " match_controller="true" href="/bikes?stolenness=all">Search bikes</a>
 </li>
 </ul>
 </div>
 </nav>
-<div class="primary-alert-block">
+<div class='primary-alert-block'>
 </div>
 <script id="alert-template" type="x-tmpl-mustache">
   <div class="alert alert-{{alert_type}} in" data-seconds="{{seconds}}">
@@ -178,7 +91,7 @@ __ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["f430d5a1-158f-46a6-70ae-2
     {{alert_body}}
   </div>
 </script>
-<div class="inner-recep legal-content" id="legal-terms">
+<div class='inner-recep legal-content' id='legal-terms'>
 <header>
 <h1>
 <a name="terms-of-service" class="anchor" href="#terms-of-service">
@@ -189,13 +102,13 @@ Terms of Service
 <p>
 Last updated July 29th, 2017. Previous versions and the change history is <a href="https://github.com/bikeindex/bike_index/tree/main/app/views/info/_terms_text.html.erb">available here</a>.
 </p>
-<hr />
+<hr>
 </header>
 <h2>
 <a name="about-our-terms-of-service" class="anchor" href="#about-our-terms-of-service"><span class="mini-icon mini-icon-link"></span></a>
 About our Terms of Service
 </h2>
-<p><strong>Welcome to Bike Index</strong>, a 501(c)(3) nonprofit. We&#39;ve developed a publicly-accessible bike registration service (the &#34;Service&#34;) that gives you the ability to save and share your bikes on the internet.</p>
+<p><strong>Welcome to Bike Index</strong>, a 501(c)(3) nonprofit. We've developed a publicly-accessible bike registration service (the "Service") that gives you the ability to save and share your bikes on the internet.</p>
 <p>By giving bike shops, biking organizations and police departments the ability to register bikes directly for their constituents we aim to incentivize bike registration, support local cycling culture and ensure accurate registrations. We have tried to draft this Terms of Service to be as simple and comprehensible as possible. Unfortunately, the realities of the legal world make that a very difficult task. So, should you have any questions or concerns, or simply want to better understand how we do things at Bike Index, please do not hesitate to <a href="/contact_us">contact us</a>.</p>
 <h1 id="section_a">
 <a name="section-a-acceptance-of-terms" class="anchor" href="#section-a-acceptance-of-terms"><span class="mini-icon mini-icon-link"></span></a>
@@ -203,7 +116,7 @@ Section A: User&#39;s Acknowledgment and Acceptance of Terms
 </h1>
 <ol>
 <li>
-<p>By creating an &#34;Account&#34; and using the BikeIndex.org web site (&#34;Service&#34;), or any services of Bike Index, NFP (&#34;Bike Index&#34;), you are agreeing to be bound by the following terms and conditions (&#34;Terms of Service&#34;). IF YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE AUTHORITY TO BIND SUCH ENTITY, ITS AFFILIATES AND ALL USERS WHO ACCESS OUR SERVICES THROUGH YOUR ACCOUNT TO THESE TERMS AND CONDITIONS, IN WHICH CASE THE TERMS &#34;YOU&#34; OR &#34;YOUR&#34; SHALL REFER TO SUCH ENTITY, ITS AFFILIATES AND USERS ASSOCIATED WITH IT. IF YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO NOT AGREE WITH THESE TERMS AND CONDITIONS, YOU MUST NOT ACCEPT THIS AGREEMENT AND MAY NOT USE THE SERVICES.</p>
+<p>By creating an &quot;Account&quot; and using the BikeIndex.org web site (&quot;Service&quot;), or any services of Bike Index, NFP (&quot;Bike Index&quot;), you are agreeing to be bound by the following terms and conditions (&quot;Terms of Service&quot;). IF YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE AUTHORITY TO BIND SUCH ENTITY, ITS AFFILIATES AND ALL USERS WHO ACCESS OUR SERVICES THROUGH YOUR ACCOUNT TO THESE TERMS AND CONDITIONS, IN WHICH CASE THE TERMS &quot;YOU&quot; OR &quot;YOUR&quot; SHALL REFER TO SUCH ENTITY, ITS AFFILIATES AND USERS ASSOCIATED WITH IT. IF YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO NOT AGREE WITH THESE TERMS AND CONDITIONS, YOU MUST NOT ACCEPT THIS AGREEMENT AND MAY NOT USE THE SERVICES.</p>
 </li>
 <li>
 <p>
@@ -212,7 +125,7 @@ If Bike Index makes material changes to these Terms, we will notify you by email
 </li>
 <li>
 <p>
-Content&#34; on the Service is defined by any information Users input into the service. Users are defined as those who utilize the Bike Index Service and agree to the Terms of Service. While Bike Index prohibits some conduct and Content on the Service, you understand and agree that Bike Index cannot be responsible for the Content posted on the Service and you nonetheless may be exposed to such materials. you agree to use the Service at your own risk. Violation of any of the terms below will result in the termination of your Account.
+Content&quot; on the Service is defined by any information Users input into the service. Users are defined as those who utilize the Bike Index Service and agree to the Terms of Service. While Bike Index prohibits some conduct and Content on the Service, you understand and agree that Bike Index cannot be responsible for the Content posted on the Service and you nonetheless may be exposed to such materials. you agree to use the Service at your own risk. Violation of any of the terms below will result in the termination of your Account.
 </p>
 </li>
 </ol>
@@ -223,7 +136,7 @@ Section B: Account Terms
 <ol>
 <li>
 <p>
-You must be a human. Accounts registered by &#34;bots&#34; or other automated methods are not permitted.
+You must be a human. Accounts registered by &quot;bots&quot; or other automated methods are not permitted.
 </p>
 </li>
 <li>
@@ -294,7 +207,7 @@ Section E: General Conditions
 <ol>
 <li>
 <p>
-Your use of the Service is at your sole risk. The service is provided on an &#34;as is&#34; and &#34;as available&#34; basis.
+Your use of the Service is at your sole risk. The service is provided on an &quot;as is&quot; and &quot;as available&quot; basis.
 </p>
 </li>
 <li>
@@ -334,7 +247,7 @@ You understand that the technical processing and transmission of the Service, in
 </li>
 <li>
 <p>
-You must not upload, post, host, or transmit unsolicited email, SMSs, or &#34;spam&#34; messages.
+You must not upload, post, host, or transmit unsolicited email, SMSs, or &quot;spam&quot; messages.
 </p>
 </li>
 <li>
@@ -354,11 +267,11 @@ Questions about the Terms of Service should be sent to <a href="mailto:contact@b
 </li>
 </ol>
 </div>
-<footer class="primary-footer">
-<div class="primary-footer-nav">
-<div class="container">
-<div class="row">
-<nav class="col-md-2 pull-right">
+<footer class='primary-footer'>
+<div class='primary-footer-nav'>
+<div class='container'>
+<div class='row'>
+<nav class='col-md-2 pull-right'>
 <h4>Bike Index</h4>
 <ul>
 <li><a class="" href="/support">FAQ</a></li>
@@ -370,7 +283,7 @@ Questions about the Terms of Service should be sent to <a href="mailto:contact@b
 <li><a class="" href="/info/how-to-get-your-stolen-bike-back">Get your stolen bike back</a></li>
 </ul>
 </nav>
-<nav class="col-md-2 pull-right">
+<nav class='col-md-2 pull-right'>
 <h4>Support Us</h4>
 <ul>
 <li><a class="" href="/why-donate">Donate</a></li>
@@ -378,19 +291,19 @@ Questions about the Terms of Service should be sent to <a href="mailto:contact@b
 <li><a class="" href="/ambassadors_how_to">Ambassadors</a></li>
 </ul>
 </nav>
-<nav class="col-md-2 pull-right">
+<nav class='col-md-2 pull-right'>
 <h4>Resources</h4>
 <ul>
 <li><a class="" href="/documentation">API documentation</a></li>
 <li><a class="" href="/dev_and_design">Dev Resources</a></li>
-<li><a class="" href="/image_resources">Design &amp; Logos</a></li>
+<li><a class="" href="/image_resources">Design & Logos</a></li>
 <li><a class="" href="/security">Security</a></li>
 <li><a class="" href="/manufacturers">Bike Manufacturer List</a></li>
 <li><a class="" href="/protect_your_bike">Protect your bike</a></li>
 <li><a class="" href="https://map.bikewise.org/">Stolen Bike Map</a></li>
 </ul>
 </nav>
-<nav class="col-md-2 pull-right">
+<nav class='col-md-2 pull-right'>
 <h4>Who we serve</h4>
 <ul>
 <li><a class="" href="/for_bike_shops">Bike Shops</a></li>
@@ -400,32 +313,32 @@ Questions about the Terms of Service should be sent to <a href="mailto:contact@b
 <li><a class="" href="/for_community_groups">Community Groups</a></li>
 </ul>
 </nav>
-<nav class="col-md-2 pull-right"></nav>
-<nav class="col-md-2 social-nav">
+<nav class='col-md-2 pull-right'></nav>
+<nav class='col-md-2 social-nav'>
 <ul>
 <li>
-<a href="https://facebook.com/bikeindex"><span class="sr-only">Bike Index Facebook</span>
-<i class="fab fa-facebook-square fa-3x"></i>
+<a href="https://facebook.com/bikeindex"><span class='sr-only'>Bike Index Facebook</span>
+<i class='fab fa-facebook-square fa-3x'></i>
 </a></li>
 <li>
-<a href="https://twitter.com/BikeIndex"><span class="sr-only">Bike Index Twitter</span>
-<i class="fab fa-twitter fa-3x"></i>
+<a href="https://twitter.com/BikeIndex"><span class='sr-only'>Bike Index Twitter</span>
+<i class='fab fa-twitter fa-3x'></i>
 </a></li>
 <li>
-<a href="https://instagram.com/bikeindex"><span class="sr-only">Bike Index Instagram</span>
-<i class="fab fa-instagram fa-3x"></i>
+<a href="https://instagram.com/bikeindex"><span class='sr-only'>Bike Index Instagram</span>
+<i class='fab fa-instagram fa-3x'></i>
 </a></li>
 </ul>
 </nav>
 </div>
 </div>
 </div>
-<nav class="terms-and-stuff">
-<div class="container">
-<div class="row">
-<div class="col-md-6 text-left">
-<form class="locale-form" action="/terms" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓" /><div class="row">
-<div class="form-group">
+<nav class='terms-and-stuff'>
+<div class='container'>
+<div class='row'>
+<div class='col-md-6 text-left'>
+<form class="locale-form" action="/bikes/556125" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" /><div class='row'>
+<div class='form-group'>
 <label for="locale">Language</label>
 <select name="locale" id="locale" class="form-control-sm" onchange="this.form.submit()"><option selected="selected" value="en">English</option>
 <option value="nl">Nederlands (Dutch)</option></select>
@@ -433,13 +346,13 @@ Questions about the Terms of Service should be sent to <a href="mailto:contact@b
 </div>
 </div>
 </form></div>
-<div class="col-md-6 text-right">
+<div class='col-md-6 text-right'>
 <p>
 <a href="https://bikeindex.org/privacy">Privacy policy</a> and <a href="https://bikeindex.org/terms">terms and conditions</a>
 </p>
 <p>
-<span data-license="https://github.com/bikeindex/bike_index/blob/main/LICENSE">
-2021 © Bike Index, a 501(c)(3) nonprofit - EIN 81-4296194
+<span data-license='https://github.com/bikeindex/bike_index/blob/main/LICENSE'>
+2021 &copy; Bike Index, a 501(c)(3) nonprofit - EIN 81-4296194
 </span>
 </p>
 </div>
@@ -466,10 +379,9 @@ src="https://www.facebook.com/tr?id=199066297131941&ev=PageView&noscript=1"/></n
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K88RMWC');
 </script>
 <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K88RMWC" height="0" width="0" style="display:none;visibility:hidden" title="Google tag manager"></iframe>
+</body>
+</html>
 <script>
   I18n.defaultLocale = "en"
   I18n.locale = "en"
 </script>
-<script type='text/javascript' style='display:none;' async>
-</script>
-<script type="text/javascript" data-cfasync="false"></script></body></html>
