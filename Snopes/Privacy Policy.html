@@ -170,13 +170,93 @@
 <link rel='dns-prefetch' href='//snopes.zeustechnology.com' />
 <link rel='dns-prefetch' href='//www.snopes.com' />
 <link rel='dns-prefetch' href='//iframe.ly' />
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel="alternate" type="application/rss+xml" title="Snopes.com &raquo; Feed" href="https://www.snopes.com/feed/" />
 <link rel='stylesheet' id='snopes-smg-frontend-css'  href='https://www.snopes.com/content/mu-plugins/smg/dist/741bf762e2d18752cc3a-frontend.css' type='text/css' integrity='sha384-FRWfl37NWOH/moniKhf1uk5UUMAebOzy80y+xyOd0gjoYUmPwf4spTyfzdCxmipH' media='all' />
 <link rel='stylesheet' id='wp-block-library-css'  href='https://www.snopes.com/wp-includes/css/dist/block-library/style.min.css?ver=5.6.2' type='text/css' media='all' />
-<link rel='stylesheet' id='vendor/fonts/ibm-plex-sans-css'  href='https://fonts.googleapis.com/css?family=IBM+Plex+Sans%3A300%2C400%2C500%2C600%2C700&#038;display=swap&#038;ver=5.6.2' type='text/css' media='all' />
-<link rel='stylesheet' id='vendor/fonts/ibm-plex-serif-css'  href='https://fonts.googleapis.com/css?family=IBM+Plex+Serif%3A400%2C500%2C500i%2C600%2C700&#038;display=swap&#038;ver=5.6.2' type='text/css' media='all' />
 <link rel='stylesheet' id='snopes/css/main-css'  href='https://www.snopes.com/content/themes/snopes/dist/styles/cdb11b6b5e7e09a559e5-main.css' type='text/css' integrity='sha384-PaWdERzXmoEo6DiWmJShtCNU/H4/gv7hpYSbm7Mvo9W7vuMeKk45vtR/MK6nxYCW' media='all' />
+<style id='snopes/css/main-inline-css' type='text/css'>
+
+	/* latin-ext */
+	@font-face {
+	  font-family: 'IBM Plex Sans';
+	  font-style: normal;
+	  font-weight: 300;
+	  font-display: swap;
+	  src: url(https://fonts.gstatic.com/s/ibmplexsans/v8/zYX9KVElMYYaJe8bpLHnCwDKjXr8AI9sdP3pBmtF8A.woff2) format('woff2');
+	  unicode-range: U+0100-024F;
+	}
+
+	/* latin */
+	@font-face {
+	  font-family: 'IBM Plex Sans';
+	  font-style: normal;
+	  font-weight: 300;
+	  font-display: swap;
+	  src: url(https://fonts.gstatic.com/s/ibmplexsans/v8/zYX9KVElMYYaJe8bpLHnCwDKjXr8AIFsdP3pBms.woff2) format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+
+	/* latin-ext */
+	@font-face {
+	  font-family: 'IBM Plex Sans';
+	  font-style: normal;
+	  font-weight: 400;
+	  font-display: swap;
+	  src: url(https://fonts.gstatic.com/s/ibmplexsans/v8/zYXgKVElMYYaJe8bpLHnCwDKhd_eFaxOedfTDw.woff2) format('woff2');
+	  unicode-range: U+0100-024F;
+	}
+
+	/* latin */
+	@font-face {
+	  font-family: 'IBM Plex Sans';
+	  font-style: normal;
+	  font-weight: 400;
+	  font-display: swap;
+	  src: url(https://fonts.gstatic.com/s/ibmplexsans/v8/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2) format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+
+	/* latin-ext */
+	@font-face {
+	  font-family: 'IBM Plex Sans';
+	  font-style: normal;
+	  font-weight: 500;
+	  font-display: swap;
+	  src: url(https://fonts.gstatic.com/s/ibmplexsans/v8/zYX9KVElMYYaJe8bpLHnCwDKjSL9AI9sdP3pBmtF8A.woff2) format('woff2');
+	  unicode-range: U+0100-024F;
+	}
+
+	/* latin */
+	@font-face {
+	  font-family: 'IBM Plex Sans';
+	  font-style: normal;
+	  font-weight: 500;
+	  font-display: swap;
+	  src: url(https://fonts.gstatic.com/s/ibmplexsans/v8/zYX9KVElMYYaJe8bpLHnCwDKjSL9AIFsdP3pBms.woff2) format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+	/* latin-ext */
+	@font-face {
+	  font-family: 'IBM Plex Sans';
+	  font-style: normal;
+	  font-weight: 600;
+	  font-display: swap;
+	  src: url(https://fonts.gstatic.com/s/ibmplexsans/v8/zYX9KVElMYYaJe8bpLHnCwDKjQ76AI9sdP3pBmtF8A.woff2) format('woff2');
+	  unicode-range: U+0100-024F;
+	}
+
+	/* latin */
+	@font-face {
+	  font-family: 'IBM Plex Sans';
+	  font-style: normal;
+	  font-weight: 600;
+	  font-display: swap;
+	  src: url(https://fonts.gstatic.com/s/ibmplexsans/v8/zYX9KVElMYYaJe8bpLHnCwDKjQ76AIFsdP3pBms.woff2) format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	
+</style>
 <script type='text/javascript' src='https://cdn.iubenda.com/cs/tcf/stub-v2.js?ver=5.6.2' id='vendor/iubenda/iab_tcf_stub-js'></script>
 <script type='text/javascript' src='https://cdn.iubenda.com/cs/tcf/safe-tcf-v2.js?ver=5.6.2' id='vendor/iubenda/iab_tcf_safe_tcf-js'></script>
 <script type='text/javascript' async async src='https://cdn.iubenda.com/cons/iubenda_cons.js?ver=5.6.2' id='vendor/iubenda/consent-js'></script>
@@ -186,7 +266,7 @@
 <script type='text/javascript' src='https://snopes.zeustechnology.com/main.js?ver=5.6.2' id='zeus-ad-manager-js'></script>
 <script type='text/javascript' id='snopes-smg-data-js-extra'>
 /* <![CDATA[ */
-var smg = {"nonce":"68ce23a6d2","ajax_url":"https:\/\/www.snopes.com\/wp-admin\/admin-ajax.php","host":"https:\/\/www.snopes.com","api":{"root_endpoint":"https:\/\/www.snopes.com\/wp-json\/smg\/v1\/","nonce":"474343a5bf","auth0_domain":"login.snopes.com","auth0_client_id":"bOldEtXzXSg9l612QILJZ2vXn9oR5sfq","shopify_domain":"snopes.myshopify.com"},"page_data":{"url":"https:\/\/www.snopes.com\/privacy-policy\/","template":"page","post_id":26082,"author":"57","author_name":"Team Snopes","title":"Your privacy matters to us.","date_published":"","date_updated":""},"ads":{"url":"https:\/\/www.snopes.com\/privacy-policy\/","template":"page","post_id":26082,"author":"57","author_name":"Team Snopes","title":"Your privacy matters to us.","date_published":"","date_updated":"","defaultMainConnector":"zeus","placements":[],"enable":false},"is_eu":"true","digest_id":"RYbCCy","user":{"msg_map":{"general":"Something went wrong. Please contact customer service.","invalid-nonce":"Invalid nonce","bad-wp-id":"Something went wrong. Please contact customer service.","denylisted-email-host":"Snopes staff can not use their work email for authenticating on the frontend.","invalid-token":"Invalid token","bad-session":"An issue may be occurring on select browsers. Please try logging in using another browser.","crypto-invalid":"crypt validation failed","invalid_user_password":"Please enter a valid verification code.","not-an-email":"Please enter a valid email address","too_many_attempts":"Too many login attempts. Please check your email for next steps"}},"collections":{"api":{"rootEndpoint":"https:\/\/www.snopes.com\/wp-json\/smg\/v1\/"}}};
+var smg = {"nonce":"cd03249383","ajax_url":"https:\/\/www.snopes.com\/wp-admin\/admin-ajax.php","host":"https:\/\/www.snopes.com","api":{"root_endpoint":"https:\/\/www.snopes.com\/wp-json\/smg\/v1\/","nonce":"884e0dea7d","auth0_domain":"login.snopes.com","auth0_client_id":"bOldEtXzXSg9l612QILJZ2vXn9oR5sfq","shopify_domain":"snopes.myshopify.com"},"page_data":{"url":"https:\/\/www.snopes.com\/privacy-policy\/","template":"page","post_id":26082,"author":"57","author_name":"Team Snopes","title":"Your privacy matters to us.","date_published":"","date_updated":""},"ads":{"url":"https:\/\/www.snopes.com\/privacy-policy\/","template":"page","post_id":26082,"author":"57","author_name":"Team Snopes","title":"Your privacy matters to us.","date_published":"","date_updated":"","defaultMainConnector":"zeus","placements":[],"enable":false},"is_eu":"true","digest_id":"RYbCCy","user":{"msg_map":{"general":"Something went wrong. Please contact customer service.","invalid-nonce":"Invalid nonce","bad-wp-id":"Something went wrong. Please contact customer service.","denylisted-email-host":"Snopes staff can not use their work email for authenticating on the frontend.","invalid-token":"Invalid token","bad-session":"An issue may be occurring on select browsers. Please try logging in using another browser.","crypto-invalid":"crypt validation failed","invalid_user_password":"Please enter a valid verification code.","not-an-email":"Please enter a valid email address","too_many_attempts":"Too many login attempts. Please check your email for next steps"}},"collections":{"api":{"rootEndpoint":"https:\/\/www.snopes.com\/wp-json\/smg\/v1\/"}}};
 /* ]]> */
 </script>
 <script type='text/javascript' integrity='sha384-TPiJ58kar/UcD2TuioKvT3OAfp4qlalBe1ECzWO2Wxx8qfsRN1ilmUSeHxhgXQeL' src='https://www.snopes.com/content/mu-plugins/smg/dist/d3f1262cb5df41d0a1bb-ads.js' id='ads-js'></script>
@@ -790,6 +870,6 @@ var consent_api = {"consent_type":"optin","waitfor_consent_hook":"","cookie_expi
 
 </html>
 <!--
-	generated in 0.162 seconds
-	44599 bytes batcached for 300 seconds
+	generated in 0.131 seconds
+	47014 bytes batcached for 300 seconds
 -->
