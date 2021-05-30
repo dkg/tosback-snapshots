@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/bundles/bamwebsaver/css/jquery-ui-style/jquery-ui.min.css"/>
     <link rel="stylesheet" href="/bundles/bamwebsaver/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/bundles/bamwebsaver/css/style.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     
         <script type="text/javascript">
         var locale = "en";
@@ -33,7 +34,7 @@
     <script src="/bundles/bamwebsaver/js/bootstrap.min.js"></script>
     <script src="/bundles/bamwebsaver/js/jquery-ui.min.js"></script>
     <script src="/bundles/bamwebsaver/js/detectmobilebrowser.js"></script>
-    <script src="/bundles/bamwebsaver/js/main.js?t=1620014717"></script>
+    <script src="/bundles/bamwebsaver/js/main.js?t=1622383556"></script>
 
     <!--[if IE 8 ]>
     <script src="/bundles/bamwebsaver/js/respond.src.js"></script>
@@ -62,6 +63,32 @@
         });
     </script>
         
+
+    <script type="text/javascript">
+        $('document').ready(function () {
+            // Adding tracking event onClick to an element
+                            var btnClicksTracking = [];
+                for (var i = 0; i < btnClicksTracking.length; i++) {
+                    if(btnClicksTracking[i].route === 'all' || btnClicksTracking[i].route === "_terms_conditions") {
+                        var selectorType = btnClicksTracking[i].selector.charAt(0);
+                        var selector = btnClicksTracking[i].selector.substring(1);
+                        var script = btnClicksTracking[i].script;
+                        if (selectorType === '.') {
+                            // Class selector
+                            var elementIdTrackClick = document.getElementsByClassName(selector);
+                        }
+
+                        if (selectorType === '#') {
+                            // ID selector
+                            var elementIdTrackClick = document.getElementById(selector);
+                        }
+
+                        elementIdTrackClick.onclick = script;
+                    }
+                }
+                    });
+    </script>
+
             <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -79,6 +106,15 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=484757739596016&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src='https://www.googletagmanager.com/gtag/js?id=UA-10302159-31'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10302159-31');
+</script>
                 
                 
                 
@@ -130,12 +166,12 @@ src="https://www.facebook.com/tr?id=484757739596016&ev=PageView&noscript=1"
                                                          href="/en_ca/coupons/">Printable Coupons</a>
 
                             </li>
-                                                        <li class='flyer'><a
-                                        href="/en_ca/digital">Digital Coupons</a>
-                            </li>
+                                                            <li class='flyer'><a
+                                            href="/en_ca/digital">Digital Coupons</a>
+                                </li>
                                                         <li class='club'><a href="/en_ca/_zebra_redirecting">Mail Coupons</a>
                             </li>
-                                                                                                                                                
+                                                                                                                    
                             <li class='flyer'><a href="https://www.salewhale.ca/en/"
                                                  target="_blank">Weekly Flyers</a>
                             </li>
@@ -152,6 +188,42 @@ src="https://www.facebook.com/tr?id=484757739596016&ev=PageView&noscript=1"
         </div>
     </div>
 </div>
+
+<style>
+    .modal-backdrop {
+        opacity: 0.9 !important;
+    }
+</style>
+<!-- Modal Popup Registration -->
+<div class="modal fade in" id="modalPopRegistration" tabindex="-1" role="dialog"
+     aria-labelledby="modalPopRegistration" aria-hidden="false">
+    <div class="modal-dialog modal-lg" role="document">
+
+        <!--Content-->
+        <div class="modal-content" style="
+    background: transparent;
+    border: none;
+    box-shadow: none;
+">
+            <button id="popRegistrationBtn" type="button" class="btn" data-dismiss="modal">
+                X
+            </button>
+
+            <!--Body-->
+            <div class="">
+                <div class="">
+                                            <a id="clickRegistrationPopup" onclick="gtag('event', 'click', { 'event_label': 'EN Pop Up 1', 'event_category': 'Contest', 'value': 1 });" href="/en_ca/registration/">
+                            <img id="popRegistrationImg" src="https://ws-public-images.s3.amazonaws.com/Prod/webSaver/images/websaver_popup_4_en.jpg">
+                        </a>
+                                    </div>
+
+            </div>
+        </div>
+        <!--/.Content-->
+
+    </div>
+</div>
+
 <script>
     // Digital coupons
     if (typeof (Storage) !== "undefined") {
@@ -351,7 +423,7 @@ src="https://www.facebook.com/tr?id=484757739596016&ev=PageView&noscript=1"
                                 <li><a href="/en_ca/coupons/">Printable Coupons</a></li>
                                 <li><a href="http://blog.websaver.ca" target="_blank">Blog</a></li>
                                 <li><a href="/en_ca/grocery-brands">Brands</a></li>
-                                                                 <li><a href="/%7B_locale_ca/retailservices">Retailer Services</a></li>
+                                                                 <li><a href="/en_ca/retailservices">Retailer Services</a></li>
                                                             </ul>
                         </div>
 
@@ -364,6 +436,7 @@ src="https://www.facebook.com/tr?id=484757739596016&ev=PageView&noscript=1"
                         </div>
                         <div class="col-sm-4">
                             <ul>
+                                <li><a href="/en_ca/about-us/">About Us</a></li>
                                 <li><a href="/en_ca/faq/">FAQ</a></li>
                                 <li><a href="/en_ca/contact-us/">Contact Us</a></li>
                             </ul>
@@ -409,6 +482,71 @@ src="https://www.facebook.com/tr?id=484757739596016&ev=PageView&noscript=1"
 <!--Pixel tracking for always trigger pixel campaigns start-->
     
 <!--Pixel tracking for always trigger pixel campaigns end-->
+
+<!-- Modal Popup Registration -->
+<script>
+    $(document).ready(function () {
+        $("#modalPopRegistration").on("hide.bs.modal", function () {
+            var retrievedPopupRegistration = localStorage.getItem('popRegistration');
+            var pop = JSON.parse(retrievedPopupRegistration);
+            pop.close += 1;
+            localStorage.setItem('popRegistration', JSON.stringify(pop));
+        });
+
+        $('body').click(function (event)
+        {
+            if(!$(event.target).closest('#modalPopRegistration').length && !$(event.target).is('#modalPopRegistration')) {
+                $(".modalDialog").hide();
+            }
+        });
+    });
+
+    function showModalRegistration(lang) {
+        console.log('ici')
+        // var popImages = [{
+        //     img: 'https://ws-public-images.s3.amazonaws.com/Prod/webSaver/images/websaver_popup_1_'+lang+'.jpg',
+        //     script: {
+        //         en: gtag('event', 'click', { 'event_label': 'EN Pop Up 1', 'event_category': 'Contest', 'value': 1 }),
+        //         fr: gtag('event', 'click', { 'event_label': 'FR Pop Up 1', 'event_category': 'Contest', 'value': 1 }),
+        //     },
+        // }, {
+        //     img: 'https://ws-public-images.s3.amazonaws.com/Prod/webSaver/images/websaver_popup_2_'+lang+'.jpg',
+        //     script: {
+        //         en: gtag('event', 'click', { 'event_label': 'EN Pop Up 2', 'event_category': 'Contest', 'value': 2 }),
+        //         fr: gtag('event', 'click', { 'event_label': 'FR Pop Up 2', 'event_category': 'Contest', 'value': 2 }),
+        //     },
+        // }, {
+        //     img: 'https://ws-public-images.s3.amazonaws.com/Prod/webSaver/images/websaver_popup_3_'+lang+'.jpg',
+        //     script: {
+        //         en: gtag('event', 'click', { 'event_label': 'EN Pop Up 3', 'event_category': 'Contest', 'value': 3 }),
+        //         fr: gtag('event', 'click', { 'event_label': 'FR Pop Up 3', 'event_category': 'Contest', 'value': 3 }),
+        //     },
+        // }];
+
+        // var randomNumber = Math.floor(Math.random() * 3);
+        // $('#popRegistrationImg').attr('src', popImages[randomNumber].img);
+        // var el = document.getElementById('clickRegistrationPopup');
+        // el.onclick = popImages[randomNumber].script[lang];
+
+        var retrievedPopupRegistration = localStorage.getItem('popRegistration');
+        if (retrievedPopupRegistration === null) {
+            var pop = {date: Date.now(), endDate: Date.now() + (86400000 * 7), close: 1};
+            localStorage.setItem('popRegistration', JSON.stringify(pop));
+        }
+
+        var retrievedPopupRegistration = localStorage.getItem('popRegistration');
+        if (retrievedPopupRegistration != null) {
+            var pop = JSON.parse(retrievedPopupRegistration);
+            if (pop.close < 3 && pop.endDate >= Date.now()) {
+                setTimeout(function () {
+                    $('#modalPopRegistration').modal();
+                }, 12000);
+            }
+        }
+    }
+
+                </script>
+<!-- END Modal Popup Registration -->
 
                         <div class="modal fade ie8no" tabindex="-1" role="dialog" aria-labelledby="getCouponLabel"
                  aria-hidden="true">
@@ -459,21 +597,8 @@ src="https://www.facebook.com/tr?id=484757739596016&ev=PageView&noscript=1"
     
     <!-- END FOOTER -->
     <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-10302159-31']);
-        _gaq.push(['_setDomainName', 'websaver.ca']);
-        _gaq.push(['_setAllowLinker', true]);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
+                                        
+                                                                    </script>
         <!--Some pages and plug in not allow to show background images-->
         <!--Some pages not allow to show background images-->
     </div>
