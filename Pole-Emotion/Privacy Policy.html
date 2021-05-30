@@ -1,99 +1,136 @@
 <!DOCTYPE html>
 <!--
-                                                                                
-                                                              ▓▓▓  ▓            
-                                                  ▓             ▓▓ ▓▓▓▒         
-                                               ▓       ▓       ▓▓  ▓▓▓▒         
-                                               ▓▓▓▓▓▓▓       ▓▓▓  ▓▓▓▓▒         
-                                        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓▓▒         
-                                     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓ ▓▓▓          
-                                     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓▓  ▓▓▓▒         
-                                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓▓▓▓   ▓▓▓▒         
-                                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▒         
-                                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▒         
-                                     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓▓▒         
-                                        ▓▓▓▓▓▓▓▓▓▓▓▓               ▓▓▓▓▓        
-                                         ▓▓▓▓▓▓▓▓▓▓                ▓▓▓▒ ▓ ▓     
-                                          ▓▓▓▓ ▓▓                  ▓▓▓▓▓▓       
-                                          ▓▓▓▓     ▓▓▓▓▓▓          ▓▓▓▓▓        
-                                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ▓▓▓▒ ▓▓      
-                                       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ▓▓▓▒  ▓▓     
-                                   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓▓▓▒  ▓▓▓▓   
-                                 ▓▓▓▓▓▓▓▓▓▓    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒   ▓▓▓▓  
-                                ▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓    ▓▓▓▓▓▓▓▓▓▓ ▓▓▓▓▓ 
+
+                                                              ▓▓▓  ▓
+                                                  ▓             ▓▓ ▓▓▓▒
+                                               ▓       ▓       ▓▓  ▓▓▓▒
+                                               ▓▓▓▓▓▓▓       ▓▓▓  ▓▓▓▓▒
+                                        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓▓▒
+                                     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓ ▓▓▓
+                                     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓▓  ▓▓▓▒
+                                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓▓▓▓   ▓▓▓▒
+                                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▒
+                                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▓▓▓▒
+                                     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▓▓▓▒
+                                        ▓▓▓▓▓▓▓▓▓▓▓▓               ▓▓▓▓▓
+                                         ▓▓▓▓▓▓▓▓▓▓                ▓▓▓▒ ▓ ▓
+                                          ▓▓▓▓ ▓▓                  ▓▓▓▓▓▓
+                                          ▓▓▓▓     ▓▓▓▓▓▓          ▓▓▓▓▓
+                                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓      ▓▓▓▒ ▓▓
+                                       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ▓▓▓▒  ▓▓
+                                   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ▓▓▓▒  ▓▓▓▓
+                                 ▓▓▓▓▓▓▓▓▓▓    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒   ▓▓▓▓
+                                ▓▓▓▓▓▓▓▓          ▓▓▓▓▓▓▓▓▓    ▓▓▓▓▓▓▓▓▓▓ ▓▓▓▓▓
                                ▓▓▓▓▓▓              ▓▓▓▓▓▓▓▓       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓
                              ▓▓▓▓▓▓                ▓▓▓▓▓▓▓▓▓       ▓▓▓░▓▓▓▓▓▓▓▓▓
-                       ▓▓▓▓▓▓▓▓▓                  ▓▓▓▓▓▓▓▓▓▓       ▓▓▓▒         
-                    ▓▓▓▓▓▓▓▓▓▓                 ▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▒         
-                 ▓▓▓▓▓▓▓▓▓                   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▒         
-               ▓▓▓▓▓▓                      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▒         
-   ▓▓▓▓▓▓▓▓▓▓▓▓                           ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▒         
- ▓       ▓▓                               ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ▓▓▓▒         
-       ▓                                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒         
-                                           ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒         
-                                            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓       
-                                            ▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓     
-                                             ▓▓▓▓▓▓▓▓▓         ▓▓▓▓▓▓▓▓▓▓▓▓▓▓   
-                                              ▓▓▓▓▓▓▓▓             ▓▓▓▓▓▓▓▓▓▓▓  
-                                              ▓▓▓▓▓▓▓▓             ▓▓▓▒▓▓▓▓▓▓▓  
-                                               ▓▓▓▓▓▓▓             ▓▓▓▓▓▓▓▓▓    
-                                                ▓▓▓▓▓▓             ▓▓▓▓▓▓▓▓     
-                                                 ▓▓▓▓▓            ▓▓▓▓▓▓▓▓      
-                                                  ▓▓▓            ▓▓▓▓▓▓▓▓       
-                                                 ▓▓▓▓            ▓▓▓▓▓▓▓        
-                                               ▓▓▓▓▓▓            ▓▓▓▓▓▓         
-                                               ▓▓▓▓▓▓            ▓▓▓▓▓▒         
-                                              ▓▓▓▓▓▓▓            ▓▓▓▓▓▒         
-                                               ▓▓▓▓▓▓            ▓▓▓▓▓▒         
-                                               ▓▓▓▓▓▓           ▓▓▓▓▓▓▒         
-                                                ▓▓▓▓▓           ▓▓▓▓▓▓▒         
-                                                ▓▓▓▓▓           ▓▓ ▓▓▓▒         
-                                                 ▓▓▓▓▓         ▓▓▓ ▓▓▓▒         
-                                                  ▓▓▓▓      ▓▓▓▓▓  ▓▓▓▒         
-                                                   ▓▓▓     ▓ ▓▓▓▓  ▓▓▓▒         
-                                                   ▓▓▓      ▓▓▓▓   ▓▓▓▒         
-                                                    ▓▓     ▓▓▓▓    ▓▓▓▒         
-                                                     ▓▓    ▓▓▓     ▓▓▓▒         
-                                                   ▓▓▓▓      ▓     ▓▓▓▒         
-                                                   ▓▓▓▓            ▓▓▓▒         
-                                                    ▓▓▓            ▓▓▓▒         
-                                                    ▓▓▓            ▓▓▓▒         
-                                                    ▓▓▓▓           ▓▓▓▒        
+                       ▓▓▓▓▓▓▓▓▓                  ▓▓▓▓▓▓▓▓▓▓       ▓▓▓▒
+                    ▓▓▓▓▓▓▓▓▓▓                 ▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▒
+                 ▓▓▓▓▓▓▓▓▓                   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▒
+               ▓▓▓▓▓▓                      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▒
+   ▓▓▓▓▓▓▓▓▓▓▓▓                           ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▒
+ ▓       ▓▓                               ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ▓▓▓▒
+       ▓                                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒
+                                           ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒
+                                            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+                                            ▓▓▓▓▓▓▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+                                             ▓▓▓▓▓▓▓▓▓         ▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+                                              ▓▓▓▓▓▓▓▓             ▓▓▓▓▓▓▓▓▓▓▓
+                                              ▓▓▓▓▓▓▓▓             ▓▓▓▒▓▓▓▓▓▓▓
+                                               ▓▓▓▓▓▓▓             ▓▓▓▓▓▓▓▓▓
+                                                ▓▓▓▓▓▓             ▓▓▓▓▓▓▓▓
+                                                 ▓▓▓▓▓            ▓▓▓▓▓▓▓▓
+                                                  ▓▓▓            ▓▓▓▓▓▓▓▓
+                                                 ▓▓▓▓            ▓▓▓▓▓▓▓
+                                               ▓▓▓▓▓▓            ▓▓▓▓▓▓
+                                               ▓▓▓▓▓▓            ▓▓▓▓▓▒
+                                              ▓▓▓▓▓▓▓            ▓▓▓▓▓▒
+                                               ▓▓▓▓▓▓            ▓▓▓▓▓▒
+                                               ▓▓▓▓▓▓           ▓▓▓▓▓▓▒
+                                                ▓▓▓▓▓           ▓▓▓▓▓▓▒
+                                                ▓▓▓▓▓           ▓▓ ▓▓▓▒
+                                                 ▓▓▓▓▓         ▓▓▓ ▓▓▓▒
+                                                  ▓▓▓▓      ▓▓▓▓▓  ▓▓▓▒
+                                                   ▓▓▓     ▓ ▓▓▓▓  ▓▓▓▒
+                                                   ▓▓▓      ▓▓▓▓   ▓▓▓▒
+                                                    ▓▓     ▓▓▓▓    ▓▓▓▒
+                                                     ▓▓    ▓▓▓     ▓▓▓▒
+                                                   ▓▓▓▓      ▓     ▓▓▓▒
+                                                   ▓▓▓▓            ▓▓▓▒
+                                                    ▓▓▓            ▓▓▓▒
+                                                    ▓▓▓            ▓▓▓▒
+                                                    ▓▓▓▓           ▓▓▓▒
 
- ███████████           ████                      ██████████                           █████     ███                                  █████     
-░░███░░░░░███         ░░███                     ░░███░░░░░█                          ░░███     ░░░                                  ░░███      
- ░███    ░███  ██████  ░███   ██████             ░███  █ ░  █████████████    ██████  ███████   ████   ██████  ████████       ██████  ░███████  
- ░██████████  ███░░███ ░███  ███░░███ ██████████ ░██████   ░░███░░███░░███  ███░░███░░░███░   ░░███  ███░░███░░███░░███     ███░░███ ░███░░███ 
- ░███░░░░░░  ░███ ░███ ░███ ░███████ ░░░░░░░░░░  ░███░░█    ░███ ░███ ░███ ░███ ░███  ░███     ░███ ░███ ░███ ░███ ░███    ░███ ░░░  ░███ ░███ 
- ░███        ░███ ░███ ░███ ░███░░░              ░███ ░   █ ░███ ░███ ░███ ░███ ░███  ░███ ███ ░███ ░███ ░███ ░███ ░███    ░███  ███ ░███ ░███ 
+ ███████████           ████                      ██████████                           █████     ███                                  █████
+░░███░░░░░███         ░░███                     ░░███░░░░░█                          ░░███     ░░░                                  ░░███
+ ░███    ░███  ██████  ░███   ██████             ░███  █ ░  █████████████    ██████  ███████   ████   ██████  ████████       ██████  ░███████
+ ░██████████  ███░░███ ░███  ███░░███ ██████████ ░██████   ░░███░░███░░███  ███░░███░░░███░   ░░███  ███░░███░░███░░███     ███░░███ ░███░░███
+ ░███░░░░░░  ░███ ░███ ░███ ░███████ ░░░░░░░░░░  ░███░░█    ░███ ░███ ░███ ░███ ░███  ░███     ░███ ░███ ░███ ░███ ░███    ░███ ░░░  ░███ ░███
+ ░███        ░███ ░███ ░███ ░███░░░              ░███ ░   █ ░███ ░███ ░███ ░███ ░███  ░███ ███ ░███ ░███ ░███ ░███ ░███    ░███  ███ ░███ ░███
  █████       ░░██████  █████░░██████             ██████████ █████░███ █████░░██████   ░░█████  █████░░██████  ████ █████ ██░░██████  ████ █████
-░░░░░         ░░░░░░  ░░░░░  ░░░░░░             ░░░░░░░░░░ ░░░░░ ░░░ ░░░░░  ░░░░░░     ░░░░░  ░░░░░  ░░░░░░  ░░░░ ░░░░░ ░░  ░░░░░░  ░░░░ ░░░░░ 
+░░░░░         ░░░░░░  ░░░░░  ░░░░░░             ░░░░░░░░░░ ░░░░░ ░░░ ░░░░░  ░░░░░░     ░░░░░  ░░░░░  ░░░░░░  ░░░░ ░░░░░ ░░  ░░░░░░  ░░░░ ░░░░░
 -->
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Bienvenue - École Pole-Emotion</title>
+    
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="tI1wa9RqQPI3kA4qSpKeWb4xuAxBPMGiUFWTt6Zt">
+    <meta name="csrf-token" content="MzrB8FacyE4gPASe6dLCukPS3IN11GeoZle9VILH">
+    
     <!-- Metas -->
     <link rel="canonical" href="https://app.pole-emotion.ch/" />
-    <meta name="description" content="Bienvenue dans une école de danse pas comme les autres! Pour toutes les femmes ! venez comme vous êtes ! et Oui, chez nous Chaque Femme à sa place">
+    <meta name="description" content="Bienvenue dans une école de danse pas comme les autres, depuis 2005! Pour toutes les femmes ! venez comme vous êtes ! et Oui, chez nous Chaque Femme à sa p...">
     <!-- Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Bienvenue sur notre site - École Pole-Emotion" />
-    <meta property="og:description" content="Bienvenue dans une école de danse pas comme les autres! Pour toutes les femmes ! venez comme vous êtes ! et Oui, chez nous Chaque Femme à sa place" />
+    <meta property="og:description" content="Bienvenue dans une école de danse pas comme les autres, depuis 2005! Pour toutes les femmes ! venez comme vous êtes ! et Oui, chez nous Chaque Femme à sa p..." />
     <meta property="og:image" content="/img/og.jpg" />
     <meta property="og:url" content="https://app.pole-emotion.ch/" />
     <meta property="og:site_name" content="Pole-Emotion.ch" />
     <!-- Twitter -->
     <meta property="twitter:title" content="Bienvenue sur notre site - École Pole-Emotion" />
-    <meta property="twitter:description" content="Bienvenue dans une école de danse pas comme les autres! Pour toutes les femmes ! venez comme vous êtes ! et Oui, chez nous Chaque Femme à sa place" />
+    <meta property="twitter:description" content="Bienvenue dans une école de danse pas comme les autres, depuis 2005! Pour toutes les femmes ! venez comme vous êtes ! et Oui, chez nous Chaque Femme à sa p..." />
     <meta property="twitter:image" content="/img/og.jpg" />
     <meta name="twitter:site" content="@Pole_Emotion">
     <meta name="twitter:creator" content="@Pole_Emotion">
-
     <link rel="sitemap" href="/storage/sitemap.xml" type="application/xml" />
+
+    <!-- Preload -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preload" href="/css/first.css?id=1ff32fbd264e04ee1f80" as="style">
+    <link rel="preload" href="/css/bootstrap.css?id=1b78e86a0e984adecc85" as="style">
+    <link rel="preload" href="/css/fonts.css?id=d42852f0e6127be09e89" as="style">
+    <link rel="preload" href="/css/app.css?id=93b8d6bc2175be1cd349" as="style">
+    <link rel="preload" href="https://app.pole-emotion.ch/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://app.pole-emotion.ch/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://app.pole-emotion.ch/webfonts/fa-light-300.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://app.pole-emotion.ch/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://app.pole-emotion.ch/webfonts/fa-duotone-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Styles -->
+    <link href="/css/fonts.css?id=d42852f0e6127be09e89" rel="stylesheet">
+    <link href="/css/bootstrap.css?id=1b78e86a0e984adecc85" rel="stylesheet">
+    <link href="/css/first.css?id=1ff32fbd264e04ee1f80" rel="stylesheet">
+    <link href="https://app.pole-emotion.ch/css/tempusdominus-4.min.css" rel="stylesheet"/>
+    <link href="https://app.pole-emotion.ch/css/all.min.css?v=5.15.1" rel="stylesheet">
+    <link href="https://app.pole-emotion.ch/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="/css/app.css?id=93b8d6bc2175be1cd349" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
+    <!-- Scripts -->
+    <script src="/js/app.js?id=bc945fb525119841d0c4"></script>
+    <script src="https://app.pole-emotion.ch/js/fuse-3.4.5.min.js" defer></script>
+    <script src="https://app.pole-emotion.ch/js/lazyload.min.js" defer></script>
+    <script src="https://app.pole-emotion.ch/js/custom-file-input.min.js" defer></script>
+    <script src="https://app.pole-emotion.ch/js/jquery.mCustomScrollbar.concat.min.js" defer></script>
+    <script src="https://app.pole-emotion.ch/js/moment-with-locales.min.js"></script>
+    <script src="https://app.pole-emotion.ch/js/tempus-dominus.min.js?v=5.1.3.1"></script>
+    <script src="https://app.pole-emotion.ch/vendor/laravel-filemanager/js/lfm.js" defer></script>
+    <script src="/js/caller.js?id=ab208fd35d35a6bc4da8" defer></script>
+    <script src="/js/cookie.js?id=86470f20ee1423c67007" defer></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>    <!--<script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>-->
+
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -113,60 +150,16 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#000000">
-    <!-- Scripts -->
-
-    
-
-    <script src="/js/app.js?id=fbc293c3383466f096e2"></script>
-    <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
-    <script src="https://app.pole-emotion.ch/js/fuse-3.4.5.min.js" defer></script>
-    <script src="https://app.pole-emotion.ch/js/lazyload.min.js" defer></script>
-    <script src="https://app.pole-emotion.ch/js/custom-file-input.min.js" defer></script>
-    <script src="https://app.pole-emotion.ch/js/jquery.mCustomScrollbar.concat.min.js" defer></script>
-      
-    <script src="https://app.pole-emotion.ch/js/datatables.min.js" defer></script>
-    <script src="https://app.pole-emotion.ch/js/moment-with-locales.min.js"></script>
-    <script src="https://app.pole-emotion.ch/js/tempus-dominus.min.js?v=5.1.3.1" defer></script>
-    <script src="https://app.pole-emotion.ch/vendor/laravel-filemanager/js/lfm.js" defer></script>
-    <script src="/js/caller.js?id=ab208fd35d35a6bc4da8" defer></script>
-    <script src="https://app.pole-emotion.ch/js/bootstrap-select.js?v=1.13.14" defer></script>
-    <script src="https://app.pole-emotion.ch/js/i18n/defaults-fr_FR.js" defer></script>
-    <script src="/js/cookie.js?id=86470f20ee1423c67007" defer></script>
-
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>-->
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400&display=swap" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="https://app.pole-emotion.ch/css/tempusdominus-4.min.css" rel="stylesheet"/>
-    <link href="https://app.pole-emotion.ch/css/all.min.css?v=5.15.1" rel="stylesheet">
-    <link href="https://app.pole-emotion.ch/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
-    <link href="https://app.pole-emotion.ch/css/datatables.min.css" rel="stylesheet">
-    <link href="/css/app.css?id=bfa3c053cccc27c3d7b6" rel="stylesheet" async>
-    <link href="https://app.pole-emotion.ch/css/cours-affix.css?v=1.0.6" rel="stylesheet">
-    <link href="https://app.pole-emotion.ch/css/bootstrap-select.min.css?v=1.13.14" rel="stylesheet">
-    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">-->
 
     <script>
-      const beamsClient = new PusherPushNotifications.Client({
-        instanceId: '26dd365c-fb4d-43f3-ac1b-053fa8f12863',
-      });
-
-      beamsClient.start()
-        .then(() => beamsClient.addDeviceInterest('PEGeneral'))
-        .catch(console.error);
-    </script>
-    <script>
+    /* <![CDATA[ */
     if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/service-worker.js', {
+          navigator.serviceWorker.register('/svwk.js', {
               scope: '.'
           }).then(function (registration) {}, function (err) {});
       }
+    /* ]]> */
     </script>
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -179,9 +172,9 @@
       "logo": "https://app.pole-emotion.ch/img/logo_Blanc_votre_ecole_depuis_2005_ROND-AVEC-TRANSPARENCE_V3_800x302.png"
     }
     </script>
-
     <!-- Smartsupp Live Chat script -->
     <script type="text/javascript">
+    /* <![CDATA[ */
     var _smartsupp = _smartsupp || {};
     _smartsupp.key = '712f201e46cafc31a26cc6c14b810d9f5e5ce3a1';
     window.smartsupp||(function(d) {
@@ -190,12 +183,13 @@
       c.type='text/javascript';c.charset='utf-8';c.async=true;
       c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
     })(document);
-        </script>
+        /* ]]> */
+    </script>
     <!-- Matomo -->
     <script type="text/javascript">
+    /* <![CDATA[ */
       var _paq = window._paq = window._paq || [];
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-      _paq.push(['trackPageView']);
+            _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
       (function() {
         var u="https://stats.pole-emotion.ch/";
@@ -204,17 +198,17 @@
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
         g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
       })();
+    /* ]]> */
     </script>
-    <!-- End Matomo Code -->
 <style type="text/css">
 .uk-padding {
     padding: 30px;
 }
 </style>
 </head>
-<body class="dark freedom">
+<body class="">
 <noscript>
-    <div style="position: fixed; top: 0px; left: 0px; z-index: 3000; 
+    <div style="position: fixed; top: 0px; left: 0px; z-index: 3000;
                 height: 100%; width: 100%; background-color: #FFFFFF">
         <p style="margin-left: 10px"> Pour accéder à toutes les fonctionnalités de ce site, vous devez activer JavaScript.
  Voici les <a href="https://www.enable-javascript.com/fr/">
@@ -239,6 +233,7 @@ var TitleIcon = {
 /* ]]> */
 </script>
     <main id="content">
+        
                 <div class="header container-fluid NoPrint">
             <a class="logo-first" href="https://app.pole-emotion.ch">
               <picture>
@@ -315,14 +310,14 @@ var TitleIcon = {
         </div>
             <nav class="navbar PENav sticky-top navbar-expand-lg mb-0 NoPrint">
     <div class="d-flex w-100 flex-wrap">
-        <button class="d-inline-block d-lg-none menuCollapse order-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars align-middle"></i>
+        <button class="d-inline-block d-lg-none menuCollapse order-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Ouvrir le menu">
+            <i class="fas fa-bars fa-2x text-light align-middle"></i>
         </button>
 
         
-        <ul class="nav navbar-nav ml-auto order-3 d-inline-block">
+        <ul class="nav navbar-nav ml-auto order-3 d-inline-block align-middle">
                         <li class="nav-item text-center">
-                                    <a class="nav-link text-light" href="https://app.pole-emotion.ch/login"><i class="fas fa-user-circle"></i> Connexion</a>
+                                    <a class="nav-link text-light " href="https://app.pole-emotion.ch/login"><i class="fas fa-user-circle"></i> Connexion</a>
                             </li>
                     </ul>
 
@@ -341,7 +336,7 @@ var TitleIcon = {
                 
                             <li class="nav-item text-center dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="planning_drop" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Plannings
+      Salles/Plannings
     </a>
     <div class="dropdown-menu text-center" aria-labelledby="planning_drop">        
 		    <a class="dropdown-item" href="https://app.pole-emotion.ch/nos-salles-de-cours/cours-en-ligne">Cours en ligne</a>
@@ -375,8 +370,14 @@ var TitleIcon = {
         </div>
         
     </div>
-</nav>            <div class="wrapper tr ns">
-	</div>                        <div class="wrap">
+</nav>            <div class="wrapper tr ns NoPrint mt-3 mb-3">
+	
+	<div class="alert alert-info">
+	recherche profs <a href="https://app.pole-emotion.ch/news/emplois">En savoir plus</a>
+	</div>
+
+	</div>
+                        <div class="wrap">
                 
             <!-- Sidebar  -->
             <div class="wrapper">
@@ -385,10 +386,10 @@ var TitleIcon = {
             <div class="carousel-item sldshw active">
                 <!--<div class="sldshw-layer"></div>--> 
                 <picture>
-                    <source srcset="https://app.pole-emotion.ch/storage/webp/welcome_to_new_site_V2.png.webp" type="image/webp">
+                    <source srcset="https://app.pole-emotion.ch/storage/webp/welcome_to_new_site_V2_1200.png.webp" type="image/webp">
                     
-                    <source srcset="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/welcome_to_new_site_V2.png" type="image/png">
-                    <img src="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/welcome_to_new_site_V2.png" class="d-block w-auto" alt="Bienvenue sur notre site - Pole-Emotion">
+                    <source srcset="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/welcome_to_new_site_V2_1200.png" type="image/png">
+                    <img src="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/welcome_to_new_site_V2_1200.png" class="d-block w-auto" alt="Bienvenue sur notre site - Pole-Emotion">
                 </picture>
                 <div class="carousel-caption sldshw-text">
                     <h5>Bienvenue!</h5>
@@ -426,9 +427,9 @@ var TitleIcon = {
             <div class="carousel-item sldshw">
                 <div class="sldshw-layer"></div>
                 <picture>
-                	<source srcset="https://app.pole-emotion.ch/storage/webp/Fotolia_108975478_M-1-1-e1495551319144.jpg.webp" type="image/webp">
-                	<source srcset="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/Fotolia_108975478_M-1-1-e1495551319144.jpg" type="image/jpeg">
-                	<img src="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/Fotolia_108975478_M-1-1-e1495551319144.jpg" class="d-block w-auto" alt="Unique en Suisse Romande - Pole-Emotion">
+                	<source srcset="https://app.pole-emotion.ch/storage/webp/pole_emotion_whoua_1200.jpg.webp" type="image/webp">
+                	<source srcset="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/pole_emotion_whoua_1200.jpg" type="image/jpeg">
+                	<img src="https://app.pole-emotion.ch/public/files/shares/R%C3%A9serve%20de%20photos/pole_emotion_whoua_1200.jpg" class="d-block w-auto" alt="Unique en Suisse Romande - Pole-Emotion">
                 </picture>
                 <div class="carousel-caption sldshw-text">
                     <h5>Unique en Suisse Romande</h5>
@@ -509,7 +510,7 @@ var TitleIcon = {
                         </div>
                     </div>
 
-                  <div class="TarifsContent">
+                  <div class="TarifsContent text-white">
                     <div class="TarifsSubTitle mt-1 mb-1">
                       Dès 74.- CHF
                     </div>
@@ -537,7 +538,7 @@ var TitleIcon = {
                             ABO - Illimité
                         </div>
                     </div>
-                    <div class="TarifsContent">
+                    <div class="TarifsContent text-white">
                         <div class="TarifsSubTitle mt-1 mb-1">
                             Dès 104.- CHF
                         </div>
@@ -555,14 +556,14 @@ var TitleIcon = {
 </div>
 
         </div>
-    
-        
+
+
     <script>
     jQuery(document).ready(function($){
 
-              
+      
         $('.popable').popover();
-        
+
         
         $(document).on("click", '.openModal', function(e){
             e.preventDefault();
@@ -598,15 +599,37 @@ var TitleIcon = {
 	   	</div>
     </div>
 </div>
-    
+
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script type="text/javascript"> <!--
+    function UnCryptMailto( s )
+    {
+        var n = 0;
+        var r = "";
+        for( var i = 0; i < s.length; i++)
+        {
+            n = s.charCodeAt( i );
+            if( n >= 8364 )
+            {
+                n = 128;
+            }
+            r += String.fromCharCode( n - 1 );
+        }
+        return r;
+    }
+
+    function linkTo_UnCryptMailto( s )
+    {
+        location.href=UnCryptMailto( s );
+    }
+    // --> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
 <footer class="NoPrint">
   <section id="mainFooter">
     <div class="container py-4">
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-3 ">
-          <h4>Pole-Emotion</h4>
+          <p class="h4">Pole-Emotion</p>
           <ul class="pe_foot px-0">
             <li><a href="/administration">Administration</a></li>
             <li><a href="/support"><i class="far fa-life-ring"></i> Support / Contact</a></li>
@@ -614,10 +637,10 @@ var TitleIcon = {
             <li><a href="/notre-histoire">Notre histoire</a></li>
             <li><a href="/les-niveaux">Les niveaux</a></li>
           </ul>
-         
+
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 ">
-          <h4>Suivez-nous</h4>
+          <p class="h4">Suivez-nous</p>
           <ul class="pe_foot px-0">
             <li class="f-social-links">
               <a href="https://www.facebook.com/Pole.Emotion/" title="Facebook" target="blank"><span class="fab fa-facebook-f"></span></a>
@@ -625,28 +648,28 @@ var TitleIcon = {
               <a href="https://www.youtube.com/channel/UCvbWvQyTN52o5cIRDaHJ0LA" title="Youtube" target="blank"><span class="fab fa-youtube"></span></a>
               <a href="https://www.instagram.com/pole_emotion/" title="Instagram" target="blank"><span class="fab fa-instagram"></span></a>
             </li>
-            
+
             <li class="small"><small><a href="https://www.swisspolesportsfederation.com/membres-partenaires/" rel="nofollow">Membre de la Fédération Suisse de Pole Dance / Pole Fitness / Pole Gymnastic</a></small></li>
           </ul>
         </div>
 
         <div class="col-xs-12 col-sm-6 col-md-3 ">
-          <h4>Contact</h4>
+          <p class="h4">Contact</p>
           <ul class="contact px-0">
             <li class="contact-sect"><a href="tel:0244362369"><i class="fal fa-phone-volume"></i> 024 436 23 69</a></li>
             <li class="contact-sect"><a href="tel:+41795354789">
-              <i class="fa-stack">
+              <!--<i class="fa-stack">
                 <i class="fal fa-ban fa-stack-1x fa-lg" style="color: rgb(125 0 156);left: -5px;"></i>
                 <i class="fab fa-whatsapp fa-stack-1x fa-xs"></i>
-              </i> +41 79 535 47 89</a></li>
-            <li class="contact-sect mail"><a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#x69;&#x6e;&#x66;&#111;&#64;&#x70;&#111;&#x6c;&#101;&#45;&#x65;&#x6d;&#x6f;&#x74;&#x69;&#111;&#x6e;&#x2e;&#99;&#x68;"><i class="fal fa-envelope"></i> info@pole-emotion.ch</a></li>
+              </i>--><i class="fas fa-mobile-alt"></i> +41 79 535 47 89</a></li>
+            <li class="contact-sect mail"><a href="javascript:linkTo_UnCryptMailto('nbjmup;jogpAqpmf.fnpujpo/di');"><i class="fal fa-envelope"></i> info@pole-emotion.ch</a></li>
           </ul>
         </div>
 
         <div class="col-xs-12 col-sm-6 col-md-3 ">
 
           <div class="uk-margin-top">
-            <h4>Moyens de paiement</h4>
+            <p class="h4">Moyens de paiement</p>
             <ul class="contact px-0 mb-2">
             	<li class="addr"><small><b>N° de clearing</b>: 80808</small><br>
             	<small><b>IBAN</b>: CH36 8080 8003 3736 0154 7</small><br>
@@ -662,13 +685,13 @@ var TitleIcon = {
         </div>
       </div>
     </div>
-  
+
 <div class="NoPrint footer-copyright">
   <div class="container-fluid">
     <div class="small">
       <div class="text-small text-center pt-1 mb-1">© École Pole-Emotion Sàrl - 2005 - 2021 - Tout droits réservés</div>
       <div class="text-center mb-1"><a href="/conditions-generales-de-l-ecole-pole-emotion">Conditions générales</a> - <a href="https://app.pole-emotion.ch/politique-de-confidentialite/">Politique de confidentialité</a></div>
-      <div class="text-small text-center mt-3 pb-3" style="margin-left: -46px;">Designed by <span class="h5">ᛚᛟᛇᚲ</span> <div class="signature"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 919.88 799.84"><defs><style>.cls-1{fill:url(#Dégradé_sans_nom_73);}.cls-2{fill:#686868;}</style><radialGradient id="Dégradé_sans_nom_73" cx="463.3" cy="395.91" r="406.54" gradientTransform="translate(796.08 -70.26) rotate(89.51) scale(1 0.85)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#999"/><stop offset="1" stop-opacity="0"/></radialGradient></defs><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><path class="cls-1" d="M513.88,129.84l41-48L496.6,3c-62.29-10.18-128.67,5.8-178.08,48-31.1,26.53-58.39,59.13-80.71,96.36-77.83,26.36-141,64.26-181.5,109.29l23.57,11.26-6,24,6.78,21.53c30.31-26.43,68.92-49.76,113.86-68.91a492.51,492.51,0,0,0-22,146.6c0,113.45,37.61,216.27,98.58,291.35l82.79-84.57L325.81,579a114.59,114.59,0,0,1-49.58-31c-28.4-30.39-29.8-66.63-3.13-80.94,21.32-11.43,54.1-5.39,80.9,13L635.88,224.84Z"/><path class="cls-2" d="M682.06,147.29c-22.31-37.23-49.6-69.83-80.7-96.36a209.26,209.26,0,0,0-56.65-34.41l26.17,63.32-45,52c1,.07,121,91.92,122,92L360.12,484.54a112.28,112.28,0,0,1,12.7,11.62c28.4,30.39,29.8,66.63,3.13,80.94a51.07,51.07,0,0,1-20.44,5.61l7.37,15.13-87.52,89.74c45.44,54,103.24,93,167.83,110.08a65.53,65.53,0,0,0,33.43,0c154.84-40.92,270.74-207.43,270.74-406.62a492.5,492.5,0,0,0-22-146.6C821.09,285.26,895.12,352,914.27,420.31A148.93,148.93,0,0,0,919.88,380C919.88,284.74,820.65,194.22,682.06,147.29ZM644.53,548c-28.4,30.39-73,43.43-99.72,29.12s-25.27-50.55,3.12-80.94S621,452.73,647.65,467,672.92,517.59,644.53,548Z"/><path class="cls-2" d="M72.88,274.84,49.31,263.58C17.73,298.73,0,338.22,0,380a148.92,148.92,0,0,0,5.6,40.35c10.17-36.24,33.81-70.07,68.06-99.94l-6.78-21.53Z"/></g></g></svg></div></div>
+      <div class="text-small text-center mt-3 pb-3" style="margin-left: -46px;">Designed by <a href="javascript:linkTo_UnCryptMailto('nbjmup;benjoAqpmf.fnpujpo/di');"><div class="signature"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 919.88 799.84"><defs><style>.cls-1{fill:url(#Dégradé_sans_nom_73);}.cls-2{fill:#0b7da2;}</style><radialGradient id="Dégradé_sans_nom_73" cx="463.3" cy="395.91" r="406.54" gradientTransform="translate(796.08 -70.26) rotate(89.51) scale(1 0.85)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0b7da2"/><stop offset="1" stop-opacity="0"/></radialGradient></defs><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><path class="cls-1" d="M513.88,129.84l41-48L496.6,3c-62.29-10.18-128.67,5.8-178.08,48-31.1,26.53-58.39,59.13-80.71,96.36-77.83,26.36-141,64.26-181.5,109.29l23.57,11.26-6,24,6.78,21.53c30.31-26.43,68.92-49.76,113.86-68.91a492.51,492.51,0,0,0-22,146.6c0,113.45,37.61,216.27,98.58,291.35l82.79-84.57L325.81,579a114.59,114.59,0,0,1-49.58-31c-28.4-30.39-29.8-66.63-3.13-80.94,21.32-11.43,54.1-5.39,80.9,13L635.88,224.84Z"/><path class="cls-2" d="M682.06,147.29c-22.31-37.23-49.6-69.83-80.7-96.36a209.26,209.26,0,0,0-56.65-34.41l26.17,63.32-45,52c1,.07,121,91.92,122,92L360.12,484.54a112.28,112.28,0,0,1,12.7,11.62c28.4,30.39,29.8,66.63,3.13,80.94a51.07,51.07,0,0,1-20.44,5.61l7.37,15.13-87.52,89.74c45.44,54,103.24,93,167.83,110.08a65.53,65.53,0,0,0,33.43,0c154.84-40.92,270.74-207.43,270.74-406.62a492.5,492.5,0,0,0-22-146.6C821.09,285.26,895.12,352,914.27,420.31A148.93,148.93,0,0,0,919.88,380C919.88,284.74,820.65,194.22,682.06,147.29ZM644.53,548c-28.4,30.39-73,43.43-99.72,29.12s-25.27-50.55,3.12-80.94S621,452.73,647.65,467,672.92,517.59,644.53,548Z"/><path class="cls-2" d="M72.88,274.84,49.31,263.58C17.73,298.73,0,338.22,0,380a148.92,148.92,0,0,0,5.6,40.35c10.17-36.24,33.81-70.07,68.06-99.94l-6.78-21.53Z"/></g></g></svg></div></div></a>
     </div>
   </div>
 </div>
@@ -678,21 +701,6 @@ var TitleIcon = {
 <div class="ohLayer"></div>
 </app>
 </div>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyC77VxpIDjjFRtfovwwew75fdW4Ql1QFxE",
-    authDomain: "app-pole-emotion-v1.firebaseapp.com",
-    projectId: "app-pole-emotion-v1",
-    storageBucket: "app-pole-emotion-v1.appspot.com",
-    messagingSenderId: "935814600816",
-    appId: "1:935814600816:web:5ee3d0a03c843a7c0b7cb5"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
 </body>
 </html>
