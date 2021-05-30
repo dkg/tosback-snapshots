@@ -14,7 +14,7 @@
 <link  rel="stylesheet" type="text/css" href="https://resource.csnstatic.com/retail/vendors/jquery.colorbox/1.6.4/colorbox.css"   />
 <link  rel="stylesheet" type="text/css" href="https://resource.csnstatic.com/retail/vendors/csn-themes/v1.1/carsales.min.css"   />
 <link  rel="stylesheet" type="text/css" href="https://resource.csnstatic.com/retail/cmp-retail-staticpages/lightbox-assets-aa832ca0c5466daa1ee9.css"   />
-<link  rel="stylesheet" type="text/css" href="https://resource.csnstatic.com/retail/cmp-retail-staticpages/common-assets-f305c334c5f4f9a66bc3.css"   />
+<link  rel="stylesheet" type="text/css" href="https://resource.csnstatic.com/retail/cmp-retail-staticpages/common-assets-61654c23d5ae9aa066a5.css"   />
 <script src="https://resource.csnstatic.com/retail/vendors/jquery/3.3.1/jquery-3.3.1.min.js" ></script>
 </head>
 <body class="tenant-carsales mega-nav-desktop">
@@ -1252,7 +1252,7 @@
 <script src="https://resource.csnstatic.com/retail/vendors/popper/1.12.9/popper.min.js" ></script>
 <script src="https://resource.csnstatic.com/retail/vendors/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
 <script src="https://resource.csnstatic.com/retail/cmp-retail-staticpages/lightbox-assets-aa832ca0c5466daa1ee9.js" ></script>
-<script src="https://resource.csnstatic.com/retail/cmp-retail-staticpages/common-assets-f305c334c5f4f9a66bc3.js" ></script>
+<script src="https://resource.csnstatic.com/retail/cmp-retail-staticpages/common-assets-61654c23d5ae9aa066a5.js" ></script>
 <script src="https://resource.csnstatic.com/retail/cmp-retail-staticpages/page-assets-32040bc59f82a024e064.js" ></script>
 
 <div class="carsales">
@@ -1500,7 +1500,7 @@ General Help                            </h3>
         </section>
     </footer>
 </div>
-<!-- Generated At 2021-05-03 04:00:40Z -->
+<!-- Generated At 2021-05-30 14:01:51Z -->
 <script>
 
     window.CsnInsights = window.CsnInsights || {};
@@ -2275,6 +2275,13 @@ General Help                            </h3>
 
     };
         var methods = {
+            externalid_dim : 'dimension9',
+            contentgroups_dim : 'dimension20',
+            originalurl_dim : 'dimension34',
+            advertiserid_dim : 'dimension88',
+            membertrackingid_dim : 'dimension89',
+            dataparams_dim : 'dimension86',
+            screenviewed_dim : 'dimension91',
             excluded_events: function () { return ["myfeedloadmyfeed"] },
             collectTags: function (eventContext) {
                 if ((typeof (eventContext) !== 'undefined') && (typeof (eventContext.metaData) !== 'undefined')
@@ -2337,7 +2344,7 @@ General Help                            </h3>
                             CsnInsights.fieldsObject['userId'] = CsnInsights.memberTrackingId;
                         }
 
-                        CsnInsights.fieldsObject['dimension89'] = CsnInsights.memberTrackingId;
+                        CsnInsights.fieldsObject[this.membertrackingid_dim] = CsnInsights.memberTrackingId;
                     };
                 };
             },
@@ -2352,7 +2359,7 @@ General Help                            </h3>
                         }
                     }
                     if (data) {
-                        fieldsObject['dimension86'] = data.substring(0, 150);
+                        fieldsObject[this.dataparams_dim] = data.substring(0, 150);
                     }
                 }
             },
@@ -2475,7 +2482,20 @@ General Help                            </h3>
                     contentGroups['adtype'] = fieldsObject['sellertype'];
                     fieldsObject['dimension102'] = (fieldsObject['sellertype'] || "").toLowerCase();
                 }
-                fieldsObject['dimension20'] = JSON.stringify(contentGroups);
+                fieldsObject[this.contentgroups_dim] = JSON.stringify(contentGroups);
+            },
+            setafx: function (fieldsObject) {
+                var afx = {}
+                try {
+                    if (window.CsnInsightsHelper.getCookieValue('afx_bi_js_crs_v1_stg_poc1.1')) {
+                        afx['afx'] = window.CsnInsightsHelper.getCookieValue('afx_bi_js_crs_v1_stg_poc1.1');
+
+                        fieldsObject['dimension15'] = JSON.stringify(afx);
+                    }
+
+                } catch (e) { }
+
+
             },
         setHostname: function (fieldsObject, pageUrl) {
             if ((window.CsnInsights || {}).ignoreUrlFromBrowser === true) {
@@ -2520,12 +2540,12 @@ General Help                            </h3>
                 } catch (e) { }
                 try {
                     if (Object.keys(extIds).length > 0) {
-                        CsnInsights.fieldsObject['dimension9'] = JSON.stringify(extIds);
+                        CsnInsights.fieldsObject[this.externalid_dim] = JSON.stringify(extIds);
                     }
                 } catch (e) { }
                 try {
                     if (Object.keys(extIds1).length > 0) {
-                        CsnInsights.fieldsObject['dimension88'] = JSON.stringify(extIds1);
+                        CsnInsights.fieldsObject[this.advertiserid_dim] = JSON.stringify(extIds1);
                     }
                 } catch (e) { }
             },
@@ -2655,7 +2675,7 @@ General Help                            </h3>
 
                     var percentShown = ((screenHeight + scrollPosition) / totalHieght) * 100;
 
-                    fieldsObject['dimension91'] = csnInsightsHelper.getScrollText(csnInsightsHelper.calculateScrollPercent(percentShown));
+                    fieldsObject[this.screenviewed_dim] = csnInsightsHelper.getScrollText(csnInsightsHelper.calculateScrollPercent(percentShown));
                 } catch (e) { }
             },
             measureEcommercePurchase: function (eventdata, orderItems) {
@@ -2756,10 +2776,10 @@ General Help                            </h3>
                         }
                     }
                     if ((originalEventUrl !== undefined) && (originalEventUrl !== '')) {
-                        fieldsObject['dimension34'] = originalEventUrl.toString().substring(0, 150);
+                        fieldsObject[this.originalurl_dim] = originalEventUrl.toString().substring(0, 150);
                     }
                     else {
-                        fieldsObject['dimension34'] = ((location.pathname || '') + (location.search || '')).substring(0, 150);
+                        fieldsObject[this.originalurl_dim] = ((location.pathname || '') + (location.search || '')).substring(0, 150);
                     }
 
                 methods.setHostname(fieldsObject, pageUrlWithQueryStringParams);
@@ -2782,10 +2802,10 @@ General Help                            </h3>
                         }
                     }
                     if ((originalEventUrl !== undefined) && (originalEventUrl !== '')) {
-                        fieldsObject['dimension34'] = originalEventUrl.toString().substring(0, 150);
+                        fieldsObject[this.originalurl_dim] = originalEventUrl.toString().substring(0, 150);
                     }
                     else {
-                        fieldsObject['dimension34'] = ((location.pathname || '') + (location.search || '')).substring(0, 150);
+                        fieldsObject[this.originalurl_dim] = ((location.pathname || '') + (location.search || '')).substring(0, 150);
                     }
                 }
                 /* if (typeof (eventData) !== 'undefined') {
@@ -2825,6 +2845,7 @@ General Help                            </h3>
                 methods.updateRefererTags(fieldsObject, overridePageUrl);
                 methods.updateDataParamKeys(eventContext, fieldsObject);
                 methods.setContentGroupsInDimension(fieldsObject);
+                methods.setafx(fieldsObject);
                 methods.extractQueryParams(fieldsObject);
                
                 try {
@@ -2864,6 +2885,7 @@ General Help                            </h3>
                 methods.updateDataParamKeys(eventContext, fieldsObject);
                 methods.recordScreenViewPercentage(fieldsObject);
                 methods.extractQueryParams(fieldsObject);
+                methods.setafx(fieldsObject);
 
                 if (orderItems !== null && orderItems !== 'undefined' && orderItems !== "" && orderItems != undefined) {
                     methods.measureEcommercePurchase(eventContext.metaData, orderItems);
@@ -2961,8 +2983,7 @@ General Help                            </h3>
     }
 
 
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1070296414"></script>
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=AW-1070296414"></script>
 
 <script>
     /* Google Sem Code */
@@ -3421,6 +3442,7 @@ fbq('init', '247251645467298');        <img height="1" width="1" style="display:
         },
 
         sendPageView: function (eventData, searchResults, orderItems) {
+            var track_pvs = ["factsplus_landing"]
             var eventObject = this.getEventObject(eventData);
             var pageType = (eventData.contentgroup2 || eventData.contentGroup2 || eventData.pagetype || eventData.pageType || '').toLowerCase();
             var area = (eventData.contentgroup1 || eventData.contentGroup1 || eventData.area || '').toLowerCase();
@@ -3465,6 +3487,9 @@ fbq('init', '247251645467298');        <img height="1" width="1" style="display:
                 this.trackInitiateCheckout(eventObject, eventData);
                 this.trackAddPaymentInfo(eventObject, eventData);
             }
+            else if (track_pvs.indexOf(area + '_' + pageType) > -1) {
+                this.trackPageLoad();
+            }            
             else
             {
             }
@@ -3829,8 +3854,6 @@ if (!(CsnInsights.fireOnLoad === undefined || CsnInsights.fireOnLoad === true)) 
                 },
                 sendEvent: function (eventContextmetaData, eventCategory, eventLabel, eventAction, eventData, overridePageUrl) {
 
-
-
                 }
 
             }
@@ -3879,7 +3902,7 @@ if (!(CsnInsights.fireOnLoad === undefined || CsnInsights.fireOnLoad === true)) 
                  var apps = getApps(targetapps || "");
                  for (var i = 0; i < apps.length; i++) {
                      if ((apps[i]) && (apps[i]["sendPageView"]) && (typeof (apps[i]["sendPageView"]) === 'function')) {
-                         try {                            
+                         try {
                              apps[i]["sendPageView"](eventContextmetaData, overridePageUrl, variantTestContext, searchResultsV2, nonInteraction, csnEventId, orderItems);
                          } catch (e) {}
                      }
@@ -3893,7 +3916,7 @@ if (!(CsnInsights.fireOnLoad === undefined || CsnInsights.fireOnLoad === true)) 
                  var apps = getApps(targetapps || "");
                  for (var i = 0; i < apps.length; i++) {
                      if ((apps[i]) && (apps[i]["sendClick"]) && (typeof (apps[i]["sendClick"]) === 'function')) {
-                         try {                           
+                         try {
                              apps[i]["sendClick"](eventContextmetaData, eventCategory, eventLabel, eventData, overridePageUrl, variantTestContext, nonInteraction, csnEventId);
                          } catch (e) {}
                      }
@@ -3916,7 +3939,7 @@ if (!(CsnInsights.fireOnLoad === undefined || CsnInsights.fireOnLoad === true)) 
                      var apps = getApps(targetapps || "");
                      for (var i = 0; i < apps.length; i++) {
                          if ((apps[i]) && (apps[i]["sendEvent"]) && (typeof (apps[i]["sendEvent"]) === 'function')) {
-                             try {                                
+                             try {
                                  apps[i]["sendEvent"](eventContextmetaData, eventCategory, eventLabel, eventAction, eventData, overridePageUrl, variantTestContext, searchResultsV2, nonInteraction, csnEventId);
                              } catch (e) { }
                          }
