@@ -37,10 +37,40 @@
 <link rel="stylesheet" id="font-awesome">
 <link rel="stylesheet" id="fonts">
 <link rel="stylesheet" href="/css/bootstrap.css">
-<link rel="stylesheet" href="/css/static-site.css?rel=7f90588ac2">
+<link rel="stylesheet" href="/css/static-site.css?rel=f25d9afd41">
 <link rel="shortcut icon" href="/images/favicon.ico">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Organization",
+        "name": "Proton Technologies AG",
+        "url": "https://protonmail.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://protonmail.com/images/protonmail-logo-square.png",
+          "width": "600",
+          "height": "600"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Geneva",
+          "addressCountry": "Switzerland",
+          "postalCode": "1228",
+          "streetAddress": "Route de la Galaise 32"
+        },
+        "founder": [{
+          "@type": "Person",
+          "givenName": "Andy",
+          "familyName": "Yen",
+          "jobTitle": "CEO/Founder",
+          "image": "https://protonmail.com/images/about/andy-yen.jpg"
+        }],
+        "sameAs": ["https://www.facebook.com/ProtonMail", "https://twitter.com/ProtonMail", "https://www.youtube.com/user/protonmail", "https://en.wikipedia.org/wiki/ProtonMail", "https://mastodon.social/@protonmail", "https://www.reddit.com/r/ProtonMail/", "https://www.instagram.com/protonmail/"]
+      }
+</script>
 
 <!--[if lt IE 10]>
     <link rel="stylesheet" href="css/ie.css" />
@@ -601,7 +631,26 @@
                     <a href="https://protonmail.com/support-form" class="btn btn-primary" lang="en">https://protonmail.com/support-form</a>
                 </p>
                 <p>
-                    <span>For all other inquiries:</span><br><a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
+                    <span>For all other inquiries:</span><br><button class="btn btn-default btn-xs" data-toggle="collapse" data-target="#conPubKey" title="global.pgp-contact" aria-label="global.pgp-contact"><i class="fa fa-key" data-toggle="collapse" aria-hidden="true"></i></button>
+                    <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
+                    <pre id="conPubKey" class="d-none">
+    -----BEGIN PGP PUBLIC KEY BLOCK-----
+    Version: OpenPGP.js v4.10.8
+    Comment: https://openpgpjs.org
+    
+    xjMEX85NMRYJKwYBBAHaRw8BAQdAhwFxKgsFU8QiBZlbUxuzrJIiYgVzM0Av
+    B/IPUTv5YTbNL2NvbnRhY3RAcHJvdG9ubWFpbC5jb20gPGNvbnRhY3RAcHJv
+    dG9ubWFpbC5jb20+wo8EEBYKACAFAl/OTTEGCwkHCAMCBBUICgIEFgIBAAIZ
+    AQIbAwIeAQAhCRCtuTRTXwNhqxYhBA1L6MzXf+0hb7gsI625NFNfA2GrPUUA
+    /1kRWoKzi4VLDxQkQHJme+C2d8Kuj5qGUESG2UdT8oXpAP9Q9Ko9cAFEWXnL
+    Tz5neP+QFezaPyQJ1hzRgXIHbu8QCM44BF/OTTESCisGAQQBl1UBBQEBB0Ac
+    REfc4aE34zZnVQ9MS5S+Xk6xEq53x0gWzY4/TrR4KQMBCAfCeAQYFggACQUC
+    X85NMQIbDAAhCRCtuTRTXwNhqxYhBA1L6MzXf+0hb7gsI625NFNfA2GrIBEA
+    /1rIGinVCXDEHzb7eKKRHnKZP1HLlIneGO2KxXODzEiAAP9dC33bnoXiuKnL
+    xQy1XWSLdMzPNCWeY5buvwrJXl15AQ==
+    =sMlu
+    -----END PGP PUBLIC KEY BLOCK-----
+</pre>
                 </p>
                 <p>
                     <span>You can also Tweet to us:</span><br><a href="https://twitter.com/protonmail" lang="en">twitter.com/protonmail</a>
@@ -618,7 +667,7 @@
 <!-- /.modal -->
 
 
-<script src="/js/site.js?rel=980914155f"></script>
+<script src="/js/site.js?rel=cc4ef34bc6"></script>
 
 
 
