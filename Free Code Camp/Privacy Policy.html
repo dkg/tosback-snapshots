@@ -10,35 +10,39 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism.min.css" />
-    <link rel="stylesheet" type="text/css"
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism.min.css" />
+    <noscript><link rel="stylesheet" href="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism.min.css"></noscript>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
         href="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-unescaped-markup.css" />
+    <noscript><link rel="stylesheet" href="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-unescaped-markup.css"></noscript>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Roboto+Mono:400,700" rel="stylesheet">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Roboto+Mono:400,700?&display=swap">
 
-    <link rel="stylesheet" type="text/css" href="/news/assets/built/screen.css?v=0e44dea448" />
-    <link rel="stylesheet" type="text/css" href="/news/assets/css/algolia-search.css?v=0e44dea448" />
+    <link rel="stylesheet" type="text/css" href="/news/assets/built/screen.css?v=d31f046bb8" />
+    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'" as="style" href="/news/assets/built/global.css?v=d31f046bb8" />
+    <link rel="stylesheet" type="text/css" href="/news/assets/built/algolia-search.css?v=d31f046bb8" />
 
-    <script src="https://cdn.freecodecamp.org/news-assets/algolia/algoliasearch-3-33-0/algoliasearch.min.js"></script>
-    <script src="https://cdn.freecodecamp.org/news-assets/algolia/autocomplete-0-36-0/autocomplete.min.js"></script>
+    <script defer src="https://cdn.freecodecamp.org/news-assets/algolia/algoliasearch-3-33-0/algoliasearch.min.js"></script>
+    <script defer src="https://cdn.freecodecamp.org/news-assets/algolia/autocomplete-0-36-0/autocomplete.min.js"></script>
 
-    <script type="text/javascript" src="/news/assets/config/en/main.js?v=0e44dea448"></script>
-    <script type="text/javascript" src="/news/assets/config/en/footer.js?v=0e44dea448"></script>
+    <script type="text/javascript" src="/news/assets/config/en/main.js?v=d31f046bb8"></script>
+    <script type="text/javascript" src="/news/assets/config/en/footer.js?v=d31f046bb8"></script>
 
-    <script type="text/javascript" src="/news/assets/config/es/main.js?v=0e44dea448"></script>
-    <script type="text/javascript" src="/news/assets/config/es/footer.js?v=0e44dea448"></script>
+    <script type="text/javascript" src="/news/assets/config/es/main.js?v=d31f046bb8"></script>
+    <script type="text/javascript" src="/news/assets/config/es/footer.js?v=d31f046bb8"></script>
 
-    <script type="text/javascript" src="/news/assets/config/zh-cn/main.js?v=0e44dea448"></script>
-    <script type="text/javascript" src="/news/assets/config/zh-cn/footer.js?v=0e44dea448"></script>
+    <script type="text/javascript" src="/news/assets/config/zh-cn/main.js?v=d31f046bb8"></script>
+    <script type="text/javascript" src="/news/assets/config/zh-cn/footer.js?v=d31f046bb8"></script>
 
-    <script type="text/javascript" src="/news/assets/config/setup-locale.js?v=0e44dea448"></script>
+    <script type="text/javascript" src="/news/assets/config/setup-locale.js?v=d31f046bb8"></script>
 
 
-    <script src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/dayjs.min.js"></script>
-    <script src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/localizedFormat.min.js"></script>
-    <script src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/relativeTime.min.js"></script>
+    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/dayjs.min.js"></script>
+    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/localizedFormat.min.js"></script>
+    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/relativeTime.min.js"></script>
 
-    <script src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/locale/zh-cn.min.js"></script>
+    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/locale/zh-cn.min.js"></script>
+    <script defer src="https://cdn.freecodecamp.org/news-assets/dayjs-1.9.1/locale/es.min.js"></script>
 
 
     <link rel="icon" href="/news/favicon.png" type="image/png" />
@@ -91,7 +95,7 @@
         "name": "freeCodeCamp.org",
         "image": {
             "@type": "ImageObject",
-            "url": "//www.gravatar.com/avatar/fcda43852608626fe46d7fd43145766e?s=250&d=mm&r=x",
+            "url": "https://www.freecodecamp.org/news/content/images/2021/05/freecodecamp-org-gravatar.jpeg",
             "width": 250,
             "height": 250
         },
@@ -155,9 +159,9 @@
     <div class="site-wrapper">
         <nav class="site-nav nav-padding">
     <div class="site-nav-left">
-        <form id="search-form" onsubmit="submitSearch()">
+        <form id="search-form">
   <div role="search" class="searchbox__wrapper">
-    <input type="search" placeholder="Search 6,000+ tutorials" id="search-input" />
+    <input type="search" placeholder="Search 7,000+ tutorials" id="search-input" />
     <button type="submit" title="Submit your search query." class="ais-SearchBox-submit">
       <svg class="ais-SearchBox-submitIcon" xmlns="https://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 40 40">
         <path d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z" />
@@ -168,6 +172,7 @@
 </form>
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
   const client = algoliasearch('QMJYL5WYTI', '89770b24481654192d7a5c402c6ad9a0');
   const index = client.initIndex(main['algolia-index-name']);
   const screenWidth = window.screen.width;
@@ -190,7 +195,7 @@
     submitSearch();
   });
 
-  const search = autocomplete('#search-input', { 
+  const search = autocomplete('#search-input', {
       hint: false,
       keyboardShortcuts: ['s', 191],
       openOnFocus: true,
@@ -239,7 +244,7 @@
       }
     }
   ]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
-    // If article is selected, set to URL of the article. 
+    // If article is selected, set to URL of the article.
     // If footer is selected, set to search results path
     hitSelected = suggestion ? suggestion.url : `https://www.freecodecamp.org/news/search?query=${searchQuery}`;
 
@@ -267,12 +272,13 @@
     }
   }
 
-  // close dropbar when clicking off 
+  // close dropbar when clicking off
   document.addEventListener('click', e => {
     if (e.target !== input) {
       search.autocomplete.close();
     }
   });
+});
 </script>
     </div>
     <div class="site-nav-middle">
@@ -528,72 +534,72 @@
         })
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
         </script>
-    <script type="text/javascript" src="/news/assets/built/jquery.fitvids.js?v=0e44dea448"></script>
+    <script defer type="text/javascript" src="/news/assets/built/jquery.fitvids.js?v=d31f046bb8"></script>
 
-    <script type="text/javascript" src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript" src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism.min.js"></script>
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-unescaped-markup.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-markup-templating.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-bash.min.js"></script>
-    <script type="text/javascript" src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-c.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript" src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-c.min.js"></script>
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-clojure.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-cpp.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-csharp.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-css.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-docker.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-elixir.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-erlang.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-git.min.js"></script>
-    <script type="text/javascript" src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-go.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript" src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-go.min.js"></script>
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-graphql.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-haskell.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-java.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-javascript.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-json.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-jsx.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-kotlin.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-lua.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-markup.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-php.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-python.min.js"></script>
-    <script type="text/javascript" src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-r.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript" src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-r.min.js"></script>
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-ruby.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-rust.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-scala.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-sql.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-swift.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-typescript.min.js"></script>
-    <script type="text/javascript"
+    <script defer type="text/javascript"
         src="https://cdn.freecodecamp.org/news-assets/prism-1-16-0/prism-yaml.min.js"></script>
 
     <script>
@@ -681,6 +687,7 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"65787f435dec4e98","token":"bdb993c6dde44e178aabd9555e75e4f4","version":"2021.5.2","si":10}'></script>
 </body>
 
 </html>
