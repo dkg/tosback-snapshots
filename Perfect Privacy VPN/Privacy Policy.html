@@ -29,6 +29,10 @@
 
                                     <link rel="stylesheet" href="/css/compiled/pp.css">
             
+                        <link rel="preload" href="/fonts/OpenSans-Regular-webfont.woff" as="font">
+            <link rel="preload" href="/fonts/glyphicons-social-regular.woff2" as="font">
+            <link rel="preload" href="/fonts/glyphicons-regular.woff2" as="font">
+            
             <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -62,8 +66,7 @@
                     <div class="col-4 navbar navbar-dark d-none d-lg-block">
                         <a class="navbar-brand" href="/en/" title="Perfect Privacy">
                             <div id="menulogo">
-                                <img class="img-fluid mx-auto d-block" src="/images/logo_dark.png" alt="Perfect Privacy">
-                            </div>
+                                                             </div>
                         </a>
                     </div>
                     <div class="col-12 col-lg-8">
@@ -580,7 +583,7 @@
                 }
 
                 $(document).ready(function(){
-                                                                                                                                                                            $(".USD").show();
+                    $("#menulogo").html('<img class="img-fluid mx-auto d-block" src="/images/logo_dark.png" alt="Perfect Privacy">');                                                                                                                                                                             $(".USD").show();
                                                                                             
                     if($('.artwork').length == 0) {
                         $('#menulogo').css("display", "block");                     }
