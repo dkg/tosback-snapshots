@@ -225,8 +225,6 @@ padding-top:40px;
       padding-top: 10px;
       padding-bottom: 10px; }
   @media screen and (max-width: 768px) {
-    .full-screen-menu.search-menu .searchform input[type=text] {
-      width: 100%; }
     .full-screen-menu.search-menu .searchform input[type=submit] {
       right: 0%; }
     .full-screen-menu.search-menu h3 {
@@ -256,7 +254,7 @@ padding-top:40px;
       width: 40px;
       position: absolute;
       top: 15px;
-      right: 20%; }
+      right: 15%; }
   .full-screen-menu form {
     height: 70px;
     line-height: 60px; }
@@ -1691,7 +1689,7 @@ body.darkmode .moka-trending-bar a {
 
 .relatedside .relateditemimg {
   float: left;
-  margin-left: 10px; }
+}
 
 .relatedtitle {
   color: #333 !important;
@@ -1905,7 +1903,54 @@ div.moka-buying-guides-relative-award {
         margin: 0 auto;
         margin-bottom: 10px;
         max-width: 250px;
-        width: 100%; } }	body {
+        width: 100%; } }
+
+.spec_box_title {
+  color: red;
+  margin-bottom: 0;
+}
+
+.spec_box_heading {
+  font-style: italic;
+  margin-top: 0;
+}
+
+.spec_box td:first {
+  border-right: 1px solid black;
+}
+
+.spec_box td {
+  padding: 8px 0 10px 8px;
+}
+
+.spec_box_cross {
+  color: darkred;
+}
+
+.spec_box_check {
+  color: green;
+}
+
+.spec_box tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.spec_box_img {
+  height: 75px; 
+  width: 100%;
+}
+
+.spec_box_img img {
+  max-height: 100%; 
+  max-width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.spec_box .product-share-links {
+  margin: 2px;
+}	body {
   font-family: "Roboto", "Open Sans", sans-serif; }
   @media screen and (max-width: 768px) {
     body {
@@ -1974,6 +2019,7 @@ div.moka-buying-guides-relative-award {
 <link rel="stylesheet" href="/public/htgfonts/htgfonts.css">
 <title>Privacy Policy </title>
 <meta property="fb:page_id" content="65878196434"/>
+<link rel="alternate" type="application/rss+xml" title="How-To Geek RSS Feed" href="https://feeds.howtogeek.com/HowToGeek"/>
 <meta name="ROBOTS" content="INDEX, FOLLOW"/>
 <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon"/>
 <link rel="icon" type="image/png" href="/public/images/32x32.png" sizes="32x32">
@@ -2044,205 +2090,7 @@ div.moka-buying-guides-relative-award {
   },3000);
 </script>
 <!-- End Facebook Pixel Code -->
-<style>
-	@-webkit-keyframes moka-slide-in {
-		100% { 
-			top: 50%; left: 50%; 
-			-ms-transform: translateX(-50%) translateY(-50%); -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);
-		}
-	}
-	@keyframes moka-slide-in {
-		100% { 
-			top: 50%; left: 50%; 
-			-ms-transform: translateX(-50%) translateY(-50%); -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);
-		}
-	}
-
-	@-webkit-keyframes moka-fade-in {
-		100% { 
-			opacity: 1;
-		}
-	}
-	@keyframes moka-fade-in {
-		100% { 
-			opacity: 1;
-		}
-	}
-
-	@-webkit-keyframes moka-fade-in-partial {
-		100% { 
-			opacity: 0.7;
-		}
-	}
-	@keyframes moka-fade-in-partial {
-		100% { 
-			opacity: 0.7;
-		}
-	}
-
-	#v2campaignpopup {
-		background-color: white;
-	}
-	.darkmode #v2campaignpopup {
-		background-color: black;
-	}
-	#v2campaignpopup_backdrop {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		opacity: 0; 
-		-webkit-animation: moka-fade-in-partial 1s forwards; 
-		-webkit-animation-delay: 0s; 
-		animation: moka-fade-in-partial 1s forwards; 
-		animation-delay: 0s;
-		background-color: white;
-		z-index: 100005;
-	}
-	.darkmode #v2campaignpopup_backdrop {
-		background-color: black;
-	}
-
-	/* Push whole block down a smidge for close button, on mobile */
-	@media screen and (max-width: 768px) {
-		#v2campaignpopup {
-			margin-top: 20px;
-			overflow: auto;
-			border: 1px solid black;
-		}
-		.darkmode #v2campaignpopup {
-			border: 1px solid white;
-		}
-	}
-</style>
-<script type="text/javascript">
-	// Check for newsletter flag or already-signed-up flag first:
-	if (!document.cookie.includes('htgreader') && !document.cookie.includes('htg_newsletter_subform_hide')) {
-		var req = new XMLHttpRequest();
-		req.addEventListener("loadend", function() {
-			var v2adslist = JSON.parse(req.response);
-			// This will be an array of ads - generally one in-page and one popup, but could be one or the other etc.
-			if (v2adslist) {
-				v2adslist.forEach(function(v2data) {
-					if (v2data.adtype == 'popup') {
-						if (+v2data.popup_delay != v2data.popup_delay) {
-							v2data.popup_delay = 60;
-						}
-
-						if (window.admiral_engaged) {
-							// Add an extra 30 seconds
-							v2data.popup_delay += 30;
-						}
-
-						// Enforce a minimum size for popups - both on mobile and desktop
-						const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-						const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-
-						if (vw < 360 || vh < 640) {
-							return;
-						}
-
-						setTimeout(function() {
-							var newDiv = document.createElement('div');
-							var positionStyle = '';
-							var backdrop = ''; // Note - no backdrop for corner styles
-
-							if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-								v2data.popup_style = 'full-width';
-								backdrop = '<div id="v2campaignpopup_backdrop" style="z-index: 100000101;"></div>';
-							}
-
-							if (v2data.popup_style == 'centered') {
-								positionStyle = 'top: 50%; left: 50%; -ms-transform: translateX(-50%) translateY(-50%); -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);';
-								backdrop = '<div id="v2campaignpopup_backdrop"></div>';
-							} else if (v2data.popup_style == 'fadein') {
-								positionStyle = 'top: 50%; left: 50%; opacity: 0; -ms-transform: translateX(-50%) translateY(-50%); -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%); -webkit-animation: moka-fade-in 1s forwards; -webkit-animation-delay: 0s; animation: moka-fade-in 1s forwards; animation-delay: 0s;';
-								backdrop = '<div id="v2campaignpopup_backdrop"></div>';
-
-							} else if (v2data.popup_style == 'slideinside') {
-								positionStyle = 'top: 50%; left: -100%; -webkit-animation: moka-slide-in 1s forwards; -webkit-animation-delay: 0s; animation: moka-slide-in 1s forwards; animation-delay: 0s;';
-								backdrop = '<div id="v2campaignpopup_backdrop"></div>';
-
-							} else if (v2data.popup_style == 'slideintop') {
-								positionStyle = 'top: -100%; left: 50%; -webkit-animation: moka-slide-in 1s forwards; -webkit-animation-delay: 0s; animation: moka-slide-in 1s forwards; animation-delay: 0s;';
-								backdrop = '<div id="v2campaignpopup_backdrop"></div>';
-
-							} else if (v2data.popup_style == 'popuplr') {
-								positionStyle = 'bottom: 5px; right: 5px;';
-							} else if (v2data.popup_style == 'popupur') {
-								positionStyle = 'top: 60px; right: 5px;';
-							} else if (v2data.popup_style == 'popupll') {
-								positionStyle = 'bottom: 5px; left: 5px;';
-							} else if (v2data.popup_style == 'popupul') {
-								positionStyle = 'top: 60px; left: 5px;';
-							} else if (v2data.popup_style == 'full-width') {
-								positionStyle = 'top: 50%; left: 0; width: 100%; -ms-transform: translateY(-50%); -webkit-transform: translateY(-50%); transform: translateY(-50%); box-shadow: none !important;';
-							}
-
-							window.closev2popup = function() {
-								try { document.getElementById('v2campaignpopup').remove(); } catch {}
-								try { document.getElementById('v2campaignpopup_backdrop').remove();  } catch {}
-								try { document.cookie = 'htg_newsletter_subform_hide=1; expires=Sun, 1 Jan 2023 00:00:00 UTC; path=/'; } catch {}
-							}
-
-							if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-								// Make sure mobile header doesn't cover up the close button
-								positionStyle += 'z-index: 100000102; ';
-							} else {
-								positionStyle += 'z-index: 100007; ';
-							}
-
-							var closeButton = '<label id="moka-v2campaign-closebtn" style="font-family: Raleway,sans-serif; cursor: pointer; text-align: center; position: absolute; top: 0; right: 0; min-height: 20px; width: 30px; background: #666666; color: white;" onclick="closev2popup()">X</label>';
-
-							newDiv.innerHTML = backdrop + '<div id="v2campaignpopup" style="position: fixed; ' + positionStyle + ' box-shadow: 4px 4px 16px #aaa; overflow: auto; max-height: 100%;">' + closeButton + v2data.content + '</div>';
-							
-							// Last ditch check to see if we shouldn't do this (e.g., HTG native popup already went)
-							if (!document.cookie.includes('htg_newsletter_subform_hide')) {
-								document.body.append(newDiv); 
-
-								// Now that we appended the content, set any hidden refer tag
-								(function() {
-									if (document.referrer) {
-										var x = document.getElementsByName('moka-pagerefer');
-										for (var i = 0; i < x.length; i++) {
-											x[i].value = document.referrer;
-										}
-									}
-								})();
-							}
-						}, v2data.popup_delay * 1000);
-					} else if (v2data.adtype == 'midpage') {
-						// Only do this on actual articles:
-						var articleArea = document.getElementsByClassName('entry-content');
-						if (articleArea && articleArea.length > 0) {
-							articleArea = articleArea[0];
-							var paragraphs = articleArea.children;
-							if (paragraphs.length < v2data.inpage_paragno) {
-								v2data.inpage_paragno = paragraphs.length - 1;
-							}
-
-							var newDiv = document.createElement('div');
-							newDiv.innerHTML = '<div id="v2campaignmidpage">' + v2data.content + '</div>';						
-
-							var insertDestCandidate = false;
-							for (var actualParag = v2data.inpage_paragno; actualParag < paragraphs.length && !insertDestCandidate; actualParag++) {
-								var candidate = paragraphs.item(actualParag);
-								if (candidate && candidate.nodeName == 'P') {
-									insertDestCandidate = candidate;
-								}
-							}
-							
-							if (insertDestCandidate) insertDestCandidate.insertBefore(newDiv, null); // Null = end
-						}
-					}
-				});
-			}
-		});
-		req.open("GET", "/emv2/inpage?p=1031");
-		req.send();
-	}
-</script></head>
+</head>
 <body class="page-template-default page page-id-1031 group-blog">
 <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 <amp-iframe width="1" height="1" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" layout="fixed" frameborder="0" src="https://ads.servebom.com/serve_cdn/amp/amp_head.html">
@@ -2293,63 +2141,27 @@ div.moka-buying-guides-relative-award {
 <input type="submit" value="Go">
 </form>
 <nav id="site-navigation-1" class="main-navigation" role="navigation">
-<div class="menu"><ul>
-<li class="page_item page-item-2"><a href="https://www.howtogeek.com/about/">About How-To Geek</a></li>
-<li class="page_item page-item-916"><a href="https://www.howtogeek.com/contact/">Contacting How-To Geek</a></li>
-<li class="page_item page-item-451039"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2020-awards/">How-To Geek Best of CES 2020 Awards</a></li>
-<li class="page_item page-item-706130"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2021-awards/">How-To Geek Best of CES 2021 Awards</a></li>
-<li class="page_item page-item-508968"><a href="https://www.howtogeek.com/how-to-geek-best-of-mwc-2020-awards/">How-To Geek Best of MWC 2020 Awards</a></li>
-<li class="page_item page-item-184204"><a href="https://www.howtogeek.com/school/">How-To Geek School</a></li>
-<li class="page_item page-item-692291"><a href="https://www.howtogeek.com/newsletter/">Newsletter</a></li>
-<li class="page_item page-item-711318"><a href="https://www.howtogeek.com/accessibility/">Our Commitment to Accessibility</a></li>
-<li class="page_item page-item-1031"><a href="https://www.howtogeek.com/privacy-policy/">Privacy Policy</a></li>
-<li class="page_item page-item-164992"><a href="https://www.howtogeek.com/search/">Search Results</a></li>
-<li class="page_item page-item-1370"><a href="https://www.howtogeek.com/email-subscription/">Subscribe to How-To Geek</a></li>
-<li class="page_item page-item-329684"><a href="https://www.howtogeek.com/terms-of-use/">Terms of Use</a></li>
+<div class="menu-header-column-1-container"><ul class="menu" role="menu"><li role="menuitem" id="menu-item-363960" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363960"><a href="https://www.howtogeek.com/t/windows/">Windows</a></li>
+<li role="menuitem" id="menu-item-363961" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363961"><a href="https://www.howtogeek.com/t/mac/">Mac</a></li>
+<li role="menuitem" id="menu-item-363962" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363962"><a href="https://www.howtogeek.com/t/ios/">iPhone</a></li>
+<li role="menuitem" id="menu-item-363963" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363963"><a href="https://www.howtogeek.com/t/android/">Android</a></li>
 </ul></div>
-<div class="menu"><ul>
-<li class="page_item page-item-2"><a href="https://www.howtogeek.com/about/">About How-To Geek</a></li>
-<li class="page_item page-item-916"><a href="https://www.howtogeek.com/contact/">Contacting How-To Geek</a></li>
-<li class="page_item page-item-451039"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2020-awards/">How-To Geek Best of CES 2020 Awards</a></li>
-<li class="page_item page-item-706130"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2021-awards/">How-To Geek Best of CES 2021 Awards</a></li>
-<li class="page_item page-item-508968"><a href="https://www.howtogeek.com/how-to-geek-best-of-mwc-2020-awards/">How-To Geek Best of MWC 2020 Awards</a></li>
-<li class="page_item page-item-184204"><a href="https://www.howtogeek.com/school/">How-To Geek School</a></li>
-<li class="page_item page-item-692291"><a href="https://www.howtogeek.com/newsletter/">Newsletter</a></li>
-<li class="page_item page-item-711318"><a href="https://www.howtogeek.com/accessibility/">Our Commitment to Accessibility</a></li>
-<li class="page_item page-item-1031"><a href="https://www.howtogeek.com/privacy-policy/">Privacy Policy</a></li>
-<li class="page_item page-item-164992"><a href="https://www.howtogeek.com/search/">Search Results</a></li>
-<li class="page_item page-item-1370"><a href="https://www.howtogeek.com/email-subscription/">Subscribe to How-To Geek</a></li>
-<li class="page_item page-item-329684"><a href="https://www.howtogeek.com/terms-of-use/">Terms of Use</a></li>
+<div class="menu-header-column-2-container"><ul class="menu" role="menu"><li role="menuitem" id="menu-item-363964" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363964"><a href="https://www.howtogeek.com/t/smarthome/">Smarthome</a></li>
+<li role="menuitem" id="menu-item-363965" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363965"><a href="https://www.howtogeek.com/t/office/">Office</a></li>
+<li role="menuitem" id="menu-item-363966" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363966"><a href="https://www.howtogeek.com/t/privacyandsecurity/">Security</a></li>
+<li role="menuitem" id="menu-item-363967" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363967"><a href="https://www.howtogeek.com/t/linux/">Linux</a></li>
 </ul></div>
-<div class="menu"><ul>
-<li class="page_item page-item-2"><a href="https://www.howtogeek.com/about/">About How-To Geek</a></li>
-<li class="page_item page-item-916"><a href="https://www.howtogeek.com/contact/">Contacting How-To Geek</a></li>
-<li class="page_item page-item-451039"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2020-awards/">How-To Geek Best of CES 2020 Awards</a></li>
-<li class="page_item page-item-706130"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2021-awards/">How-To Geek Best of CES 2021 Awards</a></li>
-<li class="page_item page-item-508968"><a href="https://www.howtogeek.com/how-to-geek-best-of-mwc-2020-awards/">How-To Geek Best of MWC 2020 Awards</a></li>
-<li class="page_item page-item-184204"><a href="https://www.howtogeek.com/school/">How-To Geek School</a></li>
-<li class="page_item page-item-692291"><a href="https://www.howtogeek.com/newsletter/">Newsletter</a></li>
-<li class="page_item page-item-711318"><a href="https://www.howtogeek.com/accessibility/">Our Commitment to Accessibility</a></li>
-<li class="page_item page-item-1031"><a href="https://www.howtogeek.com/privacy-policy/">Privacy Policy</a></li>
-<li class="page_item page-item-164992"><a href="https://www.howtogeek.com/search/">Search Results</a></li>
-<li class="page_item page-item-1370"><a href="https://www.howtogeek.com/email-subscription/">Subscribe to How-To Geek</a></li>
-<li class="page_item page-item-329684"><a href="https://www.howtogeek.com/terms-of-use/">Terms of Use</a></li>
+<div class="menu-header-column-3-container"><ul class="menu" role="menu"><li role="menuitem" id="menu-item-363968" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363968"><a href="https://www.howtogeek.com/news/">News</a></li>
+<li role="menuitem" id="menu-item-363969" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363969"><a href="https://www.howtogeek.com/t/features/">Features</a></li>
+<li role="menuitem" id="menu-item-363970" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363970"><a href="https://www.reviewgeek.com">Review Geek</a></li>
+<li role="menuitem" id="menu-item-410821" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-410821"><a href="https://www.lifesavvy.com">LifeSavvy</a></li>
+<li role="menuitem" id="menu-item-697758" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-697758"><a href="https://www.howtogeek.com/newsletter">Newsletter</a></li>
 </ul></div>
-<div class="menu"><ul>
-<li class="page_item page-item-2"><a href="https://www.howtogeek.com/about/">About How-To Geek</a></li>
-<li class="page_item page-item-916"><a href="https://www.howtogeek.com/contact/">Contacting How-To Geek</a></li>
-<li class="page_item page-item-451039"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2020-awards/">How-To Geek Best of CES 2020 Awards</a></li>
-<li class="page_item page-item-706130"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2021-awards/">How-To Geek Best of CES 2021 Awards</a></li>
-<li class="page_item page-item-508968"><a href="https://www.howtogeek.com/how-to-geek-best-of-mwc-2020-awards/">How-To Geek Best of MWC 2020 Awards</a></li>
-<li class="page_item page-item-184204"><a href="https://www.howtogeek.com/school/">How-To Geek School</a></li>
-<li class="page_item page-item-692291"><a href="https://www.howtogeek.com/newsletter/">Newsletter</a></li>
-<li class="page_item page-item-711318"><a href="https://www.howtogeek.com/accessibility/">Our Commitment to Accessibility</a></li>
-<li class="page_item page-item-1031"><a href="https://www.howtogeek.com/privacy-policy/">Privacy Policy</a></li>
-<li class="page_item page-item-164992"><a href="https://www.howtogeek.com/search/">Search Results</a></li>
-<li class="page_item page-item-1370"><a href="https://www.howtogeek.com/email-subscription/">Subscribe to How-To Geek</a></li>
-<li class="page_item page-item-329684"><a href="https://www.howtogeek.com/terms-of-use/">Terms of Use</a></li>
-</ul></div>
-</nav><!-- #site-navigation -->
+<div class="menu-header-column-4-container"><ul class="menu" role="menu"><li role="menuitem" id="menu-item-363971" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363971"><a href="https://www.howtogeek.com/about/">About Us</a></li>
+<li role="menuitem" id="menu-item-363972" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363972"><a href="https://www.howtogeek.com/contact/">Contact Us</a></li>
+<li role="menuitem" id="menu-item-445703" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-445703"><a href="https://www.facebook.com/groups/geektalkgroup/">Geek Talk</a></li>
+<li role="menuitem" id="menu-item-671446" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-671446"><a href="https://www.cloudsavvyit.com">CloudSavvy IT</a></li>
+</ul></div>	</nav><!-- #site-navigation -->
 </div>
 </div>
 </div>
@@ -2362,78 +2174,32 @@ div.moka-buying-guides-relative-award {
 <input type="submit" value="Go">
 </form>
 <strong class="popsearchheading" role="heading" aria-level="1">Popular Searches</strong>
-<div class="menu"><ul>
-<li class="page_item page-item-2"><a href="https://www.howtogeek.com/about/" aria-label="Search for About How-To Geek">About How-To Geek</a></li>
-<li class="page_item page-item-916"><a href="https://www.howtogeek.com/contact/" aria-label="Search for Contacting How-To Geek">Contacting How-To Geek</a></li>
-<li class="page_item page-item-451039"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2020-awards/" aria-label="Search for How-To Geek Best of CES 2020 Awards">How-To Geek Best of CES 2020 Awards</a></li>
-<li class="page_item page-item-706130"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2021-awards/" aria-label="Search for How-To Geek Best of CES 2021 Awards">How-To Geek Best of CES 2021 Awards</a></li>
-<li class="page_item page-item-508968"><a href="https://www.howtogeek.com/how-to-geek-best-of-mwc-2020-awards/" aria-label="Search for How-To Geek Best of MWC 2020 Awards">How-To Geek Best of MWC 2020 Awards</a></li>
-<li class="page_item page-item-184204"><a href="https://www.howtogeek.com/school/" aria-label="Search for How-To Geek School">How-To Geek School</a></li>
-<li class="page_item page-item-692291"><a href="https://www.howtogeek.com/newsletter/" aria-label="Search for Newsletter">Newsletter</a></li>
-<li class="page_item page-item-711318"><a href="https://www.howtogeek.com/accessibility/" aria-label="Search for Our Commitment to Accessibility">Our Commitment to Accessibility</a></li>
-<li class="page_item page-item-1031"><a href="https://www.howtogeek.com/privacy-policy/" aria-label="Search for Privacy Policy">Privacy Policy</a></li>
-<li class="page_item page-item-164992"><a href="https://www.howtogeek.com/search/" aria-label="Search for Search Results">Search Results</a></li>
-<li class="page_item page-item-1370"><a href="https://www.howtogeek.com/email-subscription/" aria-label="Search for Subscribe to How-To Geek">Subscribe to How-To Geek</a></li>
-<li class="page_item page-item-329684"><a href="https://www.howtogeek.com/terms-of-use/" aria-label="Search for Terms of Use">Terms of Use</a></li>
+<div class="menu-popular-searches-container"><ul id="menu-popular-searches" class="menu" role="menu"><li role="menuitem" id="menu-item-363957" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363957"><a href="https://www.howtogeek.com/search/?q=Windows+10" aria-label="Search for Windows 10">Windows 10</a></li>
+<li role="menuitem" id="menu-item-363958" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363958"><a href="https://www.howtogeek.com/search/?q=Speed+Up+PC" aria-label="Search for Speed Up PC">Speed Up PC</a></li>
+<li role="menuitem" id="menu-item-363959" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363959"><a href="https://www.howtogeek.com/search/?q=Chromecast" aria-label="Search for Chromecast">Chromecast</a></li>
 </ul></div>
 <nav id="site-navigation-2" class="main-navigation" role="navigation">
-<div class="menu"><ul>
-<li class="page_item page-item-2"><a href="https://www.howtogeek.com/about/">About How-To Geek</a></li>
-<li class="page_item page-item-916"><a href="https://www.howtogeek.com/contact/">Contacting How-To Geek</a></li>
-<li class="page_item page-item-451039"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2020-awards/">How-To Geek Best of CES 2020 Awards</a></li>
-<li class="page_item page-item-706130"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2021-awards/">How-To Geek Best of CES 2021 Awards</a></li>
-<li class="page_item page-item-508968"><a href="https://www.howtogeek.com/how-to-geek-best-of-mwc-2020-awards/">How-To Geek Best of MWC 2020 Awards</a></li>
-<li class="page_item page-item-184204"><a href="https://www.howtogeek.com/school/">How-To Geek School</a></li>
-<li class="page_item page-item-692291"><a href="https://www.howtogeek.com/newsletter/">Newsletter</a></li>
-<li class="page_item page-item-711318"><a href="https://www.howtogeek.com/accessibility/">Our Commitment to Accessibility</a></li>
-<li class="page_item page-item-1031"><a href="https://www.howtogeek.com/privacy-policy/">Privacy Policy</a></li>
-<li class="page_item page-item-164992"><a href="https://www.howtogeek.com/search/">Search Results</a></li>
-<li class="page_item page-item-1370"><a href="https://www.howtogeek.com/email-subscription/">Subscribe to How-To Geek</a></li>
-<li class="page_item page-item-329684"><a href="https://www.howtogeek.com/terms-of-use/">Terms of Use</a></li>
+<div class="menu-header-column-1-container"><ul class="menu" role="menu"><li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363960"><a href="https://www.howtogeek.com/t/windows/">Windows</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363961"><a href="https://www.howtogeek.com/t/mac/">Mac</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363962"><a href="https://www.howtogeek.com/t/ios/">iPhone</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363963"><a href="https://www.howtogeek.com/t/android/">Android</a></li>
 </ul></div>
-<div class="menu"><ul>
-<li class="page_item page-item-2"><a href="https://www.howtogeek.com/about/">About How-To Geek</a></li>
-<li class="page_item page-item-916"><a href="https://www.howtogeek.com/contact/">Contacting How-To Geek</a></li>
-<li class="page_item page-item-451039"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2020-awards/">How-To Geek Best of CES 2020 Awards</a></li>
-<li class="page_item page-item-706130"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2021-awards/">How-To Geek Best of CES 2021 Awards</a></li>
-<li class="page_item page-item-508968"><a href="https://www.howtogeek.com/how-to-geek-best-of-mwc-2020-awards/">How-To Geek Best of MWC 2020 Awards</a></li>
-<li class="page_item page-item-184204"><a href="https://www.howtogeek.com/school/">How-To Geek School</a></li>
-<li class="page_item page-item-692291"><a href="https://www.howtogeek.com/newsletter/">Newsletter</a></li>
-<li class="page_item page-item-711318"><a href="https://www.howtogeek.com/accessibility/">Our Commitment to Accessibility</a></li>
-<li class="page_item page-item-1031"><a href="https://www.howtogeek.com/privacy-policy/">Privacy Policy</a></li>
-<li class="page_item page-item-164992"><a href="https://www.howtogeek.com/search/">Search Results</a></li>
-<li class="page_item page-item-1370"><a href="https://www.howtogeek.com/email-subscription/">Subscribe to How-To Geek</a></li>
-<li class="page_item page-item-329684"><a href="https://www.howtogeek.com/terms-of-use/">Terms of Use</a></li>
+<div class="menu-header-column-2-container"><ul class="menu" role="menu"><li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363964"><a href="https://www.howtogeek.com/t/smarthome/">Smarthome</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363965"><a href="https://www.howtogeek.com/t/office/">Office</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363966"><a href="https://www.howtogeek.com/t/privacyandsecurity/">Security</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363967"><a href="https://www.howtogeek.com/t/linux/">Linux</a></li>
 </ul></div>
-<div class="menu"><ul>
-<li class="page_item page-item-2"><a href="https://www.howtogeek.com/about/">About How-To Geek</a></li>
-<li class="page_item page-item-916"><a href="https://www.howtogeek.com/contact/">Contacting How-To Geek</a></li>
-<li class="page_item page-item-451039"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2020-awards/">How-To Geek Best of CES 2020 Awards</a></li>
-<li class="page_item page-item-706130"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2021-awards/">How-To Geek Best of CES 2021 Awards</a></li>
-<li class="page_item page-item-508968"><a href="https://www.howtogeek.com/how-to-geek-best-of-mwc-2020-awards/">How-To Geek Best of MWC 2020 Awards</a></li>
-<li class="page_item page-item-184204"><a href="https://www.howtogeek.com/school/">How-To Geek School</a></li>
-<li class="page_item page-item-692291"><a href="https://www.howtogeek.com/newsletter/">Newsletter</a></li>
-<li class="page_item page-item-711318"><a href="https://www.howtogeek.com/accessibility/">Our Commitment to Accessibility</a></li>
-<li class="page_item page-item-1031"><a href="https://www.howtogeek.com/privacy-policy/">Privacy Policy</a></li>
-<li class="page_item page-item-164992"><a href="https://www.howtogeek.com/search/">Search Results</a></li>
-<li class="page_item page-item-1370"><a href="https://www.howtogeek.com/email-subscription/">Subscribe to How-To Geek</a></li>
-<li class="page_item page-item-329684"><a href="https://www.howtogeek.com/terms-of-use/">Terms of Use</a></li>
+<div class="menu-header-column-3-container"><ul class="menu" role="menu"><li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363968"><a href="https://www.howtogeek.com/news/">News</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363969"><a href="https://www.howtogeek.com/t/features/">Features</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363970"><a href="https://www.reviewgeek.com">Review Geek</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-410821"><a href="https://www.lifesavvy.com">LifeSavvy</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-697758"><a href="https://www.howtogeek.com/newsletter">Newsletter</a></li>
 </ul></div>
-<div class="menu"><ul>
-<li class="page_item page-item-2"><a href="https://www.howtogeek.com/about/">About How-To Geek</a></li>
-<li class="page_item page-item-916"><a href="https://www.howtogeek.com/contact/">Contacting How-To Geek</a></li>
-<li class="page_item page-item-451039"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2020-awards/">How-To Geek Best of CES 2020 Awards</a></li>
-<li class="page_item page-item-706130"><a href="https://www.howtogeek.com/how-to-geek-best-of-ces-2021-awards/">How-To Geek Best of CES 2021 Awards</a></li>
-<li class="page_item page-item-508968"><a href="https://www.howtogeek.com/how-to-geek-best-of-mwc-2020-awards/">How-To Geek Best of MWC 2020 Awards</a></li>
-<li class="page_item page-item-184204"><a href="https://www.howtogeek.com/school/">How-To Geek School</a></li>
-<li class="page_item page-item-692291"><a href="https://www.howtogeek.com/newsletter/">Newsletter</a></li>
-<li class="page_item page-item-711318"><a href="https://www.howtogeek.com/accessibility/">Our Commitment to Accessibility</a></li>
-<li class="page_item page-item-1031"><a href="https://www.howtogeek.com/privacy-policy/">Privacy Policy</a></li>
-<li class="page_item page-item-164992"><a href="https://www.howtogeek.com/search/">Search Results</a></li>
-<li class="page_item page-item-1370"><a href="https://www.howtogeek.com/email-subscription/">Subscribe to How-To Geek</a></li>
-<li class="page_item page-item-329684"><a href="https://www.howtogeek.com/terms-of-use/">Terms of Use</a></li>
-</ul></div>
-</nav><!-- #site-navigation -->
+<div class="menu-header-column-4-container"><ul class="menu" role="menu"><li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363971"><a href="https://www.howtogeek.com/about/">About Us</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-363972"><a href="https://www.howtogeek.com/contact/">Contact Us</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-445703"><a href="https://www.facebook.com/groups/geektalkgroup/">Geek Talk</a></li>
+<li role="menuitem" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-671446"><a href="https://www.cloudsavvyit.com">CloudSavvy IT</a></li>
+</ul></div>	</nav><!-- #site-navigation -->
 </div>
 </div>
 </div>
@@ -2750,37 +2516,19 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="How to Find and Remove Duplicate Files on Windows" aria-label="How to Find and Remove Duplicate Files on Windows" href='https://www.howtogeek.com/200962/how-to-find-and-remove-duplicate-files-on-windows/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2017/05/img_5925f9876d5af.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="10 Ways To Free Up Disk Space on Your Mac Hard Drive" aria-label="10 Ways To Free Up Disk Space on Your Mac Hard Drive" href='https://www.howtogeek.com/184091/5-ways-to-free-up-disk-space-on-a-mac/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2016/11/Fullscreen_2_28_17__9_49_AM-650x300.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="How to Find and Remove Duplicate Files on Windows" aria-label="How to Find and Remove Duplicate Files on Windows" href='https://www.howtogeek.com/200962/how-to-find-and-remove-duplicate-files-on-windows/' class='title' rel='bookmark'>How to Find and Remove Duplicate Files on Windows</a>
+<a title="10 Ways To Free Up Disk Space on Your Mac Hard Drive" aria-label="10 Ways To Free Up Disk Space on Your Mac Hard Drive" href='https://www.howtogeek.com/184091/5-ways-to-free-up-disk-space-on-a-mac/' class='title' rel='bookmark'>10 Ways To Free Up Disk Space on Your Mac Hard Drive</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="It&#8217;s 2020. Is Using Public Wi-Fi Still Dangerous?" aria-label="It&#8217;s 2020. Is Using Public Wi-Fi Still Dangerous?" href='https://www.howtogeek.com/558115/its-2020.-is-using-public-wi-fi-still-dangerous/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2020/02/free-wifi-sign.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="What Is an F-Stop in Photography?" aria-label="What Is an F-Stop in Photography?" href='https://www.howtogeek.com/695949/what-is-f-stop-in-photography/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2020/10/preview-1.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="It&#8217;s 2020. Is Using Public Wi-Fi Still Dangerous?" aria-label="It&#8217;s 2020. Is Using Public Wi-Fi Still Dangerous?" href='https://www.howtogeek.com/558115/its-2020.-is-using-public-wi-fi-still-dangerous/' class='title' rel='bookmark'>It&#8217;s 2020. Is Using Public Wi-Fi Still Dangerous?</a>
-</div>
-<div style="clear:both;"></div>
-</div>
-<div class="sfpost">
-<div class="sfp2" role="presentation">
-<a title="How to Make a Website into a Windows 10 App" aria-label="How to Make a Website into a Windows 10 App" href='https://www.howtogeek.com/718611/how-to-make-a-website-into-a-windows-10-app/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2021/03/bing-website-app-on-windows-10.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
-</div>
-<div class="sfp3">
-<a title="How to Make a Website into a Windows 10 App" aria-label="How to Make a Website into a Windows 10 App" href='https://www.howtogeek.com/718611/how-to-make-a-website-into-a-windows-10-app/' class='title' rel='bookmark'>How to Make a Website into a Windows 10 App</a>
-</div>
-<div style="clear:both;"></div>
-</div>
-<div class="sfpost">
-<div class="sfp2" role="presentation">
-<a title="How to Use All of Windows 10’s Backup and Recovery Tools" aria-label="How to Use All of Windows 10’s Backup and Recovery Tools" href='https://www.howtogeek.com/220986/how-to-use-all-of-windows-10%e2%80%99s-backup-and-recovery-tools/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2017/02/bar_top-650x300.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
-</div>
-<div class="sfp3">
-<a title="How to Use All of Windows 10’s Backup and Recovery Tools" aria-label="How to Use All of Windows 10’s Backup and Recovery Tools" href='https://www.howtogeek.com/220986/how-to-use-all-of-windows-10%e2%80%99s-backup-and-recovery-tools/' class='title' rel='bookmark'>How to Use All of Windows 10’s Backup and Recovery Tools</a>
+<a title="What Is an F-Stop in Photography?" aria-label="What Is an F-Stop in Photography?" href='https://www.howtogeek.com/695949/what-is-f-stop-in-photography/' class='title' rel='bookmark'>What Is an F-Stop in Photography?</a>
 </div>
 <div style="clear:both;"></div>
 </div>
@@ -2795,28 +2543,46 @@ by <strong><a class="p-author h-card vcard author post-author" href="https://www
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="How to Fix a Slow Context Menu in Windows 10&#8217;s File Explorer" aria-label="How to Fix a Slow Context Menu in Windows 10&#8217;s File Explorer" href='https://www.howtogeek.com/684164/how-to-fix-a-slow-context-menu-in-windows-10s-file-explorer/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2020/08/windows-10-timer.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10" aria-label="10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10" href='https://www.howtogeek.com/228570/10-quick-ways-to-speed-up-a-slow-windows-pc/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2015/09/slow-computer.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="How to Fix a Slow Context Menu in Windows 10&#8217;s File Explorer" aria-label="How to Fix a Slow Context Menu in Windows 10&#8217;s File Explorer" href='https://www.howtogeek.com/684164/how-to-fix-a-slow-context-menu-in-windows-10s-file-explorer/' class='title' rel='bookmark'>How to Fix a Slow Context Menu in Windows 10&#8217;s File Explorer</a>
+<a title="10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10" aria-label="10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10" href='https://www.howtogeek.com/228570/10-quick-ways-to-speed-up-a-slow-windows-pc/' class='title' rel='bookmark'>10 Quick Ways to Speed Up a Slow PC Running Windows 7, 8, or 10</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="What Is &#8220;Project Connected Home Over IP&#8221; for Smart Homes?" aria-label="What Is &#8220;Project Connected Home Over IP&#8221; for Smart Homes?" href='https://www.howtogeek.com/452694/what-is-project-connected-home-over-ip-for-smart-homes/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2019/12/CHIP-Logos.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="How to Easily Install Apps With Windows 10&#8217;s Package Manager (Using winstall)" aria-label="How to Easily Install Apps With Windows 10&#8217;s Package Manager (Using winstall)" href='https://www.howtogeek.com/700045/how-to-easily-install-apps-with-windows-10s-package-manager-using-winstall/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2020/11/winstall-homepage-in-browser.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="What Is &#8220;Project Connected Home Over IP&#8221; for Smart Homes?" aria-label="What Is &#8220;Project Connected Home Over IP&#8221; for Smart Homes?" href='https://www.howtogeek.com/452694/what-is-project-connected-home-over-ip-for-smart-homes/' class='title' rel='bookmark'>What Is &#8220;Project Connected Home Over IP&#8221; for Smart Homes?</a>
+<a title="How to Easily Install Apps With Windows 10&#8217;s Package Manager (Using winstall)" aria-label="How to Easily Install Apps With Windows 10&#8217;s Package Manager (Using winstall)" href='https://www.howtogeek.com/700045/how-to-easily-install-apps-with-windows-10s-package-manager-using-winstall/' class='title' rel='bookmark'>How to Easily Install Apps With Windows 10&#8217;s Package Manager (Using winstall)</a>
 </div>
 <div style="clear:both;"></div>
 </div>
 <div class="sfpost">
 <div class="sfp2" role="presentation">
-<a title="10 Quick Ways to Speed Up a Slow Mac" aria-label="10 Quick Ways to Speed Up a Slow Mac" href='https://www.howtogeek.com/228180/10-quick-ways-to-speed-up-a-slow-mac/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2015/09/using-a-macbook.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+<a title="8K TV Has Arrived. Here&#8217;s What You Need to Know" aria-label="8K TV Has Arrived. Here&#8217;s What You Need to Know" href='https://www.howtogeek.com/397365/8k-tv-has-arrived.-heres-what-you-need-to-know/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2018/12/8k_lede.png?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
 </div>
 <div class="sfp3">
-<a title="10 Quick Ways to Speed Up a Slow Mac" aria-label="10 Quick Ways to Speed Up a Slow Mac" href='https://www.howtogeek.com/228180/10-quick-ways-to-speed-up-a-slow-mac/' class='title' rel='bookmark'>10 Quick Ways to Speed Up a Slow Mac</a>
+<a title="8K TV Has Arrived. Here&#8217;s What You Need to Know" aria-label="8K TV Has Arrived. Here&#8217;s What You Need to Know" href='https://www.howtogeek.com/397365/8k-tv-has-arrived.-heres-what-you-need-to-know/' class='title' rel='bookmark'>8K TV Has Arrived. Here&#8217;s What You Need to Know</a>
+</div>
+<div style="clear:both;"></div>
+</div>
+<div class="sfpost">
+<div class="sfp2" role="presentation">
+<a title="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" aria-label="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" href='https://www.howtogeek.com/259644/nest-vs.-ecobee3-vs.-honeywell-lyric-which-smart-thermostat-should-you-buy/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2016/06/smart-thermostats-copy-650x300.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+</div>
+<div class="sfp3">
+<a title="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" aria-label="Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?" href='https://www.howtogeek.com/259644/nest-vs.-ecobee3-vs.-honeywell-lyric-which-smart-thermostat-should-you-buy/' class='title' rel='bookmark'>Nest vs. Ecobee3 vs. Honeywell Lyric: Which Smart Thermostat Should You Buy?</a>
+</div>
+<div style="clear:both;"></div>
+</div>
+<div class="sfpost">
+<div class="sfp2" role="presentation">
+<a title="Six Common Smarthome Mistakes Beginners Make" aria-label="Six Common Smarthome Mistakes Beginners Make" href='https://www.howtogeek.com/439748/six-common-mistakes-smarthome-beginners-make/' class='title' rel='bookmark'><span><img src="https://www.howtogeek.com/wp-content/uploads/2019/09/Smart-Home-Mistakes.jpg?width=340&amp;height=200&amp;fit=crop&amp;trim=2,2,2,2" width="340" height="200" alt="" role="presentation"></span></a>
+</div>
+<div class="sfp3">
+<a title="Six Common Smarthome Mistakes Beginners Make" aria-label="Six Common Smarthome Mistakes Beginners Make" href='https://www.howtogeek.com/439748/six-common-mistakes-smarthome-beginners-make/' class='title' rel='bookmark'>Six Common Smarthome Mistakes Beginners Make</a>
 </div>
 <div style="clear:both;"></div>
 </div>
